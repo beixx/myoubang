@@ -52,7 +52,7 @@
                         <?php } ?>
                         <div class="num_txt">
                             <div class="num n5 fa txtCtr">
-                                <em class="blue"><?php echo $spread['order_city'];?></em>
+                                <em class="<?php echo $spread['isVip']==2?"blue":'';?>"><?php echo $spread['order_city'];?></em>
                             </div>
                             <div class="tit_box">
                                 <div class="title"><a href="/detail/<?php echo $spread['id'];?>"><?php echo $spread['name']?></a></div>
@@ -86,12 +86,15 @@
                     <?php } ?>
                     <?php foreach($tenants as $k => $v) { ?>
                     <div class="pic_box">
+                        <?php if($v['isVip']==2) { ?>
+                            <div class="huiyuan"></div>
+                        <?php } ?>
                         <div class="num_txt">
                             <div class="num n1 fa txtCtr">
-                                <em><?php echo $v['order_city'];?></em>
+                                <em class="<?php echo $v['isVip']==2?"blue":'';?>"><?php echo $v['order_city'];?></em>
                             </div>
                             <div class="tit_box">
-                                <div class="title"><a href=""><?php echo $v['name']?></a></div>
+                                <div class="title"><a href="/detail/<?php echo $v['id'];?>"><?php echo $v['name']?></a></div>
                                 <div class="txt"><span>人均：¥<?php echo $v['person_price'];?></span><span>|</span><span><?php echo $v['address'];?></span></div>
                             </div>
                         </div>

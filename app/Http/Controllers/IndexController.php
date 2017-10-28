@@ -5,7 +5,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Helper\Msg;
 use App\Http\Models\YfcAdv;
 use App\Http\Models\YfcTenants;
+use App\Http\Models\YfcTenantsPic;
 use App\Http\Models\YfcTenantsSet;
+use App\Http\Models\YfcTenantsSort;
+use App\Http\Models\YfcTenantsSortview;
+use App\Http\Models\YfcTenantsSortviewComment;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -23,76 +27,80 @@ class IndexController extends Controller
         }
 
         if($id!='sheying' && $id!="hunli"){
-            $tenantinfo = DB::table("yfc_tenants")->where('id',$id)->first();
-            print_r($tenantinfo) ;exit;
-            $city = $tenantinfo->city;
-            $pycity = Config::get('city.'.$city,'beijing');
-            Session::put('city',$city);
-            $tenantdatas = Yfctenantsdata::where('tenants_id',$id)->get();
-            $tenantsets = Yfctenantsset::where('tenantsId',$id)->orderBy('recommend','asc')->skip(0)->take(8)->get();
+            $tenants = YfcTenants::where('id',$id)->first();
 
-            foreach($tenantsets as $key=>$v){
-                if(isset($v->kind) && $v->kind){
-                    $v->kind = json_decode($v->kind,true);
-                }
-                if(isset($v->cover) && $v->cover){
-                    $v->cover = json_decode($v->cover,true);
-                }
-                if(isset($v->picDetail) && $v->picDetail){
-                    $v->picDetail = json_decode($v->picDetail,true);
-                }
-                $tenantsets[$key] = $v;
+            if(empty($tenants['name'])) {
+                return Redirect::to("/");
             }
-            $countsets = Yfctenantsset::where('tenantsId',$id)->count();
-            $setnums = ceil($countsets/8);
-            $tenantpics = Yfctenantspic::where('tenantsId', $id)->skip(0)->take(4)->get();
-            foreach($tenantpics as $k => $t){
-                if(isset($t->cover) && $t->cover){
-                    $t->cover = json_decode($t->cover,true);
+
+            $tenantssort = YfcTenantsSort::where('tenantsid',$id)->first();
+            $tenantssortview = YfcTenantsSortview::where('tenantsid',$id)->orderby("date",'asc')->get()->toArray();
+            $tenantssortviewcomment = YfcTenantsSortviewComment::where('tenantsid',$id)->orderby("date",'asc')->get()->toArray();
+            $city = $tenants['city'];
+            $pycity = Config::get('city.'.$city,'beijing');
+            //Session::put('city',$city);
+
+            $tenantssets = YfcTenantsSet::where('tenantsId',$id)->orderBy('recommend','asc')->limit(3)->get()->toArray();
+
+            foreach($tenantssets as $key=>$v){
+                if(isset($v['kind']) && $v['kind']){
+                    $v['kind'] = json_decode($v['kind'],true);
+                }
+                if(isset($v['cover']) && $v['cover']){
+                    $v['cover'] = json_decode($v['cover'],true);
+                }
+                if(isset($v['picDetail']) && $v['picDetail']){
+                    $v['picDetail'] = json_decode($v['picDetail'],true);
+                }
+                $tenantssets[$key] = $v;
+            }
+            $countsets = YfcTenantsSet::where('tenantsId',$id)->count();
+
+            $tenantspics = YfcTenantsPic::where('tenantsId', $id)->limit(3)->get();
+            foreach($tenantspics as $k => $t){
+                if(isset($t['cover']) && $t['cover']){
+                    $t['cover'] = json_decode($t['cover'],true);
                 }
                 if(isset($t->firstcover) && $t->firstcover){
-                    $t->firstcover = json_decode($t->firstcover,true);
+                    $t['firstcover'] = json_decode($t['firstcover'],true);
                 }
-                if(isset($t->picStyle) && $t->picStyle){
-                    $t->picStyle = json_decode($t->picStyle,true);
+                if(isset($t['picStyle']) && $t['picStyle']){
+                    $t['picStyle'] = json_decode($t['picStyle'],true);
                 }
-                $tenantpics[$k] = $t;
+                $tenantspics[$k] = $t;
             }
-            $countpics = Yfctenantspic::where('tenantsId',$id)->count();
-            $picnums = ceil($countpics/4);
+            $countpics = YfcTenantsPic::where('tenantsId',$id)->count();
 
-            $comments = Yfctenantscommentdetail::where('tenantsId',$id)->skip(0)->take(20)->orderBy('created','desc')->get();
-            $counts = Yfctenantscommentdetail::where('tenantsId',$id)->count();
-            $allpages = ceil($counts/20);
-            //$goods = Yfctenantscommentdetail::where('tenantsId',$id)->where('score','>=',15)->count();
-            //$averages = Yfctenantscommentdetail::where('tenantsId',$id)->where('score','>=',0)->where('score','<',15)->count();
-            //$bads = Yfctenantscommentdetail::where('tenantsId',$id)->where('score','<',0)->count();
-            //$haspics = Yfctenantscommentdetail::where('tenantsId',$id)->where('photo','!=','')->count();
-            //$hasdans = Yfctenantscommentdetail::where('tenantsId',$id)->where('documentary','!=','')->count();
-            $searchs = Yfcdaysearch::take(30)->where('tenantsId',$id)->orderBy('id','desc')->get();
-            $searchinfo =  Yfcdaysearch::where('tenantsId',$id)->orderBy('id','desc')->first();
-            $ctime = time();
-            $advinfo = '';
-            if($tenantinfo->isVip==2){
-                $advinfo = Yfcadv::where('type','2')->where('position','3')->where('tenantsId',$id)->where('endTime','>',$ctime)->first();
-            }else{
-                if($tenantinfo->shoptype == '婚纱摄影'){
-                    $advinfo = Yfcadv::where('type','1')->where('position','3')->where('city', 'like', '%'.$pycity.'%')->where('advtype','1')->where('endTime','>',$ctime)->first();
-                }else{
-                    $advinfo = Yfcadv::where('type','1')->where('position','3')->where('city', 'like', '%'.$pycity.'%')->where('advtype','2')->where('endTime','>',$ctime)->first();
-                }
-            }
-            $shoptype = $tenantinfo->shoptype;
-            $dbtenants = Yfctenants::where('city', 'like', '%'.$city.'%')->where('shoptype',$shoptype)->skip(0)->take(50)->orderBy('order_city','asc')->get();
-            $title = $tenantinfo->name.' _有榜'.$tenantinfo->shoptype.'行业榜单「第'.$tenantinfo->order_city.'名」';
-            $desc = $tenantinfo->name.'在'.$tenantinfo->city.'地区婚纱摄影行业综合排名第{'.$tenantinfo->order_city.'}名，该商户在品牌榜单中排名第{'.$tenantinfo->order_city.'}名，好评榜单中排名第{'.$tenantinfo->order_city.'}名，希望能够帮助您了解到{'.$tenantinfo->name.'}怎么样的问题。';
-            $keyword = $tenantinfo->name.', '.$tenantinfo->name.'怎么样, '.$tenantinfo->name.'行业第'.$tenantinfo->order_city.'名';
-            return View::make('front.shop', array('tenantinfo' => $tenantinfo,'dbtenants'=>$dbtenants,'title'=>$title,'desc'=>$desc,'keyword'=>$keyword,'pycity' => $pycity,'tenantdatas'=>$tenantdatas,'tenantsets'=>$tenantsets,'advinfo'=>$advinfo,'countsets'=>$countsets,'tenantpics'=>$tenantpics,'countpics'=>$countpics,
-                'setnums'=>$setnums,'picnums'=>$picnums,'searchinfo'=>$searchinfo,'comments'=>$comments,'counts'=>$counts,'allpages'=>$allpages,'city'=>$city,'searchs'=>$searchs ));
+            $title = $tenants['name'].' _有榜'.$tenants['shoptype'].'行业榜单「第'.$tenants['order_city'].'名」';
+            $desc = $tenants['name'].'在'.$tenants['city'].'地区婚纱摄影行业综合排名第{'.$tenants['order_city'].'}名，该商户在品牌榜单中排名第{'.$tenants['order_city'].'}名，好评榜单中排名第{'.$tenants['order_city'].'}名，希望能够帮助您了解到{'.$tenants['name'].'}怎么样的问题。';
+            $keyword = $tenants['name'].', '.$tenants['name'].'怎么样, '.$tenants['name'].'行业第'.$tenants['order_city'].'名';
+
+            $this->data = [
+                'tenants' => $tenants,
+                'title' => $title,
+                'desc' => $desc,
+                'keyword' => $keyword,
+                'countsets' => $countsets,
+                'countpics' => $countpics,
+                'shoptype' => $tenants['shoptype'],
+                'tenantssets' => $tenantssets,
+                'tenantspics' => $tenantspics,
+                'tenantssort' => $tenantssort,
+                'tenantssortview' => $tenantssortview,
+                'tenantssortviewcomment' => $tenantssortviewcomment,
+                'city' => $city,
+            ];
+
+            return view("front/shop",$this->data);
+
 
         }else{
             $page = Request::get('page','1');
             $city = Config::get('city.'.$name,'北京');
+            //无法获取城市，直接首页
+            if(!$city) {
+                return Redirect::to('/');
+            }
             $this->data['city'] = $city;
             if($id=='sheying'){
                 $shoptype = '婚纱摄影';
@@ -260,5 +268,166 @@ class IndexController extends Controller
         $picinfo->picStyle = json_decode($picinfo->picStyle,true);
         return View::make('front.clientpicdetail')->with('dbtenants',$dbtenants)->with('title',$title)->with('desc',$desc)->with('keyword',$keyword)->with('pycity',$pycity)->with('city',$city)->with('picinfo',$picinfo)->with('info',$info)->with('tenantsId',$tenantsId)->with('recommpics',$recommpics);
     }
+
+
+    public function kplist($id = 0){
+        $tenants = Yfctenants::where('id',$id)->first()->toArray();
+        if(empty($tenants)) {
+            return Redirect::to('/');
+        }
+        $city = $tenants['city'];
+
+        $pics = YfcTenantsPic::where('tenantsId',$id)->get();
+        foreach($pics as $key=>$v){
+            if($v['firstcover']){
+                $v['firstcover'] = json_decode($v['firstcover'],true);
+            }
+            if($v['kind']){
+                $v['kind'] = json_decode($v['kind'],true);
+            }
+            if($v['picStyle']){
+                $v['picStyle'] = json_decode($v['picStyle'],true);
+            }
+            $pics[$key] = $v;
+        }
+        $title = $tenants['name'].'客片大全 ';
+        $this->data = [
+            'shoptype' => $tenants['shoptype'],
+            'title' => $title,
+            'pics' => $pics,
+            'tenants' => $tenants,
+            'city' => $city,
+        ];
+
+        return view("front/piclist",$this->data);
+    }
+    public function txlist($id = 0){
+        $sets = YfcTenantsSet::where('tenantsId',$id)->orderBy('recommend','asc')->get();
+        $tenants = Yfctenants::where('id',$id)->first()->toArray();
+        if(empty($tenants)) {
+            return Redirect::to('/');
+        }
+        $city = $tenants['city'];
+        if(count($sets)){
+            foreach($sets as $key=>$v){
+                if($v['cover']){
+                    $v['cover'] = json_decode($v['cover'],true);
+                }
+                if($v['picDetail']){
+                    $v['picDetail'] = json_decode($v['picDetail'],true);
+                }
+                if($v['kind']){
+                    $v['kind'] = json_decode($v['kind'],true);
+                }
+                $sets[$key] = $v;
+            }
+        }else{
+            $sets = array();
+        }
+
+        $title = $tenants['name'].'套系大全 ';
+        $this->data = [
+            'shoptype' => $tenants['shoptype'],
+            'title' => $title,
+            'sets' => $sets,
+            'tenants' => $tenants,
+            'city' => $city,
+        ];
+        return view("front/taoxilist",$this->data);
+    }
+
+
+    public function kpdetail($id){
+        $picinfo = YfcTenantsPic::where('id',$id)->first();
+        if(isset($picinfo['cover']) && $picinfo['cover']){
+            $picinfo['cover'] = json_decode($picinfo['cover'],true);
+            $picinfo['firstcover'] = json_decode($picinfo['firstcover'],true);
+        }
+        $tenantsId = $picinfo['tenantsId'];
+        $tenants = YfcTenants::where('id',$tenantsId)->first();
+        $city = $tenants['city'];
+
+        $recommpics = YfcTenantsPic::where('id','!=',$id)
+            ->where('tenantsId',$tenantsId)
+            ->orderBy('marknums','desc')
+            ->limit(4)->get();
+
+        foreach($recommpics as $key=>$v){
+            $v['firstcover'] = json_decode($v['firstcover'],true);
+            $v['picStyle'] = json_decode($v['picStyle'],true);
+            $recommpics[$key] = $v;
+        }
+        $shoptype = $tenants['shoptype'];
+        $title = $picinfo['picName'].' _'.$tenants['name'].'-有榜';
+        $desc = '有榜提供'.$tenants['name'].'的'.$picinfo['picName'].'客片欣赏！';
+        $keyword = $picinfo['picName'];
+        $picinfo['picStyle'] = json_decode($picinfo['picStyle'],true);
+
+        $this->data = [
+            'picinfo' => $picinfo,
+            'city' => $city,
+            'tenants' => $tenants,
+            'recommpics' => $recommpics,
+            'shoptype' => $shoptype,
+            'title' => $title,
+            'desc' =>$desc,
+            'keyword' => $keyword,
+        ];
+        return view("front/kpdetail",$this->data);
+    }
+
+    public function txdetail($tid = 0,$id = 0)
+    {
+        $info = Yfctenantsset::where('id', $id)->first();
+        if(empty($info)) {
+            return Redirect::to("/");
+        }
+        $tenants = YfcTenants::where('id', $info['tenantsId'])->first();
+
+        $name = $tenants['name'];
+        $city = $tenants['city'];
+        $txname = $info['setName'];
+        $remmends = Yfctenantsset::where('id', '!=', $id)->where('tenantsId', $info['tenantsId'])->skip(0)->take(6)->get();
+        foreach ($remmends as $key => $v) {
+            if ($v['cover']) {
+                $v['cover'] = json_decode($v['cover'], true);
+            }
+            if ($v['picDetail']) {
+                $v['picDetail'] = json_decode($v['picDetail'], true);
+            }
+            if ($v['kind']) {
+                $v['kind'] = json_decode($v['kind'], true);
+            }
+            $remmends[$key] = $v;
+        }
+
+        if ($info['cover']) {
+            $info['cover'] = json_decode($info['cover'], true);
+        }
+        if ($info['picDetail']) {
+            $info['picDetail'] = json_decode($info['picDetail'], true);
+        }
+        if ($info['kind']) {
+            $info['kind'] = json_decode($info['kind'], true);
+        }
+        $shoptype = $tenants['shoptype'];
+        $title = $txname . '_' . $name . '-有榜 ';
+        $desc = '通过有榜预定' . $txname . '原价' . $info->price . '，现价只需' . $info['currentPrice'] . '，赶快预定，机会难得！现在开始预约还有惊喜哦！';
+        $keyword = $txname;
+
+        $this->data = [
+            'info' => $info,
+            'tenants' => $tenants,
+            'city' => $city,
+            'remmends' => $remmends,
+            'shoptype' => $shoptype,
+            'title' => $title,
+            'desc' => $desc,
+            'keyword' => $keyword,
+        ];
+
+        return view("front/txdetail",$this->data);
+    }
+
 }
 
