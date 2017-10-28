@@ -105,7 +105,9 @@
                         <div class="pic txtCtr">
                             <?php foreach($v['taoxi'] as $v2) { ?>
                             <div class="img">
-                                <a href="/detail/<?php echo $v['id'].'/'.$v2['id'];?>"><img src="http://img2.youbangkeyi.com<?php echo $v2['cover'][0];?>"></a>
+                                <a href="/detail/<?php echo $v['id'].'/'.$v2['id'];?>">
+                                    <img class="lazy" src="/images/grey.gif" data-original="http://img2.youbangkeyi.com<?php echo $v2['cover'][0];?>">
+                                </a>
                             </div>
                             <?php } ?>
 
@@ -114,7 +116,9 @@
                         <div class="vippic txtCtr">
                             <?php if(!empty($v['taoxi'][0])) { ?>
                             <div class="vipimg">
-                                <a href="/detail/<?php echo $v['id'].'/'.$v['taoxi'][0]['id'];?>"><img src="http://img2.youbangkeyi.com<?php echo $v['taoxi'][0]['cover'][0];?>"></a>
+                                <a href="/detail/<?php echo $v['id'].'/'.$v['taoxi'][0]['id'];?>">
+                                    <img class="lazy" src="/images/grey.gif" data-original="http://img2.youbangkeyi.com<?php echo $v['taoxi'][0]['cover'][0];?>">
+                                </a>
                                 <p class="title txtLft"><?php echo $v['taoxi'][0]['setName'];?></p>
                                 <div class="price txtLft"><span class="red fa">¥<?php echo $v['taoxi'][0]['currentPrice'];?></span><del class="fa">¥<?php echo $v['taoxi'][0]['price'];?></del></div>
                             </div>
@@ -249,7 +253,11 @@
 </div>
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
+<script type="text/javascript" src="/js/jquery.lazyload.js"></script>
 <script type="text/javascript">
+    $(function() {
+        $("img.lazy").lazyload({effect: "fadeIn"});
+    });
     $(document).ready(function(){
         //子导航展开收缩
         $(".sewvtop").click(function(){
