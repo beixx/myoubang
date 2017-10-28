@@ -189,8 +189,8 @@
         <li><a href="javascript:;">Z</a></li>
     </ul>
 </div>
-<script type="text/javascript" src="js/city.js"></script>
-<script type="text/javascript" src="js/layer/layer.js"></script>
+<script type="text/javascript" src="/js/city.js"></script>
+<script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         //子导航展开收缩

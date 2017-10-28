@@ -269,9 +269,9 @@
                     $len=count($tenantsortviewcomment)-1;
                     foreach($tenantsortviewcomment as $key=>$v){
                         if($len!=$key){
-                            echo '\''.$v['date'].'\',';
+                            echo '\''.str_replace('-','/',$v['date']).'\',';
                         }else{
-                            echo '\''.$v['date'].'\'';
+                            echo '\''.str_replace('-','/',$v['date']).'\'';
                         }
                     }
                     }?>
@@ -385,9 +385,9 @@
                     $len=count($tenantssortview)-1;
                     foreach($tenantssortview as $key=>$v){
                         if($len!=$key){
-                            echo '\''.$v['date'].'\',';
+                            echo '\''.str_replace('-','/',$v['date']).'\',';
                         }else{
-                            echo '\''.$v['date'].'\'';
+                            echo '\''.str_replace('-','/',$v['date']).'\'';
                         }
                     }
                 }?>
