@@ -3,6 +3,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Helper\Msg;
+use App\Http\Models\YfcAdv;
+use App\Http\Models\YfcTenants;
+use App\Http\Models\YfcTenantsSet;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -96,47 +99,63 @@ class IndexController extends Controller
             }else{
                 $shoptype = '婚礼策划';
             }
-            $size = 10;
+            $size = 100;
             $index = ($page-1)*20;
 
-            $this->data['tenants'] = DB::table("yfc_tenants")
-                ->where('city', 'like', '%'.$city.'%')
+            $this->data['tenants'] = YfcTenants::where('city', 'like', '%'.$city.'%')
                 ->where('shoptype',$shoptype)
                 ->where('spread','!=','2')
+                ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
                 ->skip($index)->take($size)
                 ->orderBy('order_city','asc')->get()->toArray();
 
-            $spread = DB::table("yfc_tenants")
-                ->where('city', 'like', '%'.$city.'%')
+            $spread = YfcTenants::where('city', 'like', '%'.$city.'%')
                 ->where('shoptype',$shoptype)
                 ->where('spread','!=','2')
-                ->orderBy('order_city','asc')->limit(1)->get()->toArray();
+                ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
+                ->orderBy('order_city','asc')->limit(1)->get();
 
-            $this->data['spread'] = empty($spread[0])? []:$spread;
-            echo '<pre>' ;
-            print_r($this->data['tenants']);
-            print_r($this->data['spread']) ;exit;
-            foreach($this->data['tenants'] as $k =>$v) {
-                if($v->isVip != 2){
-                    $taoxis = DB::table('yfc_tenants_set')->where('tenantsId',$v->id)->orderBy('recommend','asc')->limit(3)->get();
+            $this->data['spread'] = empty($spread[0])? []:$spread[0];
 
-                    foreach($taoxis as $kk => $vv) {
-                        if($vv->cover){
-                            $vv->cover = json_decode($vv->cover,true);
-                        }
-                        $taoxis[$k] = $vv;
-                    }
-                    $v->taoxis = $taoxis;
-                    $tenants[$k] = $v;
+            $tids = [];
+            foreach($this->data['tenants'] as $v) {
+                $tids[] = $v['id'];
+            }
+
+            if(!empty($this->data['spread']['name'])) {
+                $spreadset = YfcTenantsSet::where("tenantsId",$this->data['spread']['id'])->limit(1)->get();
+                if(!empty($spreadset[0])) {
+                    $this->data['spread']['taoxi'] = $spreadset[0];
+                    $this->data['spread']['taoxi']['cover'] = json_decode($this->data['spread']['taoxi']['cover'],true);
                 }
             }
+            $taoxi = YfcTenantsSet::select('id','currentPrice','price','tenantsId','setName','cover')->whereIn('tenantsId',$tids)->orderBy('recommend','asc')->limit(1000)->get()->toArray();
+            $taoxitmp = [];
+            foreach($taoxi as $kk => $vv) {
+                # 过滤超过三条的套系
+                if(!empty($taoxitmp[$vv['tenantsId']]) && count($taoxitmp[$vv['tenantsId']])>=3){
+                    continue;
+                }
+
+                if($vv['cover']){
+                    $vv['cover'] = json_decode($vv['cover'],true);
+                }
+                $taoxitmp[$vv['tenantsId']][] = $vv;
+            }
+            foreach($this->data['tenants'] as $k => $v) {
+                $this->data['tenants'][$k]['taoxi'] = empty($taoxitmp[$v['id']]) ? [] : $taoxitmp[$v['id']];
+            }
+
+
+            //echo '<pre>' ; print_r($this->data) ;exit;
+
             $this->data['title'] = '「有榜'.$shoptype.'榜单」'.$city.$shoptype.'前十名_'.$city.$shoptype.'排名';
             $this->data['desc'] = '「有榜」依托'.$shoptype.'行业大数据，为您提供实时更新、用户打分的'.$city.$shoptype.'榜单（包含'.$city.$shoptype.'前十名），而且您也可以自由的定制'.$city.$shoptype.'排行榜。';
             $this->data['keyword'] = $city.$shoptype.'前十名,'.$city.$shoptype.'排行榜,'.$city.$shoptype.'排名 ';
-
+            //echo '<pre>' ; print_r($this->data) ;exit;
             $advtype = $shoptype=='婚纱摄影'?1:2;
 
-            $advinfo = DB::table("yfc_adv")->where('type','1')->where('position','1')->where('city', 'like', '%'.$name.'%')->where('advtype',$advtype)->where('endTime','>',time())->first();
+            $advinfo = YfcAdv::where('type','1')->where('position','1')->where('city', 'like', '%'.$name.'%')->where('advtype',$advtype)->where('endTime','>',time())->first();
 
             return view('front/index', $this->data);
 
