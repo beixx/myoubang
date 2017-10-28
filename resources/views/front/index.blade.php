@@ -35,13 +35,13 @@
 <div class="content">
 
     <div class="i_img">
-        <a href="/<?php echo $pycity.'/sheying';?>"><img src="/images/img1.png"></a>
-        <a href="/<?php echo $pycity.'/hunli';?>"><img src="/images/img2.png"></a>
+        <a href="/<?php echo $pycity.'/sheying';?>"><img src="http://qnm.hunliji.com/Fl-4VDQTDuYEloZwEGToUONRpzEj?imageView2/1/w/640/h/256"></a>
     </div>
     <div id="leftTabBox" class="tabBox">
         <div class="hd">
             <ul>
-                <li><a href="#">综合榜<span></span></a></li>
+                	<li class="on"><a href="#">婚纱摄影榜单<span></span></a></li>
+					<li><a href="#">婚礼策划榜单<span></span></a></li>
             </ul>
         </div>
         <div class="bd">
