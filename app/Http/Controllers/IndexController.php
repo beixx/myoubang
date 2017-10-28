@@ -19,6 +19,12 @@ use Illuminate\Support\Facades\Request;
 //待确认功能
 class IndexController extends Controller
 {
+
+    public function redirect(){
+        return Redirect::to('beijing/sheying');
+    }
+
+
     public function index($name = 'beijing' ,$id = 'sheying' )
     {
         # 过滤非法的url

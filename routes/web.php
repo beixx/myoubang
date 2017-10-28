@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'IndexController@index');
+Route::get('/', 'IndexController@redirect');
 
 Route::get('/search/{city}', 'IndexController@search');
 Route::get('/kpdetail/{id}', 'IndexController@kpdetail');
