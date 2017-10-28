@@ -68,7 +68,6 @@
 		        </span>
 </div>
 
-<div class="ad"><img src="/images/ad.jpg"></div>
 
 <div class="info-box">
     <div class="data">

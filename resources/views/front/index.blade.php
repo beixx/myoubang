@@ -29,13 +29,14 @@
         <input type="hidden" name="type" value="<?php echo $type;?>" />
         <input type="button" name="submit" class="btn">
     </div>
-    <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?>?</div>
+    <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
 </header>
 
 <div class="content">
 
     <div class="i_img">
-        <a href=""><img src="/images/img1.png"></a><a href=""><img src="/images/img2.png"></a>
+        <a href="/<?php echo $pycity.'/sheying';?>"><img src="/images/img1.png"></a>
+        <a href="/<?php echo $pycity.'/hunli';?>"><img src="/images/img2.png"></a>
     </div>
     <div id="leftTabBox" class="tabBox">
         <div class="hd">
@@ -206,9 +207,14 @@
             </div>
             <div class="hot">
                 <span class="city-letter">热门城市</span>
-                <p data-id="110100">北京</p><p data-id="310100">上海</p><p data-id="440100">广州</p>
-                <p data-id="440300">深圳</p><p data-id="420100">武汉</p><p data-id="510100">成都</p>
-                <p data-id="120100">天津</p><p data-id="210200">大连</p>
+                <p data-id="110100"><a href="/beijing/<?php echo $type;?>">北京</a></p>
+                <p data-id="310100"><a href="/shanghai/<?php echo $type;?>">上海</a></p>
+                <p data-id="440100"><a href="/guangzhou/<?php echo $type;?>">广州</a></p>
+                <p data-id="440300"><a href="/shenzhen/<?php echo $type;?>">深圳</a></p>
+                <p data-id="420100"><a href="/wuhan/<?php echo $type;?>">武汉</a></p>
+                <p data-id="510100"><a href="/chengdu/<?php echo $type;?>">成都</a></p>
+                <p data-id="120100"><a href="/tianjin/<?php echo $type;?>">天津</a></p>
+                <p data-id="210200"><a href="/dalian/<?php echo $type;?>">大连</a></p>
             </div>
         </div>
 

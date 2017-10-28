@@ -120,7 +120,7 @@ class IndexController extends Controller
 
             $spread = YfcTenants::where('city', 'like', '%'.$city.'%')
                 ->where('shoptype',$shoptype)
-                ->where('spread','!=','2')
+                ->where('spread','=','2')
                 ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
                 ->orderBy('order_city','asc')->limit(1)->get();
 
