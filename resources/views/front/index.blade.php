@@ -24,8 +24,10 @@
 <header>
     <div class="logo"><img src="/images/logo.png"></div>
     <div class="search">
-        <input type="text" name="" class="inp" placeholder="搜索商家">
-        <input type="submit" name="" class="btn">
+        <input type="text" name="keyword" class="inp" placeholder="搜索商家">
+        <input type="hidden" name="pycity" value="<?php echo $pycity;?>" />
+        <input type="hidden" name="type" value="<?php echo $type;?>" />
+        <input type="button" name="submit" class="btn">
     </div>
     <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?>?</div>
 </header>
@@ -290,7 +292,13 @@
             return false;
         })
 
-
+        //模糊搜索商家
+        $('input[name=submit]').click(function(){
+            var keyword = $('input[name=keyword]').val();
+            var city = $('input[name=pycity]').val();
+            var type = $("input[name=type]").val();
+            location.href="/search/"+city+'?keyword='+keyword+'&type='+type;
+        });
     });
 </script>
 

@@ -13,6 +13,7 @@
 
 Route::get('/', 'IndexController@index');
 
+Route::get('/search/{city}', 'IndexController@search');
 Route::get('/kpdetail/{id}', 'IndexController@kpdetail');
 Route::get('/detail/{tid}/{id}', 'IndexController@txdetail');
 

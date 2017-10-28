@@ -97,6 +97,7 @@ class IndexController extends Controller
         }else{
             $page = Request::get('page','1');
             $city = Config::get('city.'.$name,'北京');
+            $this->data['pycity'] = $name;
             //无法获取城市，直接首页
             if(!$city) {
                 return Redirect::to('/');
@@ -161,45 +162,60 @@ class IndexController extends Controller
             $this->data['desc'] = '「有榜」依托'.$shoptype.'行业大数据，为您提供实时更新、用户打分的'.$city.$shoptype.'榜单（包含'.$city.$shoptype.'前十名），而且您也可以自由的定制'.$city.$shoptype.'排行榜。';
             $this->data['keyword'] = $city.$shoptype.'前十名,'.$city.$shoptype.'排行榜,'.$city.$shoptype.'排名 ';
             //echo '<pre>' ; print_r($this->data) ;exit;
-            $advtype = $shoptype=='婚纱摄影'?1:2;
+            $advtype = $shoptype=='婚纱摄影'?1:0;
 
             $advinfo = YfcAdv::where('type','1')->where('position','1')->where('city', 'like', '%'.$name.'%')->where('advtype',$advtype)->where('endTime','>',time())->first();
-
+            $this->data['type'] = $shoptype?'hunsha':'hunli';
             return view('front/index', $this->data);
 
         }
     }
 
     public function search($name=''){
-        $page = Input::get('page','1');
-        $city = Config::get('city.'.$name,'北京');
-        $keyword = Input::get('keyword','');
-        $size = 20;
-        $index = ($page-1)*20;
-        $tenants = Yfctenants::where('city', 'like', '%'.$city.'%')->where('name', 'like', '%'.$keyword.'%')->skip($index)->take($size)->orderBy('order_city','asc')->get();
-        $count = Yfctenants::where('city', 'like', '%'.$city.'%')->where('name', 'like', '%'.$keyword.'%')->skip($index)->take($size)->count();
-        $allpages = ceil($count/20);
-        if(count($tenants)){
-            foreach($tenants as $key=>$v){
-                if($v->isVip == 2){
-                    $taoxis = Yfctenantsset::where('tenantsId',$v->id)->select('id','setName','price','currentPrice','cover')->get();
-                    if(count($taoxis)){
-                        foreach($taoxis as $k=>$t){
-                            if($t->cover){
-                                $t->cover = json_decode($t->cover,true);
-                            }
-                            $taoxis[$k] = $t;
-                        }
-                    }
-                    $v->taoxis = $taoxis;
-                    $tenants[$key] = $v;
-                }
-            }
+        $this->data['type'] = Request::input("type")=="hunsha" ? 'hunsha':'hunli';
+        $shoptype = Request::input("type")=="hunsha"?'婚纱摄影':'婚礼策划';
+        $this->data['city'] = Config::get('city.'.$name,'北京');
+        $this->data['pycity'] = $name;
+        $keyword = Request::get('keyword','');
+
+        $this->data['tenants'] = YfcTenants::where('city', 'like', '%'.$this->data['city'].'%')
+            ->where('shoptype',$shoptype)
+            ->where('name','like',"%".$keyword."%")
+            ->where('spread','!=','2')
+            ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
+            ->limit(100)
+            ->orderBy('order_city','asc')->get()->toArray();
+
+
+        $tids = [];
+        foreach($this->data['tenants'] as $v) {
+            $tids[] = $v['id'];
         }
 
-        $dbtenants = Yfctenants::where('city', 'like', '%'.$city.'%')->skip(0)->take(50)->orderBy('order_city','asc')->get();
-        $title = $keyword.'在'.$city.'的搜索结果-有榜';
-        return View::make('front.search')->with('dbtenants',$dbtenants)->with('tenants',$tenants)->with('allpages',$allpages)->with('pycity',$name)->with('count',$count)->with('city',$city)->with('keyword',$keyword)->with('title',$title);
+        $taoxi = YfcTenantsSet::select('id','currentPrice','price','tenantsId','setName','cover')
+            ->whereIn('tenantsId',$tids)
+            ->orderBy('recommend','asc')
+            ->limit(1000)->get()->toArray();
+
+        $taoxitmp = [];
+        foreach($taoxi as $kk => $vv) {
+            # 过滤超过三条的套系
+            if(!empty($taoxitmp[$vv['tenantsId']]) && count($taoxitmp[$vv['tenantsId']])>=3){
+                continue;
+            }
+            if($vv['cover']){
+                $vv['cover'] = json_decode($vv['cover'],true);
+            }
+            $taoxitmp[$vv['tenantsId']][] = $vv;
+        }
+
+        foreach($this->data['tenants'] as $k => $v) {
+            $this->data['tenants'][$k]['taoxi'] = empty($taoxitmp[$v['id']]) ? [] : $taoxitmp[$v['id']];
+        }
+
+        $this->data['title'] = $keyword.'在'.$this->data['city'].'的搜索结果-有榜';
+
+        return view("front/search",$this->data);
     }
 
 
