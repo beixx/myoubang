@@ -33,15 +33,22 @@
 </header>
 
 <div class="content">
-
     <div class="i_img">
         <a href="/<?php echo $pycity.'/sheying';?>"><img src="http://qnm.hunliji.com/Fl-4VDQTDuYEloZwEGToUONRpzEj?imageView2/1/w/640/h/256"></a>
     </div>
     <div id="leftTabBox" class="tabBox">
         <div class="hd">
             <ul>
-                	<li class="on"><a href="/<?php echo $pycity;?>/sheying">婚纱摄影榜单<span></span></a></li>
-					<li><a href="/<?php echo $pycity;?>/hunli">婚礼策划榜单<span></span></a></li>
+            <?php if($type=='sheying') { ?>
+                           <li class="on"><a href="/<?php echo $pycity;?>/sheying">婚纱摄影榜单<span></span></a></li>
+                    <?php } else { ?>
+							<li><a href="/<?php echo $pycity;?>/sheying">婚纱摄影榜单<span></span></a></li>
+                    <?php } ?>
+                      <?php if($type=='sheying') { ?>
+                          <li ><a href="/<?php echo $pycity;?>/hunli">婚礼策划榜单<span></span></a></li>
+                    <?php } else { ?>
+                          <li class="on"><a href="/<?php echo $pycity;?>/hunli">婚礼策划榜单<span></span></a></li>
+                    <?php } ?>
             </ul>
         </div>
         <div class="bd">
@@ -158,15 +165,11 @@
         <div class="sewvmain">
             <div class="tb"></div>
             <div class="sewv">
-                <div class="sewvtop"><em><span id="customized_name">婚纱摄影</span><img src="/images/icon9.png"></em></div>
-                <ul class="sewvbm">
-                    <li>婚纱摄影</li>
-                    <li>婚礼策划</li>
-                </ul>
+                <div class="sewvtop"><em><span id="customized_name"><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?></span><img src="/images/icon9.png"></em></div>
             </div>
             <div class="sewv">
                 <div class="sewvtop"><em><span id="style">选择风格</span><img src="/images/icon9.png"></em></div>
-                <ul class="sewvbm" multile='1' style="left: -169px">
+                <ul class="sewvbm" multile='1' style="left: -195px">
                     <?php if($type=='sheying') { ?>
                             <li class="xq2">小清新</li>
                             <li class="xq2">韩式</li>
@@ -187,24 +190,18 @@
                             <li class="xq2">旅拍</li>
                             <li class="xq2">唯美</li>
                     <?php } else { ?>
-                            <li class="xq2">小清新11111</li>
-                            <li class="xq2">韩式</li>
-                            <li class="xq2">花海</li>
-                            <li class="xq2">个性</li>
-                            <li class="xq2">城市地标</li>
-                            <li class="xq2">欧美</li>
-                            <li class="xq2">宫殿教堂</li>
+                           <li class="xq2">唯美</li>
+                            <li class="xq2">奢华大气</li>
+                            <li class="xq2">小清新</li>
+                            <li class="xq2">高贵紫</li>
+                             <li class="xq2">梦幻蓝</li>
                             <li class="xq2">复古</li>
-                            <li class="xq2">海景</li>
-                            <li class="xq2">性感</li>
-                            <li class="xq2">夜景</li>
-                            <li class="xq2">游艇</li>
-                            <li class="xq2">水下</li>
-                            <li class="xq2">日系</li>
-                            <li class="xq2">中国风</li>
-                            <li class="xq2">马场</li>
-                            <li class="xq2">旅拍</li>
-                            <li class="xq2">唯美</li>
+                             <li class="xq2">欧式宫廷</li>
+                            <li class="xq2">粉色系</li>
+                            <li class="xq2">香橙系</li>
+                            <li class="xq2">红色系</li>
+                            <li class="xq2">森系</li>
+                            <li class="xq2">中式</li>
                     <?php } ?>
 
                     <div class='btn txtCtr'>
