@@ -37,23 +37,23 @@ var Meter = (function () {
             value: {
                 margin: -40,
                 color: '#F4674B',
-                font: 'bold 2rem Microsoft YaHei'
+                font: 'bold 48px Microsoft YaHei'
             },
             title: {
                 margin: -5,
                 color: '#F4674B',
-                font: 'bold 0.5rem Microsoft YaHei'
+                font: 'bold 14px Microsoft YaHei'
             },
             subTitle: {
                 margin: 25,
                 color: '#999',
-                font: '0.5rem Microsoft YaHei'
+                font: '12px Microsoft YaHei'
             },
             label: {
                 radius: 28,
                 color: '#aaa',
                 background: '#f5f5f5',
-                font: '0.5rem Microsoft YaHei'
+                font: '12px Microsoft YaHei'
             },
             inner: {
                 radius: 97,

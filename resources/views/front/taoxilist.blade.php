@@ -30,8 +30,8 @@
     <div class="txt-box">
         <h1><?php echo $tenants['name']?></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
-        <div class="num n6 fa txtCtr">
-            <em class="blue"><?php echo $tenants['order_city'];?></em>
+        <div class="num fa txtCtr">
+            <?php echo $tenants['order_city'];?><em class="blue">TOP</em>
         </div>
     </div>
 </div>
@@ -44,9 +44,10 @@
         <?php foreach($sets as $k => $v) { ?>
         <li>
             <a href="/detail/<?php echo $tenants['id'].'/'.$v['id'];?>">
-                <img src="http://img2.youbangkeyi.com<?php echo $v['cover'][0];?>">
+               <div class="suolvt">
+                <span> <img src="http://img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/250/h/187/q/75|imageslim"></span></div>
                 <div class="txt">
-                    <h3><?php echo $v['setName'];?><em>当季热推</em></h3>
+                    <h3><?php echo $v['setName'];?></h3>
                     <div class="price fa">
                         <span class="red">¥<?php echo $v['currentPrice']?></span>
                         <del>¥<?php echo $v['price']?></del>

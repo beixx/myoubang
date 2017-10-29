@@ -31,7 +31,7 @@
         </div>
         <div class="bd">
             <ul>
-                <li class="suolvd"><span><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/600/h/450/q/75|imageslim"/></span></li>
+                <li><a href="#"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>"/></a></li>
             </ul>
         </div>
     </div>
@@ -73,7 +73,7 @@
     <div class="data">
         <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：2017-10-24</span></div>
         <script type="text/javascript" src="/js/chart.meter.js"></script>
-        <canvas id="meter" style=" width:13.5rem;margin-left:2.6rem"></canvas>
+        <canvas id="meter" style=" width:70%;margin:0 15%;"></canvas>
         <script type="text/javascript">
             window.onload = function(){
                 Meter.setOptions({
@@ -170,10 +170,10 @@
                 <li>
                     <a class="suolvk" href="/kpdetail/<?php echo $v['id']?>">
                         <span class="img">
-                            <img src="//img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/300/h/225/q/75|imageslim" />
+                            <img src="//img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>" />
                         </span>
+                        <p><?php echo $v['picName']?></p>
                     </a>
-                     <p><?php echo $v['picName']?></p>
                 </li>
                 <?php } ?>
             </ul>
@@ -196,8 +196,7 @@
         <?php foreach($tenantssets as $k => $v) { ?>
         <li>
             <a href="/detail/<?php echo $tenants['id'].'/'.$v['id']?>">
-            <div class="suolvt">
-                <span><img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/250/h/187/q/75|imageslim"></span></div>
+                <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>">
                 <div class="txt">
                     <h3><?php echo $v['setName'];?></h3>
                     <div class="price fa">

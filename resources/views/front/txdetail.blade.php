@@ -27,7 +27,7 @@
         <div class="bd">
             <ul>
                 <?php foreach($info['cover'] as $v) { ?>
-                <li><img src="http://img2.youbangkeyi.com<?php echo $v;?>" /></li>
+                <li class="suolvd"><span><img src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/450/q/75|imageslim" /></span></li>
                 <?php } ?>
             </ul>
         </div>
@@ -55,8 +55,8 @@
     <div class="txt-box">
         <h1><?php echo $tenants['name'];?></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
-        <div class="num n6 fa txtCtr">
-            <em class="blue"><?php echo $tenants['order_city'];?></em>
+        <div class="num fa txtCtr">
+            <?php echo $tenants['order_city'];?><em class="blue">TOP</em>
         </div>
     </div>
 </div>
@@ -70,22 +70,20 @@
         <img src="http://img2.youbangkeyi.com<?php echo $v;?>">
     <?php } ?>
 </div>
-<div class="tit">爱和映像婚纱摄影专属定制热卖产品</div>
+<div class="tit"><?php echo $tenants['name'];?>专属定制热卖产品</div>
 <div class="hot">
     <ul>
         <?php foreach($remmends as $v) { ?>
         <li>
-            <a href="/detail/<?php echo $tenants['id'].'/'.$v['id'];?>">
-                <img src="http://img2.youbangkeyi.com<?php echo $v['cover'][0]?>"><p><?php echo $v['setName'];?></p>
+            <a class="suolvl" href="/detail/<?php echo $tenants['id'].'/'.$v['id'];?>">
+               <span> <img src="http://img2.youbangkeyi.com<?php echo $v['cover'][0]?>?imageView2/1/w/400/h/300/q/75|imageslim"></span>  </a><p><?php echo $v['setName'];?></p>
                 <div class="price">
                     <span class="red">¥<?php echo $v['currentPrice'];?></span>
                     <del>¥<?php echo $v['price'];?></del>
                 </div>
-            </a>
         </li>
         <?php } ?>
     </ul>
-    <div class="all txtCtr"><a href="">查看全部28个热卖产品</a></div>
 </div>
 
 <div class="tel-box txtCtr">

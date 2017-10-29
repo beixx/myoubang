@@ -30,8 +30,8 @@
     <div class="txt-box">
         <h1><?php echo $tenants['name'];?></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
-        <div class="num n6 fa txtCtr">
-            <em class="blue"><?php echo $tenants['order_city'];?></em>
+        <div class="num fa txtCtr">
+            <?php echo $tenants['order_city'];?><em class="blue">TOP</em>
         </div>
     </div>
 </div>
@@ -46,12 +46,12 @@
             <ul>
                 <?php foreach($pics as $v) {?>
                 <li style="width: 48%;">
-                    <a href="/kpdetail/<?php echo $v['id'];?>">
-                        <div class="img">
-                            <img src="http://img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>" />
-                        </div>
-                        <p><?php echo $v['picName'];?></p>
+                    <a class="suolvl" href="/kpdetail/<?php echo $v['id'];?>">
+                        <span class="img">
+                            <img src="//img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/400/h/300/q/75|imageslim" />
+                        </span>
                     </a>
+                    <p><?php echo $v['picName'];?></p>
                 </li>
                 <?php } ?>
             </ul>

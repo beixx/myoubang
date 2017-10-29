@@ -27,8 +27,8 @@
         <div class="bd">
             <ul>
                 <?php foreach($picinfo['firstcover']as $k =>$v ) {  ?>
-                <li>
-                    <img _src="http://img2.youbangkeyi.com<?php echo $v;?>" src="http://img2.youbangkeyi.com<?php echo $v;?>" />
+                <li class="suolvd">
+                    <span><img _src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/450/q/75|imageslim" src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/450/q/75|imageslim" /></span>
                 </li>
                 <?php } ?>
             </ul>
@@ -60,10 +60,16 @@
     <div class="txt-box">
         <h1><?php echo $tenants['name'];?></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
-        <div class="num n6 fa txtCtr">
-            <em class="blue"><?php echo $tenants['order_city'];?></em>
+        <div class="num fa txtCtr">
+            <?php echo $tenants['order_city'];?><em class="blue">TOP</em>
         </div>
     </div>
+</div>
+<div class="tittp">客片欣赏</div>
+<div class="info">
+    <?php foreach($picinfo['cover'] as $v) { ?>
+        <img src="http://img2.youbangkeyi.com<?php echo $v;?>">
+    <?php } ?>
 </div>
 <div class="jxtc_box">
     <div class="tittx">类似案例</div>
@@ -71,7 +77,9 @@
         <?php foreach($recommpics as $v) { ?>
         <li>
             <a href="">
-                <img src="http://img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>">
+                <div class="suolvt">
+                <span><img src="http://img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/250/h/187/q/75|imageslim">
+                </span></div>
                 <div class="txt">
                     <h3><?php echo $v['picName'];?></h3>
                     <div class="text"><?php echo implode('|',$v['picStyle'])?></div>
@@ -80,13 +88,6 @@
         </li>
         <?php } ?>
     </ul>
-</div>
-
-<div class="tittp">客片欣赏</div>
-<div class="info">
-    <?php foreach($picinfo['cover'] as $v) { ?>
-        <img src="http://img2.youbangkeyi.com<?php echo $v;?>">
-    <?php } ?>
 </div>
 <div class="tel-box txtCtr">
     <a href="tel:13588886666" class="tel lft"><em></em>打电话</a>

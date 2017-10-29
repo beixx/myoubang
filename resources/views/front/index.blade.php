@@ -24,7 +24,7 @@
 <header>
     <div class="logo"><img src="/images/logo.png"></div>
     <div class="search">
-        <input type="text" name="keyword" class="inp" placeholder="搜索商家">
+        <input type="text" name="keyword" class="inp" placeholder="搜商家·查排名">
         <input type="hidden" name="pycity" value="<?php echo $pycity;?>" />
         <input type="hidden" name="type" value="<?php echo $type;?>" />
         <input type="button" name="submit" class="btn">
@@ -46,7 +46,7 @@
         </div>
         <div class="bd">
             <div class="list_box">
-                <div class="b_time">更新时间：<span class="fa">2017-02-24  09:22:35</span><span class="guize"><a href="">榜单规则</a></span></div>
+                <div class="b_time">更新时间：<span class="fa">2017-02-24  09:22:35</span><span class="guize"><a href="/guize.html">榜单规则</a></span></div>
                 <section class="showmore" pagesize="5">
                     <?php if(isset($spread['name'])) { ?>
                     <div class="pic_box">
@@ -54,18 +54,18 @@
                             <div class="huiyuan"></div>
                         <?php } ?>
                         <div class="num_txt">
-                            <div class="num n5 fa txtCtr">
-                                <em class="<?php echo $spread['isVip']==2?"blue":'';?>"><?php echo $spread['order_city'];?></em>
+                            <div class="num fa txtCtr">
+                                <?php echo $spread['order_city'];?><em class="<?php echo $spread['isVip']==2?"blue":'';?>">TOP</em>
                             </div>
                             <div class="tit_box">
                                 <div class="title"><a href="/detail/<?php echo $spread['id'];?>"><?php echo $spread['name']?></a></div>
-                                <div class="txt"><span>人均：¥<?php echo $spread['person_price'];?></span><span>|</span><span><?php echo $spread['address'];?></span></div>
+                                <div class="txt"><span>人均：¥<?php echo $spread['person_price'];?></span><span>|</span><span>竞争指数:34.5</span></div>
                             </div>
                         </div>
                         <div class="vippic txtCtr">
                             <?php if(isset($spread['taoxi'])) { ?>
                             <div class="vipimg">
-                                <a href="/detail/<?php echo $spread['id'].'/'.$spread['taoxi']['id'];?>"><img src="http://img2.youbangkeyi.com<?php echo $spread['taoxi']['cover'][0]; ?>"></a>
+                                <a href="/detail/<?php echo $spread['id'].'/'.$spread['taoxi']['id'];?>"><img src="//img2.youbangkeyi.com<?php echo $spread['taoxi']['cover'][0]; ?>"></a>
                                 <p class="title txtLft"><?php echo $spread['setName'];?></p>
                                 <div class="price txtLft"><span class="red fa">¥<?php echo $spread['taoxi']['currentPrice'];?></span><del class="fa">¥<?php echo $spread['taoxi']['price'];?></del></div>
                             </div>
@@ -93,20 +93,20 @@
                             <div class="huiyuan"></div>
                         <?php } ?>
                         <div class="num_txt">
-                            <div class="num n1 fa txtCtr">
-                                <em class="<?php echo $v['isVip']==2?"blue":'';?>"><?php echo $v['order_city'];?></em>
+                            <div class="num fa txtCtr">
+                                <?php echo $v['order_city'];?><em class="<?php echo $v['isVip']==2?"blue":'';?>">TOP</em>
                             </div>
                             <div class="tit_box">
-                                <div class="title"><a href="/detail/<?php echo $v['id'];?>"><?php echo $v['name']?></a></div>
-                                <div class="txt"><span>人均：¥<?php echo $v['person_price'];?></span><span>|</span><span><?php echo $v['address'];?></span></div>
+                                <div class="title"><a href="/detail/<?php echo $v['id'];?>"><?php echo $city;?><?php echo $v['name']?></a></div>
+                                <div class="txt"><span>人均：¥<?php echo $v['person_price'];?></span><span>|</span><span>竞争指数:34.5</span></div>
                             </div>
                         </div>
                         <?php if($v['isVip'] == 1) { ?>
                         <div class="pic txtCtr">
                             <?php foreach($v['taoxi'] as $v2) { ?>
                             <div class="img">
-                                <a href="/detail/<?php echo $v['id'].'/'.$v2['id'];?>">
-                                    <img class="lazy" src="/images/grey.gif" data-original="http://img2.youbangkeyi.com<?php echo $v2['cover'][0];?>">
+                                <a class="suolv" href="/detail/<?php echo $v['id'].'/'.$v2['id'];?>">
+                                    <span><img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/225/q/75|imageslim"></span>
                                 </a>
                             </div>
                             <?php } ?>
@@ -117,7 +117,7 @@
                             <?php if(!empty($v['taoxi'][0])) { ?>
                             <div class="vipimg">
                                 <a href="/detail/<?php echo $v['id'].'/'.$v['taoxi'][0]['id'];?>">
-                                    <img class="lazy" src="/images/grey.gif" data-original="http://img2.youbangkeyi.com<?php echo $v['taoxi'][0]['cover'][0];?>">
+                                    <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v['taoxi'][0]['cover'][0];?>">
                                 </a>
                                 <p class="title txtLft"><?php echo $v['taoxi'][0]['setName'];?></p>
                                 <div class="price txtLft"><span class="red fa">¥<?php echo $v['taoxi'][0]['currentPrice'];?></span><del class="fa">¥<?php echo $v['taoxi'][0]['price'];?></del></div>
@@ -141,20 +141,15 @@
                         </div>
                     </div>
                     <?php } ?>
-
                 </section>
-
             </div>
-
         </div>
     </div>
-    <script type="text/javascript">TouchSlide({ slideCell:"#leftTabBox" });</script>
-
 
 
 </div>
 <footer>
-    <div class="txt">覆盖<span>12万+</span>商户 <span>18个</span>数据衡量维度</div>
+    <div class="txt"><p class="f075">定制个性榜单</p>覆盖<span>12万+</span>商户 <span>18个</span>数据衡量维度</div>
     <em class="down">立即定制</em></footer>
 <div class="bgDiv"></div>
 <div class="downNav">
@@ -172,12 +167,24 @@
             <div class="sewv">
                 <div class="sewvtop"><em><span>选择风格</span><img src="/images/icon9.png"></em></div>
                 <ul class="sewvbm" multile='1' style="left: -169px">
-                    <li>小清新</li>
-                    <li>韩式</li>
-                    <li>欧美大气</li>
-                    <li>个性</li>
-                    <li>复古</li>
-                    <li>性感</li>
+                     <li class="xq2">小清新</li>
+                            <li class="xq2">韩式</li>
+                            <li class="xq2">花海</li>
+                            <li class="xq2">个性</li>
+                            <li class="xq2">城市地标</li>
+                            <li class="xq2">欧美</li>
+                            <li class="xq2">宫殿教堂</li>
+                            <li class="xq2">复古</li>
+                            <li class="xq2">海景</li>
+                            <li class="xq2">性感</li>
+                            <li class="xq2">夜景</li>
+                            <li class="xq2">游艇</li>
+                            <li class="xq2">水下</li>
+                            <li class="xq2">日系</li>
+                            <li class="xq2">中国风</li>
+                            <li class="xq2">马场</li>
+                            <li class="xq2">旅拍</li>
+                            <li class="xq2">唯美</li>
                     <div class='btn txtCtr'>
                         <a id='style_btn' href='javascript:;'>确定</a>
                     </div>
@@ -199,6 +206,7 @@
     .layui-layer-ico{background: url(/js/layer/skin/default/close.png);background-size: 2.75rem;width: 2.75rem;height: 1.45rem}
     .layui-layer-setwin a{margin-left: 0;}
     .layui-layer-setwin{right: 8px;top: 8px}
+    .f075{font-size:.75rem;}
 </style>
 
 <!-- 城市弹出 -->
@@ -209,47 +217,38 @@
                 <span class="city-letter">当前城市</span>
                 <p data-id="110100"><?php echo $city;?></p>
             </div>
-            <div class="hot">
-                <span class="city-letter">热门城市</span>
-                <p data-id="110100"><a href="/beijing/<?php echo $type;?>">北京</a></p>
-                <p data-id="310100"><a href="/shanghai/<?php echo $type;?>">上海</a></p>
-                <p data-id="440100"><a href="/guangzhou/<?php echo $type;?>">广州</a></p>
-                <p data-id="440300"><a href="/shenzhen/<?php echo $type;?>">深圳</a></p>
-                <p data-id="420100"><a href="/wuhan/<?php echo $type;?>">武汉</a></p>
-                <p data-id="510100"><a href="/chengdu/<?php echo $type;?>">成都</a></p>
-                <p data-id="120100"><a href="/tianjin/<?php echo $type;?>">天津</a></p>
-                <p data-id="210200"><a href="/dalian/<?php echo $type;?>">大连</a></p>
+            <div class="hot">  
+                  <span class="city-letter">华北东北</span>                
+                   <p data-id="110100"> <a href="/beijing/<?php echo $type;?>">北京</a></p>
+                   <p data-id="110101"> <a href="/tianjin/<?php echo $type;?>">天津</a></p>
+                    <p data-id="110102"><a href="/shenyang/<?php echo $type;?>">沈阳</a></p>
+                    <p data-id="110103"><a href="/dalian/<?php echo $type;?>">大连</a></p>
+                    <p data-id="110104"><a href="/haierbin/<?php echo $type;?>">哈尔滨</a></p>
+                    <p data-id="110105"><a href="/shijiazhuang/<?php echo $type;?>">石家庄</a></p>
+                <span class="city-letter">华东地区</span> 
+                   <p data-id="110107"> <a href="/shanghai/<?php echo $type;?>">上海</a></p>
+                   <p data-id="110106"> <a href="/hangzhou/<?php echo $type;?>">杭州</a></p>
+                    <p data-id="110108"><a href="/xiamen/<?php echo $type;?>">厦门</a></p>
+                    <p data-id="110109"><a href="/nanjing/<?php echo $type;?>">南京</a></p>
+                    <p data-id="110110"><a href="/suzhou/<?php echo $type;?>">苏州</a></p>
+                    <p data-id="110111"><a href="/wuxi/<?php echo $type;?>">无锡</a></p>
+                    <p data-id="110112"><a href="/ningbo/<?php echo $type;?>">宁波</a></p>
+                    <p data-id="110113"><a href="/fuzhou/<?php echo $type;?>">福州</a></p>
+                    <p data-id="110114"><a href="/qingdao/<?php echo $type;?>">青岛</a></p>
+                    <p data-id="110115"><a href="/hefei/<?php echo $type;?>">合肥</a></p>
+                <span class="city-letter">中部西部</span> 
+                    <p data-id="110116"><a href="/chengdu/<?php echo $type;?>">成都</a></p>
+                    <p data-id="110117"><a href="/chongqing/<?php echo $type;?>">重庆</a></p>
+                    <p data-id="110118"><a href="/changsha/<?php echo $type;?>">长沙</a></p>
+                    <p data-id="110119"><a href="/zhengzhou/<?php echo $type;?>">郑州</a></p>
+                    <p data-id="110120"><a href="/xian/<?php echo $type;?>">西安</a></p>
+                    <p data-id="110121"><a href="/wuhan/<?php echo $type;?>">武汉</a></p>
+                <span class="city-letter">华南地区</span> 
+                   <p data-id="110122"> <a href="/guangzhou/<?php echo $type;?>">广州</a></p>
+                    <p data-id="110123"><a href="/shenzhen/<?php echo $type;?>">深圳</a></p>
             </div>
         </div>
-
     </div>
-
-</div>
-<div class="letter">
-    <ul>
-        <li><a href="javascript:;">A</a></li>
-        <li><a href="javascript:;">B</a></li>
-        <li><a href="javascript:;">C</a></li>
-        <li><a href="javascript:;">D</a></li>
-        <li><a href="javascript:;">E</a></li>
-        <li><a href="javascript:;">F</a></li>
-        <li><a href="javascript:;">G</a></li>
-        <li><a href="javascript:;">H</a></li>
-        <li><a href="javascript:;">J</a></li>
-        <li><a href="javascript:;">K</a></li>
-        <li><a href="javascript:;">L</a></li>
-        <li><a href="javascript:;">M</a></li>
-        <li><a href="javascript:;">N</a></li>
-        <li><a href="javascript:;">P</a></li>
-        <li><a href="javascript:;">Q</a></li>
-        <li><a href="javascript:;">R</a></li>
-        <li><a href="javascript:;">S</a></li>
-        <li><a href="javascript:;">T</a></li>
-        <li><a href="javascript:;">W</a></li>
-        <li><a href="javascript:;">X</a></li>
-        <li><a href="javascript:;">Y</a></li>
-        <li><a href="javascript:;">Z</a></li>
-    </ul>
 </div>
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>

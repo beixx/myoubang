@@ -22,9 +22,9 @@
 </head>
 <body>
 <header>
-    <div class="logo"><img src="/images/logo.png"></div>
+    <div class="logo"><a href="http://m.youbangkeyi.com/beijing/sheying"><img src="/images/logo.png"></a></div>
     <div class="search">
-        <input type="text" name="" class="inp" placeholder="搜索商家">
+        <input type="text" name="" class="inp" placeholder="搜商家·查排名">
         <input type="submit" name="" class="btn">
     </div>
     <div class="city_box" id="gr_zone_ids" data-id="110100">北京</div>
@@ -42,12 +42,12 @@
                     <div class="huiyuan"></div>
                     <?php } ?>
                     <div class="num_txt">
-                        <div class="num n1 fa txtCtr">
-                            <em class="<?php echo $v['isVip']==2?"blue":'';?>"><?php echo $v['order_city'];?></em>
+                        <div class="num fa txtCtr">
+                            <?php echo $v['order_city'];?><em class="<?php echo $v['isVip']==2?"blue":'';?>">TOP</em>
                         </div>
                         <div class="tit_box">
                             <div class="title"><a href="/detail/<?php echo $v['id'];?>"><?php echo $v['name']?></a></div>
-                            <div class="txt"><span>人均：¥<?php echo $v['person_price'];?></span><span>|</span><span><?php echo $v['address'];?></span></div>
+                            <div class="txt"><span>人均：¥<?php echo $v['person_price'];?></span></div>
                         </div>
                     </div>
                     <?php if($v['isVip'] == 1) { ?>
@@ -97,7 +97,7 @@
 
 </div>
 <footer>
-    <div class="txt">覆盖全国<span>12万</span>商户 <span>18个</span>数据衡量维度</div>
+    <div class="txt"><p class="f075">定制个性榜单</p>覆盖全国<span>12万</span>商户 <span>18个</span>数据衡量维度</div>
     <em class="down">立即定制</em></footer>
 <div class="bgDiv"></div>
 <div class="downNav">
@@ -142,6 +142,7 @@
     .layui-layer-ico{background: url(/js/layer/skin/default/close.png);background-size: 2.75rem;width: 2.75rem;height: 1.45rem}
     .layui-layer-setwin a{margin-left: 0;}
     .layui-layer-setwin{right: 8px;top: 8px}
+    .f075{font-size:.75rem;}
 </style>
 
 <!-- 城市弹出 -->
