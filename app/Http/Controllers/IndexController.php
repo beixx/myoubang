@@ -146,7 +146,10 @@ class IndexController extends Controller
                     $this->data['spread']['taoxi']['cover'] = json_decode($this->data['spread']['taoxi']['cover'],true);
                 }
             }
-            $taoxi = YfcTenantsSet::select('id','currentPrice','price','tenantsId','setName','cover')->whereIn('tenantsId',$tids)->orderBy('recommend','asc')->limit(1000)->get()->toArray();
+            $taoxi = YfcTenantsSet::select('id','currentPrice','price','tenantsId','setName','cover')
+                ->whereIn('tenantsId',$tids)
+                ->orderBy('recommend','asc')->limit(3000)->get()->toArray();
+
             $taoxitmp = [];
             foreach($taoxi as $kk => $vv) {
                 # 过滤超过三条的套系
@@ -173,7 +176,7 @@ class IndexController extends Controller
             $advtype = $shoptype=='婚纱摄影'?1:0;
 
             $advinfo = YfcAdv::where('type','1')->where('position','1')->where('city', 'like', '%'.$name.'%')->where('advtype',$advtype)->where('endTime','>',time())->first();
-            $this->data['type'] = $shoptype?'hunsha':'hunli';
+            $this->data['type'] = $shoptype?'sheying':'hunli';
             return view('front/index', $this->data);
 
         }

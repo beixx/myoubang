@@ -212,7 +212,7 @@
     </ul>
 </div>
 <div class="comment_list">
-            <div class="title dafen"><a href="#">网友打分<span style="font-size:0.6rem;background:#FFF;">（7382）</span><em></em></a></div>
+            <div class="title dafen"><a href="#">网友打分<span style="font-size:0.6rem;background:#FFF;">（<?php echo intval($tenantssort['comments']);?>）</span><em></em></a></div>
                 <div class="shengji">打榜频词功能届时上线！<br><p>系统升级中，网友打榜内容暂时无法展示！</p></div>
                 
             </div>
@@ -271,16 +271,15 @@
                 }},
                 splitArea : {show : false},
                 data : [
-                    <?php if(isset($tenantsortviewcomment) && count($tenantsortviewcomment)){
-                    $len=count($tenantsortviewcomment)-1;
-                    foreach($tenantsortviewcomment as $key=>$v){
+                    <?php if(isset($tenantssortviewcomment) && count($tenantssortviewcomment)){
+                    $len=count($tenantssortviewcomment)-1;foreach($tenantssortviewcomment as $key=>$v){
                         if($len!=$key){
                             echo '\''.str_replace('-','/',$v['date']).'\',';
                         }else{
                             echo '\''.str_replace('-','/',$v['date']).'\'';
                         }
                     }
-                    }?>
+                }?>
                 ]
             }
         ],

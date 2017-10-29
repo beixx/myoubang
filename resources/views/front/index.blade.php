@@ -59,7 +59,7 @@
                             </div>
                             <div class="tit_box">
                                 <div class="title"><a href="/detail/<?php echo $spread['id'];?>"><?php echo $spread['name']?></a></div>
-                                <div class="txt"><span>人均：¥<?php echo $spread['person_price'];?></span><span>|</span><span>竞争指数:34.5</span></div>
+                                <div class="txt"><span>人均：¥<?php echo $spread['person_price'];?></span><span>|</span><span>竞争指数:<?php echo $spread['heat_index'];?></span></div>
                             </div>
                         </div>
                         <div class="vippic txtCtr">
@@ -98,7 +98,7 @@
                             </div>
                             <div class="tit_box">
                                 <div class="title"><a href="/detail/<?php echo $v['id'];?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span>人均：¥<?php echo $v['person_price'];?></span><span>|</span><span>竞争指数:34.5</span></div>
+                                <div class="txt"><span>人均：¥<?php echo $v['person_price'];?></span><span>|</span><span>竞争指数:<?php echo $v['heat_index'];?></span></div>
                             </div>
                         </div>
                         <?php if($v['isVip'] == 1) { ?>

@@ -31,7 +31,7 @@
 </header>
 <div class="content">
     <div class="sousuo">
-        找到<em>八月照相馆</em>相关信息99条
+        找到<em>八月照相馆</em>相关信息<?php echo count($tenants);?>条
     </div>
     <div class="bd">
         <div class="list_box">

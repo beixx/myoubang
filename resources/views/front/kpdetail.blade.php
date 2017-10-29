@@ -56,7 +56,9 @@
 </div>
 <div class="shop_box">
     <div class="titdp">店铺信息</div>
+    <?php if($tenants['isVip'] == 2) { ?>
     <div class="huiyuan"></div>
+    <?php } ?>
     <div class="txt-box">
         <h1><?php echo $tenants['name'];?></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
