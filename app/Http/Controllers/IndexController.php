@@ -429,7 +429,7 @@ class IndexController extends Controller
         $shoptype = Request::get('customized_name','婚纱摄影');
 
         $styles = YfcStyle::whereIn('name',$style)->select('tenantsId')->get();
-
+        $this->data['cname'] = $cname;
         $this->data['city'] = $city;
         $ids = [];
         if(!empty($style[0])) {

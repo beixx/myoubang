@@ -77,9 +77,19 @@
     <div class="up-pic">
         <div class="title">单据证明</div>
         <div class="pic-box">
-            <div class="pic lft ImgRegin">
+            <div class="pic-box" style="width:910px;" id="ImgRegin">
 
             </div>
+            <script type="text/html" id="ImgTemp">
+                @{{each list}}
+                <div class="pic lft">
+                    <div class="close">
+                        <input type="hidden" name="user_bill[]" value="@{{$value}}" id="user_bill" />
+                    </div>
+                    <img id="upload_img2" src="http://ceshi.youbangkeyi.com/@{{$value}}">
+                </div>
+                @{{/each}}
+            </script>
             <div class="up lft">
                 <a href="javascript:;" class="file txtCtr lft"><span class="lft fB">+</span><i class="lft">选择文件</i>
                     <input type="file" name="" id="photo_file" type="file" multiple="multiple"  onchange="SeleImg(this);" >
@@ -143,7 +153,11 @@
 <script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/zepto.min.js"></script>
 <script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/uploadImage.js"></script>
 <script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/exif.js"></script>
-
+<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/layer.js" ></script>
+<script type="text/javascript" src="http://c.youbangkeyi.com/js/main.js"></script>
+<script type="text/javascript" src="http://c.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js" ></script>
+<script type="text/javascript" src="http://c.youbangkeyi.com/js/template.js"></script>
+<script type="text/javascript" src="http://c.youbangkeyi.com/js/zepto.min.js"></script>
 <script type="text/javascript">
     //模糊搜索商家
     $('#submit').click(function(){
