@@ -95,6 +95,7 @@ class IndexController extends Controller
                 'tenantssortview' => $tenantssortview,
                 'tenantssortviewcomment' => $tenantssortviewcomment,
                 'city' => $city,
+                'pycity' => $pycity
             ];
 
             return view("front/shop",$this->data);
@@ -183,13 +184,15 @@ class IndexController extends Controller
 
     public function search($name=''){
         $this->data['type'] = Request::input("type")=="hunsha" ? 'hunsha':'hunli';
-        $shoptype = Request::input("type")=="hunsha"?'婚纱摄影':'婚礼策划';
+        $shoptype = Request::input("type")=="sheying"?'婚纱摄影':'婚礼策划';
         $this->data['city'] = Config::get('city.'.$name,'北京');
         $this->data['pycity'] = $name;
         $keyword = Request::get('keyword','');
 
+        //echo $shoptype ;exit;
+        //echo $this->data['city'] ;exit;
         $this->data['tenants'] = YfcTenants::where('city', 'like', '%'.$this->data['city'].'%')
-            ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
+            //->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
             ->where('shoptype',$shoptype)
             ->where('name','like',"%".$keyword."%")
             ->where('spread','!=','2')
@@ -536,6 +539,14 @@ class IndexController extends Controller
             $res['result'] = '01';
         }
         return json_encode($res);
+    }
+
+    public function dafen($name,$id=0){
+        $this->data['city'] = Config::get('city.'.$name,'北京');
+        $this->data['tenants'] = Yfctenants::where('id',$id)->first();
+        $this->data['title'] = $this->data['tenants']['name'].'打分-有榜';
+
+        return view("front/dianping",$this->data);
     }
 }
 

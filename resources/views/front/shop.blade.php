@@ -49,7 +49,7 @@
     <div class="txt_info">
         <h1><?php echo $city;?><?php echo $tenants['name'];?></h1>
         <p>人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></p>
-        <div class="pf txtCtr"><a href=""><em></em>打榜</a></div>
+        <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?>"><em></em>打榜</a></div>
     </div>
     <div class="address"><?php echo $tenants['address'];?><em></em></div>
 </div>
