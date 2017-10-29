@@ -101,11 +101,47 @@
             <span>7天内选片</span><span>15天出精修</span><span>不满意重拍</span><span>无隐形消费</span>
         </div>
         <p>留下您的联系方式以便商户尽快联系你</p>
-        <input type="text" name="" class="input" placeholder="请输入手机号">
-        <input type="submit" name="" class="btn" value="预约看店">
+        <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
+        <input type="text" name="mobile" id="mobile" class="input" placeholder="请输入手机号">
+        <input type="submit" name="wapsubmit" class="btn" value="预约看店">
     </div>
 </div>
+<script type="text/javascript">
 
+    $('input[name=wapsubmit]').click(function(){
+        var tenantsId = $('#tenantsId').val();
+        var phone = $('#mobile').val();
+        var source = 3;
+
+        if(!phone){
+            alert('手机必填');
+            return false;
+        }
+        if(phone){
+            if(!(/^1[34578]\d{9}$/.test(phone))){
+                alert("手机号码有误，请重填");
+                return false;
+            }
+        }
+        $.ajax({
+            url: "/saveview",
+            type: "post",
+            dataType: "json",
+            data: {'tenantsId': tenantsId,'phone': phone,'source':source},
+            success: function(data){
+                console.log(data);
+                if(data.result=='00'){
+                    alert('预约成功');
+                    <?php if($tenants['isVip'] ==2) { ?>
+                            location.href="<?php echo $tenants['modeladvurl'];?>";
+                    <?php } else {?>
+                        location.reload();
+                    <?php } ?>
+                }
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

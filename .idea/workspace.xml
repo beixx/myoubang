@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78c33a0d-54cb-4cf0-8b6a-947adcf68385" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Models/YfcStyle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/front/dingzhi.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/kpdetail.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/kpdetail.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/shop.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/shop.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/txdetail.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/txdetail.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <ignored path="myoubang.iws" />
@@ -33,8 +33,8 @@
       <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.7058825">
-              <caret line="471" column="8" selection-start-line="471" selection-start-column="8" selection-end-line="471" selection-end-column="8" />
+            <state vertical-scroll-proportion="-9.235294">
+              <caret line="533" column="34" selection-start-line="533" selection-start-column="34" selection-end-line="533" selection-end-column="34" />
               <folding>
                 <element signature="e#39#75#0#PHP" expanded="true" />
               </folding>
@@ -57,61 +57,19 @@
       <file leaf-file-name="shop.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/front/shop.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.75">
-              <caret line="469" column="7" selection-start-line="469" selection-start-column="7" selection-end-line="469" selection-end-column="7" />
+            <state vertical-scroll-proportion="-8.25">
+              <caret line="232" column="71" selection-start-line="230" selection-start-column="8" selection-end-line="232" selection-end-column="71" />
               <folding>
+                <element signature="n#style#0;n#canvas#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#2;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1509270165000" expanded="true" signature="9718:9762" placeholder="..." />
+                <marker date="1509272526000" expanded="true" signature="9844:9888" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="guize.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/guize.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5867347">
-              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#strong#0;n#p#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#strong#1;n#p#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#strong#0;n#p#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#4;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#p#4;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#5;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="YfcStyle.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Models/YfcStyle.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0">
-              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="YfcAdv.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Models/YfcAdv.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5">
-              <caret line="14" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VerifyCsrfToken.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.375">
-              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -119,10 +77,21 @@
       <file leaf-file-name="kpdetail.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/front/kpdetail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.9411764">
-              <caret line="10" column="11" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="11" />
+            <state vertical-scroll-proportion="-18.25">
+              <caret line="105" column="71" selection-start-line="103" selection-start-column="8" selection-end-line="105" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="txdetail.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/front/txdetail.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33673468">
+              <caret line="102" column="71" selection-start-line="102" selection-start-column="71" selection-end-line="102" selection-end-column="71" />
               <folding>
-                <element signature="n#style#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1509272630000" expanded="true" signature="3209:3216" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -132,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-3.125">
-              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
               <folding>
                 <element signature="e#7#385#0#PHP" expanded="false" />
               </folding>
@@ -143,11 +112,21 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.2941175">
-              <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.625">
+              <caret line="192" column="14" selection-start-line="192" selection-start-column="14" selection-end-line="192" selection-end-column="14" />
               <folding>
-                <marker date="1509270165000" expanded="true" signature="15582:15592" placeholder="{...}" />
+                <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VerifyCsrfToken.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -170,18 +149,18 @@
         <option value="$PROJECT_DIR$/app/Http/Models/YfcAdv.php" />
         <option value="$PROJECT_DIR$/resources/views/front/taoxilist.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/piclist.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/kpdetail.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/txdetail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/search.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/resources/views/front/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Models/YfcStyle.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
         <option value="$PROJECT_DIR$/resources/views/front/dingzhi.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/shop.blade.php" />
         <option value="$PROJECT_DIR$/public/guize.html" />
+        <option value="$PROJECT_DIR$/resources/views/front/index.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/shop.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/kpdetail.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/txdetail.blade.php" />
       </list>
     </option>
   </component>
@@ -590,7 +569,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1509270165000" expanded="true" signature="15582:15592" placeholder="{...}" />
+            <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -719,36 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/txdetail.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26737967">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="11" />
-          <folding>
-            <marker date="1509270165000" expanded="true" signature="1832:2214" placeholder="..." />
-            <marker date="1509270165000" expanded="true" signature="1924:2207" placeholder="..." />
-            <marker date="1509270165000" expanded="true" signature="2110:2196" placeholder="..." />
-            <marker date="1509270165000" expanded="true" signature="2267:2308" placeholder="..." />
-            <marker date="1509270165000" expanded="true" signature="2357:2492" placeholder="..." />
-            <marker date="1509270165000" expanded="true" signature="3209:3216" placeholder="..." />
-            <marker date="1509270165000" expanded="true" signature="2559:3062" placeholder="..." />
-            <marker date="1509270165000" expanded="true" signature="2616:3033" placeholder="..." />
-            <marker date="1509270165000" expanded="true" signature="3246:3381" placeholder="..." />
-            <marker date="1509270165000" expanded="true" signature="3437:3499" placeholder="..." />
-            <marker date="1509270165000" expanded="true" signature="3500:3869" placeholder="..." />
-            <marker date="1509270165000" expanded="true" signature="3522:3862" placeholder="..." />
-            <marker date="1509270165000" expanded="true" signature="3583:3684" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/taoxilist.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26737967">
@@ -759,59 +708,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/kpdetail.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/guize.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.9411764">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.25510204">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
           <folding>
-            <element signature="n#style#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#strong#0;n#p#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#strong#1;n#p#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#strong#0;n#p#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#4;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#p#4;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#5;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding>
-            <element signature="e#7#385#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Models/YfcAdv.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5">
-          <caret line="14" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Models/YfcStyle.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
+        <state vertical-scroll-proportion="0.20408164">
           <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Models/YfcAdv.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.7058825">
-          <caret line="471" column="8" selection-start-line="471" selection-start-column="8" selection-end-line="471" selection-end-column="8" />
-          <folding>
-            <element signature="e#39#75#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.2941175">
-          <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
-          <folding>
-            <marker date="1509270165000" expanded="true" signature="15582:15592" placeholder="{...}" />
-          </folding>
+        <state vertical-scroll-proportion="0.30612245">
+          <caret line="14" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -825,30 +751,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/shop.blade.php">
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.75">
-          <caret line="469" column="7" selection-start-line="469" selection-start-column="7" selection-end-line="469" selection-end-column="7" />
+        <state vertical-scroll-proportion="-3.125">
+          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
           <folding>
-            <element signature="n#style#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1509270165000" expanded="true" signature="9718:9762" placeholder="..." />
+            <element signature="e#7#385#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/guize.html">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5867347">
-          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        <state vertical-scroll-proportion="-9.235294">
+          <caret line="533" column="34" selection-start-line="533" selection-start-column="34" selection-end-line="533" selection-end-column="34" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#strong#0;n#p#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#strong#1;n#p#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#strong#0;n#p#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#4;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#p#4;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#5;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#39#75#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.625">
+          <caret line="192" column="14" selection-start-line="192" selection-start-column="14" selection-end-line="192" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/shop.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.25">
+          <caret line="232" column="71" selection-start-line="230" selection-start-column="8" selection-end-line="232" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#canvas#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#2;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1509272526000" expanded="true" signature="9844:9888" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/kpdetail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.25">
+          <caret line="105" column="71" selection-start-line="103" selection-start-column="8" selection-end-line="105" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/txdetail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33673468">
+          <caret line="102" column="71" selection-start-line="102" selection-start-column="71" selection-end-line="102" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1509272630000" expanded="true" signature="3209:3216" placeholder="..." />
           </folding>
         </state>
       </provider>

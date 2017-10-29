@@ -158,14 +158,14 @@
         <div class="sewvmain">
             <div class="tb"></div>
             <div class="sewv">
-                <div class="sewvtop"><em><span>婚纱摄影</span><img src="/images/icon9.png"></em></div>
+                <div class="sewvtop"><em><span id="customized_name">婚纱摄影</span><img src="/images/icon9.png"></em></div>
                 <ul class="sewvbm">
                     <li>婚纱摄影</li>
                     <li>婚礼策划</li>
                 </ul>
             </div>
             <div class="sewv">
-                <div class="sewvtop"><em><span>选择风格</span><img src="/images/icon9.png"></em></div>
+                <div class="sewvtop"><em><span id="style">选择风格</span><img src="/images/icon9.png"></em></div>
                 <ul class="sewvbm" multile='1' style="left: -169px">
                      <li class="xq2">小清新</li>
                             <li class="xq2">韩式</li>
@@ -192,9 +192,15 @@
             </div>
         </div>
         <div class="input">
-            <input type="text" name="" placeholder="您的预算">
-            <input type="text" name="" placeholder="您的手机">
-            <input type="text" name="" placeholder="您的姓名">
+
+            </form>
+            <form action="/user/{{$pycity}}/<?php echo rand(10,1000) ?>" method="get" id="subsubmit">
+                <input type="hidden" id="hiddenstyle" name="style" value=""/>
+                <input type="hidden" id="hiddencity" name="city" value=""/>
+                <input type="text" name="budget" placeholder="您的预算">
+                <input type="text" name="mobile" placeholder="您的手机">
+                <input type="text" name="name" placeholder="您的姓名">
+            </form>
         </div>
         <div class="submit txtCtr"><a href="">立即定制</a> </div>
     </div>
@@ -311,6 +317,58 @@
             var city = $('input[name=pycity]').val();
             var type = $("input[name=type]").val();
             location.href="/search/"+city+'?keyword='+keyword+'&type='+type;
+        });
+
+        $('.submit').click(function(){
+            var customized_name = $('#customized_name').text();
+            var style = $('#style').text();
+            var budget = $('input[name=budget]').val();
+            var city = '<?php echo $pycity?>';
+            if(!budget){
+                alert('预算不能为空');
+                return false;
+            }
+            var phone = $('input[name=mobile]').val();
+            if(!phone){
+                alert('手机号码不能为空');
+                return false;
+            }
+            if(phone){
+                var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+                if(!myreg.test(phone))
+                {
+                    alert('请输入有效的手机号码！');
+                    return false;
+                }
+            }
+            var name = $('input[name=name]').val();
+            if(!name){
+                alert('姓名不能为空');
+                return false;
+            }
+            $.ajax({
+                url: "/dingzhi",
+                type: "post",
+                dataType: "json",
+                data: {'customized_name': customized_name,'style': style,'budget': budget,'phone': phone,'name': name,'city': city,'linkurl': "{{url('user')}}/{{$pycity}}/<?php echo rand(10,1000) ?>?style="+style+"&city="+city+"&name="+name+"&price="+budget+"&customized_name="+customized_name},
+                success: function(data){
+                    console.log(data);
+                    if(data.result == "00")
+                    {
+                        var city = $('#area').text();
+                        $('#hiddenstyle').val(style);
+                        $('#hiddencity').val(city);
+                        $('#hiddenname').val(name);
+                        $('#hiddenprice').val(budget);
+                        $('#hiddencustomized_name').val(customized_name);
+
+                        $('#subsubmit').submit();
+                    }else{
+                        alert('定制失败');
+                    };
+                }
+            });
+            return false ;
         });
     });
 </script>

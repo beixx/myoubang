@@ -520,5 +520,20 @@ class IndexController extends Controller
         return json_encode($res);
 
     }
+    public function saveview(){
+        //`source` smallint(6) DEFAULT NULL COMMENT '1套系，2表示推荐榜单，3客片，4客户页面',
+        $phone = Request::get('phone');
+        $tenantsId = Request::get('tenantsId');
+        $data['phone'] = $phone;
+        $data['tenantsId'] = $tenantsId;
+        $data['source'] = Request::get('source','1');
+        $backres = DB::table('yfc_bespoke_view')->insert($data);
+        if($backres){
+            $res['result'] = '00';
+        }else{
+            $res['result'] = '01';
+        }
+        return json_encode($res);
+    }
 }
 

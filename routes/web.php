@@ -12,6 +12,7 @@
 */
 Route::get('/', 'IndexController@redirect');
 Route::post('/dingzhi', 'IndexController@dingzhisave');
+Route::post('/saveview', 'IndexController@saveview');
 Route::get('/user/{name}/{rand}', 'IndexController@dingzhi');
 
 Route::get('/search/{city}', 'IndexController@search');
