@@ -169,7 +169,7 @@
             </div>
             <div class="sewv">
                 <div class="sewvtop"><em><span id="style">选择风格</span><img src="/images/icon9.png"></em></div>
-                <ul class="sewvbm" multile='1' style="left: -195px">
+                <ul class="sewvbm" multile='1' style="left: -7.63rem">
                     <?php if($type=='sheying') { ?>
                             <li class="xq2">小清新</li>
                             <li class="xq2">韩式</li>

@@ -56,7 +56,7 @@ input:focus,textarea:focus {border: 0;outline:none;}
 /* 头部 */
 header{background:#FFF;/*position: fixed;top: 0;left: 0;*/width:100%;background-position: left bottom; background-image: -webkit-gradient(linear,left top,left bottom,color-stop(.5,transparent),color-stop(.5,#e7e7e7)); background-repeat: repeat-x; -webkit-background-size: 100% 1px;padding:0.2rem 0; z-index: 99;height:1.5rem;}
 .logo{width:3rem;height:1.5rem;margin-left: .6rem;margin-right: 0.5rem;float: left;}
-.logo img{width: 100%;height:1.5rem;width:3rem;vertical-align:initial;}
+.logo img{width: 100%;height:1.25rem;margin-top:0.125rem;width:3rem;vertical-align:initial;}
 header .title{font-size:0.8rem;width: 100%;height:1.5rem; line-height:1.5rem;}
 header .pre{width: 1.5rem;display: block;background: url(../images/icon11.png) no-repeat center center;background-size: 1rem;height:1.5rem ;position: absolute;left: 0.2rem;}
 header .share{position: absolute;right: 0.6rem;top: 0.2rem;width: 1.5rem;height: 1.5rem;background:#FFF url(../images/icon14.png) no-repeat center center;background-size: 1rem;overflow: hidden;cursor: pointer;}
@@ -119,26 +119,26 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
 .downNav{width: 100%;height: 340px;background-color: #fff;position: fixed;z-index: 999;bottom: -340px;}
 
 /*立即定制*/
-.downNav .title{display:table;margin: 0 auto;background: url(../images/icon8.png) no-repeat left center;padding-left: 3rem;font-size:0.8rem;background-size: 2.5rem;margin-top: 0.5rem;height: 1.5rem;line-height: 1.5rem;}
+.downNav .title{display:table;font-weight:700;margin: 0 auto;background: url(../images/icon8.png) no-repeat left center;padding-left: 3rem;font-size:0.8rem;background-size: 2.5rem;margin-top: 0.5rem;height: 1.5rem;line-height: 1.5rem;}
 .downNav .title span{color: #33c5c4}
 .downNav .form{width: 100%; margin-top: 0.5rem; position: relative;}
-.downNav .form .btn{border:1px #ade4e4 solid; width: 100%;  height: 2rem; line-height: 2rem; font-size: 0.7rem;margin: 1rem auto;text-align: center;clear: both;margin-bottom: 1rem;}
-.downNav .form .btn a{ width: 100%;  height: 2rem;display: block;}
-.downNav .form .submit{width: 90%;  height: 2rem; line-height: 2rem; font-size: 0.7rem;margin: 1rem auto;text-align: center;}
+.downNav .form .btn{width: 80%; height: 2rem; line-height: 2rem; font-size: 0.7rem; margin: 1rem auto; text-align: center; clear: both; margin-bottom: 1rem; background: #00c2c2; border-radius: 0.3rem;}
+.downNav .form .btn a{ width: 100%;  height: 2rem;color:#FFF;display: block;}
+.downNav .form .submit{width: 80%; height: 2rem; line-height: 2rem; font-size: 0.7rem;margin: 1rem auto;text-align: center;}
 .downNav .form .submit a{color: #fff; background: #00c2c2; border-radius: 0.3rem;font-size:0.9rem;display: block;}
-.downNav .form .input{width: 90%;margin: 0 auto}
-.downNav .form .input input{width: 100%; border:1px #ade4e4 solid; height: 2rem;font-size: 0.7rem;text-indent: 10px; line-height: 2rem;border-radius:2rem;margin-top: 0.7rem;}
-.downNav .form .sewvmain{display: table;margin: 0 auto;width: 90%;}
-.downNav .form .sewv{position: relative; width: 48%; display: inline-block; vertical-align: middle; height: 2rem; background: #FFF;text-indent:0.5rem;border-radius:2rem;border:1px #ade4e4 solid;}
+.downNav .form .input{width: 80%;margin: 0 auto}
+.downNav .form .input input{width: 100%; border:1px #ade4e4 solid; height: 2rem;font-size: 0.7rem;text-indent: 10px; line-height: 2rem;border-radius:.5rem;margin-top: 0.7rem;}
+.downNav .form .sewvmain{display: table;margin: 0 auto;width:80%;}
+.downNav .form .sewv{position: relative; width: 48%; display: inline-block; vertical-align: middle; height: 2rem; background: #FFF;text-indent:0.5rem;border-radius:.5rem;border:1px #ade4e4 solid;}
 .downNav .form .sewv:last-child{float: right;}
 .downNav .form .sewvtop{width: 100%; height: 2rem; cursor: pointer; overflow: hidden; position: relative}
 .downNav .form .sewvtop > span{float: left; width: 70%; height: 2rem; white-space: pre; text-overflow: ellipsis; overflow: hidden; font-size:0.7rem; line-height: 2rem; color: #333; padding: 0 5px 0 10px; vertical-align: middle;}
 .downNav .form .sewvtop > em{ width: 98%; height: 2rem; white-space: pre; text-overflow: ellipsis; overflow: hidden; font-size:0.7rem; line-height: 2rem; color: #333; padding: 0 2%; vertical-align: middle;display: block;position: relative;}
-.downNav .form .sewvtop > em span{width:6rem; height: 2rem; white-space: pre; text-overflow: ellipsis; overflow: hidden; font-size:0.7rem; line-height: 2rem; color: #333; vertical-align: middle;display: block;float: left;}
+.downNav .form .sewvtop > em span{width:5rem; height: 2rem; white-space: pre; text-overflow: ellipsis; overflow: hidden; font-size:0.7rem; line-height: 2rem; color: #333; vertical-align: middle;display: block;float: left;}
 .downNav .form .sewvtop > em img{width: 0.9rem;float: right;margin-top: 0.5rem;margin-right: 0.5rem;}
-.downNav .form .sewvbm{width: 211%; position: absolute; left: -2px; top: 2.5rem; display: none; z-index: 9999; height: 223px; background: #FFF url("../images/line.png") no-repeat right top;}
+.downNav .form .sewvbm{width: 210%; position: absolute; left: -2px; top: 2.5rem; display: none; z-index: 9999; height:11rem;overflow:auto;overflow-x:hidden; background: #FFF url("../images/line.png") no-repeat right top;}
 .downNav .form .sewvbm li{border: 1px #eaeaea solid; border-radius: 0.25rem; height: 1.75rem; line-height: 1.75rem; float: left; margin-right: 2%; width: 48%; margin-bottom: 0.75rem; font-size: 0.7rem; color: #333; text-indent: 0.75rem;}
-.downNav .form .sewvbm li:nth-of-type(2),.downNav .form .sewvbm li:nth-of-type(4),.downNav .form .sewvbm li:nth-of-type(6){margin-right: 0;}
+.downNav .form .sewvbm li:nth-of-type(2),.downNav .form .sewvbm li:nth-of-type(4),.downNav .form .sewvbm li:nth-of-type(6),.downNav .form .sewvbm li:nth-of-type(8),.downNav .form .sewvbm li:nth-of-type(10),.downNav .form .sewvbm li:nth-of-type(12),.downNav .form .sewvbm li:nth-of-type(14),.downNav .form .sewvbm li:nth-of-type(16),.downNav .form .sewvbm li:nth-of-type(18){margin-right: 0;}
 .downNav .form .sewvbm li:hover{cursor: pointer; border: 1px #00cccc solid;}
 .downNav .form .sewvbm .cur{background: url("../images/icon25.png") no-repeat 90% center; border: 1px #00cccc solid;background-size: 1rem}
 .downNav .form .lbaxztop{animation: rotatete 0.3s linear forwards;}
