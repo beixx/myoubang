@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title>有榜-点评</title>
+    <title><?php echo $title;?></title>
     <meta name="viewport"  content="width=device-width,user-scalable=no">
     <meta name="copyright" content="">
     <meta name="Keywords" content="">
@@ -38,14 +38,18 @@
 </header>
 
 <div class="comment">
+    <form action="/savevote?r=<?php echo rand();?>" enctype="multipart/form-data" method="post" onSubmit="return checkform();">
+        <input type="hidden" name="id" id="id" value="{{$tenants['id']}}">
+        {{ csrf_field() }}
+        <input type="hidden" name="city" id="city" value="{{$city}}">
     <div class="shop_box view" style="padding-bottom:0rem;">
         <div class="huiyuan"></div>
         <div class="titdp">店铺信息</div>
         <div class="txt-box">
-            <h1>CD视觉婚纱摄影·轻奢 定制</h1>
-            <div class="t1">人均消费<span class="red">¥5647</span></div>
+            <h1><?php echo $tenants['name']?></h1>
+            <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
             <div class="num n6 fa txtCtr">
-                <em class="blue">3</em>
+                <em class="blue"><?php echo $tenants['order_city'];?></em>
             </div>
         </div>
     </div>
@@ -54,12 +58,13 @@
         <div class="title">总体打分<span><!-- （<span id="title0" class="fa">0</span>） --></span></div>
 
         <div class="pf_txt">
-            <input type="hidden" class="single-slider" value="0" />
+            <input type="hidden" class="single-slider" name="score" id="score" value="0" />
 
             <div class="num txtCtr">
                 <span class="bars_10 fu lft"><em class="fa">-30</em>分</span>
                 <span class="bars_10 c"><em class="fa">0</em></span>
                 <span class="bars_10 red rgt"><em class="fa">30</em>分</span>
+                <input type="hidden" name="score" id='score'>
             </div>
         </div>
 
@@ -67,12 +72,12 @@
     </div>
     <div class="contact" style="padding-bottom: 1rem;margin-bottom: 0.5rem;">
         <div class="title">消费金额（元）</div>
-        <input type="text" value="" name="" class="money" placeholder="您的消费金额">
+        <input type="text" value="" name="price" class="money" placeholder="您的消费金额">
     </div>
     <!--表单-->
     <div class="text-input">
         <div class="title">打分理由</div>
-        <textarea name="textarea" id="textarea" cols="45" rows="5" placeholder="请认真客观的评价，因为这可以帮助其他新人，并督促商家更好的为新人服务。" style="resize:none"></textarea>
+        <textarea name="content" id="textarea" cols="45" rows="5" placeholder="请认真客观的评价，因为这可以帮助其他新人，并督促商家更好的为新人服务。" style="resize:none"></textarea>
     </div>
     <div class="up-pic">
         <div class="title">单据证明</div>
@@ -104,12 +109,21 @@
         <div class="title">上传照片</div>
         <div class="pic-box">
 
-            <div class="pic lft photoRegin">
+            <div class="pic-box" style="width:910px;" id="photoRegin">
+
 
             </div>
+            <script type="text/html" id="photoTemp">
+                @{{each list}}
+                <div class="pic lft" >
+                    <div class="close"> <input type="hidden" name="user_photo[]" value="@{{$value}}" id="user_photo" /> </div>
+                    <img id="photo_img" src="http://ceshi.youbangkeyi.com/@{{$value}}">
+                </div>
+                @{{/each}}
+            </script>
             <div class="up lft">
                 <a href="javascript:;" class="file txtCtr lft"><span class="lft fB">+</span><i class="lft">选择文件</i>
-                    <input type="file" name="" id="">
+                    <input type="file" id="photo_file" type="file" multiple="multiple"  onchange="SelePhoto(this);">
                 </a>
             </div>
         </div>
@@ -119,11 +133,15 @@
 
     <div class="up-face">
         <div class="title">上传个人头像</div>
-        <div class="pic lft headimgRegin">
-
-        </div>
+        <div style="margin-left:20px;margin-bottom:20px;" id="headimgRegin"></div>
+        <script type="text/html" id="headimgTemp">
+            @{{each list}}
+            <img id="head_img" src="http://ceshi.youbangkeyi.com/@{{$value}}" width="140" height="100" >
+            <input type="hidden" name="headimg" value="@{{$value}}" id="user_head" />
+            @{{/each}}
+        </script>
         <a href="javascript:;" class="file txtCtr lft fB">+
-            <input type="file" name="" id="">
+            <input type="file" name="" id="head" type="file"  onchange="SeleHeadimg(this);">
         </a>
         <div class="lft up-info">上传个人头像</div>
     </div>
@@ -131,8 +149,8 @@
 
     <div class="contact">
         <div class="title">联系方式</div>
-        <input type="text" value="" name="" class="name" placeholder="您的姓名">
-        <input type="text" value="" name="" class="tel" placeholder="手机号">
+        <input type="text" value="" id="userName" name="userName" class="name" placeholder="您的姓名">
+        <input type="text" value="" id="phone" name="phone" class="tel" placeholder="手机号">
 
         <p>为了验证评论是由本人填写，并非商家行为，我们保证您的手机号绝对不会泄露。(部分评论会进行电话核实）</p>
     </div>
@@ -144,7 +162,7 @@
         点评和打分都将是其他网友的参考依据，并影响该商户在榜单中的排名。请发布真实、客观的个人消费体验评价。如您遇到威逼、利诱及优惠等干扰而发布的点评或并非本人体验的虚假、恶意点评则打分视为违规。
     </div>
 
-
+    </form>
 
 
 </div>
@@ -295,11 +313,11 @@
 
 
     function checkform(){
-        if(!$('#pingfen').val()){
+        if(!$('#score').val()){
             alert('打分不能为空');
             return false;
         }
-        if(!$('#content').val()){
+        if(!$('#textarea').val()){
             alert('评分理由不能为空');
             return false;
         }

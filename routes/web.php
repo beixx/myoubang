@@ -14,6 +14,7 @@ Route::get('/', 'IndexController@redirect');
 
 Route::get('/dafen/{name}/{id}', 'IndexController@dafen');
 Route::post('/dingzhi', 'IndexController@dingzhisave');
+Route::post('/savevote', 'IndexController@savevote');
 Route::post('/saveview', 'IndexController@saveview');
 Route::get('/user/{name}/{rand}', 'IndexController@dingzhi');
 

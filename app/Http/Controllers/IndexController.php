@@ -552,20 +552,18 @@ class IndexController extends Controller
     /**
      * 评价的保存
      */
-    public function postSavevote(){
+    public function savevote(){
         $data = array();
-        $city = Input::get('city');
-        $id = Input::get('id');//商家的id
-        $score = Input::get('score');//评分
-        $virtue = Input::get('virtue');//优点
-        $defect = Input::get('defect');//缺点
-        $content = Input::get('content');//总体
-        $user_bill = Input::get('user_bill');//单据证明(数据类型是数组)
-        $photo = Input::get('user_photo');//用户照片(数据类型是数组)
-        $head = Input::get('headimg');//用户头像
-        $username = Input::get('userName');//用户名称
-        $phone = Input::get('phone');//用户名称
-        $price = Input::get('price');//消费金额
+        $city = Request::get('city');
+        $id = Request::get('id');//商家的id
+        $score = Request::get('score');//评分
+        $content = Request::get('content');//总体
+        $user_bill = Request::get('user_bill');//单据证明(数据类型是数组)
+        $photo = Request::get('user_photo');//用户照片(数据类型是数组)
+        $head = Request::get('headimg');//用户头像
+        $username = Request::get('userName');//用户名称
+        $phone = Request::get('phone');//用户名称
+        $price = Request::get('price');//消费金额
         if($score<0){
             $data['type'] = 3;
         }else if($score>=15){
@@ -574,8 +572,6 @@ class IndexController extends Controller
             $data['type'] = 2;
         }
         $data['score'] = $score;
-        $data['merits'] = $virtue;
-        $data['defect'] = $defect;
         $data['totailty'] = $content;
         $data['documentary'] = json_encode($user_bill);
         $data['headimg'] = json_encode($head);
@@ -587,8 +583,8 @@ class IndexController extends Controller
         $data['source'] = 0;
         $data['created'] = time();
         $data['price'] = $price;
-        Yfctenantscommentdetail::insert($data);
-        $url = url('votelist').'/'.$id;
+        DB::table("yfc_tenants_comment_detail")->insert($data);
+        $url = '/detail/'.$id;
         echo '<html>';
         echo '<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>';
         echo "<SCRIPT language=Javascript> alert('打榜成功');
@@ -596,88 +592,6 @@ class IndexController extends Controller
 			</SCRIPT>";
         echo '</html>';
         exit();
-    }
-    /**
-     * 保存图片单据
-     */
-    public function postSavedanju(){
-        $res = array();
-        $imageurls = array();
-        $images = Input::file('photo');
-        if(count($images)){
-            foreach($images as $key=>$v){
-                $realname = $_FILES['photo']['name'][$key];
-                $type = pathinfo($realname, PATHINFO_EXTENSION);
-                $filename="/uploads/shanghu/";
-                $destinationPath=public_path().$filename;
-                $name = md5(date('Y-m-d H:i:s').rand(1,1000)).'.'.$type;
-                $v->move($destinationPath, $name);
-                $imageurl = 'uploads/shanghu'.'/'.$name;
-                $imageurls[] = $imageurl;
-            }
-            $res['list'] = $imageurls;
-            $res['result'] = '00';
-            return json_encode($res);
-        }else{
-            $res['message']='图片上传失败';
-            $res['result']='01';
-            return json_encode($res);
-        }
-    }
-
-    /**
-     * 保存图片单据
-     */
-    public function postSavephoto(){
-        $res = array();
-        $imageurls = array();
-        $images = Input::file('photo');
-        if(count($images)){
-            foreach($images as $key=>$v){
-                $realname = $_FILES['photo']['name'][$key];
-                $type = pathinfo($realname, PATHINFO_EXTENSION);
-                $filename="/uploads/user/";
-                $destinationPath=public_path().$filename;
-                $name = md5(date('Y-m-d H:i:s').rand(1,1000)).'.'.$type;
-                $v->move($destinationPath, $name);
-                $imageurl = 'uploads/user'.'/'.$name;
-                $imageurls[] = $imageurl;
-            }
-            $res['list'] = $imageurls;
-            $res['result'] = '00';
-            return json_encode($res);
-        }else{
-            $res['message']='图片上传失败';
-            $res['result']='01';
-            return json_encode($res);
-        }
-    }
-    /**
-     * 保存用户头像  WLGBZ-D2Y3P-SSBDA-LLPKT-5T6RJ-BZFF7
-     */
-    public function postSaveheadimg(){
-        $res = array();
-        $imageurls = array();
-        $images = Input::file('photo');
-        if(count($images)){
-            foreach($images as $key=>$v){
-                $realname = $_FILES['photo']['name'][$key];
-                $type = pathinfo($realname, PATHINFO_EXTENSION);
-                $filename="/uploads/user/";
-                $destinationPath=public_path().$filename;
-                $name = md5(date('Y-m-d H:i:s').rand(1,1000)).'.'.$type;
-                $v->move($destinationPath, $name);
-                $imageurl = 'uploads/user'.'/'.$name;
-                $imageurls[] = $imageurl;
-            }
-            $res['list'] = $imageurls;
-            $res['result'] = '00';
-            return json_encode($res);
-        }else{
-            $res['message']='图片上传失败';
-            $res['result']='01';
-            return json_encode($res);
-        }
     }
 }
 
