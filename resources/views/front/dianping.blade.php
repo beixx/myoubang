@@ -77,13 +77,8 @@
     <div class="up-pic">
         <div class="title">单据证明</div>
         <div class="pic-box">
-            <div class="pic lft">
-                <div class="close"><a href=""></a> </div>
-                <img src="/images/img1.jpg">
-            </div>
-            <div class="pic lft">
-                <div class="close"><a href=""></a> </div>
-                <img src="/images/img2.jpg">
+            <div class="pic lft ImgRegin">
+
             </div>
             <div class="up lft">
                 <a href="javascript:;" class="file txtCtr lft"><span class="lft fB">+</span><i class="lft">选择文件</i>
@@ -98,13 +93,9 @@
     <div class="up-pic">
         <div class="title">上传照片</div>
         <div class="pic-box">
-            <div class="pic lft">
-                <div class="close"><a href=""></a> </div>
-                <img src="/images/img2.jpg">
-            </div>
-            <div class="pic lft">
-                <div class="close"><a href=""></a> </div>
-                <img src="/images/img2.jpg">
+
+            <div class="pic lft photoRegin">
+
             </div>
             <div class="up lft">
                 <a href="javascript:;" class="file txtCtr lft"><span class="lft fB">+</span><i class="lft">选择文件</i>
@@ -118,6 +109,9 @@
 
     <div class="up-face">
         <div class="title">上传个人头像</div>
+        <div class="pic lft headimgRegin">
+
+        </div>
         <a href="javascript:;" class="file txtCtr lft fB">+
             <input type="file" name="" id="">
         </a>
@@ -144,6 +138,12 @@
 
 
 </div>
+
+<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/template.js"></script>
+<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/zepto.min.js"></script>
+<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/uploadImage.js"></script>
+<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/exif.js"></script>
+
 <script type="text/javascript">
     //模糊搜索商家
     $('#submit').click(function(){
@@ -161,46 +161,6 @@
         var url = "http://www.youbangkeyi.com/index/index?city="+city;
         location.href=url;
     })
-
-    // 打分
-    scale = function (btn, bar, title) {
-        this.btn = document.getElementById(btn);
-        this.bar = document.getElementById(bar);
-        this.title = document.getElementById(title);
-        this.step = this.bar.getElementsByTagName("DIV")[0];
-        this.init();
-    };
-    scale.prototype = {
-        init: function () {
-            var f = this, g = document, b = window, m = Math;
-            f.btn.onmousedown = function (e) {
-                var x = (e || b.event).clientX;
-                var l = this.offsetLeft;
-                var max = f.bar.offsetWidth - this.offsetWidth;
-                g.onmousemove = function (e) {
-                    var thisX = (e || b.event).clientX;
-                    var to = m.min(max, m.max(-2, l + (thisX - x)));
-                    f.btn.style.left = to + 'px';
-                    f.ondrag(m.round(m.max(0, to / max) * 100), to);
-                    b.getSelection ? b.getSelection().removeAllRanges() : g.selection.empty();
-                };
-                g.onmouseup = new Function('this.onmousemove=null');
-            };
-        },
-        ondrag: function (pos, x) {
-            this.step.style.width = Math.max(0, x) + 'px';
-            var tot = parseInt(pos / 1.65 - 30);
-            $("#pingfen").val(tot);
-            if(tot > 0){
-                this.title.innerHTML ='+'+ tot + '';
-            }else{
-                this.title.innerHTML ='<font color="#51c987">'+ tot + '</font>';
-
-            }
-
-        }
-    }
-    new scale('btn0', 'bar0', 'title0');
 
 
 
