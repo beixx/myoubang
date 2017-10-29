@@ -183,7 +183,7 @@ class IndexController extends Controller
     }
 
     public function search($name=''){
-        $this->data['type'] = Request::input("type")=="hunsha" ? 'hunsha':'hunli';
+        $this->data['type'] = Request::input("type")=="sheying" ? 'sheying':'hunli';
         $shoptype = Request::input("type")=="sheying"?'婚纱摄影':'婚礼策划';
         $this->data['city'] = Config::get('city.'.$name,'北京');
         $this->data['pycity'] = $name;

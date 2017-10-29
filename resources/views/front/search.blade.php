@@ -24,8 +24,10 @@
 <header>
     <div class="logo"><a href="http://m.youbangkeyi.com/beijing/sheying"><img src="/images/logo.png"></a></div>
     <div class="search">
-        <input type="text" name="" class="inp" placeholder="搜商家·查排名">
-        <input type="submit" name="" class="btn">
+        <input type="text" name="keyword" class="inp" placeholder="搜商家·查排名">
+        <input type="hidden" name="pycity" value="<?php echo $pycity;?>" />
+        <input type="hidden" name="type" value="<?php echo $type;?>" />
+        <input type="button" name="submit" class="btn">
     </div>
     <div class="city_box" id="gr_zone_ids" data-id="110100">北京</div>
 </header>
@@ -241,7 +243,13 @@
             return false;
         })
 
-
+        //模糊搜索商家
+        $('input[name=submit]').click(function(){
+            var keyword = $('input[name=keyword]').val();
+            var city = $('input[name=pycity]').val();
+            var type = $("input[name=type]").val();
+            location.href="/search/"+city+'?keyword='+keyword+'&type='+type;
+        });
     });
 </script>
 
