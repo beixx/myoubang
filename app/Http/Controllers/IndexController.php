@@ -77,8 +77,8 @@ class IndexController extends Controller
             }
             $countpics = YfcTenantsPic::where('tenantsId',$id)->count();
 
-            $title = $tenants['name'].' _有榜'.$tenants['shoptype'].'行业榜单「第'.$tenants['order_city'].'名」';
-            $desc = $tenants['name'].'在'.$tenants['city'].'地区婚纱摄影行业综合排名第{'.$tenants['order_city'].'}名，该商户在品牌榜单中排名第{'.$tenants['order_city'].'}名，好评榜单中排名第{'.$tenants['order_city'].'}名，希望能够帮助您了解到{'.$tenants['name'].'}怎么样的问题。';
+            $title = $tenants['city'].$tenants['name'].' | 有榜「第'.$tenants['order_city'].'名」';
+            $desc = $tenants['city'].$tenants['name'].'在《有榜婚嫁行业榜单》综合排名第'.$tenants['order_city'].'名，该商户在品牌榜单中排名第'.$tenants['brand_search_order'].'名，好评榜单中排名第'.$tenants['praise_order'].'名，希望能够帮助您了解到'.$tenants['name'].'怎么样的问题。';
             $keyword = $tenants['name'].', '.$tenants['name'].'怎么样, '.$tenants['name'].'行业第'.$tenants['order_city'].'名';
 
             $this->data = [
@@ -168,15 +168,14 @@ class IndexController extends Controller
 
 
             //echo '<pre>' ; print_r($this->data) ;exit;
-
-            $this->data['title'] = '「有榜'.$shoptype.'榜单」'.$city.$shoptype.'前十名_'.$city.$shoptype.'排名';
-            $this->data['desc'] = '「有榜」依托'.$shoptype.'行业大数据，为您提供实时更新、用户打分的'.$city.$shoptype.'榜单（包含'.$city.$shoptype.'前十名），而且您也可以自由的定制'.$city.$shoptype.'排行榜。';
-            $this->data['keyword'] = $city.$shoptype.'前十名,'.$city.$shoptype.'排行榜,'.$city.$shoptype.'排名 ';
+            $this->data['title'] = $city.'婚纱摄影前十名_'.$city.'婚纱摄影排名TOP100榜单【有榜】';
+            $this->data['desc'] = '「有榜」依托'.$city.'婚纱摄影行业大数据，为您提供实时更新、用户打分的'.$city.'婚纱摄影榜单（包含'.$city.'婚纱摄影前十名），而且您也可以自由的定制'.$city.'婚纱摄影排行榜。';
+            $this->data['keyword'] =$city.'婚纱摄影,'.$city.'婚纱摄影前十名,'.$city.'婚纱摄影排行榜,'.$city.'婚纱摄影排名';
             //echo '<pre>' ; print_r($this->data) ;exit;
             $advtype = $shoptype=='婚纱摄影'?1:0;
 
             $advinfo = YfcAdv::where('type','1')->where('position','1')->where('city', 'like', '%'.$name.'%')->where('advtype',$advtype)->where('endTime','>',time())->first();
-            $this->data['type'] = $shoptype?'sheying':'hunli';
+            $this->data['type'] = $shoptype=='婚纱摄影'?'sheying':'hunli';
             return view('front/index', $this->data);
 
         }

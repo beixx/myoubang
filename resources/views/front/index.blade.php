@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php //echo $type ;exit;?><!DOCTYPE html>
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
@@ -40,8 +40,8 @@
     <div id="leftTabBox" class="tabBox">
         <div class="hd">
             <ul>
-                	<li class="on"><a href="#">婚纱摄影榜单<span></span></a></li>
-					<li><a href="#">婚礼策划榜单<span></span></a></li>
+                	<li class="on"><a href="/<?php echo $pycity;?>/sheying">婚纱摄影榜单<span></span></a></li>
+					<li><a href="/<?php echo $pycity;?>/hunli">婚礼策划榜单<span></span></a></li>
             </ul>
         </div>
         <div class="bd">
@@ -167,7 +167,8 @@
             <div class="sewv">
                 <div class="sewvtop"><em><span id="style">选择风格</span><img src="/images/icon9.png"></em></div>
                 <ul class="sewvbm" multile='1' style="left: -169px">
-                     <li class="xq2">小清新</li>
+                    <?php if($type=='sheying') { ?>
+                            <li class="xq2">小清新</li>
                             <li class="xq2">韩式</li>
                             <li class="xq2">花海</li>
                             <li class="xq2">个性</li>
@@ -185,6 +186,27 @@
                             <li class="xq2">马场</li>
                             <li class="xq2">旅拍</li>
                             <li class="xq2">唯美</li>
+                    <?php } else { ?>
+                            <li class="xq2">小清新11111</li>
+                            <li class="xq2">韩式</li>
+                            <li class="xq2">花海</li>
+                            <li class="xq2">个性</li>
+                            <li class="xq2">城市地标</li>
+                            <li class="xq2">欧美</li>
+                            <li class="xq2">宫殿教堂</li>
+                            <li class="xq2">复古</li>
+                            <li class="xq2">海景</li>
+                            <li class="xq2">性感</li>
+                            <li class="xq2">夜景</li>
+                            <li class="xq2">游艇</li>
+                            <li class="xq2">水下</li>
+                            <li class="xq2">日系</li>
+                            <li class="xq2">中国风</li>
+                            <li class="xq2">马场</li>
+                            <li class="xq2">旅拍</li>
+                            <li class="xq2">唯美</li>
+                    <?php } ?>
+
                     <div class='btn txtCtr'>
                         <a id='style_btn' href='javascript:;'>确定</a>
                     </div>

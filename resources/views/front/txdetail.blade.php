@@ -89,7 +89,7 @@
 </div>
 
 <div class="tel-box txtCtr">
-    <a href="tel:13588886666" class="tel lft"><em></em>打电话</a>
+    <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'18500905723';?>" class="tel lft"><em></em>打电话</a>
     <a href="javascript:" class="ask rgt down"><em></em>咨询套餐</a>
 </div>
 <div class="bgDiv"></div>
