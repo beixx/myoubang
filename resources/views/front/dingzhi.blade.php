@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title>推荐系统榜单</title>
+    <title><?php echo $cname;?>专属榜单</title>
     <meta name="viewport"  content="width=device-width,user-scalable=no">
     <meta name="copyright" content="">
     <meta name="Keywords" content="">
@@ -21,10 +21,8 @@
     <div class="share"></div>
 </header>
 <div class="hi">
-    <h3>Hi，红色喇叭花：请查看您的专属榜单！</h3>
+    <h3>Hi，<?php echo $cname;?>：请查看您的专属榜单！</h3>
 </div>
-
-
 <div class="tabBox">
     <div class="bd">
         <div class="list_box showmore" pagesize="5">
@@ -34,20 +32,20 @@
                 <div class="huiyuan"></div>
                 <?php } ?>
                 <div class="num_txt">
-                    <div class="num n1 fa txtCtr">
-                        <em class="<?php echo $v['isVip']==2?"blue":'';?>"><?php echo $v['order_city'];?></em>
+                    <div class="num fa txtCtr">
+                        <?php echo $k +1;?><em class="<?php echo $v['isVip']==2?"blue":'';?>">TOP</em>
                     </div>
                     <div class="tit_box">
                         <div class="title"><a href="/detail/<?php echo $v['id'];?>"><?php echo $v['name']?></a></div>
-                        <div class="txt"><span>人均：¥<?php echo $v['person_price'];?></span><span>|</span><span><?php echo $v['address'];?></span></div>
+                        <div class="txt"><span>人均：¥<?php echo $v['person_price'];?></span><span>|</span><span>竞争指数:<?php echo $v['heat_index'];?></span></div>
                     </div>
                 </div>
                 <?php if($v['isVip'] == 1) { ?>
                 <div class="pic txtCtr">
                     <?php foreach($v['taoxi'] as $v2) { ?>
                     <div class="img">
-                        <a href="/detail/<?php echo $v['id'].'/'.$v2['id'];?>">
-                            <img class="lazy" src="/images/grey.gif" data-original="http://img2.youbangkeyi.com<?php echo $v2['cover'][0];?>">
+                        <a class="suolv" href="/detail/<?php echo $v['id'].'/'.$v2['id'];?>">
+                            <span><img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/225/q/75|imageslim"></span>
                         </a>
                     </div>
                     <?php } ?>
@@ -58,7 +56,7 @@
                     <?php if(!empty($v['taoxi'][0])) { ?>
                     <div class="vipimg">
                         <a href="/detail/<?php echo $v['id'].'/'.$v['taoxi'][0]['id'];?>">
-                            <img class="lazy" src="/images/grey.gif" data-original="http://img2.youbangkeyi.com<?php echo $v['taoxi'][0]['cover'][0];?>">
+                            <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v['taoxi'][0]['cover'][0];?>">
                         </a>
                         <p class="title txtLft"><?php echo $v['taoxi'][0]['setName'];?></p>
                         <div class="price txtLft"><span class="red fa">¥<?php echo $v['taoxi'][0]['currentPrice'];?></span><del class="fa">¥<?php echo $v['taoxi'][0]['price'];?></del></div>

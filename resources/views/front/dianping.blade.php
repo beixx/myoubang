@@ -43,13 +43,12 @@
         {{ csrf_field() }}
         <input type="hidden" name="city" id="city" value="{{$city}}">
     <div class="shop_box view" style="padding-bottom:0rem;">
-        <div class="huiyuan"></div>
         <div class="titdp">店铺信息</div>
         <div class="txt-box">
             <h1><?php echo $tenants['name']?></h1>
             <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
-            <div class="num n6 fa txtCtr">
-                <em class="blue"><?php echo $tenants['order_city'];?></em>
+            <div class="num fa txtCtr">
+                <?php echo $tenants['order_city'];?><em class="blue">TOP</em>
             </div>
         </div>
     </div>
@@ -82,8 +81,12 @@
     <div class="up-pic">
         <div class="title">单据证明</div>
         <div class="pic-box">
-            <div class="pic-box" style="width:910px;" id="ImgRegin">
-
+            <div class="pic-box" style="width:100%;" id="ImgRegin">
+            <div class="up lft">
+                <a href="javascript:;" class="file txtCtr lft"><span class="lft fB">+</span><i class="lft">选择文件</i>
+                    <input type="file" name="" id="photo_file" type="file" multiple="multiple"  onchange="SeleImg(this);" >
+                </a>
+            </div>
             </div>
             <script type="text/html" id="ImgTemp">
                 @{{each list}}
@@ -95,11 +98,6 @@
                 </div>
                 @{{/each}}
             </script>
-            <div class="up lft">
-                <a href="javascript:;" class="file txtCtr lft"><span class="lft fB">+</span><i class="lft">选择文件</i>
-                    <input type="file" name="" id="photo_file" type="file" multiple="multiple"  onchange="SeleImg(this);" >
-                </a>
-            </div>
         </div>
 
         <div class="tip">为了能够证明真实性，请您上传单据，图片不超过1M</div>
@@ -109,8 +107,12 @@
         <div class="title">上传照片</div>
         <div class="pic-box">
 
-            <div class="pic-box" style="width:910px;" id="photoRegin">
-
+            <div class="pic-box" style="width:100%;" id="photoRegin">
+            <div class="up lft">
+                <a href="javascript:;" class="file txtCtr lft"><span class="lft fB">+</span><i class="lft">选择文件</i>
+                    <input type="file" id="photo_file" type="file" multiple="multiple"  onchange="SelePhoto(this);">
+                </a>
+            </div>
 
             </div>
             <script type="text/html" id="photoTemp">
@@ -121,11 +123,6 @@
                 </div>
                 @{{/each}}
             </script>
-            <div class="up lft">
-                <a href="javascript:;" class="file txtCtr lft"><span class="lft fB">+</span><i class="lft">选择文件</i>
-                    <input type="file" id="photo_file" type="file" multiple="multiple"  onchange="SelePhoto(this);">
-                </a>
-            </div>
         </div>
 
         <div class="tip">为了能够证明真实性，请您上传单据，图片不超过1M</div>
