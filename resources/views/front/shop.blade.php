@@ -155,9 +155,8 @@
         </div>
         <script type="text/javascript">jQuery(".TxtBox").slide({trigger:"click"});</script>
     </div> </div>
+<?php if($countpics >0 ) { ?>
 <div class="case_box">
-
-
     <div class="title">客片欣赏<a href="/kplist/<?php echo $tenants['id'];?>">全部<span class="fa"><?php echo $countpics;?></span>个案例 ></a></div>
 
     <div id="picScroll" class="picScroll txtCtr">
@@ -189,7 +188,9 @@
         });
     </script>
 </div>
+<?php } ?>
 
+<?php if($countsets >0 ) { ?>
 <div class="jxtc_box">
     <div class="title">精选套餐<a href="/txlist/<?php echo $tenants['id'];?>">全部<span class="fa"><?php echo $countsets;?></span>个案例 ></a></div>
     <ul>
@@ -211,6 +212,7 @@
         <?php } ?>
     </ul>
 </div>
+<?php } ?>
 <div class="comment_list">
             <div class="title dafen"><a href="#">网友打分<span style="font-size:0.6rem;background:#FFF;">（<?php echo intval($tenantssort['comments']);?>）</span><em></em></a></div>
                 <div class="shengji">打榜频词功能届时上线！<br><p>系统升级中，网友打榜内容暂时无法展示！</p></div>
