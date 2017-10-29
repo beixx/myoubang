@@ -2,8 +2,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Helper\Msg;
 use App\Http\Models\YfcAdv;
+use App\Http\Models\YfcStyle;
 use App\Http\Models\YfcTenants;
 use App\Http\Models\YfcTenantsPic;
 use App\Http\Models\YfcTenantsSet;
@@ -118,6 +118,7 @@ class IndexController extends Controller
             $index = ($page-1)*20;
 
             $this->data['tenants'] = YfcTenants::where('city', 'like', '%'.$city.'%')
+                ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
                 ->where('shoptype',$shoptype)
                 ->where('spread','!=','2')
                 ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
@@ -125,6 +126,7 @@ class IndexController extends Controller
                 ->orderBy('order_city','asc')->get()->toArray();
 
             $spread = YfcTenants::where('city', 'like', '%'.$city.'%')
+                ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
                 ->where('shoptype',$shoptype)
                 ->where('spread','=','2')
                 ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
@@ -185,6 +187,7 @@ class IndexController extends Controller
         $keyword = Request::get('keyword','');
 
         $this->data['tenants'] = YfcTenants::where('city', 'like', '%'.$this->data['city'].'%')
+            ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
             ->where('shoptype',$shoptype)
             ->where('name','like',"%".$keyword."%")
             ->where('spread','!=','2')
@@ -222,48 +225,6 @@ class IndexController extends Controller
         $this->data['title'] = $keyword.'在'.$this->data['city'].'的搜索结果-有榜';
 
         return view("front/search",$this->data);
-    }
-
-
-    public function taoxi($tid = 0){
-        $tenantsinfo = Yfctenants::where('id',$tid)->first();
-        $tenantsId = $tid;
-        $name = $tenantsinfo->name;
-        $city = $tenantsinfo->city;
-        $pycity = Config::get('city.'.$city,'beijing');
-        $phone = $tenantsinfo->phone;
-        $info = Yfctenantsset::where('id',$id)->first();
-        $txname = $info->setName;
-        $remmends = Yfctenantsset::where('id','!=',$id)->where('tenantsId',$tenantsId)->skip(0)->take(8)->get();
-        if(count($remmends)){
-            foreach($remmends as $key=>$v){
-                if($v->cover){
-                    $v->cover = json_decode($v->cover,true);
-                }
-                if($v->picDetail){
-                    $v->picDetail = json_decode($v->picDetail,true);
-                }
-                if($v->kind){
-                    $v->kind = json_decode($v->kind,true);
-                }
-                $remmends[$key] = $v;
-            }
-        }
-        if($info->cover){
-            $info->cover = json_decode($info->cover,true);
-        }
-        if($info->picDetail){
-            $info->picDetail = json_decode($info->picDetail,true);
-        }
-        if($info->kind){
-            $info->kind = json_decode($info->kind,true);
-        }
-        $shoptype = $tenantsinfo->shoptype;
-        $dbtenants = Yfctenants::where('city', 'like', '%'.$city.'%')->where('shoptype',$shoptype)->skip(0)->take(50)->orderBy('order_city','asc')->get();
-        $title =  $txname.' _'.$name.'-有榜 ';
-        $desc = '通过有榜预定'.$txname.'原价'.$info->price.'，现价只需'.$info->currentPrice.'，赶快预定，机会难得！';
-        $keyword = $txname;
-        return View::make('front.detailtaoxi')->with('dbtenants',$dbtenants)->with('title',$title)->with('desc',$desc)->with('keyword',$keyword)->with('pycity',$pycity)->with('tenantsId',$tenantsId)->with('city',$city)->with('tenantsinfo',$tenantsinfo)->with('txname',$txname)->with('phone',$phone)->with('name',$name)->with('info',$info)->with('remmends',$remmends);
     }
 
 
@@ -451,5 +412,113 @@ class IndexController extends Controller
         return view("front/txdetail",$this->data);
     }
 
+    public function dingzhi($name , $id = ''){
+        $sty = Request::get('style','');
+        $pyname = $name;
+        $city = Config::get('city.'.$name,'北京');
+        $style = explode(',',$sty);
+        $cname = Request::get('name','');
+        $price = Request::get('budget','');
+        $minprice = ($price-2000) ? ($price-2000) : 0;
+        $maxprice = $price+2000;
+        $shoptype = Request::get('customized_name','婚纱摄影');
+
+        $styles = YfcStyle::whereIn('name',$style)->select('tenantsId')->get();
+
+        $this->data['city'] = $city;
+        $ids = [];
+        if(!empty($style[0])) {
+            foreach($styles as $v){
+                $ids[] = $v['tenantsId'];
+            }
+        }
+        else {
+            $ids = [0];
+        }
+        $ids = array_unique($ids);
+        $this->data['tenants'] = YfcTenants::where('city', 'like', '%'.$this->data['city'].'%')
+            ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
+            ->where('shoptype',$shoptype)
+            ->where('person_price','>=',$minprice)
+            ->where('person_price','<=',$maxprice)
+            ->whereIn('yfc_tenants.id',$ids)
+            ->where('spread','!=','2')
+            ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
+            ->limit(100)
+            ->orderBy('order_city','asc')->get()->toArray();
+
+        $tids = [];
+        foreach($this->data['tenants'] as $v) {
+            $tids[] = $v['id'];
+        }
+
+        $taoxi = YfcTenantsSet::select('id','currentPrice','price','tenantsId','setName','cover')
+            ->whereIn('tenantsId',$tids)
+            ->orderBy('recommend','asc')
+            ->limit(1000)->get()->toArray();
+
+        $taoxitmp = [];
+        foreach($taoxi as $kk => $vv) {
+            # 过滤超过三条的套系
+            if(!empty($taoxitmp[$vv['tenantsId']]) && count($taoxitmp[$vv['tenantsId']])>=3){
+                continue;
+            }
+            if($vv['cover']){
+                $vv['cover'] = json_decode($vv['cover'],true);
+            }
+            $taoxitmp[$vv['tenantsId']][] = $vv;
+        }
+
+        foreach($this->data['tenants'] as $k => $v) {
+            $this->data['tenants'][$k]['taoxi'] = empty($taoxitmp[$v['id']]) ? [] : $taoxitmp[$v['id']];
+        }
+        $this->data['title'] = $city.'的'.$shoptype.'榜单定制页-有榜';
+
+        return view("front/dingzhi",$this->data);
+    }
+
+    public function dingzhisave(){
+        $res = array();
+        $data = array();
+        $id = Request::get('id','0');
+        $customized_name = Request::get('customized_name');
+        $style = Request::get('style');
+        $budget = Request::get('budget');
+        $phone = Request::get('phone');
+        $name = Request::get('name');
+        $city = Request::get('city');
+        $linkurl = Request::get('linkurl');
+        if($customized_name){
+            $data['customized_name'] = $customized_name;
+        }
+        if($style){
+            $data['style'] = $style;
+        }
+        if($budget){
+            $data['budget'] = $budget;
+        }
+        if($phone){
+            $data['phone'] = $phone;
+        }
+        if($name){
+            $data['name'] = $name;
+        }
+        if($city){
+            $data['city'] = $city;
+        }
+        if($linkurl){
+            $data['linkurl'] = $linkurl;
+        }
+        $data['visitState'] = 2;
+
+        $created_at = date('Y-m-d H:i:s',time());
+        $data['created_at'] = $created_at;
+
+        $result = DB::table("yfc_customized")->insert($data);
+        $res['result'] = '00';
+
+        return json_encode($res);
+
+    }
 }
 

@@ -10,8 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('/', 'IndexController@redirect');
+Route::post('/dingzhi', 'IndexController@dingzhisave');
+Route::get('/user/{name}/{rand}', 'IndexController@dingzhi');
 
 Route::get('/search/{city}', 'IndexController@search');
 Route::get('/kpdetail/{id}', 'IndexController@kpdetail');
