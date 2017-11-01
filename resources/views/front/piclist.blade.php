@@ -8,11 +8,11 @@
     <meta name="Keywords" content="">
     <meta name="description" content="">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="/js/jquery-2.1.1.js"></script>
-    <script type="text/javascript" src="/js/jquery.SuperSlide.2.1.1.js"></script>
-    <script src="/js/TouchSlide.1.1.js"></script>
-    <script type="text/javascript" src="/js/more.js"></script>
-    <script type="text/javascript" src="/js/foot.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
     <style type="text/css">body{/*padding-top: 2.5rem;*/}.case_box{position:initial;float: left;margin-bottom: 2.5rem;}.case_box .picScroll .bd .img em{z-index: initial;}</style>
 </head>
 <body class="shop-index view">
@@ -31,7 +31,7 @@
         <h1><?php echo $tenants['name'];?></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
         <div class="num fa txtCtr">
-            <?php echo $tenants['order_city'];?><em class="blue">TOP</em>
+            <?php echo $tenants['order_city'];?>
         </div>
     </div>
 </div>

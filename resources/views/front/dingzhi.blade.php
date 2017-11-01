@@ -8,10 +8,10 @@
     <meta name="Keywords" content="">
     <meta name="description" content="">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
-    <script src="/js/main.js"></script>
-    <script type="text/javascript" src="/js/more.js"></script>
-    <script type="text/javascript" src="/js/foot.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
+    <script src="//m1.youbangkeyi.com/js/main.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
     <style type="text/css">body{background: #FFF}.list_box{padding-bottom: 0;}#gr_zone_ids{cursor:pointer}</style>
 </head>
 <body>
@@ -33,11 +33,11 @@
                 <?php } ?>
                 <div class="num_txt">
                     <div class="num fa txtCtr">
-                        <?php echo $k +1;?><em class="<?php echo $v['isVip']==2?"blue":'';?>">TOP</em>
+                        <?php echo $k +1;?>
                     </div>
                     <div class="tit_box">
-                        <div class="title"><a href="/detail/<?php echo $v['id'];?>"><?php echo $v['name']?></a></div>
-                        <div class="txt"><span>人均：¥<?php echo $v['person_price'];?></span><span>|</span><span>竞争指数:<?php echo $v['heat_index'];?></span></div>
+                        <div class="title"><a href="/detail/<?php echo $v['id'];?>"><?php echo $city;?><?php echo $v['name']?></a></div>
+                        <div class="txt"><span>竞争指数：<em class="e0"><?php echo $v['heat_index'];?></em></span><span>|</span><span>人均：¥<?php echo $v['person_price'];?></span></div>
                     </div>
                 </div>
                 <?php if($v['isVip'] == 1) { ?>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="txt">
                         <p class="blue"><?php echo $v['allce'];?></p>
-                        <em>全网好评</em>
+                        <em>全网差评</em>
                     </div>
                 </div>
             </div>

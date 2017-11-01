@@ -8,9 +8,9 @@
     <meta name="Keywords" content="">
     <meta name="description" content="">
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/jquery-2.1.1.js"></script>
+    <script src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script>
     <link rel="stylesheet" href="/css/jquery.range.css" />
-    <script type="text/javascript" src="/js/jquery.range.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.range.js?2017421"></script>
     <script type="text/javascript">
         $(function () {
             $('.single-slider').jRange({
@@ -48,7 +48,7 @@
             <h1><?php echo $tenants['name']?></h1>
             <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
             <div class="num fa txtCtr">
-                <?php echo $tenants['order_city'];?><em class="blue">TOP</em>
+                <?php echo $tenants['order_city'];?>
             </div>
         </div>
     </div>

@@ -10,11 +10,11 @@
     <meta name="Keywords" content="<?php echo $keyword?>">
     <meta name="description" content="<?php echo $desc?>">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="/js/TouchSlide.1.1.js"></script>
-    <script type="text/javascript" src="/js/main.js"></script>
-    <script type="text/javascript" src="/js/foot.js"></script>
-    <script type="text/javascript" src="/js/more.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/main.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
     <style type="text/css">
         body{background: #FFF}
         #gr_zone_ids{cursor:pointer}
@@ -22,19 +22,19 @@
 </head>
 <body>
 <header>
-    <div class="logo"><img src="/images/logo.png"></div>
-    <div class="search">
+<div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
+<a class="zxdh" href="tel:18500905723"></a>
+</header>
+
+<div class="content">
+<div class="logo"><img src="/images/logo.png"></div>
+    <div class="sousj">
+       <div class="search">
         <input type="text" name="keyword" class="inp" placeholder="搜商家·查排名">
         <input type="hidden" name="pycity" value="<?php echo $pycity;?>" />
         <input type="hidden" name="type" value="<?php echo $type;?>" />
         <input type="button" name="submit" class="btn">
     </div>
-    <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
-</header>
-
-<div class="content">
-    <div class="i_img">
-        <a href="/<?php echo $pycity.'/sheying';?>"><img src="http://qnm.hunliji.com/Fl-4VDQTDuYEloZwEGToUONRpzEj?imageView2/1/w/640/h/256"></a>
     </div>
     <div id="leftTabBox" class="tabBox">
         <div class="hd">
@@ -53,7 +53,7 @@
         </div>
         <div class="bd">
             <div class="list_box">
-                <div class="b_time">更新时间：<span class="fa">2017-02-24  09:22:35</span><span class="guize"><a href="/guize.html">榜单规则</a></span></div>
+                <div class="b_time">更新时间：<span class="fa">2017-10-29</span><span class="guize"><a href="/guize.html">榜单规则</a></span></div>
                 <section class="showmore" pagesize="5">
                     <?php if(isset($spread['name'])) { ?>
                     <div class="pic_box">
@@ -62,11 +62,11 @@
                         <?php } ?>
                         <div class="num_txt">
                             <div class="num fa txtCtr">
-                                <?php echo $spread['order_city'];?><em class="<?php echo $spread['isVip']==2?"blue":'';?>">TOP</em>
+                                <?php echo $spread['order_city'];?>
                             </div>
                             <div class="tit_box">
                                 <div class="title"><a href="/detail/<?php echo $spread['id'];?>"><?php echo $spread['name']?></a></div>
-                                <div class="txt"><span>人均：¥<?php echo $spread['person_price'];?></span><span>|</span><span>竞争指数:<?php echo $spread['heat_index'];?></span></div>
+                                <div class="txt"><span>竞争指数：<em class="e0"><?php echo $spread['heat_index'];?></em></span><span>|</span><span>人均：¥<?php echo $spread['person_price'];?></span></div>
                             </div>
                         </div>
                         <div class="vippic txtCtr">
@@ -89,7 +89,7 @@
                             </div>
                             <div class="txt">
                                 <p class="blue"><?php echo $spread['allce'];?></p>
-                                <em>全网好评</em>
+                                <em>全网差评</em>
                             </div>
                         </div>
                     </div>
@@ -101,11 +101,11 @@
                         <?php } ?>
                         <div class="num_txt">
                             <div class="num fa txtCtr">
-                                <?php echo $v['order_city'];?><em class="<?php echo $v['isVip']==2?"blue":'';?>">TOP</em>
+                                <?php echo $v['order_city'];?>
                             </div>
                             <div class="tit_box">
                                 <div class="title"><a href="/detail/<?php echo $v['id'];?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span>人均：¥<?php echo $v['person_price'];?></span><span>|</span><span>竞争指数:<?php echo $v['heat_index'];?></span></div>
+                                <div class="txt"><span>竞争指数：<em class="e0"><?php echo $v['heat_index'];?></em></span><span>|</span><span>人均：¥<?php echo $v['person_price'];?></span></div>
                             </div>
                         </div>
                         <?php if($v['isVip'] == 1) { ?>
@@ -143,7 +143,7 @@
                             </div>
                             <div class="txt">
                                 <p class="blue"><?php echo $v['allce'];?></p>
-                                <em>全网好评</em>
+                                <em>全网差评</em>
                             </div>
                         </div>
                     </div>

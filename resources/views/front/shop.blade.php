@@ -8,11 +8,12 @@
     <meta name="Keywords" content="<?php echo $keyword;?>">
     <meta name="description" content="<?php echo $desc;?>">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="/js/jquery-2.1.1.js"></script>
-    <script type="text/javascript" src="/js/jquery.SuperSlide.2.1.1.js"></script>
-    <script src="/js/TouchSlide.1.1.js"></script>
-    <script type="text/javascript" src="/js/more.js"></script>
-    <script type="text/javascript" src="/js/foot.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/chart.meter.js"></script>
     <style type="text/css">body{background:#f0f0f0}</style>
 </head>
 <body class="shop-index">
@@ -71,8 +72,7 @@
 
 <div class="info-box">
     <div class="data">
-        <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：2017-10-24</span></div>
-        <script type="text/javascript" src="/js/chart.meter.js"></script>
+        <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：2017-10-29</span></div>
         <canvas id="meter" style=" width:13.5rem;margin-left:2.6rem"></canvas>
         <script type="text/javascript">
             window.onload = function(){
@@ -134,7 +134,7 @@
 </div>
 <div class="info-box">
     <div class="data-chart">
-        <div class="titleqs"><i>数据趋势</i><span class="fa">更新时间：2017-10-24</span></div>
+        <div class="titleqs"><i>数据趋势</i><span class="fa">更新时间：2017-10-29</span></div>
 
         <div class="TxtBox">
             <div class="tit hd">
@@ -271,6 +271,13 @@
                     width: 1,
                     type: 'solid'
                 }},
+                axisLabel : {
+                    textStyle: {
+                        color: '#BBBBBB',
+                        fontFamily: 'verdana',
+                        fontSize: 10,
+                        fontStyle: 'normal',
+                    }  },
                 splitArea : {show : false},
                 data : [
                     <?php if(isset($tenantssortviewcomment) && count($tenantssortviewcomment)){
@@ -386,6 +393,13 @@
                     width: 1,
                     type: 'solid'
                 }},
+            axisLabel : {
+                    textStyle: {
+                        color: '#BBBBBB',
+                        fontFamily: 'verdana',
+                        fontSize: 10,
+                        fontStyle: 'normal',
+                    }  },
                 splitArea : {show : false},
                 data : [
                     <?php if(isset($tenantssortview) && count($tenantssortview)){

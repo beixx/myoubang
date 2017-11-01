@@ -8,11 +8,11 @@
     <meta name="Keywords" content="">
     <meta name="description" content="">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="/js/jquery-2.1.1.js"></script>
-    <script type="text/javascript" src="/js/jquery.SuperSlide.2.1.1.js"></script>
-    <script src="/js/TouchSlide.1.1.js"></script>
-    <script type="text/javascript" src="/js/more.js"></script>
-    <script type="text/javascript" src="/js/foot.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
     <style type="text/css">body{background: #f0f0f0}</style>
 </head>
 <body class="shop-index view">
@@ -31,7 +31,7 @@
         <h1><?php echo $tenants['name']?></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
         <div class="num fa txtCtr">
-            <?php echo $tenants['order_city'];?><em class="blue">TOP</em>
+            <?php echo $tenants['order_city'];?>
         </div>
     </div>
 </div>
@@ -63,7 +63,7 @@
 <div class="more txtCtr">点击加载更多套系</div>
 
 <div class="tel-box txtCtr">
-    <a href="tel:13588886666" class="tel lft"><em></em>打电话</a>
+    <a href="tel:18500905723" class="tel lft"><em></em>打电话</a>
     <a href="javascript:" class="ask rgt down"><em></em>咨询套餐</a>
 </div>
 <div class="bgDiv"></div>
