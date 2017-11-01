@@ -283,9 +283,9 @@
                     <?php if(isset($tenantssortviewcomment) && count($tenantssortviewcomment)){
                     $len=count($tenantssortviewcomment)-1;foreach($tenantssortviewcomment as $key=>$v){
                         if($len!=$key){
-                            echo '\''.str_replace('-','/',$v['date']).'\',';
+                            echo '\''.substr(str_replace('-','/',$v['date']),5,strlen($v['date'])).'\',';
                         }else{
-                            echo '\''.str_replace('-','/',$v['date']).'\'';
+                            echo '\''.substr(str_replace('-','/',$v['date']),5,strlen($v['date'])).'\'';
                         }
                     }
                 }?>
@@ -406,9 +406,9 @@
                     $len=count($tenantssortview)-1;
                     foreach($tenantssortview as $key=>$v){
                         if($len!=$key){
-                            echo '\''.str_replace('-','/',$v['date']).'\',';
+                            echo '\''.substr(str_replace('-','/',$v['date']),5,strlen($v['date'])).'\',';
                         }else{
-                            echo '\''.str_replace('-','/',$v['date']).'\'';
+                            echo '\''.substr(str_replace('-','/',$v['date']),5,strlen($v['date'])).'\'';
                         }
                     }
                 }?>
