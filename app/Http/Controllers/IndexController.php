@@ -83,7 +83,7 @@ class IndexController extends Controller
             $this->data = [
                 'tenants' => $tenants,
                 'type' => $tenants['shoptype']=='婚纱摄影'?'sheying':'hunli',
-		'title' => $title,
+		        'title' => $title,
                 'desc' => $desc,
                 'keyword' => $keyword,
                 'countsets' => $countsets,
@@ -102,6 +102,12 @@ class IndexController extends Controller
 
 
         }else{
+            if(count(explode('/',$_SERVER['REQUEST_URI'])) == 2 ){
+                $this->data['iscity'] = 1;
+            }
+            else {
+                $this->data['iscity'] = 0;
+            }
             $page = Request::get('page','1');
             $city = Config::get('city.'.$name,'北京');
             $this->data['pycity'] = $name;

@@ -63,7 +63,7 @@ var _hmt = _hmt || [];
         <div class="bd">
             <div class="list_box">
                 <div class="b_time">更新时间：<span class="fa">2017-10-29</span><span class="guize"><a href="/guize.html">榜单规则</a></span></div>
-                <section class="showmore" pagesize="15">
+                <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
                     <?php if(isset($spread['name'])) { ?>
                     <div class="pic_box">
                         <?php if($spread['isVip']==2) { ?>
