@@ -27,16 +27,21 @@
                 alert(aa);
             });
         });
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c803a020b6c4205813b9d1558a2f7ef4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
     </script>
     <style type="text/css">body{background:#f0f0f0}#g1{margin-top:50px;}</style>
 </head>
 <body>
-
 <header>
     <a href="javascript:history.go(-1)" class="pre"></a>
     <div class="txtCtr title">点评打榜</div>
 </header>
-
 <div class="comment">
     <form action="/savevote?r=<?php echo rand();?>" enctype="multipart/form-data" method="post" onSubmit="return checkform();">
         <input type="hidden" name="id" id="id" value="{{$tenants['id']}}">

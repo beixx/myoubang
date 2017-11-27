@@ -80,10 +80,10 @@ class IndexController extends Controller
             $title = $tenants['city'].$tenants['name'].' | 有榜「第'.$tenants['order_city'].'名」';
             $desc = $tenants['city'].$tenants['name'].'在《有榜婚嫁行业榜单》综合排名第'.$tenants['order_city'].'名，该商户在品牌榜单中排名第'.$tenants['brand_search_order'].'名，好评榜单中排名第'.$tenants['praise_order'].'名，希望能够帮助您了解到'.$tenants['name'].'怎么样的问题。';
             $keyword = $tenants['name'].', '.$tenants['name'].'怎么样, '.$tenants['name'].'行业第'.$tenants['order_city'].'名';
-
             $this->data = [
                 'tenants' => $tenants,
-                'title' => $title,
+                'type' => $tenants['shoptype']=='婚纱摄影'?'sheying':'hunli',
+		'title' => $title,
                 'desc' => $desc,
                 'keyword' => $keyword,
                 'countsets' => $countsets,

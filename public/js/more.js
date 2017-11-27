@@ -10,7 +10,7 @@ $(document).ready(function() {
                 }
 
                 $(".showmore").each(function () {
-                    var pagesize = $(this).attr("pagesize") || 10;
+                    var pagesize = $(this).attr("pagesize") || 30;
                     var $children = $(this).children();
                     if ($children.length > pagesize) {
                         for (var i = pagesize; i < $children.length; i++) {

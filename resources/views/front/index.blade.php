@@ -14,7 +14,16 @@
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/main.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
+    <script type="text/javascript" src="/js/more.js"></script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c803a020b6c4205813b9d1558a2f7ef4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
     <style type="text/css">
         body{background: #FFF}
         #gr_zone_ids{cursor:pointer}
@@ -23,11 +32,11 @@
 <body>
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
+<div class="logo"><img width="3rem" height="1.25rem" src="/images/logo.png"></div>
 <a class="zxdh" href="tel:18500905723"></a>
 </header>
 
 <div class="content">
-<div class="logo"><img src="/images/logo.png"></div>
     <div class="sousj">
        <div class="search">
         <input type="text" name="keyword" class="inp" placeholder="搜商家·查排名">
@@ -40,21 +49,21 @@
         <div class="hd">
             <ul>
             <?php if($type=='sheying') { ?>
-                           <li class="on"><a href="/<?php echo $pycity;?>/sheying">婚纱摄影榜单<span></span></a></li>
+                           <li class="on"><a href="/<?php echo $pycity;?>/sheying">婚纱摄影榜单</a></li>
                     <?php } else { ?>
-							<li><a href="/<?php echo $pycity;?>/sheying">婚纱摄影榜单<span></span></a></li>
+							<li><a href="/<?php echo $pycity;?>/sheying">婚纱摄影榜单</a></li>
                     <?php } ?>
                       <?php if($type=='sheying') { ?>
-                          <li ><a href="/<?php echo $pycity;?>/hunli">婚礼策划榜单<span></span></a></li>
+                          <li ><a href="/<?php echo $pycity;?>/hunli">婚礼策划榜单</a></li>
                     <?php } else { ?>
-                          <li class="on"><a href="/<?php echo $pycity;?>/hunli">婚礼策划榜单<span></span></a></li>
+                          <li class="on"><a href="/<?php echo $pycity;?>/hunli">婚礼策划榜单</a></li>
                     <?php } ?>
             </ul>
         </div>
         <div class="bd">
             <div class="list_box">
                 <div class="b_time">更新时间：<span class="fa">2017-10-29</span><span class="guize"><a href="/guize.html">榜单规则</a></span></div>
-                <section class="showmore" pagesize="5">
+                <section class="showmore" pagesize="15">
                     <?php if(isset($spread['name'])) { ?>
                     <div class="pic_box">
                         <?php if($spread['isVip']==2) { ?>

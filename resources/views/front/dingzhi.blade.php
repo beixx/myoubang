@@ -12,6 +12,15 @@
     <script src="//m1.youbangkeyi.com/js/main.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c803a020b6c4205813b9d1558a2f7ef4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
     <style type="text/css">body{background: #FFF}.list_box{padding-bottom: 0;}#gr_zone_ids{cursor:pointer}</style>
 </head>
 <body>

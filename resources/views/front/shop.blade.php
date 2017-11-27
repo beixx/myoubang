@@ -10,17 +10,26 @@
     <link rel="stylesheet" href="/css/style.css">
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
-    <script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/chart.meter.js"></script>
     <style type="text/css">body{background:#f0f0f0}</style>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c803a020b6c4205813b9d1558a2f7ef4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 </head>
 <body class="shop-index">
 <header>
-    <a href="javascript:history.go(-1)" class="pre"></a>
-    <div class="txtCtr title">商户信息</div>
-    <div class="share"></div>
+<div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
+<div class="logo"><a href="/"><img width="3rem" height="1.25rem" src="/images/logo.png"></a></div>
+<a class="zxdh" href="tel:18500905723"></a>
 </header>
 <div class="focus_box">
     <?php if($tenants['isVip'] == 2) { ?>
@@ -68,8 +77,15 @@
 		        	<p>好评榜</p>
 		        </span>
 </div>
-
-
+<?php if($tenants['jieshao'] != '') { ?>
+<div class="info-box">
+    <div class="data">
+        <div class="titleqs ppjj"><i>- 品牌故事 -</i></div>
+        <div class="ppsm"><?php echo $tenants['jieshao'];?>
+        </div>
+    </div>
+</div>
+<?php } ?>
 <div class="info-box">
     <div class="data">
         <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：2017-10-29</span></div>
@@ -236,6 +252,57 @@
     </div>
 
 </div>
+<!-- 城市弹出 -->
+<style type="text/css">
+    .layui-layer-title{border-radius: 0.3rem 0.3rem 0 0;padding: 0;margin-top: 0rem;text-align: center;}
+    .layui-layer{border-radius: 0.3rem;overflow: hidden;}
+    .layui-layer-ico{background: url(/js/layer/skin/default/close.png);background-size: 2.75rem;width: 2.75rem;height: 1.45rem}
+    .layui-layer-setwin a{margin-left: 0;}
+    .layui-layer-setwin{right: 8px;top: 8px}
+    .f075{font-size:.75rem;}
+</style>
+<div class="container">
+    <div class="city">
+        <div class="city-list">
+            <div class="current">
+                <span class="city-letter">当前城市</span>
+                <p data-id="110100"><?php echo $city;?></p>
+            </div>
+            <div class="hot">  
+                  <span class="city-letter">华北东北</span>                
+                   <p data-id="110100"> <a href="/beijing/<?php echo $type;?>">北京</a></p>
+                   <p data-id="110101"> <a href="/tianjin/<?php echo $type;?>">天津</a></p>
+                    <p data-id="110102"><a href="/shenyang/<?php echo $type;?>">沈阳</a></p>
+                    <p data-id="110103"><a href="/dalian/<?php echo $type;?>">大连</a></p>
+                    <p data-id="110104"><a href="/haierbin/<?php echo $type;?>">哈尔滨</a></p>
+                    <p data-id="110105"><a href="/shijiazhuang/<?php echo $type;?>">石家庄</a></p>
+                <span class="city-letter">华东地区</span> 
+                   <p data-id="110107"> <a href="/shanghai/<?php echo $type;?>">上海</a></p>
+                   <p data-id="110106"> <a href="/hangzhou/<?php echo $type;?>">杭州</a></p>
+                    <p data-id="110108"><a href="/xiamen/<?php echo $type;?>">厦门</a></p>
+                    <p data-id="110109"><a href="/nanjing/<?php echo $type;?>">南京</a></p>
+                    <p data-id="110110"><a href="/suzhou/<?php echo $type;?>">苏州</a></p>
+                    <p data-id="110111"><a href="/wuxi/<?php echo $type;?>">无锡</a></p>
+                    <p data-id="110112"><a href="/ningbo/<?php echo $type;?>">宁波</a></p>
+                    <p data-id="110113"><a href="/fuzhou/<?php echo $type;?>">福州</a></p>
+                    <p data-id="110114"><a href="/qingdao/<?php echo $type;?>">青岛</a></p>
+                    <p data-id="110115"><a href="/hefei/<?php echo $type;?>">合肥</a></p>
+                <span class="city-letter">中部西部</span> 
+                    <p data-id="110116"><a href="/chengdu/<?php echo $type;?>">成都</a></p>
+                    <p data-id="110117"><a href="/chongqing/<?php echo $type;?>">重庆</a></p>
+                    <p data-id="110118"><a href="/changsha/<?php echo $type;?>">长沙</a></p>
+                    <p data-id="110119"><a href="/zhengzhou/<?php echo $type;?>">郑州</a></p>
+                    <p data-id="110120"><a href="/xian/<?php echo $type;?>">西安</a></p>
+                    <p data-id="110121"><a href="/wuhan/<?php echo $type;?>">武汉</a></p>
+                <span class="city-letter">华南地区</span> 
+                   <p data-id="110122"> <a href="/guangzhou/<?php echo $type;?>">广州</a></p>
+                    <p data-id="110123"><a href="/shenzhen/<?php echo $type;?>">深圳</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/city.js"></script>
+<script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
 <script type="text/javascript">
 
