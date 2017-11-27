@@ -124,13 +124,24 @@ class IndexController extends Controller
             $size = 100;
             $index = ($page-1)*20;
 
-            $this->data['tenants'] = YfcTenants::where('city', 'like', '%'.$city.'%')
-                ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
-                ->where('shoptype',$shoptype)
-                ->where('spread','!=','2')
-                ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
-                ->skip($index)->take($size)
-                ->orderBy('order_city','asc')->get()->toArray();
+            if($this->data['iscity'] == 1) {
+                $this->data['tenants'] = YfcTenants::where('city', 'like', '%'.$city.'%')
+                    ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
+                    ->where('shoptype',$shoptype)
+                    ->where('spread','!=','2')
+                    ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
+                    ->limit(10)
+                    ->orderBy('order_city','asc')->get()->toArray();
+            }
+            else {
+                $this->data['tenants'] = YfcTenants::where('city', 'like', '%'.$city.'%')
+                    ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
+                    ->where('shoptype',$shoptype)
+                    ->where('spread','!=','2')
+                    ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
+                    ->skip($index)->take($size)
+                    ->orderBy('order_city','asc')->get()->toArray();
+            }
 
             $spread = YfcTenants::where('city', 'like', '%'.$city.'%')
                 ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
