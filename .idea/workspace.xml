@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78c33a0d-54cb-4cf0-8b6a-947adcf68385" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" />
     </list>
     <ignored path="myoubang.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,14 +34,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.125">
-              <caret line="183" column="36" selection-start-line="183" selection-start-column="36" selection-end-line="183" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.28061223">
+              <caret line="182" column="18" selection-start-line="182" selection-start-column="18" selection-end-line="182" selection-end-column="18" />
               <folding>
                 <element signature="e#39#75#0#PHP" expanded="true" />
-                <marker date="1511788357057" expanded="true" signature="22942:23002" placeholder="..." />
+                <marker date="1511788719486" expanded="true" signature="23320:23380" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -81,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2798574">
-              <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
+            <state vertical-scroll-proportion="-7.0416665">
+              <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -140,8 +138,8 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/front/dianping.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/shop.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
         <option value="$PROJECT_DIR$/resources/views/front/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
       </list>
     </option>
   </component>
@@ -544,7 +542,7 @@
           <caret line="583" column="34" selection-start-line="583" selection-start-column="34" selection-end-line="583" selection-end-column="34" />
           <folding>
             <element signature="e#39#75#0#PHP" expanded="true" />
-            <marker date="1511788357057" expanded="true" signature="22942:23002" placeholder="..." />
+            <marker date="1511788719486" expanded="true" signature="23320:23380" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -613,7 +611,7 @@
           <caret line="583" column="34" selection-start-line="583" selection-start-column="34" selection-end-line="583" selection-end-column="34" />
           <folding>
             <element signature="e#39#75#0#PHP" expanded="true" />
-            <marker date="1511788357057" expanded="true" signature="22942:23002" placeholder="..." />
+            <marker date="1511788719486" expanded="true" signature="23320:23380" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -681,7 +679,7 @@
           <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
           <folding>
             <element signature="e#39#75#0#PHP" expanded="true" />
-            <marker date="1511788357057" expanded="true" signature="22942:23002" placeholder="..." />
+            <marker date="1511788719486" expanded="true" signature="23320:23380" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -905,22 +903,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.125">
-          <caret line="183" column="36" selection-start-line="183" selection-start-column="36" selection-end-line="183" selection-end-column="36" />
-          <folding>
-            <element signature="e#39#75#0#PHP" expanded="true" />
-            <marker date="1511788357057" expanded="true" signature="22942:23002" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-7.0416665">
+          <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2798574">
-          <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
-          <folding />
+        <state vertical-scroll-proportion="0.28061223">
+          <caret line="182" column="18" selection-start-line="182" selection-start-column="18" selection-end-line="182" selection-end-column="18" />
+          <folding>
+            <element signature="e#39#75#0#PHP" expanded="true" />
+            <marker date="1511788719486" expanded="true" signature="23320:23380" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

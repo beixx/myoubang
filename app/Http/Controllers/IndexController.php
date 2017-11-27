@@ -175,9 +175,16 @@ class IndexController extends Controller
 
 
             //echo '<pre>' ; print_r($this->data) ;exit;
-            $this->data['title'] = $city.'婚纱摄影前十名_'.$city.'婚纱摄影排名TOP100榜单【有榜】';
-            $this->data['desc'] = '「有榜」依托'.$city.'婚纱摄影行业大数据，为您提供实时更新、用户打分的'.$city.'婚纱摄影榜单（包含'.$city.'婚纱摄影前十名），而且您也可以自由的定制'.$city.'婚纱摄影排行榜。';
-            $this->data['keyword'] =$city.'婚纱摄影,'.$city.'婚纱摄影前十名,'.$city.'婚纱摄影排行榜,'.$city.'婚纱摄影排名';
+            if($this->data['iscity']==1) {
+                $this->data['title'] = '【有榜网 Youbangkeyi.com】'.$city.' - 商家数据查询平台';
+                $this->data['desc'] = '有榜网广州站，为您提供'.$city.'商家数据查询、'.$city.'婚纱摄影榜单以及'.$city.'婚礼策划榜单等，并且可以根据自己的需求定制专属榜单，充分的辅助您做决策。';
+                $this->data['keyword'] ='有榜网,有榜网'.$city.'站';
+            }
+            else {
+                $this->data['title'] = $city.'婚纱摄影前十名_'.$city.'婚纱摄影排名TOP100榜单【有榜】';
+                $this->data['desc'] = '「有榜」依托'.$city.'婚纱摄影行业大数据，为您提供实时更新、用户打分的'.$city.'婚纱摄影榜单（包含'.$city.'婚纱摄影前十名），而且您也可以自由的定制'.$city.'婚纱摄影排行榜。';
+                $this->data['keyword'] =$city.'婚纱摄影,'.$city.'婚纱摄影前十名,'.$city.'婚纱摄影排行榜,'.$city.'婚纱摄影排名';
+            }
             //echo '<pre>' ; print_r($this->data) ;exit;
             $advtype = $shoptype=='婚纱摄影'?1:0;
 
