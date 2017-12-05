@@ -181,13 +181,13 @@ var _hmt = _hmt || [];
             <p><?php echo $v['picName']?></p>
             <span class="anli_month">12月01日 09:44</span>
                     <a class="suolvk" href="/kpdetail/<?php echo $v['id']?>">
-
-                        <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
                         <span class="img">
-                            <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?imageView2/1/w/200/h/200/q/75|imageslim" />
-                        </span>
-                        <?php } ?>
+                        <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
 
+                            <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?imageView2/1/w/200/h/200/q/75|imageslim" />
+
+                        <?php } ?>
+                        </span>
                     </a>
                 </li>
                 <?php } ?>
