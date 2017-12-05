@@ -73,7 +73,7 @@ var _hmt = _hmt || [];
 		        	<p>好评榜</p>
 		        </span>
 </div>
-    <div class="address"><?php echo $tenants['address'];?><em></em></div>
+    <div class="address"><?php echo $tenants['address'];?></div>
 </div></div>
 <?php if($tenants['jieshao'] != '') { ?>
 <div class="info-box mtrem6">

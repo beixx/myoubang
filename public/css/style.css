@@ -604,7 +604,7 @@ text-align: justify;
     color: #FFF;
     font-weight: bold;
     background-color: #f66;
-    padding-top: 0.2rem;
+    padding-top: 0.2rem;height:auto;
     right: 3%;top:18%}
 .view .txt-box .num span{
     font-size: .6rem;

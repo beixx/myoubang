@@ -57,7 +57,9 @@ var _hmt = _hmt || [];
                 <li>
                     <a class="suolvl" href="/kpdetail/<?php echo $v['id'];?>">
                         <span class="img">
-                            <img src="//img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim" />
+                            <?php $v['cover'] = json_decode($v['cover'],true); for($i = 0 ; $i < 9 ;$i ++ ) { if(empty($v['cover'][$i])) { break; }?>
+                            <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?imageView2/1/w/640/h/370/q/75|imageslim" />
+                            <?php } ?>
                         </span>
                     </a>
                     <p><?php echo $v['picName'];?></p>
