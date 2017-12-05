@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Models\DianpingHunqingComments;
+use App\Http\Models\DianpingHunshaComments;
 use App\Http\Models\YfcAdv;
 use App\Http\Models\YfcStyle;
 use App\Http\Models\YfcTenants;
@@ -39,6 +41,27 @@ class IndexController extends Controller
                 return Redirect::to("/");
             }
 
+            if(file_exists(storage_path('logs/tenantinfo'.$tenants->id))){
+                $usercomment = json_decode(file_get_contents(storage_path('logs/tenantinfo'.$tenants->id)),true);
+            }
+            else {
+                if($tenants->shoptype=='婚纱摄影'){
+                    $usercomment = DianpingHunshaComments::instance()->where("shop_url",$tenants->url)->limit(10)->get();
+
+                }else {
+                    $usercomment = DianpingHunqingComments::instance()->where("shop_url",$tenants->url)->limit(10)->get();
+
+                }
+                if(count($usercomment) > 0) {
+                    $usercomment = $usercomment->toArray();
+                    $r = rand(0,count($usercomment)>9?9:count($usercomment));
+                    $usercomment = $usercomment[$r];
+                }else {
+                    $usercomment = [];
+                }
+                file_put_contents(storage_path('logs/tenantinfo'.$tenants->id),json_encode($usercomment));
+            }
+            $this->data['usercomment'] = $usercomment;
             $tenantssort = YfcTenantsSort::where('tenantsid',$id)->first();
             $tenantssortview = YfcTenantsSortview::where('tenantsid',$id)->orderby("date",'asc')->get()->toArray();
             $tenantssortviewcomment = YfcTenantsSortviewComment::where('tenantsid',$id)->orderby("date",'asc')->get()->toArray();

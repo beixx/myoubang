@@ -221,12 +221,14 @@ var _hmt = _hmt || [];
 </div>
 <?php } ?>
 <div class="comment_list">
-            <div class="title dafen">今日点评精选</a><span class="fa">更新时间：2017-10-29</span></div>
+            <div class="title dafen">今日点评精选</a><span class="fa">更新时间：<?php echo Date("Y-m-d")?></span></div>
             <div class="comment_column">
-    <div class="cmt_con cmt_R">
-            <span class="comment_W">三日内上线，敬请期待。</span>
-      <span class="f12p">—「有榜」CEO 卢硕</span>
-</div>
+                <?php if(!empty($usercomment['content'])) { ?>
+                    <div class="cmt_con cmt_R">
+                            <span class="comment_W"><?php echo $usercomment['content'];?></span>
+                      <span class="f12p">—「点评网」<?php echo $usercomment['nick_name'];?></span>
+                </div>
+                <?php } ?>
 </div>
                 <div class="shengji">打榜频词/商家表现能力功能届时上线！</div>
 
