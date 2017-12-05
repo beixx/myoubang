@@ -20,7 +20,7 @@ var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
   hm.src = "https://hm.baidu.com/hm.js?c803a020b6c4205813b9d1558a2f7ef4";
-  var s = document.getElementsByTagName("script")[0]; 
+  var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
@@ -181,9 +181,13 @@ var _hmt = _hmt || [];
             <p><?php echo $v['picName']?></p>
             <span class="anli_month">12月01日 09:44</span>
                     <a class="suolvk" href="/kpdetail/<?php echo $v['id']?>">
+
+                        <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['conver'][$i])) break; ?>
                         <span class="img">
-                            <img src="//img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/200/h/200/q/75|imageslim" />
+                            <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?imageView2/1/w/200/h/200/q/75|imageslim" />
                         </span>
+                        <?php } ?>
+
                     </a>
                 </li>
                 <?php } ?>
@@ -225,7 +229,7 @@ var _hmt = _hmt || [];
 </div>
 </div>
                 <div class="shengji">打榜频词/商家表现能力功能届时上线！</div>
-                
+
             </div>
 <div class="tel-box txtCtr">
     <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'18500905723';?>" class="tel lft"><em></em>打电话</a>
@@ -261,15 +265,15 @@ var _hmt = _hmt || [];
                 <span class="city-letter">当前城市</span>
                 <p data-id="110100"><?php echo $city;?></p>
             </div>
-            <div class="hot">  
-                  <span class="city-letter">华北东北</span>                
+            <div class="hot">
+                  <span class="city-letter">华北东北</span>
                    <p data-id="110100"> <a href="/beijing/<?php echo $type;?>">北京</a></p>
                    <p data-id="110101"> <a href="/tianjin/<?php echo $type;?>">天津</a></p>
                     <p data-id="110102"><a href="/shenyang/<?php echo $type;?>">沈阳</a></p>
                     <p data-id="110103"><a href="/dalian/<?php echo $type;?>">大连</a></p>
                     <p data-id="110104"><a href="/haierbin/<?php echo $type;?>">哈尔滨</a></p>
                     <p data-id="110105"><a href="/shijiazhuang/<?php echo $type;?>">石家庄</a></p>
-                <span class="city-letter">华东地区</span> 
+                <span class="city-letter">华东地区</span>
                    <p data-id="110107"> <a href="/shanghai/<?php echo $type;?>">上海</a></p>
                    <p data-id="110106"> <a href="/hangzhou/<?php echo $type;?>">杭州</a></p>
                     <p data-id="110108"><a href="/xiamen/<?php echo $type;?>">厦门</a></p>
@@ -280,14 +284,14 @@ var _hmt = _hmt || [];
                     <p data-id="110113"><a href="/fuzhou/<?php echo $type;?>">福州</a></p>
                     <p data-id="110114"><a href="/qingdao/<?php echo $type;?>">青岛</a></p>
                     <p data-id="110115"><a href="/hefei/<?php echo $type;?>">合肥</a></p>
-                <span class="city-letter">中部西部</span> 
+                <span class="city-letter">中部西部</span>
                     <p data-id="110116"><a href="/chengdu/<?php echo $type;?>">成都</a></p>
                     <p data-id="110117"><a href="/chongqing/<?php echo $type;?>">重庆</a></p>
                     <p data-id="110118"><a href="/changsha/<?php echo $type;?>">长沙</a></p>
                     <p data-id="110119"><a href="/zhengzhou/<?php echo $type;?>">郑州</a></p>
                     <p data-id="110120"><a href="/xian/<?php echo $type;?>">西安</a></p>
                     <p data-id="110121"><a href="/wuhan/<?php echo $type;?>">武汉</a></p>
-                <span class="city-letter">华南地区</span> 
+                <span class="city-letter">华南地区</span>
                    <p data-id="110122"> <a href="/guangzhou/<?php echo $type;?>">广州</a></p>
                     <p data-id="110123"><a href="/shenzhen/<?php echo $type;?>">深圳</a></p>
             </div>
