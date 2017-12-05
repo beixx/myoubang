@@ -40,7 +40,7 @@ var _hmt = _hmt || [];
         <h1><?php echo $tenants['name'];?></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
         <div class="num fa txtCtr">
-            <?php echo $tenants['order_city'];?>
+            <?php echo $tenants['order_city'];?><span>TOP</span>
         </div>
     </div>
 </div>
@@ -54,10 +54,10 @@ var _hmt = _hmt || [];
         <div class="bd">
             <ul>
                 <?php foreach($pics as $v) {?>
-                <li style="width: 48%;">
+                <li>
                     <a class="suolvl" href="/kpdetail/<?php echo $v['id'];?>">
                         <span class="img">
-                            <img src="//img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/400/h/300/q/75|imageslim" />
+                            <img src="//img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim" />
                         </span>
                     </a>
                     <p><?php echo $v['picName'];?></p>

@@ -25,7 +25,6 @@ var _hmt = _hmt || [];
 })();
 </script>
     <style type="text/css">
-        body{background: #FFF}
         #gr_zone_ids{cursor:pointer}
     </style>
 </head>
@@ -71,7 +70,7 @@ var _hmt = _hmt || [];
                         <?php } ?>
                         <div class="num_txt">
                             <div class="num fa txtCtr">
-                                <?php echo $spread['order_city'];?>
+                                <?php echo $spread['order_city'];?><span>TOP</span>
                             </div>
                             <div class="tit_box">
                                 <div class="title"><a href="/detail/<?php echo $spread['id'];?>"><?php echo $spread['name']?></a></div>
@@ -110,7 +109,7 @@ var _hmt = _hmt || [];
                         <?php } ?>
                         <div class="num_txt">
                             <div class="num fa txtCtr">
-                                <?php echo $v['order_city'];?>
+                                <?php echo $v['order_city'];?><span>TOP</span>
                             </div>
                             <div class="tit_box">
                                 <div class="title"><a href="/detail/<?php echo $v['id'];?>"><?php echo $city;?><?php echo $v['name']?></a></div>

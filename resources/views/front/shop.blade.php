@@ -36,9 +36,6 @@ var _hmt = _hmt || [];
         <div class="huiyuan"></div>
     <?php } ?>
     <div id="focus" class="focus">
-        <div class="hd">
-            <ul></ul>
-        </div>
         <div class="bd">
             <ul>
                 <li class="suolvd"><span><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/600/h/450/q/75|imageslim"/></span></li>
@@ -56,14 +53,13 @@ var _hmt = _hmt || [];
             switchLoad:"_src" //切换加载，真实图片路径为"_src"
         });
     </script>
+<div class="sjkap">
     <div class="txt_info">
         <h1><?php echo $city;?><?php echo $tenants['name'];?></h1>
         <p>人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></p>
         <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?>"><em></em>打榜</a></div>
     </div>
-    <div class="address"><?php echo $tenants['address'];?><em></em></div>
-</div>
-<div class="datas">
+    <div class="datas">
 		        <span class="lft txtCtr c1">
 		            <em>第<i class="fa blue"><?php echo $tenants['order_city'];?></i>名</em>
 		        	<p>综合榜</p>
@@ -77,8 +73,10 @@ var _hmt = _hmt || [];
 		        	<p>好评榜</p>
 		        </span>
 </div>
+    <div class="address"><?php echo $tenants['address'];?><em></em></div>
+</div></div>
 <?php if($tenants['jieshao'] != '') { ?>
-<div class="info-box">
+<div class="info-box mtrem6">
     <div class="data">
         <div class="titleqs ppjj"><i>- 品牌故事 -</i></div>
         <div class="ppsm"><?php echo $tenants['jieshao'];?>
@@ -176,33 +174,22 @@ var _hmt = _hmt || [];
     <div class="title">客片欣赏<a href="/kplist/<?php echo $tenants['id'];?>">全部<span class="fa"><?php echo $countpics;?></span>个案例 ></a></div>
 
     <div id="picScroll" class="picScroll txtCtr">
-        <div class="hd">
-            <ul></ul>
-        </div>
         <div class="bd">
             <ul>
                 <?php foreach($tenantspics as $k => $v){?>
                 <li>
+            <p><?php echo $v['picName']?></p>
+            <span class="anli_month">12月01日 09:44</span>
                     <a class="suolvk" href="/kpdetail/<?php echo $v['id']?>">
                         <span class="img">
-                            <img src="//img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/300/h/225/q/75|imageslim" />
+                            <img src="//img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/200/h/200/q/75|imageslim" />
                         </span>
                     </a>
-                     <p><?php echo $v['picName']?></p>
                 </li>
                 <?php } ?>
-            </ul>
-        </div>
+            </ul>        </div>
     </div>
-    <script type="text/javascript">
-        TouchSlide({
-            slideCell:"#picScroll",
-            titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
-            autoPage:true, //自动分页
-            pnLoop:"false", // 前后按钮不循环
-            switchLoad:"_src" //切换加载，真实图片路径为"_src"
-        });
-    </script>
+	<div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?>">查看全部<span class="fa"><?php echo $countpics;?></span>个案例</a></div>
 </div>
 <?php } ?>
 
@@ -214,24 +201,30 @@ var _hmt = _hmt || [];
         <li>
             <a href="/detail/<?php echo $tenants['id'].'/'.$v['id']?>">
             <div class="suolvt">
-                <span><img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/250/h/187/q/75|imageslim"></span></div>
+                <span><img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim"></span></div>
                 <div class="txt">
                     <h3><?php echo $v['setName'];?></h3>
                     <div class="price fa">
                         <span class="red">¥<?php echo $v['currentPrice']?></span>
                         <del>¥<?php echo $v['price'];?></del>
                     </div>
-                    <div class="text"><?php echo implode('|',$v['kind']);?></div>
                 </div>
             </a>
         </li>
         <?php } ?>
     </ul>
+    <div class="ckqb"><a href="/txlist/<?php echo $tenants['id'];?>">查看全部<span class="fa"><?php echo $countsets;?></span>个精选套系</a></div>
 </div>
 <?php } ?>
 <div class="comment_list">
-            <div class="title dafen"><a href="#">网友打分<span style="font-size:0.6rem;background:#FFF;">（<?php echo intval($tenantssort['comments']);?>）</span><em></em></a></div>
-                <div class="shengji">打榜频词功能届时上线！<br><p>系统升级中，网友打榜内容暂时无法展示！</p></div>
+            <div class="title dafen">今日点评精选</a><span class="fa">更新时间：2017-10-29</span></div>
+            <div class="comment_column">
+    <div class="cmt_con cmt_R">
+            <span class="comment_W">三日内上线，敬请期待。</span>
+      <span class="f12p">—「有榜」CEO 卢硕</span>
+</div>
+</div>
+                <div class="shengji">打榜频词/商家表现能力功能届时上线！</div>
                 
             </div>
 <div class="tel-box txtCtr">

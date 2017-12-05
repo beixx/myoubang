@@ -8,30 +8,37 @@
     <meta name="Keywords" content="<?php echo $keyword;?>">
     <meta name="description" content="<?php echo $desc;?>">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="/js/jquery-2.1.1.js"></script>
-    <script type="text/javascript" src="/js/jquery.SuperSlide.2.1.1.js"></script>
-    <script src="/js/TouchSlide.1.1.js"></script>
-    <script type="text/javascript" src="/js/more.js"></script>
-    <script type="text/javascript" src="/js/foot.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/chart.meter.js"></script>
     <style type="text/css">body{background:#f0f0f0}</style>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c803a020b6c4205813b9d1558a2f7ef4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 </head>
 <body class="shop-index">
 <header>
-    <a href="javascript:history.go(-1)" class="pre"></a>
-    <div class="txtCtr title">商户信息</div>
-    <div class="share"></div>
+<div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
+<div class="logo"><a href="/"><img width="3rem" height="1.25rem" src="/images/logo.png"></a></div>
+<a class="zxdh" href="tel:18500905723"></a>
 </header>
 <div class="focus_box">
     <?php if($tenants['isVip'] == 2) { ?>
         <div class="huiyuan"></div>
     <?php } ?>
     <div id="focus" class="focus">
-        <div class="hd">
-            <ul></ul>
-        </div>
         <div class="bd">
             <ul>
-                <li><a href="#"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>"/></a></li>
+                <li class="suolvd"><span><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/600/h/450/q/75|imageslim"/></span></li>
             </ul>
         </div>
     </div>
@@ -46,14 +53,13 @@
             switchLoad:"_src" //切换加载，真实图片路径为"_src"
         });
     </script>
+<div class="sjkap">
     <div class="txt_info">
-        <h1><?php echo $tenants['name'];?></h1>
+        <h1><?php echo $city;?><?php echo $tenants['name'];?></h1>
         <p>人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></p>
-        <div class="pf txtCtr"><a href=""><em></em>打榜</a></div>
+        <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?>"><em></em>打榜</a></div>
     </div>
-    <div class="address"><?php echo $tenants['address'];?><em></em></div>
-</div>
-<div class="datas">
+    <div class="datas">
 		        <span class="lft txtCtr c1">
 		            <em>第<i class="fa blue"><?php echo $tenants['order_city'];?></i>名</em>
 		        	<p>综合榜</p>
@@ -67,13 +73,21 @@
 		        	<p>好评榜</p>
 		        </span>
 </div>
-
-
+    <div class="address"><?php echo $tenants['address'];?><em></em></div>
+</div></div>
+<?php if($tenants['jieshao'] != '') { ?>
+<div class="info-box mtrem6">
+    <div class="data">
+        <div class="titleqs ppjj"><i>- 品牌故事 -</i></div>
+        <div class="ppsm"><?php echo $tenants['jieshao'];?>
+        </div>
+    </div>
+</div>
+<?php } ?>
 <div class="info-box">
     <div class="data">
-        <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：2017-10-24</span></div>
-        <script type="text/javascript" src="/js/chart.meter.js"></script>
-        <canvas id="meter" style=" width:70%;margin:0 15%;"></canvas>
+        <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：2017-10-29</span></div>
+        <canvas id="meter" style=" width:13.5rem;margin-left:2.6rem"></canvas>
         <script type="text/javascript">
             window.onload = function(){
                 Meter.setOptions({
@@ -134,7 +148,7 @@
 </div>
 <div class="info-box">
     <div class="data-chart">
-        <div class="titleqs"><i>数据趋势</i><span class="fa">更新时间：2017-10-24</span></div>
+        <div class="titleqs"><i>数据趋势</i><span class="fa">更新时间：2017-10-29</span></div>
 
         <div class="TxtBox">
             <div class="tit hd">
@@ -155,68 +169,65 @@
         </div>
         <script type="text/javascript">jQuery(".TxtBox").slide({trigger:"click"});</script>
     </div> </div>
+<?php if($countpics >0 ) { ?>
 <div class="case_box">
-
-
     <div class="title">客片欣赏<a href="/kplist/<?php echo $tenants['id'];?>">全部<span class="fa"><?php echo $countpics;?></span>个案例 ></a></div>
 
     <div id="picScroll" class="picScroll txtCtr">
-        <div class="hd">
-            <ul></ul>
-        </div>
         <div class="bd">
             <ul>
                 <?php foreach($tenantspics as $k => $v){?>
                 <li>
                     <a class="suolvk" href="/kpdetail/<?php echo $v['id']?>">
                         <span class="img">
-                            <img src="//img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>" />
+                            <img src="//img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim" />
                         </span>
-                        <p><?php echo $v['picName']?></p>
                     </a>
+                     <p><?php echo $v['picName']?></p>
                 </li>
                 <?php } ?>
-            </ul>
-        </div>
+            </ul>        </div>
     </div>
-    <script type="text/javascript">
-        TouchSlide({
-            slideCell:"#picScroll",
-            titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
-            autoPage:true, //自动分页
-            pnLoop:"false", // 前后按钮不循环
-            switchLoad:"_src" //切换加载，真实图片路径为"_src"
-        });
-    </script>
+	<div class="ckqb"><a href="/kplist/<?php echo $tenants['id'];?>">查看全部<span class="fa"><?php echo $countpics;?></span>个案例</a></div>
 </div>
+<?php } ?>
 
+<?php if($countsets >0 ) { ?>
 <div class="jxtc_box">
     <div class="title">精选套餐<a href="/txlist/<?php echo $tenants['id'];?>">全部<span class="fa"><?php echo $countsets;?></span>个案例 ></a></div>
     <ul>
         <?php foreach($tenantssets as $k => $v) { ?>
         <li>
             <a href="/detail/<?php echo $tenants['id'].'/'.$v['id']?>">
-                <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>">
+            <div class="suolvt">
+                <span><img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim"></span></div>
                 <div class="txt">
                     <h3><?php echo $v['setName'];?></h3>
                     <div class="price fa">
                         <span class="red">¥<?php echo $v['currentPrice']?></span>
                         <del>¥<?php echo $v['price'];?></del>
                     </div>
-                    <div class="text"><?php echo implode('|',$v['kind']);?></div>
                 </div>
             </a>
         </li>
         <?php } ?>
     </ul>
+    <div class="ckqb"><a href="/txlist/<?php echo $tenants['id'];?>">查看全部<span class="fa"><?php echo $countsets;?></span>个精选套系</a></div>
 </div>
+<?php } ?>
 <div class="comment_list">
-            <div class="title dafen"><a href="#">网友打分<span style="font-size:0.6rem;background:#FFF;">（7382）</span><em></em></a></div>
-                <div class="shengji">打榜频词功能届时上线！<br><p>系统升级中，网友打榜内容暂时无法展示！</p></div>
+            <div class="title dafen">今日点评精选</a><span class="fa">更新时间：2017-10-29</span></div>
+            <div class="comment_column">
+    <div class="cmt_con cmt_R">
+            <span class="comment_W">三日内上线，敬请期待。</span>
+      <span class="f12p">—「有榜」CEO 卢硕</span>
+</div>
+</div>
+                <div class="shengji">打榜频词/商家表现能力功能届时上线！</div>
                 
             </div>
 <div class="tel-box txtCtr">
-    <a href="tel:13588886666" class="tel lft"><em></em>打电话</a>
+    <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'18500905723';?>" class="tel lft"><em></em>打电话</a>
     <a href="javascript:" class="ask rgt down"><em></em>咨询商户</a>
 </div>
 <div class="bgDiv"></div>
@@ -227,11 +238,63 @@
             <span>7天内选片</span><span>15天出精修</span><span>不满意重拍</span><span>无隐形消费</span>
         </div>
         <p>留下您的联系方式以便商户尽快联系你</p>
-        <input type="text" name="" class="input" placeholder="请输入手机号">
-        <input type="submit" name="" class="btn" value="预约看店">
+        <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
+        <input type="text" name="mobile" id="mobile" class="input" placeholder="请输入手机号">
+        <input type="submit" name="wapsubmit" class="btn" value="预约看店">
     </div>
 
 </div>
+<!-- 城市弹出 -->
+<style type="text/css">
+    .layui-layer-title{border-radius: 0.3rem 0.3rem 0 0;padding: 0;margin-top: 0rem;text-align: center;}
+    .layui-layer{border-radius: 0.3rem;overflow: hidden;}
+    .layui-layer-ico{background: url(/js/layer/skin/default/close.png);background-size: 2.75rem;width: 2.75rem;height: 1.45rem}
+    .layui-layer-setwin a{margin-left: 0;}
+    .layui-layer-setwin{right: 8px;top: 8px}
+    .f075{font-size:.75rem;}
+</style>
+<div class="container">
+    <div class="city">
+        <div class="city-list">
+            <div class="current">
+                <span class="city-letter">当前城市</span>
+                <p data-id="110100"><?php echo $city;?></p>
+            </div>
+            <div class="hot">  
+                  <span class="city-letter">华北东北</span>                
+                   <p data-id="110100"> <a href="/beijing/<?php echo $type;?>">北京</a></p>
+                   <p data-id="110101"> <a href="/tianjin/<?php echo $type;?>">天津</a></p>
+                    <p data-id="110102"><a href="/shenyang/<?php echo $type;?>">沈阳</a></p>
+                    <p data-id="110103"><a href="/dalian/<?php echo $type;?>">大连</a></p>
+                    <p data-id="110104"><a href="/haierbin/<?php echo $type;?>">哈尔滨</a></p>
+                    <p data-id="110105"><a href="/shijiazhuang/<?php echo $type;?>">石家庄</a></p>
+                <span class="city-letter">华东地区</span> 
+                   <p data-id="110107"> <a href="/shanghai/<?php echo $type;?>">上海</a></p>
+                   <p data-id="110106"> <a href="/hangzhou/<?php echo $type;?>">杭州</a></p>
+                    <p data-id="110108"><a href="/xiamen/<?php echo $type;?>">厦门</a></p>
+                    <p data-id="110109"><a href="/nanjing/<?php echo $type;?>">南京</a></p>
+                    <p data-id="110110"><a href="/suzhou/<?php echo $type;?>">苏州</a></p>
+                    <p data-id="110111"><a href="/wuxi/<?php echo $type;?>">无锡</a></p>
+                    <p data-id="110112"><a href="/ningbo/<?php echo $type;?>">宁波</a></p>
+                    <p data-id="110113"><a href="/fuzhou/<?php echo $type;?>">福州</a></p>
+                    <p data-id="110114"><a href="/qingdao/<?php echo $type;?>">青岛</a></p>
+                    <p data-id="110115"><a href="/hefei/<?php echo $type;?>">合肥</a></p>
+                <span class="city-letter">中部西部</span> 
+                    <p data-id="110116"><a href="/chengdu/<?php echo $type;?>">成都</a></p>
+                    <p data-id="110117"><a href="/chongqing/<?php echo $type;?>">重庆</a></p>
+                    <p data-id="110118"><a href="/changsha/<?php echo $type;?>">长沙</a></p>
+                    <p data-id="110119"><a href="/zhengzhou/<?php echo $type;?>">郑州</a></p>
+                    <p data-id="110120"><a href="/xian/<?php echo $type;?>">西安</a></p>
+                    <p data-id="110121"><a href="/wuhan/<?php echo $type;?>">武汉</a></p>
+                <span class="city-letter">华南地区</span> 
+                   <p data-id="110122"> <a href="/guangzhou/<?php echo $type;?>">广州</a></p>
+                    <p data-id="110123"><a href="/shenzhen/<?php echo $type;?>">深圳</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/city.js"></script>
+<script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
 <script type="text/javascript">
 
@@ -267,18 +330,24 @@
                     width: 1,
                     type: 'solid'
                 }},
+                axisLabel : {
+                    textStyle: {
+                        color: '#BBBBBB',
+                        fontFamily: 'verdana',
+                        fontSize: 10,
+                        fontStyle: 'normal',
+                    }  },
                 splitArea : {show : false},
                 data : [
-                    <?php if(isset($tenantsortviewcomment) && count($tenantsortviewcomment)){
-                    $len=count($tenantsortviewcomment)-1;
-                    foreach($tenantsortviewcomment as $key=>$v){
+                    <?php if(isset($tenantssortviewcomment) && count($tenantssortviewcomment)){
+                    $len=count($tenantssortviewcomment)-1;foreach($tenantssortviewcomment as $key=>$v){
                         if($len!=$key){
-                            echo '\''.str_replace('-','/',$v['date']).'\',';
+                            echo '\''.substr(str_replace('-','/',$v['date']),5,strlen($v['date'])).'\',';
                         }else{
-                            echo '\''.str_replace('-','/',$v['date']).'\'';
+                            echo '\''.substr(str_replace('-','/',$v['date']),5,strlen($v['date'])).'\'';
                         }
                     }
-                    }?>
+                }?>
                 ]
             }
         ],
@@ -383,15 +452,22 @@
                     width: 1,
                     type: 'solid'
                 }},
+            axisLabel : {
+                    textStyle: {
+                        color: '#BBBBBB',
+                        fontFamily: 'verdana',
+                        fontSize: 10,
+                        fontStyle: 'normal',
+                    }  },
                 splitArea : {show : false},
                 data : [
                     <?php if(isset($tenantssortview) && count($tenantssortview)){
                     $len=count($tenantssortview)-1;
                     foreach($tenantssortview as $key=>$v){
                         if($len!=$key){
-                            echo '\''.str_replace('-','/',$v['date']).'\',';
+                            echo '\''.substr(str_replace('-','/',$v['date']),5,strlen($v['date'])).'\',';
                         }else{
-                            echo '\''.str_replace('-','/',$v['date']).'\'';
+                            echo '\''.substr(str_replace('-','/',$v['date']),5,strlen($v['date'])).'\'';
                         }
                     }
                 }?>
@@ -464,6 +540,40 @@
         myChartContainer();
         myChart.resize();
     };
+
+    $('input[name=wapsubmit]').click(function(){
+        var tenantsId = $('#tenantsId').val();
+        var phone = $('#mobile').val();
+        var source = 4;
+
+        if(!phone){
+            alert('手机必填');
+            return false;
+        }
+        if(phone){
+            if(!(/^1[34578]\d{9}$/.test(phone))){
+                alert("手机号码有误，请重填");
+                return false;
+            }
+        }
+        $.ajax({
+            url: "/saveview",
+            type: "post",
+            dataType: "json",
+            data: {'tenantsId': tenantsId,'phone': phone,'source':source},
+            success: function(data){
+                console.log(data);
+                if(data.result=='00'){
+                    alert('预约成功');
+                    <?php if($tenants['isVip'] ==2) { ?>
+                        location.href="<?php echo $tenants['modeladvurl'];?>";
+                    <?php } else {?>
+                        location.reload();
+                    <?php } ?>
+                }
+            }
+        });
+    });
 </script>
 </body>
 </html>

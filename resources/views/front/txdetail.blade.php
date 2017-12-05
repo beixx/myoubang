@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
         <h1><?php echo $tenants['name'];?></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
         <div class="num fa txtCtr">
-            <?php echo $tenants['order_city'];?>
+            <?php echo $tenants['order_city'];?><span>TOP</span>
         </div>
     </div>
 </div>
