@@ -61,7 +61,7 @@ class IndexController extends Controller
                 }
                 file_put_contents(storage_path('logs/tenantinfo'.$tenants->id),json_encode($usercomment));
             }
-            $this->data['usercomment'] = $usercomment;
+            
             $tenantssort = YfcTenantsSort::where('tenantsid',$id)->first();
             $tenantssortview = YfcTenantsSortview::where('tenantsid',$id)->orderby("date",'asc')->get()->toArray();
             $tenantssortviewcomment = YfcTenantsSortviewComment::where('tenantsid',$id)->orderby("date",'asc')->get()->toArray();
@@ -118,7 +118,8 @@ class IndexController extends Controller
                 'tenantssortview' => $tenantssortview,
                 'tenantssortviewcomment' => $tenantssortviewcomment,
                 'city' => $city,
-                'pycity' => $pycity
+                'pycity' => $pycity,
+                'usercomment' => $usercomment,
             ];
 
             return view("front/shop",$this->data);
