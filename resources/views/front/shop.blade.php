@@ -422,8 +422,9 @@ option = {
             type:'pie',
             radius: ['35%', '55%'],
             data:[
+                    <?php $sum = 0; foreach($style as $v) {$sum += $v['count'];}?>
                     <?php foreach($style as $k=>$v) { ?>
-                        {value:<?php echo $v['count'];?>, name:'<?php echo $v['name'];?> 35%'},
+                        {value:<?php echo $v['count'];?>, name:'<?php echo $v['name'];?> <?php echo intval($v['count']*100/$sum);?>%'},
                     <?php } ?>
             ]
         }
@@ -720,105 +721,27 @@ option = {
                 }
             }
         },
-        data: [ {
-                name: "执行团队给力",
-                value: 10000
-            },
-            {
-                name: "摄影师服务非常不错",
-                value: 6181,
-  
-            },
-            {
-                name: "好朋友推荐过来的",
-                value: 4386,
-       
-            },
-            {
-                name: "婚博会下单",
-                value: 4055,
-           
-            },
-            {
-                name: "修图很精致",
-                value: 2467,
-  
-            },
-            {
-                name: "感谢摄影老师",
-                value: 2244,
-   
-            },
-            {
-                name: "满意满意满意",
-                value: 1898,
-             
-            },
-            {
-                name: "价格合适",
-                value: 1484,
-              
-            },
-            {
-                name: "效果出乎意料的棒",
-                value: 1112,
-             
-            },
-            {
-                name: "底片全送",
-                value: 965,
-       
-            },
-            {
-                name: "我们对这次拍摄挺满意",
-                value: 847,
-          
-            },
-            {
-                name: "化妆和服务一流棒",
-                value: 582,
-            
-            },
-            {
-                name: "拍摄技术太NB",
-                value: 555,
-             
-            },
-            {
-                name: "有点小贵",
-                value: 550,
-          
-            },
-            {
-                name: "好喜欢她家的风格",
-                value: 462,
-         
-            },
-            {
-                name: "场景动作都是一样的",
-                value: 366,
-               
-            },
-            {
-                name: "感受很差",
-                value: 360,
+        data: [
+                <?php
+                $stylelong = file('./1.txt');
+                $stylemap = [];
+                foreach($stylelong as $k =>$v) {
+                    $s = explode(' ',trim($v));
+                    if(count($s)>1) {
+                        $key = $s[0];
+                        unset($s[0]);
+                        $s = array_values($s);
+                        $stylemap[$key] = $s[rand(0,count($s)-1)];
+                    }
+                }
+                ?>
 
-            },
+                <?php foreach(json_decode($tenants['commitstyle'],true) as $v ) { ?>
             {
-                name: "价格极度不透明",
-                value: 282,
-            
+                name: "<?php echo isset($stylemap[$v['name']])?$stylemap[$v['name']]:$v['name'];?>",
+                value: <?php echo $v['count'];?>
             },
-            {
-                name: "太贵，很一般",
-                value: 273,
-           
-            },
-            {
-                name: "价格太贵内容单一",
-                value: 265,
-           
-            }]
+        <?php } ?>
     }]
 };
     // 使用刚指定的配置项和数据显示图表。
