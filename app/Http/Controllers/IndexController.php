@@ -61,7 +61,7 @@ class IndexController extends Controller
                 }
                 file_put_contents(storage_path('logs/tenantinfo'.$tenants->id),json_encode($usercomment));
             }
-            
+
             $tenantssort = YfcTenantsSort::where('tenantsid',$id)->first();
             $tenantssortview = YfcTenantsSortview::where('tenantsid',$id)->orderby("date",'asc')->get()->toArray();
             $tenantssortviewcomment = YfcTenantsSortviewComment::where('tenantsid',$id)->orderby("date",'asc')->get()->toArray();
@@ -100,6 +100,8 @@ class IndexController extends Controller
             }
             $countpics = YfcTenantsPic::where('tenantsId',$id)->count();
 
+            $style = YfcStyle::where("tenantsId",$id)->orderby("order_index")->limit(3)->get();
+
             $title = $tenants['city'].$tenants['name'].' | 有榜「第'.$tenants['order_city'].'名」';
             $desc = $tenants['city'].$tenants['name'].'在《有榜婚嫁行业榜单》综合排名第'.$tenants['order_city'].'名，该商户在品牌榜单中排名第'.$tenants['brand_search_order'].'名，好评榜单中排名第'.$tenants['praise_order'].'名，希望能够帮助您了解到'.$tenants['name'].'怎么样的问题。';
             $keyword = $tenants['city'].$tenants['name'].', '.$tenants['name'].', '.$tenants['name'].'怎么样, '.$tenants['name'].'行业第'.$tenants['order_city'].'名';
@@ -120,6 +122,7 @@ class IndexController extends Controller
                 'city' => $city,
                 'pycity' => $pycity,
                 'usercomment' => $usercomment,
+                'style' => $style
             ];
 
             return view("front/shop",$this->data);

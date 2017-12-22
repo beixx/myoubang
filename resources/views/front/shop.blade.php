@@ -137,7 +137,9 @@ var _hmt = _hmt || [];
          <div id="fengge" style="width:100%;height:12rem;"></div>
          <div class="shushuo">
 <span>擅长拍摄风格<em>(通过大数据进行标签提取)</em></span>
-     <p>“梦幻”被提及104次，在北京排名第4位</p>
+             <?php foreach($style as $k=>$v) { ?>
+     <p>“<?php echo $v['name'];?>”被提及<?php echo $v['count'];?>次，在北京排名第<?php echo $v['order_index'];?>位</p>
+             <?php } ?>
       <p>“梦幻”被提及104次，在北京排名第4位</p>
      <p>“梦幻”被提及104次，在北京排名第4位</p>
 </div>
