@@ -37,7 +37,7 @@ var _hmt = _hmt || [];
             <ul>
                 <?php foreach($picinfo['firstcover']as $k =>$v ) {  ?>
                 <li class="suolvd">
-                    <span><img _src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/450/q/75|imageslim" src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/450/q/75|imageslim" /></span>
+                    <span><img _src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" /></span>
                 </li>
                 <?php } ?>
             </ul>
@@ -69,10 +69,10 @@ var _hmt = _hmt || [];
     <div class="huiyuan"></div>
     <?php } ?>
     <div class="txt-box">
-        <h1><?php echo $tenants['name'];?></h1>
+        <h1><a href="/shop/<?php echo $tenants['id'];?>"><?php echo $tenants['name'];?></a></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
         <div class="num fa txtCtr">
-            <?php echo $tenants['order_city'];?><span>TOP</span>
+            <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
     </div>
 </div>
@@ -89,7 +89,7 @@ var _hmt = _hmt || [];
         <li>
             <a href="<?php echo '/kpdetail/'.$v['id'];?>">
                 <div class="suolvt">
-                <span><img src="http://img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim">
+                <span><img src="http://img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/768/h/420/q/75|imageslim">
                 </span></div>
                 <div class="txt">
                     <h3><?php echo $v['picName'];?></h3>
@@ -101,7 +101,7 @@ var _hmt = _hmt || [];
     </ul>
 </div>
 <div class="tel-box txtCtr">
-    <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'18500905723';?>" class="tel lft"><em></em>打电话</a>
+    <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'18500905723';?>" class="tel lft"><em></em>电话咨询</a>
     <a href="javascript:" class="ask rgt down"><em></em>咨询套餐</a>
 </div>
 <div class="bgDiv"></div>

@@ -21,7 +21,7 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-    <style type="text/css">body{background: #FFF}.list_box{padding-bottom: 0;}#gr_zone_ids{cursor:pointer}</style>
+    <style type="text/css">.tabBox{width: 96%; margin: .5rem 2%; background: #FFF; border-radius: .2rem;}.list_box{padding-bottom: 0;}#gr_zone_ids{cursor:pointer}</style>
 </head>
 <body>
 <header>
@@ -42,7 +42,7 @@ var _hmt = _hmt || [];
                 <?php } ?>
                 <div class="num_txt">
                     <div class="num fa txtCtr">
-                        <?php echo $k +1;?>
+                        <?php echo $k +1;?><div class="pmt"><span>TOP</span></div>
                     </div>
                     <div class="tit_box">
                         <div class="title"><a href="/detail/<?php echo $v['id'];?>"><?php echo $city;?><?php echo $v['name']?></a></div>

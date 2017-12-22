@@ -25,7 +25,7 @@ var _hmt = _hmt || [];
 })();
 </script>
     <style type="text/css">
-        body{background: #FFF}
+       .content{width: 96%;margin: .5rem 2%;background: #FFF;border-radius: .2rem;}
         #gr_zone_ids{cursor:pointer}
     </style>
 </head>
@@ -49,7 +49,7 @@ var _hmt = _hmt || [];
                     <?php } ?>
                     <div class="num_txt">
                         <div class="num fa txtCtr">
-                            <?php echo $v['order_city'];?>
+                            <?php echo $v['order_city'];?><div class="pmt"><span>TOP</span></div>
                         </div>
                         <div class="tit_box">
                             <div class="title"><a href="/detail/<?php echo $v['id'];?>"><?php echo $city;?><?php echo $v['name']?></a></div>

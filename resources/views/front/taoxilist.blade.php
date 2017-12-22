@@ -40,7 +40,7 @@ var _hmt = _hmt || [];
         <h1><?php echo $tenants['name']?></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
         <div class="num fa txtCtr">
-            <?php echo $tenants['order_city'];?><span>TOP</span>
+            <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
     </div>
 </div>
@@ -71,7 +71,7 @@ var _hmt = _hmt || [];
 <div class="more txtCtr">点击加载更多套系</div>
 
 <div class="tel-box txtCtr">
-    <a href="tel:18500905723" class="tel lft"><em></em>打电话</a>
+    <a href="tel:18500905723" class="tel lft"><em></em>电话咨询</a>
     <a href="javascript:" class="ask rgt down"><em></em>咨询套餐</a>
 </div>
 <div class="bgDiv"></div>

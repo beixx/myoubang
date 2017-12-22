@@ -61,7 +61,7 @@ var _hmt = _hmt || [];
         </div>
         <div class="bd">
             <div class="list_box">
-                <div class="b_time">更新时间：<span class="fa">2017-10-29</span><span class="guize"><a href="/guize.html">榜单规则</a></span></div>
+                <div class="b_time">更新时间：<span class="fa">2017-12-20</span><span class="guize"><a href="/guize.html">榜单规则</a></span></div>
                 <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
                     <?php if(isset($spread['name'])) { ?>
                     <div class="pic_box">
@@ -69,8 +69,7 @@ var _hmt = _hmt || [];
                             <div class="huiyuan"></div>
                         <?php } ?>
                         <div class="num_txt">
-                            <div class="num fa txtCtr">
-                                <?php echo $spread['order_city'];?><span>TOP</span>
+                            <div class="num fa txtCtr"><?php echo $spread['order_city'];?><div class="pmt"><span>TOP</span></div>
                             </div>
                             <div class="tit_box">
                                 <div class="title"><a href="/detail/<?php echo $spread['id'];?>"><?php echo $spread['name']?></a></div>
@@ -108,8 +107,7 @@ var _hmt = _hmt || [];
                             <div class="huiyuan"></div>
                         <?php } ?>
                         <div class="num_txt">
-                            <div class="num fa txtCtr">
-                                <?php echo $v['order_city'];?><span>TOP</span>
+                            <div class="num fa txtCtr"><?php echo $v['order_city'];?><div class="pmt"><span>TOP</span></div>
                             </div>
                             <div class="tit_box">
                                 <div class="title"><a href="/detail/<?php echo $v['id'];?>"><?php echo $city;?><?php echo $v['name']?></a></div>

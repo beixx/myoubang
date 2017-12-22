@@ -50,10 +50,10 @@ var _hmt = _hmt || [];
     <div class="shop_box view" style="padding-bottom:0rem;">
         <div class="titdp">店铺信息</div>
         <div class="txt-box">
-            <h1><?php echo $tenants['name']?></h1>
+            <h1><a href="/shop/{{$tenants['id']}}"><?php echo $tenants['name']?></a></h1>
             <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
             <div class="num fa txtCtr">
-                <?php echo $tenants['order_city'];?><span>TOP</span>
+                <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
             </div>
         </div>
     </div>

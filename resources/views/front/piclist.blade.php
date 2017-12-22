@@ -40,7 +40,7 @@ var _hmt = _hmt || [];
         <h1><?php echo $tenants['name'];?></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
         <div class="num fa txtCtr">
-            <?php echo $tenants['order_city'];?><span>TOP</span>
+            <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
     </div>
 </div>
@@ -55,14 +55,15 @@ var _hmt = _hmt || [];
             <ul>
                 <?php foreach($pics as $v) {?>
                 <li>
+                <p><?php echo $v['picName'];?></p>
+                 <span class="anli_month">12月01日 09:44</span>
                     <a class="suolvl" href="/kpdetail/<?php echo $v['id'];?>">
                         <span class="img">
                             <?php $v['cover'] = json_decode($v['cover'],true); for($i = 0 ; $i < 9 ;$i ++ ) { if(empty($v['cover'][$i])) { break; }?>
-                            <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?imageView2/1/w/640/h/370/q/75|imageslim" />
+                            <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?imageView2/1/w/200/h/200/q/75|imageslim" />
                             <?php } ?>
                         </span>
                     </a>
-                    <p><?php echo $v['picName'];?></p>
                 </li>
                 <?php } ?>
             </ul>
@@ -70,7 +71,7 @@ var _hmt = _hmt || [];
     </div>
 </div>
 <div class="tel-box txtCtr">
-    <a href="tel:13588886666" class="tel lft"><em></em>打电话</a>
+    <a href="tel:13588886666" class="tel lft"><em></em>电话咨询</a>
     <a href="javascript:" class="ask rgt down"><em></em>咨询套餐</a>
 </div>
 <div class="bgDiv"></div>

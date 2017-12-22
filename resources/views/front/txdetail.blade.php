@@ -11,7 +11,7 @@
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
     <script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
-    <style type="text/css">body{background:#f0f0f0;}</style>
+    <style type="text/css">body{background:#f0f0f0;}.suolvl,.suolvl span{height: 5.5rem;}</style>
     <script>
 var _hmt = _hmt || [];
 (function() {
@@ -36,7 +36,7 @@ var _hmt = _hmt || [];
         <div class="bd">
             <ul>
                 <?php foreach($info['cover'] as $v) { ?>
-                <li class="suolvd"><span><img src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/450/q/75|imageslim" /></span></li>
+                <li class="suolvd"><span><img src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" /></span></li>
                 <?php } ?>
             </ul>
         </div>
@@ -64,10 +64,10 @@ var _hmt = _hmt || [];
     <div class="huiyuan"></div>
     <?php } ?>
     <div class="txt-box">
-        <h1><?php echo $tenants['name'];?></h1>
+        <h1><a href="/shop/<?php echo $tenants['id'];?>"><?php echo $tenants['name'];?></a></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
         <div class="num fa txtCtr">
-            <?php echo $tenants['order_city'];?><span>TOP</span>
+            <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
     </div>
 </div>
@@ -98,7 +98,7 @@ var _hmt = _hmt || [];
 </div>
 
 <div class="tel-box txtCtr">
-    <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'18500905723';?>" class="tel lft"><em></em>打电话</a>
+    <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'18500905723';?>" class="tel lft"><em></em>电话咨询</a>
     <a href="javascript:" class="ask rgt down"><em></em>咨询套餐</a>
 </div>
 <div class="bgDiv"></div>

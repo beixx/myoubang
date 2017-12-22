@@ -8,12 +8,11 @@
     <meta name="Keywords" content="<?php echo $keyword;?>">
     <meta name="description" content="<?php echo $desc;?>">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/chart.meter.js"></script>
     <style type="text/css">body{background:#f0f0f0}</style>
     <script>
 var _hmt = _hmt || [];
@@ -38,7 +37,7 @@ var _hmt = _hmt || [];
     <div id="focus" class="focus">
         <div class="bd">
             <ul>
-                <li class="suolvd"><span><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/600/h/450/q/75|imageslim"/></span></li>
+                <li class="suolvd"><span><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/></span></li>
             </ul>
         </div>
     </div>
@@ -74,48 +73,15 @@ var _hmt = _hmt || [];
 		        </span>
 </div>
     <div class="address"><?php echo $tenants['address'];?></div>
-</div></div>
-<?php if($tenants['jieshao'] != '') { ?>
-<div class="info-box mtrem6">
-    <div class="data">
-        <div class="titleqs ppjj"><i>- 品牌故事 -</i></div>
-        <div class="ppsm"><?php echo $tenants['jieshao'];?>
-        </div>
-    </div>
-</div>
-<?php } ?>
+</div><?php if($tenants['jieshao'] != '') { ?>
+         <div class="shushuo mtrem6">
+<span>品牌故事</span>
+    <p><?php echo $tenants['jieshao'];?></p>
+</div><?php } ?></div>
 <div class="info-box">
     <div class="data">
-        <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：2017-10-29</span></div>
-        <canvas id="meter" style=" width:13.5rem;margin-left:2.6rem"></canvas>
-        <script type="text/javascript">
-            window.onload = function(){
-                Meter.setOptions({
-                    element: 'meter',
-                    centerPoint: {
-                        x: 145,
-                        y: 145
-                    },
-                    radius: 145,
-                    data: {
-                        value: <?php echo $tenants['heat_index'];?>,
-                        title: '<?php echo $city;?>竞争力{t}',
-                        subTitle: '评估时间：2017.10.23',
-                        area: [{
-                            min: 0, max: 70, text: '较弱'
-                        },{
-                            min: 70, max: 80, text: '一般'
-                        },{
-                            min: 80, max: 85, text: '强'
-                        },{
-                            min: 85, max: 90, text: '很强'
-                        },{
-                            min: 90, max: 100, text: '极强'
-                        }]
-                    }
-                }).init();
-            }
-        </script>
+        <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：2017-12-20</span></div>
+        <div id="shuju" style="width:100%;height:14rem;"></div>
         <div class="table">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr style="background: #f9f9f9">
@@ -145,30 +111,38 @@ var _hmt = _hmt || [];
             </table>
         </div>
     </div>
-</div>
-<div class="info-box">
     <div class="data-chart">
-        <div class="titleqs"><i>数据趋势</i><span class="fa">更新时间：2017-10-29</span></div>
-
         <div class="TxtBox">
             <div class="tit hd">
                 <ul>
                     <li><a href="javascript:" class="txtCtr lft b1"><em class="icon1"></em>品牌搜索</a></li>
-                    <li style="margin-left:1rem;"><a href="javascript:" class="txtCtr lft b2"><em class="icon2"></em>全网评论</a></li>
+                    <li><a href="javascript:" class="txtCtr lft b2"><em class="icon2"></em>全网评论</a></li>
                 </ul>
 
             </div>
             <div class="bd">
                 <div class="chart">
-                    <div id="dbmain" style="width:100%;height:15rem;"></div>
+                    <div id="dbmain" style="width:100%;height:12rem;"></div>
                 </div>
                 <div class="chart">
-                    <div id="dbmain2" style="width:100%;height:15rem;"></div>
+                    <div id="dbmain2" style="width:100%;height:12rem;"></div>
                 </div>
             </div>
         </div>
         <script type="text/javascript">jQuery(".TxtBox").slide({trigger:"click"});</script>
-    </div> </div>
+    </div> 
+</div>
+<div class="info-box">
+    <div class="data pbbb">
+         <div id="fengge" style="width:100%;height:12rem;"></div>
+         <div class="shushuo">
+<span>擅长拍摄风格<em>(通过大数据进行标签提取)</em></span>
+     <p>“梦幻”被提及104次，在北京排名第4位</p>
+      <p>“梦幻”被提及104次，在北京排名第4位</p>
+     <p>“梦幻”被提及104次，在北京排名第4位</p>
+</div>
+    </div>
+</div>
 <?php if($countpics >0 ) { ?>
 <div class="case_box">
     <div class="title">客片欣赏<a href="/kplist/<?php echo $tenants['id'];?>">全部<span class="fa"><?php echo $countpics;?></span>个案例 ></a></div>
@@ -179,12 +153,12 @@ var _hmt = _hmt || [];
                 <?php foreach($tenantspics as $k => $v){?>
                 <li>
             <p><?php echo $v['picName']?></p>
-            <span class="anli_month">12月01日 09:44</span>
+            <span class="anli_month">12月11日 13:44</span>
                     <a class="suolvk" href="/kpdetail/<?php echo $v['id']?>">
                         <span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
 
-                            <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?imageView2/1/w/200/h/200/q/75|imageslim" />
+                            <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?imageView2/1/w/250/h/250/q/75|imageslim" />
 
                         <?php } ?>
                         </span>
@@ -199,13 +173,13 @@ var _hmt = _hmt || [];
 
 <?php if($countsets >0 ) { ?>
 <div class="jxtc_box">
-    <div class="title">精选套餐<a href="/txlist/<?php echo $tenants['id'];?>">全部<span class="fa"><?php echo $countsets;?></span>个案例 ></a></div>
+    <div class="title">精选套餐<a href="/txlist/<?php echo $tenants['id'];?>">全部<span class="fa"><?php echo $countsets;?></span>个套系 ></a></div>
     <ul>
         <?php foreach($tenantssets as $k => $v) { ?>
         <li>
             <a href="/detail/<?php echo $tenants['id'].'/'.$v['id']?>">
             <div class="suolvt">
-                <span><img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim"></span></div>
+                <span><img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/768/h/420/q/75|imageslim"></span></div>
                 <div class="txt">
                     <h3><?php echo $v['setName'];?></h3>
                     <div class="price fa">
@@ -220,21 +194,25 @@ var _hmt = _hmt || [];
     <div class="ckqb"><a href="/txlist/<?php echo $tenants['id'];?>">查看全部<span class="fa"><?php echo $countsets;?></span>个精选套系</a></div>
 </div>
 <?php } ?>
+<div class="info-box">
+    <div class="data">
+        <div class="titleqs"><i>用户点评标签</i><span class="fa">以下标签为大数据分析所得</span></div>
+        <div id="biaoqian" style="width:100%;height:14rem;"></div>
+
+</div></div>
 <div class="comment_list">
             <div class="title dafen">今日点评精选</a><span class="fa">更新时间：<?php echo Date("Y-m-d")?></span></div>
             <div class="comment_column">
                 <?php if(!empty($usercomment['content'])) { ?>
                     <div class="cmt_con cmt_R">
                             <span class="comment_W"><?php echo $usercomment['content'];?></span>
-                      <span class="f12p">—「点评网」<?php echo $usercomment['nick_name'];?></span>
+                      <span class="f12p">—「摘自第三方平台」<?php echo $usercomment['nick_name'];?></span>
                 </div>
                 <?php } ?>
 </div>
-                <div class="shengji">打榜频词/商家表现能力功能届时上线！</div>
-
             </div>
 <div class="tel-box txtCtr">
-    <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'18500905723';?>" class="tel lft"><em></em>打电话</a>
+    <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'18500905723';?>" class="tel lft"><em></em>电话咨询</a>
     <a href="javascript:" class="ask rgt down"><em></em>咨询商户</a>
 </div>
 <div class="bgDiv"></div>
@@ -303,13 +281,171 @@ var _hmt = _hmt || [];
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
+<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/echarts-wordcloud.min.js"></script>
 <script type="text/javascript">
+    var myChart = document.getElementById('shuju');
+    //自适应宽高
+    var myChartContainer = function () {
+        myChart.style.width = window.innerWidth+'px';
+        myChart.style.height = 100%'px'
+    };
+    myChartContainer();
+    var myChart = echarts.init(myChart);
+
+ var colorList = [
+     '#59c5a7', '#51b8fe', '#fa827d'
+ ];
+ 
+ // 总和
+ var total = {
+     name: '竞争指数',
+     value: '<?php echo $tenants['heat_index'];?>'
+ }
+
+ var originalData = [{
+     value: <?php echo $tenantssort['allcy']?>,
+     name: '<?php echo $tenantssort['allcy']?>人\n表示很满意'
+ }, {
+     value: <?php echo $tenantssort['allce']?>,
+     name: '<?php echo $tenantssort['allce']?>人\n表示很糟糕'
+ }, {
+     value: <?php echo $tenantssort['alls']?>,
+     name: "<?php echo $tenantssort['alls']?>人/日\n搜索过该品牌"
+ }];
+
+ echarts.util.each(originalData, function(item, index) {
+     item.itemStyle = {
+         normal: {
+             color: colorList[index]
+         }
+     };
+ });
+
+ option = {
+     title: [{
+            text: total.name,
+            left: '49%',
+            top: '54%',
+            textAlign: 'center',
+            textBaseline: 'middle',
+            textStyle: {
+                color: '#aaafb8',
+                fontWeight: 'normal',
+                fontSize: 12
+            }
+        }, {
+            text: total.value,
+            left: '49%',
+            top: '46%',
+            textAlign: 'center',
+            textBaseline: 'middle',
+            textStyle: {
+                color: '#596471',
+                fontWeight: 'normal',
+                fontSize: 28
+            }
+        }],
+     series: [{
+         hoverAnimation: false, //设置饼图默认的展开样式
+         radius: [50,80],
+         name: 'pie',
+         type: 'pie',
+         selectedMode: 'single',
+         selectedOffset: 16, //选中是扇区偏移量
+         clockwise: true,
+         startAngle: 80,
+         label: {
+             normal: {
+                 textStyle: {
+                     fontSize: 12,
+                     color: '#aaafb8'
+                 }
+             }
+         },
+         labelLine: {
+             normal: {
+                 lineStyle: {
+                     color: '#aaafb8',
+
+                 }
+             }
+         },
+         data: originalData
+     }]
+ };
+ myChart.setOption(option, true);
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+    //浏览器大小改变时重置大小
+    window.onresize = function () {
+        myChartContainer();
+        myChart.resize();
+    };
+
+    var myChart = document.getElementById('fengge');
+    //自适应宽高
+    var myChartContainer = function () {
+        myChart.style.width = window.innerWidth+'px';
+        myChart.style.height = 100%'px'
+    };
+    myChartContainer();
+    var myChart = echarts.init(myChart);
+
+
+option = {
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    series: [
+        {
+            name:'访问来源',
+            type:'pie',
+            selectedMode: 'single',
+            radius: [0, '30%'],
+
+            label: {
+                normal: {
+                    position: 'inner'
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            }
+        },
+        {
+            name:'标签提起次数',
+            type:'pie',
+            radius: ['35%', '55%'],
+            data:[
+                {value:335, name:'韩式 35%'},
+                {value:310, name:'纪实  20%'},
+                {value:234, name:'小清新 22%'},
+                {value:135, name:'中国风 23%'},
+            ]
+        }
+    ]
+};
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+    //浏览器大小改变时重置大小
+    window.onresize = function () {
+        myChartContainer();
+        myChart.resize();
+    };
+
+
 
     var myChart = document.getElementById('dbmain2');
     //自适应宽高
     var myChartContainer = function () {
         myChart.style.width = window.innerWidth+'px';
-        myChart.style.height = 100%'px';
+        myChart.style.height = 80%'px'
     };
     myChartContainer();
     var myChart = echarts.init(myChart);
@@ -386,8 +522,9 @@ var _hmt = _hmt || [];
             {
                 name:'全网好评',
                 type:'line',
+                symbol: "none",
                 smooth:true,
-                itemStyle: {normal: {areaStyle: {type: 'default'},lineStyle:{ color:'rgba(0,187,205,1)'},color:'rgba(0,187,205,0.5)'}},
+                areaStyle: { normal: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: 'rgba(216, 244, 247,1)' }, { offset: 1, color: 'rgba(216, 244, 247,0.1)' }], false) } }, itemStyle: { normal: { color: '#58c8da' } },
                 data:[<?php if(isset($tenantssortviewcomment) && count($tenantssortviewcomment)){
                     $len=count($tenantssortviewcomment)-1;foreach($tenantssortviewcomment as $key=>$v){
                         if($len!=$key){
@@ -401,8 +538,9 @@ var _hmt = _hmt || [];
             {
                 name:'全网差评',
                 type:'line',
+                symbol: "none",
                 smooth:true,
-                itemStyle: {normal: {areaStyle: {type: 'default'},lineStyle:{ color:"rgba(238,0,0,1)"},color:"rgba(238,0,0,0.5)"}},
+                areaStyle: { normal: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: 'rgba(199, 237, 250,0.5)' }, { offset: 1, color: 'rgba(199, 237, 250,0.2)' }], false) } }, itemStyle: { normal: { color: '#f7b851' } }, lineStyle: { normal: { width: 3 } },
                 data:[<?php if(isset($tenantssortviewcomment) && count($tenantssortviewcomment)){
                     $len=count($tenantssortviewcomment)-1;foreach($tenantssortviewcomment as $key=>$v){
                         if($len!=$key){
@@ -431,7 +569,7 @@ var _hmt = _hmt || [];
     var myChart = document.getElementById('dbmain');//自适应宽高
     var myChartContainer = function () {
         myChart.style.width = window.innerWidth+'px';
-        myChart.style.height = 100%'px';
+        myChart.style.height = 80%'px';
     };
     myChartContainer();
     var myChart = echarts.init(myChart);
@@ -510,7 +648,8 @@ var _hmt = _hmt || [];
                 name:'全网移动搜索',
                 type:'line',
                 smooth:true,
-                itemStyle: {normal: {areaStyle: {type: 'default'},lineStyle:{ color:'rgba(0,187,205,1)'},color:'rgba(0,187,205,0.5)'}},
+                symbol: "none",
+                areaStyle: { normal: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: 'rgba(216, 244, 247,1)' }, { offset: 1, color: 'rgba(216, 244, 247,0.1)' }], false) } }, itemStyle: { normal: { color: '#58c8da' } },
                 data:[<?php if(isset($tenantssortview) && count($tenantssortview)){
                     $len=count($tenantssortview)-1;foreach($tenantssortview as $key=>$v){
                         if($len!=$key){
@@ -524,8 +663,9 @@ var _hmt = _hmt || [];
             {
                 name:'全网PC搜索',
                 type:'line',
+                symbol: "none",
                 smooth:true,
-                itemStyle: {normal: {areaStyle: {type: 'default'},lineStyle:{ color:"rgba(238,0,0,1)"},color:"rgba(238,0,0,0.5)"}},
+                areaStyle: { normal: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: 'rgba(199, 237, 250,0.5)' }, { offset: 1, color: 'rgba(199, 237, 250,0.2)' }], false) } }, itemStyle: { normal: { color: '#f7b851' } }, lineStyle: { normal: { width: 3 } },
                 data:[<?php if(isset($tenantssortview) && count($tenantssortview)){
                     $len=count($tenantssortview)-1;foreach($tenantssortview as $key=>$v){
                         if($len!=$key){
@@ -542,6 +682,149 @@ var _hmt = _hmt || [];
 
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
+    //浏览器大小改变时重置大小
+    window.onresize = function () {
+        myChartContainer();
+        myChart.resize();
+    };
+
+    var myChart = document.getElementById('biaoqian');
+    //自适应宽高
+    var myChartContainer = function () {
+        myChart.style.width = window.innerWidth+'px';
+        myChart.style.height = 100%'px'
+    };
+    myChartContainer();
+    var myChart = echarts.init(myChart);
+option = {
+    tooltip: {
+        show: true
+    },
+
+    series: [{
+        type: 'wordCloud',
+        size: ['80%', '80%'],
+        textRotation : [0, 90, 90, -90],
+        textPadding: 0,
+        autoSize: {
+            enable: true,
+            minSize: 14
+        },
+        textStyle: {
+            normal: {
+                color: function() {
+                    return 'rgb(' + [
+                        Math.round(Math.random() * 160),
+                        Math.round(Math.random() * 160),
+                        Math.round(Math.random() * 160)
+                    ].join(',') + ')';
+                }
+            }
+        },
+        data: [ {
+                name: "执行团队给力",
+                value: 10000
+            },
+            {
+                name: "摄影师服务非常不错",
+                value: 6181,
+  
+            },
+            {
+                name: "好朋友推荐过来的",
+                value: 4386,
+       
+            },
+            {
+                name: "婚博会下单",
+                value: 4055,
+           
+            },
+            {
+                name: "修图很精致",
+                value: 2467,
+  
+            },
+            {
+                name: "感谢摄影老师",
+                value: 2244,
+   
+            },
+            {
+                name: "满意满意满意",
+                value: 1898,
+             
+            },
+            {
+                name: "价格合适",
+                value: 1484,
+              
+            },
+            {
+                name: "效果出乎意料的棒",
+                value: 1112,
+             
+            },
+            {
+                name: "底片全送",
+                value: 965,
+       
+            },
+            {
+                name: "我们对这次拍摄挺满意",
+                value: 847,
+          
+            },
+            {
+                name: "化妆和服务一流棒",
+                value: 582,
+            
+            },
+            {
+                name: "拍摄技术太NB",
+                value: 555,
+             
+            },
+            {
+                name: "有点小贵",
+                value: 550,
+          
+            },
+            {
+                name: "好喜欢她家的风格",
+                value: 462,
+         
+            },
+            {
+                name: "场景动作都是一样的",
+                value: 366,
+               
+            },
+            {
+                name: "感受很差",
+                value: 360,
+
+            },
+            {
+                name: "价格极度不透明",
+                value: 282,
+            
+            },
+            {
+                name: "太贵，很一般",
+                value: 273,
+           
+            },
+            {
+                name: "价格太贵内容单一",
+                value: 265,
+           
+            }]
+    }]
+};
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
     //浏览器大小改变时重置大小
     window.onresize = function () {
         myChartContainer();
