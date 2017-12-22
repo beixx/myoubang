@@ -136,12 +136,10 @@ var _hmt = _hmt || [];
     <div class="data pbbb">
          <div id="fengge" style="width:100%;height:12rem;"></div>
          <div class="shushuo">
-<span>擅长拍摄风格<em>(通过大数据进行标签提取)</em></span>
+            <span>擅长拍摄风格<em>(通过大数据进行标签提取)</em></span>
              <?php foreach($style as $k=>$v) { ?>
-     <p>“<?php echo $v['name'];?>”被提及<?php echo $v['count'];?>次，在北京排名第<?php echo $v['order_index'];?>位</p>
+                    <p>“<?php echo $v['name'];?>”被提及<?php echo $v['count'];?>次，在北京排名第<?php echo $v['order_index'];?>位</p>
              <?php } ?>
-      <p>“梦幻”被提及104次，在北京排名第4位</p>
-     <p>“梦幻”被提及104次，在北京排名第4位</p>
 </div>
     </div>
 </div>
@@ -424,10 +422,9 @@ option = {
             type:'pie',
             radius: ['35%', '55%'],
             data:[
-                {value:335, name:'韩式 35%'},
-                {value:310, name:'纪实  20%'},
-                {value:234, name:'小清新 22%'},
-                {value:135, name:'中国风 23%'},
+                    <?php foreach($style as $k=>$v) { ?>
+                        {value:<?php echo $v['count'];?>, name:'<?php echo $v['name'];?> 35%'},
+                    <?php } ?>
             ]
         }
     ]
