@@ -32,7 +32,7 @@ var _hmt = _hmt || [];
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
 <div class="logo"><img width="3rem" height="1.25rem" src="/images/logo.png"></div>
-<a class="zxdh" href="tel:18500905723"></a>
+<a class="zxdh" href="tel:010-88869660"></a>
 </header>
 
 <div class="content">
@@ -61,7 +61,7 @@ var _hmt = _hmt || [];
         </div>
         <div class="bd">
             <div class="list_box">
-                <div class="b_time">更新时间：<span class="fa">2017-12-20</span><span class="guize"><a href="/guize.html">榜单规则</a></span></div>
+                <div class="b_time">更新时间：<span class="fa">2018-2-23</span><span class="guize"><a href="/guize.html">榜单规则</a></span></div>
                 <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
                     <?php if(isset($spread['name'])) { ?>
                     <div class="pic_box">
