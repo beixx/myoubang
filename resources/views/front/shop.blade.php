@@ -22,13 +22,30 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(hm, s);
 })();
+window.onload=function(){  
+var unfoldField=document.querySelector(".unfold-field");  
+var wrapH=document.querySelector(".data-chart").offsetHeight;  
+var wrap=document.querySelector(".data-chart");  
+var contentH=document.querySelector(".TxtBox").offsetHeight;  
+// 如果实际高度大于我们设置的默认高度就把超出的部分隐藏。  
+if(contentH>wrapH){  
+   unfoldField.style.display="block";  
+}  
+wrap.style.visibility="visible";  
+unfoldField.onclick=function(){  
+   this.parentNode.removeChild(this);  
+   wrap.style.maxHeight="100%";  
+   wrap.style.visible="visible";  
+}  
+  
+} 
 </script>
 </head>
 <body class="shop-index">
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
 <div class="logo"><a href="/"><img width="3rem" height="1.25rem" src="/images/logo.png"></a></div>
-<a class="zxdh" href="tel:18500905723"></a>
+<a class="zxdh" href="tel:010-88869660"></a>
 </header>
 <div class="focus_box">
     <?php if($tenants['isVip'] == 2) { ?>
@@ -73,14 +90,10 @@ var _hmt = _hmt || [];
 		        </span>
 </div>
     <div class="address"><?php echo $tenants['address'];?></div>
-</div><?php if($tenants['jieshao'] != '') { ?>
-         <div class="shushuo mtrem6">
-<span>品牌故事</span>
-    <p><?php echo $tenants['jieshao'];?></p>
-</div><?php } ?></div>
-<div class="info-box">
+</div></div>
+<div class="info-box mtrem6">
     <div class="data">
-        <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：2017-12-20</span></div>
+        <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：2018-1-29</span></div>
         <div id="shuju" style="width:100%;height:14rem;"></div>
         <div class="table">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -111,6 +124,55 @@ var _hmt = _hmt || [];
             </table>
         </div>
     </div>
+
+<style>  
+/*展开全文*/  
+.unfold-field{  
+display:none;  
+position:absolute;  
+font-size: 0;  
+bottom:0;  
+width:100%;  
+height:5rem;  
+z-index: 3;  
+}  
+.unfold-field .unflod-field_mask {  
+height:2.5rem;  
+width: 100%;  
+background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,hsla(0,0%,100%,0)),to(#fff));  
+background-image: linear-gradient(-180deg,hsla(0,0%,100%,0),#fff);  
+}  
+.unfold-field_text{  
+cursor: pointer;  
+width:100%;  
+color: #B1B1B1;
+height:2.5rem;  
+font-size: 0px;  
+line-height:2.5rem;  
+text-align: center;  
+background: #fbfbfb; 
+}  
+.unfold-field_text span{  
+display:inline-block;  
+font-size:.7rem;  
+height:2.5rem;  
+line-height:2.5rem;  
+}  
+.unfold-field_text span::after{  
+content:"";  
+vertical-align: middle;  
+background:url(http://c.youbangkeyi.com/images/zhankai.png);  
+background-size: contain;  
+background-repeat: no-repeat;  
+width:15px;  
+height:15px;  
+display: inline-block;  
+margin-left: 5px;  
+}  
+</style>  
+
+
+
     <div class="data-chart">
         <div class="TxtBox">
             <div class="tit hd">
@@ -130,6 +192,10 @@ var _hmt = _hmt || [];
             </div>
         </div>
         <script type="text/javascript">jQuery(".TxtBox").slide({trigger:"click"});</script>
+        <div class="unfold-field">  
+        <div class="unflod-field_mask"></div>  
+        <div class="unfold-field_text"><span>查看详细数据</span></div>  
+    </div> 
     </div> 
 </div>
 <div class="info-box">
@@ -212,7 +278,7 @@ var _hmt = _hmt || [];
 </div>
             </div>
 <div class="tel-box txtCtr">
-    <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'18500905723';?>" class="tel lft"><em></em>电话咨询</a>
+    <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'010-88869660';?>" class="tel lft"><em></em>电话咨询</a>
     <a href="javascript:" class="ask rgt down"><em></em>咨询商户</a>
 </div>
 <div class="bgDiv"></div>
