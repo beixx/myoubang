@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\merchant;
+namespace App\Http\Controllers\Merchant;
 
 use App\Http\Controllers\Merchant;
 use App\Http\Helper\Msg;
@@ -113,6 +113,12 @@ class IndexController extends MerchantController
         $pic = new YfcTenantsPic();
         $this->data['data'] = $pic->where(['tenantsId' =>$this->tid,'source'=>2 ])->get();
         return view("merchant/piclist" , $this->data);
+    }
+    public  function picdel(Request $request){
+        $id = intval($request->get('id'));
+        $pic = new YfcTenantsPic();
+        $this->data['data'] = $pic->where(['tenantsId' =>$this->tid,'source'=>2,'id'=>$id ])->delete();
+        Msg::js('删除结束','/merchant/yfctenantspic');
     }
 
     public function yfctenantsset(){
