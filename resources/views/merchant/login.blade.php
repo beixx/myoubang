@@ -14,7 +14,7 @@
     <link href="/merchant/static/h-ui/css/H-ui.min.css" rel="stylesheet" type="text/css" />
     <link href="/merchant/static/h-ui.admin/css/H-ui.login.css" rel="stylesheet" type="text/css" />
     <link href="/merchant/static/h-ui.admin/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="/merchant/lib/Hui-iconfont/1.0.7/iconfont.css" rel="stylesheet" type="text/css" />
+    <link href="/merchant/lib/Hui-iconfont/1.0.8/iconfont.css" rel="stylesheet" type="text/css" />
     <title>登录 芸豆会计BPO </title>
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -54,14 +54,14 @@
     </div>
 </div>
 <div class="footer">Copyright 你的公司名称 by H-ui.admin.v2.3</div>
-<script type="text/javascript" src="/merchant/static/js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
 <script>
     <!--
     $(function (){
         $("#c").click(function(){
             var name = $("#name").val();
             var pass = $("#password").val();
-            $.post('/login/check',{'name':name,'password':pass},function(data){
+            $.post('/merchant/check',{'name':name,'password':pass},function(data){
                 if(data.status ==1) {
                     location.href='/';
                 }

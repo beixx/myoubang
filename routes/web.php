@@ -39,7 +39,16 @@ Route::group(['domain' => env('M_WEB_URL')],function(){
     Route::get('/test', 'IndexController@test');
 });
 
+
 Route::group(['domain' => env('MERCHANT_URL')],function(){
-    Route::get("/" , 'merchant/IndexController@index');
-    Route::get("/merchant/login" , 'merchant/IndexController@login');
+    //登录
+    Route::get("/merchant/login" , 'Merchant\LoginController@login');
+    Route::post("/merchant/check" , 'Merchant\LoginController@check');
+    Route::get("/merchant/logout" , 'Merchant\LoginController@logout');
+
+    //首页
+    Route::get("/" , 'Merchant\IndexController@index');
+    Route::get("/merchant/welcome" , 'Merchant\IndexController@welcome');
+    Route::get("/merchant/addpic" , 'Merchant\IndexController@addpic');
+    Route::post("/merchant/addpic" , 'Merchant\IndexController@addpic');
 });
