@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 class IndexController extends MerchantController
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function index(Request $request)
     {
         return view("merchant/index" , ['user' => $this->user]);

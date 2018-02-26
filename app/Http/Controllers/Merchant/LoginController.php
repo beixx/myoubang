@@ -50,7 +50,6 @@ class LoginController extends Controller
     # 推出登录
     public function logout()
     {
-        echo 33;exit;
         session()->flush();
         return redirect('/');
     }

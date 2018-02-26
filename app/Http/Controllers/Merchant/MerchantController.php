@@ -23,10 +23,11 @@ class MerchantController extends Controller
     {
         $this->middleware(function ($request, $next) {
             ($request->session()->all());
+
             $uid = $request->session()->get("uid");
 
-            if(!$uid || $uid <1) {
-                redirect("merchant/login");
+            if(!$uid ) {
+                Msg::js("请登录",'/merchant/login');
             }
             $this->uid = $uid;
             $this->user = $request->session()->get("user");
