@@ -84,7 +84,7 @@
                         <div class="close">
                             <input type="hidden" name="imageurl[]" value="<?php echo $v;?>" id="user_bill">
                         </div>
-                        <img id="upload_img2" width="120px" src="//i.youbangkeyi.com<?php echo $v;?>">
+                        <img id="upload_img2" width="120px" src="//img2.youbangkeyi.com<?php echo $v;?>">
                     </div>
                     <?php } ?>
                 </div>
