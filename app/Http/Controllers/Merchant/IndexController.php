@@ -127,6 +127,8 @@ class IndexController extends MerchantController
     }
 
     public function yfctenantsset(){
+        $set = new YfcTenantsSet();
+        $this->data['data'] = $set->where(['tenantsId' =>$this->tid,'source'=>2 ])->get();
         return view("merchant/setlist" , $this->data);
     }
 }

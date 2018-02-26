@@ -49,9 +49,15 @@ Route::group(['domain' => env('MERCHANT_URL')],function(){
     //首页
     Route::get("/" , 'Merchant\IndexController@index');
     Route::get("/merchant/welcome" , 'Merchant\IndexController@welcome');
+    
     Route::get("/merchant/addpic" , 'Merchant\IndexController@addpic');
     Route::post("/merchant/addpic" , 'Merchant\IndexController@addpic');
     Route::get("/merchant/yfctenantspic" , 'Merchant\IndexController@yfctenantspic');
     Route::get("/merchant/picdel" , 'Merchant\IndexController@picdel');
+
+
+    Route::get("/merchant/addset" , 'Merchant\IndexController@addset');
+    Route::post("/merchant/addset" , 'Merchant\IndexController@addset');
     Route::get("/merchant/yfctenantsset" , 'Merchant\IndexController@yfctenantsset');
+    Route::get("/merchant/setdel" , 'Merchant\IndexController@yfctenantsset');
 });
