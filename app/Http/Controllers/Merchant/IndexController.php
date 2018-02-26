@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Merchant;
 use App\Http\Controllers\Merchant;
 use App\Http\Helper\Msg;
 use App\Http\Models\YfcTenantsPic;
+use App\Http\Models\YfcTenantsSet;
 use Illuminate\Http\Request;
 
 //待确认功能
@@ -31,23 +32,27 @@ class IndexController extends MerchantController
     {
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
-                'picname' => $request->get("picname"),
+                'setName' => $request->get("setName"),
                 'cover' => json_encode($request->get("imageurl")),
-                'firstcover' => json_encode([$request->get('imageurl')[0]]),
-                'picstyle' => json_encode(explode(',',$request->get("picstyle"))),
-                'explain' => $request->get('explain'),
+                'picDetail' =>  json_encode($request->get("imageurl")),
+                'kind' => json_encode(explode(',',$request->get("kind"))),
+                'detail' => $request->get('detail'),
+                'taoxiexplain' => $request->get('taoxiexplain'),
+                'price' => $request->get('price'),
+                'currentPrice' => $request->get('currentPrice'),
+                'item' => $request->get('item'),
                 'source' => 2,
                 'tenantsId' => $this->tid,
                 'created_at' => time(),
                 'updated_at' => time(),
             ];
 
-            $style = new YfcTenantsPic();
+            $set = new YfcTenantsSet();
             if($request->get('id') >0) {
-                $style->where(['id'=>$request->get('id'),'tenantsId'=>$this->tid])->update($data);
+                $set->where(['id'=>$request->get('id'),'tenantsId'=>$this->tid])->update($data);
             }
             else {
-                $style->insert($data);
+                $set->insert($data);
             }
             Msg::js('编辑成功','/merchant/yfctenantspic');
             exit;
@@ -55,8 +60,8 @@ class IndexController extends MerchantController
         $this->data['tid'] = $this->tid;
 
         if($request->get('id',0)>0) {
-            $pic = new YfcTenantsPic();
-            $this->data['pic'] = $pic->where([
+            $set = new YfcTenantsPic();
+            $this->data['set'] = $set->where([
                 'id' => $request->get('id'),
                 'tenantsId' => $this->tid,
                 'source' => 2,

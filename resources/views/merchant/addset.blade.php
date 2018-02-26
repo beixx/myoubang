@@ -52,27 +52,38 @@
 <body>
 <div class="page-container">
     <form class="form form-horizontal" action="" method="post" enctype="multipart/form-data" id="formarticleadd">
-        <input type="hidden" name="id" value="<?php echo isset($pic['id'])?$pic['id']:0; ?>" />
+        <input type="hidden" name="id" value="<?php echo isset($set['id'])?$set['id']:0; ?>" />
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>标题：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="<?php echo isset($pic['picName'])?$pic['picName']:''; ?>" placeholder="" id="" name="picname">
+                <input type="text" class="input-text" value="<?php echo isset($set['setName'])?$set['setName']:''; ?>" placeholder="" id="" name="setName">
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">风格：</label>
+            <label class="form-label col-xs-4 col-sm-2">原价：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" placeholder="字符用逗号分割" name="" placeholder="picstyle" id="" value="<?php echo isset($pic['picStyle'])?implode(',',json_decode($pic['picStyle'],true)):''; ?>">
+                <input type="text" class="input-text" placeholder="字符用逗号分割" name="" placeholder="price" id="" value="<?php echo isset($set['price'])?$set['price']:''; ?>">
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">图片摘要：</label>
+            <label class="form-label col-xs-4 col-sm-2">折扣价：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)"><?php echo $pic['explain']??''; ?></textarea>
+                <input type="text" class="input-text" placeholder="字符用逗号分割" name="" placeholder="currentPrice" id="" value="<?php echo isset($set['currentPrice'])?$set['currentPrice']:''; ?>">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">套系特色简介：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" placeholder="字符用逗号分割" name="" placeholder="item" id="" value="<?php echo isset($set['item'])?$set['item']:''; ?>">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">套系活动说明：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)"><?php echo $set['taoxiexplain']??''; ?></textarea>
                 <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
             </div>
         </div>
-
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">图片上传：</label>
             <div class="formControls col-xs-8 col-sm-9">

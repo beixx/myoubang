@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78c33a0d-54cb-4cf0-8b6a-947adcf68385" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/merchant/addpic.blade.php" afterPath="$PROJECT_DIR$/resources/views/merchant/addpic.blade.php" />
     </list>
     <ignored path="myoubang.iws" />
@@ -28,7 +28,7 @@
       <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-285.0">
+            <state vertical-scroll-proportion="-68.125">
               <caret line="470" column="27" selection-start-line="470" selection-start-column="20" selection-end-line="470" selection-end-column="27" />
               <folding>
                 <marker date="1519530739330" expanded="true" signature="25280:25340" placeholder="..." />
@@ -47,15 +47,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addpic.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addpic.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/merchant/addpic.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44247788">
-              <caret line="86" column="88" selection-start-line="86" selection-start-column="88" selection-end-line="86" selection-end-column="88" />
+            <state vertical-scroll-proportion="-11.041667">
+              <caret line="145" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="163" selection-end-column="7" />
               <folding>
-                <marker date="1519612631072" expanded="true" signature="6082:6096" placeholder="..." />
-                <marker date="1519612631072" expanded="true" signature="6097:6259" placeholder="..." />
+                <marker date="1519612791945" expanded="true" signature="6042:6056" placeholder="..." />
+                <marker date="1519612791945" expanded="true" signature="6057:6219" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addset.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/merchant/addset.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.291667">
+              <caret line="107" column="18" selection-start-line="107" selection-start-column="18" selection-end-line="107" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.4336283">
+              <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -165,9 +185,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Merchant/MerchantController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/merchant/piclist.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Merchant/LoginController.php" />
         <option value="$PROJECT_DIR$/resources/views/merchant/addpic.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/merchant/addset.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php" />
       </list>
     </option>
   </component>
@@ -768,13 +789,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/front/dingzhi.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6122449">
-          <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/kpdetail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1162,16 +1176,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-285.0">
-          <caret line="470" column="27" selection-start-line="470" selection-start-column="20" selection-end-line="470" selection-end-column="27" />
-          <folding>
-            <marker date="1519530739330" expanded="true" signature="25280:25340" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Merchant/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.875">
@@ -1180,14 +1184,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-68.125">
+          <caret line="470" column="27" selection-start-line="470" selection-start-column="20" selection-end-line="470" selection-end-column="27" />
+          <folding>
+            <marker date="1519530739330" expanded="true" signature="25280:25340" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/merchant/addpic.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44247788">
-          <caret line="86" column="88" selection-start-line="86" selection-start-column="88" selection-end-line="86" selection-end-column="88" />
+        <state vertical-scroll-proportion="-11.041667">
+          <caret line="145" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="163" selection-end-column="7" />
           <folding>
-            <marker date="1519612631072" expanded="true" signature="6082:6096" placeholder="..." />
-            <marker date="1519612631072" expanded="true" signature="6097:6259" placeholder="..." />
+            <marker date="1519612791945" expanded="true" signature="6042:6056" placeholder="..." />
+            <marker date="1519612791945" expanded="true" signature="6057:6219" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/merchant/addset.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.291667">
+          <caret line="107" column="18" selection-start-line="107" selection-start-column="18" selection-end-line="107" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4336283">
+          <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
