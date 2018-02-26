@@ -51,4 +51,6 @@ Route::group(['domain' => env('MERCHANT_URL')],function(){
     Route::get("/merchant/welcome" , 'Merchant\IndexController@welcome');
     Route::get("/merchant/addpic" , 'Merchant\IndexController@addpic');
     Route::post("/merchant/addpic" , 'Merchant\IndexController@addpic');
+    Route::get("/merchant/yfctenantspic" , 'Merchant\IndexController@yfctenantspic');
+    Route::get("/merchant/yfctenantsset" , 'Merchant\IndexController@yfctenantsset');
 });
