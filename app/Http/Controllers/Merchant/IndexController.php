@@ -41,7 +41,7 @@ class IndexController extends MerchantController
                 'price' => $request->get('price'),
                 'currentPrice' => $request->get('currentPrice'),
                 'item' => $request->get('item'),
-                'source' => 2,
+                //'source' => 2,
                 'tenantsId' => $this->tid,
                 'created_at' => time(),
                 'updated_at' => time(),
@@ -64,7 +64,7 @@ class IndexController extends MerchantController
             $this->data['set'] = $set->where([
                 'id' => $request->get('id'),
                 'tenantsId' => $this->tid,
-                'source' => 2,
+                //'source' => 2,
             ])->first();
             if(empty($this->data['pic'])) {
                 Msg::js('无权限编辑','/merchant/yfctenantspic');
@@ -82,7 +82,7 @@ class IndexController extends MerchantController
                 'firstcover' => json_encode([$request->get('imageurl')[0]]),
                 'picstyle' => json_encode(explode(',',$request->get("picstyle"))),
                 'explain' => $request->get('explain'),
-                'source' => 2,
+                //'source' => 2,
                 'tenantsId' => $this->tid,
                 'created_at' => time(),
                 'updated_at' => time(),
@@ -105,7 +105,7 @@ class IndexController extends MerchantController
             $this->data['pic'] = $pic->where([
                 'id' => $request->get('id'),
                 'tenantsId' => $this->tid,
-                'source' => 2,
+                //'source' => 2,
             ])->first();
             if(empty($this->data['pic'])) {
                 Msg::js('无权限编辑','/merchant/yfctenantspic');
@@ -116,26 +116,26 @@ class IndexController extends MerchantController
 
     public  function yfctenantspic(){
         $pic = new YfcTenantsPic();
-        $this->data['data'] = $pic->where(['tenantsId' =>$this->tid,'source'=>2 ])->get();
+        $this->data['data'] = $pic->where(['tenantsId' =>$this->tid ])->get();
         return view("merchant/piclist" , $this->data);
     }
     public  function picdel(Request $request){
         $id = intval($request->get('id'));
         $pic = new YfcTenantsPic();
-        $this->data['data'] = $pic->where(['tenantsId' =>$this->tid,'source'=>2,'id'=>$id ])->delete();
+        $this->data['data'] = $pic->where(['tenantsId' =>$this->tid,'id'=>$id ])->delete();
         Msg::js('删除结束','/merchant/yfctenantspic');
     }
 
     public function yfctenantsset(){
         $set = new YfcTenantsSet();
-        $this->data['data'] = $set->where(['tenantsId' =>$this->tid,'source'=>2 ])->get();
+        $this->data['data'] = $set->where(['tenantsId' =>$this->tid ])->get();
         return view("merchant/setlist" , $this->data);
     }
 
     public function setdel(Request $request){
         $id = intval($request->get('id'));
         $set = new YfcTenantsSet();
-        $this->data['data'] = $set->where(['tenantsId' =>$this->tid,'source'=>2,'id'=>$id ])->delete();
+        $this->data['data'] = $set->where(['tenantsId' =>$this->tid,'id'=>$id ])->delete();
         Msg::js('删除结束','/merchant/yfctenantspic');
     }
 }
