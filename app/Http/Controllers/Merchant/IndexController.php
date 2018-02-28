@@ -54,13 +54,13 @@ class IndexController extends MerchantController
             else {
                 $set->insert($data);
             }
-            Msg::js('编辑成功','/merchant/yfctenantspic');
+            Msg::js('编辑成功','/merchant/yfctenantsset');
             exit;
         }
         $this->data['tid'] = $this->tid;
 
         if($request->get('id',0)>0) {
-            $set = new YfcTenantsPic();
+            $set = new YfcTenantsSet();
             $this->data['set'] = $set->where([
                 'id' => $request->get('id'),
                 'tenantsId' => $this->tid,
@@ -130,6 +130,13 @@ class IndexController extends MerchantController
         $set = new YfcTenantsSet();
         $this->data['data'] = $set->where(['tenantsId' =>$this->tid,'source'=>2 ])->get();
         return view("merchant/setlist" , $this->data);
+    }
+
+    public function setdel(Request $request){
+        $id = intval($request->get('id'));
+        $set = new YfcTenantsSet();
+        $this->data['data'] = $set->where(['tenantsId' =>$this->tid,'source'=>2,'id'=>$id ])->delete();
+        Msg::js('删除结束','/merchant/yfctenantspic');
     }
 }
 
