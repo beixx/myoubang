@@ -69,7 +69,7 @@ class IndexController extends Controller
             $pycity = Config::get('city.'.$city,'beijing');
             //Session::put('city',$city);
 
-            $tenantssets = YfcTenantsSet::where('tenantsId',$id)->orderBy('recommend','asc')->limit(3)->get()->toArray();
+            $tenantssets = YfcTenantsSet::where('tenantsId',$id)->orderby("created_at",'desc')->limit(3)->get()->toArray();
 
             foreach($tenantssets as $key=>$v){
                 if(isset($v['kind']) && $v['kind']){
@@ -85,7 +85,7 @@ class IndexController extends Controller
             }
             $countsets = YfcTenantsSet::where('tenantsId',$id)->count();
 
-            $tenantspics = YfcTenantsPic::where('tenantsId', $id)->limit(3)->get();
+            $tenantspics = YfcTenantsPic::where('tenantsId', $id)->orderby("created_at",'desc')->limit(3)->get();
             foreach($tenantspics as $k => $t){
                 if(isset($t['cover']) && $t['cover']){
                     $t['cover'] = json_decode($t['cover'],true);
@@ -316,7 +316,7 @@ class IndexController extends Controller
         }
         $city = $tenants['city'];
 
-        $pics = YfcTenantsPic::where('tenantsId',$id)->get();
+        $pics = YfcTenantsPic::where('tenantsId',$id)->orderby("created_at",'desc')->get();
         foreach($pics as $key=>$v){
             if($v['firstcover']){
                 $v['firstcover'] = json_decode($v['firstcover'],true);
@@ -341,7 +341,7 @@ class IndexController extends Controller
         return view("front/piclist",$this->data);
     }
     public function txlist($id = 0){
-        $sets = YfcTenantsSet::where('tenantsId',$id)->orderBy('recommend','asc')->get();
+        $sets = YfcTenantsSet::where('tenantsId',$id)->orderby("created_at",'desc')->get();
         $tenants = Yfctenants::where('id',$id)->first()->toArray();
         if(empty($tenants)) {
             return Redirect::to('/');
