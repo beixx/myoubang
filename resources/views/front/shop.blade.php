@@ -88,12 +88,12 @@ unfoldField.onclick=function(){
 		            <em>第<i class="fa blue"><?php echo $tenants['praise_order'];?></i>名</em>
 		        	<p>好评榜</p>
 		        </span>
-</div>
+</div><p class="youhui">狂欢3月，有榜网咨询下单后立减500元！</p>
     <div class="address"><?php echo $tenants['address'];?></div>
 </div></div>
 <div class="info-box mtrem6">
     <div class="data">
-        <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：2018-1-29</span></div>
+        <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：<?php echo date("Y年m月d日");?></span></div>
         <div id="shuju" style="width:100%;height:14rem;"></div>
         <div class="table">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -250,7 +250,7 @@ margin-left: 5px;
                     <h3><?php echo $v['setName'];?></h3>
                     <div class="price fa">
                         <span class="red">¥<?php echo $v['currentPrice']?></span>
-                        <del>¥<?php echo $v['price'];?></del>
+                        <del>市场价：¥<?php echo $v['price'];?></del>
                     </div>
                 </div>
             </a>
@@ -317,7 +317,7 @@ margin-left: 5px;
                    <p data-id="110101"> <a href="/tianjin/<?php echo $type;?>">天津</a></p>
                     <p data-id="110102"><a href="/shenyang/<?php echo $type;?>">沈阳</a></p>
                     <p data-id="110103"><a href="/dalian/<?php echo $type;?>">大连</a></p>
-                    <p data-id="110104"><a href="/haierbin/<?php echo $type;?>">哈尔滨</a></p>
+                    <p data-id="110104"><a href="/haerbin/<?php echo $type;?>">哈尔滨</a></p>
                     <p data-id="110105"><a href="/shijiazhuang/<?php echo $type;?>">石家庄</a></p>
                 <span class="city-letter">华东地区</span>
                    <p data-id="110107"> <a href="/shanghai/<?php echo $type;?>">上海</a></p>

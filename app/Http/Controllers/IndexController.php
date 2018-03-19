@@ -148,7 +148,7 @@ class IndexController extends Controller
             }else{
                 $shoptype = '婚礼策划';
             }
-            $size = 100;
+            $size = 50;
             $index = ($page-1)*20;
 
             if($this->data['iscity'] == 1) {

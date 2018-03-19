@@ -15,13 +15,13 @@
     <link href="/merchant/static/h-ui.admin/css/H-ui.login.css" rel="stylesheet" type="text/css" />
     <link href="/merchant/static/h-ui.admin/css/style.css" rel="stylesheet" type="text/css" />
     <link href="/merchant/lib/Hui-iconfont/1.0.8/iconfont.css" rel="stylesheet" type="text/css" />
-    <title>登录 芸豆会计BPO </title>
+    <title>有榜商家管理后台</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
 </head>
 <body>
 <input type="hidden" id="TenantId" name="TenantId" value="" />
-<div class="header"></div>
+<div class="header"><div class="lft logo"><a href="http://www.youbangkeyi.com/beijing"><img alt="有榜" width="120px" src="//c.youbangkeyi.com/images/logo.png"></a> </div></div>
 <div class="loginWraper">
     <div id="loginform" class="loginBox">
         <form class="form form-horizontal" action="index.html" method="post">
@@ -53,7 +53,7 @@
         </form>
     </div>
 </div>
-<div class="footer">Copyright 你的公司名称 by H-ui.admin.v2.3</div>
+<div class="footer">Copyright 北京有榜信息科技有限公司</div>
 <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
 <script>
     <!--

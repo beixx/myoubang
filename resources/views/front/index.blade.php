@@ -38,7 +38,7 @@ var _hmt = _hmt || [];
 <div class="content">
     <div class="sousj">
        <div class="search">
-        <input type="text" name="keyword" class="inp" placeholder="搜商家·查排名">
+        <input type="text" name="keyword" class="inp" placeholder="查商家排名·消费才放心">
         <input type="hidden" name="pycity" value="<?php echo $pycity;?>" />
         <input type="hidden" name="type" value="<?php echo $type;?>" />
         <input type="button" name="submit" class="btn">
@@ -61,7 +61,7 @@ var _hmt = _hmt || [];
         </div>
         <div class="bd">
             <div class="list_box">
-                <div class="b_time">更新时间：<span class="fa">2018-2-23</span><span class="guize"><a href="/guize.html">榜单规则</a></span></div>
+                <div class="b_time">更新时间：<span class="fa"><?php echo date("Y年m月d日");?></span><span class="guize"><a href="/guize.html">榜单规则</a></span></div>
                 <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
                     <?php if(isset($spread['name'])) { ?>
                     <div class="pic_box">
@@ -69,13 +69,12 @@ var _hmt = _hmt || [];
                             <div class="huiyuan"></div>
                         <?php } ?>
                         <div class="num_txt">
-                            <div class="num fa txtCtr"><?php echo $spread['order_city'];?><div class="pmt"><span>TOP</span></div>
-                            </div>
                             <div class="tit_box">
-                                <div class="title"><a href="/detail/<?php echo $spread['id'];?>"><?php echo $spread['name']?></a></div>
-                                <div class="txt"><span>竞争指数：<em class="e0"><?php echo $spread['heat_index'];?></em></span><span>|</span><span>人均：¥<?php echo $spread['person_price'];?></span></div>
+                                <div class="title"><span>NO.<?php echo $spread['order_city'];?></span><a href="/detail/<?php echo $spread['id'];?>"><?php echo $spread['name']?></a></div>
+                                <div class="txt"><span>竞争指数：<em class="e0"><?php echo $spread['heat_index'];?></em></span><span>|</span><span>人均消费：¥<?php echo $spread['person_price'];?></span></div>
                             </div>
                         </div>
+                        <div class="dongtai">该商家暂无最新动态</div>
                         <div class="vippic txtCtr">
                             <?php if(isset($spread['taoxi'])) { ?>
                             <div class="vipimg">
@@ -88,15 +87,15 @@ var _hmt = _hmt || [];
                         <div class="txt_box txtCtr">
                             <div class="txt">
                                 <p class="blue"><?php echo $spread['day30s'];?></p>
-                                <em>品牌搜索</em>
+                                <em>品牌搜索人数</em>
                             </div>
                             <div class="txt">
                                 <p class="blue"><?php echo $spread['allcy'];?></p>
-                                <em>全网好评</em>
+                                <em>全网好评人数</em>
                             </div>
                             <div class="txt">
                                 <p class="blue"><?php echo $spread['allce'];?></p>
-                                <em>全网差评</em>
+                                <em>全网差评人数</em>
                             </div>
                         </div>
                     </div>
@@ -107,13 +106,12 @@ var _hmt = _hmt || [];
                             <div class="huiyuan"></div>
                         <?php } ?>
                         <div class="num_txt">
-                            <div class="num fa txtCtr"><?php echo $v['order_city'];?><div class="pmt"><span>TOP</span></div>
-                            </div>
                             <div class="tit_box">
-                                <div class="title"><a href="/detail/<?php echo $v['id'];?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span>竞争指数：<em class="e0"><?php echo $v['heat_index'];?></em></span><span>|</span><span>人均：¥<?php echo $v['person_price'];?></span></div>
+                                <div class="title"><span>NO.<?php echo $v['order_city'];?></span><a href="/detail/<?php echo $v['id'];?>"><?php echo $city;?><?php echo $v['name']?></a></div>
+                                <div class="txt"><span>竞争指数：<em class="e0"><?php echo $v['heat_index'];?></em></span><span>|</span><span>人均消费：¥<?php echo $v['person_price'];?></span></div>
                             </div>
                         </div>
+                        <div class="dongtai">该商家暂无最新动态</div>
                         <?php if($v['isVip'] == 1) { ?>
                         <div class="pic txtCtr">
                             <?php foreach($v['taoxi'] as $v2) { ?>
@@ -141,15 +139,15 @@ var _hmt = _hmt || [];
                         <div class="txt_box txtCtr">
                             <div class="txt">
                                 <p class="blue"><?php echo $v['day30s'];?></p>
-                                <em>品牌搜索</em>
+                                <em>品牌搜索人数</em>
                             </div>
                             <div class="txt">
                                 <p class="blue"><?php echo $v['allcy'];?></p>
-                                <em>全网好评</em>
+                                <em>全网好评人数</em>
                             </div>
                             <div class="txt">
                                 <p class="blue"><?php echo $v['allce'];?></p>
-                                <em>全网差评</em>
+                                <em>全网差评人数</em>
                             </div>
                         </div>
                     </div>
@@ -254,7 +252,7 @@ var _hmt = _hmt || [];
                    <p data-id="110101"> <a href="/tianjin/<?php echo $type;?>">天津</a></p>
                     <p data-id="110102"><a href="/shenyang/<?php echo $type;?>">沈阳</a></p>
                     <p data-id="110103"><a href="/dalian/<?php echo $type;?>">大连</a></p>
-                    <p data-id="110104"><a href="/haierbin/<?php echo $type;?>">哈尔滨</a></p>
+                    <p data-id="110104"><a href="/haerbin/<?php echo $type;?>">哈尔滨</a></p>
                     <p data-id="110105"><a href="/shijiazhuang/<?php echo $type;?>">石家庄</a></p>
                 <span class="city-letter">华东地区</span> 
                    <p data-id="110107"> <a href="/shanghai/<?php echo $type;?>">上海</a></p>
