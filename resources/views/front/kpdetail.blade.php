@@ -85,7 +85,11 @@ var _hmt = _hmt || [];
 <div class="tittp">客片欣赏</div>
 <div class="info">
     <?php foreach($picinfo['cover'] as $v) { ?>
-        <img src="http://img2.youbangkeyi.com<?php echo $v;?>">
+        <?php if(strpos($v,'http') === false) {?>
+            <img src="http://img2.youbangkeyi.com<?php echo $v;?>">
+        <?php } else {?>
+        <img src="<?php echo $v;?>">
+        <?php } ?>
     <?php } ?>
 </div>
 <div class="jxtc_box">

@@ -36,7 +36,16 @@ var _hmt = _hmt || [];
         <div class="bd">
             <ul>
                 <?php foreach($info['cover'] as $v) { ?>
-                <li class="suolvd"><span><img src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" /></span></li>
+                <li class="suolvd">
+                    <span>
+                        <?php if(strpos($v,'http') === false) {?>
+                        <img src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" />
+                        <?php } else {?>
+                            <img src="<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" />
+                        <?php } ?>
+                        <img src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" />
+                    </span>
+                </li>
                 <?php } ?>
             </ul>
         </div>
@@ -96,7 +105,7 @@ var _hmt = _hmt || [];
                    <?php if(strpos($v['cover'][0],'http') === false) {?>
                    <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0]?>?imageView2/1/w/400/h/300/q/75|imageslim">
                    <?php } else {?>
-                       <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0]?>?imageView2/1/w/400/h/300/q/75|imageslim">
+                       <img src="<?php echo $v['cover'][0]?>?imageView2/1/w/400/h/300/q/75|imageslim">
                    <?php } ?>
                </span>  </a><p><?php echo $v['setName'];?></p>
                 <div class="price">
