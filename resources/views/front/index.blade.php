@@ -78,7 +78,13 @@ var _hmt = _hmt || [];
                         <div class="vippic txtCtr">
                             <?php if(isset($spread['taoxi'])) { ?>
                             <div class="vipimg">
-                                <a href="/detail/<?php echo $spread['id'].'/'.$spread['taoxi']['id'];?>"><img src="//img2.youbangkeyi.com<?php echo $spread['taoxi']['cover'][0]; ?>"></a>
+                                <a href="/detail/<?php echo $spread['id'].'/'.$spread['taoxi']['id'];?>">
+                                    <?php if(strpos($spread['taoxi']['cover'][0],'http') === false) {?>
+                                    <img src="//img2.youbangkeyi.com<?php echo $spread['taoxi']['cover'][0]; ?>">
+                                    <?php } else {?>
+                                        <img src="<?php echo $spread['taoxi']['cover'][0]; ?>">
+                                    <?php }?>
+                                </a>
                                 <p class="title txtLft"><?php echo $spread['setName'];?></p>
                                 <div class="price txtLft"><span class="red fa">¥<?php echo $spread['taoxi']['currentPrice'];?></span><del class="fa">¥<?php echo $spread['taoxi']['price'];?></del></div>
                             </div>
@@ -117,7 +123,13 @@ var _hmt = _hmt || [];
                             <?php foreach($v['taoxi'] as $v2) { ?>
                             <div class="img">
                                 <a class="suolv" href="/detail/<?php echo $v['id'].'/'.$v2['id'];?>">
-                                    <span><img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/225/q/75|imageslim"></span>
+                                    <span>
+                                        <?php if(strpos($v2['cover'][0],'http') === false) {?>
+                                            <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/225/q/75|imageslim">
+                                        <?php } else {?>
+                                            <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/225/q/75|imageslim">
+                                        <?php } ?>
+                                    </span>
                                 </a>
                             </div>
                             <?php } ?>
@@ -128,7 +140,11 @@ var _hmt = _hmt || [];
                             <?php if(!empty($v['taoxi'][0])) { ?>
                             <div class="vipimg">
                                 <a href="/detail/<?php echo $v['id'].'/'.$v['taoxi'][0]['id'];?>">
+                                    <?php if(strpos($v['taoxi'][0]['cover'][0],'http') === false) {?>
                                     <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v['taoxi'][0]['cover'][0];?>">
+                                    <?php } else {?>
+                                        <img class="lazy" src="/images/grey.gif" data-original="}<?php echo $v['taoxi'][0]['cover'][0];?>">
+                                    <?php } ?>
                                 </a>
                                 <p class="title txtLft"><?php echo $v['taoxi'][0]['setName'];?></p>
                                 <div class="price txtLft"><span class="red fa">¥<?php echo $v['taoxi'][0]['currentPrice'];?></span><del class="fa">¥<?php echo $v['taoxi'][0]['price'];?></del></div>

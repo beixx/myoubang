@@ -226,7 +226,7 @@ class IndexController extends Controller
             //echo '<pre>' ; print_r($this->data) ;exit;
             $advtype = $shoptype=='婚纱摄影'?1:0;
 
-            $advinfo = YfcAdv::where('type','1')->where('position','1')->where('city', 'like', '%'.$name.'%')->where('advtype',$advtype)->where('endTime','>',time())->first();
+            //$advinfo = YfcAdv::where('type','1')->where('position','1')->where('positionCity', '=', $name)->where('advtype',$advtype)->where('endTime','>',time())->first();
             $this->data['type'] = $shoptype=='婚纱摄影'?'sheying':'hunli';
             return view('front/index', $this->data);
 
