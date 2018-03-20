@@ -87,7 +87,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">图片上传：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <?php if(isset($pic['cover'])){ $cover = json_decode($pic['cover'],true); ?>
+                <?php if(isset($set['cover'])){ $cover = json_decode($set['cover'],true); ?>
 
                 <div id="imageload" style="width: 100%;height:<?php echo (1+intval(count($cover)/6))*170;?>px;display: block;">
                     <?php foreach( $cover as $k => $v){?>
@@ -95,7 +95,7 @@
                         <div class="close">
                             <input type="hidden" name="imageurl[]" value="<?php echo $v;?>" id="user_bill">
                         </div>
-                        <img id="upload_img2" width="120px" src="//i.youbangkeyi.com<?php echo $v;?>">
+                        <img id="upload_img2" width="172px" src="//img2.youbangkeyi.com<?php echo $v;?>">
                     </div>
                     <?php } ?>
                 </div>
