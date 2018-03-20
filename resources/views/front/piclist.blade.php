@@ -60,7 +60,12 @@ var _hmt = _hmt || [];
                     <a class="suolvl" href="/kpdetail/<?php echo $v['id'];?>">
                         <span class="img">
                             <?php $v['cover'] = json_decode($v['cover'],true); for($i = 0 ; $i < 9 ;$i ++ ) { if(empty($v['cover'][$i])) { break; }?>
-                            <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?imageView2/1/w/200/h/200/q/75|imageslim" />
+                            <?php if(strpos($v['cover'][$i],'http') === false) {?>
+                                <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?imageView2/1/w/200/h/200/q/75|imageslim" />
+                            <?php } else {?>
+                                <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/200/h/200/q/75|imageslim" />
+                            <?php } ?>
+
                             <?php } ?>
                         </span>
                     </a>

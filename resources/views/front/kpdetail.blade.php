@@ -37,7 +37,13 @@ var _hmt = _hmt || [];
             <ul>
                 <?php foreach($picinfo['firstcover']as $k =>$v ) {  ?>
                 <li class="suolvd">
-                    <span><img _src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" /></span>
+                    <span>
+                        <?php if(strpos($v,'http') === false) {?>
+                            <img _src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" />
+                        <?php } else {?>
+                            <img _src="<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" />
+                        <?php } ?>
+                    </span>
                 </li>
                 <?php } ?>
             </ul>
@@ -89,7 +95,13 @@ var _hmt = _hmt || [];
         <li>
             <a href="<?php echo '/kpdetail/'.$v['id'];?>">
                 <div class="suolvt">
-                <span><img src="http://img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/768/h/420/q/75|imageslim">
+                <span>
+                    <?php if(strpos($v['firstcover'][0],'http') === false) {?>
+                        <img src="http://img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/768/h/420/q/75|imageslim">
+                    <?php } else {?>
+                        <img src="<?php echo $v['firstcover'][0];?>?imageView2/1/w/768/h/420/q/75|imageslim">
+                    <?php } ?>
+
                 </span></div>
                 <div class="txt">
                     <h3><?php echo $v['picName'];?></h3>

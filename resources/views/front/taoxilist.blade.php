@@ -54,7 +54,14 @@ var _hmt = _hmt || [];
         <li>
             <a href="/detail/<?php echo $tenants['id'].'/'.$v['id'];?>">
                <div class="suolvt">
-                <span> <img src="http://img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim"></span></div>
+                <span>
+                    <?php if(strpos($v['cover'][0],'http') === false) {?>
+                        <img src="http://img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim">
+                    <?php } else {?>
+                        <img src="http://img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim">
+                    <?php } ?>
+
+                </span></div>
                 <div class="txt">
                     <h3><?php echo $v['setName'];?></h3>
                     <div class="price fa">

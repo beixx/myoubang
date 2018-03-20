@@ -78,7 +78,12 @@ var _hmt = _hmt || [];
 <div class="tittp">图文详情</div>
 <div class="info">
     <?php foreach($info['picDetail'] as $v) { ?>
-        <img src="http://img2.youbangkeyi.com<?php echo $v;?>">
+        <?php if(strpos($v,'http') === false) {?>
+            <img src="http://img2.youbangkeyi.com<?php echo $v;?>">
+        <?php } else {?>
+            <img src="<?php echo $v;?>">
+        <?php } ?>
+
     <?php } ?>
 </div>
 <div class="tit"><?php echo $tenants['name'];?>专属定制热卖产品</div>
@@ -87,7 +92,13 @@ var _hmt = _hmt || [];
         <?php foreach($remmends as $v) { ?>
         <li>
             <a class="suolvl" href="/detail/<?php echo $tenants['id'].'/'.$v['id'];?>">
-               <span> <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0]?>?imageView2/1/w/400/h/300/q/75|imageslim"></span>  </a><p><?php echo $v['setName'];?></p>
+               <span>
+                   <?php if(strpos($v['cover'][0],'http') === false) {?>
+                   <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0]?>?imageView2/1/w/400/h/300/q/75|imageslim">
+                   <?php } else {?>
+                       <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0]?>?imageView2/1/w/400/h/300/q/75|imageslim">
+                   <?php } ?>
+               </span>  </a><p><?php echo $v['setName'];?></p>
                 <div class="price">
                     <span class="red">¥<?php echo $v['currentPrice'];?></span>
                     <del>¥<?php echo $v['price'];?></del>
