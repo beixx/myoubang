@@ -66,7 +66,8 @@ class IndexController extends MerchantController
                 'tenantsId' => $this->tid,
                 //'source' => 2,
             ])->first();
-            if(empty($this->data['pic'])) {
+
+            if(empty($this->data['set'])) {
                 Msg::js('无权限编辑','/merchant/yfctenantsset');
             }
         }
@@ -136,7 +137,7 @@ class IndexController extends MerchantController
         $id = intval($request->get('id'));
         $set = new YfcTenantsSet();
         $this->data['data'] = $set->where(['tenantsId' =>$this->tid,'id'=>$id ])->delete();
-        Msg::js('删除结束','/merchant/yfctenantspic');
+        Msg::js('删除结束','/merchant/yfctenantsset');
     }
 }
 
