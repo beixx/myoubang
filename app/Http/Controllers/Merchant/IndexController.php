@@ -39,7 +39,7 @@ class IndexController extends MerchantController
                 'detail' => $request->get('detail'),
                 'taoxiexplain' => $request->get('taoxiexplain'),
                 'price' => $request->get('price'),
-                'currentPrice' => $request->get('currentPrice'),
+                'currentPrice' => $request->get('currentprice'),
                 'item' => $request->get('item'),
                 //'source' => 2,
                 'tenantsId' => $this->tid,
@@ -67,7 +67,7 @@ class IndexController extends MerchantController
                 //'source' => 2,
             ])->first();
             if(empty($this->data['pic'])) {
-                Msg::js('无权限编辑','/merchant/yfctenantspic');
+                Msg::js('无权限编辑','/merchant/yfctenantsset');
             }
         }
         return view("merchant/addset" , $this->data);

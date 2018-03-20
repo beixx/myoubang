@@ -62,25 +62,25 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">原价：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" placeholder="字符用逗号分割" name="" placeholder="price" id="" value="<?php echo isset($set['price'])?$set['price']:''; ?>">
+                <input type="text" class="input-text" placeholder="字符用逗号分割" name="price" placeholder="price" id="" value="<?php echo isset($set['price'])?$set['price']:''; ?>">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">折扣价：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" placeholder="字符用逗号分割" name="" placeholder="currentPrice" id="" value="<?php echo isset($set['currentPrice'])?$set['currentPrice']:''; ?>">
+                <input type="text" class="input-text" placeholder="字符用逗号分割" name="currentprice" placeholder="currentPrice" id="" value="<?php echo isset($set['currentPrice'])?$set['currentPrice']:''; ?>">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">套系特色简介：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" placeholder="字符用逗号分割" name="" placeholder="item" id="" value="<?php echo isset($set['item'])?$set['item']:''; ?>">
+                <input type="text" class="input-text" placeholder="字符用逗号分割" name="item" placeholder="item" id="" value="<?php echo isset($set['item'])?$set['item']:''; ?>">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">套系活动说明：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)"><?php echo $set['taoxiexplain']??''; ?></textarea>
+                <textarea name="taoxiexplain" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)"><?php echo $set['taoxiexplain']??''; ?></textarea>
                 <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
             </div>
         </div>

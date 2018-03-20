@@ -47,8 +47,8 @@
                 <td><?php echo $v['setName'];?></td>
                 <td><?php echo $v['taoxiexplain'];?></td>
                 <td class="f-14 product-brand-manage">
-                    <a href="/merchant/addpic?id=<?php echo $v['id'];?>" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
-                    <a href="/merchant/picdel?id=<?php echo $v['id'];?>" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a>
+                    <a href="/merchant/addset?id=<?php echo $v['id'];?>" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
+                    <a href="/merchant/setdel?id=<?php echo $v['id'];?>" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a>
                 </td>
             </tr>
             <?php } ?>

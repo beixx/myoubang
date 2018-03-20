@@ -62,13 +62,13 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">风格：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" placeholder="字符用逗号分割" name="" placeholder="picstyle" id="" value="<?php echo isset($pic['picStyle'])?implode(',',json_decode($pic['picStyle'],true)):''; ?>">
+                <input type="text" class="input-text" placeholder="字符用逗号分割" name="picstyle" placeholder="picstyle" id="" value="<?php echo isset($pic['picStyle'])?implode(',',json_decode($pic['picStyle'],true)):''; ?>">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">图片摘要：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)"><?php echo $pic['explain']??''; ?></textarea>
+                <textarea name="explain" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)"><?php echo $pic['explain']??''; ?></textarea>
                 <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
             </div>
         </div>
