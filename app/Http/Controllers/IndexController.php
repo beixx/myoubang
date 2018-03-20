@@ -152,7 +152,7 @@ class IndexController extends Controller
             $index = ($page-1)*20;
 
             if($this->data['iscity'] == 1) {
-                $this->data['tenants'] = YfcTenants::where('city', '=', $city)
+                $this->data['tenants'] = YfcTenants::where('positionCity', '=', $city)
                     ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
                     ->where('shoptype',$shoptype)
                     ->where('spread','!=','2')
@@ -161,7 +161,7 @@ class IndexController extends Controller
                     ->orderBy('order_city','asc')->get()->toArray();
             }
             else {
-                $this->data['tenants'] = YfcTenants::where('city', '=',$city)
+                $this->data['tenants'] = YfcTenants::where('positionCity', '=',$city)
                     ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
                     ->where('shoptype',$shoptype)
                     ->where('spread','!=','2')
@@ -170,7 +170,7 @@ class IndexController extends Controller
                     ->orderBy('order_city','asc')->get()->toArray();
             }
 
-            $spread = YfcTenants::where('city', '=',$city)
+            $spread = YfcTenants::where('positionCity', '=',$city)
                 ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
                 ->where('shoptype',$shoptype)
                 ->where('spread','=','2')
