@@ -802,7 +802,7 @@ option = {
                 }
             }
             ?>
-                <?php foreach(json_decode($tenants['commitstyle'],true) as $v ) { ?>
+                <?php if(is_array(json_decode($tenants['commitstyle'],true))) foreach(json_decode($tenants['commitstyle'],true) as $v ) { ?>
             {
                 name: "<?php echo isset($stylemap[$v['name']])?$stylemap[$v['name']]:$v['name'];?>",
                 value: <?php echo $v['count'];?>
