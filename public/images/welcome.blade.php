@@ -24,18 +24,14 @@
 <body>
 <div class="page-container">
     <p class="f-20 text-success">欢迎使用有榜网商家后台管理 <span class="f-14">v3.1</span></p>
-    <style type="text/css">
-    .anlitaoxi{    width: 360px;
-    margin-top: 35px;}
-.anlitaoxi img { width: 120px;   margin-right: 55px;
-    margin-bottom: 50px;}
-    </style>
-   <div class="anlitaoxi">
-      <a href="javascript:;" onclick="article_add('案例列表','/merchant/yfctenantspic')"><img src="http://m.youbangkeyi.com/images/anlilibiao.jpg"></a>
-       <a href="javascript:;" onclick="picture_add('添加案例','/merchant/addpic')"><img src="http://m.youbangkeyi.com/images/tianjia.jpg"></a>
+   <div>
+      <a href="javascript:;" onclick="article_add('案例列表','/merchant/yfctenantspic')"><img src="http://m.yobuangkeyi.com/images/anlilibiao.jpg"></a>
+       <a href="javascript:;" onclick="picture_add('添加案例','/merchant/addpic')"><img src="http://m.yobuangkeyi.com/images/tianjia.jpg"></a>
 
-      <a href="javascript:;" onclick="article_add('套系列表','/merchant/yfctenantsset')"><img src="http://m.youbangkeyi.com/images/taoxiliebiao.jpg"></a>
-       <a  href="javascript:;" onclick="article_add('添加套系','/merchant/addset')"><img src="http://m.youbangkeyi.com/images/tianjiataoxi.jpg"></a>
+   </div>
+    <div>
+      <a href="javascript:;" onclick="article_add('套系列表','/merchant/yfctenantsset')"><img src="http://m.yobuangkeyi.com/images/taoxiliebiao.jpg"></a>
+       <a  href="javascript:;" onclick="article_add('添加套系','/merchant/addset')"><img src="http://m.yobuangkeyi.com/images/tianjiataoxi.jpg"></a>
 
    </div>
 </div>
