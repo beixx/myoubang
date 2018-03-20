@@ -33,9 +33,9 @@ class IndexController extends MerchantController
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
                 'setName' => $request->get("setName"),
-                'cover' => json_encode($request->get("imageurl")),
-                'picDetail' =>  json_encode($request->get("imageurl")),
-                'kind' => json_encode(explode(',',$request->get("kind"))),
+                'cover' => json_encode($request->get("imageurl",[]),JSON_UNESCAPED_UNICODE),
+                'picDetail' =>  json_encode($request->get("imageurl",[]),JSON_UNESCAPED_UNICODE),
+                'kind' => json_encode(explode(',',$request->get("kind"),[]),JSON_UNESCAPED_UNICODE),
                 'detail' => $request->get('detail'),
                 'taoxiexplain' => $request->get('taoxiexplain'),
                 'price' => $request->get('price'),
@@ -79,9 +79,9 @@ class IndexController extends MerchantController
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
                 'picname' => $request->get("picname"),
-                'cover' => json_encode($request->get("imageurl")),
-                'firstcover' => json_encode([$request->get('imageurl')[0]]),
-                'picstyle' => json_encode(explode(',',$request->get("picstyle"))),
+                'cover' => json_encode($request->get("imageurl",[]),JSON_UNESCAPED_UNICODE),
+                'firstcover' => json_encode([$request->get('imageurl',[])[0]],JSON_UNESCAPED_UNICODE),
+                'picstyle' => json_encode(explode(',',$request->get("picstyle"),[]),JSON_UNESCAPED_UNICODE),
                 'explain' => $request->get('explain'),
                 //'source' => 2,
                 'tenantsId' => $this->tid,
