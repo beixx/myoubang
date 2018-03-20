@@ -39,8 +39,8 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.5490196">
-              <caret line="394" column="43" selection-start-line="394" selection-start-column="43" selection-end-line="394" selection-end-column="43" />
+            <state vertical-scroll-proportion="-4.1372547">
+              <caret line="126" column="94" selection-start-line="126" selection-start-column="40" selection-end-line="126" selection-end-column="94" />
               <folding />
             </state>
           </provider>
@@ -49,8 +49,8 @@
       <file leaf-file-name="shop.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/front/shop.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15789473">
-              <caret line="804" column="75" selection-start-line="804" selection-start-column="75" selection-end-line="804" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.36491227">
+              <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -1139,16 +1139,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5490196">
-          <caret line="394" column="43" selection-start-line="394" selection-start-column="43" selection-end-line="394" selection-end-column="43" />
+        <state vertical-scroll-proportion="-4.1372547">
+          <caret line="126" column="94" selection-start-line="126" selection-start-column="40" selection-end-line="126" selection-end-column="94" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/shop.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15789473">
-          <caret line="804" column="75" selection-start-line="804" selection-start-column="75" selection-end-line="804" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.36491227">
+          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
           <folding />
         </state>
       </provider>

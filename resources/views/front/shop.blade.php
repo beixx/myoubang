@@ -54,7 +54,13 @@ unfoldField.onclick=function(){
     <div id="focus" class="focus">
         <div class="bd">
             <ul>
-                <li class="suolvd"><span><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/></span></li>
+                <li class="suolvd"><span>
+                        <?php if(strpos($tenants['cover'],'http') === false) {?>
+                            <img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
+                        <?php } else {?>
+                            <img src="<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
+                        <?php } ?>
+                    </span></li>
             </ul>
         </div>
     </div>
@@ -223,8 +229,12 @@ margin-left: 5px;
                     <a class="suolvk" href="/kpdetail/<?php echo $v['id']?>">
                         <span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
-
+                            <?php if(strpos($v['cover'][$i],'http') === false) {?>
                             <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?imageView2/1/w/250/h/250/q/75|imageslim" />
+                            <?php } else {?>
+                            <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
+                            <?php } ?>
+
 
                         <?php } ?>
                         </span>
@@ -245,7 +255,13 @@ margin-left: 5px;
         <li>
             <a href="/detail/<?php echo $tenants['id'].'/'.$v['id']?>">
             <div class="suolvt">
-                <span><img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/768/h/420/q/75|imageslim"></span></div>
+                <span>
+                    <?php if(strpos($v['cover'][0],'http') === false) {?>
+                    <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/250/h/250/q/75|imageslim" />
+                    <?php } else {?>
+                    <img src="<?php echo $v['cover'][0];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
+                    <?php } ?>
+                </span></div>
                 <div class="txt">
                     <h3><?php echo $v['setName'];?></h3>
                     <div class="price fa">
