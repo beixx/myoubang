@@ -152,7 +152,7 @@ class IndexController extends Controller
             $index = ($page-1)*20;
 
             if($this->data['iscity'] == 1) {
-                $this->data['tenants'] = YfcTenants::where('city', 'like', '%'.$city.'%')
+                $this->data['tenants'] = YfcTenants::where('city', '=', $city)
                     ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
                     ->where('shoptype',$shoptype)
                     ->where('spread','!=','2')
@@ -161,7 +161,7 @@ class IndexController extends Controller
                     ->orderBy('order_city','asc')->get()->toArray();
             }
             else {
-                $this->data['tenants'] = YfcTenants::where('city', 'like', '%'.$city.'%')
+                $this->data['tenants'] = YfcTenants::where('city', '=',$city)
                     ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
                     ->where('shoptype',$shoptype)
                     ->where('spread','!=','2')
@@ -170,7 +170,7 @@ class IndexController extends Controller
                     ->orderBy('order_city','asc')->get()->toArray();
             }
 
-            $spread = YfcTenants::where('city', 'like', '%'.$city.'%')
+            $spread = YfcTenants::where('city', '=',$city)
                 ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
                 ->where('shoptype',$shoptype)
                 ->where('spread','=','2')
@@ -242,7 +242,7 @@ class IndexController extends Controller
 
         //echo $shoptype ;exit;
         //echo $this->data['city'] ;exit;
-        $this->data['tenants'] = YfcTenants::where('city', 'like', '%'.$this->data['city'].'%')
+        $this->data['tenants'] = YfcTenants::where('city', '=', $this->data['city'])
             //->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
             ->where('shoptype',$shoptype)
             ->where('name','like',"%".$keyword."%")
