@@ -101,6 +101,15 @@ class IndexController extends Controller
             $countpics = YfcTenantsPic::where('tenantsId',$id)->count();
 
             $style = YfcStyle::where("tenantsId",$id)->where("order_index",'>',0)->orderby("order_index")->limit(3)->get();
+            if($tenants->isVip==2){
+                $advinfo = Yfcadv::where('type','2')->where('position','3')->where('tenantsId',$id)->where('endTime','>',time())->first();
+            }else{
+                if($tenants->shoptype == '婚纱摄影'){
+                    $advinfo = Yfcadv::where('type','1')->where('position','3')->where('city', 'like', '%'.$pycity.'%')->where('advtype','1')->where('endTime','>',time())->first();
+                }else{
+                    $advinfo = Yfcadv::where('type','1')->where('position','3')->where('city', 'like', '%'.$pycity.'%')->where('advtype','2')->where('endTime','>',$time())->first();
+                }
+            }
 
             $title = $tenants['city'].$tenants['name'].' | 有榜「第'.$tenants['order_city'].'名」';
             $desc = $tenants['city'].$tenants['name'].'在《有榜婚嫁行业榜单》综合排名第'.$tenants['order_city'].'名，该商户在品牌榜单中排名第'.$tenants['brand_search_order'].'名，好评榜单中排名第'.$tenants['praise_order'].'名，希望能够帮助您了解到'.$tenants['name'].'怎么样的问题。';
@@ -122,7 +131,8 @@ class IndexController extends Controller
                 'city' => $city,
                 'pycity' => $pycity,
                 'usercomment' => $usercomment,
-                'style' => $style
+                'style' => $style,
+                'advinfo' => $advinfo
             ];
 
             return view("front/shop",$this->data);
@@ -226,7 +236,7 @@ class IndexController extends Controller
             //echo '<pre>' ; print_r($this->data) ;exit;
             $advtype = $shoptype=='婚纱摄影'?1:0;
 
-            //$advinfo = YfcAdv::where('type','1')->where('position','1')->where('positionCity', '=', $name)->where('advtype',$advtype)->where('endTime','>',time())->first();
+            $advinfo = YfcAdv::where('type','1')->where('position','1')->where('positionCity', '=', $name)->where('advtype',$advtype)->where('endTime','>',time())->first();
             $this->data['type'] = $shoptype=='婚纱摄影'?'sheying':'hunli';
             return view('front/index', $this->data);
 
