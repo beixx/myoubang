@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Merchant;
 
 use App\Http\Controllers\Merchant;
 use App\Http\Helper\Msg;
+use App\Http\Models\YfcTenants;
 use App\Http\Models\YfcTenantsPic;
 use App\Http\Models\YfcTenantsSet;
 use Illuminate\Http\Request;
@@ -54,6 +55,8 @@ class IndexController extends MerchantController
             else {
                 $set->insert($data);
             }
+            $trends = ['time' => time(),'content' => '更新了最新套系《'.$data['setName'].'》'];
+            Yfctenants::where("id",'=',$data['tenantsId'])->update(['trends'=>json_encode($trends)]);
             Msg::js('编辑成功','/merchant/yfctenantsset');
             exit;
         }
@@ -96,6 +99,8 @@ class IndexController extends MerchantController
             else {
                 $style->insert($data);
             }
+            $trends = ['time' => time(),'content' => '更新了最新案例《'.$data['picname'].'》'];
+            Yfctenants::where("id",'=',$data['tenantsId'])->update(['trends'=>json_encode($trends)]);
             Msg::js('编辑成功','/merchant/yfctenantspic');
             exit;
         }
