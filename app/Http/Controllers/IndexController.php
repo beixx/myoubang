@@ -107,7 +107,7 @@ class IndexController extends Controller
                 if($tenants->shoptype == '婚纱摄影'){
                     $advinfo = Yfcadv::where('type','1')->where('position','3')->where('city', 'like', '%'.$pycity.'%')->where('advtype','1')->where('endTime','>',time())->first();
                 }else{
-                    $advinfo = Yfcadv::where('type','1')->where('position','3')->where('city', 'like', '%'.$pycity.'%')->where('advtype','2')->where('endTime','>',$time())->first();
+                    $advinfo = Yfcadv::where('type','1')->where('position','3')->where('city', 'like', '%'.$pycity.'%')->where('advtype','2')->where('endTime','>',time())->first();
                 }
             }
 
@@ -236,7 +236,12 @@ class IndexController extends Controller
             //echo '<pre>' ; print_r($this->data) ;exit;
             $advtype = $shoptype=='婚纱摄影'?1:0;
 
-            $advinfo = YfcAdv::where('type','1')->where('position','1')->where('positionCity', '=', $name)->where('advtype',$advtype)->where('endTime','>',time())->first();
+            $this->data['advinfo'] = YfcAdv::where('type','1')->where('position','1')->where('city', '=', $city)->where('advtype',$advtype)->where('endTime','>',time())->first();
+	    if(isset($_GET['abc'])) {
+		var_dump($city);
+		var_dump($advtype);
+	    	echo '<pre>' ; print_r($this->data['advinfo'] );exit;
+            }
             $this->data['type'] = $shoptype=='婚纱摄影'?'sheying':'hunli';
             return view('front/index', $this->data);
 

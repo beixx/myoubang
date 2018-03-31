@@ -44,14 +44,11 @@ unfoldField.onclick=function(){
 <body class="shop-index">
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
-<div class="logo"><a href="/"><img width="3rem" height="1.25rem" src="/images/logo.png"></a></div>
+<div class="logo"><a href="/<?php echo $pycity;?>"><img width="3rem" height="1.25rem" src="/images/logo.png"></a></div>
 <a class="zxdh" href="tel:010-88869660"></a>
 </header>
 <div class="focus_box">
-    <?php if($tenants['isVip'] == 2) { ?>
-        <div class="huiyuan"></div>
-    <?php } ?>
-    <div id="focus" class="focus">
+<div id="focus" class="focus">
         <div class="bd">
             <ul>
                 <li class="suolvd"><span>
@@ -94,7 +91,34 @@ unfoldField.onclick=function(){
 		            <em>第<i class="fa blue"><?php echo $tenants['praise_order'];?></i>名</em>
 		        	<p>好评榜</p>
 		        </span>
-</div><p class="youhui">狂欢3月，有榜网咨询下单后立减500元！</p>
+</div>
+<p class="youhui">狂欢3月，有榜网咨询下单后立减500元！</p>
+    <?php if($tenants['isVip'] == 2) { ?>
+<?php if(isset($tenantinfo->isVip) && $tenantinfo->isVip==2){
+    if(isset($advinfo->id)){
+        ?>
+ 
+    <?php }}else{
+    if(isset($advinfo->id)){
+        ?><style type="text/css">.youhui{border-bottom: 1px dashed #eee;}</style>
+            <a target="_blank" href="http://720yun.com/t/85gxrjw96wsdnrnjh4?from=singlemessage&amp;isappinstalled=0&amp;pano_id=vJ3sRb56KUhzVBJC">
+                <li class="suolvvr">
+<div class="m-title">
+    <p>720度  VR全景看店</p>
+        北京蒙娜丽莎婚纱摄影(总店)</div>
+<div class="bg1"></div>
+<div class="m-kan"></div>
+                <span>
+                        <?php if(strpos($tenants['cover'],'http') === false) {?>
+                            <?php echo $advinfo->content;?>
+                        <?php } else {?>
+                            <img src="<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
+                        <?php } ?>
+                    </span></li></a>
+    <?php }} ?>    
+<?php }else { ?>
+
+    <?php } ?>
     <div class="address"><?php echo $tenants['address'];?></div>
 </div></div>
 <div class="info-box mtrem6">
@@ -130,54 +154,6 @@ unfoldField.onclick=function(){
             </table>
         </div>
     </div>
-
-<style>  
-/*展开全文*/  
-.unfold-field{  
-display:none;  
-position:absolute;  
-font-size: 0;  
-bottom:0;  
-width:100%;  
-height:5rem;  
-z-index: 3;  
-}  
-.unfold-field .unflod-field_mask {  
-height:2.5rem;  
-width: 100%;  
-background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,hsla(0,0%,100%,0)),to(#fff));  
-background-image: linear-gradient(-180deg,hsla(0,0%,100%,0),#fff);  
-}  
-.unfold-field_text{  
-cursor: pointer;  
-width:100%;  
-color: #B1B1B1;
-height:2.5rem;  
-font-size: 0px;  
-line-height:2.5rem;  
-text-align: center;  
-background: #fbfbfb; 
-}  
-.unfold-field_text span{  
-display:inline-block;  
-font-size:.7rem;  
-height:2.5rem;  
-line-height:2.5rem;  
-}  
-.unfold-field_text span::after{  
-content:"";  
-vertical-align: middle;  
-background:url(http://c.youbangkeyi.com/images/zhankai.png);  
-background-size: contain;  
-background-repeat: no-repeat;  
-width:15px;  
-height:15px;  
-display: inline-block;  
-margin-left: 5px;  
-}  
-</style>  
-
-
 
     <div class="data-chart">
         <div class="TxtBox">

@@ -65,9 +65,9 @@ var _hmt = _hmt || [];
                 <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
                     <?php if(isset($spread['name'])) { ?>
                     <div class="pic_box">
-                        <?php if($spread['isVip']==2) { ?>
+                        <!-- <?php if($spread['isVip']==2) { ?>
                             <div class="huiyuan"></div>
-                        <?php } ?>
+                        <?php } ?> -->
                         <div class="num_txt">
                             <div class="tit_box">
                                 <div class="title"><span>NO.<?php echo $spread['order_city'];?></span><a href="/detail/<?php echo $spread['id'];?>"><?php echo $spread['name']?></a></div>
@@ -108,7 +108,7 @@ var _hmt = _hmt || [];
                     <?php } ?>
                     <?php foreach($tenants as $k => $v) { ?>
                     <div class="pic_box">
-                        <?php if($v['isVip']==2) { ?>
+                         <?php if($v['isVip']==2) { ?>
                             <div class="huiyuan"></div>
                         <?php } ?>
                         <div class="num_txt">
@@ -139,15 +139,20 @@ var _hmt = _hmt || [];
                         <div class="vippic txtCtr">
                             <?php if(!empty($v['taoxi'][0])) { ?>
                             <div class="vipimg">
-                                <a href="/detail/<?php echo $v['id'].'/'.$v['taoxi'][0]['id'];?>">
-                                    <?php if(strpos($v['taoxi'][0]['cover'][0],'http') === false) {?>
+<a target="_blank" href="http://720yun.com/t/85gxrjw96wsdnrnjh4?from=singlemessage&amp;isappinstalled=0&amp;pano_id=vJ3sRb56KUhzVBJC">
+                <li class="suolvvr">
+<div class="m-title">
+    <p>720度  VR全景看店</p>
+        <?php echo $city;?><?php echo $v['name']?></div>
+<div class="bg1"></div>
+<div class="m-kan"></div>
+                <span>
+                                      <?php if(strpos($v['taoxi'][0]['cover'][0],'http') === false) {?>
                                     <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v['taoxi'][0]['cover'][0];?>">
                                     <?php } else {?>
                                         <img class="lazy" src="/images/grey.gif" data-original="}<?php echo $v['taoxi'][0]['cover'][0];?>">
-                                    <?php } ?>
-                                </a>
-                                <p class="title txtLft"><?php echo $v['taoxi'][0]['setName'];?></p>
-                                <div class="price txtLft"><span class="red fa">¥<?php echo $v['taoxi'][0]['currentPrice'];?></span><del class="fa">¥<?php echo $v['taoxi'][0]['price'];?></del></div>
+                                    <?php } ?>                                            </span></li></a>
+
                             </div>
                             <?php } ?>
                         </div>
