@@ -75,7 +75,7 @@ var _hmt = _hmt || [];
                             </div>
                         </div>
                         <?php
-                            if($spread->trends && is_array(json_decode($spread['trends'],true))){
+                            if($spread['trends'] && is_array(json_decode($spread['trends'],true))){
                                 $trends = json_decode($spread['trends'],true);
                                 if($trends['time'] >= time() - 86400*2) {
                                     if(isset($trends['type']) && $trends['type'] ==1) {
@@ -145,7 +145,7 @@ var _hmt = _hmt || [];
                             </div>
                         </div>
                              <?php
-                             if($v->trends && is_array(json_decode($v['trends'],true))){
+                             if($v['trends'] && is_array(json_decode($v['trends'],true))){
                                  $trends = json_decode($v['trends'],true);
                                  if($trends['time'] >= time() - 86400*3) {
                                      if(isset($trends['type']) && $trends['type'] ==1) {
