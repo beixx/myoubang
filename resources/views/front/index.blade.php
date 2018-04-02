@@ -74,7 +74,34 @@ var _hmt = _hmt || [];
                                 <div class="txt"><span>竞争指数：<em class="e0"><?php echo $spread['heat_index'];?></em></span><span>|</span><span>人均消费：¥<?php echo $spread['person_price'];?></span></div>
                             </div>
                         </div>
-                        <div class="dongtai">该商家暂无最新动态</div>
+                        <?php
+                            if($spread->trends && is_array(json_decode($spread->trends,true))){
+                                $trends = json_decode($spread->trends,true);
+                                if($trends['time'] >= time() - 86400*2) {
+                                    if(isset($trends['type']) && $trends['type'] ==1) {
+                                        echo '<div class="t1" style="color:#ff6546"> '.$trends['content'].'</div>';
+                                    }
+                                    else {
+                                        $time = time() - $trends['time'];
+                                        if($time < 3600) {
+                                            $str = intval($time/60).'分钟前';
+                                        }elseif ($time < 3600*24) {
+                                            $str = intval($time/3600).'小时前';
+
+                                        }else {
+                                            $str = '昨天';
+                                        }
+                                        echo '<div class="t1" style="color:#ff6546">'.$str.$trends['content'].'</div>';
+                                    }
+                                }
+                                else {
+                                    echo '<div class="t1">该商家暂无最新动态</div>';
+                                }
+                            }
+                            else {
+                                echo '<div class="t1">该商家暂无最新动态</div>';
+                            }
+                        ?>
                         <div class="vippic txtCtr">
                             <?php if(isset($spread['taoxi'])) { ?>
                             <div class="vipimg">
@@ -117,7 +144,35 @@ var _hmt = _hmt || [];
                                 <div class="txt"><span>竞争指数：<em class="e0"><?php echo $v['heat_index'];?></em></span><span>|</span><span>人均消费：¥<?php echo $v['person_price'];?></span></div>
                             </div>
                         </div>
-                        <div class="dongtai">该商家暂无最新动态</div>
+                             <?php
+                             if($v->trends && is_array(json_decode($v->trends,true))){
+                                 $trends = json_decode($v->trends,true);
+                                 if($trends['time'] >= time() - 86400*3) {
+                                     if(isset($trends['type']) && $trends['type'] ==1) {
+                                         echo '<div class="t1" style="color:#ff6546">'.$trends['content'].'</div>';
+
+                                     }
+                                     else {
+                                         $time = time() - $trends['time'];
+                                         if($time < 3600) {
+                                             $str = intval($time/60).'分钟前';
+                                         }elseif ($time < 3600*24) {
+                                             $str = intval($time/3600).'小时前';
+
+                                         }else {
+                                             $str = '昨天';
+                                         }
+                                         echo '<div class="t1" style="color:#ff6546">'.$str.$trends['content'].'</div>';
+                                     }
+                                 }
+                                 else {
+                                     echo '<div class="t1">该商家暂无最新动态</div>';
+                                 }
+                             }
+                             else {
+                                 echo '<div class="t1">该商家暂无最新动态</div>';
+                             }
+                             ?>
                         <?php if($v['isVip'] == 1) { ?>
                         <div class="pic txtCtr">
                             <?php foreach($v['taoxi'] as $v2) { ?>
