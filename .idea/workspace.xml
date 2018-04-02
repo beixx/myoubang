@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78c33a0d-54cb-4cf0-8b6a-947adcf68385" name="Default" comment="Merge branch 'master' of https://github.com/beixx/myoubang&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;" />
+    <list default="true" id="78c33a0d-54cb-4cf0-8b6a-947adcf68385" name="Default" comment="Merge branch 'master' of https://github.com/beixx/myoubang&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" />
+    </list>
     <ignored path="myoubang.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -37,14 +39,14 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38938054">
-              <caret line="147" column="44" selection-start-line="147" selection-start-column="44" selection-end-line="147" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.7079646">
+              <caret line="101" column="57" selection-start-line="101" selection-start-column="57" selection-end-line="101" selection-end-column="57" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1522679881950" expanded="true" signature="4267:4280" placeholder="..." />
-                <marker date="1522679881950" expanded="true" signature="4965:4978" placeholder="..." />
-                <marker date="1522679881950" expanded="true" signature="8560:8573" placeholder="..." />
-                <marker date="1522679881950" expanded="true" signature="9269:9282" placeholder="..." />
+                <marker date="1522680077752" expanded="true" signature="4272:4285" placeholder="..." />
+                <marker date="1522680077752" expanded="true" signature="4975:4988" placeholder="..." />
+                <marker date="1522680077752" expanded="true" signature="8585:8598" placeholder="..." />
+                <marker date="1522680077752" expanded="true" signature="9299:9312" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1064,14 +1066,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38938054">
-          <caret line="147" column="44" selection-start-line="147" selection-start-column="44" selection-end-line="147" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.7079646">
+          <caret line="101" column="57" selection-start-line="101" selection-start-column="57" selection-end-line="101" selection-end-column="57" />
           <folding>
             <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1522679881950" expanded="true" signature="4267:4280" placeholder="..." />
-            <marker date="1522679881950" expanded="true" signature="4965:4978" placeholder="..." />
-            <marker date="1522679881950" expanded="true" signature="8560:8573" placeholder="..." />
-            <marker date="1522679881950" expanded="true" signature="9269:9282" placeholder="..." />
+            <marker date="1522680077752" expanded="true" signature="4272:4285" placeholder="..." />
+            <marker date="1522680077752" expanded="true" signature="4975:4988" placeholder="..." />
+            <marker date="1522680077752" expanded="true" signature="8585:8598" placeholder="..." />
+            <marker date="1522680077752" expanded="true" signature="9299:9312" placeholder="..." />
           </folding>
         </state>
       </provider>

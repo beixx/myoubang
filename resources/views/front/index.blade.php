@@ -79,7 +79,7 @@ var _hmt = _hmt || [];
                                 $trends = json_decode($spread['trends'],true);
                                 if($trends['time'] >= time() - 86400*2) {
                                     if(isset($trends['type']) && $trends['type'] ==1) {
-                                        echo '<div class="t1" style="color:#ff6546"> '.$trends['content'].'</div>';
+                                        echo '<div class="dongtai" style="color:#ff6546"> '.$trends['content'].'</div>';
                                     }
                                     else {
                                         $time = time() - $trends['time'];
@@ -91,15 +91,15 @@ var _hmt = _hmt || [];
                                         }else {
                                             $str = '昨天';
                                         }
-                                        echo '<div class="t1" style="color:#ff6546">'.$str.$trends['content'].'</div>';
+                                        echo '<div class="dongtai" style="color:#ff6546">'.$str.$trends['content'].'</div>';
                                     }
                                 }
                                 else {
-                                    echo '<div class="t1">该商家暂无最新动态</div>';
+                                    echo '<div class="dongtai">该商家暂无最新动态</div>';
                                 }
                             }
                             else {
-                                echo '<div class="t1">该商家暂无最新动态</div>';
+                                echo '<div class="dongtai">该商家暂无最新动态</div>';
                             }
                         ?>
                         <div class="vippic txtCtr">
@@ -149,7 +149,7 @@ var _hmt = _hmt || [];
                                  $trends = json_decode($v['trends'],true);
                                  if($trends['time'] >= time() - 86400*3) {
                                      if(isset($trends['type']) && $trends['type'] ==1) {
-                                         echo '<div class="t1" style="color:#ff6546">'.$trends['content'].'</div>';
+                                         echo '<div class="dongtai" style="color:#ff6546">'.$trends['content'].'</div>';
 
                                      }
                                      else {
@@ -162,15 +162,15 @@ var _hmt = _hmt || [];
                                          }else {
                                              $str = '昨天';
                                          }
-                                         echo '<div class="t1" style="color:#ff6546">'.$str.$trends['content'].'</div>';
+                                         echo '<div class="dongtai" style="color:#ff6546">'.$str.$trends['content'].'</div>';
                                      }
                                  }
                                  else {
-                                     echo '<div class="t1">该商家暂无最新动态</div>';
+                                     echo '<div class="dongtai">该商家暂无最新动态</div>';
                                  }
                              }
                              else {
-                                 echo '<div class="t1">该商家暂无最新动态</div>';
+                                 echo '<div class="dongtai">该商家暂无最新动态</div>';
                              }
                              ?>
                         <?php if($v['isVip'] == 1) { ?>
