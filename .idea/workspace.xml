@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78c33a0d-54cb-4cf0-8b6a-947adcf68385" name="Default" comment="Merge branch 'master' of https://github.com/beixx/myoubang&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/merchant/addpic.blade.php" afterPath="$PROJECT_DIR$/resources/views/merchant/addpic.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/merchant/addset.blade.php" afterPath="$PROJECT_DIR$/resources/views/merchant/addset.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/webUpload/js/diyUpload.js" afterPath="$PROJECT_DIR$/public/webUpload/js/diyUpload.js" />
     </list>
     <ignored path="myoubang.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addpic.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addpic.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/merchant/addpic.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6283186">
-              <caret line="155" column="7" selection-start-line="155" selection-start-column="7" selection-end-line="155" selection-end-column="7" />
+            <state vertical-scroll-proportion="-7.9166665">
+              <caret line="138" column="17" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -91,16 +89,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="diyUpload.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="diyUpload.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/webUpload/js/diyUpload.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="108" column="45" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.5996441">
+              <caret line="171" column="5" selection-start-line="171" selection-start-column="5" selection-end-line="171" selection-end-column="5" />
               <folding>
-                <marker date="1404973874000" expanded="true" signature="4970:5019" placeholder="..." />
-                <marker date="1404973874000" expanded="true" signature="5222:5366" placeholder="..." />
-                <marker date="1404973874000" expanded="true" signature="6155:6460" placeholder="..." />
-                <marker date="1404973874000" expanded="true" signature="6346:6448" placeholder="..." />
+                <marker date="1522808616166" expanded="true" signature="4972:5021" placeholder="..." />
+                <marker date="1522808616166" expanded="true" signature="5224:5368" placeholder="..." />
+                <marker date="1522808616166" expanded="true" signature="6157:6462" placeholder="..." />
+                <marker date="1522808616166" expanded="true" signature="6348:6450" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -174,7 +172,6 @@
         <option value="$PROJECT_DIR$/resources/views/merchant/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/merchant/picadd.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/merchant/index.blade.php" />
-        <option value="$PROJECT_DIR$/public/webUpload/js/diyUpload.js" />
         <option value="$PROJECT_DIR$/public/merchant/lib/webuploader/0.1.5/server/fileupload.php" />
         <option value="$PROJECT_DIR$/resources/views/merchant/addpic.php" />
         <option value="$PROJECT_DIR$/public/webUpload/server/fileupload.php" />
@@ -193,6 +190,7 @@
         <option value="$PROJECT_DIR$/resources/views/front/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/merchant/addset.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/merchant/addpic.blade.php" />
+        <option value="$PROJECT_DIR$/public/webUpload/js/diyUpload.js" />
       </list>
     </option>
   </component>
@@ -1018,19 +1016,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/webUpload/js/diyUpload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="108" column="45" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="45" />
-          <folding>
-            <marker date="1404973874000" expanded="true" signature="4970:5019" placeholder="..." />
-            <marker date="1404973874000" expanded="true" signature="5222:5366" placeholder="..." />
-            <marker date="1404973874000" expanded="true" signature="6155:6460" placeholder="..." />
-            <marker date="1404973874000" expanded="true" signature="6346:6448" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/webUpload/server/fileupload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1065,9 +1050,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/merchant/addpic.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6283186">
-          <caret line="155" column="7" selection-start-line="155" selection-start-column="7" selection-end-line="155" selection-end-column="7" />
+        <state vertical-scroll-proportion="-7.9166665">
+          <caret line="138" column="17" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/webUpload/js/diyUpload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5996441">
+          <caret line="171" column="5" selection-start-line="171" selection-start-column="5" selection-end-line="171" selection-end-column="5" />
+          <folding>
+            <marker date="1522808616166" expanded="true" signature="4972:5021" placeholder="..." />
+            <marker date="1522808616166" expanded="true" signature="5224:5368" placeholder="..." />
+            <marker date="1522808616166" expanded="true" signature="6157:6462" placeholder="..." />
+            <marker date="1522808616166" expanded="true" signature="6348:6450" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
