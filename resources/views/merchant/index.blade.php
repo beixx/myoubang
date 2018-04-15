@@ -76,6 +76,7 @@
                 <ul>
                     <li><a data-href="/merchant/yfctenantspic" data-title="案例列表" href="javascript:void(0)">案例列表</a></li>
                     <li><a data-href="/merchant/yfctenantsset" data-title="套系列表" href="javascript:void(0)">套系列表</a></li>
+                    <li><a data-href="/merchant/setpackage" data-title="套系列表" href="javascript:void(0)">设置优惠</a></li>
                 </ul>
             </dd>
         </dl>

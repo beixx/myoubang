@@ -144,5 +144,13 @@ class IndexController extends MerchantController
         $this->data['data'] = $set->where(['tenantsId' =>$this->tid,'id'=>$id ])->delete();
         Msg::js('删除结束','/merchant/yfctenantsset');
     }
+    public function setpackage(Request $request){
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $name = trim($request->input('name'));
+            YfcTenants::where("id" ,'=',$this->tid)->update(["package"=>$name]);
+            Msg::js('设置成功','/merchant/setpackage');
+        }
+        return view("merchant/setpackage" , $this->data);
+    }
 }
 
