@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78c33a0d-54cb-4cf0-8b6a-947adcf68385" name="Default" comment="Merge branch 'master' of https://github.com/beixx/myoubang&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" />
     </list>
     <ignored path="myoubang.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0">
-              <caret line="149" column="97" selection-start-line="149" selection-start-column="97" selection-end-line="149" selection-end-column="97" />
+            <state vertical-scroll-proportion="-7.5">
+              <caret line="183" column="31" selection-start-line="183" selection-start-column="31" selection-end-line="183" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -74,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7407407">
-              <caret line="87" column="104" selection-start-line="87" selection-start-column="104" selection-end-line="87" selection-end-column="104" />
+            <state vertical-scroll-proportion="-3.5294118">
+              <caret line="126" column="28" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="28" />
               <folding>
                 <marker date="1523802543176" expanded="true" signature="26203:26263" placeholder="..." />
               </folding>
@@ -182,8 +182,8 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/merchant/setpackage.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/index.blade.php" />
       </list>
     </option>
   </component>
@@ -980,14 +980,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="149" column="97" selection-start-line="149" selection-start-column="97" selection-end-line="149" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.730769">
@@ -998,11 +990,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7407407">
-          <caret line="87" column="104" selection-start-line="87" selection-start-column="104" selection-end-line="87" selection-end-column="104" />
+        <state vertical-scroll-proportion="-3.5294118">
+          <caret line="126" column="28" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="28" />
           <folding>
             <marker date="1523802543176" expanded="true" signature="26203:26263" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5">
+          <caret line="183" column="31" selection-start-line="183" selection-start-column="31" selection-end-line="183" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

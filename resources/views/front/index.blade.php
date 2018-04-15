@@ -96,11 +96,11 @@ var _hmt = _hmt || [];
                                     }
                                 }
                                 else {
-                                    echo '<div class="dongtai">该商家暂无最新动态</div>';
+                                    echo '';
                                 }
                             }
                             else {
-                                echo '<div class="dongtai">该商家暂无最新动态</div>';
+                                echo '';
                             }
                         ?>
                         <div class="vippic txtCtr">
@@ -175,11 +175,11 @@ var _hmt = _hmt || [];
                                      }
                                  }
                                  else {
-                                     echo '<div class="dongtai">该商家暂无最新动态</div>';
+                                     echo '';
                                  }
                              }
                              else {
-                                 echo '<div class="dongtai">该商家暂无最新动态</div>';
+                                 echo '';
                              }
                              ?>
                         <?php if(strlen($v['vrimage']) < 10) { ?>
