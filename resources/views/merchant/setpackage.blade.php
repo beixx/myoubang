@@ -56,7 +56,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>标题：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="<?php echo isset($set['setName'])?$set['setName']:''; ?>" placeholder="" id="" name="name">
+                <input type="text" class="input-text" value="<?php echo $tenants['package']; ?>" placeholder="" id="" name="name">
             </div>
         </div>
 
