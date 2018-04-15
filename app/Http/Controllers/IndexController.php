@@ -85,7 +85,7 @@ class IndexController extends Controller
             }
             $countsets = YfcTenantsSet::where('tenantsId',$id)->count();
 
-            $tenantspics = YfcTenantsPic::where('tenantsId', $id)->orderby("created_at",'desc')->limit(3)->get();
+            $tenantspics = YfcTenantsPic::where('tenantsId', $id)->orderby("created_at",'desc')->limit(9)->get();
             foreach($tenantspics as $k => $t){
                 if(isset($t['cover']) && $t['cover']){
                     $t['cover'] = json_decode($t['cover'],true);
