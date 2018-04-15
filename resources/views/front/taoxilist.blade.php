@@ -79,18 +79,27 @@ var _hmt = _hmt || [];
 
 <div class="tel-box txtCtr">
     <a href="tel:18500905723" class="tel lft"><em></em>电话咨询</a>
-    <a href="javascript:" class="ask rgt down"><em></em>咨询套餐</a>
+    <a href="javascript:" class="ask rgt down"><em></em>预约到店</a>
 </div>
 <div class="bgDiv"></div>
-<div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:280px">
+<div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:19rem;">
     <div class="ask">
-        <h4>有榜评选商家优质服务，预约即可享受</h4>
+        <h4>有榜网独家优惠,预约即可领取：</h4>
+        <dl class="vip">
+                <dt><i class="vipcon"></i></dt>
+                <dd>获得有榜网一对一VIP服务，全程免费</dd>
+            </dl>
+        <dl class="vip">
+                <dt><i class="youhuicon"></i></dt>
+                <dd>预约到店免费赠送超值结婚大礼包</dd>
+            </dl>
         <div class="tip">
             <span>7天内选片</span><span>15天出精修</span><span>不满意重拍</span><span>无隐形消费</span>
         </div>
         <p>留下您的联系方式以便商户尽快联系你</p>
-        <input type="text" name="" class="input" placeholder="请输入手机号">
-        <input type="submit" name="" class="btn" value="预约看店">
+        <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
+        <input type="text" name="mobile" id="mobile" class="input" placeholder="输入手机号，享受以上福利">
+        <input type="submit" name="wapsubmit" class="btn" value="预约看店">
     </div>
 
 </div>

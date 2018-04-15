@@ -51,6 +51,16 @@ unfoldField.onclick=function(){
 <div id="focus" class="focus">
         <div class="bd">
             <ul>
+            <?php if(strlen($tenants['vrimage'])>10) { ?>
+            <a target="_blank" href="<?php echo $tenants['vrurl']?>">
+                <li class="suolvvr">
+<div class="m-title">720度VR全景看店</div>
+<div class="bg1"></div>
+<div class="m-kan"></div>
+                <span>
+                            <img src="<?php echo $tenants['vrimage'];?>"/>
+                    </span></li></a>
+<?php } ?>
                 <li class="suolvd"><span>
                         <?php if(strpos($tenants['cover'],'http') === false) {?>
                             <img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
@@ -80,19 +90,20 @@ unfoldField.onclick=function(){
     </div>
     <div class="datas">
 		        <span class="lft txtCtr c1">
-		            <em>第<i class="fa blue"><?php echo $tenants['order_city'];?></i>名</em>
+		            <em>第<i class="fa"><?php echo $tenants['order_city'];?></i>名</em>
 		        	<p>综合榜</p>
 		        </span>
 		        <span class="lft txtCtr c2">
-		            <em>第<i class="fa blue"><?php echo $tenants['brand_search_order'];?></i>名</em>
+		            <em>第<i class="fa"><?php echo $tenants['brand_search_order'];?></i>名</em>
 		            <p>品牌榜</p>
 		        </span>
 		        <span class="lft txtCtr c3">
-		            <em>第<i class="fa blue"><?php echo $tenants['praise_order'];?></i>名</em>
+		            <em>第<i class="fa"><?php echo $tenants['praise_order'];?></i>名</em>
 		        	<p>好评榜</p>
 		        </span>
 </div>
-<p class="youhui">狂欢3月，有榜网咨询下单后立减500元！</p>
+    <div class="address"><?php echo $tenants['address'];?></div>
+</div></div>
     <?php if($tenants['isVip'] == 2) { ?>
 <?php if(isset($tenantinfo->isVip) && $tenantinfo->isVip==2){
     if(isset($advinfo->id)){
@@ -119,8 +130,11 @@ unfoldField.onclick=function(){
 <?php }else { ?>
 
     <?php } ?>
-    <div class="address"><?php echo $tenants['address'];?></div>
-</div></div>
+<div class="banyouhui">
+        <dl class="vip">
+                <dt><i class="youhuicon">预约礼</i></dt>
+                <dd>预约到店免费赠送超值结婚大礼包<a href="javascript:" class="down">去领取 ></a></dd>
+            </dl></div>
 <div class="info-box mtrem6">
     <div class="data">
         <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：<?php echo date("Y年m月d日");?></span></div>
@@ -193,7 +207,7 @@ unfoldField.onclick=function(){
 </div>
 <?php if($countpics >0 ) { ?>
 <div class="case_box">
-    <div class="title">客片欣赏<a href="/kplist/<?php echo $tenants['id'];?>">全部<span class="fa"><?php echo $countpics;?></span>个案例 ></a></div>
+    <!--<div class="title">客片欣赏<a href="/kplist/<?php echo $tenants['id'];?>">全部<span class="fa"><?php echo $countpics;?></span>个案例 ></a></div> -->
 
     <div id="picScroll" class="picScroll txtCtr">
         <div class="bd">
@@ -201,7 +215,7 @@ unfoldField.onclick=function(){
                 <?php foreach($tenantspics as $k => $v){?>
                 <li>
             <p><?php echo $v['picName']?></p>
-            <span class="anli_month">12月11日 13:44</span>
+            <span class="anli_month">发布于4月14日 13:44</span>
                     <a class="suolvk" href="/kpdetail/<?php echo $v['id']?>">
                         <span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
@@ -215,6 +229,7 @@ unfoldField.onclick=function(){
                         <?php } ?>
                         </span>
                     </a>
+                <div href="javascript:" class="anlibj down">获取该案例报价</div>
                 </li>
                 <?php } ?>
             </ul>        </div>
@@ -233,7 +248,7 @@ unfoldField.onclick=function(){
             <div class="suolvt">
                 <span>
                     <?php if(strpos($v['cover'][0],'http') === false) {?>
-                    <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/250/h/250/q/75|imageslim" />
+                    <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/250/h/145/q/75|imageslim" />
                     <?php } else {?>
                     <img src="<?php echo $v['cover'][0];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                     <?php } ?>
@@ -270,19 +285,27 @@ unfoldField.onclick=function(){
 </div>
             </div>
 <div class="tel-box txtCtr">
-    <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'010-88869660';?>" class="tel lft"><em></em>电话咨询</a>
-    <a href="javascript:" class="ask rgt down"><em></em>咨询商户</a>
+    <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'18301005723';?>" class="tel lft"><em></em>电话咨询</a>
+    <a href="javascript:" class="ask rgt down">预约到店</a>
 </div>
 <div class="bgDiv"></div>
-<div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:280px">
+<div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:19rem;">
     <div class="ask">
         <h4>有榜评选商家优质服务，预约即可享受</h4>
+        <dl class="vip">
+                <dt><i class="vipcon"></i></dt>
+                <dd>获得有榜网一对一VIP服务，全程免费</dd>
+            </dl>
+        <dl class="vip">
+                <dt><i class="youhuicon"></i></dt>
+                <dd>预约到店免费赠送超值结婚大礼包</dd>
+            </dl>
         <div class="tip">
             <span>7天内选片</span><span>15天出精修</span><span>不满意重拍</span><span>无隐形消费</span>
         </div>
         <p>留下您的联系方式以便商户尽快联系你</p>
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="text" name="mobile" id="mobile" class="input" placeholder="请输入手机号">
+        <input type="text" name="mobile" id="mobile" class="input" placeholder="输入手机号，享受以上福利">
         <input type="submit" name="wapsubmit" class="btn" value="预约看店">
     </div>
 

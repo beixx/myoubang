@@ -69,9 +69,10 @@ var _hmt = _hmt || [];
                             <div class="huiyuan"></div>
                         <?php } ?> -->
                         <div class="num_txt">
+                       <!-- <div class="tit_pic"><img src="商户缩略图"></div>-->
                             <div class="tit_box">
                                 <div class="title"><span>NO.<?php echo $spread['order_city'];?></span><a href="/detail/<?php echo $spread['id'];?>"><?php echo $spread['name']?></a></div>
-                                <div class="txt"><span>竞争指数：<em class="e0"><?php echo $spread['heat_index'];?></em></span><span>|</span><span>人均消费：¥<?php echo $spread['person_price'];?></span></div>
+                                <div class="txt"><span>竞争指数：<?php echo $spread['heat_index'];?></span><span>|</span><span>人均消费：¥<?php echo $spread['person_price'];?></span></div>
                             </div>
                         </div>
                         <?php
@@ -79,19 +80,19 @@ var _hmt = _hmt || [];
                                 $trends = json_decode($spread['trends'],true);
                                 if($trends['time'] >= time() - 86400*2) {
                                     if(isset($trends['type']) && $trends['type'] ==1) {
-                                        echo '<div class="dongtai" style="color:#ff6546"> '.$trends['content'].'</div>';
+                                        echo '<div class="dongtai"> '.$trends['content'].'</div>';
                                     }
                                     else {
                                         $time = time() - $trends['time'];
                                         if($time < 3600) {
-                                            $str = intval($time/60).'分钟前';
+                                            $str = intval($time/60).'分钟前  ';
                                         }elseif ($time < 3600*24) {
-                                            $str = intval($time/3600).'小时前';
+                                            $str = intval($time/3600).'小时前  ';
 
                                         }else {
-                                            $str = '昨天';
+                                            $str = '昨天  ';
                                         }
-                                        echo '<div class="dongtai" style="color:#ff6546">'.$str.$trends['content'].'</div>';
+                                        echo '<div class="dongtai">'.$str.$trends['content'].'</div>';
                                     }
                                 }
                                 else {
@@ -117,6 +118,13 @@ var _hmt = _hmt || [];
                             </div>
                             <?php } ?>
                         </div>
+                        <div class="daodian">
+                                <div class="daodian_l">
+                                    <p class="dp001"><span>到店礼 </span>
+                                    通过有榜网预约到店免费领取超值礼包</p>
+                                                                    </div>
+                               <div class="daodian_r"><a href="/detail/<?php echo $spread['id']?>">领取优惠</a></div>
+                            </div>
                         <div class="txt_box txtCtr">
                             <div class="txt">
                                 <p class="blue"><?php echo $spread['day30s'];?></p>
@@ -139,9 +147,10 @@ var _hmt = _hmt || [];
                             <div class="huiyuan"></div>
                         <?php } ?>
                         <div class="num_txt">
+                        <!-- <div class="tit_pic"><img src="商户缩略图"></div>-->
                             <div class="tit_box">
                                 <div class="title"><span>NO.<?php echo $v['order_city'];?></span><a href="/detail/<?php echo $v['id'];?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span>竞争指数：<em class="e0"><?php echo $v['heat_index'];?></em></span><span>|</span><span>人均消费：¥<?php echo $v['person_price'];?></span></div>
+                                <div class="txt"><span>竞争指数：<?php echo $v['heat_index'];?></span><span>|</span><span>人均消费：¥<?php echo $v['person_price'];?></span></div>
                             </div>
                         </div>
                              <?php
@@ -149,20 +158,20 @@ var _hmt = _hmt || [];
                                  $trends = json_decode($v['trends'],true);
                                  if($trends['time'] >= time() - 86400*3) {
                                      if(isset($trends['type']) && $trends['type'] ==1) {
-                                         echo '<div class="dongtai" style="color:#ff6546">'.$trends['content'].'</div>';
+                                         echo '<div class="dongtai">'.$trends['content'].'</div>';
 
                                      }
                                      else {
                                          $time = time() - $trends['time'];
                                          if($time < 3600) {
-                                             $str = intval($time/60).'分钟前';
+                                             $str = intval($time/60).'分钟前  ';
                                          }elseif ($time < 3600*24) {
-                                             $str = intval($time/3600).'小时前';
+                                             $str = intval($time/3600).'小时前  ';
 
                                          }else {
-                                             $str = '昨天';
+                                             $str = '昨天  ';
                                          }
-                                         echo '<div class="dongtai" style="color:#ff6546">'.$str.$trends['content'].'</div>';
+                                         echo '<div class="dongtai">'.$str.$trends['content'].'</div>';
                                      }
                                  }
                                  else {
@@ -173,45 +182,53 @@ var _hmt = _hmt || [];
                                  echo '<div class="dongtai">该商家暂无最新动态</div>';
                              }
                              ?>
-                        <?php if($v['isVip'] == 1) { ?>
+                        <?php if(strlen($v['vrimage']) < 10) { ?>
                         <div class="pic txtCtr">
                             <?php foreach($v['taoxi'] as $v2) { ?>
-                            <div class="img">
-                                <a class="suolv" href="/detail/<?php echo $v['id'].'/'.$v2['id'];?>">
-                                    <span>
-                                        <?php if(strpos($v2['cover'][0],'http') === false) {?>
-                                            <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/225/q/75|imageslim">
-                                        <?php } else {?>
-                                            <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/225/q/75|imageslim">
-                                        <?php } ?>
-                                    </span>
-                                </a>
-                            </div>
+                                <?php if(isset($v2['cover'][0])) { ?>                  
+                                <div class="img">
+                                    <a class="suolv" href="/detail/<?php echo $v['id'].'/'.$v2['id'];?>">
+                                        <span>
+                                            <?php if(strpos($v2['cover'][0],'http') === false) {?>
+                                                <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/225/q/75|imageslim">
+                                            <?php } else {?>
+                                                <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/225/q/75|imageslim">
+                                            <?php } ?>
+                                        </span>
+                                    </a>
+                                </div>
+                                <?php } ?>
                             <?php } ?>
 
                         </div>
                         <?php } else { ?>
                         <div class="vippic txtCtr">
-                            <?php if(!empty($v['taoxi'][0])) { ?>
-                            <div class="vipimg">
-<a target="_blank" href="http://720yun.com/t/85gxrjw96wsdnrnjh4?from=singlemessage&amp;isappinstalled=0&amp;pano_id=vJ3sRb56KUhzVBJC">
-                <li class="suolvvr">
-<div class="m-title">
-    <p>720度  VR全景看店</p>
-        <?php echo $city;?><?php echo $v['name']?></div>
-<div class="bg1"></div>
-<div class="m-kan"></div>
-                <span>
-                                      <?php if(strpos($v['taoxi'][0]['cover'][0],'http') === false) {?>
-                                    <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v['taoxi'][0]['cover'][0];?>">
-                                    <?php } else {?>
-                                        <img class="lazy" src="/images/grey.gif" data-original="}<?php echo $v['taoxi'][0]['cover'][0];?>">
-                                    <?php } ?>                                            </span></li></a>
+ 
+                             <div class="vipimg">
+                            <a target="_blank" href="<?php echo $v['vrurl'];?>">
+                                            <li class="suolvvr">
+                            <div class="m-title">720度VR全景看店</div>
+                            <div class="bg1"></div>
+                            <div class="m-kan"></div>
+
+                                            <span>
+                                      
+                                    <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v['vrimage']?>">
+                                    
+                                    </span></li></a>
+
+
 
                             </div>
-                            <?php } ?>
                         </div>
                         <?php } ?>
+                          <div class="daodian">
+                                <div class="daodian_l">
+                                    <p class="dp001"><span>到店礼 </span>
+                                    通过有榜网预约到店免费领取超值礼包</p>
+                                                                    </div>
+                                <div class="daodian_r"><a href="/detail/<?php echo $v['id'];?>">领取优惠</a></div>
+                            </div>
                         <div class="txt_box txtCtr">
                             <div class="txt">
                                 <p class="blue"><?php echo $v['day30s'];?></p>
@@ -232,8 +249,6 @@ var _hmt = _hmt || [];
             </div>
         </div>
     </div>
-
-
 </div>
 <footer>
     <div class="txt"><p class="f075">定制个性榜单</p>覆盖<span>12万+</span>商户 <span>18个</span>数据衡量维度</div>
@@ -358,6 +373,53 @@ var _hmt = _hmt || [];
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript" src="/js/jquery.lazyload.js"></script>
+<!-- 订单有礼
+<div class="bgDiv"></div>
+<div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:280px">
+    <div class="ask">
+        <h4>有榜评选商家优质服务，预约即可享受</h4>
+        <div class="tip">
+            <span>7天内选片</span><span>15天出精修</span><span>不满意重拍</span><span>无隐形消费</span>
+        </div>
+        <p>留下您的联系方式以便商户尽快联系你</p>
+        <input type="hidden" name="tenantsId" id="tenantsId" value="商户id">
+        <input type="text" name="mobile" id="mobile" class="input" placeholder="请输入手机号">
+        <input type="submit" name="wapsubmit" class="btn" value="预约看店">
+    </div>
+</div>
+<script type="text/javascript">
+
+    $('input[name=wapsubmit]').click(function(){
+        var tenantsId = $('#tenantsId').val();
+        var phone = $('#mobile').val();
+        var source = 3;
+
+        if(!phone){
+            alert('手机必填');
+            return false;
+        }
+        if(phone){
+            if(!(/^1[34578]\d{9}$/.test(phone))){
+                alert("手机号码有误，请重填");
+                return false;
+            }
+        }
+        $.ajax({
+            url: "/saveview",
+            type: "post",
+            dataType: "json",
+            data: {'tenantsId': tenantsId,'phone': phone,'source':source},
+            success: function(data){
+                console.log(data);
+                if(data.result=='00'){
+                    alert('预约成功');
+                    <!--这块代码，看一下其他页面是怎么加的，我加上了， 就出乱码-->
+                }
+            }
+        });
+    });
+</script>-->
+
 <script type="text/javascript">
     $(function() {
         $("img.lazy").lazyload({effect: "fadeIn"});
