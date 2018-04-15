@@ -69,7 +69,7 @@ var _hmt = _hmt || [];
                             <div class="huiyuan"></div>
                         <?php } ?> -->
                         <div class="num_txt">
-                       <!-- <div class="tit_pic"><img src="商户缩略图"></div>-->
+                       <div class="tit_pic"><img src="//img2.youbangkeyi.com/<?php echo $spread['logo'];?>"></div>
                             <div class="tit_box">
                                 <div class="title"><span>NO.<?php echo $spread['order_city'];?></span><a href="/detail/<?php echo $spread['id'];?>"><?php echo $spread['name']?></a></div>
                                 <div class="txt"><span>竞争指数：<?php echo $spread['heat_index'];?></span><span>|</span><span>人均消费：¥<?php echo $spread['person_price'];?></span></div>
@@ -147,7 +147,7 @@ var _hmt = _hmt || [];
                             <div class="huiyuan"></div>
                         <?php } ?>
                         <div class="num_txt">
-                        <!-- <div class="tit_pic"><img src="商户缩略图"></div>-->
+                         <div class="tit_pic"><img src="//img2.youbangkeyi.com<?php echo $v['logo'];?>"></div>
                             <div class="tit_box">
                                 <div class="title"><span>NO.<?php echo $v['order_city'];?></span><a href="/detail/<?php echo $v['id'];?>"><?php echo $city;?><?php echo $v['name']?></a></div>
                                 <div class="txt"><span>竞争指数：<?php echo $v['heat_index'];?></span><span>|</span><span>人均消费：¥<?php echo $v['person_price'];?></span></div>
