@@ -366,7 +366,7 @@ var _hmt = _hmt || [];
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript" src="/js/jquery.lazyload.js"></script>
-<!-- 订单有礼
+
 <div class="bgDiv"></div>
 <div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:280px">
     <div class="ask">
@@ -411,7 +411,7 @@ var _hmt = _hmt || [];
             }
         });
     });
-</script>-->
+</script>
 
 <script type="text/javascript">
     $(function() {
