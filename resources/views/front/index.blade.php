@@ -220,7 +220,7 @@ var _hmt = _hmt || [];
                                     <p class="dp001"><span>到店礼 </span>
                                     通过有榜网预约到店免费领取超值礼包</p>
                                                                     </div>
-                                <div class="daodian_r"><a href="/detail/<?php echo $v['id'];?>">领取优惠</a></div>
+                                <div class="daodian_r"><a href="javascript:" class="ask rgt down">领取优惠</a></div>
                             </div>
                         <div class="txt_box txtCtr">
                             <div class="txt">
@@ -244,6 +244,7 @@ var _hmt = _hmt || [];
     </div>
 </div>
 <footer>
+<!--
     <div class="txt"><p class="f075">定制个性榜单</p>覆盖<span>12万+</span>商户 <span>18个</span>数据衡量维度</div>
     <em class="down">立即定制</em></footer>
 <div class="bgDiv"></div>
@@ -312,7 +313,9 @@ var _hmt = _hmt || [];
         <div class="submit txtCtr"><a href="">立即定制</a> </div>
     </div>
 </div>
+
 </div>
+-->
 <style type="text/css">
     .layui-layer-title{border-radius: 0.3rem 0.3rem 0 0;padding: 0;margin-top: 0rem;text-align: center;}
     .layui-layer{border-radius: 0.3rem;overflow: hidden;}
@@ -366,7 +369,7 @@ var _hmt = _hmt || [];
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript" src="/js/jquery.lazyload.js"></script>
-<!-- 订单有礼
+
 <div class="bgDiv"></div>
 <div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:280px">
     <div class="ask">
@@ -412,7 +415,7 @@ var _hmt = _hmt || [];
         });
     });
 </script>
--->
+
 <script type="text/javascript">
     $(function() {
         $("img.lazy").lazyload({effect: "fadeIn"});
