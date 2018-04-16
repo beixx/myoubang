@@ -366,7 +366,7 @@ var _hmt = _hmt || [];
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript" src="/js/jquery.lazyload.js"></script>
-
+<!-- 订单有礼
 <div class="bgDiv"></div>
 <div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:280px">
     <div class="ask">
@@ -406,13 +406,13 @@ var _hmt = _hmt || [];
                 console.log(data);
                 if(data.result=='00'){
                     alert('预约成功');
-                    <!--这块代码，看一下其他页面是怎么加的，我加上了， 就出乱码-->
+
                 }
             }
         });
     });
 </script>
-
+-->
 <script type="text/javascript">
     $(function() {
         $("img.lazy").lazyload({effect: "fadeIn"});
