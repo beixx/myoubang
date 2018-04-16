@@ -409,7 +409,7 @@ var _hmt = _hmt || [];
                 console.log(data);
                 if(data.result=='00'){
                     alert('预约成功');
-
+                    location.reload();
                 }
             }
         });
