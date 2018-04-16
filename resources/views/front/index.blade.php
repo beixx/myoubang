@@ -220,7 +220,7 @@ var _hmt = _hmt || [];
                                     <p class="dp001"><span>到店礼 </span>
                                         <?php echo $v['package']?$v['package']:'通过有榜网预约到店免费领取超值礼包';?></p>
                                 </div>
-                                <div class="daodian_r"><a href="javascript:" class="ask rgt down" id='<?php echo $v['id'];?>' class='package' message='<?php echo $v['package']?$v['package']:'通过有榜网预约到店免费领取超值礼包';?>'>领取优惠</a></div>
+                                <div class="daodian_r"><a href="javascript:" class="ask rgt down package" id='<?php echo $v['id'];?>'  message='<?php echo $v['package']?$v['package']:'通过有榜网预约到店免费领取超值礼包';?>'>领取优惠</a></div>
                             </div>
                         <div class="txt_box txtCtr">
                             <div class="txt">
@@ -371,7 +371,7 @@ var _hmt = _hmt || [];
 <script type="text/javascript" src="/js/jquery.lazyload.js"></script>
 
 <div class="bgDiv"></div>
-<div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:280px">
+<div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:300px">
     <div class="ask">
         <h4>有榜评选商家优质服务，预约即可享受</h4>
         <div class="tip">
