@@ -78,8 +78,7 @@ var _hmt = _hmt || [];
 <div class="more txtCtr">点击加载更多套系</div>
 
 <div class="tel-box txtCtr">
-    <a href="tel:18500905723" class="tel lft"><em></em>电话咨询</a>
-    <a href="javascript:" class="ask rgt down"><em></em>预约到店</a>
+<a href="javascript:" class="ask rgt down">咨询套系<em>(已有80人咨询)</em></a>
 </div>
 <div class="bgDiv"></div>
 <div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:19rem;">

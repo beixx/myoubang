@@ -24,9 +24,9 @@ var _hmt = _hmt || [];
 })();
 window.onload=function(){  
 var unfoldField=document.querySelector(".unfold-field");  
-var wrapH=document.querySelector(".data-chart").offsetHeight;  
-var wrap=document.querySelector(".data-chart");  
-var contentH=document.querySelector(".TxtBox").offsetHeight;  
+var wrapH=document.querySelector(".mtrem6").offsetHeight;  
+var wrap=document.querySelector(".mtrem6");  
+var contentH=document.querySelector(".zhanshi").offsetHeight;  
 // 如果实际高度大于我们设置的默认高度就把超出的部分隐藏。  
 if(contentH>wrapH){  
    unfoldField.style.display="block";  
@@ -136,6 +136,7 @@ unfoldField.onclick=function(){
                 <dd>预约到店免费赠送超值结婚大礼包<a href="javascript:" class="down">去领取 ></a></dd>
             </dl></div>
 <div class="info-box mtrem6">
+<div class="zhanshi">
     <div class="data">
         <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：<?php echo date("Y年m月d日");?></span></div>
         <div id="shuju" style="width:100%;height:14rem;"></div>
@@ -187,12 +188,13 @@ unfoldField.onclick=function(){
                 </div>
             </div>
         </div>
-        <script type="text/javascript">jQuery(".TxtBox").slide({trigger:"click"});</script>
+    </div> 
+    </div>
+                    <script type="text/javascript">jQuery(".zhanshi").slide({trigger:"click"});</script>
         <div class="unfold-field">  
         <div class="unflod-field_mask"></div>  
         <div class="unfold-field_text"><span>查看详细数据</span></div>  
-    </div> 
-    </div> 
+         </div> 
 </div>
 <div class="info-box">
     <div class="data pbbb">
@@ -214,8 +216,10 @@ unfoldField.onclick=function(){
             <ul>
                 <?php foreach($tenantspics as $k => $v){?>
                 <li>
+        <div class="anli_touxiang"><img src="//img2.youbangkeyi.com/uploads/cover/2fac75dc3ee53c59b9b2dca6c02cea33.jpg?imageView2/1/w/150/h/150/q/75|imageslim"></div>
             <p><?php echo $v['picName']?></p>
             <span class="anli_month">发布于4月14日 13:44</span>
+            <!--<p class="anli_p">恋爱最好的状态是什么？觉得有句话很适合回答：谈恋爱一起狂，结了婚一起扛。”</p>-->
                     <a class="suolvk" href="/kpdetail/<?php echo $v['id']?>">
                         <span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
@@ -285,8 +289,7 @@ unfoldField.onclick=function(){
 </div>
             </div>
 <div class="tel-box txtCtr">
-    <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'18301005723';?>" class="tel lft"><em></em>电话咨询</a>
-    <a href="javascript:" class="ask rgt down">预约到店</a>
+    <a href="javascript:" class="ask rgt down">预约到店<em>(已有116人预约)</em></a>
 </div>
 <div class="bgDiv"></div>
 <div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:19rem;">

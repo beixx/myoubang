@@ -259,17 +259,26 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
     position: absolute;
     left: 2.44rem;
     z-index: 9;}
-
+.anli_p{color: #333;
+    font-size: 0.6rem;
+    font-weight: initial;
+    line-height: 1rem;
+    width: 94%;
+    padding: 0 3%;
+    height: auto;
+    margin-top: 0.6rem;
+    text-align: left;
+    float: left;}
 .anlibj{
     background: #FF7373;
     width: 6rem;
-    line-height: 1.5rem;
+    line-height: 1.8rem;
     text-align: center;
     font-size: .7rem;
     border-radius: 5px;
     position: relative;
     margin: 0 0 0.6rem -3rem;
-    height: 1.5rem;
+    height: 1.8rem;
     border: 1px solid #FF7373;
     color: #FFF;
     float: left;
@@ -332,7 +341,7 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
 .pic_box{width: 100%;position: relative;border-bottom:.5rem #f0f0f0 solid;padding: .5rem 0;}
 .pic_box .num_txt{width:92%;height:2.2rem;display: -webkit-box;display: -ms-flexbox;display: -moz-box;padding:0.65rem 4% .5rem;position: relative;border-bottom:1px dashed #eee;}
 .pic_box .num_txt .num{width: 2.2rem;line-height: 1rem;height: 2rem;margin: 0 .5rem 0 .7rem;position: relative;font-size: 1.2rem;font-family: Krungthep,"Microsoft YaHei",arial;border-radius:50%;color:#FFF;font-weight:700;background-color:#00B7B7;padding-top: 0.2rem;}
-.pic_box .dongtai{width: 92%; padding: 0rem 4%; font-size: 0.6rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; height: 0.6rem; line-height: 0.6rem; padding-top: 0.5rem;}
+.pic_box .dongtai{width: 92%; padding: 0.5rem 4%; font-size: 0.6rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; height: 0.6rem; line-height: 0.6rem;border-bottom: 1px dashed #eee;}
 .youhui{border-top: 1px dashed #eee;margin-top: 0.5rem;padding: 0.5rem 0;font-size: 0.6rem;line-height: 1rem;color: #FF4848;text-indent: 0.75rem;}
 .pic_box .num_txt .num em{display: block; font-size: .6rem;line-height: .6rem; color: #666; overflow: hidden; font-family: Krungthep,"Microsoft YaHei",arial;}
 .pic_box .num_txt .num p{color: #FFF;font-size: 0.6rem;height: 0.9rem;line-height: 0.9rem;}
@@ -494,7 +503,7 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
 .pic_box .num_txt .tit_pic img{width: 2.2rem;height: 2.2rem;}
 .taoxi-xiangqing h3{font-size:.8rem;}
 .taoxi-xiangqing p{font-size:.6rem;}
-.pic_box .num_txt .tit_box{width: 17rem;height:2.2rem;display: inline-block;}
+.pic_box .num_txt .tit_box{width: 14.5rem;height:2.2rem;display: inline-block;}
 .xiangxia{background: url(../images/xiangxia.png) no-repeat center center;background-size:18px;position:absolute;bottom:-15px;width:20px;height: 20px; z-index: 999999; left:47%;}
 .pic_box .num_txt .tit_box .title{width:100%;height:0.9rem;margin:0.2rem 0 0.38rem;line-height:0.9rem;font-size: 0.85rem;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;display: block;}
 .pic_box .num_txt .tit_box .title a{font-family: DroidSans;width:100%;height:0.9rem;line-height:0.9rem;font-size:0.85rem;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;font-weight:700;}
@@ -644,7 +653,8 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
 .shop-index .datas .icon2{background: url(../images/icon17.png) no-repeat center center;background-size: 0.5rem}
 .shop-index .ad{width: 100%;display: table;}
 .shop-index .ad img{width: 100%;}
-.shop-index .info-box{width:100%; margin:.3rem 0% 0;}
+.mtrem6 {visibility: hidden; max-height:19rem;}
+.shop-index .info-box{width:100%; margin:0;border-top: 0.3rem solid #efefef;}
 .shop-index .info-box .title{line-height: 1.8rem; height: 1.8rem; font-size: 0.7rem; color: #111; text-indent: 0.5rem; border-bottom: 1px solid #efefef; margin-bottom: 0.3rem;}
 .shop-index .info-box .titleqs{line-height:2.5rem; height:2.5rem; font-size: 0.75rem;font-weight: 700;text-indent: 0.5rem; border-bottom: 1px solid #efefef; margin-bottom: 0.3rem;}
 .shop-index .info-box .title tr:nth-child(2n){background-color: #f9f9f9}
@@ -659,7 +669,7 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
 .shop-index .info-box .data td span{padding-left: 0.6rem;}
 .shop-index .info-box .data td img{margin-left: 0.35rem;}
 .shop-index .info-box .data .bor{border-right: 1px #e7e7e7 solid;}
-.shop-index .info-box .data-chart{width:100%; display:block;max-height:2.5rem;overflow:hidden;position:relative;visibility: hidden;}
+.shop-index .info-box .data-chart{width:100%; display:block;overflow:hidden;position:relative;}
 .shop-index .info-box .data-chart .tit{height:2rem; width:100%; }
 .shop-index .info-box .data-chart .tit ul{display: flex; width: 12rem; left: 50%; position: absolute; margin-left: -6rem; margin-top: 0.5rem;}
 .shop-index .info-box .data-chart .tit li{width:6rem;height:1.5rem;float: left;border: 1px #E3E3E3 solid;}
@@ -677,34 +687,39 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
 .shop-index .info-box .data-chart .chart img{width: 100%;}
 
 /*客户案例*/
-.case_box{position: relative; background: #FFF; width:100%;margin: .3rem 0% 0;}
+.case_box{position: relative; background: #FFF; width:100%;margin:0;border-top: 0.3rem solid #efefef;}
 .case_box .title{text-indent: 0.5rem; line-height: 2.5rem; height: 2.5rem; font-size: 0.75rem; border-bottom: 1px solid #efefef; font-weight: 700;}
 .case_box .tittx{background:#F9F9F9;border-radius: .2rem .2rem 0 0;text-indent:0.5rem;line-height: 1.5rem;height:1.5rem;border-bottom:1px solid #efefef;font-size:0.6rem;color:#999;margin-bottom: 0.3rem;}
 .case_box .title a{float: right;color: #999999;font-size: 0.6rem;margin-right:0.5rem;}
 .case_box .picScroll{margin:0 auto; text-align:center;display: inline-block;}
 .case_box .picScroll .bd ul{ float:left;}
-.case_box .picScroll .bd li{ width:100%;position:relative;float:left;font-size:14px; text-align:center;border-bottom: solid #f5f5f5 0.3rem;}
+.case_box .picScroll .bd li{ width:100%;position:relative;float:left;font-size:14px; text-align:center;border-bottom: solid #EFEFEF 0.3rem;}
 .case_box .picScroll .bd li a{-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
 .case_box .picScroll .bd li img{background:url(../images/loading.gif) #fff center center no-repeat;float: left; width: 32.3%; margin-right: 1.5%;margin-bottom: 1.5%;position: initial;}
-.case_box .picScroll .bd .img{position: relative; width: 94%; margin: 0; padding: .5rem 3% 0.3rem; border-bottom: 1px solid #efefef;border-top: 1px solid #efefef;}
-.anli_month{float: right;
+.case_box .picScroll .bd .img{position: relative; width: 94%; margin: 0; padding: .6rem 3% 0.3rem; border-bottom: 1px solid #efefef;}
+.anli_month{
+    float: left;
     color: #999;
-    font-weight: 700;
-    padding: 0 3%;
+    padding: 0 3% 0 20%;
     font-size: 0.6rem;
-    line-height: 2.5rem;
-    height: 2.5rem;}
+    line-height: 0.8rem;
+    height: 0.8rem;}
+.anli_touxiang{
+    position: absolute;
+    top: 0.6rem;
+    left: 0.5rem;}
 .case_box .picScroll .bd li img:nth-child(3n) { margin-right: 0; }
 .case_box .picScroll .bd p{
     font-size: 0.75rem;
     color: #111;
     font-weight: 700;
     float: left;
-    line-height: 2.5rem;
-    height: 2.5rem;
-    overflow: hidden;
-    padding: 0 3%;
-    text-align: left;}
+    line-height: 1.5rem;
+    height: 1.5rem;
+    padding: 0px 3% 0 20%;
+    text-align: left;
+    width: 77%;
+    margin-top: 0.6rem;}
 .case_box .picScroll .hd{}
 .case_box .picScroll .hd ul{ float:right; padding-top:16px;  display: none; } 
 
@@ -802,9 +817,8 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
 .view .hot .all a{color: #00b7b7;font-size: 0.7rem;}
 .tel-box{position: fixed;z-index:99;height: 2.5rem;width: 100%;left: 0;bottom: 0;-webkit-box-shadow: 2px 1px 8px #a4a4a4; box-shadow: 2px 1px 8px #a4a4a4;}
 .tel-box a{display: block;height: 2.5rem;font-weight:bold;line-height: 2.5rem;font-size: 0.7rem;}
-.tel-box .tel{width: 40%;background:#FFF;height: 2.5rem;color: #757575 ;position: relative;text-indent: 12%;}
-.tel-box .tel em{position: absolute;left: 22%;top: 0;background: url(../images/icon22.png) no-repeat center center;width: 1.5rem;height: 2.5rem;background-size:100%;}
-.tel-box .ask{width: 60%;background: #00CCCC;height: 2.5rem;color: #FFF;position: relative;}
+.tel-box .ask{width:100%;background: #00CCCC;height: 2.5rem;color: #FFF;position: relative;}
+.tel-box .ask em{font-size: 0.6rem; font-weight: initial; margin-left: 0.5rem;}
 /*套片欣赏*/
 .v_box{}
 .v_box .hdp-box{position:relative;height:100%;}

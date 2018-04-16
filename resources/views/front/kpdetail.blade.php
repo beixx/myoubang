@@ -117,8 +117,7 @@ var _hmt = _hmt || [];
     </ul>
 </div>
 <div class="tel-box txtCtr">
-    <a href="tel:<?php echo $tenants['isVip']==2?$tenants['phone']:'18500905723';?>" class="tel lft"><em></em>电话咨询</a>
-    <a href="javascript:" class="ask rgt down">获取客片报价</a>
+    <a href="javascript:" class="ask rgt down">获取客片报价<em>(已有108人获取)</em></a>
 </div>
 <div class="bgDiv"></div>
 <div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:19rem;">
