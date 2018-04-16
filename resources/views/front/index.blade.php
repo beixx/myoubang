@@ -218,9 +218,9 @@ var _hmt = _hmt || [];
                           <div class="daodian">
                                 <div class="daodian_l">
                                     <p class="dp001"><span>到店礼 </span>
-                                    通过有榜网预约到店免费领取超值礼包</p>
-                                                                    </div>
-                                <div class="daodian_r"><a href="javascript:" class="ask rgt down">领取优惠</a></div>
+                                        <?php echo $v['package']?$v['package']:'通过有榜网预约到店免费领取超值礼包';?></p>
+                                </div>
+                                <div class="daodian_r"><a href="javascript:" class="ask rgt down" id='<?php echo $v->id;?>' class='package' message='<?php echo $v->package?$v->package:'通过有榜网预约到店免费领取超值礼包';?>'>领取优惠</a></div>
                             </div>
                         <div class="txt_box txtCtr">
                             <div class="txt">
@@ -378,7 +378,7 @@ var _hmt = _hmt || [];
             <span>7天内选片</span><span>15天出精修</span><span>不满意重拍</span><span>无隐形消费</span>
         </div>
         <p>留下您的联系方式以便商户尽快联系你</p>
-        <input type="hidden" name="tenantsId" id="tenantsId" value="商户id">
+        <input type="hidden" name="tenantsId" id="tenantsId" value="">
         <input type="text" name="mobile" id="mobile" class="input" placeholder="请输入手机号">
         <input type="submit" name="wapsubmit" class="btn" value="预约看店">
     </div>
@@ -413,6 +413,11 @@ var _hmt = _hmt || [];
                 }
             }
         });
+    });
+    $(".package").click(function(){
+        $("#tenantsId").val($(this).attr("id"));
+        //$("#packagemessage").html($(this).attr("message"));
+        console.log($(this).attr("message"));
     });
 </script>
 
