@@ -37,6 +37,9 @@ Route::group(['domain' => env('M_WEB_URL')],function(){
 
 
     Route::get('/test', 'IndexController@test');
+
+    Route::post('/get/sheyingprice', 'IndexController@sheyingprice');
+    Route::post('/get/hunliprice', 'IndexController@hunliprice');
 });
 
 Route::group(['domain' => 'm.youbangkeyi.cn'],function(){

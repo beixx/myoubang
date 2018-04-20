@@ -660,5 +660,124 @@ class IndexController extends Controller
         echo '</html>';
         exit();
     }
+
+    function sheyingprice(){
+        $city = Input::get("city");
+        $shangjia = Input::get("shangjia");
+        $zaoxing = Input::get("zaoxing");
+        $sheying = Input::get("sheying");
+        $huazhuang = Input::get("huazhuang");
+        $count = Input::get("count");
+        $mobile = Input::get("mobile");
+
+        $price = Yfctenants::select(DB::RAW("avg(price) as c"))->where("shoptype",'=','婚纱摄影')->where('city', '=',$city)->where("price",'>',0)->get();
+
+        $price = $price[0]['c'];
+
+        $shangjia = $shangjia=='中端商家'? 4.3 : 6.5;
+        $zaoxingprice = intval($shangjia * $zaoxing * $price  / 100 );
+
+        if($sheying == '资深级') {
+            $sheying = 0.7;
+        }else if($sheying == '总监级') {
+            $sheying = 0.85 ;
+        }
+        else {
+            $sheying = 1.5;
+        }
+
+        if($shangjia == 4.3) {
+            $sheyingpop = 0.95;
+        }
+        else {
+            $sheyingpop = 1.1;
+        }
+        $sheyingprice = intval($sheying * 27 * $price * $sheyingpop / 100 );
+
+        if($huazhuang == '资深级'){
+            $huazhuang = 0.7;
+        }else if ($huazhuang == '总监级') {
+            $huazhuang = 0.85;
+        }
+        else {
+            $huazhuang = 1.5;
+        }
+        $huazhuangprice = intval($huazhuang * 21.5 * $price* $sheyingpop /100);
+
+        if($shangjia == 4.3) {
+            $cpprice = intval($price * 0.54  * $count/100) ;
+        }
+        else {
+            $cpprice = intval($price * 0.86 * $count / 100);
+        }
+        $allprice  = $zaoxingprice + $sheyingprice + $huazhuangprice + $cpprice  ;
+
+        file_put_contents(storage_path("logs/sheying.log"), "日期：".date("Y-m-d H:i:s")."=>数据：".json_encode($_REQUEST,JSON_UNESCAPED_UNICODE)."\n",FILE_APPEND);
+
+        $data = [
+            'zaoxingprice' => $zaoxingprice,
+            'sheyingprice' => $sheyingprice,
+            'huazhuangprice' => $huazhuangprice,
+            'cpprice' => $cpprice,
+            'allprice' => $allprice,
+            'price' => $price,
+        ];
+        echo json_encode($data,JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+
+    function  hunliprice(){
+        $city = Input::get("city");
+        $hotel = Input::get("hotel");
+        $zhuoshu = Input::get("zhuoshu");
+        $xuqiu = Input::get("xuqiu");
+        $mobile = Input::get("mobile");
+
+        $price = Yfctenants::select(DB::RAW("avg(price) as c"))->where("shoptype",'=','婚礼策划')->where('city', '=',$city)->where("price",'>',0)->get();
+
+        $price = $price[0]['c'];
+
+        if($xuqiu == '经济型') {
+            $xuqiuprice = 0.86;
+            $wedprice = intval(($price - 2000) * $xuqiuprice) ;
+            $carprice = intval(1500 * $xuqiuprice);
+            $lifuprice = intval(2000 * $xuqiuprice);
+            $wineprice = intval(250 * $zhuoshu * $xuqiuprice);
+        }
+        else if($xuqiu == '中端消费') {
+            $xuqiuprice = 1 ;
+            $wedprice = intval($price * $xuqiuprice );
+            $carprice = intval(4500 * $xuqiuprice) ;
+            $lifuprice = intval(5000 * $xuqiuprice);
+            $wineprice = intval(300 * $zhuoshu * $xuqiuprice);
+        }
+        else {
+            $xuqiuprice = 1.15;
+            $wedprice = intval(( $price  + 2000) * $xuqiuprice);
+            $carprice = intval(8000 * $xuqiuprice);
+            $lifuprice = intval(9000 * $xuqiuprice);
+            $wineprice = intval(320 * $zhuoshu * $xuqiuprice);
+        }
+
+
+        $hotelprice = intval($hotel * $zhuoshu * $xuqiuprice);
+
+
+        $allprice  = $wedprice + $carprice + $lifuprice + $wineprice + $hotelprice ;
+
+        file_put_contents(storage_path("logs/hunli.log"), "日期：".date("Y-m-d H:i:s")."=>数据：".json_encode($_REQUEST,JSON_UNESCAPED_UNICODE)."\n",FILE_APPEND);
+
+        $data = [
+            'wedprice' => $wedprice,
+            'carprice' => $carprice,
+            'lifuprice' => $lifuprice,
+            'wineprice' => $wineprice,
+            'hotelprice' => $hotelprice,
+            'allprice' => $allprice,
+            'price' => $price,
+        ];
+        echo json_encode($data,JSON_UNESCAPED_UNICODE);
+        exit;
+    }
 }
 
