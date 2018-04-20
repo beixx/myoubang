@@ -662,13 +662,13 @@ class IndexController extends Controller
     }
 
     function sheyingprice(){
-        $city = Input::get("city");
-        $shangjia = Input::get("shangjia");
-        $zaoxing = Input::get("zaoxing");
-        $sheying = Input::get("sheying");
-        $huazhuang = Input::get("huazhuang");
-        $count = Input::get("count");
-        $mobile = Input::get("mobile");
+        $city = Request::get("city");
+        $shangjia = Request::get("shangjia");
+        $zaoxing = Request::get("zaoxing");
+        $sheying = Request::get("sheying");
+        $huazhuang = Request::get("huazhuang");
+        $count = Request::get("count");
+        $mobile = Request::get("mobile");
 
         $price = Yfctenants::select(DB::RAW("avg(price) as c"))->where("shoptype",'=','婚纱摄影')->where('city', '=',$city)->where("price",'>',0)->get();
 
@@ -727,11 +727,11 @@ class IndexController extends Controller
     }
 
     function  hunliprice(){
-        $city = Input::get("city");
-        $hotel = Input::get("hotel");
-        $zhuoshu = Input::get("zhuoshu");
-        $xuqiu = Input::get("xuqiu");
-        $mobile = Input::get("mobile");
+        $city = Request::get("city");
+        $hotel = Request::get("hotel");
+        $zhuoshu = Request::get("zhuoshu");
+        $xuqiu = Request::get("xuqiu");
+        $mobile = Request::get("mobile");
 
         $price = Yfctenants::select(DB::RAW("avg(price) as c"))->where("shoptype",'=','婚礼策划')->where('city', '=',$city)->where("price",'>',0)->get();
 
