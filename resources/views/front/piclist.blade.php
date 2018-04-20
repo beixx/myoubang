@@ -91,7 +91,7 @@ var _hmt = _hmt || [];
             </dl>
         <dl class="vip">
                 <dt><i class="youhuicon"></i></dt>
-                <dd>预约到店免费赠送超值结婚大礼包</dd>
+                <dd><?php echo $tenants['package']?$tenants['package']:'预约到店免费赠送超值结婚大礼包';?></dd>
             </dl>
         <div class="tip">
             <span>7天内选片</span><span>15天出精修</span><span>不满意重拍</span><span>无隐形消费</span>

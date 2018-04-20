@@ -117,7 +117,7 @@ var _hmt = _hmt || [];
     </ul>
 </div>
 <div class="tel-box txtCtr">
-   <a href="javascript:" class="ask rgt down">咨询该套餐<em>(已有85人咨询)</em></a>
+   <a href="javascript:" class="ask rgt down">咨询该套餐<em>(已有<?php echo $tenants['count2'];?>人咨询)</em></a>
 </div>
 <div class="bgDiv"></div>
 <div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:19rem;">
@@ -129,7 +129,7 @@ var _hmt = _hmt || [];
             </dl>
         <dl class="vip">
                 <dt><i class="youhuicon"></i></dt>
-                <dd>预约到店免费赠送超值结婚大礼包</dd>
+                <dd><?php echo $tenants['package']?$tenants['package']:'预约到店免费赠送超值结婚大礼包';?></dd>
             </dl>
         <div class="tip">
             <span>7天内选片</span><span>15天出精修</span><span>不满意重拍</span><span>无隐形消费</span>

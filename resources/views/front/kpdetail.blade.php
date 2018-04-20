@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
     <script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js?2"></script>
     <style type="text/css">body{background: #f0f0f0}</style>
     <script>
 var _hmt = _hmt || [];
@@ -68,9 +68,11 @@ var _hmt = _hmt || [];
             <?php } ?>
         </div>
     </div>
+<!--
+           <p class="anli_pa">内容</p> -->
 </div>
 <div class="shop_box">
-    <div class="titdp">店铺信息</div>
+    <div class="titdp">案例所属商家</div>
     <?php if($tenants['isVip'] == 2) { ?>
     <div class="huiyuan"></div>
     <?php } ?>
@@ -117,27 +119,27 @@ var _hmt = _hmt || [];
     </ul>
 </div>
 <div class="tel-box txtCtr">
-    <a href="javascript:" class="ask rgt down">获取客片报价<em>(已有108人获取)</em></a>
+    <a href="javascript:" class="ask rgt down">获取客片报价<em>(已有<?php echo $tenants['count3'];?>人获取)</em></a>
 </div>
 <div class="bgDiv"></div>
 <div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:19rem;">
     <div class="ask">
-        <h4>有榜网独家优惠,预约即可领取：</h4>
+        <h4>享独家优惠,获取报价：</h4>
         <dl class="vip">
                 <dt><i class="vipcon"></i></dt>
                 <dd>获得有榜网一对一VIP服务，全程免费</dd>
             </dl>
         <dl class="vip">
                 <dt><i class="youhuicon"></i></dt>
-                <dd>预约到店免费赠送超值结婚大礼包</dd>
+                <dd><?php echo $tenants['package']?$tenants['package']:'预约到店免费赠送超值结婚大礼包';?></dd>
             </dl>
         <div class="tip">
             <span>7天内选片</span><span>15天出精修</span><span>不满意重拍</span><span>无隐形消费</span>
         </div>
         <p>留下您的联系方式以便商户尽快联系你</p>
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="text" name="mobile" id="mobile" class="input" placeholder="输入手机号，享受以上福利">
-        <input type="submit" name="wapsubmit" class="btn" value="预约看店">
+        <input type="text" name="mobile" id="mobile" class="input" placeholder="输入手机号，立即获取报价">
+        <input type="submit" name="wapsubmit" class="btn" value="获取报价">
     </div>
 
 </div>

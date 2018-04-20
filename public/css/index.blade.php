@@ -31,7 +31,7 @@ var _hmt = _hmt || [];
 <body>
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
-<div class="logo"><img width="3.46rem" height="1.4rem" src="/images/logo.png"></div>
+<div class="logo"><img width="3.956rem" height="1.6rem" src="/images/logo.png"></div>
 <a class="zxdh" href="tel:18500905723"></a>
 </header>
 

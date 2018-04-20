@@ -122,7 +122,7 @@ class IndexController extends MerchantController
 
     public  function yfctenantspic(){
         $pic = new YfcTenantsPic();
-        $this->data['data'] = $pic->where(['tenantsId' =>$this->tid ])->get();
+        $this->data['data'] = $pic->where(['tenantsId' =>$this->tid ])->orderby("id",'desc')->get();
         return view("merchant/piclist" , $this->data);
     }
     public  function picdel(Request $request){
@@ -134,7 +134,7 @@ class IndexController extends MerchantController
 
     public function yfctenantsset(){
         $set = new YfcTenantsSet();
-        $this->data['data'] = $set->where(['tenantsId' =>$this->tid ])->get();
+        $this->data['data'] = $set->where(['tenantsId' =>$this->tid ])->orderby("id",'desc')->get();
         return view("merchant/setlist" , $this->data);
     }
 

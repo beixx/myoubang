@@ -12,7 +12,7 @@
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js?2"></script>
     <style type="text/css">body{background:#f0f0f0}</style>
     <script>
 var _hmt = _hmt || [];
@@ -44,8 +44,8 @@ unfoldField.onclick=function(){
 <body class="shop-index">
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
-<div class="logo"><a href="/<?php echo $pycity;?>"><img width="3rem" height="1.25rem" src="/images/logo.png"></a></div>
-<a class="zxdh" href="tel:010-88869660"></a>
+<div class="logo"><a href="/<?php echo $pycity;?>"><img width="3.46rem" height="1.4rem" src="/images/logo.png"></a></div>
+<a class="zxdh" href="tel:18500905723"></a>
 </header>
 <div class="focus_box">
 <div id="focus" class="focus">
@@ -85,7 +85,7 @@ unfoldField.onclick=function(){
 <div class="sjkap">
     <div class="txt_info">
         <h1><?php echo $city;?><?php echo $tenants['name'];?></h1>
-        <p>人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></p>
+        <p><span>人均消费:¥<?php echo $tenants['person_price'];?></span><span>|</span><span>有<?php echo $tenantssort['allcy']?>人在此店消费过</span></p>
         <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?>"><em></em>打榜</a></div>
     </div>
     <div class="datas">
@@ -130,11 +130,17 @@ unfoldField.onclick=function(){
 <?php }else { ?>
 
     <?php } ?>
-<div class="banyouhui">
-        <dl class="vip">
-                <dt><i class="youhuicon">预约礼</i></dt>
-                <dd>预约到店免费赠送超值结婚大礼包<a href="javascript:" class="down">去领取 ></a></dd>
-            </dl></div>
+<div class="daodianli">
+                <div class="daodiant">
+                    <span class="coupon-tag">到店礼</span>
+                    <h3>免费赠送超值结婚大礼包</h3>
+                    <div class="btm-line">
+                        仅限到店使用
+                        <span class="sm-text"><?php echo $tenants['count1'];?>人感兴趣</span>
+                    </div>
+                </div>
+                <div class="to-get-btn down" href="javascript:">领取</div>
+            </div>
 <div class="info-box mtrem6">
 <div class="zhanshi">
     <div class="data">
@@ -216,10 +222,12 @@ unfoldField.onclick=function(){
             <ul>
                 <?php foreach($tenantspics as $k => $v){?>
                 <li>
-        <div class="anli_touxiang"><img src="//img2.youbangkeyi.com/uploads/cover/2fac75dc3ee53c59b9b2dca6c02cea33.jpg?imageView2/1/w/150/h/150/q/75|imageslim"></div>
+        <div class="anli_touxiang"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim"></div>
             <p><?php echo $v['picName']?></p>
             <span class="anli_month">发布于4月14日 13:44</span>
-            <!--<p class="anli_p">恋爱最好的状态是什么？觉得有句话很适合回答：谈恋爱一起狂，结了婚一起扛。”</p>-->
+            <?php if(strlen($v['explain'])>5) { ?>
+           <p class="anli_p"><?php echo $v['explain'];?></p>
+           <?php } ?>
                     <a class="suolvk" href="/kpdetail/<?php echo $v['id']?>">
                         <span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
@@ -301,7 +309,7 @@ unfoldField.onclick=function(){
             </dl>
         <dl class="vip">
                 <dt><i class="youhuicon"></i></dt>
-                <dd>预约到店免费赠送超值结婚大礼包</dd>
+                <dd><?php echo $tenants['package']?$tenants['package']:'预约到店免费赠送超值结婚大礼包';?></dd>
             </dl>
         <div class="tip">
             <span>7天内选片</span><span>15天出精修</span><span>不满意重拍</span><span>无隐形消费</span>
@@ -330,16 +338,26 @@ unfoldField.onclick=function(){
                 <p data-id="110100"><?php echo $city;?></p>
             </div>
             <div class="hot">
-                  <span class="city-letter">华北东北</span>
-                   <p data-id="110100"> <a href="/beijing/<?php echo $type;?>">北京</a></p>
-                   <p data-id="110101"> <a href="/tianjin/<?php echo $type;?>">天津</a></p>
+                <span class="city-letter">华北东北</span>     
+                    <p data-id="110100"> <a href="/beijing/<?php echo $type;?>">北京</a></p>
+                    <p data-id="110101"> <a href="/tianjin/<?php echo $type;?>">天津</a></p>
                     <p data-id="110102"><a href="/shenyang/<?php echo $type;?>">沈阳</a></p>
                     <p data-id="110103"><a href="/dalian/<?php echo $type;?>">大连</a></p>
                     <p data-id="110104"><a href="/haerbin/<?php echo $type;?>">哈尔滨</a></p>
                     <p data-id="110105"><a href="/shijiazhuang/<?php echo $type;?>">石家庄</a></p>
-                <span class="city-letter">华东地区</span>
-                   <p data-id="110107"> <a href="/shanghai/<?php echo $type;?>">上海</a></p>
-                   <p data-id="110106"> <a href="/hangzhou/<?php echo $type;?>">杭州</a></p>
+                    <p data-id="1101041"><a href="/taiyuan/<?php echo $type;?>">太原</a></p>
+                    <p data-id="1101042"><a href="/changchun/<?php echo $type;?>">长春</a></p>
+                    <p data-id="1101043"><a href="/tangshan/<?php echo $type;?>">唐山</a></p>
+                    <p data-id="1101044"><a href="/qinhuangdao/<?php echo $type;?>">秦皇岛</a></p>
+                    <p data-id="1101045"><a href="/langfang/<?php echo $type;?>">廊坊</a></p>
+                    <p data-id="1101046"><a href="/baoding/<?php echo $type;?>">保定</a></p>
+                    <p data-id="1101047"><a href="/bangbu/<?php echo $type;?>">蚌埠</a></p>
+                    <p data-id="1101048"><a href="/jinzhou/<?php echo $type;?>">锦州</a></p>
+                    <p data-id="1101049"><a href="/daqing/<?php echo $type;?>">大庆</a></p>
+                    <p data-id="1101040"><a href="/changzhi/<?php echo $type;?>">长治</a></p>
+               <span class="city-letter">华东地区</span> 
+                    <p data-id="110107"> <a href="/shanghai/<?php echo $type;?>">上海</a></p>
+                    <p data-id="110106"> <a href="/hangzhou/<?php echo $type;?>">杭州</a></p>
                     <p data-id="110108"><a href="/xiamen/<?php echo $type;?>">厦门</a></p>
                     <p data-id="110109"><a href="/nanjing/<?php echo $type;?>">南京</a></p>
                     <p data-id="110110"><a href="/suzhou/<?php echo $type;?>">苏州</a></p>
@@ -348,16 +366,52 @@ unfoldField.onclick=function(){
                     <p data-id="110113"><a href="/fuzhou/<?php echo $type;?>">福州</a></p>
                     <p data-id="110114"><a href="/qingdao/<?php echo $type;?>">青岛</a></p>
                     <p data-id="110115"><a href="/hefei/<?php echo $type;?>">合肥</a></p>
-                <span class="city-letter">中部西部</span>
+                    <p data-id="1101121"><a href="/jinan/<?php echo $type;?>">济南</a></p>
+                    <p data-id="1101122"><a href="/changzhou/<?php echo $type;?>">常州</a></p>
+                    <p data-id="1101123"><a href="/wenzhou/<?php echo $type;?>">温州</a></p>
+                    <p data-id="1101124"><a href="/quanzhou/<?php echo $type;?>">泉州</a></p>
+                    <p data-id="1101125"><a href="/nantong/<?php echo $type;?>">南通</a></p>
+                    <p data-id="1101126"><a href="/xuzhou/<?php echo $type;?>">徐州</a></p>
+                    <p data-id="1101127"><a href="/wuhu/<?php echo $type;?>">芜湖</a></p>
+                    <p data-id="1101128"><a href="/weifang/<?php echo $type;?>">潍坊</a></p>
+                    <p data-id="1101129"><a href="/yangzhou/<?php echo $type;?>">扬州</a></p>
+                    <p data-id="1101120"><a href="/jinhua/<?php echo $type;?>">金华</a></p>
+                    <p data-id="11011"><a href="/linyi/<?php echo $type;?>">临沂</a></p>
+                    <p data-id="11012"><a href="/huzhou/<?php echo $type;?>">湖州</a></p>
+                    <p data-id="11013"><a href="/yancheng/<?php echo $type;?>">盐城</a></p>
+                    <p data-id="11014"><a href="/shaoxing/<?php echo $type;?>">绍兴</a></p>
+                    <p data-id="11015"><a href="/jiaxing/<?php echo $type;?>">嘉兴</a></p>
+                    <p data-id="11016"><a href="/huaian/<?php echo $type;?>">淮安</a></p>
+                    <p data-id="11017"><a href="/maanshan/<?php echo $type;?>">马鞍山</a></p>
+                    <p data-id="11018"><a href="/taian/<?php echo $type;?>">泰安</a></p>
+            <span class="city-letter">中部西部</span> 
                     <p data-id="110116"><a href="/chengdu/<?php echo $type;?>">成都</a></p>
                     <p data-id="110117"><a href="/chongqing/<?php echo $type;?>">重庆</a></p>
                     <p data-id="110118"><a href="/changsha/<?php echo $type;?>">长沙</a></p>
                     <p data-id="110119"><a href="/zhengzhou/<?php echo $type;?>">郑州</a></p>
                     <p data-id="110120"><a href="/xian/<?php echo $type;?>">西安</a></p>
                     <p data-id="110121"><a href="/wuhan/<?php echo $type;?>">武汉</a></p>
-                <span class="city-letter">华南地区</span>
-                   <p data-id="110122"> <a href="/guangzhou/<?php echo $type;?>">广州</a></p>
+                    <p data-id="1101191"><a href="/nanchang/<?php echo $type;?>">南昌</a></p>
+                    <p data-id="1101192"><a href="/lanzhou/<?php echo $type;?>">兰州</a></p>
+                    <p data-id="1101193"><a href="/yichang/<?php echo $type;?>">宜昌</a></p>
+                    <p data-id="1101194"><a href="/kunming/<?php echo $type;?>">昆明</a></p>
+                    <p data-id="1101195"><a href="/guiyang/<?php echo $type;?>">贵阳</a></p>
+                    <p data-id="1101196"><a href="/hanzhong/<?php echo $type;?>">汉中</a></p>
+                    <p data-id="1101197"><a href="/hengyang/<?php echo $type;?>">衡阳</a></p>
+                  <span class="city-letter">华南地区</span>
+                    <p data-id="110122"> <a href="/guangzhou/<?php echo $type;?>">广州</a></p>
                     <p data-id="110123"><a href="/shenzhen/<?php echo $type;?>">深圳</a></p>
+                    <p data-id="1101231"><a href="/sanya/<?php echo $type;?>">三亚</a></p>
+                     <p data-id="1101232"><a href="/nanning/<?php echo $type;?>">南宁</a></p>
+                     <p data-id="1101233"><a href="/zhuhai/<?php echo $type;?>">珠海</a></p>
+                     <p data-id="1101234"><a href="/haikou/<?php echo $type;?>">海口</a></p>
+                     <p data-id="1101235"><a href="/guilin/<?php echo $type;?>">桂林</a></p>
+                    <p data-id="1101236"><a href="/foshan/<?php echo $type;?>">佛山</a></p>
+                     <p data-id="1101237"><a href="/huizhou/<?php echo $type;?>">惠州</a></p>
+                    <p data-id="1101238"> <a href="/shantou/<?php echo $type;?>">汕头</a></p>
+                     <p data-id="1101239"><a href="/jiangmen/<?php echo $type;?>">江门</a></p>
+                    <p data-id="1101230"><a href="/dong_/<?php echo $type;?>">东莞</a></p>
+                    <p data-id="11012311"><a href="/zhanjiang/<?php echo $type;?>">湛江</a></p>
             </div>
         </div>
     </div>
