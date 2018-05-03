@@ -8,17 +8,17 @@
     <meta name="Keywords" content="">
     <meta name="description" content="">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
-    <script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="//m1.youbangkeyi.cn/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/more.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/foot.js"></script>
     <style type="text/css">body{background: #f0f0f0}</style>
     <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?c803a020b6c4205813b9d1558a2f7ef4";
+  hm.src = "https://hm.baidu.com/hm.js?1211ad93505007e7eb6df7f6f05c4e8d";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
@@ -56,9 +56,9 @@ var _hmt = _hmt || [];
                <div class="suolvt">
                 <span>
                     <?php if(strpos($v['cover'][0],'http') === false) {?>
-                        <img src="http://img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim">
+                        <img src="http://img2.youbangkeyi.cn<?php echo $v['cover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim">
                     <?php } else {?>
-                        <img src="http://img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim">
+                        <img src="http://img2.youbangkeyi.cn<?php echo $v['cover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim">
                     <?php } ?>
 
                 </span></div>

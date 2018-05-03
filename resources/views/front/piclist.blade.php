@@ -8,16 +8,16 @@
     <meta name="Keywords" content="">
     <meta name="description" content="">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
-    <script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="//m1.youbangkeyi.cn/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/more.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/foot.js"></script>
     <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?c803a020b6c4205813b9d1558a2f7ef4";
+  hm.src = "https://hm.baidu.com/hm.js?1211ad93505007e7eb6df7f6f05c4e8d";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
@@ -55,15 +55,17 @@ var _hmt = _hmt || [];
             <ul>
                 <?php foreach($pics as $v) {?>
                 <li>
-                <div class="anli_touxiang"><img src="//img2.youbangkeyi.com/uploads/cover/2fac75dc3ee53c59b9b2dca6c02cea33.jpg?imageView2/1/w/150/h/150/q/75|imageslim"></div>
+                <div class="anli_touxiang"><img src="//img2.youbangkeyi.cn/uploads/cover/2fac75dc3ee53c59b9b2dca6c02cea33.jpg?imageView2/1/w/150/h/150/q/75|imageslim"></div>
                 <p><?php echo $v['picName'];?></p>
                  <span class="anli_month">发表于4月15日 09:44</span>
-                 <!--<div class="anli_p">恋爱最好的状态是什么？觉得有句话很适合回答：谈恋爱一起狂，结了婚一起扛。”</div>-->
+                    <?php if($v['explain']) { ?>
+                    <div class="anli_p"><?php echo $v['explain'];?></div>
+                    <?php } ?>
                     <a class="suolvl" href="/kpdetail/<?php echo $v['id'];?>">
                         <span class="img">
                             <?php $v['cover'] = json_decode($v['cover'],true); for($i = 0 ; $i < 9 ;$i ++ ) { if(empty($v['cover'][$i])) { break; }?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
-                                <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?imageView2/1/w/200/h/200/q/75|imageslim" />
+                                <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>?imageView2/1/w/200/h/200/q/75|imageslim" />
                             <?php } else {?>
                                 <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/200/h/200/q/75|imageslim" />
                             <?php } ?>

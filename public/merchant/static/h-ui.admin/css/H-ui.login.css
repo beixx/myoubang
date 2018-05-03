@@ -12,10 +12,10 @@
 */
 html, body{ height:100%}
 body{font-size:14px}
-
+input{ appearance: none;-moz-appearance: none;-webkit-appearance: none;}
+input:focus,textarea:focus {border: 0;outline:none;}
 .header,.footer{ position:absolute; left:0; right:0; width:100%; z-index:99}
 .header{top:0; height:60px; background:#FFF;}
-
 .loginWraper{    position: absolute;
     width: 100%;
     left: 0;

@@ -10,11 +10,11 @@
     <meta name="Keywords" content="">
     <meta name="description" content="">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/main.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/main.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/foot.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/more.js"></script>
     <script>
 var _hmt = _hmt || [];
 (function() {
@@ -60,7 +60,7 @@ var _hmt = _hmt || [];
                     <div class="pic txtCtr">
                         <?php foreach($v['taoxi'] as $v2) { ?>
                         <div class="img">
-                            <a class="suolv" href="/detail/<?php echo $v['id'].'/'.$v2['id'];?>"><span><img src="http://img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/225/q/75|imageslim"></span></a>
+                            <a class="suolv" href="/detail/<?php echo $v['id'].'/'.$v2['id'];?>"><span><img src="http://img2.youbangkeyi.cn<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/225/q/75|imageslim"></span></a>
                         </div>
                         <?php } ?>
 
@@ -69,7 +69,7 @@ var _hmt = _hmt || [];
                     <div class="vippic txtCtr">
                         <?php if(!empty($v['taoxi'][0])) { ?>
                         <div class="vipimg">
-                            <a href="/detail/<?php echo $v['id'].'/'.$v['taoxi'][0]['id'];?>"><img src="http://img2.youbangkeyi.com<?php echo $v['taoxi'][0]['cover'][0];?>"></a>
+                            <a href="/detail/<?php echo $v['id'].'/'.$v['taoxi'][0]['id'];?>"><img src="http://img2.youbangkeyi.cn<?php echo $v['taoxi'][0]['cover'][0];?>"></a>
                             <p class="title txtLft"><?php echo $v['taoxi'][0]['setName'];?></p>
                             <div class="price txtLft"><span class="red fa">¥<?php echo $v['taoxi'][0]['currentPrice'];?></span><del class="fa">¥<?php echo $v['taoxi'][0]['price'];?></del></div>
                         </div>

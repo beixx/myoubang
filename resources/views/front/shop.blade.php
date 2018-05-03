@@ -8,18 +8,20 @@
     <meta name="Keywords" content="<?php echo $keyword;?>">
     <meta name="description" content="<?php echo $desc;?>">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js?2"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/more.js"></script>
+        <script type="text/javascript" src="/js/index.js"></script>
+            <script type="text/javascript" src="/js/data.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/foot.js?2"></script>
     <style type="text/css">body{background:#f0f0f0}</style>
     <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?c803a020b6c4205813b9d1558a2f7ef4";
-  var s = document.getElementsByTagName("script")[0];
+  hm.src = "https://hm.baidu.com/hm.js?1211ad93505007e7eb6df7f6f05c4e8d";
+  var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
 window.onload=function(){  
@@ -63,7 +65,7 @@ unfoldField.onclick=function(){
 <?php } ?>
                 <li class="suolvd"><span>
                         <?php if(strpos($tenants['cover'],'http') === false) {?>
-                            <img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
+                            <img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                         <?php } else {?>
                             <img src="<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                         <?php } ?>
@@ -88,15 +90,16 @@ unfoldField.onclick=function(){
         <p><span>人均消费:¥<?php echo $tenants['person_price'];?></span><span>|</span><span>有<?php echo $tenantssort['allcy']?>人在此店消费过</span></p>
         <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?>"><em></em>打榜</a></div>
     </div>
+    <div class="zysm">排名权威有保障，由有榜网对商家全网大数据分析得出！</div>
     <div class="datas">
 		        <span class="lft txtCtr c1">
 		            <em>第<i class="fa"><?php echo $tenants['order_city'];?></i>名</em>
 		        	<p>综合榜</p>
-		        </span>
+		        </span><div class="border-right-e7e7e7"></div>
 		        <span class="lft txtCtr c2">
 		            <em>第<i class="fa"><?php echo $tenants['brand_search_order'];?></i>名</em>
 		            <p>品牌榜</p>
-		        </span>
+		        </span><div class="border-right-e7e7e7"></div>
 		        <span class="lft txtCtr c3">
 		            <em>第<i class="fa"><?php echo $tenants['praise_order'];?></i>名</em>
 		        	<p>好评榜</p>
@@ -130,10 +133,10 @@ unfoldField.onclick=function(){
 <?php }else { ?>
 
     <?php } ?>
-<div class="daodianli">
+<div class="daodianli down" href="javascript:">
                 <div class="daodiant">
-                    <span class="coupon-tag">到店礼</span>
-                    <h3>免费赠送超值结婚大礼包</h3>
+                    <span class="coupon-tag"></span>
+                    <h3><?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?></h3>
                     <div class="btm-line">
                         仅限到店使用
                         <span class="sm-text"><?php echo $tenants['count1'];?>人感兴趣</span>
@@ -144,7 +147,7 @@ unfoldField.onclick=function(){
 <div class="info-box mtrem6">
 <div class="zhanshi">
     <div class="data">
-        <div class="titleqs"><i>数据概况</i><span class="fa">更新时间：<?php echo date("Y年m月d日");?></span></div>
+        <div class="titleqs"><i>全网大数据</i><span class="fa">更新时间：<?php echo date("Y年m月d日");?></span></div>
         <div id="shuju" style="width:100%;height:14rem;"></div>
         <div class="table">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -195,15 +198,8 @@ unfoldField.onclick=function(){
             </div>
         </div>
     </div> 
-    </div>
-                    <script type="text/javascript">jQuery(".zhanshi").slide({trigger:"click"});</script>
-        <div class="unfold-field">  
-        <div class="unflod-field_mask"></div>  
-        <div class="unfold-field_text"><span>查看详细数据</span></div>  
-         </div> 
-</div>
-<div class="info-box">
-    <div class="data pbbb">
+
+        <div class="data pbbb">
          <div id="fengge" style="width:100%;height:12rem;"></div>
          <div class="shushuo">
             <span>擅长拍摄风格<em>(通过大数据进行标签提取)</em></span>
@@ -212,7 +208,14 @@ unfoldField.onclick=function(){
              <?php } ?>
 </div>
     </div>
+    </div>
+                    <script type="text/javascript">jQuery(".zhanshi").slide({trigger:"click"});</script>
+        <div class="unfold-field">  
+        <div class="unflod-field_mask"></div>  
+        <div class="unfold-field_text"><span>查看详细数据、商家擅长风格</span></div>  
+         </div> 
 </div>
+<div class="jisuanqi click_are" onclick="showaa(this)"> <?php if($tenants['shoptype']=='婚纱摄影') { ?><div class="suan-wen"><p>你在他家拍婚纱照多少钱？</p><span>试试婚纱摄影计算器</span></div> <?php } else { ?><div class="suan-wen"><p>在他们家办婚礼多少钱？</p><span>试试婚礼计算器</span></div> <?php } ?></div>
 <?php if($countpics >0 ) { ?>
 <div class="case_box">
     <!--<div class="title">客片欣赏<a href="/kplist/<?php echo $tenants['id'];?>">全部<span class="fa"><?php echo $countpics;?></span>个案例 ></a></div> -->
@@ -222,17 +225,17 @@ unfoldField.onclick=function(){
             <ul>
                 <?php foreach($tenantspics as $k => $v){?>
                 <li>
-        <div class="anli_touxiang"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim"></div>
+        <div class="anli_touxiang"><img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim"></div>
             <p><?php echo $v['picName']?></p>
             <span class="anli_month">发布于4月14日 13:44</span>
             <?php if(strlen($v['explain'])>5) { ?>
-           <p class="anli_p"><?php echo $v['explain'];?></p>
+           <div class="anli_p"><?php echo $v['explain'];?></div>
            <?php } ?>
                     <a class="suolvk" href="/kpdetail/<?php echo $v['id']?>">
                         <span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
-                            <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?imageView2/1/w/250/h/250/q/75|imageslim" />
+                            <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>?imageView2/1/w/250/h/250/q/75|imageslim" />
                             <?php } else {?>
                             <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                             <?php } ?>
@@ -241,7 +244,7 @@ unfoldField.onclick=function(){
                         <?php } ?>
                         </span>
                     </a>
-                <div href="javascript:" class="anlibj down">获取该案例报价</div>
+                <div href="javascript:" class="anlibj down anliclick">获取该案例报价</div>
                 </li>
                 <?php } ?>
             </ul>        </div>
@@ -260,7 +263,7 @@ unfoldField.onclick=function(){
             <div class="suolvt">
                 <span>
                     <?php if(strpos($v['cover'][0],'http') === false) {?>
-                    <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/250/h/145/q/75|imageslim" />
+                    <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][0];?>?imageView2/1/w/750/h/396/q/75|imageslim" />
                     <?php } else {?>
                     <img src="<?php echo $v['cover'][0];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                     <?php } ?>
@@ -269,10 +272,11 @@ unfoldField.onclick=function(){
                     <h3><?php echo $v['setName'];?></h3>
                     <div class="price fa">
                         <span class="red">¥<?php echo $v['currentPrice']?></span>
-                        <del>市场价：¥<?php echo $v['price'];?></del>
+                        <del>原价:¥<?php echo $v['price'];?></del>
                     </div>
                 </div>
             </a>
+        <div href="javascript:" class="anlibj down">咨询档期</div>
         </li>
         <?php } ?>
     </ul>
@@ -416,10 +420,577 @@ unfoldField.onclick=function(){
         </div>
     </div>
 </div>
+<?php if($tenants['shoptype']=='婚纱摄影') { ?>
+      <script type="text/javascript">
+   
+    function showaa(obj)
+    {
+      //var obj_parent=obj.parentNode;
+      var obj_parent=obj.parentElement
+     
+      if(document.getElementById("12").className=="bottom_slide_box aa_show")
+      {
+        document.getElementById("12").className="bottom_slide_box aa_hide";
+      }
+      else
+      {
+        document.getElementById("12").className="bottom_slide_box aa_show";
+      }
+    }
+    
+  </script>
+
+
+<div id="12" class="bottom_slide_box aa_hide">
+  <div onclick="showaa(this)" class="click_are"></div>
+ <div class="click_img"><span class="money">拍婚纱照多少钱？</span><span class="suansuan">98%的新人选择，提前算一算</span></div>
+  <!-- <div class="go_shake_img"></div> -->
+  <div class="calculator_box">
+    <div class="select_b">
+      <h2><span>今天已有 <em>940</em> 位新人获取了婚纱照预算</span></h2>
+        <div class="num-frame">
+                <div class="ndys"><p>您的婚纱照预算为</p></div>
+                <div class="yuan"><p>元</p></div>
+                <div class="num-window clearfix clear">
+        <em id="setnum">?</em>
+                </div>
+            </div>
+
+            <div class="form_line">
+          <div class="element triangle">
+                <select name="city" id="xuqiu" class="first_line">
+                  <option value="<?php echo $city;?>">--<?php echo $city;?>--</option>
+                    <option value="北京">北京</option>
+                    <option value="天津">天津</option>
+                    <option value="沈阳">沈阳</option>
+                    <option value="石家庄">石家庄</option>
+                    <option value="哈尔滨">哈尔滨</option>
+                    <option value="太原">太原</option>
+                    <option value="长春">长春</option>
+                    <option value="唐山">唐山</option>
+                    <option value="秦皇岛">秦皇岛</option>
+                    <option value="大连">大连</option>
+                    <option value="廊坊">廊坊</option>
+                    <option value="保定">保定</option>
+                    <option value="蚌埠">蚌埠</option>
+                    <option value="锦州">锦州</option>
+                    <option value="大庆">大庆</option>
+                    <option value="长治">长治</option>
+                    <option value="上海">上海</option>
+                    <option value="杭州">杭州</option>
+                    <option value="南京">南京</option>
+                    <option value="厦门">厦门</option>
+                    <option value="青岛">青岛</option>
+                    <option value="苏州">苏州</option>
+                    <option value="济南">济南</option>
+                    <option value="无锡">无锡</option>
+                    <option value="常州">常州</option>
+                    <option value="合肥">合肥</option>
+                    <option value="温州">温州</option>
+                    <option value="宁波">宁波</option>
+                    <option value="福州">福州</option>
+                    <option value="泉州">泉州</option>
+                    <option value="南通">南通</option>
+                    <option value="徐州">徐州</option>
+                    <option value="芜湖">芜湖</option>
+                    <option value="潍坊">潍坊</option>
+                    <option value="扬州">扬州</option>
+                    <option value="金华">金华</option>
+                    <option value="临沂">临沂</option>
+                    <option value="湖州">湖州</option>
+                    <option value="盐城">盐城</option>
+                    <option value="绍兴">绍兴</option>
+                    <option value="嘉兴">嘉兴</option>
+                    <option value="淮安">淮安</option>
+                    <option value="马鞍山">马鞍山</option>
+                    <option value="泰安">泰安</option>
+                    <option value="成都">成都</option>
+                    <option value="重庆">重庆</option>
+                    <option value="长沙">长沙</option>
+                    <option value="郑州">郑州</option>
+                    <option value="西安">西安</option>
+                    <option value="武汉">武汉</option>
+                    <option value="南昌">南昌</option>
+                    <option value="兰州">兰州</option>
+                    <option value="宜昌">宜昌</option>
+                    <option value="昆明">昆明</option>
+                    <option value="贵阳">贵阳</option>
+                    <option value="汉中">汉中</option>
+                    <option value="衡阳">衡阳</option>
+                    <option value="广州">广州</option>
+                    <option value="深圳">深圳</option>
+                    <option value="三亚">三亚</option>
+                    <option value="南宁">南宁</option>
+                    <option value="珠海">珠海</option>
+                    <option value="海口">海口</option>
+                    <option value="桂林">桂林</option>
+                    <option value="佛山">佛山</option>
+                    <option value="惠州">惠州</option>
+                    <option value="汕头">汕头</option>
+                    <option value="江门">江门</option>
+                    <option value="东莞">东莞</option>
+                    <option value="湛江">湛江</option>
+              </select>
+          </div>
+      </div>
+      <div class="form_line">
+          <div class="element triangle">
+                  <select name="shangjia" id="xuqiu" class="first_lin">
+                  <option value="">--选择商家类型--</option>
+                  <option value="资深级">中端商家</option>
+                  <option value="总监级">高端商家</option>
+              </select>
+                <select name="zaoxing" id="hotel" class="first_lin fr">
+                  <option value="">--选择场景数量--</option>
+                  <option data-value="3" value="3">3个</option>
+                  <option data-value="4" value="4">4个</option>
+                  <option data-value="5" value="5">5个</option>
+                  <option data-value="6" value="6">6个</option>
+                  <option data-value="7" value="7">6以上</option>
+              </select>
+          </div>
+      </div>
+      <div class="form_line">
+          <div class="element">
+              <div class="text_wrap">
+                   <select  name="sheying"  id="xuqiu" class="first_lin">
+                  <option value="">--选择摄影师--</option>
+                  <option value="资深级">资深级</option>
+                  <option value="总监级">总监级</option>
+                  <option value="资深级">首席摄影师</option>
+              </select>
+               <select name="huazhuang" id="xuqiu" class="first_lin fr">
+                  <option value="">--选择化妆师--</option>
+                  <option value="资深级">资深级</option>
+                  <option value="总监级">总监级</option>
+                  <option value="资深级">首席化妆师</option>
+              </select>
+              </div>
+          </div>
+      </div>
+      <div class="form_line">
+          <div class="element triangle">
+              <select name="count" id="xuqiu" class="first_line">
+                  <option value="">--请选择精修张数--</option>
+                  <option value="40张">40张</option>
+                  <option value="45张">45张</option>
+                  <option value="50张">50张</option>
+                  <option value="55张">55张</option>
+                  <option value="60张">60张</option>
+                  <option value="65张">65张</option>
+                  <option value="70张">70张</option>
+                  <option value="75张">75张</option>
+                  <option value="80张">80张</option>
+                  <option value="85张">85张</option>
+                  <option value="90张">90张</option>
+                  <option value="95张">95张</option>
+                  <option value="100张">100张</option>
+              </select>
+          </div>
+      </div>
+      <div class="form_line" id="zxys_phoneInput">
+          <div class="element">
+              <div class="text_wrap">
+                  <input id="phonenumber" placeholder="输入手机号，短信接收报价结果" type="text" class="text phonetext" name="phone">
+                  <em class="text_lbl"></em>
+              </div>
+          </div>
+      </div>
+          <div class="shuom">
+          预算结果根据用户真实消费大数据分析计算得出。
+          </div>
+    </div>
+    <div class="result_b">
+      <button  href="javascript:void(0)" onclick="one()" class="star_calculator">
+        开始计算
+      </button>
+      <span></span>
+    </div>
+
+  </div>
+</div>
+
+<div id="overlay-bd" class="overlay-bd">
+<div class="t8s-alert-close" href="javascript:void(0)" onclick="two()"><i class="t8s-alert-i"></i></div>
+<div class="t8s-content-box">
+<div class="t8s-fruit-price">
+<p class="column">您的婚纱照预算为</p>
+<p class="jaojia">
+<span id='setnumall'>4738</span>
+<i>元</i></p></div>
+<div class="t8s-price-list">
+<ul><li class="clearfix"><span class="t8s-budget-span">场景费用：</span><span><em id='zaoxingprice'>0</em>元</span></li>
+<li class="clearfix"><span class="t8s-budget-span">摄影师费用：</span><span><em id='sheyingprice'>0</em>元</span></li>
+<li class="clearfix"><span class="t8s-budget-span">化妆造型：</span><span><em id='huazhuangprice'>0</em>元</span></li>
+<li class="clearfix"><span class="t8s-budget-span">精修费用：</span><span><em id=jinxiuprice>0</em>元</span></li>
+
+</ul></div><div class="holiday-text-t6s"><p>*报价有疑问？稍后有榜网将致电为您解答。</p><p>*报价为大数据报价，实际以推荐商家为准。</p></div></div>
+</div>
+ <div id="fade" class="black_overlay"> 
+  </div>
+ <script>
+   function one(){
+    document.getElementById('overlay-bd').style.display='block';
+    document.getElementById('fade').style.display='block'
+   }
+   function two(){
+    document.getElementById('overlay-bd').style.display='none';
+    document.getElementById('fade').style.display='none'
+   }
+   </script> 
+<script type="text/javascript">
+  var min = 3000, max = 20000;
+  setInterval(displayNum,100);
+  function displayNum(){
+    var temp_min = min < 10 ? "00" : (min < 10 ? "0"+min : min);
+    var temp_max = max < 100 ? "0"+max : max;
+    document.getElementById("setnum").innerHTML = temp_min;
+    min = min + 4356;
+    if(min > max){
+      min=0;
+    }
+  }
+
+  $(function() {
+    $(".star_calculator").click(function(){
+
+      var city = $("select[name=city]").val();
+      console.log(city);
+      if(!city) {
+        showMessage("请选择城市");
+        return false ;
+      } 
+      var shangjia = $("select[name=shangjia]").val();
+      console.log(shangjia);
+      if(!shangjia){
+        showMessage("请选择商家类型")
+        return false ;
+      }
+      var zaoxing = $("select[name=zaoxing]").val()
+      if(!zaoxing) {
+        showMessage("请选择造型数量");
+        return false ;
+      }
+
+      var sheying = $("select[name=sheying]").val();
+      if(!sheying) {
+        showMessage("请选择摄影师");
+        return false ;
+      }
+      
+      var huazhuang = $("select[name=huazhuang]").val()
+      if(!huazhuang) {
+        showMessage("请选择化妆师");
+        return false ;
+      }
+
+      var count = $("select[name=count]").val();
+      if(!count) {
+        showMessage("请选择精修数量");
+        return false ;
+      }
+
+      var mobile = $("input[name=phone]").val();
+      if(!mobile) {
+        showMessage("请填写手机号码");
+      }
+
+      $.post(
+        "/get/sheyingprice", 
+        "city="+city+"&shangjia=" + shangjia+ "&zaoxing="+zaoxing+"&sheying="+
+        sheying+"&huazhuang="+huazhuang+"&count="+count+"&mobile="+mobile, 
+        function (res, status, xhr) {
+            console.log(res);
+            $("#zaoxingprice").html(res.zaoxingprice);
+            $("#sheyingprice").html(res.sheyingprice);
+            $("#huazhuangprice").html(res.huazhuangprice);
+            $("#jinxiuprice").html(res.cpprice);
+            $("#setnumall").html(res.allprice);
+        }, 
+        'json'
+      );
+    
+    })
+    
+    function showMessage(message){
+        alert(message);
+    }
+});
+
+</script>
+                    <?php } else { ?>
+                
+<script type="text/javascript">
+   
+    function showaa(obj)
+    {
+      //var obj_parent=obj.parentNode;
+      var obj_parent=obj.parentElement
+     
+      if(document.getElementById("12").className=="bottom_slide_box aa_show")
+      {
+        document.getElementById("12").className="bottom_slide_box aa_hide";
+      }
+      else
+      {
+        document.getElementById("12").className="bottom_slide_box aa_show";
+      }
+    }
+    
+  </script>
+
+
+<div id="12" class="bottom_slide_box aa_hide">
+  <div onclick="showaa(this)" class="click_are"></div>
+ <div class="click_img"><span class="money">办一场婚礼多少钱？</span><span class="suansuan">98%的新人选择，提前算一算</span></div>
+  <!-- <div class="go_shake_img"></div> -->
+  <div class="calculator_box">
+    <div class="select_b">
+      <h2><span>今天已有 <em>940</em> 位新人获取了婚礼预算</span></h2>
+        <div class="num-frame">
+                <div class="yuan"><p>元</p></div>
+                <div class="num-window clearfix clear">
+        <em id="setnum">?</em>
+                </div>
+            </div>
+
+            <div class="form_line">
+          <div class="element triangle">
+                <select name="city"  id="xuqiu" class="first_line">
+                  <option value="<?php echo $city;?>">--<?php echo $city;?>--</option>
+                    <option value="北京">北京</option>
+                    <option value="天津">天津</option>
+                    <option value="沈阳">沈阳</option>
+                    <option value="石家庄">石家庄</option>
+                    <option value="哈尔滨">哈尔滨</option>
+                    <option value="太原">太原</option>
+                    <option value="长春">长春</option>
+                    <option value="唐山">唐山</option>
+                    <option value="秦皇岛">秦皇岛</option>
+                    <option value="大连">大连</option>
+                    <option value="廊坊">廊坊</option>
+                    <option value="保定">保定</option>
+                    <option value="蚌埠">蚌埠</option>
+                    <option value="锦州">锦州</option>
+                    <option value="大庆">大庆</option>
+                    <option value="长治">长治</option>
+                    <option value="上海">上海</option>
+                    <option value="杭州">杭州</option>
+                    <option value="南京">南京</option>
+                    <option value="厦门">厦门</option>
+                    <option value="青岛">青岛</option>
+                    <option value="苏州">苏州</option>
+                    <option value="济南">济南</option>
+                    <option value="无锡">无锡</option>
+                    <option value="常州">常州</option>
+                    <option value="合肥">合肥</option>
+                    <option value="温州">温州</option>
+                    <option value="宁波">宁波</option>
+                    <option value="福州">福州</option>
+                    <option value="泉州">泉州</option>
+                    <option value="南通">南通</option>
+                    <option value="徐州">徐州</option>
+                    <option value="芜湖">芜湖</option>
+                    <option value="潍坊">潍坊</option>
+                    <option value="扬州">扬州</option>
+                    <option value="金华">金华</option>
+                    <option value="临沂">临沂</option>
+                    <option value="湖州">湖州</option>
+                    <option value="盐城">盐城</option>
+                    <option value="绍兴">绍兴</option>
+                    <option value="嘉兴">嘉兴</option>
+                    <option value="淮安">淮安</option>
+                    <option value="马鞍山">马鞍山</option>
+                    <option value="泰安">泰安</option>
+                    <option value="成都">成都</option>
+                    <option value="重庆">重庆</option>
+                    <option value="长沙">长沙</option>
+                    <option value="郑州">郑州</option>
+                    <option value="西安">西安</option>
+                    <option value="武汉">武汉</option>
+                    <option value="南昌">南昌</option>
+                    <option value="兰州">兰州</option>
+                    <option value="宜昌">宜昌</option>
+                    <option value="昆明">昆明</option>
+                    <option value="贵阳">贵阳</option>
+                    <option value="汉中">汉中</option>
+                    <option value="衡阳">衡阳</option>
+                    <option value="广州">广州</option>
+                    <option value="深圳">深圳</option>
+                    <option value="三亚">三亚</option>
+                    <option value="南宁">南宁</option>
+                    <option value="珠海">珠海</option>
+                    <option value="海口">海口</option>
+                    <option value="桂林">桂林</option>
+                    <option value="佛山">佛山</option>
+                    <option value="惠州">惠州</option>
+                    <option value="汕头">汕头</option>
+                    <option value="江门">江门</option>
+                    <option value="东莞">东莞</option>
+                    <option value="湛江">湛江</option>
+              </select>
+          </div>
+      </div>
+      <div class="form_line">
+          <div class="element triangle">
+                  <select name="hotel" id="xuqiu" class="first_line">
+                  <option value="">--请选择酒店价位--</option>
+                  <option data-value="1500" value="1000-2000">1000-2000</option>
+                  <option data-value="2500" value="2000-3000">2000-3000</option>
+                  <option data-value="3500" value="3000-4000">3000-4000</option>
+                  <option data-value="5000" value="4000以上">4000以上</option>
+              </select>
+          </div>
+      </div>
+            <div class="form_line" id="zxys_phoneInput">
+          <div class="element">
+              <div class="text_wrap">
+                  <input id="shuoshu" placeholder="您的预期桌数" type="text" class="text phonetext" name="zhuoshu">
+                  <em class="text_lbl"></em>
+              </div>
+          </div>
+      </div>
+      <div class="form_line">
+          <div class="element">
+              <div class="text_wrap">
+                   <select name="xuqiu" id="xuqiu" class="first_line">
+                  <option value="">--请选择婚礼档次--</option>
+                  <option value="经济型">经济型</option>
+                  <option value="中端消费">中端消费</option>
+                  <option value="高端消费">高端消费</option>
+              </select>
+              </div>
+          </div>
+      </div>
+      <div class="form_line" id="zxys_phoneInput">
+          <div class="element">
+              <div class="text_wrap">
+                  <input id="phonenumber" placeholder="输入您的手机" type="text" class="text phonetext" name="phone">
+                  <em class="text_lbl"></em>
+              </div>
+          </div>
+      </div>
+          <div class="shuom">
+          预算结果根据用户真实消费大数据分析计算得出。
+          </div>
+    </div>
+    <div class="result_b">
+      <button  href="javascript:void(0)" onclick="one()" class="star_calculator ">
+        开始计算
+      </button>
+      <span></span>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div id="overlay-bd" class="overlay-bd">
+<div class="t8s-alert-close" href="javascript:void(0)" onclick="two()"><i class="t8s-alert-i"></i></div>
+<div class="t8s-content-box">
+<div class="t8s-fruit-price">
+<p class="column">您的婚礼预算为</p>
+<p class="jaojia">
+<span id='setnumall'>0</span>
+<i>元</i></p></div>
+<div class="t8s-price-list">
+<ul><li class="clearfix"><span class="t8s-budget-span">酒店费用：</span><span><em id='hotelprice'>0</em>元</span></li>
+<li class="clearfix"><span class="t8s-budget-span">婚庆公司费用：</span><span><em id="wedprice">0</em>元</span></li>
+<li class="clearfix"><span class="t8s-budget-span">车队费用：</span><span><em id='carprice'>0</em>元</span></li>
+<li class="clearfix"><span class="t8s-budget-span">婚纱礼服费用：</span><span ><em id='lifuprice'>0</em>元</span></li>
+<li class="clearfix"><span class="t8s-budget-span">喜品喜酒费用：</span><span><em id='wineprice'>0</em>元</span></li>
+
+</ul></div><div class="holiday-text-t6s"><p>*报价有疑问？稍后有榜网将致电为您解答。</p><p>*报价为大数据报价，实际以推荐商家为准。</p></div></div>
+</div>
+ <div id="fade" class="black_overlay"> 
+  </div>
+ <script>
+   function one(){
+    document.getElementById('overlay-bd').style.display='block';
+    document.getElementById('fade').style.display='block'
+   }
+   function two(){
+    document.getElementById('overlay-bd').style.display='none';
+    document.getElementById('fade').style.display='none'
+   }
+   </script> 
+
+<script type="text/javascript">
+  var min = 10000, max = 93000;
+  setInterval(displayNum,100);
+  function displayNum(){
+    var temp_min = min < 10 ? "00" : (min < 10 ? "0"+min : min);
+    var temp_max = max < 100 ? "0"+max : max;
+    document.getElementById("setnum").innerHTML = temp_min;
+    min = min + 4356;
+    if(min > max){
+      min=0;
+    }
+  }
+$(function() {
+    $(".star_calculator").click(function(){
+
+      var city = $("select[name=city]").val();
+      console.log(city);
+      if(!city) {
+        showMessage("请选择城市");
+        return false ;
+      } 
+      var hotel = $("select[name=hotel]").val();
+      console.log(hotel);
+      if(!hotel){
+        showMessage("请选择酒店价位")
+        return false ;
+      }
+      var zhuoshu = $("input[name=zhuoshu]").val()
+      if(!zhuoshu) {
+        showMessage("请填写预期桌数数量");
+        return false ;
+      }
+
+      var xuqiu = $("select[name=xuqiu]").val();
+      if(!xuqiu) {
+        showMessage("请选择婚礼需求");
+        return false ;
+      }
+      
+      var mobile = $("input[name=phone]").val();
+      if(!mobile) {
+        showMessage("请填写手机号码");
+      }
+
+      $.post(
+        "/get/hunliprice", 
+        "city="+city+"&hotel=" + hotel+ "&zhuoshu="+zhuoshu+"&xuqiu="+
+        xuqiu+"&mobile="+mobile, 
+        function (res, status, xhr) {
+            console.log(res);
+            $("#hotelprice").html(res.hotelprice);
+            $("#wedprice").html(res.wedprice);
+            $("#lifuprice").html(res.lifuprice);
+            $("#carprice").html(res.carprice);
+            $("#wineprice").html(res.wineprice);
+            $("#setnumall").html(res.allprice);
+        }, 
+        'json'
+      );
+    
+    })
+    
+    function showMessage(message){
+        alert(message);
+    }
+});
+
+</script>
+
+                    <?php } ?>
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
-<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/echarts-wordcloud.min.js"></script>
+<script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/echarts-wordcloud.min.js"></script>
 <script type="text/javascript">
     var myChart = document.getElementById('shuju');
     //自适应宽高
@@ -895,7 +1466,7 @@ option = {
     $('input[name=wapsubmit]').click(function(){
         var tenantsId = $('#tenantsId').val();
         var phone = $('#mobile').val();
-        var source = 4;
+        var source = 12;
 
         if(!phone){
             alert('手机必填');
@@ -925,6 +1496,24 @@ option = {
             }
         });
     });
+    $(".anliclick").click(function(){
+        $("input[name=wapsubmit]").val("获取报价");
+    })
+    $(".shopclick").click(function(){
+        $("input[name=wapsubmit]").val("预约看店");
+    })
+        // 数据初始化
+    var Obj = $('body').barrage({
+        data : data, //数据列表
+        row : 1,   //显示行数
+        time : 5000, //间隔时间
+        gap : 10,    //每一个的间隙
+        position : 'fixed', //绝对定位
+        direction : 'bottom left', //方向
+        ismoseoverclose : true, //悬浮是否停止
+        height : 30, //设置单个div的高度
+    })
+    Obj.start(); 
 </script>
 </body>
 </html>

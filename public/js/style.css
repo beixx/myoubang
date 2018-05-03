@@ -309,14 +309,6 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
     vertical-align: middle;
     display: inherit;
          }
-.zysm{
-    text-align: left;
-    padding: 0 4% 0 10%;
-    font-size: .6rem;
-    color: #ff6c32;
-    background: #fffaea url(/images/zhuyi.png) no-repeat 4% 0.25rem;
-    background-size: 1rem;
-}
 /*评选咨询*/
 .downNav .ask{width: 92%;padding: 4%}
 .downNav .vip{padding: 0.2rem 0; border-bottom: 1px dashed #e4e4e4; display: inline-block; width: 100%;}
@@ -339,7 +331,7 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
 .tabBox .hd ul li{ float:left;color:#515151;margin-left: -1px;border-left: 1px solid #efefef;width:50%;text-align:center;position: relative;}
 .tabBox .hd ul li span{display: none;}
 .tabBox .hd ul .on{position: relative;margin-left: -1px;}
-.tabBox .hd ul .on a{ display:block;font-size:0.8rem;position: relative;font-weight:700;color:#00b7b7}
+.tabBox .hd ul .on a{ display:block;position: relative;font-weight:700;color:#00b7b7}
 .tabBox .hd ul a{color:#333}
 .tabBox .bd{z-index:0;width: 100%;}
 /*列表*/
@@ -349,7 +341,7 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
 .list_box .text p{height: 0.8rem;line-height: 0.8rem;overflow:hidden;text-overflow:ellipsis;width: 85%;white-space:nowrap; }
 .list_box .text em{width: 1.6rem;height: 1.6rem;border-radius: 50%;position: absolute;;right: 3%;top: 0.15rem;border:1px #dedede solid;line-height: 0.55rem;overflow: hidden;}
 .list_box .text em a{display: block;color: #00b7b7;font-size: 0.45rem;line-height: 0.6rem;margin-top: 0.25rem;}
-.list_box .b_time{font-size: 0.6rem;background: #fff  url(../images/clock.png) no-repeat 0.5rem center;height: 1.5rem;line-height: 1.5rem;background-size: 0.75rem;text-indent: 1.4rem;color:#B5B8BB;width: 100%;}
+.list_box .b_time{font-size: 0.6rem;background: #f9f9f9  url(../images/clock.png) no-repeat 0.5rem center;height: 1.5rem;line-height: 1.5rem;background-size: 0.75rem;text-indent: 1.4rem;color:#B5B8BB;width: 100%;}
 .daodian{width: 100%; height: 2rem;border-top: 1px solid #F6F7F9;display: table; overflow: hidden;}
 .daodian .daodian_l{width: 78%; height: auto; float: left;}
 .daodian .daodian_l{white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
@@ -374,7 +366,7 @@ width: 100%; background: #FFF; margin: 0;
 }
 .sousj{font-size: 0.7rem;height:8rem;color:#666;background:url(//c.youbangkeyi.cn/images/e9137a57d4fb1b02417eac246db7110f.jpg?imageslim) no-repeat;background-size: cover;}
 .pic_box{width:100%;background: #FFF;position: relative;border-bottom:.5rem #f0f0f0 solid;padding:0.5rem 0 0;}
-.pic_box .num_txt{width:92%;display: -webkit-box;display: -ms-flexbox;display: -moz-box;height:2rem;padding:0.5rem 4% .3rem;position: relative;border-bottom:1px solid #F6F7F9;}
+.pic_box .num_txt{width:92%;display: -webkit-box;height:2rem;padding:0.5rem 4% .3rem;position: relative;border-bottom:1px solid #F6F7F9;}
 .pic_box .num_txt .num{width: 2.2rem;line-height: 1rem;height: 2rem;margin: 0 .5rem 0 .7rem;position: relative;font-size: 1.2rem;font-family: Krungthep,"Microsoft YaHei",arial;border-radius:50%;color:#FFF;font-weight:700;background-color:#00B7B7;padding-top: 0.2rem;}
 .pic_box .dongtai{width: 92%;padding: 0.5rem 4%; font-size: 0.6rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; height: 0.6rem; line-height: 0.6rem;border-bottom:1px solid #F6F7F9;}
 .youhui{border-top: 1px dashed #eee;margin-top: 0.5rem;padding: 0.5rem 0;font-size: 0.6rem;line-height: 1rem;color: #FF4848;text-indent: 0.75rem;}
@@ -550,10 +542,9 @@ width: 100%; background: #FFF; margin: 0;
 .pic_box .num_txt .com em{display: block; width: 1.5rem; height: 1.5rem; overflow: hidden; text-indent: -999px; background: url(../images/icon21.png) no-repeat center center; background-size: 1.5rem; border-radius: 50%; margin: 0 auto;}
 .pic_box .num_txt .com a{color: #999999;line-height: 1.2rem;}
 .pic_box .num_txt .com a p{height: 1rem;line-height: 1rem;font-size: 0.6rem;}
-.pic_box .pic{float:left;width:92%;margin:0 4%;padding:0.3rem 0 0.15rem;}
+.pic_box .pic{display: -webkit-box;display: -ms-flexbox;display: -moz-box;width:92%;margin:0 4%;padding:0.3rem 0 0;}
 .pic_box .vippic{display: -webkit-box;display: -ms-flexbox;display: -moz-box;margin:0.5rem 0 0;width:100%;}
-.pic_box .pic .img{width: 32.666%;float: left;margin-right:1%;margin-bottom:1%;}
-.pic_box .pic .img:nth-child(3n){margin-right: 0;}
+.pic_box .pic .img{width: 32.666%;float: left;margin-right:1%;}
 .pic_box .pic .img:last-child,.pic_box .txt_box .txt:last-child,.pic_box .txt_box .txt:last-child{margin-right: 0;}
 .pic_box .pic .img img{width: 100%;}
 .pic_box .pic .img .title{line-height: 1rem;height: 1rem;overflow: hidden;color: #666;font-size: 0.6rem;white-space:nowrap;text-overflow:ellipsis;width: 100%}
@@ -570,7 +561,7 @@ width: 100%; background: #FFF; margin: 0;
 .viptag{position: absolute;bottom: 5rem;left:0.83rem;}
 .viptag a{border: 1px #FFF solid;color: #FFF;font-size: 0.6rem;border-radius: 0.15rem;padding: 0px 0.15rem;margin-right: 0.25rem;height: 0.8rem;line-height: 0.8rem;}
 .pic_box .pic .tag em{border:1px #00b7b7 solid;float: left;color: #00b7b7;font-size: 0.6rem;border-radius: 0.15rem;padding:0px 0.15rem;margin-right: 0.25rem;height: 0.8rem;line-height: 0.8rem;}
-.pic_box .txt_box{display:-webkit-box;display: -ms-flexbox;display: -moz-box;position:relative;width: 92%; border-top: 1px solid #F5F5F5; margin: 0 4% 0.3rem;padding:0 0 0.3rem;background: #f5f5f5;}
+.pic_box .txt_box{display:-webkit-box;display: -ms-flexbox;display: -moz-box;position:relative;width: 92%; border-top: 1px solid #F5F5F5; margin: 0.3rem 4%; padding: 0.3rem 0; background: #f5f5f5;}
 .pic_box .txt_box .txt{width: 32%;padding: 0;margin-right: 2%}
 .pic_box .txt_box .txt p{font-size: 0.8rem;height:1.1rem;font-weight: 700;line-height: 1.3rem;color:#666;font-family: DINAlternate-Bold,DIN-Regular;}
 .pic_box .txt_box .txt em{color:#B5B8BB;font-size: 0.6rem;height: 1rem;line-height: 1rem;display: block;}
@@ -770,7 +761,7 @@ width: 100%; background: #FFF; margin: 0;
 .jxtc_box{position: relative; background: #FFF; width: 100%; margin: .3rem 0% 0;}
 .jxtc_box .title{background:#FFF;width:92%;padding: 0 4%;line-height:2.5rem;height:2.5rem;border-bottom:1px solid #efefef;font-size: 0.75rem;color:#111;font-weight:700;border-radius:.2rem;}
 .jxtc_box .title a{float: right;color: #999999;font-size: 0.6rem;}
-.jxtc_box .tittx{background: #FFF; border-radius: .2rem .2rem 0 0; text-indent: 4%; border-bottom: 1px solid #efefef; font-size: 0.75rem; color: #111; line-height: 2.5rem; height: 2.5rem; font-weight: bold;}
+.jxtc_box .tittx{background: #FFF; border-radius: .2rem .2rem 0 0; text-indent: 0.5rem; border-bottom: 1px solid #efefef; font-size: 0.75rem; color: #111; line-height: 2.5rem; height: 2.5rem; font-weight: bold;}
 .jxtc_box ul{width: 100%;}
 .jxtc_box li{width:100%;display: inline-block;border-bottom: 0.5rem solid #EFEFEF;}
 .jxtc_box li:last-child{border-bottom: 0}
@@ -815,7 +806,7 @@ width: 100%; background: #FFF; margin: 0;
 .view .titdp{width: 100%; margin: 0.3rem 0% 0; background: #FFF; border-radius: .2rem .2rem 0 0; text-indent: 0.5rem; border-bottom: 1px solid #efefef; font-size: 0.75rem; color: #111; line-height: 2.5rem; height: 2.5rem; font-weight: bold;}
 .view .titjs{width: 100%; margin: 0.3rem 0% 0; background: #FFF; border-radius: .2rem .2rem 0 0; text-indent: 0.5rem; border-bottom: 1px solid #efefef; font-size: 0.75rem; color: #111; line-height: 2.5rem; height: 2.5rem; font-weight: bold;}
 .view .tittp{width: 100%; margin: 0.3rem 0% 0;background: #FFF; border-radius: .2rem .2rem 0 0; text-indent: 0.5rem; border-bottom: 1px solid #efefef; font-size: 0.75rem; color: #111; line-height: 2.5rem; height: 2.5rem; font-weight: bold;}
-.view .tit{background: #FFF; width: 92%; padding: 0 4%;margin: 0.3rem 0% 0;line-height: 2.5rem; height: 2.5rem; border-bottom: 1px solid #efefef; font-size: 0.75rem; color: #111; font-weight: 700; border-radius: .2rem;}
+.view .tit{font-size: 0.6rem;height: 1.5rem;line-height: 1.5rem;text-indent:3%;background:#f9f9f9;margin:0.3rem 0% 0;width:100%;color: #999999}
 .view .txt-box{width: 94%;position: relative;padding:3% 3%}
 .view .txt-box .num{
     width: 2rem;position: absolute;
@@ -1570,15 +1561,23 @@ background: url(http://c.youbangkeyi.cn/a/cross78.png) no-repeat;
     font-size: 0.6rem;
     width: 100%;
     background:#FFF url(http://c.youbangkeyi.cn/a/6eef8e5dd1c8f3b7ffd84dc4921fb592.png) no-repeat 0.5rem 0.5rem;
-    background-size:1.5rem;
-    height: 1rem;
+    background-size:2.5rem;
     }
 .suan-wen{ 
-    margin-left: 2.5rem;
+    margin-left: 3.5rem;
     line-height: 1rem;}
-.suan-wen span{border: 1px solid #FF7373;border-radius: 0.2rem;color: #FF7373;padding: 0 0.2rem;float: right;margin-right: 4%;}
-.suan-wen p{font-size: 0.65rem;float: left;
+.suan-wen p{font-size: 0.65rem;
     font-weight: bold;}
+.jisuanqi em{       background: url(http://c.youbangkeyi.cn/a/423423.png) no-repeat center center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: cover;
+    float: right;
+    margin-right: 0.5rem;
+    position: absolute;
+    right: 0.5rem;
+    top: 1rem;}
+
     .yytouxiang{
           
 background: rgba(0,0,0,0.5);

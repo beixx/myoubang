@@ -117,6 +117,10 @@
      * 服务器地址,成功返回,失败返回参数格式依照jquery.ajax习惯;
      * 其他参数同WebUploader
      */
+document.activeElement.scrollIntoViewIfNeeded();  
+var input= document.getElementById("input");  
+input.scrollIntoViewIfNeeded();  
+
 
     $('#test').diyUpload({
         url:'/webUpload/server/fileupload.php',

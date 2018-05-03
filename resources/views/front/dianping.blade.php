@@ -8,9 +8,9 @@
     <meta name="Keywords" content="">
     <meta name="description" content="">
     <link rel="stylesheet" href="/css/style.css">
-    <script src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script>
+    <script src="//m1.youbangkeyi.cn/js/jquery-2.1.1.js"></script>
     <link rel="stylesheet" href="/css/jquery.range.css" />
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.range.js?2017421"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/jquery.range.js?2017421"></script>
     <script type="text/javascript">
         $(function () {
             $('.single-slider').jRange({
@@ -30,7 +30,7 @@
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?c803a020b6c4205813b9d1558a2f7ef4";
+  hm.src = "https://hm.baidu.com/hm.js?1211ad93505007e7eb6df7f6f05c4e8d";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
@@ -76,7 +76,7 @@ var _hmt = _hmt || [];
     </div>
     <div class="contact" style="padding-bottom: 1rem;margin-bottom: 0.5rem;">
         <div class="title">消费金额（元）</div>
-        <input type="text" value="" name="price" class="money" placeholder="您的消费金额">
+        <input type="text" value="" name="price" class="money1" placeholder="您的消费金额">
     </div>
     <!--表单-->
     <div class="text-input">
@@ -99,7 +99,7 @@ var _hmt = _hmt || [];
                     <div class="close">
                         <input type="hidden" name="user_bill[]" value="@{{$value}}" id="user_bill" />
                     </div>
-                    <img id="upload_img2" src="http://ceshi.youbangkeyi.com/@{{$value}}">
+                    <img id="upload_img2" src="http://ceshi.youbangkeyi.cn/@{{$value}}">
                 </div>
                 @{{/each}}
             </script>
@@ -124,7 +124,7 @@ var _hmt = _hmt || [];
                 @{{each list}}
                 <div class="pic lft" >
                     <div class="close"> <input type="hidden" name="user_photo[]" value="@{{$value}}" id="user_photo" /> </div>
-                    <img id="photo_img" src="http://ceshi.youbangkeyi.com/@{{$value}}">
+                    <img id="photo_img" src="http://ceshi.youbangkeyi.cn/@{{$value}}">
                 </div>
                 @{{/each}}
             </script>
@@ -138,7 +138,7 @@ var _hmt = _hmt || [];
         <div style="margin-left:20px;margin-bottom:20px;" id="headimgRegin"></div>
         <script type="text/html" id="headimgTemp">
             @{{each list}}
-            <img id="head_img" src="http://ceshi.youbangkeyi.com/@{{$value}}" width="140" height="100" >
+            <img id="head_img" src="http://ceshi.youbangkeyi.cn/@{{$value}}" width="140" height="100" >
             <input type="hidden" name="headimg" value="@{{$value}}" id="user_head" />
             @{{/each}}
         </script>
@@ -169,21 +169,21 @@ var _hmt = _hmt || [];
 
 </div>
 
-<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/template.js"></script>
-<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/zepto.min.js"></script>
-<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/uploadImage.js"></script>
-<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/exif.js"></script>
-<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/layer.js" ></script>
-<script type="text/javascript" src="http://c.youbangkeyi.com/js/main.js"></script>
-<script type="text/javascript" src="http://c.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js" ></script>
-<script type="text/javascript" src="http://c.youbangkeyi.com/js/template.js"></script>
-<script type="text/javascript" src="http://c.youbangkeyi.com/js/zepto.min.js"></script>
+<script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/template.js"></script>
+<script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/zepto.min.js"></script>
+<script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/uploadImage.js"></script>
+<script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/exif.js"></script>
+<script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/layer.js" ></script>
+<script type="text/javascript" src="http://c.youbangkeyi.cn/js/main.js"></script>
+<script type="text/javascript" src="http://c.youbangkeyi.cn/js/jquery.SuperSlide.2.1.1.js" ></script>
+<script type="text/javascript" src="http://c.youbangkeyi.cn/js/template.js"></script>
+<script type="text/javascript" src="http://c.youbangkeyi.cn/js/zepto.min.js"></script>
 <script type="text/javascript">
     //模糊搜索商家
     $('#submit').click(function(){
         var keyword = $('#search_keyword').val();
         var city = $('#area').text();
-        var url = "http://www.youbangkeyi.com/index/index?city="+city+"&keyword="+keyword;
+        var url = "http://www.youbangkeyi.cn/index/index?city="+city+"&keyword="+keyword;
         location.href=url;
     });
 
@@ -192,7 +192,7 @@ var _hmt = _hmt || [];
         $('.area2').html($(this).html());
         var type=$("li").filter(".on").attr('tt');
         var city = $(this).html();
-        var url = "http://www.youbangkeyi.com/index/index?city="+city;
+        var url = "http://www.youbangkeyi.cn/index/index?city="+city;
         location.href=url;
     })
 
@@ -227,7 +227,7 @@ var _hmt = _hmt || [];
             };
             setTimeout(function(){ layer.closeAll(); }, 1500);
         };
-        ImgHttp.open("post", "http://www.youbangkeyi.com/index/saveheadimg", true);
+        ImgHttp.open("post", "http://www.youbangkeyi.cn/index/saveheadimg", true);
         ImgHttp.send(FormObj);
     };
 
@@ -267,7 +267,7 @@ var _hmt = _hmt || [];
             };
             setTimeout(function(){ layer.closeAll(); }, 1500);
         };
-        ImgHttp.open("post", "http://www.youbangkeyi.com/index/savedanju", true);
+        ImgHttp.open("post", "http://www.youbangkeyi.cn/index/savedanju", true);
         ImgHttp.send(FormObj);
     };
 
@@ -307,7 +307,7 @@ var _hmt = _hmt || [];
             };
             setTimeout(function(){ layer.closeAll(); }, 1500);
         };
-        ImgHttp.open("post", "http://www.youbangkeyi.com/index/savephoto", true);
+        ImgHttp.open("post", "http://www.youbangkeyi.cn/index/savephoto", true);
         ImgHttp.send(FormObj);
     };
 

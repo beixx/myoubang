@@ -118,6 +118,7 @@
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="/merchant/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
 <script type="text/javascript">
+
     $(function(){
         /*$("#min_title_list li").contextMenu('Huiadminmenu', {
          bindings: {

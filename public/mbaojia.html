@@ -1,0 +1,858 @@
+
+<html lang="en"><head><meta charset="UTF-8">
+
+<meta content="yes" name="apple-mobile-web-app-capable">
+
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
+
+</head><body>
+<link rel="stylesheet" href="http://m.youbangkeyi.com/css/style.css">
+<style type="text/css">
+
+
+body {
+    display: block;
+    margin: 0px;
+}
+.bottom_slide_box .click_are {
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    cursor: pointer;
+
+}
+.aa_show .click_img::after {
+    background: url(https://dl.mijwed.com/themes/template_3_1/static_pc/images/index/bottom_slide_ud_02.png) no-repeat center;
+    background-size: contain;
+}
+.click_img::after {
+    width: 1.6rem;
+    height: 1.6rem;
+    background: url(https://dl.mijwed.com/themes/template_3_1/static_pc/images/index/slide_up.png) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    right: -2%;
+    top: 64%;
+    cursor: pointer;
+    content: '';
+    -webkit-animation: up-down 1s ease infinite;
+    -ms-animation: up-down 1s ease infinite;
+    -moz-animation: up-down 1s ease infinite;
+    -o-animation: up-down 1s ease infinite;
+    animation: up-down 1s ease infinite;
+}
+.bottom_slide_box .click_img {
+    width: 75%;
+    height: 4.5rem;
+    background: url(http://c.youbangkeyi.com/a/1fc9df907e3173fdf142a967911c5dba.png?imageslim) no-repeat left;
+    background-size: contain;
+    position: absolute;
+    left: 39%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    cursor: pointer;
+    top: 0.65rem;
+    float: unset;
+}
+
+.bottom_slide_box {
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    position: fixed;
+}
+.bottom_slide_box .calculator_box .select_b .form_line .element .text_wrap input {
+    width: 100%;
+    height:2rem;
+    border:0;
+    border-radius: .3rem;
+    text-indent:.5rem;
+    font-size:.6rem;
+    color: #333333;
+    background:#EFEFEF;
+}
+.bottom_slide_box .calculator_box {
+    width:100%;
+    background: #fff;
+    margin: 0 auto;
+    margin-top:2.6rem;
+    overflow: hidden;
+        background: rgba(255,255,255,.97);
+    position: relative;
+}
+.bottom_slide_box .calculator_box .get_result .rusult_box .detail_b span {
+    font-size: 14px;
+    color: #333333;
+    display: inline-block;
+    text-align: right;
+}
+.bottom_slide_box .calculator_box .select_b h2 span {
+  font-size:.6rem;
+    color: #999;
+    font-weight: normal;
+    display: block;
+    line-height: 1.2rem;
+}
+.bottom_slide_box .calculator_box .select_b h2 span em{font-style: initial;color: #FF4848;}
+.bottom_slide_box .calculator_box .select_b {
+    width: 86%;
+    margin:0.5rem 7% 0;
+}
+.bottom_slide_box .calculator_box .result_b {
+    width: 6.3rem;
+    background: #FFF;
+    height: 2rem;
+    bottom:-0.5rem;
+    margin-right: -5rem;
+    border: 1px solid #faafbc;
+    border-radius: 0.5rem;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+.bottom_slide_box .calculator_box .get_result {
+    margin:34px 4% 50px;
+    width:92%;
+    height: auto;
+}
+.bottom_slide_box .calculator_box .select_b h2 {
+    font-size:1rem;
+    color: #1a1a1a;
+    font-weight: inherit;
+    text-align:right;
+}
+.bottom_slide_box .calculator_box .select_b .form_line {
+    width: 98%;
+    padding: 1%;
+    height:2rem;
+    margin-bottom: 0.1rem;
+}
+.bottom_slide_box .calculator_box .select_b .form_line .triangle {
+    position: relative;
+}
+.bottom_slide_box .calculator_box .select_b .form_line .element {
+    overflow: hidden;
+    float: right;
+    width:100%;
+}
+
+.bottom_slide_box .calculator_box .select_b .form_line .element .first_line {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    text-indent:0.5rem;
+    font-size: .6rem;
+    color: #333333;
+    border-radius: .2rem;
+    background:#EFEFEF;
+}
+select {   
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/  
+  border: solid 1px #000;   
+  /*很关键：将默认的select选择框样式清除*/  
+  appearance:none;   
+  -moz-appearance:none;   
+  -webkit-appearance:none;   
+  /*在选择框的最右侧中间显示小箭头图片*/  
+  background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll rightright center transparent;   
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/  
+  padding-right: 14px;   
+}   
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/  
+select::-ms-expand { display: none; }  
+
+.bottom_slide_box .calculator_box .select_b .form_line .element .first_line::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-top: 5px solid #999;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: .04rem;
+    right: .08rem;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+.bottom_slide_box .calculator_box .result_b .star_calculator {
+    width: 6rem;
+    height: 1.8rem;
+    background: #ed4a57;
+    text-align: center;
+    border-radius: 0.5rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    border: none;
+    font-size: .8rem;
+    color: #fff;
+    z-index: 15;
+    cursor: pointer;
+}
+.bottom_slide_box .calculator_box .result_b span {
+     width: 5rem;
+    height: 1.5rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: scale-three 1.5s ease infinite;
+    -moz-animation: scale-three 1.5s ease infinite;
+    -o-animation: scale-three 1.5s ease infinite;
+    animation: scale-three 1.5s ease infinite;
+    background-color: #ed4a57;
+    opacity: 0.15;
+    z-index: 12;
+    top: 12%;
+    left: 10%;
+}
+@keyframes scale-three{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.5);opacity:0}}
+.bottom_slide_box .calculator_box .get_result h2 {
+    font-size: 18px;
+    color: #1a1a1a;
+    font-weight: inherit;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.bottom_slide_box .calculator_box .get_result h2 span {
+    font-size: 28px;
+    color: #e94653;
+    display: inline-block;
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+    text-align: center;
+}
+.bottom_slide_box .calculator_box .get_result h2 em {
+    font-size: 16px;
+    font-style: inherit;
+}
+.bottom_slide_box .calculator_box .get_result .rusult_box {
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 2rem 0;
+}
+.bottom_slide_box .calculator_box .get_result .rusult_box .detail_b {
+    width: 100%;
+    margin-top: 14px;
+}
+.bottom_slide_box .calculator_box .get_result .rusult_box .detail_b span:nth-of-type(1) {
+    width: 55%;
+    text-align: right;
+}
+.bottom_slide_box .calculator_box .get_result .rusult_box .detail_b span:nth-of-type(2) {
+    width: 28%;
+}
+.bottom_slide_box .calculator_box .get_result .rusult_box .detail_b span em {
+    font-size: 20px;
+    color: #e94653;
+    font-style: initial;
+    margin-right: 10px;
+    font-style: initial;
+    display: inline-block;
+    width: 73%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+    text-align: center;
+}
+.shuom{      color: #999;
+    font-size: .6rem;
+    width: 100%;
+    text-align: center;
+    line-height: 0.8rem;
+    width: 98%;
+    padding: 1%;
+    height: 1.4rem;
+    margin-bottom: 0.2rem;}
+.shuom1{
+      color: #666;
+          padding-top: 20px;
+    font-size: 12px;
+    height: 100%;}
+.aa_show{bottom: 0px;}
+.aa_hide{bottom: -20.6rem;}
+
+.num-frame {
+    position: relative;
+    height: 2rem;
+    margin: 0 0 .5rem;
+    padding: .3rem .3rem 0;
+    border-radius: 4px;
+    background: #fff;
+    background: -moz-linear-gradient(top,#d2d1d1,#fff);
+    background: -webkit-gradient(linear,top,from(#d2d1d1),to(#fff));
+    background: -webkit-linear-gradient(top,#d2d1d1,#fff);
+    background: -o-linear-gradient(top,#d2d1d1,#fff);
+    background: linear-gradient(top,#d2d1d1,#fff);
+}
+
+.num-frame .yuan {
+    height: 2rem;
+    line-height: 3rem;
+    bottom: 0.04rem;
+    position: absolute;
+    z-index: 10;
+    width: 1.2rem;
+    right: .5rem;
+    font-size: .6rem;
+}
+.num-frame .ndys{
+      height: 2rem;
+    line-height: 3rem;
+    bottom: 0.04rem;
+    position: absolute;
+    z-index: 10;
+    width: 5.5rem;
+    left: 1.2rem;
+    font-size: .6rem;
+}
+.num-window {
+    width: 99%;
+    height: 100%;
+    padding-top: 0;
+    border-radius: .03rem;
+    border-top: 2px solid #3D3C30;
+    border-bottom: 2px solid #6C6B60;
+    border-left: 2px solid #3D3C30;
+    border-right: 2px solid #3D3C30;
+    background-color: #D3D3CB;
+    box-shadow: 0 1px 5px 1px #ABABA5 inset;
+}
+.num-window em{
+    float: right;
+    margin-right: 1.8rem;
+    font-style: initial;
+    height: 2rem;
+    font-weight: bold;
+    line-height: 2rem;
+    font-size: 1.5rem;
+}
+.money{
+    position: absolute;
+    bottom: 1.2rem;
+    color: #FFF;
+    left: 4rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.suansuan{
+      position: absolute;
+    bottom: 0.1rem;
+    left: 4rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #FF7373;
+}
+.click_img:after {
+    width: 1.8rem;
+    height: 1.8rem;
+    background: url(https://dl.mijwed.com/themes/template_3_1/static_pc/images/index/slide_up.png) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    right: -24%;
+    top: 53%;
+    cursor: pointer;
+    content: '';
+    -webkit-animation: up-down 1s ease infinite;
+    -ms-animation: up-down 1s ease infinite;
+    -moz-animation: up-down 1s ease infinite;
+    -o-animation: up-down 1s ease infinite;
+    animation: up-down 1s ease infinite;
+}
+</style>
+ <script type="text/javascript">
+   
+    function showaa(obj)
+    {
+      //var obj_parent=obj.parentNode;
+      var obj_parent=obj.parentElement
+     
+      if(obj_parent.className=="bottom_slide_box aa_show")
+      {
+        obj_parent.className="bottom_slide_box aa_hide";
+      }
+      else
+      {
+        obj_parent.className="bottom_slide_box aa_show";
+      }
+    }
+    
+  </script>
+
+
+<div id="12" class="bottom_slide_box aa_hide">
+  <div onclick="showaa(this)" class="click_are"></div>
+ <div class="click_img"><span class="money">拍婚纱照多少钱？</span><span class="suansuan">98%的新人选择，提前算一算</span></div>
+  <!-- <div class="go_shake_img"></div> -->
+  <div class="calculator_box">
+    <div class="select_b">
+      <h2><span>今天已有 <em>940</em> 位新人获取了婚纱照预算</span></h2>
+        <div class="num-frame">
+                <div class="ndys"><p>您的婚纱照预算为</p></div>
+                <div class="yuan"><p>元</p></div>
+                <div class="num-window clearfix clear">
+        <em id="setnum">?</em>
+                </div>
+            </div>
+
+            <div class="form_line">
+          <div class="element triangle">
+                <select name="city" id="xuqiu" class="first_line">
+                  <option value="">--请选择城市--</option>
+
+                  <option value="北京">北京</option>
+                  <option value="天津">天津</option>
+                  <option value="沈阳">沈阳</option>
+                  <option value="大连">大连</option>
+                  <option value="哈尔滨">哈尔滨</option>
+                  <option value="石家庄">石家庄</option>
+
+                  <option value="上海">上海</option>
+                  <option value="杭州">杭州</option>
+                  <option value="厦门">厦门</option>
+                  <option value="南京">南京</option>
+                  <option value="苏州">苏州</option>
+                  <option value="无锡">无锡</option>
+                  <option value="宁波">宁波</option>
+                  <option value="福州">福州</option>
+                  <option value="青岛">青岛</option>
+                  <option value="合肥">合肥</option>
+
+                  <option value="成都">成都</option>
+                  <option value="重庆">重庆</option>
+                  <option value="长沙">长沙</option>
+                  <option value="郑州">郑州</option>
+                  <option value="西安">西安</option>
+                  <option value="武汉">武汉</option>
+                  <option value="总监级">广州</option>
+                  <option value="资深级">深圳</option>
+              </select>
+          </div>
+      </div>
+      <div class="form_line">
+          <div class="element triangle">
+                  <select name="shangjia" id="xuqiu" class="first_lin">
+                  <option value="">--选择商家类型--</option>
+                  <option value="资深级">中端商家</option>
+                  <option value="总监级">高端商家</option>
+              </select>
+                <select name="zaoxing" id="hotel" class="first_lin fr">
+                  <option value="">--选择场景数量--</option>
+                  <option data-value="3" value="3">3个</option>
+                  <option data-value="4" value="4">4个</option>
+                  <option data-value="5" value="5">5个</option>
+                  <option data-value="6" value="6">6个</option>
+                  <option data-value="7" value="7">6以上</option>
+              </select>
+          </div>
+      </div>
+      <div class="form_line">
+          <div class="element">
+              <div class="text_wrap">
+                   <select  name="sheying"  id="xuqiu" class="first_lin">
+                  <option value="">--选择摄影师--</option>
+                  <option value="资深级">资深级</option>
+                  <option value="总监级">总监级</option>
+                  <option value="资深级">首席摄影师</option>
+              </select>
+               <select name="huazhuang" id="xuqiu" class="first_lin fr">
+                  <option value="">--选择化妆师--</option>
+                  <option value="资深级">资深级</option>
+                  <option value="总监级">总监级</option>
+                  <option value="资深级">首席化妆师</option>
+              </select>
+              </div>
+          </div>
+      </div>
+      <div class="form_line">
+          <div class="element triangle">
+              <select name="count" id="xuqiu" class="first_line">
+                  <option value="">--请选择精修张数--</option>
+                  <option value="40张">40张</option>
+                  <option value="45张">45张</option>
+                  <option value="50张">50张</option>
+                  <option value="55张">55张</option>
+                  <option value="60张">60张</option>
+                  <option value="65张">65张</option>
+                  <option value="70张">70张</option>
+                  <option value="75张">75张</option>
+                  <option value="80张">80张</option>
+                  <option value="85张">85张</option>
+                  <option value="90张">90张</option>
+                  <option value="95张">95张</option>
+                  <option value="100张">100张</option>
+              </select>
+          </div>
+      </div>
+      <div class="form_line" id="zxys_phoneInput">
+          <div class="element">
+              <div class="text_wrap">
+                  <input id="phonenumber" placeholder="输入手机号，短信接收报价结果" type="text" class="text phonetext" name="phone">
+                  <em class="text_lbl"></em>
+              </div>
+          </div>
+      </div>
+          <div class="shuom">
+          预算结果根据用户真实消费大数据分析计算得出。
+          </div>
+    </div>
+    <div class="result_b">
+      <button  href="javascript:void(0)" onclick="one()" class="star_calculator">
+        开始计算
+      </button>
+      <span></span>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div id="overlay-bd" class="overlay-bd">
+<div class="t8s-alert-close" href="javascript:void(0)" onclick="two()"><i class="t8s-alert-i"></i></div>
+<div class="t8s-content-box">
+<div class="t8s-fruit-price">
+<p class="column">您的婚纱照预算为</p>
+<p class="jaojia">
+<span id='setnumall'>4738</span>
+<i>元</i></p></div>
+<div class="t8s-price-list">
+<ul><li class="clearfix"><span class="t8s-budget-span">场景费用：</span><span><em id='zaoxingprice'>0</em>元</span></li>
+<li class="clearfix"><span class="t8s-budget-span">摄影师费用：</span><span><em id='sheyingprice'>0</em>元</span></li>
+<li class="clearfix"><span class="t8s-budget-span">化妆造型：</span><span><em id='huazhuangprice'>0</em>元</span></li>
+<li class="clearfix"><span class="t8s-budget-span">精修费用：</span><span><em id=jinxiuprice>0</em>元</span></li>
+
+</ul></div><div class="holiday-text-t6s"><p>*报价有疑问？稍后有榜网将致电为您解答。</p><p>*报价为大数据报价，实际以推荐商家为准。</p></div></div>
+</div>
+ <div id="fade" class="black_overlay"> 
+  </div>
+ <script>
+   function one(){
+    document.getElementById('overlay-bd').style.display='block';
+    document.getElementById('fade').style.display='block'
+   }
+   function two(){
+    document.getElementById('overlay-bd').style.display='none';
+    document.getElementById('fade').style.display='none'
+   }
+   </script> 
+
+
+<style>
+   .black_overlay{ display: none; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; background-color: black; z-index:1001; -moz-opacity: 0.6; opacity:.60; filter: alpha(opacity=60); } 
+.overlay-bd {
+    background-color: #fff;
+    font-size: 14px;
+    display: none;
+    color: #333;
+    line-height: 24px;
+    padding: 0.5rem 0%;
+    text-align: center;
+    margin: -10rem 10%;
+    z-index: 1002;
+    border-radius: 1rem;
+    height: 19rem;
+    top: 50%;
+    bottom: 50%;
+}
+.overlay-bd, .yusuan-submit {
+    position:absolute;
+    width: 80%;
+
+}
+.t8s-alert-close {
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+}
+.t8s-fruit-price:before {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #E3E3E3;
+}
+.holiday-text-t6s:before, .t8s-fruit-price:before {
+    content: ' ';
+    display: block;
+}
+.t8s-alert-i {
+background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
+    width: 1rem;
+    height: 1rem;
+    background-size: 1rem auto;
+    display: block;
+}
+.t8s-fruit-price {
+    margin: 0 10%;
+    padding-bottom: 1rem;
+    border-bottom: 1px #eee solid;
+    position: relative;
+    width: 80%;
+}
+.t8s-fruit-price:before {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #E3E3E3;
+}
+.t8s-fruit-price .column {
+    padding-top: 1.2rem;
+    color: #333;
+    font-size: 0.8rem;
+    height: 2rem;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    background: #fff;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6rem;
+    font-weight: bold;
+}
+.t8s-fruit-price .jaojia{
+    margin: .3rem 0;
+    line-height: 2rem;
+    height: 2rem;
+}
+.t8s-fruit-price .jaojia span{
+    font-size: 2rem;
+    color: #ffb200;
+    padding: 0 0.5rem 0;
+    font-weight: bold;
+}
+.t8s-fruit-price .jaojia i{
+    font-size: 1rem;
+    font-style: normal;
+    color: #ffb200;
+}
+.t8s-price-list ul {
+    height:auto;
+    overflow: hidden;
+}
+.t8s-price-list ul li {
+    position: relative;
+    height: 2rem;
+    font-size: 1rem;
+    color: #666;
+    margin: 0 10%;
+    line-height: 6rem;
+    width: 80%;
+}
+.clearfix {
+    overflow: hidden;
+}
+.clearfix {
+    zoom: 1;
+}
+.clearfix:after, .clearfix:before {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+.t8s-price-list .t8s-budget-span {
+    width: 50%;
+    text-align: right;
+}
+.t8s-price-list ul li span {
+    float: left;
+    width: 50%;
+    font-size: .8rem;
+    color: #333;
+    vertical-align: bottom;
+    text-align: left;
+    height: 2rem;
+    line-height: 2rem;
+}
+.t8s-price-list li span em {
+    padding: 0 0.3rem;
+    font-size:1rem;
+}
+.t8s-price-list ul li:after {
+    width: 90%;
+    height:2px;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    background: url(http://img.to8to.com/wap/v2/t6s-result-cut-line.jpg?v=20170626);
+    background-size: 100%;
+}
+.t8s-price-list li span del {
+    margin-left:1rem;
+    font-size:0.8rem;
+    color: #999;
+}
+
+@keyframes animationTop{0%{transform:translateY(100%);opacity:0}100%{transform:translateY(0);opacity:1}}@-moz-keyframes animationTop{0%{-moz-transform:translateY(100%);opacity:0}100%{-moz-transform:translateY(0);opacity:1}}@-webkit-keyframes animationTop{0%{-webkit-transform:translateY(100%);opacity:0}100%{-webkit-transform:translateY(0);opacity:1}}@-ms-keyframes animationTop{0%{-ms-transform:translateY(100%);opacity:0}100%{-ms-transform:translateY(0);opacity:1}}@keyframes animationBottom{0%{transform:translateY(-100%);opacity:0}100%{transform:translateY(0);opacity:1}}@-moz-keyframes animationBottom{0%{-moz-transform:translateY(-100%);opacity:0}100%{-moz-transform:translateY(0);opacity:1}}@-webkit-keyframes animationBottom{0%{-webkit-transform:translateY(-100%);opacity:0}100%{-webkit-transform:translateY(0);opacity:1}}@-ms-keyframes animationBottom{0%{-ms-transform:translateY(-100%);opacity:0}100%{-ms-transform:translateY(0);opacity:1}}@keyframes animationLeft{0%{transform:translateX(-100%);opacity:0}100%{transform:translateX(0);opacity:1}}@-moz-keyframes animationLeft{0%{-moz-transform:translateX(-100%);opacity:0}100%{-moz-transform:translateX(0);opacity:1}}@-webkit-keyframes animationLeft{0%{-webkit-transform:translateX(-100%);opacity:0}100%{-webkit-transform:translateX(0);opacity:1}}@-ms-keyframes animationLeft{0%{-ms-transform:translateX(-100%);opacity:0}100%{-ms-transform:translateX(0);opacity:1}}@keyframes animationRight{0%{transform:translateX(100%);opacity:0}100%{transform:translateX(0);opacity:1}}@-moz-keyframes animationRight{0%{-moz-transform:translateX(100%);opacity:0}100%{-moz-transform:translateX(0);opacity:1}}@-webkit-keyframes animationRight{0%{-webkit-transform:translateX(100%);opacity:0}100%{-webkit-transform:translateY(0);opacity:1}}@-ms-keyframes animationRight{0%{-ms-transform:translateX(100%);opacity:0}100%{-ms-transform:translateX(0);opacity:1}}@keyframes scale-three{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.5);opacity:0}}@-moz-keyframes scale-three{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.5);opacity:0}}@-webkit-keyframes scale-three{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.5);opacity:0}}@-ms-keyframes scale-three{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.5);opacity:0}}@keyframes up-down{0%{transform:translate(0, 0)}50%{transform:translate(0, -10px)}100%{transform:translate(0, 0)}}@-moz-keyframes up-down{0%{transform:translate(0, 0)}50%{transform:translate(0, -10px)}100%{transform:translate(0, 0)}}@-webkit-keyframes up-down{0%{transform:translate(0, 0)}50%{transform:translate(0, -10px)}100%{transform:translate(0, 0)}}@-ms-keyframes up-down{0%{transform:translate(0, 0)}50%{transform:translate(0, -10px)}100%{transform:translate(0, 0)}}
+
+.holiday-text-t6s {
+  position: relative;
+    margin-bottom: -20px;
+    padding: 1rem 0 1rem;
+    background: #ffb200;
+}
+.holiday-text-t6s::before {
+    position: absolute;
+    top: -1.9rem;
+    left: 0;
+    width: 90%;
+    height: 2rem;
+    padding: 0 5%;
+    background: url(http://c.youbangkeyi.com/a/t6s-result-bg.png) no-repeat;
+    background-size: 100% 2rem;
+    z-index: 10;
+}
+.t8s-price-list{
+  padding-bottom: 1rem;
+}
+.holiday-text-t6s, .t8s-result-bg img {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.holiday-text-t6s p {
+    position: relative;
+    display: block;
+    color: #fff;
+    z-index: 10;
+}
+.holiday-text-t6s p, .t8s-error {
+    font-size: .6rem;
+    text-align: left;
+    padding: 0 5%;
+    line-height: 1.2rem;
+    width: 90%;
+}
+
+.bottom_slide_box .calculator_box .select_b .form_line .element .first_lin{
+    width: 48%;
+    height: 100%;
+    text-indent:.5rem;
+    font-size:.6rem;
+    color: #333333;
+    border-radius: .2rem;
+    background:#EFEFEF;
+    border:0;
+}
+.fr{float: right;}
+</style>
+
+
+<script type="text/javascript">
+  var min = 3000, max = 20000;
+  setInterval(displayNum,100);
+  function displayNum(){
+    var temp_min = min < 10 ? "00" : (min < 10 ? "0"+min : min);
+    var temp_max = max < 100 ? "0"+max : max;
+    document.getElementById("setnum").innerHTML = temp_min;
+    min = min + 4356;
+    if(min > max){
+      min=0;
+    }
+  }
+
+  $(function() {
+    $(".star_calculator").click(function(){
+
+      var city = $("select[name=city]").val();
+      console.log(city);
+      if(!city) {
+        showMessage("请选择城市");
+        return false ;
+      } 
+      var shangjia = $("select[name=shangjia]").val();
+      console.log(shangjia);
+      if(!shangjia){
+        showMessage("请选择商家类型")
+        return false ;
+      }
+      var zaoxing = $("select[name=zaoxing]").val()
+      if(!zaoxing) {
+        showMessage("请选择造型数量");
+        return false ;
+      }
+
+      var sheying = $("select[name=sheying]").val();
+      if(!sheying) {
+        showMessage("请选择摄影师");
+        return false ;
+      }
+      
+      var huazhuang = $("select[name=huazhuang]").val()
+      if(!huazhuang) {
+        showMessage("请选择化妆师");
+        return false ;
+      }
+
+      var count = $("select[name=count]").val();
+      if(!count) {
+        showMessage("请选择精修数量");
+        return false ;
+      }
+
+      var mobile = $("input[name=phone]").val();
+      if(!mobile) {
+        showMessage("请填写手机号码");
+      }
+
+      $.post(
+        "/get/sheyingprice", 
+        "city="+city+"&shangjia=" + shangjia+ "&zaoxing="+zaoxing+"&sheying="+
+        sheying+"&huazhuang="+huazhuang+"&count="+count+"&mobile="+mobile, 
+        function (res, status, xhr) {
+            console.log(res);
+            $("#zaoxingprice").html(res.zaoxingprice);
+            $("#sheyingprice").html(res.sheyingprice);
+            $("#huazhuangprice").html(res.huazhuangprice);
+            $("#jinxiuprice").html(res.cpprice);
+            $("#setnumall").html(res.allprice);
+        }, 
+        'json'
+      );
+    
+    })
+    
+    function showMessage(message){
+        alert(message);
+    }
+});
+
+</script>
+
+</body></html>
