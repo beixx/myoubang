@@ -139,6 +139,7 @@ class IndexController extends Controller
                 ->where("id",'!=',$tenants['id'])
                 ->where("shoptype",'=',$tenants['shoptype'])
                 ->where("order_city",'<','50')
+                ->orderby("order_city",'asc')
                 ->limit(8)
                 ->get()
                 ->toArray();
