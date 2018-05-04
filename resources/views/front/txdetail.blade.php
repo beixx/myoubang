@@ -11,7 +11,7 @@
     <script type="text/javascript" src="//m1.youbangkeyi.cn/js/jquery-1.7.1.min.js"></script>
     <script src="//m1.youbangkeyi.cn/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.cn/js/foot.js"></script>
-    <style type="text/css">body{background:#f0f0f0;}.suolvl,.suolvl span{height: 5.5rem;}</style>
+    <style type="text/css">body{background:#f0f0f0;}</style>
     <script>
 var _hmt = _hmt || [];
 (function() {

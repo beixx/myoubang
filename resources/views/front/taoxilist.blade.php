@@ -43,6 +43,7 @@ var _hmt = _hmt || [];
             <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
     </div>
+    <div class="zysm">排名权威有保障，由有榜网对商家全网大数据分析得出！</div>
 </div>
 
 

@@ -63,8 +63,8 @@ var _hmt = _hmt || [];
         </div>
         <div class="bd">
             <div class="list_box">
-            <div class="zysm">排名权威有保障，由有榜网对商家全网大数据分析得出！</div>
                 <div class="b_time">数据更新：<span class="fa"><?php echo date("Y年m月d日");?></span><span class="guize"><a href="/guize.html">榜单规则</a></span></div>
+                <div class="zysmi">排名权威有保障，由有榜网对全网大数据分析得出！</div>
                 <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
                     <?php if(isset($spread['name'])) { ?>
                     <div class="pic_box">
@@ -192,9 +192,9 @@ var _hmt = _hmt || [];
                                     <a class="suolv" href="/detail/<?php echo $v['id'].'/'.$v2['id'];?>">
                                         <span>
                                             <?php if(strpos($v2['cover'][0],'http') === false) {?>
-                                                <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.cn<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/226/q/75|imageslim">
+                                                <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.cn<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
                                             <?php } else {?>
-                                                <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/226/q/75|imageslim">
+                                                <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
                                             <?php } ?>
                                         </span>
                                     </a>

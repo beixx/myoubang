@@ -119,7 +119,7 @@ var _hmt = _hmt || [];
                     <div class="text"><?php echo implode('|',$v['picStyle'])?></div>
                 </div>
             </a>
-          <div href="javascript:" class="anlibj down">咨询档期</div>
+          <div href="javascript:" class="anlibj down">获取该案例报价</div>
         </li>
         <?php } ?>
     </ul>

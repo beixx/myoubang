@@ -276,7 +276,7 @@ unfoldField.onclick=function(){
                     </div>
                 </div>
             </a>
-        <div href="javascript:" class="anlibj down">咨询档期</div>
+        <div href="javascript:" class="anlibj down dangqiclick">咨询档期</div>
         </li>
         <?php } ?>
     </ul>
@@ -300,8 +300,26 @@ unfoldField.onclick=function(){
                 <?php } ?>
 </div>
             </div>
+            <!-- 猜你喜欢的商家
+    <div class="view shop-tuijian">        
+<div class="tit">猜你喜欢的商家</div>
+<div class="hot">
+    <ul>
+        <li>
+            <a class="suolvl" href="#">
+               <span>
+                   <img src="//img2.youbangkeyi.cn/?imageView2/1/w/400/h/300/q/75|imageslim">
+               </span>  </a><p>北京聚焦摄影（世界公园店）</p>
+                <div class="price">
+                    <span class="red">TOP01</span>
+                    <del>竞争指数：98.8</del>
+                </div>
+        </li>
+    </ul>
+</div>
+</div>-->
 <div class="tel-box txtCtr">
-    <a href="javascript:" class="ask rgt down">预约到店<em>(已有116人预约)</em></a>
+    <a href="javascript:" class="ask rgt down shopclick">预约到店<em>(已有116人预约)</em></a>
 </div>
 <div class="bgDiv"></div>
 <div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:19rem;">
@@ -1500,7 +1518,10 @@ option = {
         $("input[name=wapsubmit]").val("获取报价");
     })
     $(".shopclick").click(function(){
-        $("input[name=wapsubmit]").val("预约看店");
+        $("input[name=wapsubmit]").val("预约到店");
+    })
+    $(".dangqiclick").click(function(){
+        $("input[name=wapsubmit]").val("咨询档期");
     })
         // 数据初始化
     var Obj = $('body').barrage({
