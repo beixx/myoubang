@@ -135,6 +135,12 @@ class IndexController extends Controller
                 'advinfo' => $advinfo
             ];
 
+            $this->data['recommenttenants'] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
+                ->where("id",'!=',$tenants['id'])
+                ->where("shoptype",'=',$tenants['shoptype'])
+                ->where("order_city",'<','50')
+                ->get()
+                ->toArray();
             return view("front/shop",$this->data);
 
 
