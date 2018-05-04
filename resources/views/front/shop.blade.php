@@ -300,24 +300,27 @@ unfoldField.onclick=function(){
                 <?php } ?>
 </div>
             </div>
-            <!-- 猜你喜欢的商家
-    <div class="view shop-tuijian">        
-<div class="tit">猜你喜欢的商家</div>
-<div class="hot">
-    <ul>
-        <li>
-            <a class="suolvl" href="#">
-               <span>
-                   <img src="//img2.youbangkeyi.cn/?imageView2/1/w/400/h/300/q/75|imageslim">
-               </span>  </a><p>北京聚焦摄影（世界公园店）</p>
-                <div class="price">
-                    <span class="red">TOP01</span>
-                    <del>竞争指数：98.8</del>
-                </div>
-        </li>
-    </ul>
+
+<div class="view shop-tuijian">
+    <div class="tit">猜你喜欢的商家</div>
+    <div class="hot">
+        <ul>
+            <?php foreach($recommenttenants as $k =>$v) { ?>
+            <li>
+                <a class="suolvl" href="">
+                   <span>
+                       <img src="http://img2.youbangkeyi.cn<?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim">
+                   </span>  </a><p><?php echo $v['name'];?></p>
+                    <div class="price">
+                        <span class="red">TOP<?php echo $v['order_city'];?></span>
+                        <del>竞争指数：<?php echo $v['heat_index'];?></del>
+                    </div>
+            </li>
+            <?php } ?>
+        </ul>
+    </div>
 </div>
-</div>-->
+
 <div class="tel-box txtCtr">
     <a href="javascript:" class="ask rgt down shopclick">预约到店<em>(已有116人预约)</em></a>
 </div>
