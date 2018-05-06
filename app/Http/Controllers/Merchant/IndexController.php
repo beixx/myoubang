@@ -83,7 +83,7 @@ class IndexController extends MerchantController
             $data = [
                 'picname' => $request->get("picname"),
                 'cover' => json_encode($request->get("imageurl",[]),JSON_UNESCAPED_UNICODE),
-                'firstcover' => json_encode([$request->get('imageurl',[])[0]],JSON_UNESCAPED_UNICODE),
+                'firstcover' => json_encode([$request->get('imageurl',[])[0]??''],JSON_UNESCAPED_UNICODE),
                 'picstyle' => json_encode(explode(',',$request->get("picstyle",'')),JSON_UNESCAPED_UNICODE),
                 'explain' => $request->get('explain'),
                 //'source' => 2,
