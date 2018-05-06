@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78c33a0d-54cb-4cf0-8b6a-947adcf68385" name="Default" comment="Merge branch 'master' of https://github.com/beixx/myoubang&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php" />
     </list>
     <ignored path="myoubang.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,8 +73,8 @@
       <file leaf-file-name="shop.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/front/shop.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.125">
-              <caret line="307" column="43" selection-start-line="307" selection-start-column="26" selection-end-line="307" selection-end-column="43" />
+            <state vertical-scroll-proportion="-13.0">
+              <caret line="310" column="43" selection-start-line="310" selection-start-column="43" selection-end-line="310" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -112,13 +113,23 @@
         </entry>
       </file>
       <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6719577">
+              <caret line="103" column="87" selection-start-line="103" selection-start-column="87" selection-end-line="103" selection-end-column="87" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34391534">
-              <caret line="141" column="45" selection-start-line="141" selection-start-column="45" selection-end-line="141" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.23529412">
+              <caret line="137" column="14" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
               <folding>
                 <element signature="e#39#75#0#PHP" expanded="true" />
-                <marker date="1525405881562" expanded="true" signature="26596:26656" placeholder="..." />
+                <marker date="1525586841779" expanded="true" signature="26645:26705" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -129,7 +140,14 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1525404223600" expanded="false" signature="9:383" placeholder="..." />
+                <marker date="1525404223600" expanded="true" signature="402:1459" placeholder="..." />
+                <marker date="1525404223600" expanded="true" signature="444:1458" placeholder="..." />
+                <marker date="1525404223600" expanded="true" signature="1476:2398" placeholder="..." />
+                <marker date="1525404223600" expanded="true" signature="1520:2397" placeholder="..." />
+                <marker date="1525404223600" expanded="true" signature="2460:3594" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -207,11 +225,11 @@
         <option value="$PROJECT_DIR$/public/webUpload/js/diyUpload.js" />
         <option value="$PROJECT_DIR$/resources/views/merchant/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/merchant/setpackage.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php" />
         <option value="$PROJECT_DIR$/resources/views/front/index.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/front/shop.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php" />
       </list>
     </option>
   </component>
@@ -1006,7 +1024,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1525404223600" expanded="false" signature="9:383" placeholder="..." />
+            <marker date="1525404223600" expanded="true" signature="402:1459" placeholder="..." />
+            <marker date="1525404223600" expanded="true" signature="444:1458" placeholder="..." />
+            <marker date="1525404223600" expanded="true" signature="1476:2398" placeholder="..." />
+            <marker date="1525404223600" expanded="true" signature="1520:2397" placeholder="..." />
+            <marker date="1525404223600" expanded="true" signature="2460:3594" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1028,19 +1053,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/shop.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.125">
-          <caret line="307" column="43" selection-start-line="307" selection-start-column="26" selection-end-line="307" selection-end-column="43" />
+        <state vertical-scroll-proportion="-13.0">
+          <caret line="310" column="43" selection-start-line="310" selection-start-column="43" selection-end-line="310" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.7777777">
-          <caret line="141" column="41" selection-start-line="141" selection-start-column="41" selection-end-line="141" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,12 +1071,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34391534">
-          <caret line="141" column="45" selection-start-line="141" selection-start-column="45" selection-end-line="141" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.23529412">
+          <caret line="137" column="14" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
           <folding>
             <element signature="e#39#75#0#PHP" expanded="true" />
-            <marker date="1525405881562" expanded="true" signature="26596:26656" placeholder="..." />
+            <marker date="1525586841779" expanded="true" signature="26645:26705" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6719577">
+          <caret line="103" column="87" selection-start-line="103" selection-start-column="87" selection-end-line="103" selection-end-column="87" />
+          <folding />
         </state>
       </provider>
     </entry>

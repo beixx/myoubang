@@ -98,6 +98,10 @@ class IndexController extends MerchantController
             }
             else {
                 $style->insert($data);
+
+                $count = YfcTenantsPic::where("tenantsid",'=',$this->tid)->count();
+
+                YfcTenants::where("id",'=',$this->tid)->update(['piccount' => $count]);
             }
             $trends = ['time' => time(),'content' => '更新了最新案例《'.$data['picname'].'》'];
             Yfctenants::where("id",'=',$data['tenantsId'])->update(['trends'=>json_encode($trends)]);
