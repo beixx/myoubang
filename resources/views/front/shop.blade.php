@@ -133,17 +133,20 @@ unfoldField.onclick=function(){
 <?php }else { ?>
 
     <?php } ?>
+<div class="info-box"><div class="titleqs"><i>有榜网预约到店专享</i><span class="fa">86人已预约到店</span></div>
 <div class="daodianli down" href="javascript:">
                 <div class="daodiant">
                     <span class="coupon-tag"></span>
                     <h3><?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?></h3>
                     <div class="btm-line">
-                        仅限到店使用
+                        仅限预约到店使用
                         <span class="sm-text"><?php echo $tenants['count1'];?>人感兴趣</span>
                     </div>
                 </div>
                 <div class="to-get-btn down" href="javascript:">领取</div>
             </div>
+<div class="yuyue yyvip down" href="javascript:">到店享受VIP客户待遇，店员一对一服务</div>
+<div class="yuyue yydq down" href="javascript:">根据您的需求，可优先安排拍摄档期</div><div class="yuyue yyxy down" href="javascript:">线上预约或获取客片报价，商家5分钟内快速响应</div></div>
 <div class="info-box mtrem6">
 <div class="zhanshi">
     <div class="data">
@@ -307,7 +310,7 @@ unfoldField.onclick=function(){
         <ul>
             <?php foreach($recommenttenants as $k =>$v) { ?>
             <li>
-                <a class="suolvl" href="">
+                <a class="suolvl" href="/detail/<?php echo $v['id'];?>">
                    <span>
                        <img src="http://img2.youbangkeyi.cn<?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim">
                    </span>  </a><p><?php echo $v['name'];?></p>
@@ -322,7 +325,7 @@ unfoldField.onclick=function(){
 </div>
 
 <div class="tel-box txtCtr">
-    <a href="javascript:" class="ask rgt down shopclick">预约到店<em>(已有116人预约)</em></a>
+    <a href="javascript:" class="ask rgt down shopclick">预约到店<em>(已有<?php echo $tenants['count1'];?>人预约)</em></a>
 </div>
 <div class="bgDiv"></div>
 <div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:19rem;">

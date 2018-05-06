@@ -607,6 +607,7 @@ class IndexController extends Controller
         $data['tenantsId'] = $tenantsId;
         $data['source'] = Request::get('source','1');
         $data['ctime'] = time();
+        $data['url'] = $_SERVER['HTTP_REFERER'];
         $backres = DB::table('yfc_bespoke_view')->insert($data);
         if($backres){
             $res['result'] = '00';

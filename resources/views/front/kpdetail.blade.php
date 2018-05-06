@@ -77,6 +77,7 @@ var _hmt = _hmt || [];
 <div class="jisuanqi click_are" onclick="showaa(this)"> <?php if($tenants['shoptype']=='婚纱摄影') { ?><div class="suan-wen"><p>拍一样的婚纱照需要多少钱？</p><span>试试婚纱摄影计算器</span></div> <?php } else { ?><div class="suan-wen"><p>办这样的婚礼需要多少钱？</p><span>试试婚礼计算器</span></div> <?php } ?></div>
 <div class="shop_box">
     <div class="titdp">案例所属商家</div>
+        <div class="zysm">排名权威有保障，由有榜网对商家全网大数据分析得出！</div>
     <?php if($tenants['isVip'] == 2) { ?>
     <div class="huiyuan"></div>
     <?php } ?>
@@ -87,7 +88,6 @@ var _hmt = _hmt || [];
             <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
     </div>
-    <div class="zysm">排名权威有保障，由有榜网对商家全网大数据分析得出！</div>
 </div>
 <div class="tittp">客片欣赏</div>
 <div class="info">

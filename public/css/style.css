@@ -149,9 +149,9 @@ header .city_box{width: 1.8rem;color:#666;font-weight: bold;display: table-cell;
     margin-top: 0.4rem;
     width: 1.4rem;}
 header .city_box span{position: absolute;top: 0.3rem;right: 0.2rem;background: url(../images/icon2.png) no-repeat center center;width: 0.55rem;height: 0.55rem;background-size: 0.5rem;}
-.sousj .search{width:74%;float: left; margin:1.5rem 13%;height:2rem;overflow-x: hidden;background:#FFF; border-radius: 100px; -webkit-box-sizing: border-box; -webkit-box-flex: 1;}
-.sousj .search .inp{background:#FFF;width: 87%;height: 2rem;float: left;border:0;line-height: 1.5rem;font-size: 0.7rem;text-indent:0.8rem;}
-.sousj .search .btn{width: 1.1rem;height: 2rem;float: left;background: url(../images/icon3.png) no-repeat center center #FFF;background-size: 75%;border: 0;overflow: hidden;text-indent: -99px;}
+.sousj .search{width:74%;float: left; margin:1.3rem 13%;height:1.5rem;overflow-x: hidden;background:#FFF; border-radius: 100px; -webkit-box-sizing: border-box; -webkit-box-flex: 1;}
+.sousj .search .inp{background:#FFF;width: 87%;height:1.5rem;float: left;border:0;line-height: 1.5rem;font-size: 0.6rem;text-indent:0.8rem;}
+.sousj .search .btn{width: 1.1rem;height: 1.5rem;float: left;background: url(../images/icon3.png) no-repeat center center #FFF;background-size: 75%;border: 0;overflow: hidden;text-indent: -99px;}
 header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;float: right;background: #FFF url(../images/icon4.png) no-repeat center center;background-size: 60%;overflow: hidden; }
 .cd-bouncy-nav-modal {position: fixed;z-index: 99999999999999; top: 0; left: 0;width: 100%;height: 100%;background-color: rgba(36, 35, 37, 0.9);opacity: 0;visibility: hidden;}
 .cd-bouncy-nav-modal.fade-in {visibility: visible;opacity: 1;}
@@ -313,17 +313,17 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
     text-align: left;
     padding: 0 4% 0 10%;
     font-size: .6rem;
-    color: #ff6c32;
-    background: #fffaea url(/images/zhuyi.png) no-repeat 4% 0.25rem;
+    background: #f9f4d9 url(http://c.youbangkeyi.cn/yuyue/anquan1.png) no-repeat 4% 0.25rem;
     background-size: 1rem;
+    color: #8f7f5d;
 }
 .zysmi{
     text-align: left;
-    padding: 0 4% 0 8%;
+    padding: 0 4% 0 10%;
     font-size: .6rem;
-    color: #ff6c32;
-    background: #fffaea url(/images/zhuyi.png) no-repeat 2% 0.25rem;
+    background: #f9f4d9 url(http://c.youbangkeyi.cn/yuyue/anquan1.png) no-repeat 4% 0.25rem;
     background-size: 1rem;
+    color: #8f7f5d;
     margin: 0.5rem 4% 0;
 }
 /*评选咨询*/
@@ -381,7 +381,7 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
 .sjkap{
 width: 100%; background: #FFF; margin: 0;
 }
-.sousj{font-size: 0.7rem;height:7rem;color:#666;background:url(//c.youbangkeyi.cn/images/e9137a57d4fb1b02417eac246db7110f.jpg?imageslim) no-repeat;background-size: cover;}
+.sousj{font-size: 0.7rem;height:6rem;color:#666;background:url(//c.youbangkeyi.cn/images/e9137a57d4fb1b02417eac246db7110f.jpg?imageslim) no-repeat;background-size: cover;}
 .pic_box{width:100%;background: #FFF;position: relative;border-bottom:.5rem #f0f0f0 solid;padding:0.5rem 0 0;}
 .pic_box .num_txt{width:92%;display: -webkit-box;display: -ms-flexbox;display: -moz-box;height:2.2rem;padding:0.5rem 4% .3rem;position: relative;border-bottom:1px solid #F6F7F9;}
 .pic_box .num_txt .num{width: 2.2rem;line-height: 1rem;height: 2rem;margin: 0 .5rem 0 .7rem;position: relative;font-size: 1.2rem;font-family: Krungthep,"Microsoft YaHei",arial;border-radius:50%;color:#FFF;font-weight:700;background-color:#00B7B7;padding-top: 0.2rem;}
@@ -582,7 +582,7 @@ width: 100%; background: #FFF; margin: 0;
 .viptag{position: absolute;bottom: 5rem;left:0.83rem;}
 .viptag a{border: 1px #FFF solid;color: #FFF;font-size: 0.6rem;border-radius: 0.15rem;padding: 0px 0.15rem;margin-right: 0.25rem;height: 0.8rem;line-height: 0.8rem;}
 .pic_box .pic .tag em{border:1px #00b7b7 solid;float: left;color: #00b7b7;font-size: 0.6rem;border-radius: 0.15rem;padding:0px 0.15rem;margin-right: 0.25rem;height: 0.8rem;line-height: 0.8rem;}
-.pic_box .txt_box{display:-webkit-box;display: -ms-flexbox;display: -moz-box;position:relative;width: 92%; border-top: 1px solid #F5F5F5; margin: 0 4% 0.3rem;padding:0 0 0.3rem;background: #f5f5f5;}
+.pic_box .txt_box{display:-webkit-box;display: -ms-flexbox;display: -moz-box;position:relative;width: 92%; border-top: 1px solid #F5F5F5; margin: 0 4% 0.3rem;padding:0.3rem 0;background: #f5f5f5;}
 .pic_box .txt_box .txt{width: 32%;padding: 0;margin-right: 2%}
 .pic_box .txt_box .txt p{font-size: 0.8rem;height:1.1rem;font-weight: 700;line-height: 1.3rem;color:#666;font-family: DINAlternate-Bold,DIN-Regular;}
 .pic_box .txt_box .txt em{color:#B5B8BB;font-size: 0.6rem;height: 1rem;line-height: 1rem;display: block;}
@@ -797,7 +797,7 @@ width: 100%; background: #FFF; margin: 0;
 .jxtc_box li .txt .text span{padding: 0 0.4rem}
 .ckqb{text-align:center;padding:1rem 0 .5rem;margin:0 .5rem;font-size: .7rem;border-top: #f5f5f5 solid 1px;}
 .ckaqb{text-align:center;padding:0 0 .5rem;margin:0 .5rem .3rem;font-size: .7rem;}
-.comment_list{display:inline-block;position: relative; background: #FFF; width:100%; margin:.3rem 0% 3rem;}
+.comment_list{display:inline-block;position: relative; background: #FFF; width:100%; margin:.3rem 0% 0;}
 .comment_list .title{width: 92%;padding: 0 4%;line-height:2.5rem; height:2.5rem; font-size: 0.75rem;font-weight:700;border-bottom:1px solid #efefef;color: #333;}
 .comment_list dl{width:94%;border-bottom: 1px solid #F5F5F5;padding:1rem 3% 0.5rem}
 .comment_list dd{width:2rem; overflow:hidden; float:left; height:2rem}
@@ -868,6 +868,7 @@ width: 100%; background: #FFF; margin: 0;
 .view .hot li .price{height: 1rem;line-height: 1rem;}
 .view .hot li .price span{font-size: 0.8rem;margin-right: 0.5rem;}
 .view .hot li .price del{color: #bfbfbf;font-size: 0.5rem;}
+.shop-index .view .hot li .price del{color: #bfbfbf;font-size: 0.5rem;text-decoration: none;}
 .view .hot .all{line-height: 2rem;height: 2rem;border:1px #d7d7d7 solid;border-radius: 0.15rem;margin: 0 auto;width: 94%;}
 .view .hot .all a{color: #00b7b7;font-size: 0.7rem;}
 .tel-box{background: #FFF;position: fixed;z-index:99;height: 2.5rem;width: 100%;left: 0;bottom: 0;-webkit-box-shadow: 2px 1px 8px #a4a4a4; box-shadow: 2px 1px 8px #a4a4a4;}
@@ -1585,6 +1586,42 @@ background: url(http://c.youbangkeyi.cn/a/cross78.png) no-repeat;
     background-size:1.5rem;
     height: 1rem;
     }
+.yuyue{
+    position: relative;
+    border-top: 1px solid #f5f5f5;
+    font-size: 0.6rem;
+    width: 100%;
+    line-height: 1rem;
+    text-indent: 14%;
+    height: 1rem;
+    padding: 0.5rem 0;
+}
+.yuyuedaodian{
+    position: relative;
+    padding: 0.8rem 0;
+    border-top: 1px solid #f5f5f5;
+    width: 100%;
+    font-size: 0.6rem;
+    line-height: 1rem;
+    text-indent: 0;
+    height: 2rem;
+}
+.yyvip{
+    background: #FFF url(http://c.youbangkeyi.cn/yuyue/vip.png) no-repeat 1rem 0.75rem;
+    background-size: 1rem;
+}
+.yyxy{
+    background: #FFF url(http://c.youbangkeyi.cn/yuyue/xiangying.png) no-repeat 1rem 0.5rem;
+    background-size: 1rem;
+}
+.yydq{
+    background: #FFF url(http://c.youbangkeyi.cn/yuyue/dangqi.png) no-repeat 1rem 0.5rem;
+    background-size: 1rem;
+}
+.yyts{
+    background: #FFF url(http://c.youbangkeyi.cn/yuyue/tousu.png) no-repeat 1rem 0.5rem;
+    background-size: 1rem;
+}
 .suan-wen{ 
     margin-left: 2.5rem;
     line-height: 1rem;}

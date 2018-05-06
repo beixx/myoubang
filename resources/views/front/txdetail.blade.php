@@ -67,12 +67,13 @@ var _hmt = _hmt || [];
         <h2 class="txtRgt rgt"><?php echo $info['setName'];?></h2>
     </div>
 </div>
-<div class="jisuanqi click_are" onclick="showaa(this)"> <?php if($tenants['shoptype']=='婚纱摄影') { ?><div class="suan-wen"><p>算算定制这样的婚纱照多少钱？</p><span>试试婚纱摄影计算器</span></div> <?php } else { ?><div class="suan-wen"><p>算算定制这样的婚礼多少钱？</p><span>试试婚礼计算器</span></div> <?php } ?></div>
+<div class="jisuanqi click_are" onclick="showaa(this)"> <?php if($tenants['shoptype']=='婚纱摄影') { ?><div class="suan-wen"><p>定制这样的婚纱照多少钱？</p><span>试试婚纱摄影计算器</span></div> <?php } else { ?><div class="suan-wen"><p>算算定制这样的婚礼多少钱？</p><span>试试婚礼计算器</span></div> <?php } ?></div>
 <div class="shop_box">
     <div class="titdp">店铺信息</div>
     <?php if($tenants['isVip'] == 2) { ?>
     <div class="huiyuan"></div>
     <?php } ?>
+  <div class="zysm">排名权威有保障，由有榜网对商家全网大数据分析得出！</div>
     <div class="txt-box">
         <h1><a href="/shop/<?php echo $tenants['id'];?>"><?php echo $tenants['name'];?></a></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
@@ -80,7 +81,6 @@ var _hmt = _hmt || [];
             <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
     </div>
-    <div class="zysm">排名权威有保障，由有榜网对商家全网大数据分析得出！</div>
 </div>
 <div class="titjs">套餐介绍</div>
 <div class="txt-info">
