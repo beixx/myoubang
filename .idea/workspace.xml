@@ -91,11 +91,12 @@
       <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7079646">
-              <caret line="613" column="34" selection-start-line="613" selection-start-column="34" selection-end-line="613" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.20353982">
+              <caret line="605" column="32" selection-start-line="605" selection-start-column="32" selection-end-line="605" selection-end-column="32" />
               <folding>
                 <element signature="e#39#75#0#PHP" expanded="true" />
-                <marker date="1525850996009" expanded="true" signature="26754:26814" placeholder="..." />
+                <marker date="1525876135542" expanded="true" signature="26921:26961" placeholder="..." />
+                <marker date="1525876135542" expanded="true" signature="27065:27125" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1103,11 +1104,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7079646">
-          <caret line="613" column="34" selection-start-line="613" selection-start-column="34" selection-end-line="613" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.20353982">
+          <caret line="605" column="32" selection-start-line="605" selection-start-column="32" selection-end-line="605" selection-end-column="32" />
           <folding>
             <element signature="e#39#75#0#PHP" expanded="true" />
-            <marker date="1525850996009" expanded="true" signature="26754:26814" placeholder="..." />
+            <marker date="1525876135542" expanded="true" signature="26921:26961" placeholder="..." />
+            <marker date="1525876135542" expanded="true" signature="27065:27125" placeholder="..." />
           </folding>
         </state>
       </provider>

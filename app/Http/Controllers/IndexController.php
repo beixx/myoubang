@@ -612,7 +612,13 @@ class IndexController extends Controller
         $backres = DB::table('yfc_bespoke_view')->insert($data);
         if($backres){
             $res['result'] = '00';
-            $this->sendDD('04a7b3d87f5701ff8d2bf9cccb38ead42344b8ead406fe125d5147e36df33b81','有新的预约，请处理');
+            if($tenantsId) {
+                $yfctenants = YfcTenants::where("id",'=',$tenantsId)->first();
+                $content = '城市:'.$yfctenants["positionCity"].";时间:".date('Y-m-d H:i:s').';名称:'
+                    .$yfctenants["name"].";预约人:无;手机号码:".$data['phone'].";地址:".$data['url'];
+                $this->sendDD('04a7b3d87f5701ff8d2bf9cccb38ead42344b8ead406fe125d5147e36df33b81',$content);
+            }
+
         }else{
             $res['result'] = '01';
         }
