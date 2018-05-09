@@ -608,12 +608,15 @@ class IndexController extends Controller
         $data['source'] = Request::get('source','1');
         $data['ctime'] = time();
         $data['url'] = $_SERVER['HTTP_REFERER'];
+
         $backres = DB::table('yfc_bespoke_view')->insert($data);
         if($backres){
             $res['result'] = '00';
+            $this->sendDD('04a7b3d87f5701ff8d2bf9cccb38ead42344b8ead406fe125d5147e36df33b81','有新的预约，请处理');
         }else{
             $res['result'] = '01';
         }
+
         return json_encode($res);
     }
 
@@ -788,5 +791,30 @@ class IndexController extends Controller
         echo json_encode($data,JSON_UNESCAPED_UNICODE);
         exit;
     }
+
+    function sendDD($access_token  ,$message){
+        $arr = json_encode([
+            'at' => ['isAtAll' =>true] ,
+            'msgtype' => 'text',
+            'text' => ['content' => $message]
+        ]);
+        $url = 'https://oapi.dingtalk.com/robot/send?access_token='.$access_token;
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL,$url);
+
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $arr);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json',
+                'Content-Length: ' . strlen($arr))
+        );
+        $output = curl_exec($ch);
+        curl_close($ch);
+
+        return $output;
+
+    }
+
 }
 
