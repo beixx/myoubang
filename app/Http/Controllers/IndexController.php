@@ -110,7 +110,9 @@ class IndexController extends Controller
                     $advinfo = Yfcadv::where('type','1')->where('position','3')->where('city', 'like', '%'.$pycity.'%')->where('advtype','2')->where('endTime','>',time())->first();
                 }
             }
-
+            # 添加案例次数
+            $c = rand(1,3);
+            YfcTenantsPic::where("tenantsId",'=',$id)->update(['showcount' => DB::RAW("showcount+".$c)]);
             $title = $tenants['city'].$tenants['name'].' | 有榜「第'.$tenants['order_city'].'名」';
             $desc = $tenants['city'].$tenants['name'].'在《有榜婚嫁行业榜单》综合排名第'.$tenants['order_city'].'名，该商户在品牌榜单中排名第'.$tenants['brand_search_order'].'名，好评榜单中排名第'.$tenants['praise_order'].'名，希望能够帮助您了解到'.$tenants['name'].'怎么样的问题。';
             $keyword = $tenants['city'].$tenants['name'].', '.$tenants['name'].', '.$tenants['name'].'怎么样, '.$tenants['name'].'行业第'.$tenants['order_city'].'名';
