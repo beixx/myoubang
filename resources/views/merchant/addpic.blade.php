@@ -46,7 +46,7 @@
         .close {
             width: 23px;
             height: 23px;
-            background: url(//c.youbangkeyi.com/images/close.png);
+            background: url(//c.youbangkeyi.cn/images/close.png);
             position: absolute;
             right: -10px;
             top: -10px;
