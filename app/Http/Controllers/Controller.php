@@ -12,9 +12,10 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public $ismobile = false;
+
     function __construct()
     {
-        parent::__construct();
+        //parent::__construct();
 
         $this->ismobile = $this->is_mobile_request();
 
