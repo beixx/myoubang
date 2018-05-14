@@ -17,7 +17,7 @@ $(document).ready(function() {
                             $children.eq(i).hide();
                         }
           
-                        $("<div class='more txtCtr'>点击查看更多</div>").insertAfter($(this)).click(function () {
+                        $("<div class='more txtCtr'>点击查看更多商家</div>").insertAfter($(this)).click(function () {
                             if (showMoreNChildren($children, pagesize) <= 0) {
                                 $(this).hide();
                             };

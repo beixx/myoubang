@@ -46,7 +46,7 @@ unfoldField.onclick=function(){
 <body class="shop-index">
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
-<div class="logo"><a href="/<?php echo $pycity;?>"><img width="3.46rem" height="1.4rem" src="/images/logo.png"></a></div>
+<div class="logo"><a href="/<?php echo $pycity;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><img width="3.46rem" height="1.4rem" src="/images/logo.png"></a></div>
 <a class="zxdh" href="tel:18500905723"></a>
 </header>
 <div class="focus_box">
@@ -88,7 +88,7 @@ unfoldField.onclick=function(){
     <div class="txt_info">
         <h1><?php echo $city;?><?php echo $tenants['name'];?></h1>
         <p><span>人均消费:¥<?php echo $tenants['person_price'];?></span><span>|</span><span>有<?php echo $tenantssort['allcy']?>人在此店消费过</span></p>
-        <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?>"><em></em>打榜</a></div>
+        <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><em></em>打榜</a></div>
     </div>
     <div class="zysm">排名权威有保障，由有榜网对商家全网大数据分析得出！</div>
     <div class="datas">
@@ -105,7 +105,7 @@ unfoldField.onclick=function(){
 		        	<p>好评榜</p>
 		        </span>
 </div>
-    <div class="address"><?php echo $tenants['address'];?></div>
+    <div class="address"><a target="_blank" href="https://map.baidu.com/mobile/webapp/search/search/qt=s&wd=<?php echo $city;?><?php echo $tenants['name'];?>&&vt=map&universalLinkCbkTag=1"><?php echo $tenants['address'];?><em></em></a></div>
 </div></div>
     <?php if($tenants['isVip'] == 2) { ?>
 <?php if(isset($tenantinfo->isVip) && $tenantinfo->isVip==2){
@@ -143,10 +143,10 @@ unfoldField.onclick=function(){
                         <span class="sm-text"><?php echo $tenants['count1'];?>人感兴趣</span>
                     </div>
                 </div>
-                <div class="to-get-btn down" href="javascript:">领取</div>
+                <div class="to-get-btn down liwuclick" href="javascript:">领取</div>
             </div>
 <div class="yuyue yyvip down" href="javascript:">到店享受VIP客户待遇，店员一对一服务</div>
-<div class="yuyue yydq down" href="javascript:">根据您的需求，可优先安排拍摄档期</div><div class="yuyue yyxy down" href="javascript:">线上预约或获取客片报价，商家5分钟内快速响应</div></div>
+<div class="yuyue yydq down" href="javascript:">根据您的需求，可优先安排拍摄档期</div><div class="yuyue yyxy down" href="javascript:">线上预约或获取客片报价，商家3分钟内快速响应</div></div>
 <div class="info-box mtrem6">
 <div class="zhanshi">
     <div class="data">
@@ -218,11 +218,8 @@ unfoldField.onclick=function(){
         <div class="unfold-field_text"><span>查看详细数据、商家擅长风格</span></div>  
          </div> 
 </div>
-<div class="jisuanqi click_are" onclick="showaa(this)"> <?php if($tenants['shoptype']=='婚纱摄影') { ?><div class="suan-wen"><p>你在他家拍婚纱照多少钱？</p><span>试试婚纱摄影计算器</span></div> <?php } else { ?><div class="suan-wen"><p>在他们家办婚礼多少钱？</p><span>试试婚礼计算器</span></div> <?php } ?></div>
 <?php if($countpics >0 ) { ?>
 <div class="case_box">
-    <!--<div class="title">客片欣赏<a href="/kplist/<?php echo $tenants['id'];?>">全部<span class="fa"><?php echo $countpics;?></span>个案例 ></a></div> -->
-
     <div id="picScroll" class="picScroll txtCtr">
         <div class="bd">
             <ul>
@@ -230,11 +227,11 @@ unfoldField.onclick=function(){
                 <li>
         <div class="anli_touxiang"><img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim"></div>
             <p><?php echo $v['picName']?></p>
-            <span class="anli_month">发布于4月14日 13:44</span>
+            <span class="anli_month"><em class="fl">发布于5月05日 13:44</em><em class="fr">浏览<?php echo $v['showcount'];?>次</em></span>
             <?php if(strlen($v['explain'])>5) { ?>
            <div class="anli_p"><?php echo $v['explain'];?></div>
            <?php } ?>
-                    <a class="suolvk" href="/kpdetail/<?php echo $v['id']?>">
+                    <a class="suolvk" href="/kpdetail/<?php echo $v['id']?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                         <span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
@@ -252,17 +249,17 @@ unfoldField.onclick=function(){
                 <?php } ?>
             </ul>        </div>
     </div>
-	<div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?>">查看全部<span class="fa"><?php echo $countpics;?></span>个案例</a></div>
+	<div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看全部<span class="fa"><?php echo $countpics;?></span>个案例</a></div>
 </div>
 <?php } ?>
 
 <?php if($countsets >0 ) { ?>
 <div class="jxtc_box">
-    <div class="title">精选套餐<a href="/txlist/<?php echo $tenants['id'];?>">全部<span class="fa"><?php echo $countsets;?></span>个套系 ></a></div>
+    <div class="title">精选套餐<a href="/txlist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">全部<span class="fa"><?php echo $countsets;?></span>个套系 ></a></div>
     <ul>
         <?php foreach($tenantssets as $k => $v) { ?>
         <li>
-            <a href="/detail/<?php echo $tenants['id'].'/'.$v['id']?>">
+            <a href="/detail/<?php echo $tenants['id'].'/'.$v['id']?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
             <div class="suolvt">
                 <span>
                     <?php if(strpos($v['cover'][0],'http') === false) {?>
@@ -283,7 +280,7 @@ unfoldField.onclick=function(){
         </li>
         <?php } ?>
     </ul>
-    <div class="ckqb"><a href="/txlist/<?php echo $tenants['id'];?>">查看全部<span class="fa"><?php echo $countsets;?></span>个精选套系</a></div>
+    <div class="ckqb"><a href="/txlist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看全部<span class="fa"><?php echo $countsets;?></span>个精选套系</a></div>
 </div>
 <?php } ?>
 <div class="info-box">
@@ -310,7 +307,7 @@ unfoldField.onclick=function(){
         <ul>
             <?php foreach($recommenttenants as $k =>$v) { ?>
             <li>
-                <a class="suolvl" href="/detail/<?php echo $v['id'];?>">
+                <a class="suolvl" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                    <span>
                        <img src="http://img2.youbangkeyi.cn<?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim">
                    </span>  </a><p><?php echo $v['name'];?></p>
@@ -323,29 +320,13 @@ unfoldField.onclick=function(){
         </ul>
     </div>
 </div>
-
-<div class="tel-box txtCtr">
-    <a href="javascript:" class="ask rgt down shopclick">预约到店<em>(已有<?php echo $tenants['count1'];?>人预约)</em></a>
-</div>
+<div class="unit-footer"><div class="peace-live"><p class="txt-cont">大数据实时分析 | 排名权威有保障</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
 <div class="bgDiv"></div>
-<div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:19rem;">
+<div class="downNav bt00">
     <div class="ask">
-        <h4>有榜评选商家优质服务，预约即可享受</h4>
-        <dl class="vip">
-                <dt><i class="vipcon"></i></dt>
-                <dd>获得有榜网一对一VIP服务，全程免费</dd>
-            </dl>
-        <dl class="vip">
-                <dt><i class="youhuicon"></i></dt>
-                <dd><?php echo $tenants['package']?$tenants['package']:'预约到店免费赠送超值结婚大礼包';?></dd>
-            </dl>
-        <div class="tip">
-            <span>7天内选片</span><span>15天出精修</span><span>不满意重拍</span><span>无隐形消费</span>
-        </div>
-        <p>留下您的联系方式以便商户尽快联系你</p>
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="text" name="mobile" id="mobile" class="input" placeholder="输入手机号，享受以上福利">
-        <input type="submit" name="wapsubmit" class="btn" value="预约看店">
+        <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入手机号，(<?php echo $tenants['count1'];?>人已预约)">
+        <input type="submit" name="wapsubmit" class="btn shopclick" value="预约看店·3分钟响应">
     </div>
 
 </div>
@@ -367,650 +348,83 @@ unfoldField.onclick=function(){
             </div>
             <div class="hot">
                 <span class="city-letter">华北东北</span>     
-                    <p data-id="110100"> <a href="/beijing/<?php echo $type;?>">北京</a></p>
-                    <p data-id="110101"> <a href="/tianjin/<?php echo $type;?>">天津</a></p>
-                    <p data-id="110102"><a href="/shenyang/<?php echo $type;?>">沈阳</a></p>
-                    <p data-id="110103"><a href="/dalian/<?php echo $type;?>">大连</a></p>
-                    <p data-id="110104"><a href="/haerbin/<?php echo $type;?>">哈尔滨</a></p>
-                    <p data-id="110105"><a href="/shijiazhuang/<?php echo $type;?>">石家庄</a></p>
-                    <p data-id="1101041"><a href="/taiyuan/<?php echo $type;?>">太原</a></p>
-                    <p data-id="1101042"><a href="/changchun/<?php echo $type;?>">长春</a></p>
-                    <p data-id="1101043"><a href="/tangshan/<?php echo $type;?>">唐山</a></p>
-                    <p data-id="1101044"><a href="/qinhuangdao/<?php echo $type;?>">秦皇岛</a></p>
-                    <p data-id="1101045"><a href="/langfang/<?php echo $type;?>">廊坊</a></p>
-                    <p data-id="1101046"><a href="/baoding/<?php echo $type;?>">保定</a></p>
-                    <p data-id="1101047"><a href="/bangbu/<?php echo $type;?>">蚌埠</a></p>
-                    <p data-id="1101048"><a href="/jinzhou/<?php echo $type;?>">锦州</a></p>
-                    <p data-id="1101049"><a href="/daqing/<?php echo $type;?>">大庆</a></p>
-                    <p data-id="1101040"><a href="/changzhi/<?php echo $type;?>">长治</a></p>
+                    <p data-id="110100"> <a href="/beijing/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">北京</a></p>
+                    <p data-id="110101"> <a href="/tianjin/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">天津</a></p>
+                    <p data-id="110102"><a href="/shenyang/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">沈阳</a></p>
+                    <p data-id="110103"><a href="/dalian/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">大连</a></p>
+                    <p data-id="110104"><a href="/haerbin/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">哈尔滨</a></p>
+                    <p data-id="110105"><a href="/shijiazhuang/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">石家庄</a></p>
+                    <p data-id="1101041"><a href="/taiyuan/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">太原</a></p>
+                    <p data-id="1101042"><a href="/changchun/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">长春</a></p>
+                    <p data-id="1101043"><a href="/tangshan/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">唐山</a></p>
+                    <p data-id="1101044"><a href="/qinhuangdao/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">秦皇岛</a></p>
+                    <p data-id="1101045"><a href="/langfang/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">廊坊</a></p>
+                    <p data-id="1101046"><a href="/baoding/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">保定</a></p>
+                    <p data-id="1101047"><a href="/bangbu/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">蚌埠</a></p>
+                    <p data-id="1101048"><a href="/jinzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">锦州</a></p>
+                    <p data-id="1101049"><a href="/daqing/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">大庆</a></p>
+                    <p data-id="1101040"><a href="/changzhi/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">长治</a></p>
                <span class="city-letter">华东地区</span> 
-                    <p data-id="110107"> <a href="/shanghai/<?php echo $type;?>">上海</a></p>
-                    <p data-id="110106"> <a href="/hangzhou/<?php echo $type;?>">杭州</a></p>
-                    <p data-id="110108"><a href="/xiamen/<?php echo $type;?>">厦门</a></p>
-                    <p data-id="110109"><a href="/nanjing/<?php echo $type;?>">南京</a></p>
-                    <p data-id="110110"><a href="/suzhou/<?php echo $type;?>">苏州</a></p>
-                    <p data-id="110111"><a href="/wuxi/<?php echo $type;?>">无锡</a></p>
-                    <p data-id="110112"><a href="/ningbo/<?php echo $type;?>">宁波</a></p>
-                    <p data-id="110113"><a href="/fuzhou/<?php echo $type;?>">福州</a></p>
-                    <p data-id="110114"><a href="/qingdao/<?php echo $type;?>">青岛</a></p>
-                    <p data-id="110115"><a href="/hefei/<?php echo $type;?>">合肥</a></p>
-                    <p data-id="1101121"><a href="/jinan/<?php echo $type;?>">济南</a></p>
-                    <p data-id="1101122"><a href="/changzhou/<?php echo $type;?>">常州</a></p>
-                    <p data-id="1101123"><a href="/wenzhou/<?php echo $type;?>">温州</a></p>
-                    <p data-id="1101124"><a href="/quanzhou/<?php echo $type;?>">泉州</a></p>
-                    <p data-id="1101125"><a href="/nantong/<?php echo $type;?>">南通</a></p>
-                    <p data-id="1101126"><a href="/xuzhou/<?php echo $type;?>">徐州</a></p>
-                    <p data-id="1101127"><a href="/wuhu/<?php echo $type;?>">芜湖</a></p>
-                    <p data-id="1101128"><a href="/weifang/<?php echo $type;?>">潍坊</a></p>
-                    <p data-id="1101129"><a href="/yangzhou/<?php echo $type;?>">扬州</a></p>
-                    <p data-id="1101120"><a href="/jinhua/<?php echo $type;?>">金华</a></p>
-                    <p data-id="11011"><a href="/linyi/<?php echo $type;?>">临沂</a></p>
-                    <p data-id="11012"><a href="/huzhou/<?php echo $type;?>">湖州</a></p>
-                    <p data-id="11013"><a href="/yancheng/<?php echo $type;?>">盐城</a></p>
-                    <p data-id="11014"><a href="/shaoxing/<?php echo $type;?>">绍兴</a></p>
-                    <p data-id="11015"><a href="/jiaxing/<?php echo $type;?>">嘉兴</a></p>
-                    <p data-id="11016"><a href="/huaian/<?php echo $type;?>">淮安</a></p>
-                    <p data-id="11017"><a href="/maanshan/<?php echo $type;?>">马鞍山</a></p>
-                    <p data-id="11018"><a href="/taian/<?php echo $type;?>">泰安</a></p>
+                    <p data-id="110107"> <a href="/shanghai/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">上海</a></p>
+                    <p data-id="110106"> <a href="/hangzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">杭州</a></p>
+                    <p data-id="110108"><a href="/xiamen/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">厦门</a></p>
+                    <p data-id="110109"><a href="/nanjing/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">南京</a></p>
+                    <p data-id="110110"><a href="/suzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">苏州</a></p>
+                    <p data-id="110111"><a href="/wuxi/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">无锡</a></p>
+                    <p data-id="110112"><a href="/ningbo/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">宁波</a></p>
+                    <p data-id="110113"><a href="/fuzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">福州</a></p>
+                    <p data-id="110114"><a href="/qingdao/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">青岛</a></p>
+                    <p data-id="110115"><a href="/hefei/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">合肥</a></p>
+                    <p data-id="1101121"><a href="/jinan/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">济南</a></p>
+                    <p data-id="1101122"><a href="/changzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">常州</a></p>
+                    <p data-id="1101123"><a href="/wenzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">温州</a></p>
+                    <p data-id="1101124"><a href="/quanzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">泉州</a></p>
+                    <p data-id="1101125"><a href="/nantong/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">南通</a></p>
+                    <p data-id="1101126"><a href="/xuzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">徐州</a></p>
+                    <p data-id="1101127"><a href="/wuhu/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">芜湖</a></p>
+                    <p data-id="1101128"><a href="/weifang/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">潍坊</a></p>
+                    <p data-id="1101129"><a href="/yangzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">扬州</a></p>
+                    <p data-id="1101120"><a href="/jinhua/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">金华</a></p>
+                    <p data-id="11011"><a href="/linyi/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">临沂</a></p>
+                    <p data-id="11012"><a href="/huzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">湖州</a></p>
+                    <p data-id="11013"><a href="/yancheng/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">盐城</a></p>
+                    <p data-id="11014"><a href="/shaoxing/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">绍兴</a></p>
+                    <p data-id="11015"><a href="/jiaxing/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">嘉兴</a></p>
+                    <p data-id="11016"><a href="/huaian/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">淮安</a></p>
+                    <p data-id="11017"><a href="/maanshan/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">马鞍山</a></p>
+                    <p data-id="11018"><a href="/taian/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">泰安</a></p>
             <span class="city-letter">中部西部</span> 
-                    <p data-id="110116"><a href="/chengdu/<?php echo $type;?>">成都</a></p>
-                    <p data-id="110117"><a href="/chongqing/<?php echo $type;?>">重庆</a></p>
-                    <p data-id="110118"><a href="/changsha/<?php echo $type;?>">长沙</a></p>
-                    <p data-id="110119"><a href="/zhengzhou/<?php echo $type;?>">郑州</a></p>
-                    <p data-id="110120"><a href="/xian/<?php echo $type;?>">西安</a></p>
-                    <p data-id="110121"><a href="/wuhan/<?php echo $type;?>">武汉</a></p>
-                    <p data-id="1101191"><a href="/nanchang/<?php echo $type;?>">南昌</a></p>
-                    <p data-id="1101192"><a href="/lanzhou/<?php echo $type;?>">兰州</a></p>
-                    <p data-id="1101193"><a href="/yichang/<?php echo $type;?>">宜昌</a></p>
-                    <p data-id="1101194"><a href="/kunming/<?php echo $type;?>">昆明</a></p>
-                    <p data-id="1101195"><a href="/guiyang/<?php echo $type;?>">贵阳</a></p>
-                    <p data-id="1101196"><a href="/hanzhong/<?php echo $type;?>">汉中</a></p>
-                    <p data-id="1101197"><a href="/hengyang/<?php echo $type;?>">衡阳</a></p>
+                    <p data-id="110116"><a href="/chengdu/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">成都</a></p>
+                    <p data-id="110117"><a href="/chongqing/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">重庆</a></p>
+                    <p data-id="110118"><a href="/changsha/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">长沙</a></p>
+                    <p data-id="110119"><a href="/zhengzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">郑州</a></p>
+                    <p data-id="110120"><a href="/xian/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">西安</a></p>
+                    <p data-id="110121"><a href="/wuhan/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">武汉</a></p>
+                    <p data-id="1101191"><a href="/nanchang/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">南昌</a></p>
+                    <p data-id="1101192"><a href="/lanzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">兰州</a></p>
+                    <p data-id="1101193"><a href="/yichang/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">宜昌</a></p>
+                    <p data-id="1101194"><a href="/kunming/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">昆明</a></p>
+                    <p data-id="1101195"><a href="/guiyang/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">贵阳</a></p>
+                    <p data-id="1101196"><a href="/hanzhong/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">汉中</a></p>
+                    <p data-id="1101197"><a href="/hengyang/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">衡阳</a></p>
                   <span class="city-letter">华南地区</span>
-                    <p data-id="110122"> <a href="/guangzhou/<?php echo $type;?>">广州</a></p>
-                    <p data-id="110123"><a href="/shenzhen/<?php echo $type;?>">深圳</a></p>
-                    <p data-id="1101231"><a href="/sanya/<?php echo $type;?>">三亚</a></p>
-                     <p data-id="1101232"><a href="/nanning/<?php echo $type;?>">南宁</a></p>
-                     <p data-id="1101233"><a href="/zhuhai/<?php echo $type;?>">珠海</a></p>
-                     <p data-id="1101234"><a href="/haikou/<?php echo $type;?>">海口</a></p>
-                     <p data-id="1101235"><a href="/guilin/<?php echo $type;?>">桂林</a></p>
-                    <p data-id="1101236"><a href="/foshan/<?php echo $type;?>">佛山</a></p>
-                     <p data-id="1101237"><a href="/huizhou/<?php echo $type;?>">惠州</a></p>
-                    <p data-id="1101238"> <a href="/shantou/<?php echo $type;?>">汕头</a></p>
-                     <p data-id="1101239"><a href="/jiangmen/<?php echo $type;?>">江门</a></p>
-                    <p data-id="1101230"><a href="/dong_/<?php echo $type;?>">东莞</a></p>
-                    <p data-id="11012311"><a href="/zhanjiang/<?php echo $type;?>">湛江</a></p>
+                    <p data-id="110122"> <a href="/guangzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">广州</a></p>
+                    <p data-id="110123"><a href="/shenzhen/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">深圳</a></p>
+                    <p data-id="1101231"><a href="/sanya/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">三亚</a></p>
+                     <p data-id="1101232"><a href="/nanning/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">南宁</a></p>
+                     <p data-id="1101233"><a href="/zhuhai/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">珠海</a></p>
+                     <p data-id="1101234"><a href="/haikou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">海口</a></p>
+                     <p data-id="1101235"><a href="/guilin/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">桂林</a></p>
+                    <p data-id="1101236"><a href="/foshan/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">佛山</a></p>
+                     <p data-id="1101237"><a href="/huizhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">惠州</a></p>
+                    <p data-id="1101238"> <a href="/shantou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">汕头</a></p>
+                     <p data-id="1101239"><a href="/jiangmen/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">江门</a></p>
+                    <p data-id="1101230"><a href="/dong_/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">东莞</a></p>
+                    <p data-id="11012311"><a href="/zhanjiang/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">湛江</a></p>
             </div>
         </div>
     </div>
 </div>
-<?php if($tenants['shoptype']=='婚纱摄影') { ?>
-      <script type="text/javascript">
-   
-    function showaa(obj)
-    {
-      //var obj_parent=obj.parentNode;
-      var obj_parent=obj.parentElement
-     
-      if(document.getElementById("12").className=="bottom_slide_box aa_show")
-      {
-        document.getElementById("12").className="bottom_slide_box aa_hide";
-      }
-      else
-      {
-        document.getElementById("12").className="bottom_slide_box aa_show";
-      }
-    }
-    
-  </script>
-
-
-<div id="12" class="bottom_slide_box aa_hide">
-  <div onclick="showaa(this)" class="click_are"></div>
- <div class="click_img"><span class="money">拍婚纱照多少钱？</span><span class="suansuan">98%的新人选择，提前算一算</span></div>
-  <!-- <div class="go_shake_img"></div> -->
-  <div class="calculator_box">
-    <div class="select_b">
-      <h2><span>今天已有 <em>940</em> 位新人获取了婚纱照预算</span></h2>
-        <div class="num-frame">
-                <div class="ndys"><p>您的婚纱照预算为</p></div>
-                <div class="yuan"><p>元</p></div>
-                <div class="num-window clearfix clear">
-        <em id="setnum">?</em>
-                </div>
-            </div>
-
-            <div class="form_line">
-          <div class="element triangle">
-                <select name="city" id="xuqiu" class="first_line">
-                  <option value="<?php echo $city;?>">--<?php echo $city;?>--</option>
-                    <option value="北京">北京</option>
-                    <option value="天津">天津</option>
-                    <option value="沈阳">沈阳</option>
-                    <option value="石家庄">石家庄</option>
-                    <option value="哈尔滨">哈尔滨</option>
-                    <option value="太原">太原</option>
-                    <option value="长春">长春</option>
-                    <option value="唐山">唐山</option>
-                    <option value="秦皇岛">秦皇岛</option>
-                    <option value="大连">大连</option>
-                    <option value="廊坊">廊坊</option>
-                    <option value="保定">保定</option>
-                    <option value="蚌埠">蚌埠</option>
-                    <option value="锦州">锦州</option>
-                    <option value="大庆">大庆</option>
-                    <option value="长治">长治</option>
-                    <option value="上海">上海</option>
-                    <option value="杭州">杭州</option>
-                    <option value="南京">南京</option>
-                    <option value="厦门">厦门</option>
-                    <option value="青岛">青岛</option>
-                    <option value="苏州">苏州</option>
-                    <option value="济南">济南</option>
-                    <option value="无锡">无锡</option>
-                    <option value="常州">常州</option>
-                    <option value="合肥">合肥</option>
-                    <option value="温州">温州</option>
-                    <option value="宁波">宁波</option>
-                    <option value="福州">福州</option>
-                    <option value="泉州">泉州</option>
-                    <option value="南通">南通</option>
-                    <option value="徐州">徐州</option>
-                    <option value="芜湖">芜湖</option>
-                    <option value="潍坊">潍坊</option>
-                    <option value="扬州">扬州</option>
-                    <option value="金华">金华</option>
-                    <option value="临沂">临沂</option>
-                    <option value="湖州">湖州</option>
-                    <option value="盐城">盐城</option>
-                    <option value="绍兴">绍兴</option>
-                    <option value="嘉兴">嘉兴</option>
-                    <option value="淮安">淮安</option>
-                    <option value="马鞍山">马鞍山</option>
-                    <option value="泰安">泰安</option>
-                    <option value="成都">成都</option>
-                    <option value="重庆">重庆</option>
-                    <option value="长沙">长沙</option>
-                    <option value="郑州">郑州</option>
-                    <option value="西安">西安</option>
-                    <option value="武汉">武汉</option>
-                    <option value="南昌">南昌</option>
-                    <option value="兰州">兰州</option>
-                    <option value="宜昌">宜昌</option>
-                    <option value="昆明">昆明</option>
-                    <option value="贵阳">贵阳</option>
-                    <option value="汉中">汉中</option>
-                    <option value="衡阳">衡阳</option>
-                    <option value="广州">广州</option>
-                    <option value="深圳">深圳</option>
-                    <option value="三亚">三亚</option>
-                    <option value="南宁">南宁</option>
-                    <option value="珠海">珠海</option>
-                    <option value="海口">海口</option>
-                    <option value="桂林">桂林</option>
-                    <option value="佛山">佛山</option>
-                    <option value="惠州">惠州</option>
-                    <option value="汕头">汕头</option>
-                    <option value="江门">江门</option>
-                    <option value="东莞">东莞</option>
-                    <option value="湛江">湛江</option>
-              </select>
-          </div>
-      </div>
-      <div class="form_line">
-          <div class="element triangle">
-                  <select name="shangjia" id="xuqiu" class="first_lin">
-                  <option value="">--选择商家类型--</option>
-                  <option value="资深级">中端商家</option>
-                  <option value="总监级">高端商家</option>
-              </select>
-                <select name="zaoxing" id="hotel" class="first_lin fr">
-                  <option value="">--选择场景数量--</option>
-                  <option data-value="3" value="3">3个</option>
-                  <option data-value="4" value="4">4个</option>
-                  <option data-value="5" value="5">5个</option>
-                  <option data-value="6" value="6">6个</option>
-                  <option data-value="7" value="7">6以上</option>
-              </select>
-          </div>
-      </div>
-      <div class="form_line">
-          <div class="element">
-              <div class="text_wrap">
-                   <select  name="sheying"  id="xuqiu" class="first_lin">
-                  <option value="">--选择摄影师--</option>
-                  <option value="资深级">资深级</option>
-                  <option value="总监级">总监级</option>
-                  <option value="资深级">首席摄影师</option>
-              </select>
-               <select name="huazhuang" id="xuqiu" class="first_lin fr">
-                  <option value="">--选择化妆师--</option>
-                  <option value="资深级">资深级</option>
-                  <option value="总监级">总监级</option>
-                  <option value="资深级">首席化妆师</option>
-              </select>
-              </div>
-          </div>
-      </div>
-      <div class="form_line">
-          <div class="element triangle">
-              <select name="count" id="xuqiu" class="first_line">
-                  <option value="">--请选择精修张数--</option>
-                  <option value="40张">40张</option>
-                  <option value="45张">45张</option>
-                  <option value="50张">50张</option>
-                  <option value="55张">55张</option>
-                  <option value="60张">60张</option>
-                  <option value="65张">65张</option>
-                  <option value="70张">70张</option>
-                  <option value="75张">75张</option>
-                  <option value="80张">80张</option>
-                  <option value="85张">85张</option>
-                  <option value="90张">90张</option>
-                  <option value="95张">95张</option>
-                  <option value="100张">100张</option>
-              </select>
-          </div>
-      </div>
-      <div class="form_line" id="zxys_phoneInput">
-          <div class="element">
-              <div class="text_wrap">
-                  <input id="phonenumber" placeholder="输入手机号，短信接收报价结果" type="text" class="text phonetext" name="phone">
-                  <em class="text_lbl"></em>
-              </div>
-          </div>
-      </div>
-          <div class="shuom">
-          预算结果根据用户真实消费大数据分析计算得出。
-          </div>
-    </div>
-    <div class="result_b">
-      <button  href="javascript:void(0)" onclick="one()" class="star_calculator">
-        开始计算
-      </button>
-      <span></span>
-    </div>
-
-  </div>
-</div>
-
-<div id="overlay-bd" class="overlay-bd">
-<div class="t8s-alert-close" href="javascript:void(0)" onclick="two()"><i class="t8s-alert-i"></i></div>
-<div class="t8s-content-box">
-<div class="t8s-fruit-price">
-<p class="column">您的婚纱照预算为</p>
-<p class="jaojia">
-<span id='setnumall'>4738</span>
-<i>元</i></p></div>
-<div class="t8s-price-list">
-<ul><li class="clearfix"><span class="t8s-budget-span">场景费用：</span><span><em id='zaoxingprice'>0</em>元</span></li>
-<li class="clearfix"><span class="t8s-budget-span">摄影师费用：</span><span><em id='sheyingprice'>0</em>元</span></li>
-<li class="clearfix"><span class="t8s-budget-span">化妆造型：</span><span><em id='huazhuangprice'>0</em>元</span></li>
-<li class="clearfix"><span class="t8s-budget-span">精修费用：</span><span><em id=jinxiuprice>0</em>元</span></li>
-
-</ul></div><div class="holiday-text-t6s"><p>*报价有疑问？稍后有榜网将致电为您解答。</p><p>*报价为大数据报价，实际以推荐商家为准。</p></div></div>
-</div>
- <div id="fade" class="black_overlay"> 
-  </div>
- <script>
-   function one(){
-    document.getElementById('overlay-bd').style.display='block';
-    document.getElementById('fade').style.display='block'
-   }
-   function two(){
-    document.getElementById('overlay-bd').style.display='none';
-    document.getElementById('fade').style.display='none'
-   }
-   </script> 
-<script type="text/javascript">
-  var min = 3000, max = 20000;
-  setInterval(displayNum,100);
-  function displayNum(){
-    var temp_min = min < 10 ? "00" : (min < 10 ? "0"+min : min);
-    var temp_max = max < 100 ? "0"+max : max;
-    document.getElementById("setnum").innerHTML = temp_min;
-    min = min + 4356;
-    if(min > max){
-      min=0;
-    }
-  }
-
-  $(function() {
-    $(".star_calculator").click(function(){
-
-      var city = $("select[name=city]").val();
-      console.log(city);
-      if(!city) {
-        showMessage("请选择城市");
-        return false ;
-      } 
-      var shangjia = $("select[name=shangjia]").val();
-      console.log(shangjia);
-      if(!shangjia){
-        showMessage("请选择商家类型")
-        return false ;
-      }
-      var zaoxing = $("select[name=zaoxing]").val()
-      if(!zaoxing) {
-        showMessage("请选择造型数量");
-        return false ;
-      }
-
-      var sheying = $("select[name=sheying]").val();
-      if(!sheying) {
-        showMessage("请选择摄影师");
-        return false ;
-      }
-      
-      var huazhuang = $("select[name=huazhuang]").val()
-      if(!huazhuang) {
-        showMessage("请选择化妆师");
-        return false ;
-      }
-
-      var count = $("select[name=count]").val();
-      if(!count) {
-        showMessage("请选择精修数量");
-        return false ;
-      }
-
-      var mobile = $("input[name=phone]").val();
-      if(!mobile) {
-        showMessage("请填写手机号码");
-      }
-
-      $.post(
-        "/get/sheyingprice", 
-        "city="+city+"&shangjia=" + shangjia+ "&zaoxing="+zaoxing+"&sheying="+
-        sheying+"&huazhuang="+huazhuang+"&count="+count+"&mobile="+mobile, 
-        function (res, status, xhr) {
-            console.log(res);
-            $("#zaoxingprice").html(res.zaoxingprice);
-            $("#sheyingprice").html(res.sheyingprice);
-            $("#huazhuangprice").html(res.huazhuangprice);
-            $("#jinxiuprice").html(res.cpprice);
-            $("#setnumall").html(res.allprice);
-        }, 
-        'json'
-      );
-    
-    })
-    
-    function showMessage(message){
-        alert(message);
-    }
-});
-
-</script>
-                    <?php } else { ?>
-                
-<script type="text/javascript">
-   
-    function showaa(obj)
-    {
-      //var obj_parent=obj.parentNode;
-      var obj_parent=obj.parentElement
-     
-      if(document.getElementById("12").className=="bottom_slide_box aa_show")
-      {
-        document.getElementById("12").className="bottom_slide_box aa_hide";
-      }
-      else
-      {
-        document.getElementById("12").className="bottom_slide_box aa_show";
-      }
-    }
-    
-  </script>
-
-
-<div id="12" class="bottom_slide_box aa_hide">
-  <div onclick="showaa(this)" class="click_are"></div>
- <div class="click_img"><span class="money">办一场婚礼多少钱？</span><span class="suansuan">98%的新人选择，提前算一算</span></div>
-  <!-- <div class="go_shake_img"></div> -->
-  <div class="calculator_box">
-    <div class="select_b">
-      <h2><span>今天已有 <em>940</em> 位新人获取了婚礼预算</span></h2>
-        <div class="num-frame">
-                <div class="yuan"><p>元</p></div>
-                <div class="num-window clearfix clear">
-        <em id="setnum">?</em>
-                </div>
-            </div>
-
-            <div class="form_line">
-          <div class="element triangle">
-                <select name="city"  id="xuqiu" class="first_line">
-                  <option value="<?php echo $city;?>">--<?php echo $city;?>--</option>
-                    <option value="北京">北京</option>
-                    <option value="天津">天津</option>
-                    <option value="沈阳">沈阳</option>
-                    <option value="石家庄">石家庄</option>
-                    <option value="哈尔滨">哈尔滨</option>
-                    <option value="太原">太原</option>
-                    <option value="长春">长春</option>
-                    <option value="唐山">唐山</option>
-                    <option value="秦皇岛">秦皇岛</option>
-                    <option value="大连">大连</option>
-                    <option value="廊坊">廊坊</option>
-                    <option value="保定">保定</option>
-                    <option value="蚌埠">蚌埠</option>
-                    <option value="锦州">锦州</option>
-                    <option value="大庆">大庆</option>
-                    <option value="长治">长治</option>
-                    <option value="上海">上海</option>
-                    <option value="杭州">杭州</option>
-                    <option value="南京">南京</option>
-                    <option value="厦门">厦门</option>
-                    <option value="青岛">青岛</option>
-                    <option value="苏州">苏州</option>
-                    <option value="济南">济南</option>
-                    <option value="无锡">无锡</option>
-                    <option value="常州">常州</option>
-                    <option value="合肥">合肥</option>
-                    <option value="温州">温州</option>
-                    <option value="宁波">宁波</option>
-                    <option value="福州">福州</option>
-                    <option value="泉州">泉州</option>
-                    <option value="南通">南通</option>
-                    <option value="徐州">徐州</option>
-                    <option value="芜湖">芜湖</option>
-                    <option value="潍坊">潍坊</option>
-                    <option value="扬州">扬州</option>
-                    <option value="金华">金华</option>
-                    <option value="临沂">临沂</option>
-                    <option value="湖州">湖州</option>
-                    <option value="盐城">盐城</option>
-                    <option value="绍兴">绍兴</option>
-                    <option value="嘉兴">嘉兴</option>
-                    <option value="淮安">淮安</option>
-                    <option value="马鞍山">马鞍山</option>
-                    <option value="泰安">泰安</option>
-                    <option value="成都">成都</option>
-                    <option value="重庆">重庆</option>
-                    <option value="长沙">长沙</option>
-                    <option value="郑州">郑州</option>
-                    <option value="西安">西安</option>
-                    <option value="武汉">武汉</option>
-                    <option value="南昌">南昌</option>
-                    <option value="兰州">兰州</option>
-                    <option value="宜昌">宜昌</option>
-                    <option value="昆明">昆明</option>
-                    <option value="贵阳">贵阳</option>
-                    <option value="汉中">汉中</option>
-                    <option value="衡阳">衡阳</option>
-                    <option value="广州">广州</option>
-                    <option value="深圳">深圳</option>
-                    <option value="三亚">三亚</option>
-                    <option value="南宁">南宁</option>
-                    <option value="珠海">珠海</option>
-                    <option value="海口">海口</option>
-                    <option value="桂林">桂林</option>
-                    <option value="佛山">佛山</option>
-                    <option value="惠州">惠州</option>
-                    <option value="汕头">汕头</option>
-                    <option value="江门">江门</option>
-                    <option value="东莞">东莞</option>
-                    <option value="湛江">湛江</option>
-              </select>
-          </div>
-      </div>
-      <div class="form_line">
-          <div class="element triangle">
-                  <select name="hotel" id="xuqiu" class="first_line">
-                  <option value="">--请选择酒店价位--</option>
-                  <option data-value="1500" value="1000-2000">1000-2000</option>
-                  <option data-value="2500" value="2000-3000">2000-3000</option>
-                  <option data-value="3500" value="3000-4000">3000-4000</option>
-                  <option data-value="5000" value="4000以上">4000以上</option>
-              </select>
-          </div>
-      </div>
-            <div class="form_line" id="zxys_phoneInput">
-          <div class="element">
-              <div class="text_wrap">
-                  <input id="shuoshu" placeholder="您的预期桌数" type="text" class="text phonetext" name="zhuoshu">
-                  <em class="text_lbl"></em>
-              </div>
-          </div>
-      </div>
-      <div class="form_line">
-          <div class="element">
-              <div class="text_wrap">
-                   <select name="xuqiu" id="xuqiu" class="first_line">
-                  <option value="">--请选择婚礼档次--</option>
-                  <option value="经济型">经济型</option>
-                  <option value="中端消费">中端消费</option>
-                  <option value="高端消费">高端消费</option>
-              </select>
-              </div>
-          </div>
-      </div>
-      <div class="form_line" id="zxys_phoneInput">
-          <div class="element">
-              <div class="text_wrap">
-                  <input id="phonenumber" placeholder="输入您的手机" type="text" class="text phonetext" name="phone">
-                  <em class="text_lbl"></em>
-              </div>
-          </div>
-      </div>
-          <div class="shuom">
-          预算结果根据用户真实消费大数据分析计算得出。
-          </div>
-    </div>
-    <div class="result_b">
-      <button  href="javascript:void(0)" onclick="one()" class="star_calculator ">
-        开始计算
-      </button>
-      <span></span>
-    </div>
-
-  </div>
-</div>
-
-
-
-
-<div id="overlay-bd" class="overlay-bd">
-<div class="t8s-alert-close" href="javascript:void(0)" onclick="two()"><i class="t8s-alert-i"></i></div>
-<div class="t8s-content-box">
-<div class="t8s-fruit-price">
-<p class="column">您的婚礼预算为</p>
-<p class="jaojia">
-<span id='setnumall'>0</span>
-<i>元</i></p></div>
-<div class="t8s-price-list">
-<ul><li class="clearfix"><span class="t8s-budget-span">酒店费用：</span><span><em id='hotelprice'>0</em>元</span></li>
-<li class="clearfix"><span class="t8s-budget-span">婚庆公司费用：</span><span><em id="wedprice">0</em>元</span></li>
-<li class="clearfix"><span class="t8s-budget-span">车队费用：</span><span><em id='carprice'>0</em>元</span></li>
-<li class="clearfix"><span class="t8s-budget-span">婚纱礼服费用：</span><span ><em id='lifuprice'>0</em>元</span></li>
-<li class="clearfix"><span class="t8s-budget-span">喜品喜酒费用：</span><span><em id='wineprice'>0</em>元</span></li>
-
-</ul></div><div class="holiday-text-t6s"><p>*报价有疑问？稍后有榜网将致电为您解答。</p><p>*报价为大数据报价，实际以推荐商家为准。</p></div></div>
-</div>
- <div id="fade" class="black_overlay"> 
-  </div>
- <script>
-   function one(){
-    document.getElementById('overlay-bd').style.display='block';
-    document.getElementById('fade').style.display='block'
-   }
-   function two(){
-    document.getElementById('overlay-bd').style.display='none';
-    document.getElementById('fade').style.display='none'
-   }
-   </script> 
-
-<script type="text/javascript">
-  var min = 10000, max = 93000;
-  setInterval(displayNum,100);
-  function displayNum(){
-    var temp_min = min < 10 ? "00" : (min < 10 ? "0"+min : min);
-    var temp_max = max < 100 ? "0"+max : max;
-    document.getElementById("setnum").innerHTML = temp_min;
-    min = min + 4356;
-    if(min > max){
-      min=0;
-    }
-  }
-$(function() {
-    $(".star_calculator").click(function(){
-
-      var city = $("select[name=city]").val();
-      console.log(city);
-      if(!city) {
-        showMessage("请选择城市");
-        return false ;
-      } 
-      var hotel = $("select[name=hotel]").val();
-      console.log(hotel);
-      if(!hotel){
-        showMessage("请选择酒店价位")
-        return false ;
-      }
-      var zhuoshu = $("input[name=zhuoshu]").val()
-      if(!zhuoshu) {
-        showMessage("请填写预期桌数数量");
-        return false ;
-      }
-
-      var xuqiu = $("select[name=xuqiu]").val();
-      if(!xuqiu) {
-        showMessage("请选择婚礼需求");
-        return false ;
-      }
-      
-      var mobile = $("input[name=phone]").val();
-      if(!mobile) {
-        showMessage("请填写手机号码");
-      }
-
-      $.post(
-        "/get/hunliprice", 
-        "city="+city+"&hotel=" + hotel+ "&zhuoshu="+zhuoshu+"&xuqiu="+
-        xuqiu+"&mobile="+mobile, 
-        function (res, status, xhr) {
-            console.log(res);
-            $("#hotelprice").html(res.hotelprice);
-            $("#wedprice").html(res.wedprice);
-            $("#lifuprice").html(res.lifuprice);
-            $("#carprice").html(res.carprice);
-            $("#wineprice").html(res.wineprice);
-            $("#setnumall").html(res.allprice);
-        }, 
-        'json'
-      );
-    
-    })
-    
-    function showMessage(message){
-        alert(message);
-    }
-});
-
-</script>
-
-                    <?php } ?>
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
@@ -1521,13 +935,16 @@ option = {
         });
     });
     $(".anliclick").click(function(){
-        $("input[name=wapsubmit]").val("获取报价");
+        $("input[name=wapsubmit]").val("获取报价·3分钟响应");
+    })
+    $(".liwuclick").click(function(){
+        $("input[name=wapsubmit]").val("领取优惠·3分钟响应");
     })
     $(".shopclick").click(function(){
-        $("input[name=wapsubmit]").val("预约到店");
+        $("input[name=wapsubmit]").val("预约到店·3分钟响应");
     })
     $(".dangqiclick").click(function(){
-        $("input[name=wapsubmit]").val("咨询档期");
+        $("input[name=wapsubmit]").val("咨询档期·3分钟响应");
     })
         // 数据初始化
     var Obj = $('body').barrage({

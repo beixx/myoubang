@@ -603,6 +603,7 @@ class IndexController extends Controller
     }
     public function saveview(){
         //`source` smallint(6) DEFAULT NULL COMMENT '1套系，2表示推荐榜单，3客片，4客户页面',
+	date_default_timezone_set('PRC'); 
         $phone = Request::get('phone');
         $tenantsId = Request::get('tenantsId');
         $data['phone'] = $phone;
@@ -616,8 +617,8 @@ class IndexController extends Controller
             $res['result'] = '00';
             if($tenantsId) {
                 $yfctenants = YfcTenants::where("id",'=',$tenantsId)->first();
-                $content = '城市:'.$yfctenants["positionCity"].";时间:".date('Y-m-d H:i:s').';名称:'
-                    .$yfctenants["name"].";预约人:无;手机号码:".$data['phone'].";地址:".$data['url'];
+                $content = '城市:'.$yfctenants["positionCity"].";\n时间:".date('Y-m-d H:i:s').";\n名称:"
+                    .$yfctenants["name"].";\n预约人:无;\n手机号码:".$data['phone'].";\n地址:".$data['url']."\n";
                 $this->sendDD('04a7b3d87f5701ff8d2bf9cccb38ead42344b8ead406fe125d5147e36df33b81',$content);
             }
 

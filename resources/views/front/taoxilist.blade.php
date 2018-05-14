@@ -36,6 +36,7 @@ var _hmt = _hmt || [];
     <div class="huiyuan"></div>
     <?php } ?>
     <div class="titdp">店铺信息</div>
+    <div class="zysm">排名权威有保障，由有榜网对商家全网大数据分析得出！</div>
     <div class="txt-box">
         <h1><?php echo $tenants['name']?></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
@@ -43,7 +44,6 @@ var _hmt = _hmt || [];
             <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
     </div>
-    <div class="zysm">排名权威有保障，由有榜网对商家全网大数据分析得出！</div>
 </div>
 
 
@@ -53,7 +53,7 @@ var _hmt = _hmt || [];
     <ul>
         <?php foreach($sets as $k => $v) { ?>
         <li>
-            <a href="/detail/<?php echo $tenants['id'].'/'.$v['id'];?>">
+            <a href="/detail/<?php echo $tenants['id'].'/'.$v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                <div class="suolvt">
                 <span>
                     <?php if(strpos($v['cover'][0],'http') === false) {?>
@@ -71,38 +71,64 @@ var _hmt = _hmt || [];
                     </div>
                 </div>
             </a>
+            <div href="javascript:" class="anlibj down dangqiclick">咨询档期</div>
         </li>
         <?php } ?>
     </ul>
 </div>
 <div></div>
 <div class="more txtCtr">点击加载更多套系</div>
-
-<div class="tel-box txtCtr">
-<a href="javascript:" class="ask rgt down">咨询套系<em>(已有80人咨询)</em></a>
-</div>
+<div class="unit-footer"><div class="peace-live"><p class="txt-cont">大数据实时分析 | 排名权威有保障</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
 <div class="bgDiv"></div>
-<div class="downNav" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:19rem;">
+<div class="downNav bt00">
     <div class="ask">
-        <h4>有榜网独家优惠,预约即可领取：</h4>
-        <dl class="vip">
-                <dt><i class="vipcon"></i></dt>
-                <dd>获得有榜网一对一VIP服务，全程免费</dd>
-            </dl>
-        <dl class="vip">
-                <dt><i class="youhuicon"></i></dt>
-                <dd><?php echo $tenants['package']?$tenants['package']:'预约到店免费赠送超值结婚大礼包';?></dd>
-            </dl>
-        <div class="tip">
-            <span>7天内选片</span><span>15天出精修</span><span>不满意重拍</span><span>无隐形消费</span>
-        </div>
-        <p>留下您的联系方式以便商户尽快联系你</p>
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="text" name="mobile" id="mobile" class="input" placeholder="输入手机号，享受以上福利">
-        <input type="submit" name="wapsubmit" class="btn" value="预约看店">
+        <input type="text" name="mobile" id="mobile" class="input" placeholder="请输入手机号，(3分钟响应·<?php echo $tenants['count1'];?>人咨询)">
+        <input type="submit" name="wapsubmit" class="btn" value="咨询套系">
     </div>
 
 </div>
+<script>
+    
+    $('input[name=wapsubmit]').click(function(){
+        var tenantsId = $('#tenantsId').val();
+        var phone = $('#mobile').val();
+        var source = 12;
 
+        if(!phone){
+            alert('手机必填');
+            return false;
+        }
+        if(phone){
+            if(!(/^1[34578]\d{9}$/.test(phone))){
+                alert("手机号码有误，请重填");
+                return false;
+            }
+        }
+        $.ajax({
+            url: "/saveview",
+            type: "post",
+            dataType: "json",
+            data: {'tenantsId': tenantsId,'phone': phone,'source':source},
+            success: function(data){
+                console.log(data);
+                if(data.result=='00'){
+                    alert('预约成功');
+                    <?php if($tenants['isVip'] ==2) { ?>
+                        location.href="<?php echo $tenants['modeladvurl'];?>";
+                    <?php } else {?>
+                        location.reload();
+                    <?php } ?>
+                }
+            }
+        });
+    });
+    $(".dangqiclick").click(function(){
+        $("input[name=wapsubmit]").val("获取报价");
+    })
+    $(".shopclick").click(function(){
+        $("input[name=wapsubmit]").val("咨询套系");
+    })
+</script>
 </body>
 </html>
