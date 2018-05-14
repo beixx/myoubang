@@ -236,11 +236,8 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
 }
 
 /*底部*/
-footer{z-index: 99999;position: fixed;width: 100%;bottom: 0;left: 0;background:rgba(71,71,82,.85);padding: 0.5rem 0;}
-footer em{float: right; border-radius: 0.2rem; margin-top:0.2rem;padding: 0rem 0.75rem; font-size: 0.7rem; margin-right: 3%;height: 1.58rem; line-height: 1.58rem; color: #FFF; background: #00b7b7;}
-footer .txt{float: left; font-size: 0.6rem;  color: #FFF; line-height: 1rem; margin-left: 3%;}
-footer .txt span{color: #00b7b7;font-family: Arial;}
-.bgDiv{ width: 100%;height: 100%; background-color: #000;opacity: .5; position:fixed;display:none ; z-index: 99; bottom: 0;}
+
+.bgDiv{ width: 100%;height: 100%; background-color: #000;opacity: .75; position:fixed;display:none ; z-index: 99; bottom: 0;}
 .downNav{width: 100%;background-color: #fff;position: fixed;z-index:1001;}
 
 /*立即定制*/
@@ -1714,7 +1711,7 @@ background: rgba(0,0,0,0.5);
 .h30{height: 30px;}
 .unit-footer{
     line-height: 0.6rem;
-    padding: 0.5rem 5% 3.5rem;
+    padding: 0.5rem 5% 0.5rem;
     background:#f5f7fa;
     }
 .peace-live{
@@ -1798,7 +1795,20 @@ background: rgba(0,0,0,0.5);
 .UISelect{margin-top:5px}
 
 
-
+footer{background:#26282b;width:100%;margin:0 auto 5.5rem;font-size:0.6rem;color:#ababab;}
+.foot{width:100%;;background:#313439;line-height:1.2rem;display:table;color:#666;padding:0.8rem 0px;}
+.foo{width:100%;;margin:0 auto;}
+.foots{width:100%;;text-align:center;margin:0 auto;}
+.foots1{width:350px;float:right;text-align:right;height:75px;}
+.foot span{display:table;color:#666;text-align:center;width:100%;line-height:1.2rem;height:1.2rem;}
+.foots a{margin:0px 0.3rem;color:#666;}
+.tuijian{width:92%;padding:4%;margin:0 auto;text-align:left;display: none;}
+.tuijian h3{font-size:16px;color:#999;}
+.tuijian h3 span{font-size:0.6rem;font-weight:initial;margin-left:0.3rem;color:#666;}
+.tuijian ul{margin-top:0.5rem;display:table;width:100%;}
+.tuijian li{display:block;height:1.2rem;font-size:0.6rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:25%;float:left;color:#999;}
+.tuijian li a{color:#666;}
+.lian img{width: 70%;height: auto;}
 
 
 
@@ -1825,6 +1835,9 @@ background: rgba(0,0,0,0.5);
 .suolv{height: 167.2px;}
 .suolvt{height: 178.9px;}
 .view .hot li{    width:28%;}
+.lian img{width: 300px;}
+.tuijian{display: block;}
+.foots a{margin: 0 12px;}
 }
 
 

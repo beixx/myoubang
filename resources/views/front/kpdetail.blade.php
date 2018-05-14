@@ -24,7 +24,7 @@ var _hmt = _hmt || [];
 })();
 </script>
 </head>
-<body class="view">
+<body onload="document.getElementById('shouji').focus()" class="view">
 <header>
     <a href="javascript:history.go(-1)" class="pre"></a>
     <div class="txtCtr title">案例欣赏</div>
@@ -138,12 +138,48 @@ var _hmt = _hmt || [];
     </ul>
 </div>
 <div class="unit-footer"><div class="peace-live"><p class="txt-cont">大数据实时分析 | 排名权威有保障</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
+<footer class="txtCtr">
+    <div class="tuijian"><h3>热门城市婚纱摄影榜单<span>(城市排名不分先后)</span></h3><ul>
+                     <li><a target="_blank" href="/beijing/sheying">北京婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/tianjin/sheying">天津婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/shenyang/sheying">沈阳婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/dalian/sheying">大连婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/haerbin/sheying">哈尔滨婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/shijiazhuang/sheying">石家庄婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/shanghai/sheying">上海婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/hangzhou/sheying">杭州婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/xiamen/sheying">厦门婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/nanjing/sheying">南京婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/suzhou/sheying">苏州婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/wuxi/sheying">无锡婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/ningbo/sheying">宁波婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/fuzhou/sheying">福州婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/qingdao/sheying">青岛婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/hefei/sheying">合肥婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/chengdu/sheying">成都婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/chongqing/sheying">重庆婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/changsha/sheying">长沙婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/zhengzhou/sheying">郑州婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/xian/sheying">西安婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/wuhan/sheying">武汉婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/guangzhou/sheying">广州婚纱摄影排名</a></li>
+                    <li><a target="_blank" href="/shenzhen/sheying">深圳婚纱摄影排名</a></li>
+
+</ul></div>  <div class="foot">
+        <div class="foots">
+            <span><a href="/about.html">关于有榜</a>|<a target="_blank" href="http://youbangkeyi.mikecrm.com/E09npdx">商务合作</a>|<a target="_blank" href="/mianze.html">免责说明</a>|<a href="/shuoming.html" target="_blank">服务说明</a>|<a target="_blank" href="//c.youbangkeyi.cn/images/yingyezhizhao.jpeg">营业执照</a></span>
+            京ICP备17036862号-1 北京有榜信息科技有限公司 
+            <span class="gongan">京公网安备 11010802024698号</span>
+        </div>
+        <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.cn/images/scs_logo.png"></a></div>
+    </div>
+</footer>
 <div class="bgDiv"></div>
 <div class="downNav bt00">
     <div class="ask">
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="text" name="mobile" id="mobile" class="input" placeholder="请输入手机号，(3分钟响应·<?php echo $tenants['count3'];?>人已获取)">
-        <input type="submit" name="wapsubmit" class="btn" value="获取报价">
+        <input type="text" id="shouji" name="mobile" id="mobile" class="input" placeholder="请输入手机号，(<?php echo $tenants['count3'];?>人已获取)">
+        <input type="submit" name="wapsubmit" class="btn" value="获取报价·3分钟响应">
     </div>
 
 </div>
@@ -184,10 +220,10 @@ var _hmt = _hmt || [];
         });
     });
         $(".liwuclick").click(function(){
-        $("input[name=wapsubmit]").val("领取优惠");
+        $("input[name=wapsubmit]").val("领取优惠·3分钟响应");
     })
     $(".anliclick").click(function(){
-        $("input[name=wapsubmit]").val("获取报价");
+        $("input[name=wapsubmit]").val("获取报价·3分钟响应");
     })
             // 数据初始化
     var Obj = $('body').barrage({

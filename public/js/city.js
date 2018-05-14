@@ -9,7 +9,7 @@ $('body').on('click', '#zone_ids,#gr_zone_ids', function () {
     layer.open({type:1,content:$('.container'),area:['90%','90%'],offset:'8%',title:['请选择地区','background-color:#00b7b7; color:#fff;height:2.5rem;line-height:2.5rem;font-size:0.75rem'],closeBtn:['取消'],shadeClose:true});
 
      $('.letter').fadeIn(500);
-     $('body').css({'overflow':'hidden',"height":'100%','position':'fixed'});
+     $('body').css({'overflow':'hidden',"height":'100%'});
 
 
 });
