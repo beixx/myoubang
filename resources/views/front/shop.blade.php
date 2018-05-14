@@ -66,7 +66,7 @@ unfoldField.onclick=function(){
                 <?php } else { ?>
                 <li class="suolvd"><span>
                         <?php if(strpos($tenants['cover'],'http') === false) {?>
-                            <img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?<?php echo  $ismobile?"imageView2/1/w/800/h/600/q/75":'';?>|imageslim"/>
+                            <img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?<?php echo  $ismobile?"imageView2/1/w/800/h/600/q/75":'imageView2/1/w/800/h/600/q/75';?>|imageslim"/>
                         <?php } else {?>
                             <img src="<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                         <?php } ?>
@@ -975,6 +975,7 @@ option = {
     });
     $(".anliclick").click(function(){
         $("input[name=wapsubmit]").val("获取报价·3分钟响应");
+	$("#mobile").attr("placeholder","xxxxx");
     })
     $(".liwuclick").click(function(){
         $("input[name=wapsubmit]").val("领取优惠·3分钟响应");
