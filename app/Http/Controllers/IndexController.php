@@ -146,6 +146,15 @@ class IndexController extends Controller
                 ->limit(6)
                 ->get()
                 ->toArray();
+
+            $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
+                ->where("id",'!=',$tenants['id'])
+                ->where("shoptype",'=',$tenants['shoptype'])
+                ->where("order_city",'<','50')
+                ->orderby("order_city",'asc')
+                ->limit(24)
+                ->get()
+                ->toArray();
             return view("front/shop",$this->data);
 
 
