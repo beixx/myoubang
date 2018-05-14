@@ -157,5 +157,35 @@ class IndexController extends MerchantController
         }
         return view("merchant/setpackage" , $this->data);
     }
+
+    public function  fileupload(){
+        if(empty($_FILES))
+            die(json_encode(array('code'=>-1,'msg'=>'error')));
+
+        $file = $_FILES['file'];
+        if($file['error']!=0 || $file['size']< 1 ){
+            die(json_encode(array('code'=>-1,'msg'=>'error','id'=>$_POST['id'])));
+        }
+
+        $uploadDir = '/Server/data/image/upload';
+
+        $filedir = '/merchant/'.substr(md5(rand(1,10000)),0,3).'/'.substr(md5(rand(1,10000)),0,3).'/'.substr(md5(rand(1,10000)),0,3);
+        $uploadDir .= $filedir ;
+        $fileName = md5(rand(1,10000)).'.jpg';
+
+        if(!is_dir($uploadDir)) {
+            mkdir($uploadDir,0777,true);
+        }
+
+
+        move_uploaded_file( $file['tmp_name'],$uploadDir. $fileName);
+
+        echo json_encode( array( 'code'=>0, 'msg'=>'ok', 'imageUrl'=>$filedir.$fileName ) );
+
+
+    }
+    public function  filedel(){
+
+    }
 }
 

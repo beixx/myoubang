@@ -94,6 +94,11 @@ Route::group(['domain' => env('MERCHANT_URL')],function(){
     Route::get("/merchant/setpackage" , 'Merchant\IndexController@setpackage');
     Route::post("/merchant/setpackage" , 'Merchant\IndexController@setpackage');
 
+
+    Route::post("/merchant/fileupload" , 'Merchant\IndexController@fileupload');
+
+
+
 });
 Route::group(['domain' => 'merchant.youbangkeyi.cn'],function(){
     //登录
@@ -117,5 +122,8 @@ Route::group(['domain' => 'merchant.youbangkeyi.cn'],function(){
     Route::get("/merchant/setdel" , 'Merchant\IndexController@setdel');
     Route::get("/merchant/setpackage" , 'Merchant\IndexController@setpackage');
     Route::post("/merchant/setpackage" , 'Merchant\IndexController@setpackage');
+
+
+    Route::post("/merchant/fileupload" , 'Merchant\IndexController@fileupload');
 
 });

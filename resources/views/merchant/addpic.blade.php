@@ -20,12 +20,16 @@
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
     <title>新增图片</title>
-    <script src="/webUpload/js/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/webUpload/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/webUpload/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/webUpload/style.css">
+    <link rel="stylesheet" type="text/css" href="/webUpload/demo.css">
+    <link rel="stylesheet" type="text/css" href="/webUpload/webuploader.css">
 
-    <link rel="stylesheet" type="text/css" href="/webUpload/css/webuploader.css">
-    <link rel="stylesheet" type="text/css" href="/webUpload/css/diyUpload.css">
-    <script type="text/javascript" src="/webUpload/js/webuploader.html5only.min.js"></script>
-    <script type="text/javascript" src="/webUpload/js/diyUpload.js"></script>
+    <script type="text/javascript" src="/webUpload/jquery.min.js"></script>
+    <script type="text/javascript" src="/webUpload/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/webUpload/webuploader.js"></script>
+
     <style >
         .lftat{
             float: left;
@@ -92,8 +96,30 @@
                 <div id="box">
                     <div id="test" ></div>
                 </div>
-                <div id="imageloadpath">
+                <div class="page-container">
+                    <p>Drag</p>
+                    <div id="uploader" class="wu-example">
+                        <div class="queueList">
+                            <div id="dndArea" class="placeholder">
+                                <div id="filePicker"></div>
+                                <p>或将照片拖到这里</p>
+                            </div>
+                        </div>
+                        <div class="statusBar" style="display:none">
+                            <div class="progress">
+                                <span class="text">0%</span>
+                                <span class="percentage"></span>
+                            </div>
+                            <div class="info"></div>
+                            <div class="btns">
+                                <div id="filePicker2"></div>
+                                <div class="uploadBtn">开始上传</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div id="imageloadpath">
             </div>
         </div>
         <div class="row cl">
@@ -113,51 +139,27 @@
 
 <script type="text/javascript">
 
-    /*
-     * 服务器地址,成功返回,失败返回参数格式依照jquery.ajax习惯;
-     * 其他参数同WebUploader
-     */
-    $('#test').diyUpload({
-        url:'/webUpload/server/fileupload.php',
-        success:function( data ) {
-            var imageload = $("#imageloadpath");
-            var str = data._raw;
-            var obj = eval('(' + str + ')');
-            //var html = '<div class="pic lftat" style="display:block;"> <div class="close"> <input type="hidden" name="cover[]" value="'+obj.url+'" id="user_bill"> </div> <img id="upload_img2" width="120px" src="/upload/'+obj.url+'"> </div>';
-            var html = '<input type=hidden name=imageurl[] value="'+obj.url+'" />';
-            console.log(data._raw);
-            console.log(html);
-            console.log(data);
-            imageload.append(html);
+    window.webuploader = {
+        config:{
+            thumbWidth: 110, //缩略图宽度，可省略，默认为110
+            thumbHeight: 110, //缩略图高度，可省略，默认为110
+            wrapId: 'uploader', //必填
         },
-        error:function( err ) {
-            console.info( err );
-        }
-    });
+        //处理客户端新文件上传时，需要调用后台处理的地址, 必填
+        uploadUrl: '/merchant/fileupload',
+        //处理客户端原有文件更新时的后台处理地址，必填
+        updateUrl: 'fileupdate.php',
+        //当客户端原有文件删除时的后台处理地址，必填
+        removeUrl: 'filedel.php',
+    }
 
-    $('#as').diyUpload({
-        url:'server/fileupload.php',
-        success:function( data ) {
-            console.info( data );
-        },
-        error:function( err ) {
-            console.info( err );
-        },
-        buttonText : '选择文件',
-        chunked:true,
-        // 分片大小
-        chunkSize:512 * 1024,
-        //最大上传的文件数量, 总文件大小,单个文件大小(单位字节);
-        fileNumLimit:50,
-        fileSizeLimit:5000000 * 1024,
-        fileSingleSizeLimit:5000000 * 1024,
-        accept: {}
-    });
+
     $(document).delegate(".close","click",function(){
         $(this).parent().remove();
     });
 
 
 </script>
+<script src="/webUpload/extend-webuploader.js" type="text/javascript"></script>
 </body>
 </html>
