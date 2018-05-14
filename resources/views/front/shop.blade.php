@@ -65,7 +65,7 @@ unfoldField.onclick=function(){
 <?php } ?>
                 <li class="suolvd"><span>
                         <?php if(strpos($tenants['cover'],'http') === false) {?>
-                            <img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
+                            <img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?<?php echo  $ismobile?"imageView2/1/w/800/h/600/q/75":'';?>|imageslim"/>
                         <?php } else {?>
                             <img src="<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                         <?php } ?>
