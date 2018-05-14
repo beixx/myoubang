@@ -269,7 +269,7 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
 .downNav .form .lbaxztop{animation: rotatete 0.3s linear forwards;}
 .downNav .form .lbaxztop2{animation: rotatete2 0.3s linear forwards;}
 /*优惠咨询*/
-.banyouhui{width: 94%;background: #FFFFFF;margin-top: 0.3rem; padding: 0 3%;}
+.banyouhui{width: 92%;background: #FFFFFF;margin-top: 0.3rem; padding: 0 4%;}
 .banyouhui .vip{padding: 0.2rem 0;display: inline-block; width: 100%;}
 .banyouhui .vip dt{float: left; margin-right: 0.5rem;  height: 1.6rem;}
 .banyouhui .vip dd{font-size: 0.6rem; color: #666; overflow: hidden; height: 1.6rem; line-height: 1.6rem;}
@@ -313,8 +313,8 @@ footer .txt span{color: #00b7b7;font-family: Arial;}
     font-size: 0.6rem;
     font-weight: initial;
     line-height: 1rem;
-    width: 94%;
-    padding: 0.6rem 3%;
+    width: 92%;
+    padding: 0.6rem 4%;
     height: auto;
     text-align: left;
     border-top: 1px solid #efefef;
@@ -629,7 +629,7 @@ width: 100%; background: #FFF; margin: 0;
 .pic_box .pic .img .title{line-height: 1rem;height: 1rem;overflow: hidden;color: #666;font-size: 0.6rem;white-space:nowrap;text-overflow:ellipsis;width: 100%}
 .pic_box .pic .img .price{width: 100%;font-size: 0.6rem;line-height: 0.8rem;height: 0.8rem;overflow: hidden;}
 .pic_box .pic .img .price del{color: #b9b9b9;padding-left: 0.3rem;font-size: 0.5rem;}
-.vipimg .suolvvr {width: 94%; margin: 0rem 3% 0.5rem;}
+.vipimg .suolvvr {width: 92%; margin: 0rem 4% 0.5rem;}
 .pic_box .vippic .vipimg{width:100%;display: table;background:#FFF;}
 .pic_box .vippic .vipimg:last-child,.pic_box .txt_box .txt:last-child,.pic_box .txt_box .txt:last-child{margin-right: 0;}
 .pic_box .vippic .vipimg img{width: 100%;}
@@ -657,7 +657,7 @@ width: 100%; background: #FFF; margin: 0;
 .hi p{font-size: 0.6rem;line-height: 1rem;padding:0 4%;}
 /*点评打榜*/
 .comment {background: #f5f7fa;}
-.comment .txt-box { background:#FFF;position: relative;padding:3%;width: 94%;display: table;}
+.comment .txt-box { background:#FFF;position: relative;padding:3% 4%;width: 92%;display: table;}
 .comment .txt-box img{float: left;margin-right: 0.5rem;width: 5.25rem;}
 .comment .txt-box .txt {overflow: hidden;clear: right;}
 .comment .txt-box h2 {font-size:0.7rem;line-height: 1.35rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width: 75%;height: 1.35rem}
@@ -859,7 +859,7 @@ width: 100%; background: #FFF; margin: 0;
 .ckaqb{text-align:center;padding:0 0 .5rem;margin:0 .5rem;font-size: .7rem;}
 .comment_list{display:inline-block;position: relative; background: #FFF; width:100%;border-top: 0.5rem solid #f5f7fa;}
 .comment_list .title{width: 92%;padding: 0 4%;line-height:2.5rem; height:2.5rem; font-size: 0.75rem;font-weight:700;color:#111111;}
-.comment_list dl{width:94%;border-bottom: 1px solid #F5F5F5;padding:1rem 3% 0.5rem}
+.comment_list dl{width:92%;border-bottom: 1px solid #F5F5F5;padding:1rem 4% 0.5rem}
 .comment_list dd{width:2rem; overflow:hidden; float:left; height:2rem}
 .comment_list dd img{border-radius:5px; width:2rem; height:2rem}
 .comment_list dt{clear:right; padding-left:2.5rem; position: relative;}
@@ -879,13 +879,13 @@ width: 100%; background: #FFF; margin: 0;
 .more{line-height:3rem; width:100%;background: #f0f0f0;font-size:0.6rem; color: #b2b2b2;cursor: pointer;}
 .more em{border: 1px solid #b2b2b2; padding: 0.5rem;}
 /*套餐详情*/
-.view .price-box{width: 94%;height: 2.5rem;line-height: 2.5rem;overflow: hidden;padding: 0 3%}
+.view .price-box{width: 92%;height: 2.5rem;line-height: 2.5rem;overflow: hidden;padding: 0 4%}
 .view .price-box span{font-size: 1.3rem;margin-right: 0.5rem;}
 .view .price-box del{font-size: 0.6rem;color: #bfbfbf;line-height: 3rem;}
 .view .price-box h2{font-size: 0.75rem;font-weight: bold;}
 .view .titdp,.view .titjs,.view .tittp{width: 100%;border-top: 0.5rem solid #f5f7fa;background: #FFF;text-indent: 0.5rem;font-size: 0.75rem; color: #111; line-height: 2.5rem; height: 2.5rem; font-weight: bold;}
 .view .tit{background: #FFF; width: 92%; padding: 0 4%;border-top:0.5rem solid #f5f7fa;line-height: 2.5rem; height: 2.5rem;font-size: 0.75rem; color: #111; font-weight: 700;}
-.view .txt-box{width: 94%;position: relative;padding:3% 3%}
+.view .txt-box{width: 92%;position: relative;padding:3% 4%}
 .view .txt-box .num{
     width: 2rem;position: absolute;
     line-height: 1rem;
@@ -919,14 +919,14 @@ width: 100%; background: #FFF; margin: 0;
 .view .info img{max-width: 100%}
 .view .hot{width:100%;display: table;background: #FFF;padding: 0.5rem 0}
 .view .hot ul{width: 100%;display: table;}
-.view .hot li{float: left;width:45.5%;margin-left: 3%;margin-bottom: 0.75rem;}
+.view .hot li{float: left;width:44%;margin-left: 4%;margin-bottom: 0.75rem;}
 .view .hot li img{width: 100%;margin-bottom: 0.25rem;}
 .view .hot li p{font-size: 0.6rem;height: 1rem;font-weight:bold;line-height: 1rem;width: 100%;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;}
 .view .hot li .price{height: 1rem;line-height: 1rem;}
 .view .hot li .price span{font-size: 0.7rem;margin-right: 0.5rem;}
 .view .hot li .price del{color: #bfbfbf;font-size: 0.5rem;}
 .shop-index .view .hot li .price del{color:#999999;font-size: 0.5rem;text-decoration: none;}
-.view .hot .all{line-height: 2rem;height: 2rem;border:1px #d7d7d7 solid;border-radius: 0.15rem;margin: 0 auto;width: 94%;}
+.view .hot .all{line-height: 2rem;height: 2rem;border:1px #d7d7d7 solid;border-radius: 0.15rem;margin: 0 auto;width: 92%;}
 .view .hot .all a{color: #00b7b7;font-size: 0.7rem;}
 .suan-box{background: #FFF;z-index:99;height: 2.5rem;width: 100%;left: 0;-webkit-box-shadow: 2px 1px 8px #a4a4a4; box-shadow: 2px 1px 8px #a4a4a4;}
 .tel-box{background: #FFF;position: fixed;z-index:99;height: 2.5rem;width: 100%;left: 0;bottom: 0;-webkit-box-shadow: 2px 1px 8px #a4a4a4; box-shadow: 2px 1px 8px #a4a4a4;}
@@ -1808,12 +1808,11 @@ background: rgba(0,0,0,0.5);
   }
   .anli_month,.case_box .picScroll .bd p{padding: 0px 0% 0 5rem;width: 82%;}
   .yuyue{text-indent: 7%;}
-.jxtc_box ul{    overflow: hidden;
-    zoom: 1;}
+.jxtc_box ul{overflow: hidden;zoom: 1;}
     .jxtc_box li{width: 50%;float: left;}
 .jxtc_box li:last-child{    border-bottom: 0.5rem solid #f5f7fa;}
-.shop-tuijian .suolvl, .shop-tuijian .suolvl span {
-    height: 230px;
+.hot .suolvl,.hot .suolvl span,.shop-tuijian .suolvl, .shop-tuijian .suolvl span {
+    height:165px;
 }
 .view .hot li p{
         font-size: 14px;
@@ -1821,8 +1820,11 @@ background: rgba(0,0,0,0.5);
         line-height: 28px;
 }
 .shop-index .info-box,.downNav,.bgDiv{width: 740px;}
-.focus_box .focus,.suolvd{height: 320px;}
-
+.focus_box .focus,.suolvd{height:438px;}
+.sjkap{margin-top: -65px;}
+.suolv{height: 167.2px;}
+.suolvt{height: 178.9px;}
+.view .hot li{    width:28%;}
 }
 
 

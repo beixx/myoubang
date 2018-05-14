@@ -433,7 +433,7 @@ unfoldField.onclick=function(){
     var myChart = document.getElementById('shuju');
     //自适应宽高
     var myChartContainer = function () {
-        myChart.style.width = window.innerWidth+'px';
+        myChart.style.width = 100%'px';
         myChart.style.height = 100%'px'
     };
     myChartContainer();
@@ -534,7 +534,7 @@ unfoldField.onclick=function(){
     var myChart = document.getElementById('fengge');
     //自适应宽高
     var myChartContainer = function () {
-        myChart.style.width = window.innerWidth+'px';
+        myChart.style.width = 100%'px';
         myChart.style.height = 100%'px'
     };
     myChartContainer();
@@ -591,7 +591,7 @@ option = {
     var myChart = document.getElementById('dbmain2');
     //自适应宽高
     var myChartContainer = function () {
-        myChart.style.width = window.innerWidth+'px';
+        myChart.style.width = 100%'px';
         myChart.style.height = 80%'px'
     };
     myChartContainer();
@@ -715,7 +715,7 @@ option = {
 
     var myChart = document.getElementById('dbmain');//自适应宽高
     var myChartContainer = function () {
-        myChart.style.width = window.innerWidth+'px';
+        myChart.style.width = 100%'px';
         myChart.style.height = 80%'px';
     };
     myChartContainer();
@@ -838,8 +838,8 @@ option = {
     var myChart = document.getElementById('biaoqian');
     //自适应宽高
     var myChartContainer = function () {
-        myChart.style.width = window.innerWidth+'px';
-        myChart.style.height = 100%'px'
+        biaoqian.style.width = 100%'px';
+        biaoqian.style.height = 100%'px'
     };
     myChartContainer();
     var myChart = echarts.init(myChart);

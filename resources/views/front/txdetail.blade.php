@@ -113,7 +113,16 @@ var _hmt = _hmt || [];
 <div class="yuyue yyvip down" href="javascript:">到店享受VIP客户待遇，店员一对一服务</div>
 <div class="yuyue yydq down" href="javascript:">根据您的需求，可优先安排拍摄档期</div><div class="yuyue yyxy down" href="javascript:">线上预约或获取客片报价，商家5分钟内快速响应</div></div>
 <div class="tit"><?php echo $tenants['name'];?>专属定制热卖产品</div>
-<div class="hot">
+  <div class="wrap">
+  
+  <ul class="tabs group">
+    <li><a class="active" href="#/one">Light &</a></li>
+    <li><a href="#/two">Sexy</a></li>
+    <li><a href="#/three">Tabs</a></li>
+  </ul>
+  
+  <div id="content">
+    <div id="one" class="hot">
     <ul>
         <?php foreach($remmends as $v) { ?>
         <li>
@@ -133,6 +142,11 @@ var _hmt = _hmt || [];
         <?php } ?>
     </ul>
 </div>
+    <p id="two">Sexy sexy  consectetur adipisicing elit. Pariatur modi quod quo iure recusandae eligendi q.t, consectetur adipisicing elit. Pariatur modi quod quo iureq</p>
+    <p id="three">Tabs , consectetur adipisicing elit. Pariatur modi quod quo iure recusandae eligendi q.t, consectetur adipisicing elit. Pariatur modi quod quo iureq</p>
+  </div>
+  
+</div>
 <div class="unit-footer"><div class="peace-live"><p class="txt-cont">大数据实时分析 | 排名权威有保障</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
 <div class="bgDiv"></div>
 <div class="downNav bt00">
@@ -143,6 +157,8 @@ var _hmt = _hmt || [];
     </div>
 
 </div>
+<link rel="stylesheet" href="http://www.lanrenzhijia.com/demos/49/4987/demo/css/style.css">
+<script  src="http://www.lanrenzhijia.com/demos/49/4987/demo/js/index.js"></script>
 <script type="text/javascript">
 
     $('input[name=wapsubmit]').click(function(){
