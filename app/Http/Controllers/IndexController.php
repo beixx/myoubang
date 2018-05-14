@@ -134,7 +134,8 @@ class IndexController extends Controller
                 'pycity' => $pycity,
                 'usercomment' => $usercomment,
                 'style' => $style,
-                'advinfo' => $advinfo
+                'advinfo' => $advinfo,
+                'ismobile' => $this->ismobile,
             ];
 
             $this->data['recommenttenants'] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
@@ -247,11 +248,13 @@ class IndexController extends Controller
             $advtype = $shoptype=='婚纱摄影'?1:0;
 
             $this->data['advinfo'] = YfcAdv::where('type','1')->where('position','1')->where('city', '=', $city)->where('advtype',$advtype)->where('endTime','>',time())->first();
-	    if(isset($_GET['abc'])) {
-		var_dump($city);
-		var_dump($advtype);
-	    	echo '<pre>' ; print_r($this->data['advinfo'] );exit;
+	            if(isset($_GET['abc'])) {
+                var_dump($city);
+                var_dump($advtype);
+                echo '<pre>' ; print_r($this->data['advinfo'] );exit;
             }
+
+            $this->data['ismobile'] = $this->ismobile;
             $this->data['type'] = $shoptype=='婚纱摄影'?'sheying':'hunli';
             return view('front/index', $this->data);
 
@@ -304,7 +307,7 @@ class IndexController extends Controller
         }
 
         $this->data['title'] = $keyword.'在'.$this->data['city'].'的搜索结果-有榜';
-
+        $this->data['ismobile'] = $this->ismobile;
         return view("front/search",$this->data);
     }
 
@@ -330,7 +333,18 @@ class IndexController extends Controller
         $desc = '有榜提供'.$info->name.'的'.$picinfo->picName.'客片欣赏！';
         $keyword = $picinfo->picName;
         $picinfo->picStyle = json_decode($picinfo->picStyle,true);
-        return View::make('front.clientpicdetail')->with('dbtenants',$dbtenants)->with('title',$title)->with('desc',$desc)->with('keyword',$keyword)->with('pycity',$pycity)->with('city',$city)->with('picinfo',$picinfo)->with('info',$info)->with('tenantsId',$tenantsId)->with('recommpics',$recommpics);
+        $this->data['dbtenants'] = $dbtenants;
+        $this->data['title'] = $title;
+        $this->data['desc'] = $desc;
+        $this->data['keyword'] = $keyword;
+        $this->data['pycity'] = $pycity;
+        $this->data['city'] = $city;
+        $this->data['picinfo'] = $picinfo;
+        $this->data['info'] = $info;
+        $this->data['tenantsId'] = $tenantsId;
+        $this->data['recommpics'] = $recommpics;
+        $this->data['ismobile'] = $this->ismobile;
+        return view("front.clientpicdetail",$this->data);
     }
 
 
@@ -362,7 +376,7 @@ class IndexController extends Controller
             'tenants' => $tenants,
             'city' => $city,
         ];
-
+        $this->data['ismobile'] = $this->ismobile;
         return view("front/piclist",$this->data);
     }
     public function txlist($id = 0){
@@ -397,6 +411,7 @@ class IndexController extends Controller
             'tenants' => $tenants,
             'city' => $city,
         ];
+        $this->data['ismobile'] = $this->ismobile;
         return view("front/taoxilist",$this->data);
     }
 
@@ -437,6 +452,7 @@ class IndexController extends Controller
             'desc' =>$desc,
             'keyword' => $keyword,
         ];
+        $this->data['ismobile'] = $this->ismobile;
         return view("front/kpdetail",$this->data);
     }
 
@@ -489,7 +505,7 @@ class IndexController extends Controller
             'desc' => $desc,
             'keyword' => $keyword,
         ];
-
+        $this->data['ismobile'] = $this->ismobile;
         return view("front/txdetail",$this->data);
     }
 
@@ -554,7 +570,7 @@ class IndexController extends Controller
             $this->data['tenants'][$k]['taoxi'] = empty($taoxitmp[$v['id']]) ? [] : $taoxitmp[$v['id']];
         }
         $this->data['title'] = $city.'的'.$shoptype.'榜单定制页-有榜';
-
+        $this->data['ismobile'] = $this->ismobile;
         return view("front/dingzhi",$this->data);
     }
 
@@ -633,7 +649,7 @@ class IndexController extends Controller
         $this->data['city'] = Config::get('city.'.$name,'北京');
         $this->data['tenants'] = Yfctenants::where('id',$id)->first();
         $this->data['title'] = $this->data['tenants']['name'].'打分-有榜';
-
+        $this->data['ismobile'] = $this->ismobile;
         return view("front/dianping",$this->data);
     }
 
