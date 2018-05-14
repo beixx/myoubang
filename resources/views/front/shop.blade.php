@@ -50,7 +50,7 @@ unfoldField.onclick=function(){
 <a class="zxdh" href="tel:18500905723"></a>
 </header>
 <div class="focus_box">
-<div id="focus" class="focus">
+<div id="focus" class="focus" style="height: auto;">
         <div class="bd">
             <ul>
             <?php if(strlen($tenants['vrimage'])>10) { ?>
