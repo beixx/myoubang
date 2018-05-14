@@ -54,22 +54,25 @@ unfoldField.onclick=function(){
         <div class="bd">
             <ul>
             <?php if(strlen($tenants['vrimage'])>10) { ?>
-            <a target="_blank" href="<?php echo $tenants['vrurl']?>">
+                <a target="_blank" href="<?php echo $tenants['vrurl']?>">
                 <li class="suolvvr">
-<div class="m-title">720度VR全景看店</div>
-<div class="bg1"></div>
-<div class="m-kan"></div>
-                <span>
-                            <img src="<?php echo $tenants['vrimage'];?>"/>
-                    </span></li></a>
-<?php } ?>
+                    <div class="m-title">720度VR全景看店</div>
+                    <div class="bg1"></div>
+                    <div class="m-kan"></div>
+                    <span><img src="<?php echo $tenants['vrimage'];?>"/>
+                    </span>
+                </li>
+                </a>
+                <?php } else { ?>
                 <li class="suolvd"><span>
                         <?php if(strpos($tenants['cover'],'http') === false) {?>
                             <img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?<?php echo  $ismobile?"imageView2/1/w/800/h/600/q/75":'';?>|imageslim"/>
                         <?php } else {?>
                             <img src="<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                         <?php } ?>
-                    </span></li>
+                    </span>
+                </li>
+                <?php } ?>
             </ul>
         </div>
     </div>
