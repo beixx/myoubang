@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78c33a0d-54cb-4cf0-8b6a-947adcf68385" name="Default" comment="Merge branch 'master' of https://github.com/beixx/myoubang&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/css/diyUpload.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/css/webuploader.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/bgblack.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/check_alt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/filebg/avi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/filebg/cdr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/filebg/csv.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/filebg/doc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/filebg/jpg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/filebg/mp3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/filebg/pdf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/filebg/png.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/filebg/ppt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/filebg/rar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/filebg/txt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/filebg/xls.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/filebg/zip.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/filebg/复件 txt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/images/x_alt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/js/diyUpload.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/js/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/js/webuploader.html5only.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/server/fileupload.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/server/upload/jquery-ui-1.8.2.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/webUpload/server/upload/女装.docx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/merchant/addpic.blade.php" afterPath="$PROJECT_DIR$/resources/views/merchant/addpic.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <ignored path="myoubang.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,21 +34,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4159292">
-              <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+            <state vertical-scroll-proportion="-27.916666">
+              <caret line="177" column="9" selection-start-line="177" selection-start-column="9" selection-end-line="177" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addpic.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="addpic.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/merchant/addpic.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.647059">
-              <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.53571427">
+              <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -210,9 +181,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/merchant/addpic.blade.php" />
         <option value="$PROJECT_DIR$/public/webUpload/extend-webuploader.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php" />
+        <option value="$PROJECT_DIR$/resources/views/merchant/addpic.blade.php" />
       </list>
     </option>
   </component>
@@ -598,13 +569,13 @@
     <property name="SearchEverywhereHistoryKey" value="web.php&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/routes/web.php&#10;route&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/vendor/symfony/routing/Route.php&#10;.env&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/.env&#10;route.php&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/vendor/symfony/routing/Route.php&#10;invoice.js&#9;null&#9;null&#10;web.&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/routes/web.php&#10;iconf&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/public/merchant/lib/Hui-iconfont/1.0.8/iconfont.css" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="93" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="86" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="243" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="224" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="104" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="96" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="768" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="802" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="104" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
@@ -676,7 +647,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3273906" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1060,18 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/merchant/addpic.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.647059">
-          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/webUpload/extend-webuploader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1085,9 +1044,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4159292">
-          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+        <state vertical-scroll-proportion="-27.916666">
+          <caret line="177" column="9" selection-start-line="177" selection-start-column="9" selection-end-line="177" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/merchant/addpic.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53571427">
+          <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
