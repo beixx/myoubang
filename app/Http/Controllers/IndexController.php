@@ -386,6 +386,14 @@ class IndexController extends Controller
             'city' => $city,
         ];
         $this->data['ismobile'] = $this->ismobile;
+        $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
+            ->where("id",'!=',$tenants['id'])
+            ->where("shoptype",'=',$tenants['shoptype'])
+            ->where("order_city",'<','50')
+            ->orderby("order_city",'asc')
+            ->limit(24)
+            ->get()
+            ->toArray();
         return view("front/piclist",$this->data);
     }
     public function txlist($id = 0){
@@ -421,6 +429,14 @@ class IndexController extends Controller
             'city' => $city,
         ];
         $this->data['ismobile'] = $this->ismobile;
+        $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
+            ->where("id",'!=',$tenants['id'])
+            ->where("shoptype",'=',$tenants['shoptype'])
+            ->where("order_city",'<','50')
+            ->orderby("order_city",'asc')
+            ->limit(24)
+            ->get()
+            ->toArray();
         return view("front/taoxilist",$this->data);
     }
 
@@ -462,6 +478,14 @@ class IndexController extends Controller
             'keyword' => $keyword,
         ];
         $this->data['ismobile'] = $this->ismobile;
+        $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
+            ->where("id",'!=',$tenants['id'])
+            ->where("shoptype",'=',$tenants['shoptype'])
+            ->where("order_city",'<','50')
+            ->orderby("order_city",'asc')
+            ->limit(24)
+            ->get()
+            ->toArray();
         return view("front/kpdetail",$this->data);
     }
 
@@ -515,6 +539,14 @@ class IndexController extends Controller
             'keyword' => $keyword,
         ];
         $this->data['ismobile'] = $this->ismobile;
+        $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
+            ->where("id",'!=',$tenants['id'])
+            ->where("shoptype",'=',$tenants['shoptype'])
+            ->where("order_city",'<','50')
+            ->orderby("order_city",'asc')
+            ->limit(24)
+            ->get()
+            ->toArray();
         return view("front/txdetail",$this->data);
     }
 

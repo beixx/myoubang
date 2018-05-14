@@ -324,7 +324,17 @@ unfoldField.onclick=function(){
     </div>
 </div>
 <div class="unit-footer"><div class="peace-live"><p class="txt-cont">大数据实时分析 | 排名权威有保障</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
-@include("front.footer")
+<footer class="txtCtr">
+    @include("front.hotTenants")
+    <div class="foot">
+        <div class="foots">
+            <span><a href="/about.html">关于有榜</a>|<a target="_blank" href="http://youbangkeyi.mikecrm.com/E09npdx">商务合作</a>|<a target="_blank" href="/mianze.html">免责说明</a>|<a href="/shuoming.html" target="_blank">服务说明</a>|<a target="_blank" href="//c.youbangkeyi.cn/images/yingyezhizhao.jpeg">营业执照</a></span>
+            京ICP备17036862号-1 北京有榜信息科技有限公司
+            <span class="gongan">京公网安备 11010802024698号</span>
+        </div>
+        <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.cn/images/scs_logo.png"></a></div>
+    </div>
+</footer>
 <div class="bgDiv"></div>
 <div class="downNav bt00">
     <div class="ask">
