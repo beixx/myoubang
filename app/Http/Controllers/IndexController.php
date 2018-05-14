@@ -69,7 +69,7 @@ class IndexController extends Controller
             $pycity = Config::get('city.'.$city,'beijing');
             //Session::put('city',$city);
 
-            $tenantssets = YfcTenantsSet::where('tenantsId',$id)->orderby("created_at",'desc')->limit(3)->get()->toArray();
+            $tenantssets = YfcTenantsSet::where('tenantsId',$id)->orderby("created_at",'desc')->limit(4)->get()->toArray();
 
             foreach($tenantssets as $key=>$v){
                 if(isset($v['kind']) && $v['kind']){
@@ -142,7 +142,7 @@ class IndexController extends Controller
                 ->where("shoptype",'=',$tenants['shoptype'])
                 ->where("order_city",'<','50')
                 ->orderby("order_city",'asc')
-                ->limit(8)
+                ->limit(6)
                 ->get()
                 ->toArray();
             return view("front/shop",$this->data);
