@@ -50,26 +50,29 @@ unfoldField.onclick=function(){
 <a class="zxdh" href="tel:18500905723"></a>
 </header>
 <div class="focus_box">
-<div id="focus" class="focus">
+<div id="focus" class="focus" style="height: auto;">
         <div class="bd">
             <ul>
             <?php if(strlen($tenants['vrimage'])>10) { ?>
-            <a target="_blank" href="<?php echo $tenants['vrurl']?>">
+                <a target="_blank" href="<?php echo $tenants['vrurl']?>">
                 <li class="suolvvr">
-<div class="m-title">720度VR全景看店</div>
-<div class="bg1"></div>
-<div class="m-kan"></div>
-                <span>
-                            <img src="<?php echo $tenants['vrimage'];?>"/>
-                    </span></li></a>
-<?php } ?>
+                    <div class="m-title">720度VR全景看店</div>
+                    <div class="bg1"></div>
+                    <div class="m-kan"></div>
+                    <span><img src="<?php echo $tenants['vrimage'];?>"/>
+                    </span>
+                </li>
+                </a>
+                <?php } else { ?>
                 <li class="suolvd"><span>
                         <?php if(strpos($tenants['cover'],'http') === false) {?>
-                            <img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
+                            <img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?<?php echo  $ismobile?"imageView2/1/w/800/h/600/q/75":'';?>|imageslim"/>
                         <?php } else {?>
                             <img src="<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                         <?php } ?>
-                    </span></li>
+                    </span>
+                </li>
+                <?php } ?>
             </ul>
         </div>
     </div>
@@ -143,7 +146,7 @@ unfoldField.onclick=function(){
                         <span class="sm-text"><?php echo $tenants['count1'];?>人感兴趣</span>
                     </div>
                 </div>
-                <div class="to-get-btn down" href="javascript:">领取</div>
+                <div class="to-get-btn down liwuclick" href="javascript:">领取</div>
             </div>
 <div class="yuyue yyvip down" href="javascript:">到店享受VIP客户待遇，店员一对一服务</div>
 <div class="yuyue yydq down" href="javascript:">根据您的需求，可优先安排拍摄档期</div><div class="yuyue yyxy down" href="javascript:">线上预约或获取客片报价，商家3分钟内快速响应</div></div>
@@ -218,11 +221,8 @@ unfoldField.onclick=function(){
         <div class="unfold-field_text"><span>查看详细数据、商家擅长风格</span></div>  
          </div> 
 </div>
-<div class="jisuanqi click_are" onclick="showaa(document.getElementById('click_are'))"> <?php if($tenants['shoptype']=='婚纱摄影') { ?><div class="suan-wen"><p>你在他家拍婚纱照多少钱？</p><span>试试婚纱摄影计算器</span></div> <?php } else { ?><div class="suan-wen"><p>在他们家办婚礼多少钱？</p><span>试试婚礼计算器</span></div> <?php } ?></div>
 <?php if($countpics >0 ) { ?>
 <div class="case_box">
-    <!--<div class="title">客片欣赏<a href="/kplist/<?php echo $tenants['id'];?>">全部<span class="fa"><?php echo $countpics;?></span>个案例 ></a></div> -->
-
     <div id="picScroll" class="picScroll txtCtr">
         <div class="bd">
             <ul>
@@ -238,7 +238,7 @@ unfoldField.onclick=function(){
                         <span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
-                            <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>?imageView2/1/w/250/h/250/q/75|imageslim" />
+                          <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim"/>
                             <?php } else {?>
                             <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                             <?php } ?>
@@ -324,11 +324,23 @@ unfoldField.onclick=function(){
     </div>
 </div>
 <div class="unit-footer"><div class="peace-live"><p class="txt-cont">大数据实时分析 | 排名权威有保障</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
-<div class="downNav">
+<footer class="txtCtr">
+    @include("front.hotTenants")
+    <div class="foot">
+        <div class="foots">
+            <span><a href="/about.html">关于有榜</a>|<a target="_blank" href="http://youbangkeyi.mikecrm.com/E09npdx">商务合作</a>|<a target="_blank" href="/mianze.html">免责说明</a>|<a href="/shuoming.html" target="_blank">服务说明</a>|<a target="_blank" href="//c.youbangkeyi.cn/images/yingyezhizhao.jpeg">营业执照</a></span>
+            京ICP备17036862号-1 北京有榜信息科技有限公司
+            <span class="gongan">京公网安备 11010802024698号</span>
+        </div>
+        <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.cn/images/scs_logo.png"></a></div>
+    </div>
+</footer>
+<div class="bgDiv"></div>
+<div class="downNav bt00">
     <div class="ask">
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="text" name="mobile" id="mobile" class="input" placeholder="输入手机号，享受以上福利">
-        <input type="submit" name="wapsubmit" class="btn" value="预约到店<em>(3分钟响应·<?php echo $tenants['count1'];?>人已预约)</em>">
+        <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入手机号，(<?php echo $tenants['count1'];?>人已预约)">
+        <input type="submit" name="wapsubmit" class="btn shopclick" value="预约看店·3分钟响应">
     </div>
 
 </div>
@@ -427,13 +439,6 @@ unfoldField.onclick=function(){
         </div>
     </div>
 </div>
- <?php if($type=='sheying') { ?>
-    @include('front.sheyingprice')
-<?php } else { ?>
-    @include('front.hunliprice')
- <?php } ?>
-
-
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
@@ -442,7 +447,7 @@ unfoldField.onclick=function(){
     var myChart = document.getElementById('shuju');
     //自适应宽高
     var myChartContainer = function () {
-        myChart.style.width = window.innerWidth+'px';
+        myChart.style.width = 100%'px';
         myChart.style.height = 100%'px'
     };
     myChartContainer();
@@ -543,7 +548,7 @@ unfoldField.onclick=function(){
     var myChart = document.getElementById('fengge');
     //自适应宽高
     var myChartContainer = function () {
-        myChart.style.width = window.innerWidth+'px';
+        myChart.style.width = 100%'px';
         myChart.style.height = 100%'px'
     };
     myChartContainer();
@@ -600,7 +605,7 @@ option = {
     var myChart = document.getElementById('dbmain2');
     //自适应宽高
     var myChartContainer = function () {
-        myChart.style.width = window.innerWidth+'px';
+        myChart.style.width = 100%'px';
         myChart.style.height = 80%'px'
     };
     myChartContainer();
@@ -724,7 +729,7 @@ option = {
 
     var myChart = document.getElementById('dbmain');//自适应宽高
     var myChartContainer = function () {
-        myChart.style.width = window.innerWidth+'px';
+        myChart.style.width = 100%'px';
         myChart.style.height = 80%'px';
     };
     myChartContainer();
@@ -847,8 +852,8 @@ option = {
     var myChart = document.getElementById('biaoqian');
     //自适应宽高
     var myChartContainer = function () {
-        myChart.style.width = window.innerWidth+'px';
-        myChart.style.height = 100%'px'
+        biaoqian.style.width = 100%'px';
+        biaoqian.style.height = 100%'px'
     };
     myChartContainer();
     var myChart = echarts.init(myChart);
@@ -944,13 +949,17 @@ option = {
         });
     });
     $(".anliclick").click(function(){
-        $("input[name=wapsubmit]").val("获取报价");
+        $("input[name=wapsubmit]").val("获取报价·3分钟响应");
+	$("#mobile").attr("placeholder","xxxxx");
+    })
+    $(".liwuclick").click(function(){
+        $("input[name=wapsubmit]").val("领取优惠·3分钟响应");
     })
     $(".shopclick").click(function(){
-        $("input[name=wapsubmit]").val("预约到店");
+        $("input[name=wapsubmit]").val("预约到店·3分钟响应");
     })
     $(".dangqiclick").click(function(){
-        $("input[name=wapsubmit]").val("咨询档期");
+        $("input[name=wapsubmit]").val("咨询档期·3分钟响应");
     })
         // 数据初始化
     var Obj = $('body').barrage({

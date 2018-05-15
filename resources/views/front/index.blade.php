@@ -188,7 +188,7 @@ var _hmt = _hmt || [];
                                     <a class="suolv" href="/detail/<?php echo $v['id'].'/'.$v2['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                                         <span>
                                             <?php if(strpos($v2['cover'][0],'http') === false) {?>
-                                                <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.cn<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
+                                                <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.cn<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
                                             <?php } else {?>
                                                 <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
                                             <?php } ?>
@@ -223,7 +223,8 @@ var _hmt = _hmt || [];
             <div class="unit-footer"><div class="peace-live"><p class="txt-cont">大数据实时分析 | 排名权威有保障</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">所属城市：<?php echo $city;?></span></div></div>
         </div>
 <footer class="txtCtr">
-    <div class="tuijian"><h3>热门城市婚纱摄影榜单<span>(城市排名不分先后)</span></h3><ul>
+    <?php if($type=='sheying') { ?>
+                  <div class="tuijian"><h3>热门城市婚纱摄影榜单<span>(城市排名不分先后)</span></h3><ul>
                      <li><a target="_blank" href="/beijing/sheying">北京婚纱摄影排名</a></li>
                     <li><a target="_blank" href="/tianjin/sheying">天津婚纱摄影排名</a></li>
                     <li><a target="_blank" href="/shenyang/sheying">沈阳婚纱摄影排名</a></li>
@@ -249,7 +250,38 @@ var _hmt = _hmt || [];
                     <li><a target="_blank" href="/guangzhou/sheying">广州婚纱摄影排名</a></li>
                     <li><a target="_blank" href="/shenzhen/sheying">深圳婚纱摄影排名</a></li>
 
-</ul></div>  <div class="foot">
+</ul></div> 
+                    <?php } else { ?>
+                     <div class="tuijian"><h3>热门城市婚礼策划榜单<span>(城市排名不分先后)</span></h3><ul>
+                     <li><a target="_blank" href="/beijing/hunli">北京婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/tianjin/hunli">天津婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/shenyang/hunli">沈阳婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/dalian/hunli">大连婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/haerbin/hunli">哈尔滨婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/shijiazhuang/hunli">石家庄婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/shanghai/hunli">上海婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/hangzhou/hunli">杭州婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/xiamen/hunli">厦门婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/nanjing/hunli">南京婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/suzhou/hunli">苏州婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/wuxi/hunli">无锡婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/ningbo/hunli">宁波婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/fuzhou/hunli">福州婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/qingdao/hunli">青岛婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/hefei/hunli">合肥婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/chengdu/hunli">成都婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/chongqing/hunli">重庆婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/changsha/hunli">长沙婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/zhengzhou/hunli">郑州婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/xian/hunli">西安婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/wuhan/hunli">武汉婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/guangzhou/hunli">广州婚礼策划排名</a></li>
+                    <li><a target="_blank" href="/shenzhen/hunli">深圳婚礼策划排名</a></li>
+
+</ul></div> 
+                    <?php } ?>
+
+ <div class="foot">
         <div class="foots">
             <span><a href="/about.html">关于有榜</a>|<a target="_blank" href="http://youbangkeyi.mikecrm.com/E09npdx">商务合作</a>|<a target="_blank" href="/mianze.html">免责说明</a>|<a href="/shuoming.html" target="_blank">服务说明</a>|<a target="_blank" href="//c.youbangkeyi.cn/images/yingyezhizhao.jpeg">营业执照</a></span>
             京ICP备17036862号-1 北京有榜信息科技有限公司 

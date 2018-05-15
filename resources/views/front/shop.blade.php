@@ -66,7 +66,7 @@ unfoldField.onclick=function(){
                 <?php } else { ?>
                 <li class="suolvd"><span>
                         <?php if(strpos($tenants['cover'],'http') === false) {?>
-                            <img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?<?php echo  $ismobile?"imageView2/1/w/800/h/600/q/75":'imageView2/1/w/800/h/600/q/75';?>|imageslim"/>
+                            <img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?<?php echo  $ismobile?"imageView2/1/w/800/h/600/q/75":'';?>|imageslim"/>
                         <?php } else {?>
                             <img src="<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                         <?php } ?>
@@ -238,7 +238,7 @@ unfoldField.onclick=function(){
                         <span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
-                            <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>?imageView2/1/w/250/h/250/q/75|imageslim" />
+                          <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim"/>
                             <?php } else {?>
                             <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                             <?php } ?>
@@ -266,7 +266,7 @@ unfoldField.onclick=function(){
             <div class="suolvt">
                 <span>
                     <?php if(strpos($v['cover'][0],'http') === false) {?>
-                    <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][0];?>?imageView2/1/w/750/h/396/q/75|imageslim" />
+                    <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][0];?>?imageView2/1/w/690/h/444/q/75|imageslim" />
                     <?php } else {?>
                     <img src="<?php echo $v['cover'][0];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                     <?php } ?>
@@ -339,8 +339,8 @@ unfoldField.onclick=function(){
 <div class="downNav bt00">
     <div class="ask">
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入手机号，(<?php echo $tenants['count1'];?>人已预约)">
-        <input type="submit" name="wapsubmit" class="btn shopclick" value="预约看店·3分钟响应">
+        <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入手机号（您的隐私享受国密级别安全保护！）">
+        <div type="submit" name="wapsubmit" id="tijiao" class="btn">预约看店<em>(3分钟响应·<?php echo $tenants['count2'];?>人已预约)</em><em></div>
     </div>
 
 </div>
@@ -601,12 +601,135 @@ option = {
     };
 
 
+    var myChart = document.getElementById('dbmain');//自适应宽高
+    var myChartContainer = function () {
+        myChart.style.width = 100%'px';
+        myChart.style.height = 100%'px';
+    };
+    myChartContainer();
+    var myChart = echarts.init(myChart);
+
+    option = {
+        grid : {
+            x :25,    //距离容器上边界40像素
+            x2:25,
+            y:30,
+        },
+        tooltip : {
+            trigger: 'axis',
+            padding: 15,    // [5, 10, 15, 20]
+        },
+        legend: {
+            data:['全网PC搜索', '全网移动搜索']
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                splitLine:{show: true,lineStyle:{
+                    color: ['#f0f0f0'],
+                    width: 1,
+                    type: 'solid'
+                }},
+            axisLabel : {
+                    textStyle: {
+                        color: '#BBBBBB',
+                        fontFamily: 'verdana',
+                        fontSize: 10,
+                        fontStyle: 'normal',
+                    }  },
+                splitArea : {show : false},
+                data : [
+                    <?php if(isset($tenantssortview) && count($tenantssortview)){
+                    $len=count($tenantssortview)-1;
+                    foreach($tenantssortview as $key=>$v){
+                        if($len!=$key){
+                            echo '\''.substr(str_replace('-','/',$v['date']),5,strlen($v['date'])).'\',';
+                        }else{
+                            echo '\''.substr(str_replace('-','/',$v['date']),5,strlen($v['date'])).'\'';
+                        }
+                    }
+                }?>
+                ]
+            }
+        ],
+        yAxis : [
+            {
+                splitArea : {show : false},
+                axisLine : {show: false,lineStyle:{
+                    color: ['#B1B1B1'],
+                    width: 1,
+                    type: 'solid'
+                }},
+                splitLine:{show: true,lineStyle:{
+                    color: ['#f0f0f0'],
+                    width: 1,
+                    type: 'solid'
+                }},
+                axisLabel : {
+                    margin: -20,
+                    textStyle: {
+                        color: '#BBBBBB',
+                        fontFamily: 'verdana',
+                        fontSize: 10,
+                        fontStyle: 'normal',
+                    }  },
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'全网移动搜索',
+                type:'line',
+                smooth:true,
+                symbol: "none",
+                areaStyle: { normal: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: 'rgba(216, 244, 247,1)' }, { offset: 1, color: 'rgba(216, 244, 247,0.1)' }], false) } }, itemStyle: { normal: { color: '#58c8da' } },
+                data:[<?php if(isset($tenantssortview) && count($tenantssortview)){
+                    $len=count($tenantssortview)-1;foreach($tenantssortview as $key=>$v){
+                        if($len!=$key){
+                            echo $v['sortmo'].',';
+                        }else{
+                            echo $v['sortmo'];
+                        }
+                    }
+                }?>]
+            },
+            {
+                name:'全网PC搜索',
+                type:'line',
+                symbol: "none",
+                smooth:true,
+                areaStyle: { normal: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: 'rgba(199, 237, 250,0.5)' }, { offset: 1, color: 'rgba(199, 237, 250,0.2)' }], false) } }, itemStyle: { normal: { color: '#f7b851' } }, lineStyle: { normal: { width: 3 } },
+                data:[<?php if(isset($tenantssortview) && count($tenantssortview)){
+                    $len=count($tenantssortview)-1;foreach($tenantssortview as $key=>$v){
+                        if($len!=$key){
+                            echo $v['sortpc'].',';
+                        }else{
+                            echo $v['sortpc'];
+                        }
+                    }
+                }?>]
+            }
+        ]
+    };
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    //浏览器大小改变时重置大小
+    window.onresize = function () {
+        myChartContainer();
+        myChart.resize();
+    };
+
+    
 
     var myChart = document.getElementById('dbmain2');
     //自适应宽高
     var myChartContainer = function () {
         myChart.style.width = 100%'px';
-        myChart.style.height = 80%'px'
+        myChart.style.height = 100%'px';
     };
     myChartContainer();
     var myChart = echarts.init(myChart);
@@ -727,128 +850,6 @@ option = {
 
 
 
-    var myChart = document.getElementById('dbmain');//自适应宽高
-    var myChartContainer = function () {
-        myChart.style.width = 100%'px';
-        myChart.style.height = 80%'px';
-    };
-    myChartContainer();
-    var myChart = echarts.init(myChart);
-
-    option = {
-        grid : {
-            x :25,    //距离容器上边界40像素
-            x2:25,
-            y:30,
-        },
-        tooltip : {
-            trigger: 'axis',
-            padding: 15,    // [5, 10, 15, 20]
-        },
-        legend: {
-            data:['全网PC搜索', '全网移动搜索']
-        },
-        calculable : true,
-        xAxis : [
-            {
-                type : 'category',
-                boundaryGap : false,
-                splitLine:{show: true,lineStyle:{
-                    color: ['#f0f0f0'],
-                    width: 1,
-                    type: 'solid'
-                }},
-            axisLabel : {
-                    textStyle: {
-                        color: '#BBBBBB',
-                        fontFamily: 'verdana',
-                        fontSize: 10,
-                        fontStyle: 'normal',
-                    }  },
-                splitArea : {show : false},
-                data : [
-                    <?php if(isset($tenantssortview) && count($tenantssortview)){
-                    $len=count($tenantssortview)-1;
-                    foreach($tenantssortview as $key=>$v){
-                        if($len!=$key){
-                            echo '\''.substr(str_replace('-','/',$v['date']),5,strlen($v['date'])).'\',';
-                        }else{
-                            echo '\''.substr(str_replace('-','/',$v['date']),5,strlen($v['date'])).'\'';
-                        }
-                    }
-                }?>
-                ]
-            }
-        ],
-        yAxis : [
-            {
-                splitArea : {show : false},
-                axisLine : {show: false,lineStyle:{
-                    color: ['#B1B1B1'],
-                    width: 1,
-                    type: 'solid'
-                }},
-                splitLine:{show: true,lineStyle:{
-                    color: ['#f0f0f0'],
-                    width: 1,
-                    type: 'solid'
-                }},
-                axisLabel : {
-                    margin: -20,
-                    textStyle: {
-                        color: '#BBBBBB',
-                        fontFamily: 'verdana',
-                        fontSize: 10,
-                        fontStyle: 'normal',
-                    }  },
-                type : 'value'
-            }
-        ],
-        series : [
-            {
-                name:'全网移动搜索',
-                type:'line',
-                smooth:true,
-                symbol: "none",
-                areaStyle: { normal: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: 'rgba(216, 244, 247,1)' }, { offset: 1, color: 'rgba(216, 244, 247,0.1)' }], false) } }, itemStyle: { normal: { color: '#58c8da' } },
-                data:[<?php if(isset($tenantssortview) && count($tenantssortview)){
-                    $len=count($tenantssortview)-1;foreach($tenantssortview as $key=>$v){
-                        if($len!=$key){
-                            echo $v['sortmo'].',';
-                        }else{
-                            echo $v['sortmo'];
-                        }
-                    }
-                }?>]
-            },
-            {
-                name:'全网PC搜索',
-                type:'line',
-                symbol: "none",
-                smooth:true,
-                areaStyle: { normal: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: 'rgba(199, 237, 250,0.5)' }, { offset: 1, color: 'rgba(199, 237, 250,0.2)' }], false) } }, itemStyle: { normal: { color: '#f7b851' } }, lineStyle: { normal: { width: 3 } },
-                data:[<?php if(isset($tenantssortview) && count($tenantssortview)){
-                    $len=count($tenantssortview)-1;foreach($tenantssortview as $key=>$v){
-                        if($len!=$key){
-                            echo $v['sortpc'].',';
-                        }else{
-                            echo $v['sortpc'];
-                        }
-                    }
-                }?>]
-            }
-        ]
-    };
-
-
-    // 使用刚指定的配置项和数据显示图表。
-    myChart.setOption(option);
-    //浏览器大小改变时重置大小
-    window.onresize = function () {
-        myChartContainer();
-        myChart.resize();
-    };
-
     var myChart = document.getElementById('biaoqian');
     //自适应宽高
     var myChartContainer = function () {
@@ -915,7 +916,7 @@ option = {
         myChart.resize();
     };
 
-    $('input[name=wapsubmit]').click(function(){
+    $('div[name=wapsubmit]').click(function(){
         var tenantsId = $('#tenantsId').val();
         var phone = $('#mobile').val();
         var source = 12;
@@ -949,17 +950,19 @@ option = {
         });
     });
     $(".anliclick").click(function(){
-        $("input[name=wapsubmit]").val("获取报价·3分钟响应");
-	$("#mobile").attr("placeholder","xxxxx");
+     $("#tijiao").html("获取报价·3分钟响应");
+	$("#mobile").attr("placeholder","请输入手机号，立刻获取案例报价！");
     })
     $(".liwuclick").click(function(){
-        $("input[name=wapsubmit]").val("领取优惠·3分钟响应");
+    $("#tijiao").html("领取优惠<em>(3分钟响应·<?php echo $tenants['count1'];?>人已领取)</em>");
+    $("#mobile").attr("placeholder","请输入手机号，领取优惠！");
     })
     $(".shopclick").click(function(){
-        $("input[name=wapsubmit]").val("预约到店·3分钟响应");
+    $("#tijiao").html("预约到店<em>(3分钟响应·<?php echo $tenants['count1'];?>人已领取)</em>");
     })
     $(".dangqiclick").click(function(){
-        $("input[name=wapsubmit]").val("咨询档期·3分钟响应");
+    $("#tijiao").html("咨询档期·3分钟响应");
+    $("#mobile").attr("placeholder","请输入手机号，优先安排拍摄档期！");
     })
         // 数据初始化
     var Obj = $('body').barrage({
