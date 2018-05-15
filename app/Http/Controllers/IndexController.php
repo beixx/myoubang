@@ -249,9 +249,16 @@ class IndexController extends Controller
                 $this->data['keyword'] ='有榜网,有榜网'.$city.'站';
             }
             else {
-                $this->data['title'] = $city.'婚纱摄影前十名_'.$city.'婚纱摄影排名TOP100榜单【有榜网】';
-                $this->data['desc'] = '「有榜」依托'.$city.'婚纱摄影行业大数据，为您提供实时更新、用户打分的'.$city.'婚纱摄影榜单（包含'.$city.'婚纱摄影前十名），而且您也可以自由的定制'.$city.'婚纱摄影排行榜。';
-                $this->data['keyword'] =$city.'婚纱摄影,'.$city.'婚纱摄影前十名,'.$city.'婚纱摄影排行榜,'.$city.'婚纱摄影排名';
+                if($shoptype != "婚纱摄影"){
+                    $this->data['title'] = $city.'婚礼策划前十名_'.$city.'婚礼策划排名TOP100榜单【有榜网】';
+                    $this->data['desc'] = '「有榜」依托'.$city.'婚礼策划行业大数据，为您提供实时更新、用户打分的'.$city.'婚礼策划榜单（包含'.$city.'婚礼策划前十名），而且您也可以自由的定制'.$city.'婚礼策划排行榜。';
+                    $this->data['keyword'] =$city.'婚礼策划,'.$city.'婚礼策划前十名,'.$city.'婚礼策划排行榜,'.$city.'婚礼策划排名';
+                }
+                else {
+                    $this->data['title'] = $city.'婚纱摄影前十名_'.$city.'婚纱摄影排名TOP100榜单【有榜网】';
+                    $this->data['desc'] = '「有榜」依托'.$city.'婚纱摄影行业大数据，为您提供实时更新、用户打分的'.$city.'婚纱摄影榜单（包含'.$city.'婚纱摄影前十名），而且您也可以自由的定制'.$city.'婚纱摄影排行榜。';
+                    $this->data['keyword'] =$city.'婚纱摄影,'.$city.'婚纱摄影前十名,'.$city.'婚纱摄影排行榜,'.$city.'婚纱摄影排名';
+                }
             }
             //echo '<pre>' ; print_r($this->data) ;exit;
             $advtype = $shoptype=='婚纱摄影'?1:0;
