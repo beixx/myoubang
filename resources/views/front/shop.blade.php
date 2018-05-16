@@ -149,7 +149,7 @@ unfoldField.onclick=function(){
                 <div class="to-get-btn down liwuclick" href="javascript:">领取</div>
             </div>
 <div class="yuyue yyvip down" href="javascript:">到店享受VIP客户待遇，店员一对一服务</div>
-<div class="yuyue yydq down" href="javascript:">根据您的需求，可优先安排拍摄档期</div><div class="yuyue yyxy down" href="javascript:">线上预约或获取客片报价，商家3分钟内快速响应</div></div>
+<div class="yuyue yydq down" href="javascript:">根据您的需求，可优先安排拍摄档期</div>
 <div class="info-box mtrem6">
 <div class="zhanshi">
     <div class="data">
