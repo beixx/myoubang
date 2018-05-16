@@ -209,7 +209,7 @@ class IndexController extends MerchantController
 
                 $v->move($uploadDir, $fileName);
 
-                $imageurls[] = $filedir.$fileName;
+                $imageurls[] = $filedir.'/'.$fileName;
             }
             $res['list'] = $imageurls;
             $res['result'] = '00';
