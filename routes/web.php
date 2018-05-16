@@ -96,6 +96,7 @@ Route::group(['domain' => env('MERCHANT_URL')],function(){
 
 
     Route::post("/merchant/fileupload" , 'Merchant\IndexController@fileupload');
+    Route::post("/merchant/filesave" , 'Merchant\IndexController@filesave');
 
 
 
@@ -125,5 +126,6 @@ Route::group(['domain' => 'merchant.youbangkeyi.cn'],function(){
 
 
     Route::post("/merchant/fileupload" , 'Merchant\IndexController@fileupload');
+    Route::post("/merchant/filesave" , 'Merchant\IndexController@filesave');
 
 });

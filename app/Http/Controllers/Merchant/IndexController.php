@@ -7,6 +7,7 @@ use App\Http\Models\YfcTenants;
 use App\Http\Models\YfcTenantsPic;
 use App\Http\Models\YfcTenantsSet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request as FileRequest;
 
 //待确认功能
 class IndexController extends MerchantController
@@ -82,8 +83,8 @@ class IndexController extends MerchantController
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
                 'picname' => $request->get("picname"),
-                'cover' => json_encode($request->get("imageurl",[]),JSON_UNESCAPED_UNICODE),
-                'firstcover' => json_encode([$request->get('imageurl',[])[0]??''],JSON_UNESCAPED_UNICODE),
+                'cover' => json_encode($request->get("firstcover",[]),JSON_UNESCAPED_UNICODE),
+                'firstcover' => json_encode($request->get('firstcover',[]),JSON_UNESCAPED_UNICODE),
                 'picstyle' => json_encode(explode(',',$request->get("picstyle",'')),JSON_UNESCAPED_UNICODE),
                 'explain' => $request->get('explain'),
                 //'source' => 2,
@@ -186,6 +187,38 @@ class IndexController extends MerchantController
     }
     public function  filedel(){
 
+    }
+
+
+    public function filesave(){
+        $res = array();
+        $imageurls = array();
+        $images = FileRequest::file('photo');
+        if(count($images)){
+            foreach($images as $key=>$v){
+
+                $uploadDir = '/Server/data/image/upload';
+
+                $filedir = '/merchant/'.substr(md5(rand(1,10000)),0,3).'/'.substr(md5(rand(1,10000)),0,3).'/'.substr(md5(rand(1,10000)),0,3);
+                $uploadDir .= $filedir ;
+                $fileName = md5(rand(1,10000)).'.jpg';
+
+                if(!is_dir($uploadDir)) {
+                    mkdir($uploadDir,0777,true);
+                }
+
+                $v->move($uploadDir, $fileName);
+
+                $imageurls[] = $filedir.$fileName;
+            }
+            $res['list'] = $imageurls;
+            $res['result'] = '00';
+            return json_encode($res);
+        }else{
+            $res['message']='图片上传失败';
+            $res['result']='01';
+            return json_encode($res);
+        }
     }
 }
 
