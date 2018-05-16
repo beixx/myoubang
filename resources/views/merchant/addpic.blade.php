@@ -156,7 +156,7 @@
                                 <div class="close">
                                     <input type="hidden" name="firstcover[]" value="<?php echo $v?>" />
                                 </div>
-                                <img  width="120px" src="http://img2.youbangkeyi.cn/<?php echo $v;?>}}">
+                                <img  width="120px" src="http://img2.youbangkeyi.cn<?php echo $v;?>">
                             </div>
                             <?php } ?>
                         <?php  }?>
@@ -192,7 +192,7 @@
                             <div class="close">
                                 <input type="hidden" name="cover[]" value="<?php echo $v?>" />
                             </div>
-                            <img  width="120px" src="http://img2.youbangkeyi.cn/<?php echo $v;?>}}">
+                            <img  width="120px" src="http://img2.youbangkeyi.cn<?php echo $v;?>">
                         </div>
                         <?php } ?>
                         <?php  }?>
