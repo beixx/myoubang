@@ -34,7 +34,7 @@ var _hmt = _hmt || [];
 <body>
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
-<div class="logo"><img width="3.46rem" height="1.4rem" src="/images/logo.png"></div>
+<div class="logo"><img src="/images/logo.png"></div>
 <a class="zxdh" href="tel:18500905723"></a>
 </header>
 <div class="content">
@@ -47,20 +47,20 @@ var _hmt = _hmt || [];
         <div class="hd">
             <ul>
             <?php if($type=='sheying') { ?>
-                           <li class="on"><a href="/<?php echo $pycity;?>/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚纱摄影排行榜</a></li>
+                           <li class="on"><a href="/<?php echo $pycity;?>/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚纱摄影</a></li>
                     <?php } else { ?>
-							<li><a href="/<?php echo $pycity;?>/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚纱摄影排行榜</a></li>
+							<li><a href="/<?php echo $pycity;?>/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚纱摄影</a></li>
                     <?php } ?>
                       <?php if($type=='sheying') { ?>
-                          <li ><a href="/<?php echo $pycity;?>/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚礼策划排行榜</a></li>
+                          <li ><a href="/<?php echo $pycity;?>/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚礼策划</a></li>
                     <?php } else { ?>
-                          <li class="on"><a href="/<?php echo $pycity;?>/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚礼策划排行榜</a></li>
+                          <li class="on"><a href="/<?php echo $pycity;?>/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚礼策划</a></li>
                     <?php } ?>
             </ul>
         </div>
         <div class="bd">
             <div class="list_box">
-                <div class="zysmi">排名权威有保障，由有榜网对全网大数据分析得出！</div>
+               <div class="zysmi"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div>
                 <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
                     <?php if(isset($spread['name'])) { ?>
                     <div class="pic_box">
@@ -146,10 +146,9 @@ var _hmt = _hmt || [];
                             <div class="huiyuan"></div>
                         <?php } ?>-->
                         <div class="num_txt">
-                         <div class="tit_pic"><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><img src="<?php echo strpos($v['cover'],'http')=== false?'//img2.youbangkeyi.cn':'';?><?php echo $v['cover'];?>?imageView2/1/w/150/h/150/q/75|imageslim"></a></div>
                             <div class="tit_box">
                                 <div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span>得分：<?php echo $v['heat_index'];?></span><span>|</span><span>人均：¥<?php echo $v['person_price'];?></span><span>|</span><span><?php echo $v['piccount']>0?''.$v['piccount'].'组':'商家无案例';?>客片</span></div>
+                                <div class="txt"><span class="zhish"><em class="shu">数据指数</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均：¥<?php echo $v['person_price'];?></span><span>|</span><span><?php echo $v['piccount']>0?''.$v['piccount'].'组':'商家无案例';?>客片</span></div>
                             </div>
                         </div>
                              <?php
@@ -220,7 +219,7 @@ var _hmt = _hmt || [];
                     <?php } ?>
                 </section>
             </div>
-            <div class="unit-footer"><div class="peace-live"><p class="txt-cont">大数据实时分析 | 排名权威有保障</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">所属城市：<?php echo $city;?></span></div></div>
+            <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">所属城市：<?php echo $city;?></span></div></div>
         </div>
 <footer class="txtCtr">
     <?php if($type=='sheying') { ?>
@@ -292,88 +291,6 @@ var _hmt = _hmt || [];
 </footer>
     </div>
 </div>
-<!--
-<footer>
-    <div class="txt"><p class="f075">定制个性榜单</p>覆盖<span>12万+</span>商户 <span>18个</span>数据衡量维度</div>
-    <em class="down">立即定制</em></footer>
-<div class="bgDiv"></div>
-<div class="downNav">
-    <div class="title">快速定制专属榜单</div>
-    <div class="form">
-        <div class="sewvmain">
-            <div class="tb"></div>
-            <div class="sewv">
-                <div class="sewvtop"><em><span id="customized_name"><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?></span><img src="/images/icon9.png"></em></div>
-            </div>
-            <div class="sewv">
-                <div class="sewvtop"><em><span id="style">选择风格</span><img src="/images/icon9.png"></em></div>
-                <ul class="sewvbm" multile='1' style="left: -7.63rem">
-                    <?php if($type=='sheying') { ?>
-                            <li class="xq2">小清新</li>
-                            <li class="xq2">韩式</li>
-                            <li class="xq2">花海</li>
-                            <li class="xq2">个性</li>
-                            <li class="xq2">城市地标</li>
-                            <li class="xq2">欧美</li>
-                            <li class="xq2">宫殿教堂</li>
-                            <li class="xq2">复古</li>
-                            <li class="xq2">海景</li>
-                            <li class="xq2">性感</li>
-                            <li class="xq2">夜景</li>
-                            <li class="xq2">游艇</li>
-                            <li class="xq2">水下</li>
-                            <li class="xq2">日系</li>
-                            <li class="xq2">中国风</li>
-                            <li class="xq2">马场</li>
-                            <li class="xq2">旅拍</li>
-                            <li class="xq2">唯美</li>
-                    <?php } else { ?>
-                           <li class="xq2">唯美</li>
-                            <li class="xq2">奢华大气</li>
-                            <li class="xq2">小清新</li>
-                            <li class="xq2">高贵紫</li>
-                             <li class="xq2">梦幻蓝</li>
-                            <li class="xq2">复古</li>
-                             <li class="xq2">欧式宫廷</li>
-                            <li class="xq2">粉色系</li>
-                            <li class="xq2">香橙系</li>
-                            <li class="xq2">红色系</li>
-                            <li class="xq2">森系</li>
-                            <li class="xq2">中式</li>
-                    <?php } ?>
-
-                    <div class='btn txtCtr'>
-                        <a id='style_btn' href='javascript:;'>确定</a>
-                    </div>
-                </ul>
-            </div>
-        </div>
-        <div class="input">
-
-            </form>
-            <form action="/user/{{$pycity}}/<?php echo rand(10,1000) ?>" method="get" id="subsubmit">
-                <input type="hidden" id="hiddenstyle" name="style" value=""/>
-                <input type="hidden" id="hiddencity" name="city" value=""/>
-                <input type="text" name="budget" placeholder="您的预算">
-                <input type="text" name="mobile" placeholder="您的手机">
-                <input type="text" name="name" placeholder="您的姓名">
-            </form>
-        </div>
-        <div class="submit txtCtr"><a href="">立即定制</a> </div>
-    </div>
-</div>
-
-</div>
--->
-<style type="text/css">
-    .layui-layer-title{border-radius: 0.3rem 0.3rem 0 0;padding: 0;margin-top: 0rem;text-align: center;}
-    .layui-layer{border-radius: 0.3rem;overflow: hidden;}
-    .layui-layer-ico{background: url(/js/layer/skin/default/close.png);background-size: 2.75rem;width: 2.75rem;height: 1.45rem}
-    .layui-layer-setwin a{margin-left: 0;}
-    .layui-layer-setwin{right: 8px;top: 8px}
-    .f075{font-size:.75rem;}
-</style>
-
 <!-- 城市弹出 -->
 <div class="container">
     <div class="city">
@@ -500,7 +417,7 @@ var _hmt = _hmt || [];
         }
         if(phone){
             if(!(/^1[34578]\d{9}$/.test(phone))){
-                alert("手机号码有误，请重填");
+                alert("亲，手机号填写有误哦");
                 return false;
             }
         }
@@ -512,7 +429,7 @@ var _hmt = _hmt || [];
             success: function(data){
                 console.log(data);
                 if(data.result=='00'){
-                    alert('预约成功');
+                    alert("预约成功" + '\n' + "请注意接听商家的来电！");
                     location.reload();
                 }
             }

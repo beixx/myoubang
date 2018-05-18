@@ -168,7 +168,8 @@ class IndexController extends Controller
             $page = Request::get('page','1');
             $city = Config::get('city.'.$name,'北京');
             $this->data['pycity'] = $name;
-            //无法获取城市，直接首页
+            $this->data['city'] = $city;
+	    //无法获取城市，直接首页
             if(!$city) {
                 return Redirect::to('/');
             }
@@ -279,7 +280,7 @@ class IndexController extends Controller
 
     public function search($name=''){
         $this->data['type'] = Request::input("type")=="sheying" ? 'sheying':'hunli';
-        $shoptype = Request::input("type")=="sheying"?'婚纱摄影':'婚礼策划';
+        $this->data['shoptype']=$shoptype = Request::input("type")=="sheying"?'婚纱摄影':'婚礼策划';
         $this->data['city'] = Config::get('city.'.$name,'北京');
         $this->data['pycity'] = $name;
         $this->data['keyword'] = $keyword = Request::get('keyword','');
@@ -349,7 +350,9 @@ class IndexController extends Controller
         $desc = '有榜提供'.$info->name.'的'.$picinfo->picName.'客片欣赏！';
         $keyword = $picinfo->picName;
         $picinfo->picStyle = json_decode($picinfo->picStyle,true);
-        $this->data['dbtenants'] = $dbtenants;
+        $this->data['type'] = $shoptype=='婚纱摄影'?'sheying':'hunli';
+	$this->data['shoptype'] = $shoptype;
+	$this->data['dbtenants'] = $dbtenants;
         $this->data['title'] = $title;
         $this->data['desc'] = $desc;
         $this->data['keyword'] = $keyword;
@@ -392,6 +395,8 @@ class IndexController extends Controller
             'tenants' => $tenants,
             'city' => $city,
         ];
+	$this->data['pycity'] = Config::get('city.'.$city,'beijing');
+	$this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
         $this->data['ismobile'] = $this->ismobile;
         $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
             ->where("id",'!=',$tenants['id'])
@@ -435,6 +440,8 @@ class IndexController extends Controller
             'tenants' => $tenants,
             'city' => $city,
         ];
+        $this->data['pycity'] = Config::get('city.'.$city,'beijing');
+	$this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
         $this->data['ismobile'] = $this->ismobile;
         $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
             ->where("id",'!=',$tenants['id'])
@@ -484,6 +491,8 @@ class IndexController extends Controller
             'desc' =>$desc,
             'keyword' => $keyword,
         ];
+	$this->data['pycity'] = Config::get('city.'.$city,'beijing');
+	$this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
         $this->data['ismobile'] = $this->ismobile;
         $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
             ->where("id",'!=',$tenants['id'])
@@ -545,6 +554,8 @@ class IndexController extends Controller
             'desc' => $desc,
             'keyword' => $keyword,
         ];
+	$this->data['pycity'] = Config::get('city.'.$city,'beijing');
+	$this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
         $this->data['ismobile'] = $this->ismobile;
         $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
             ->where("id",'!=',$tenants['id'])
@@ -617,6 +628,7 @@ class IndexController extends Controller
         foreach($this->data['tenants'] as $k => $v) {
             $this->data['tenants'][$k]['taoxi'] = empty($taoxitmp[$v['id']]) ? [] : $taoxitmp[$v['id']];
         }
+	$this->data['pycity'] = Config::get('city.'.$city,'beijing');
         $this->data['title'] = $city.'的'.$shoptype.'榜单定制页-有榜';
         $this->data['ismobile'] = $this->ismobile;
         return view("front/dingzhi",$this->data);

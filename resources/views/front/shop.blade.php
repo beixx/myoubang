@@ -46,7 +46,7 @@ unfoldField.onclick=function(){
 <body class="shop-index">
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
-<div class="logo"><a href="/<?php echo $pycity;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><img width="3.46rem" height="1.4rem" src="/images/logo.png"></a></div>
+<div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><img src="/images/logo.png" alt="有榜网"></a></div>
 <a class="zxdh" href="tel:18500905723"></a>
 </header>
 <div class="focus_box">
@@ -93,7 +93,6 @@ unfoldField.onclick=function(){
         <p><span>人均消费:¥<?php echo $tenants['person_price'];?></span><span>|</span><span>有<?php echo $tenantssort['allcy']?>人在此店消费过</span></p>
         <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><em></em>打榜</a></div>
     </div>
-    <div class="zysm">排名权威有保障，由有榜网对商家全网大数据分析得出！</div>
     <div class="datas">
 		        <span class="lft txtCtr c1">
 		            <em>第<i class="fa"><?php echo $tenants['order_city'];?></i>名</em>
@@ -110,6 +109,7 @@ unfoldField.onclick=function(){
 </div>
     <div class="address"><a target="_blank" href="https://map.baidu.com/mobile/webapp/search/search/qt=s&wd=<?php echo $city;?><?php echo $tenants['name'];?>&&vt=map&universalLinkCbkTag=1"><?php echo $tenants['address'];?><em></em></a></div>
 </div></div>
+<div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div>
     <?php if($tenants['isVip'] == 2) { ?>
 <?php if(isset($tenantinfo->isVip) && $tenantinfo->isVip==2){
     if(isset($advinfo->id)){
@@ -136,20 +136,18 @@ unfoldField.onclick=function(){
 <?php }else { ?>
 
     <?php } ?>
-<div class="info-box"><div class="titleqs"><i>有榜网预约到店专享</i><span class="fa">86人已预约到店</span></div>
+<div class="info-box"><div class="titleqs"><i>有榜网预约到店专享</i><span class="fa">到店请提前预约</span></div>
 <div class="daodianli down" href="javascript:">
                 <div class="daodiant">
                     <span class="coupon-tag"></span>
                     <h3><?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?></h3>
                     <div class="btm-line">
                         仅限预约到店使用
-                        <span class="sm-text"><?php echo $tenants['count1'];?>人感兴趣</span>
+                        <span class="sm-text"><?php echo $tenants['count1'];?>人已领取</span>
                     </div>
                 </div>
                 <div class="to-get-btn down liwuclick" href="javascript:">领取</div>
             </div>
-<div class="yuyue yyvip down" href="javascript:">到店享受VIP客户待遇，店员一对一服务</div>
-<div class="yuyue yydq down" href="javascript:">根据您的需求，可优先安排拍摄档期</div>
 <div class="info-box mtrem6">
 <div class="zhanshi">
     <div class="data">
@@ -230,7 +228,7 @@ unfoldField.onclick=function(){
                 <li>
         <div class="anli_touxiang"><img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim"></div>
             <p><?php echo $v['picName']?></p>
-            <span class="anli_month"><em class="fl">发布于5月05日 13:44</em><em class="fr">浏览<?php echo $v['showcount'];?>次</em></span>
+            <span class="anli_month"><em class="fl">发布于<?php echo date("m-d H:i",$v['created_at']);?></em><em class="fr">浏览<?php echo $v['showcount'];?>次</em></span>
             <?php if(strlen($v['explain'])>5) { ?>
            <div class="anli_p"><?php echo $v['explain'];?></div>
            <?php } ?>
@@ -312,7 +310,7 @@ unfoldField.onclick=function(){
             <li>
                 <a class="suolvl" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                    <span>
-                       <img src="http://img2.youbangkeyi.cn<?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim">
+                       <img src="<?php echo strpos($v['cover'],"http")!==false ? '' : 'http://img2.youbangkeyi.cn';?><?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim">
                    </span>  </a><p><?php echo $v['name'];?></p>
                     <div class="price">
                         <span class="red">TOP<?php echo $v['order_city'];?></span>
@@ -323,7 +321,7 @@ unfoldField.onclick=function(){
         </ul>
     </div>
 </div>
-<div class="unit-footer"><div class="peace-live"><p class="txt-cont">大数据实时分析 | 排名权威有保障</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
+<div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
 <footer class="txtCtr">
     @include("front.hotTenants")
     <div class="foot">
@@ -339,20 +337,12 @@ unfoldField.onclick=function(){
 <div class="downNav bt00">
     <div class="ask">
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入手机号（您的隐私享受国密级别安全保护！）">
+        <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入手机号（到店礼:<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
         <div type="submit" name="wapsubmit" id="tijiao" class="btn">预约看店<em>(3分钟响应·<?php echo $tenants['count2'];?>人已预约)</em><em></div>
     </div>
 
 </div>
 <!-- 城市弹出 -->
-<style type="text/css">
-    .layui-layer-title{border-radius: 0.3rem 0.3rem 0 0;padding: 0;margin-top: 0rem;text-align: center;}
-    .layui-layer{border-radius: 0.3rem;overflow: hidden;}
-    .layui-layer-ico{background: url(/js/layer/skin/default/close.png);background-size: 2.75rem;width: 2.75rem;height: 1.45rem}
-    .layui-layer-setwin a{margin-left: 0;}
-    .layui-layer-setwin{right: 8px;top: 8px}
-    .f075{font-size:.75rem;}
-</style>
 <div class="container">
     <div class="city">
         <div class="city-list">
@@ -927,7 +917,7 @@ option = {
         }
         if(phone){
             if(!(/^1[34578]\d{9}$/.test(phone))){
-                alert("手机号码有误，请重填");
+                alert("亲，手机号码填写的不对哦");
                 return false;
             }
         }
@@ -939,7 +929,7 @@ option = {
             success: function(data){
                 console.log(data);
                 if(data.result=='00'){
-                    alert('预约成功');
+                    alert("预约成功" + '\n' + "请注意接听商家的来电！");
                     <?php if($tenants['isVip'] ==2) { ?>
                         location.href="<?php echo $tenants['modeladvurl'];?>";
                     <?php } else {?>

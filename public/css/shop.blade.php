@@ -441,6 +441,7 @@ unfoldField.onclick=function(){
 </div>
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
+<script type="text/javascript" src="/js/jquery.lazyload.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
 <script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/echarts-wordcloud.min.js"></script>
 <script type="text/javascript">
