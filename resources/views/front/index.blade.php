@@ -213,7 +213,7 @@ var _hmt = _hmt || [];
                             </div>
                         </div>
                             <div class="daodian">
-                                <span class="sybj down">预约咨询<em>(3分钟快速响应)</em></span>
+                                <span class="sybj down" data-id="<?php echo $v['id'];?>">预约咨询<em>(3分钟快速响应)</em></span>
                             </div>
                     </div>
                     <?php } ?>
@@ -439,6 +439,9 @@ var _hmt = _hmt || [];
         $("#tenantsId").val($(this).attr("id"));
         $("#packagemessage").html($(this).attr("message"));
         console.log($(this).attr("message"));
+    });
+    $(".sybj").click(function(){
+        $("#tenantsId").val($(this).attr("data-id"));
     });
 </script>
 
