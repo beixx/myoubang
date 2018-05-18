@@ -225,7 +225,7 @@
         </div>
     </form>
 </div>
-
+<<div id="tishi" style="display: none;">图片上传中</div>
 
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="/merchant/lib/layer/2.4/layer.js"></script>
@@ -248,6 +248,7 @@
 
     //选择图片(单据证明)
     function SeleImg(ObjectDom){
+        $("#tishi").css("display","block");
         var FormObj = new FormData();
         var files = event.target.files;
         var len = 0;
@@ -278,6 +279,8 @@
             }else{
                 alert("照片超过规定大小,上传失败");
             };
+
+            $("#tishi").css("display","none");
             setTimeout(function(){ layer.closeAll(); }, 1500);
         };
         ImgHttp.open("post", "/merchant/filesave", true);
