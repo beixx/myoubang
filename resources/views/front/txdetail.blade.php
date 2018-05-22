@@ -81,11 +81,10 @@ var _hmt = _hmt || [];
             <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
     </div>
-    <div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div>
-<div class="titjs">套餐介绍</div>
-<div class="txt-info">
-    <?php echo $info['detail'];?>
-</div>
+    <div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div><hr>
+    <a class="yuyue">
+                <i></i><span><?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?></span><button class="discount-btn down liwuclick" href="javascript:">领取优惠</button>
+            </a></div>
 <div class="tittp">图文详情</div>
 <div class="info">
     <?php foreach($info['picDetail'] as $v) { ?>
@@ -97,18 +96,10 @@ var _hmt = _hmt || [];
 
     <?php } ?>
 </div>
-<div class="info-box mt03"><div class="titleqs"><i>有榜网咨询档期并预约专享</i><span class="fa">到店请提前预约</span></div>
-<div class="daodianli down" href="javascript:">
-                <div class="daodiant">
-                    <span class="coupon-tag"></span>
-                    <h3><?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?></h3>
-                    <div class="btm-line">
-                        仅限预约到店使用
-                        <span class="sm-text"><?php echo $tenants['count1'];?>人已领取</span>
-                    </div>
-                </div>
-                <div class="to-get-btn down liwuclick" href="javascript:">领取</div>
-            </div>
+<div class="titjs">套餐介绍</div>
+<div class="txt-info">
+    <?php echo $info['detail'];?>
+</div>
 <div class="tit"><?php echo $tenants['name'];?>专属定制热卖产品</div>
 <div class="hot">
     <ul>
@@ -278,7 +269,7 @@ var _hmt = _hmt || [];
         });
     });
     $(".liwuclick").click(function(){
-    $("#tijiao").html("领取优惠<em>(3分钟响应·<?php echo $tenants['count1'];?>人已领取)</em>");
+    $("#tijiao").html("领取优惠·3分钟响应");
     $("#mobile").attr("placeholder","请输入手机号，领取优惠！");
     })
     $(".dagnqiclick").click(function(){

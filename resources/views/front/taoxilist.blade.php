@@ -42,8 +42,10 @@ var _hmt = _hmt || [];
             <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
     </div>
+    <div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div><hr>
+<a class="yuyue">
+                <i></i><span><?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?></span><button class="discount-btn down liwuclick" href="javascript:">领取优惠</button></a>
 </div>
-<div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div>
 <div class="jxtc_box">
     <div class="tittx">全部套餐（<?php echo count($sets);?>）</div>
     <ul>

@@ -42,8 +42,10 @@ var _hmt = _hmt || [];
             <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
     </div>
+    <div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div><hr>
+<a class="yuyue">
+                <i></i><span><?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?></span><button class="discount-btn down liwuclick" href="javascript:">领取优惠</button></a>
 </div>
-<div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div>
 <div class="case_box">
     <div class="tittx">客片欣赏 (<?php echo count($pics);?>)</div>
     <div id="picScroll" class="picScroll txtCtr">
@@ -55,23 +57,22 @@ var _hmt = _hmt || [];
                 <?php foreach($pics as $v) {?>
                 <li>
                 <div class="anli_touxiang"><img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?imageView2/1/w/150/h/150/q/75|imageslim"></div>
-                <p><?php echo $v['picName'];?></p>
+                <p> <a href="/kpdetail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $v['picName'];?> </a></p>
                  <span class="anli_month"><em class="fl">发布于<?php echo date("m-d H:i",$v['created_at']);?></em><em class="fr">浏览342次</em></span>
                     <?php if($v['explain']) { ?>
                     <div class="anli_p"><?php echo $v['explain'];?></div>
                     <?php } ?>
-                    <a class="suolvl" href="/kpdetail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                         <span class="img">
                             <?php $v['cover'] = json_decode($v['cover'],true); for($i = 0 ; $i < 9 ;$i ++ ) { if(empty($v['cover'][$i])) { break; }?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
-                               <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim"/>
+                            <a class="yulan glightbox" href="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>">
+                               <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim"/></a>
                             <?php } else {?>
                                 <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/200/h/200/q/75|imageslim" />
                             <?php } ?>
 
                             <?php } ?>
                         </span>
-                    </a>
             <div href="javascript:" class="anlibj down anliclick">获取该案例报价</div>
                 </li>
                 <?php } ?>
@@ -79,6 +80,14 @@ var _hmt = _hmt || [];
         </div>
     </div>
 </div>
+
+<link rel="stylesheet" href="http://yanshi.sucaihuo.com/jquery/34/3486/demo/dist/css/glightbox.css">
+
+<script src="http://yanshi.sucaihuo.com/jquery/34/3486/demo/dist/js/glightbox.min.js"></script>
+  <script>
+    var lightbox = GLightbox();
+  </script>
+
 <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
 <footer class="txtCtr">
   @include("front.hotTenants") <div class="foot">

@@ -91,8 +91,11 @@ var _hmt = _hmt || [];
             <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
     </div>
+<div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div><hr>
+<a class="yuyue">
+                <i></i><span><?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?></span><button class="discount-btn down liwuclick" href="javascript:">领取优惠</button>
+            </a>
 </div>
-<div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div>
 <div class="tittp">客片欣赏</div>
 <div class="info">
     <?php foreach($picinfo['cover'] as $v) { ?>
@@ -103,18 +106,6 @@ var _hmt = _hmt || [];
         <?php } ?>
     <?php } ?>
 </div>
-<div class="info-box mt03"><div class="titleqs"><i>有榜网获取报价并预约专享</i><span class="fa">到店请提前预约</span></div>
-<div class="daodianli down" href="javascript:">
-                <div class="daodiant">
-                    <span class="coupon-tag"></span>
-                    <h3><?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?></h3>
-                    <div class="btm-line">
-                        仅限预约到店使用
-                        <span class="sm-text"><?php echo $tenants['count1'];?>人已领取</span>
-                    </div>
-                </div>
-                <div class="to-get-btn down liwuclick" href="javascript:">领取</div>
-            </div></div>
 <div class="jxtc_box">
     <div class="tittx">该商家其他最新客片欣赏</div>
     <ul>
@@ -172,7 +163,7 @@ var _hmt = _hmt || [];
     <div class="ask">
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
         <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入手机号（到店礼:<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
-        <div type="submit" name="wapsubmit" id="tijiao" class="btn">获取报价<em>(3分钟响应·<?php echo $tenants['count3'];?>人已领取)</em></div>
+        <div type="submit" name="wapsubmit" id="tijiao" class="btn">获取报价·3分钟响应</div>
     </div>
 
 </div>
@@ -300,10 +291,10 @@ var _hmt = _hmt || [];
         });
     });
     $(".liwuclick").click(function(){
-        $("#tijiao").html("领取优惠<em>(3分钟响应·<?php echo $tenants['count3'];?>人已领取)</em>");
+        $("#tijiao").html("领取优惠·3分钟响应");
     })
     $(".anliclick").click(function(){
-        $("#tijiao").html("获取报价<em>(3分钟响应·<?php echo $tenants['count3'];?>人已领取)</em>");
+        $("#tijiao").html("获取报价·3分钟响应");
     })
             // 数据初始化
     var Obj = $('body').barrage({

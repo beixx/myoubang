@@ -64,7 +64,7 @@ unfoldField.onclick=function(){
                 </li>
                 </a>
                 <?php } else { ?>
-                <li class="suolvd"><span>
+                <li class="suolvvr"><span>
                         <?php if(strpos($tenants['cover'],'http') === false) {?>
                             <img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?<?php echo  $ismobile?"imageView2/1/w/800/h/600/q/75":'';?>|imageslim"/>
                         <?php } else {?>
@@ -107,9 +107,13 @@ unfoldField.onclick=function(){
 		        	<p>好评榜</p>
 		        </span>
 </div>
+<div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div><hr>
+<a class="yuyue">
+                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?></span>
+			<button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠资讯';?></button>
+            </a>
     <div class="address"><a target="_blank" href="https://map.baidu.com/mobile/webapp/search/search/qt=s&wd=<?php echo $city;?><?php echo $tenants['name'];?>&&vt=map&universalLinkCbkTag=1"><?php echo $tenants['address'];?><em></em></a></div>
 </div></div>
-<div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div>
     <?php if($tenants['isVip'] == 2) { ?>
 <?php if(isset($tenantinfo->isVip) && $tenantinfo->isVip==2){
     if(isset($advinfo->id)){
@@ -136,18 +140,6 @@ unfoldField.onclick=function(){
 <?php }else { ?>
 
     <?php } ?>
-<div class="info-box"><div class="titleqs"><i>有榜网预约到店专享</i><span class="fa">到店请提前预约</span></div>
-<div class="daodianli down" href="javascript:">
-                <div class="daodiant">
-                    <span class="coupon-tag"></span>
-                    <h3><?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?></h3>
-                    <div class="btm-line">
-                        仅限预约到店使用
-                        <span class="sm-text"><?php echo $tenants['count1'];?>人已领取</span>
-                    </div>
-                </div>
-                <div class="to-get-btn down liwuclick" href="javascript:">领取</div>
-            </div>
 <div class="info-box mtrem6">
 <div class="zhanshi">
     <div class="data">
@@ -227,16 +219,16 @@ unfoldField.onclick=function(){
                 <?php foreach($tenantspics as $k => $v){?>
                 <li>
         <div class="anli_touxiang"><img src="//img2.youbangkeyi.cn<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim"></div>
-            <p><?php echo $v['picName']?></p>
+            <p><a href="/kpdetail/<?php echo $v['id']?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $v['picName']?></a></p>
             <span class="anli_month"><em class="fl">发布于<?php echo date("m-d H:i",$v['created_at']);?></em><em class="fr">浏览<?php echo $v['showcount'];?>次</em></span>
             <?php if(strlen($v['explain'])>5) { ?>
            <div class="anli_p"><?php echo $v['explain'];?></div>
            <?php } ?>
-                    <a class="suolvk" href="/kpdetail/<?php echo $v['id']?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                         <span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
-                          <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim"/>
+                            <a class="yulan glightbox" href="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>">
+                          <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim"/></a>
                             <?php } else {?>
                             <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                             <?php } ?>
@@ -244,14 +236,33 @@ unfoldField.onclick=function(){
 
                         <?php } ?>
                         </span>
-                    </a>
-                <div href="javascript:" class="anlibj down anliclick">获取该案例报价</div>
+                <div href="javascript:" class="anlibj down anliclick">获取案例报价</div>
                 </li>
                 <?php } ?>
             </ul>        </div>
     </div>
 	<div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看全部<span class="fa"><?php echo $countpics;?></span>个案例</a></div>
 </div>
+<link rel="stylesheet" href="http://yanshi.sucaihuo.com/jquery/34/3486/demo/dist/css/glightbox.css">
+
+<script src="http://yanshi.sucaihuo.com/jquery/34/3486/demo/dist/js/glightbox.min.js"></script>
+  <script>
+    var lightbox = GLightbox();
+    var lightboxDescription = GLightbox({
+      selector: 'glightbox2'
+    });
+    var lightboxVideo = GLightbox({
+      selector: 'glightbox3',
+      jwplayer: {
+        api: 'https://content.jwplatform.com/libraries/QzXs2BlW.js',
+        licenseKey: 'imB2/QF0crMqHks7/tAxcTRRjnqA9ZwxWQ2N1A=='
+      }
+    });
+    var lightboxInlineIframe = GLightbox({
+      'selector': 'glightbox4'
+    });
+
+  </script>
 <?php } ?>
 
 <?php if($countsets >0 ) { ?>
@@ -338,7 +349,7 @@ unfoldField.onclick=function(){
     <div class="ask">
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
         <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入手机号（到店礼:<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
-        <div type="submit" name="wapsubmit" id="tijiao" class="btn">预约看店<em>(3分钟响应·<?php echo $tenants['count2'];?>人已预约)</em><em></div>
+        <div type="submit" name="wapsubmit" id="tijiao" class="btn">预约看店·3分钟响应</div>
     </div>
 
 </div>
@@ -856,19 +867,19 @@ option = {
     series: [{
         type: 'wordCloud',
         size: ['80%', '80%'],
-        textRotation : [0, 90, 90, -90],
+        rotationRange: [0, 0],
         textPadding: 0,
         autoSize: {
             enable: true,
-            minSize: 14
+            minSize: 12
         },
         textStyle: {
             normal: {
                 color: function() {
                     return 'rgb(' + [
-                        Math.round(Math.random() * 160),
-                        Math.round(Math.random() * 160),
-                        Math.round(Math.random() * 160)
+                        Math.round(Math.random() * 255),
+                        Math.round(Math.random() * 255),
+                        Math.round(Math.random() * 255)
                     ].join(',') + ')';
                 }
             }
@@ -944,11 +955,11 @@ option = {
 	$("#mobile").attr("placeholder","请输入手机号，立刻获取案例报价！");
     })
     $(".liwuclick").click(function(){
-    $("#tijiao").html("领取优惠<em>(3分钟响应·<?php echo $tenants['count1'];?>人已领取)</em>");
+    $("#tijiao").html("领取优惠·3分钟响应");
     $("#mobile").attr("placeholder","请输入手机号，领取优惠！");
     })
     $(".shopclick").click(function(){
-    $("#tijiao").html("预约到店<em>(3分钟响应·<?php echo $tenants['count1'];?>人已领取)</em>");
+    $("#tijiao").html("预约到店·3分钟响应");
     })
     $(".dangqiclick").click(function(){
     $("#tijiao").html("咨询档期·3分钟响应");

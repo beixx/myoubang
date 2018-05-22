@@ -238,7 +238,8 @@ unfoldField.onclick=function(){
                         <span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
-                          <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim"/>
+                            <a class="yulan glightbox" href="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>">
+                          <img src="//img2.youbangkeyi.cn<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim"/></a>
                             <?php } else {?>
                             <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                             <?php } ?>
@@ -254,6 +255,12 @@ unfoldField.onclick=function(){
     </div>
 	<div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看全部<span class="fa"><?php echo $countpics;?></span>个案例</a></div>
 </div>
+<link rel="stylesheet" href="http://yanshi.sucaihuo.com/jquery/34/3486/demo/dist/css/glightbox.css">
+
+<script src="http://yanshi.sucaihuo.com/jquery/34/3486/demo/dist/js/glightbox.min.js"></script>
+  <script>
+    var lightbox = GLightbox();
+  </script>
 <?php } ?>
 
 <?php if($countsets >0 ) { ?>
