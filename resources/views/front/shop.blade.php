@@ -56,7 +56,7 @@ unfoldField.onclick=function(){
             <?php if(strlen($tenants['vrimage'])>10) { ?>
                 <a target="_blank" href="<?php echo $tenants['vrurl']?>">
                 <li class="suolvvr">
-                    <div class="m-title">720度VR全景看店</div>
+                    <div class="m-title">全景看店</div>
                     <div class="bg1"></div>
                     <div class="m-kan"></div>
                     <span><img src="<?php echo $tenants['vrimage'];?>"/>
@@ -110,7 +110,7 @@ unfoldField.onclick=function(){
 <div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div><hr>
 <a class="yuyue">
                 <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?></span>
-			<button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠资讯';?></button>
+			<button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
             </a>
     <div class="address"><a target="_blank" href="https://map.baidu.com/mobile/webapp/search/search/qt=s&wd=<?php echo $city;?><?php echo $tenants['name'];?>&&vt=map&universalLinkCbkTag=1"><?php echo $tenants['address'];?><em></em></a></div>
 </div></div>
@@ -243,25 +243,10 @@ unfoldField.onclick=function(){
     </div>
 	<div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看全部<span class="fa"><?php echo $countpics;?></span>个案例</a></div>
 </div>
-<link rel="stylesheet" href="http://yanshi.sucaihuo.com/jquery/34/3486/demo/dist/css/glightbox.css">
-
-<script src="http://yanshi.sucaihuo.com/jquery/34/3486/demo/dist/js/glightbox.min.js"></script>
+<link rel="stylesheet" href="/css/glightbox.css">
+<script src="/js/glightbox.min.js"></script>
   <script>
     var lightbox = GLightbox();
-    var lightboxDescription = GLightbox({
-      selector: 'glightbox2'
-    });
-    var lightboxVideo = GLightbox({
-      selector: 'glightbox3',
-      jwplayer: {
-        api: 'https://content.jwplatform.com/libraries/QzXs2BlW.js',
-        licenseKey: 'imB2/QF0crMqHks7/tAxcTRRjnqA9ZwxWQ2N1A=='
-      }
-    });
-    var lightboxInlineIframe = GLightbox({
-      'selector': 'glightbox4'
-    });
-
   </script>
 <?php } ?>
 
@@ -297,7 +282,7 @@ unfoldField.onclick=function(){
 <?php } ?>
 <div class="info-box">
     <div class="data">
-        <div class="titleqs"><i>用户点评标签</i><span class="fa">以下标签为大数据分析所得</span></div>
+        <div class="titleqs"><i>用户评论标签</i><span class="fa">以下标签为大数据分析所得</span></div>
         <div id="biaoqian" style="width:100%;height:14rem;"></div>
 
 </div></div>
@@ -324,7 +309,7 @@ unfoldField.onclick=function(){
                        <img src="<?php echo strpos($v['cover'],"http")!==false ? '' : 'http://img2.youbangkeyi.cn';?><?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim">
                    </span>  </a><p><?php echo $v['name'];?></p>
                     <div class="price">
-                        <span class="red">TOP<?php echo $v['order_city'];?></span>
+                        <span class="red">第<?php echo $v['order_city'];?>名</span>
                         <del>竞争指数：<?php echo $v['heat_index'];?></del>
                     </div>
             </li>
@@ -332,6 +317,21 @@ unfoldField.onclick=function(){
         </ul>
     </div>
 </div>
+                    <div class="tittp">有榜数据说明</div>
+<div id="fugai" class="time-box">
+   <div class="txtshuju lft fgchs">
+                    <span class="blue">200+ </span>数据覆盖城市</div>
+                    <div class="txtshuju lft fgshh">
+                <span class="blue">120,000+ </span>实时分析商户
+                </div>
+                <div class="txtshuju lft fgcaiji">
+                    <span class="blue">10 </span>数据采集渠道 </div>
+<div class="txtshuju lft fgweidu">
+                    <span class="blue">18 </span>数据统计维度</div>
+<div class="txtshuju lft fgxinren">
+                    <span class="blue">40,000 </span>对结婚新人</div>
+<div class="txtshuju lft fgpinglun">
+                    <span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
 <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
 <footer class="txtCtr">
     @include("front.hotTenants")
@@ -348,8 +348,8 @@ unfoldField.onclick=function(){
 <div class="downNav bt00">
     <div class="ask">
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入手机号（到店礼:<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
-        <div type="submit" name="wapsubmit" id="tijiao" class="btn">预约看店·3分钟响应</div>
+        <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入手机号（预约优惠:<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
+        <div type="submit" name="wapsubmit" id="tijiao" class="btn">免费预约咨询 · 3分钟响应</div>
     </div>
 
 </div>
@@ -951,18 +951,18 @@ option = {
         });
     });
     $(".anliclick").click(function(){
-     $("#tijiao").html("获取报价·3分钟响应");
+     $("#tijiao").html("免费获取报价 · 3分钟响应");
 	$("#mobile").attr("placeholder","请输入手机号，立刻获取案例报价！");
     })
     $(".liwuclick").click(function(){
-    $("#tijiao").html("领取优惠·3分钟响应");
+    $("#tijiao").html("免费领取优惠 · 3分钟响应");
     $("#mobile").attr("placeholder","请输入手机号，领取优惠！");
     })
     $(".shopclick").click(function(){
-    $("#tijiao").html("预约到店·3分钟响应");
+    $("#tijiao").html("免费预约咨询 · 3分钟响应");
     })
     $(".dangqiclick").click(function(){
-    $("#tijiao").html("咨询档期·3分钟响应");
+    $("#tijiao").html("免费咨询档期 · 3分钟响应");
     $("#mobile").attr("placeholder","请输入手机号，优先安排拍摄档期！");
     })
         // 数据初始化

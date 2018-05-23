@@ -148,8 +148,9 @@ var _hmt = _hmt || [];
                         <div class="num_txt">
                             <div class="tit_box">
                                 <div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span class="zhish"><em class="shu">数据指数</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均：¥<?php echo $v['person_price'];?></span><span>|</span><span><?php echo $v['piccount']>0?''.$v['piccount'].'组':'商家无案例';?>客片</span></div>
+                                <div class="txt"><span class="zhish"><em class="shu">数据指数</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均 ¥<?php echo $v['person_price'];?></span><span><?php echo $v['piccount']>0?''.$v['piccount'].'组':'商家无案例';?>客片</span></div>
                             </div>
+                            <div class="dafen txtCtr"><a href="/dafen/<?php echo $pycity;?>/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><em></em>打榜</a></div>
                         </div>
                              <?php
                              if($v['trends'] && is_array(json_decode($v['trends'],true))){
@@ -219,6 +220,21 @@ var _hmt = _hmt || [];
                     <?php } ?>
                 </section>
             </div>
+                                <div class="tittp">有榜数据说明</div>
+<div id="fugai" class="time-box">
+   <div class="txtshuju lft fgchs">
+                    <span class="blue">200+ </span>数据覆盖城市</div>
+                    <div class="txtshuju lft fgshh">
+                <span class="blue">120,000+ </span>实时分析商户
+                </div>
+                <div class="txtshuju lft fgcaiji">
+                    <span class="blue">10 </span>数据采集渠道 </div>
+<div class="txtshuju lft fgweidu">
+                    <span class="blue">18 </span>数据统计维度</div>
+<div class="txtshuju lft fgxinren">
+                    <span class="blue">40,000 </span>对结婚新人</div>
+<div class="txtshuju lft fgpinglun">
+                    <span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
             <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">所属城市：<?php echo $city;?></span></div></div>
         </div>
 <footer class="txtCtr">

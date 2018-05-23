@@ -93,7 +93,8 @@ var _hmt = _hmt || [];
     </div>
 <div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div><hr>
 <a class="yuyue">
-                <i></i><span><?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?></span><button class="discount-btn down liwuclick" href="javascript:">领取优惠</button>
+                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?></span>
+            <button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
             </a>
 </div>
 <div class="tittp">客片欣赏</div>
@@ -134,19 +135,18 @@ var _hmt = _hmt || [];
                     <div class="tittp">有榜数据说明</div>
 <div id="fugai" class="time-box">
    <div class="txtshuju lft fgchs">
-                    <span class="blue">200+ </span>覆盖城市</div>
+                    <span class="blue">200+ </span>数据覆盖城市</div>
                     <div class="txtshuju lft fgshh">
-                <span class="blue">120,000+ </span>覆盖商户
+                <span class="blue">120,000+ </span>实时分析商户
                 </div>
                 <div class="txtshuju lft fgcaiji">
                     <span class="blue">10 </span>数据采集渠道 </div>
-                
 <div class="txtshuju lft fgweidu">
                     <span class="blue">18 </span>数据统计维度</div>
 <div class="txtshuju lft fgxinren">
                     <span class="blue">40,000 </span>对结婚新人</div>
 <div class="txtshuju lft fgpinglun">
-                    <span class="blue">500万+ </span>用户真实点评</div><div class="clear"></div> </div>
+                    <span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
 <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
 <footer class="txtCtr">
  @include("front.hotTenants")  <div class="foot">
@@ -162,8 +162,8 @@ var _hmt = _hmt || [];
 <div class="downNav bt00">
     <div class="ask">
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入手机号（到店礼:<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
-        <div type="submit" name="wapsubmit" id="tijiao" class="btn">获取报价·3分钟响应</div>
+        <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入手机号（预约优惠:<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
+        <div type="submit" name="wapsubmit" id="tijiao" class="btn">免费获取报价 · 3分钟响应</div>
     </div>
 
 </div>
