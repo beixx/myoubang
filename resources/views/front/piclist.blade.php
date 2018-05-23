@@ -87,7 +87,7 @@ var _hmt = _hmt || [];
 
 <script src="/js/glightbox.min.js"></script>
   <script>
-    var lightbox = GLightbox();
+    var lightbox = GLightbox(); 
   </script>
                     <div class="tittp">有榜数据说明</div>
 <div id="fugai" class="time-box">
