@@ -73,7 +73,7 @@
 
                         <?php } ?>
                         </span>
-                    <div href="javascript:" class="anlibj down anliclick">获取该案例报价</div>
+                    <div href="javascript:" class="anlibj down anliclick">获取案例报价</div>
                 </li>
                 <?php } ?>
             </ul>
@@ -81,7 +81,7 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="http://yanshi.sucaihuo.com/jquery/34/3486/demo/dist/css/glightbox.css">
+<link rel="stylesheet" href="/css/glightbox.css">
 
 <script src="/js/glightbox.min.js"></script>
 
@@ -238,13 +238,9 @@
         $("input[name=wapsubmit]").val("咨询档期·3分钟响应");
     })
 
-    $(".glightbox").click(function(){
-        $(this).parent().parent().addClass("glightbox-open")
-    })
-            <?php foreach($pics as $k=>$v) {?>
-    var lightbox<?php echo $k;?> = GLightbox({
-                selector: 'glightbox<?php echo $k?>'
-            });
+
+    <?php foreach($pics as $k=>$v) {?>
+        var lightbox = GLightbox({selector: 'glightbox<?php echo $k?>'});
     <?php } ?>
 
 </script>

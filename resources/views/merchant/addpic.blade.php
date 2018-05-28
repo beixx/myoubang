@@ -225,7 +225,7 @@
         </div>
     </form>
 </div>
-<<div id="tishi" style="display: none;">图片上传中</div>
+<div id="tishi" style="display: none;"><div class="shangchuanzhong">图片上传中</div></div>
 
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="/merchant/lib/layer/2.4/layer.js"></script>

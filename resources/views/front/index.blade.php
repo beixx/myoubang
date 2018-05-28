@@ -60,7 +60,7 @@ var _hmt = _hmt || [];
         </div>
         <div class="bd">
             <div class="list_box">
-               <div class="zysmi"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div>
+               <div class="zysmi"><span>全网数据监测  排名客观权威</span>中国婚嫁产业  大数据服务商<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div>
                 <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
                     <?php if(isset($spread['name'])) { ?>
                     <div class="pic_box">
@@ -148,9 +148,8 @@ var _hmt = _hmt || [];
                         <div class="num_txt">
                             <div class="tit_box">
                                 <div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span class="zhish"><em class="shu">数据指数</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均 ¥<?php echo $v['person_price'];?></span><span><?php echo $v['piccount']>0?''.$v['piccount'].'组':'商家无案例';?>客片</span></div>
+                                <div class="txt"><span class="zhish"><em class="shu">数据指数</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均 ¥<?php echo $v['person_price'];?></span><span><?php echo $v['piccount']>0?''.$v['piccount'].'组':'无案例';?>客片</span><span class="daoli">线上预约有优惠</span></div>
                             </div>
-                            <div class="dafen txtCtr"><a href="/dafen/<?php echo $pycity;?>/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><em></em>打榜</a></div>
                         </div>
                              <?php
                              if($v['trends'] && is_array(json_decode($v['trends'],true))){
@@ -214,7 +213,7 @@ var _hmt = _hmt || [];
                             </div>
                         </div>
                             <div class="daodian">
-                                <span class="sybj down" data-id="<?php echo $v['id'];?>">预约咨询<em>(3分钟快速响应)</em></span>
+                                <a class="sybj" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看商家详情</a>
                             </div>
                     </div>
                     <?php } ?>

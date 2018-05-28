@@ -70,22 +70,20 @@ var _hmt = _hmt || [];
     </div>
 </div>
 <div class="shop_box">
-    <div class="titdp">店铺信息</div>
-    <?php if($tenants['isVip'] == 2) { ?>
-    <div class="huiyuan"></div>
-    <?php } ?>
+   <div class="titdp">店铺信息</div>
     <div class="txt-box">
-        <h1><a href="/detail/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $tenants['name'];?></a></h1>
+        <h1><?php echo $tenants['name']?></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
         <div class="num fa txtCtr">
             <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
     </div>
-    <div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div><hr>
+    <div class="zysmn"><span>全网数据监测  排名客观权威</span>中国婚嫁产业  大数据服务商<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div><hr>
 <a class="yuyue">
                 <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?></span>
             <button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
-            </a></div>
+            </a>
+</div>
 <div class="tittp">图文详情</div>
 <div class="info">
     <?php foreach($info['picDetail'] as $v) { ?>
@@ -137,7 +135,7 @@ var _hmt = _hmt || [];
                     <span class="blue">40,000 </span>对结婚新人</div>
 <div class="txtshuju lft fgpinglun">
                     <span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
-<div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
+<div class="unit-footer"><div class="peace-live"><p class="txt-cont">大数据实时分析 | 排名权威有保障</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
 <footer class="txtCtr">
 @include("front.hotTenants")
  <div class="foot">
@@ -149,13 +147,12 @@ var _hmt = _hmt || [];
         <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.cn/images/scs_logo.png"></a></div>
     </div>
 </footer>
-
 <div class="bgDiv"></div>
 <div class="downNav bt00">
     <div class="ask">
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入手机号（预约优惠:<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
-        <div type="submit" name="wapsubmit" id="tijiao" class="btn">免费咨询档期 · 3分钟响应</div>
+        <input type="text" name="mobile" id="mobile" class="input" placeholder="输入手机号，优先安排拍摄档期">
+        <input type="submit" name="wapsubmit" class="btn" value="咨询档期 · 3分钟响应">
     </div>
 
 </div>
@@ -248,7 +245,6 @@ var _hmt = _hmt || [];
 </div>
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
-
 <script type="text/javascript">
 
     $('input[name=wapsubmit]').click(function(){
@@ -262,7 +258,7 @@ var _hmt = _hmt || [];
         }
         if(phone){
             if(!(/^1[34578]\d{9}$/.test(phone))){
-                alert("亲，手机号码填写的不对哦");
+                alert("手机号码有误，请重填");
                 return false;
             }
         }
@@ -284,13 +280,7 @@ var _hmt = _hmt || [];
             }
         });
     });
-    $(".liwuclick").click(function(){
-    $("#tijiao").html("领取优惠·3分钟响应");
-    $("#mobile").attr("placeholder","请输入手机号，领取优惠！");
-    })
-    $(".dagnqiclick").click(function(){
-        $("input[name=wapsubmit]").val("咨询档期·3分钟响应");
-    })
+
             // 数据初始化
     var Obj = $('body').barrage({
         data : data, //数据列表
@@ -303,6 +293,12 @@ var _hmt = _hmt || [];
         height : 30, //设置单个div的高度
     })
     Obj.start(); 
+    $(".dangqiclick").click(function(){
+        $("input[name=wapsubmit]").val("获取报价·3分钟响应");
+    })
+    $(".liwuclick").click(function(){
+        $("input[name=wapsubmit]").val("领取优惠·3分钟响应");
+    })
 </script>
 </body>
 </html>

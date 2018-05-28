@@ -107,7 +107,7 @@ unfoldField.onclick=function(){
 		        	<p>好评榜</p>
 		        </span>
 </div>
-<div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div><hr>
+<div class="zysmn"><span>全网数据监测  排名客观权威</span>中国婚嫁产业  大数据服务商<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div><hr>
 <a class="yuyue">
                 <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?></span>
 			<button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
@@ -287,7 +287,7 @@ unfoldField.onclick=function(){
 
 </div></div>
 <div class="comment_list">
-            <div class="title dafen">今日点评精选</a><span class="fa">更新时间：<?php echo Date("Y-m-d")?></span></div>
+            <div class="title dafen1">今日点评精选</a><span class="fa">更新时间：<?php echo Date("Y-m-d")?></span></div>
             <div class="comment_column">
                 <?php if(!empty($usercomment['content'])) { ?>
                     <div class="cmt_con cmt_R">
@@ -871,7 +871,7 @@ option = {
         textPadding: 0,
         autoSize: {
             enable: true,
-            minSize: 12
+            Size: 12
         },
         textStyle: {
             normal: {
@@ -901,7 +901,7 @@ option = {
             ?>
                 <?php if(is_array(json_decode($tenants['commitstyle'],true))) foreach(json_decode($tenants['commitstyle'],true) as $v ) { ?>
             {
-                name: "<?php echo isset($stylemap[$v['name']])?$stylemap[$v['name']]:$v['name'];?>",
+                name: "<?php echo isset($stylemap[$v['name']])?$stylemap[$v['name']]:$v['name'];?>(<?php echo $v['count'];?>)",
                 value: <?php echo $v['count'];?>
             },
             <?php } ?>

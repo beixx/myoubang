@@ -31,11 +31,11 @@
     margin-bottom: 50px;}
     </style>
    <div class="anlitaoxi">
-      <a href="javascript:;" onclick="article_add('案例列表','/merchant/yfctenantspic')"><img src="http://m.youbangkeyi.com/images/anlilibiao.jpg"></a>
-       <a href="javascript:;" onclick="picture_add('添加案例','/merchant/addpic')"><img src="http://m.youbangkeyi.com/images/tianjia.jpg"></a>
+      <a href="javascript:;" onclick="article_add('案例列表','/merchant/yfctenantspic')"><img src="http://m.youbangkeyi.cn/images/anlilibiao.jpg"></a>
+       <a href="javascript:;" onclick="picture_add('添加案例','/merchant/addpic')"><img src="http://m.youbangkeyi.cn/images/tianjia.jpg"></a>
 
-      <a href="javascript:;" onclick="article_add('套系列表','/merchant/yfctenantsset')"><img src="http://m.youbangkeyi.com/images/taoxiliebiao.jpg"></a>
-       <a  href="javascript:;" onclick="article_add('添加套系','/merchant/addset')"><img src="http://m.youbangkeyi.com/images/tianjiataoxi.jpg"></a>
+      <a href="javascript:;" onclick="article_add('套系列表','/merchant/yfctenantsset')"><img src="http://m.youbangkeyi.cn/images/taoxiliebiao.jpg"></a>
+       <a  href="javascript:;" onclick="article_add('添加套系','/merchant/addset')"><img src="http://m.youbangkeyi.cn/images/tianjiataoxi.jpg"></a>
 
    </div>
 </div>

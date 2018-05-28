@@ -556,18 +556,7 @@ function(e, t) {
 										T = t.targetTouches[0].clientY,
 										q = S - x,
 										O = w - T;
-									if (Math.abs(q) > Math.abs(O) ? (u = !1, h = !0) : (h = !1, u = !0), u) {
-										if (d = r, r = p.pageY - g.pageY, Math.abs(r) >= 0 || u) {
-											var j = .75 - Math.abs(r) / s;
-											k.style.opacity = j, E && (E.style.opacity = j), m(k, "translate3d(0, " + r + "px, 0)")
-										}
-									} else if (a = i, i = p.pageX - g.pageX, c = 100 * i / A, h) {
-										if (e.index + 1 == e.elements.length && i < -60) return y(b), !1;
-										if (e.index - 1 < 0 && i > 60) return y(b), !1;
-										var N = .75 - Math.abs(i) / o;
-										k.style.opacity = N, E && (E.style.opacity = N), m(k, "translate3d(" + c + "%, 0, 0)")
-									}
-								}
+					
 							}
 						}), this.events.touchEnd = n("touchend", {
 							onElement: C,

@@ -300,7 +300,7 @@ unfoldField.onclick=function(){
 
 </div></div>
 <div class="comment_list">
-            <div class="title dafen">今日点评精选</a><span class="fa">更新时间：<?php echo Date("Y-m-d")?></span></div>
+            <div class="title dafen1">今日点评精选</a><span class="fa">更新时间：<?php echo Date("Y-m-d")?></span></div>
             <div class="comment_column">
                 <?php if(!empty($usercomment['content'])) { ?>
                     <div class="cmt_con cmt_R">
