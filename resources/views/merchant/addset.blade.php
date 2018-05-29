@@ -20,12 +20,20 @@
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
     <title>新增图片</title>
-    <script src="/webUpload/js/jquery.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="/webUpload/css/webuploader.css">
-    <link rel="stylesheet" type="text/css" href="/webUpload/css/diyUpload.css">
-    <script type="text/javascript" src="/webUpload/js/webuploader.html5only.min.js"></script>
-    <script type="text/javascript" src="/webUpload/js/diyUpload.js"></script>
+
+    <script type="text/javascript" src="/webUpload/jquery.min.js"></script>
+
+
+
+    <script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/jquery.SuperSlide.2.1.1.js" ></script>
+
+    <script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/layer.js" ></script>
+    <script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/uploadImage.js"></script>
+    <script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/exif.js"></script>
+    <script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/template.js"></script>
+    <script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/zepto.min.js"></script>
+    <link href="http://www.youbangkeyi.cn/xincss/style1.css" rel="stylesheet" type="text/css" />
     <style >
         .lftat{
             float: left;
@@ -42,10 +50,73 @@
         .close {
             width: 23px;
             height: 23px;
-            background: url(//c.youbangkeyi.com/images/close.png);
+            background: url(//c.youbangkeyi.cn/images/close.png);
             position: absolute;
             right: -10px;
             top: -10px;
+        }
+        .up {
+            width: 100%;
+            padding-left: 30px;
+            margin-top: 20px;
+        }
+        .up a {
+            position: relative;
+            display: inline-block;
+            border-radius: 5px;
+            overflow: hidden;
+            color: #FFF;
+            width: 175px;
+            height: 50px;
+            background: -webkit-linear-gradient(90deg,#00CCCC,#31dac8);
+            background: -o-linear-gradient(90deg,#00CCCC,#31dac8);
+            background: -moz-linear-gradient(90deg,#00CCCC,#31dac8);
+            background: linear-gradient(90deg,#00CCCC,#31dac8);
+            font-size: 18px;
+            margin-right: 30px;
+            cursor: pointer;
+        }
+        .file span {
+            font-size: 30px;
+            display: inline-block;
+            line-height: 50px;
+            padding-left: 30px;
+            margin-right: 15px;
+            float: left;
+        }
+        .file i {
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            float:left;
+        }
+        .file input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+            width: 175px;
+            height: 50px;
+            vertical-align: middle;
+            outline: none;
+        }
+        .pic {
+            position: relative;
+            height: 95px;
+            margin-right: 20px;
+        }
+        .pic .close {
+            width: 23px;
+            height: 23px;
+            background: url(//c.youbangkeyi.cn/images/close.png);
+            position: absolute;
+            right: -10px;
+            top: -10px;
+        }
+        .pic img {
+            height: 95px;
+            width: auto;
         }
     </style>
 </head>
@@ -85,27 +156,76 @@
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">图片上传：</label>
+            <label class="form-label col-xs-4 col-sm-2">封面图片上传：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <?php if(isset($set['cover'])){ $cover = json_decode($set['cover'],true); ?>
-
-                <div id="imageload" style="width: 100%;height:<?php echo (1+intval(count($cover)/6))*170;?>px;display: block;">
-                    <?php foreach( $cover as $k => $v){?>
-                    <div class="pic lftat" style="display:block;">
-                        <div class="close">
-                            <input type="hidden" name="imageurl[]" value="<?php echo $v;?>" id="user_bill">
+                <div class="up-pic">
+                    <div class="pic-box" style="width:910px;" id="cover">
+                        <?php if(isset($pic['cover'])){ $cover = json_decode($pic['cover'],true); ?>
+                        <?php foreach( $cover as $k => $v){?>
+                        <div class="pic lft">
+                            <div class="close">
+                                <input type="hidden" name="cover[]" value="<?php echo $v?>" />
+                            </div>
+                            <img  width="120px" src="http://img2.youbangkeyi.cn<?php echo $v;?>">
                         </div>
-                        <img id="upload_img2" width="172px" src="//img2.youbangkeyi.com<?php echo $v;?>">
+                        <?php } ?>
+                        <?php  }?>
                     </div>
-                    <?php } ?>
-                </div>
-                <?php  }?>
-                <div id="box">
-                    <div id="test" ></div>
-                </div>
-                <div id="imageloadpath">
+                    <script type="text/html" id="coverTmp">
+                        @{{each list}}
+                        <div class="pic lft">
+                            <div class="close">
+                                <input type="hidden" name="cover[]" value="@{{$value}}"  />
+                            </div>
+                            <img  width="120px" src="http://img2.youbangkeyi.cn/@{{$value}}">
+                        </div>
+                        @{{/each}}
+                    </script>
+                    <div class="up">
+                        <a href="javascript:void(0);" class="file txtCtr lft"><span class="lft fB">+</span>
+                            <i class="lft">选择文件</i>
+                            <input class="weui-uploader__input"  id="photo_file" type="file" multiple="multiple"  onchange="SeleImg('cover');"/>
+                        </a>
+                    </div>
                 </div>
             </div>
+
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">图片详细上传：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <div class="up-pic">
+                    <div class="pic-box" style="width:910px;" id="picDetail">
+                        <?php if(isset($pic['picDetail'])){ $cover = json_decode($pic['picDetail'],true); ?>
+                        <?php foreach( $cover as $k => $v){?>
+                        <div class="pic lft">
+                            <div class="close">
+                                <input type="hidden" name="picDetail[]" value="<?php echo $v?>" />
+                            </div>
+                            <img  width="120px" src="http://img2.youbangkeyi.cn<?php echo $v;?>">
+                        </div>
+                        <?php } ?>
+                        <?php  }?>
+                    </div>
+                    <script type="text/html" id="picDetailTmp">
+                        @{{each list}}
+                        <div class="pic lft">
+                            <div class="close">
+                                <input type="hidden" name="picDetail[]" value="@{{$value}}"  />
+                            </div>
+                            <img  width="120px" src="http://img2.youbangkeyi.cn/@{{$value}}">
+                        </div>
+                        @{{/each}}
+                    </script>
+                    <div class="up">
+                        <a href="javascript:void(0);" class="file txtCtr lft"><span class="lft fB">+</span>
+                            <i class="lft">选择文件</i>
+                            <input class="weui-uploader__input"  id="photo_file" type="file" multiple="multiple"  onchange="SeleImg('picDetail');"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
@@ -115,58 +235,77 @@
         </div>
     </form>
 </div>
-
+<div id="tishi" style="display: none;"><div class="shangchuanzhong">图片上传中</div></div>
 
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="/merchant/lib/layer/2.4/layer.js"></script>
 <script type="text/javascript" src="/merchant/static/h-ui/js/H-ui.min.js"></script>
 <script type="text/javascript" src="/merchant/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer /作为公共模版分离出去-->
 
+
+<script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/exif.js"></script> <!--/_footer /作为公共模版分离出去-->
+<script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/template.js"></script> <!--/_footer /作为公共模版分离出去-->
+<script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/zepto.min.js"></script>
+<script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/layer.js" ></script>
+<script type="text/javascript" src="http://www.youbangkeyi.cn/xinjs/uploadImage.js"></script>
 <script type="text/javascript">
 
-    /*
-     * 服务器地址,成功返回,失败返回参数格式依照jquery.ajax习惯;
-     * 其他参数同WebUploader
-     */
 
-    $('#test').diyUpload({
-        url:'/webUpload/server/fileupload.php',
-        success:function( data ) {
-            var imageload = $("#imageloadpath");
-            var str = data._raw;
-            var obj = eval('(' + str + ')');
-            //var html = '<div class="pic lftat" style="display:block;"> <div class="close"> <input type="hidden" name="cover[]" value="'+obj.url+'" id="user_bill"> </div> <img id="upload_img2" width="120px" src="/upload/'+obj.url+'"> </div>';
-            var html = '<input type=hidden name=imageurl[] value="'+obj.url+'" />';
-            console.log(data._raw);
-            console.log(html);
-            console.log(data);
-            imageload.append(html);
-        },
-        error:function( err ) {
-            console.info( err );
-        }
-    });
 
-    $('#as').diyUpload({
-        url:'server/fileupload.php',
-        success:function( data ) {
-            console.info( data );
-        },
-        error:function( err ) {
-            console.info( err );
-        },
-        buttonText : '选择文件',
-        chunked:true,
-        // 分片大小
-        chunkSize:512 * 1024,
-        //最大上传的文件数量, 总文件大小,单个文件大小(单位字节);
-        fileNumLimit:50,
-        fileSizeLimit:5000000 * 1024,
-        fileSingleSizeLimit:5000000 * 1024,
-        accept: {}
-    });
     $(document).delegate(".close","click",function(){
         $(this).parent().remove();
+    });
+
+    //选择图片(单据证明)
+    function SeleImg(ObjectDom){
+        var FormObj = new FormData();
+        var files = event.target.files;
+        var len = 0;
+        if(ObjectDom == "cover" && files.length>5) {
+            alert("封面图最多可以上传5张");
+            return false;
+        }
+        $("#tishi").css("display","block");
+        for (var index = 0; index < files.length; index ++)
+        {
+            var file = files[index];
+            console.log(file);
+            EXIF.getData(file, function() {
+                len++;
+                FormObj.append("photo[]", files[len-1]);
+                if(len==files.length){
+                    SubmitImgAjax(FormObj , ObjectDom);
+                }
+
+            });
+        };
+    };
+
+    //上传图片文件（单据证明）
+    function SubmitImgAjax(FormObj,ObjectDom){
+        var ImgHttp = new XMLHttpRequest();
+        ImgHttp.onload = function(event){
+            var TempObj = JSON.parse(event.target.responseText || "{}");
+            if(TempObj.result == "00")
+            {
+                $("#"+ObjectDom).append(template(ObjectDom+"Tmp", TempObj || []));
+
+            }else{
+                alert("照片超过规定大小,上传失败");
+            };
+
+            $("#tishi").css("display","none");
+            setTimeout(function(){ layer.closeAll(); }, 1500);
+        };
+        ImgHttp.open("post", "/merchant/filesave", true);
+        ImgHttp.send(FormObj);
+    };
+
+
+
+    $('page-container').on('click','.close',function(){
+        $(this).parent().remove();
+
     });
 
 

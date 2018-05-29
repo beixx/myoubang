@@ -35,8 +35,8 @@ class IndexController extends MerchantController
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
                 'setName' => $request->get("setName"),
-                'cover' => json_encode($request->get("imageurl",[]),JSON_UNESCAPED_UNICODE),
-                'picDetail' =>  json_encode($request->get("imageurl",[]),JSON_UNESCAPED_UNICODE),
+                'cover' => json_encode($request->get("cover",[]),JSON_UNESCAPED_UNICODE),
+                'picDetail' =>  json_encode($request->get("picDetail",[]),JSON_UNESCAPED_UNICODE),
                 'kind' => json_encode(explode(',',$request->get("kind",'')),JSON_UNESCAPED_UNICODE),
                 'detail' => $request->get('detail'),
                 'taoxiexplain' => $request->get('taoxiexplain'),
@@ -197,7 +197,7 @@ class IndexController extends MerchantController
         if(count($images)){
             foreach($images as $key=>$v){
 
-                $uploadDir = '/Server/data/image/upload';
+                $uploadDir = '/tmp';
 
                 $filedir = '/merchant/'.substr(md5(rand(1,10000)),0,3).'/'.substr(md5(rand(1,10000)),0,3).'/'.substr(md5(rand(1,10000)),0,3);
                 $uploadDir .= $filedir ;
