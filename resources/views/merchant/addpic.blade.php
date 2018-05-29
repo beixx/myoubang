@@ -247,11 +247,15 @@
     });
 
     //选择图片(单据证明)
-    function SeleImg(ObjectDom){
         $("#tishi").css("display","block");
         var FormObj = new FormData();
         var files = event.target.files;
         var len = 0;
+	if(ObjectDom == "firstcover" && files.length>5) {
+	    alert("封面图最多可以上传5张");
+	    return false ;
+	}
+        $("#tishi").css("display","block");
         for (var index = 0; index < files.length; index ++)
         {
             var file = files[index];

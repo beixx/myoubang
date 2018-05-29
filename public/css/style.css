@@ -109,25 +109,11 @@ input:focus,textarea:focus {border: 0;outline:none;}
     z-index: 99;
     position: absolute;}
 
-
-    .unfold-field{  
-display:none;  
-position:absolute;  
-font-size: 0;  
-bottom:-0.06rem;  
-width:100%;  
-height:5.5rem;  
-z-index: 3;  
-}  
-.unfold-field .unflod-field_mask {  
-height:2.5rem;  
-width: 100%;  
-background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,hsla(0,0%,100%,0)),to(#fff));  
-background-image: linear-gradient(-180deg,hsla(0,0%,100%,0),#fff);  
-}  
+.zhanshi{height: 16rem;}
 .unfold-field_text{  
 cursor: pointer;  
 width:100%;  
+    display: inline-block;
 color: #999999;
 height:3rem;  
 font-size: 0px;  
@@ -838,7 +824,7 @@ width: 100%; background: #FFF; margin: 0;
 .shop-index .info-box .title tr:nth-child(2n){background-color: #f9f9f9}
 .shop-index .info-box .title em{display: inline-block; width:1rem; height:1rem; background: url("../images/icon18.png") no-repeat center 0; margin:0px 0.5rem 0 0.2rem; vertical-align: middle;background-size: 0.8rem}
 .info-box .titleqs span{color:#999999; height:2.5rem;line-height:2.5rem;font-size: 0.6rem; float: right;}
-.shop-index .info-box .data{width:100%;overflow:hidden;padding-bottom: 1rem; border-bottom: 1px solid #F5F5F5;}
+.shop-index .info-box .data{width:100%;overflow:hidden;padding-bottom: 1rem; border-bottom: 1px solid #F5F5F5;height: 16rem;}
 .shop-index .info-box div.pbbb{padding-bottom:0;border-bottom:0;border-top: 0.3rem solid #efefef;}
 .shop-index .info-box .data .table{width: 100%;display: table;line-height: 1.2rem;}
 .shop-index .info-box .data th{font-size:0.6rem; color: #999999;font-weight:normal;}

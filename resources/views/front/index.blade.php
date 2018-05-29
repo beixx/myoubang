@@ -148,7 +148,9 @@ var _hmt = _hmt || [];
                         <div class="num_txt">
                             <div class="tit_box">
                                 <div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span class="zhish"><em class="shu">数据指数</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均 ¥<?php echo $v['person_price'];?></span><span><?php echo $v['piccount']>0?''.$v['piccount'].'组':'无案例';?>客片</span><span class="daoli">线上预约有优惠</span></div>
+                                <div class="txt"><span class="zhish"><em class="shu">数据指数</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均 ¥<?php echo $v['person_price'];?></span><span><?php echo $v['piccount']>0?''.$v['piccount'].'组':'无案例';?>客片</span>
+					<?php if(strlen($v['package'])>2) { ?><span class="daoli">线上预约有优惠</span><?php } ?>
+				</div>
                             </div>
                         </div>
                              <?php

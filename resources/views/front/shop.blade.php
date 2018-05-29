@@ -24,23 +24,31 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-window.onload=function(){  
-var unfoldField=document.querySelector(".unfold-field");  
-var wrapH=document.querySelector(".mtrem6").offsetHeight;  
-var wrap=document.querySelector(".mtrem6");  
-var contentH=document.querySelector(".zhanshi").offsetHeight;  
-// 如果实际高度大于我们设置的默认高度就把超出的部分隐藏。  
-if(contentH>wrapH){  
-   unfoldField.style.display="block";  
-}  
-wrap.style.visibility="visible";  
-unfoldField.onclick=function(){  
-   this.parentNode.removeChild(this);  
-   wrap.style.maxHeight="100%";  
-   wrap.style.visible="visible";  
-}  
-  
-} 
+
+
+
+    $(document).ready(function() {
+        $(".info-box").off('click').on('click','.icon-unfold', function () {
+            $(".zhanshi").animate({height: $('.neirong').height()}, "slow");
+            $(this).removeClass('icon-unfold icon-fold').addClass('icon-fold');
+        }).on('click','.icon-fold', function () {
+            $(".zhanshi").animate({height: '16rem'}, "normal");
+            $(this).removeClass('icon-fold icon-unfold').addClass('icon-unfold');
+        });
+    })
+
+
+        $(document).ready(function() {
+        $(".info-box").off('click').on('click','.icon-unfold1', function () {
+            $(".yinxiang").animate({height: $('.mui-tagscloud-ul').height()}, "slow");
+            $(this).removeClass('icon-unfold1 icon-fold1').addClass('icon-fold1');
+        }).on('click','.icon-fold1', function () {
+            $(".yinxiang").animate({height: '16rem'}, "normal");
+            $(this).removeClass('icon-fold1 icon-unfold1').addClass('icon-unfold1');
+        });
+    })
+
+
 </script>
 </head>
 <body class="shop-index">
@@ -140,8 +148,9 @@ unfoldField.onclick=function(){
 <?php }else { ?>
 
     <?php } ?>
-<div class="info-box mtrem6">
+<div class="info-box">
 <div class="zhanshi">
+    <div class="neirong">
     <div class="data">
         <div class="titleqs"><i>全网大数据</i><span class="fa">更新时间：<?php echo date("Y年m月d日");?></span></div>
         <div id="shuju" style="width:100%;height:14rem;"></div>
@@ -205,11 +214,8 @@ unfoldField.onclick=function(){
 </div>
     </div>
     </div>
-                    <script type="text/javascript">jQuery(".zhanshi").slide({trigger:"click"});</script>
-        <div class="unfold-field">  
-        <div class="unflod-field_mask"></div>  
-        <div class="unfold-field_text"><span>查看详细数据、商家擅长风格</span></div>  
-         </div> 
+    </div>
+    <div href="javascript:void(0);" class="unfold-field_text iconfont icon-unfold"><span>查看详细数据、商家擅长风格</span></div>
 </div>
 <?php if($countpics >0 ) { ?>
 <div class="case_box">
@@ -280,12 +286,51 @@ unfoldField.onclick=function(){
     <div class="ckqb"><a href="/txlist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看全部<span class="fa"><?php echo $countsets;?></span>个精选套系</a></div>
 </div>
 <?php } ?>
-<div class="info-box">
-    <div class="data">
+<div class="info-box 2">
+    <div class="data yinxiang">
         <div class="titleqs"><i>用户评论标签</i><span class="fa">以下标签为大数据分析所得</span></div>
-        <div id="biaoqian" style="width:100%;height:14rem;"></div>
+        <style>.mui-tagscloud-ul{    list-style-type: none;
+    padding: 0;
+    margin: 10px 4%;
+    overflow: hidden;}
+.mui-tagscloud-ul li{    float: left;
+    background-color: #FEE;
+    color: #666;
+    margin: 6px 3px;
+    padding: 0px 9px;
+    text-align: center;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    font-size: 12px;}
+    </style>
 
-</div></div>
+        <ul class="mui-tagscloud-ul">
+            
+ <?php
+            $stylelong = file('./1.txt');
+            $stylemap = [];
+            foreach($stylelong as $k =>$v) {
+                $s = explode(' ',trim($v));
+                if(count($s)>1) {
+                    $key = $s[0];
+                    unset($s[0]);
+                    $s = array_values($s);
+                    $stylemap[$key] = $s[rand(0,count($s)-1)];
+                }
+            }
+            ?>
+              <?php if(is_array(json_decode($tenants['commitstyle'],true))) foreach(json_decode($tenants['commitstyle'],true) as $v ) { ?>
+    
+                <li><?php echo isset($stylemap[$v['name']])?$stylemap[$v['name']]:$v['name'];?>(<?php echo $v['count'];?>)</li>
+            <?php } ?>
+                
+                
+            
+        </ul>
+
+
+
+</div>    <div href="javascript:void(0);" class="unfold-field_text iconfont1 icon-unfold1"><span>查看详细数据、商家擅长风格</span></div></div>
 <div class="comment_list">
             <div class="title dafen1">今日点评精选</a><span class="fa">更新时间：<?php echo Date("Y-m-d")?></span></div>
             <div class="comment_column">
