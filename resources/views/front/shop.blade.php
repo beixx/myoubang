@@ -283,8 +283,8 @@ var _hmt = _hmt || [];
 <div class="info-box info-yinxiang">
     <div class="data yinxiang">
         <div class="titleqs"><i>用户印象标签</i><span class="fa">以下标签为大数据分析所得</span></div>
-        <ul class="mui-tagscloud-ul">  
- <?php
+        <ul class="mui-tagscloud-ul">
+            <?php
             $stylelong = file('./1.txt');
             $stylemap = [];
             foreach($stylelong as $k =>$v) {
@@ -297,18 +297,18 @@ var _hmt = _hmt || [];
                 }
             }
             ?>
-              <?php if(is_array(json_decode($tenants['commitstyle'],true))) foreach(json_decode($tenants['commitstyle'],true) as $v ) { ?>
-    
+            <?php if(is_array(json_decode($tenants['commitstyle'],true))) {
+
+            $s = json_decode($tenants['commitstyle'],true) ; $p = [];
+            foreach($s as $k => $v) { $p[$v["count"]] = $v;}
+            krsort($p);
+            foreach($p  as $v ) { ?>
                 <li><?php echo isset($stylemap[$v['name']])?$stylemap[$v['name']]:$v['name'];?>(<?php echo $v['count'];?>)</li>
-            <?php } ?>
-                
-                
-            
+            <?php }} ?>
         </ul>
-
-
-
-</div>    <div href="javascript:void(0);" class="unfold-field_text iconfont1 icon-unfold1"><span>查看更多用户印象</span></div></div>
+    </div>
+    <div href="javascript:void(0);" class="unfold-field_text iconfont1 icon-unfold1"><span>查看更多用户印象</span></div>
+</div>
 <div class="comment_list">
             <div class="title dafen1">今日点评精选</a><span class="fa">更新时间：<?php echo Date("Y-m-d")?></span></div>
             <div class="comment_column">
