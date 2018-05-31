@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>支持手机移动端图片相册大图查看浏览js特效代码</title>
+	<meta name="keywords" content="手机移动端,图片相册,大图查看浏览,js特效,代码" />
+	<meta name="description" content="支持手机移动端图片相册大图查看浏览js特效代码，点击图片浏览大图，可以关闭、上/下一张。" /> 
+	<meta name="author" content="js代码" />
+	<meta name="copyright" content="js代码" />
+	<link rel="stylesheet" href="http://www.jsdaima.com/Uploads/js/201707/1498874839/css/baguetteBox.css">
+	<link rel="stylesheet" type="text/css" href="http://www.jsdaima.com/Uploads/js/201707/1498874839/css/style.css">
+    <script type="text/javascript" src="http://www.jsdaima.com/static/js/protect.js"></script>
+</head>
+<body>
+	<div class="jq22-container">
+		
+		<div class="content">
+		<h1>支持手机移动端图片相册大图查看浏览js特效代码，点击图片浏览大图，可以关闭、上/下一张。</h1>
+
+    <h2>基本样式</h2>
+
+    <pre><code class="js">baguetteBox.run('.baguetteBoxOne');</code></pre>
+
+    <div class="baguetteBoxOne gallery">
+        <a href="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" data-caption="Golden Gate Bridge">
+            <img src="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" alt="Golden Gate Bridge">
+        </a>
+        <a href="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" title="Midnight City">
+            <img src="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" alt="Midnight City">
+        </a>
+        <a href="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim">
+            <img src="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" alt="">
+        </a>
+        <a href="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim">
+            <img src="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" alt="">
+        </a>
+       	
+    </div>
+
+
+       <div class="baguetteBox1 gallery">
+        <a href="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" data-caption="Golden Gate Bridge">
+            <img src="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" alt="Golden Gate Bridge">
+        </a>
+        <a href="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" title="Midnight City">
+            <img src="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" alt="Midnight City">
+        </a>
+        <a href="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim">
+            <img src="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" alt="">
+        </a>
+        <a href="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim">
+            <img src="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" alt="">
+        </a>
+        
+    </div>
+
+    <h2>响应式图片</h2>
+
+<pre><code class="js">baguetteBox.run('.baguetteBoxTwo');</code></pre>
+<pre><code class="html">&lt;a href=&quot;img/2-1.png&quot;
+    data-at-450=&quot;img/thumbs/2-1.png&quot;
+    data-at-800=&quot;img/small/2-1.png&quot;
+    data-at-1366=&quot;img/medium/2-1.png&quot;
+    data-at-1920=&quot;img/big/2-1.png&quot;&gt;
+        &lt;img src=&quot;img/thumbs/2-1.png&quot;&gt;
+&lt;/a&gt;</code></pre>
+
+    <div class="baguetteBoxTwo gallery">
+        <a href="img/2-1.png" data-at-450="img/thumbs/2-1.png" data-at-800="img/big/2-1.png" data-at-1366="img/big/2-1.png" data-at-1920="img/big/2-1.png">
+            <img src="img/thumbs/2-1.png" alt="">
+        </a>
+        <a href="img/2-2.png" data-at-450="img/thumbs/2-2.png" data-at-800="img/big/2-2.png" data-at-1366="img/big/2-2.png" data-at-1920="img/big/2-2.png">
+            <img src="img/thumbs/2-2.png" alt="">
+        </a>
+        <a href="img/2-3.png" data-at-450="img/thumbs/2-3.png" data-at-800="img/big/2-3.png" data-at-1366="img/big/2-3.png" data-at-1920="img/big/2-3.png">
+            <img src="img/thumbs/2-3.png" alt="">
+        </a>
+        <a href="img/2-4.png" data-at-450="img/thumbs/2-4.png" data-at-800="img/big/2-4.png" data-at-1366="img/big/2-4.png" data-at-1920="img/big/2-4.png">
+            <img src="img/thumbs/2-4.png" alt="">
+        </a>
+    </div>
+
+    <h2>渐显动画</h2>
+
+<pre><code class="js">baguetteBox.run('.baguetteBoxThree', {
+    animation: 'fadeIn',
+    noScrollbars: true
+});</code></pre>
+
+    <div class="baguetteBoxThree gallery">
+        <a href="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim"  data-caption="1/9">
+            <img src="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" alt="">
+        </a>
+        <a href="http://img2.youbangkeyi.cn/d44/8f9/3cb/d448f99448863cbed85b1baf90057980.jpg?imageView2/1/w/500/h/500/q/75|imageslim">
+            <img src="http://img2.youbangkeyi.cn/d44/8f9/3cb/d448f99448863cbed85b1baf90057980.jpg?imageView2/1/w/500/h/500/q/75|imageslim" alt="">
+        </a>
+        <a href="img/big/2-3.png">
+            <img src="img/thumbs/2-3.png" alt="">
+        </a>
+        <a href="img/big/2-4.png">
+            <img src="img/thumbs/2-4.png" alt="">
+        </a>
+    </div>
+
+    <h2>小图像，按钮禁用(使用箭头或滑动手势)</h2>
+
+<pre><code class="js">baguetteBox.run('.baguetteBoxFour', {
+    buttons: false
+});</code></pre>
+
+    <div class="baguetteBoxFour gallery">
+        <a href="http://img2.youbangkeyi.cn/5ff/b00/f73/5ffb00f5a7f1f73b0d4f1611e0107d87.jpg?imageView2/1/w/500/h/500/q/75|imageslim" data-caption="1/9">
+            <img src="http://img2.youbangkeyi.cn/5ff/b00/f73/5ffb00f5a7f1f73b0d4f1611e0107d87.jpg?imageView2/1/w/500/h/500/q/75|imageslim" alt="2">
+        </a>
+        <a href="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" data-caption="Road to nowhere">
+            <img src="http://img2.youbangkeyi.cn/7a4/29c/c0b/7a429c3a1138c0bbe9e8cc2359224d9b.jpg?imageView2/1/w/500/h/500/q/75|imageslim" alt="Road to nowhere">
+        </a>
+        <a href="img/big/2-3.png" data-caption="Misty landscape">
+            <img src="img/thumbs/2-3.png" alt="Misty landscape">
+        </a>
+        <a href="img/big/2-4.png" data-caption="Forest">
+            <img src="img/thumbs/2-4.png" alt="Forest">
+        </a>
+    </div>
+
+    <h2>单个图像(默认情况下隐藏的按钮，自定义标题函数)</h2>
+
+<pre style="width: 520px"><code class="js">baguetteBox.run('.baguetteBoxFive', {
+    captions: function(element) {
+        return element.getElementsByTagName('img')[0].alt;
+    }
+});</code></pre>
+
+    <div class="baguetteBoxFive gallery">
+        <a href="img/big/2-1.png">
+            <img src="img/thumbs/2-1.png" alt="A caption in the alt attribute">
+        </a>
+    </div>
+
+</div>
+		
+	</div>
+	
+	<script src="http://www.jsdaima.com/Uploads/js/201707/1498874839/js/baguetteBox.js"></script>
+	<script src="http://www.jsdaima.com/Uploads/js/201707/1498874839/js/highlight.min.js" ></script>
+	<!--[if lt IE 9]>
+	<script>
+	var oldIE = true;
+	</script>
+	<![endif]-->
+	<script>
+	window.onload = function() {
+	    baguetteBox.run('.baguetteBoxOne');
+	    baguetteBox.run('.baguetteBoxTwo');
+                baguetteBox.run('.baguetteBox1');
+	    baguetteBox.run('.baguetteBoxThree', {
+	        animation: 'fadeIn',
+	        noScrollbars: true
+	    });
+	    baguetteBox.run('.baguetteBoxFour', {
+	        buttons: false
+	    });
+	    baguetteBox.run('.baguetteBoxFive', {
+	        captions: function(element) {
+	            return element.getElementsByTagName('img')[0].alt;
+	        }
+	    });
+
+	    if (typeof oldIE === 'undefined' && Object.keys) {
+	        hljs.initHighlighting();
+	    }
+	};
+	</script>
+</body>
+</html>

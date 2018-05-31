@@ -25,8 +25,6 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 
-
-
     $(document).ready(function() {
         $(".info-box").off('click').on('click','.icon-unfold', function () {
             $(".zhanshi").animate({height: $('.neirong').height()}, "slow");
@@ -39,11 +37,11 @@ var _hmt = _hmt || [];
 
 
         $(document).ready(function() {
-        $(".info-box").off('click').on('click','.icon-unfold1', function () {
+        $(".info-yinxiang").off('click').on('click','.icon-unfold1', function () {
             $(".yinxiang").animate({height: $('.mui-tagscloud-ul').height()}, "slow");
             $(this).removeClass('icon-unfold1 icon-fold1').addClass('icon-fold1');
         }).on('click','.icon-fold1', function () {
-            $(".yinxiang").animate({height: '16rem'}, "normal");
+            $(".yinxiang").animate({height: '17.5rem'}, "normal");
             $(this).removeClass('icon-fold1 icon-unfold1').addClass('icon-unfold1');
         });
     })
@@ -186,13 +184,7 @@ var _hmt = _hmt || [];
 
     <div class="data-chart">
         <div class="TxtBox">
-            <div class="tit hd">
-                <ul>
-                    <li><a href="javascript:" class="txtCtr lft b1"><em class="icon1"></em>品牌搜索</a></li>
-                    <li><a href="javascript:" class="txtCtr lft b2"><em class="icon2"></em>全网评论</a></li>
-                </ul>
-
-            </div>
+            <div class="titleqs"><i>每日详细数据</i><span class="fa"><?php echo date("Y年m月d日");?></span></div>
             <div class="bd">
                 <div class="chart">
                     <div id="dbmain" style="width:100%;height:12rem;"></div>
@@ -205,9 +197,10 @@ var _hmt = _hmt || [];
     </div> 
 
         <div class="data pbbb">
+        <div class="titleqs"><i>擅长数据分析</i><span class="fa">通过大数据进行标签提取</span></div>
          <div id="fengge" style="width:100%;height:12rem;"></div>
          <div class="shushuo">
-            <span>擅长拍摄风格<em>(通过大数据进行标签提取)</em></span>
+            <span>擅长拍摄风格<em>(对商家案例、评论数据进行标签分析)</em></span>
              <?php foreach($style as $k=>$v) { ?>
                     <p>“<?php echo $v['name'];?>”被提及<?php echo $v['count'];?>次，在北京排名第<?php echo $v['order_index'];?>位</p>
              <?php } ?>
@@ -251,6 +244,7 @@ var _hmt = _hmt || [];
 </div>
 <link rel="stylesheet" href="/css/glightbox.css">
 <script src="/js/glightbox.min.js"></script>
+
   <script>
     var lightbox = GLightbox();
   </script>
@@ -286,26 +280,10 @@ var _hmt = _hmt || [];
     <div class="ckqb"><a href="/txlist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看全部<span class="fa"><?php echo $countsets;?></span>个精选套系</a></div>
 </div>
 <?php } ?>
-<div class="info-box 2">
+<div class="info-box info-yinxiang">
     <div class="data yinxiang">
-        <div class="titleqs"><i>用户评论标签</i><span class="fa">以下标签为大数据分析所得</span></div>
-        <style>.mui-tagscloud-ul{    list-style-type: none;
-    padding: 0;
-    margin: 10px 4%;
-    overflow: hidden;}
-.mui-tagscloud-ul li{    float: left;
-    background-color: #FEE;
-    color: #666;
-    margin: 6px 3px;
-    padding: 0px 9px;
-    text-align: center;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    font-size: 12px;}
-    </style>
-
-        <ul class="mui-tagscloud-ul">
-            
+        <div class="titleqs"><i>用户印象标签</i><span class="fa">以下标签为大数据分析所得</span></div>
+        <ul class="mui-tagscloud-ul">  
  <?php
             $stylelong = file('./1.txt');
             $stylemap = [];
@@ -330,7 +308,7 @@ var _hmt = _hmt || [];
 
 
 
-</div>    <div href="javascript:void(0);" class="unfold-field_text iconfont1 icon-unfold1"><span>查看详细数据、商家擅长风格</span></div></div>
+</div>    <div href="javascript:void(0);" class="unfold-field_text iconfont1 icon-unfold1"><span>查看更多用户印象</span></div></div>
 <div class="comment_list">
             <div class="title dafen1">今日点评精选</a><span class="fa">更新时间：<?php echo Date("Y-m-d")?></span></div>
             <div class="comment_column">
@@ -514,7 +492,7 @@ var _hmt = _hmt || [];
      name: '<?php echo $tenantssort['allcy']?>人\n表示很满意'
  }, {
      value: <?php echo $tenantssort['allce']?>,
-     name: '<?php echo $tenantssort['allce']?>人\n表示很糟糕'
+     name: '<?php echo $tenantssort['allce']?>人\n表示待提高'
  }, {
      value: <?php echo $tenantssort['alls']?>,
      name: "<?php echo $tenantssort['alls']?>人/日\n搜索过该品牌"
@@ -885,74 +863,6 @@ option = {
     };
 
 
-    // 使用刚指定的配置项和数据显示图表。
-    myChart.setOption(option);
-
-    //浏览器大小改变时重置大小
-    window.onresize = function () {
-        myChartContainer();
-        myChart.resize();
-    };
-
-
-
-    var myChart = document.getElementById('biaoqian');
-    //自适应宽高
-    var myChartContainer = function () {
-        biaoqian.style.width = 100%'px';
-        biaoqian.style.height = 100%'px'
-    };
-    myChartContainer();
-    var myChart = echarts.init(myChart);
-option = {
-    tooltip: {
-        show: true
-    },
-
-    series: [{
-        type: 'wordCloud',
-        size: ['80%', '80%'],
-        rotationRange: [0, 0],
-        textPadding: 0,
-        autoSize: {
-            enable: true,
-            Size: 12
-        },
-        textStyle: {
-            normal: {
-                color: function() {
-                    return 'rgb(' + [
-                        Math.round(Math.random() * 255),
-                        Math.round(Math.random() * 255),
-                        Math.round(Math.random() * 255)
-                    ].join(',') + ')';
-                }
-            }
-        },
-        data: [
-
-            <?php
-            $stylelong = file('./1.txt');
-            $stylemap = [];
-            foreach($stylelong as $k =>$v) {
-                $s = explode(' ',trim($v));
-                if(count($s)>1) {
-                    $key = $s[0];
-                    unset($s[0]);
-                    $s = array_values($s);
-                    $stylemap[$key] = $s[rand(0,count($s)-1)];
-                }
-            }
-            ?>
-                <?php if(is_array(json_decode($tenants['commitstyle'],true))) foreach(json_decode($tenants['commitstyle'],true) as $v ) { ?>
-            {
-                name: "<?php echo isset($stylemap[$v['name']])?$stylemap[$v['name']]:$v['name'];?>(<?php echo $v['count'];?>)",
-                value: <?php echo $v['count'];?>
-            },
-            <?php } ?>
-        ]
-    }]
-};
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
 

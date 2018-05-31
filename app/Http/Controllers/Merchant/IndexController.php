@@ -197,7 +197,7 @@ class IndexController extends MerchantController
         if(count($images)){
             foreach($images as $key=>$v){
 
-                $uploadDir = '/tmp';
+                $uploadDir = '/Server/data/image/upload';
 
                 $filedir = '/merchant/'.substr(md5(rand(1,10000)),0,3).'/'.substr(md5(rand(1,10000)),0,3).'/'.substr(md5(rand(1,10000)),0,3);
                 $uploadDir .= $filedir ;

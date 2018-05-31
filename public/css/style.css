@@ -35,6 +35,19 @@ input:focus,textarea:focus {border: 0;outline:none;}
     text-align: center;
     z-index: 13;
 }
+.mui-tagscloud-ul{    list-style-type: none;
+    padding: 0;
+    margin: 10px 4%;
+    overflow: hidden;}
+.mui-tagscloud-ul li{    float: left;
+    background-color: #FEE;
+    color: #666;
+    margin: 6px 3px;
+    padding: 0px 9px;
+    text-align: center;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    font-size: 12px;}
 .daoli{float: right;
     border-radius: 0.2rem;
     padding: 0!important;
@@ -87,8 +100,8 @@ input:focus,textarea:focus {border: 0;outline:none;}
     z-index: 9;
     height: 11rem;}
 .bg2{    background: #000;
-    opacity: .3;
-    filter: alpha(opacity=60);
+    opacity: .5;
+    filter: alpha(opacity=50);
     position: absolute;
     left: 0;
     width: 100%;
@@ -108,8 +121,15 @@ input:focus,textarea:focus {border: 0;outline:none;}
     opacity: .85;
     z-index: 99;
     position: absolute;}
-
-.zhanshi{height: 16rem;}
+.icon-unfold span,.icon-unfold1 span{
+    background: #eff2f6 url(http://c.youbangkeyi.cn/a/xiangxia.png) no-repeat right 1.2rem center;
+    background-size: 0.6rem;
+}
+.icon-fold span,.icon-fold1 span{
+    background: #eff2f6 url(http://c.youbangkeyi.cn/a/xiangshang.png) no-repeat right 1.2rem center;
+    background-size: 0.6rem;
+}
+.zhanshi{height: 16rem;overflow: hidden;}
 .unfold-field_text{  
 cursor: pointer;  
 width:100%;  
@@ -128,9 +148,8 @@ background: #FFF;
     height: 2rem;
     line-height: 2rem;
     margin: 0.5rem 0;
-    background:#eff2f6;
     border-radius: 2rem;
-    padding: 0 1.5rem;
+    padding:0 2.1rem 0 1.5rem;
     color: #FF4040;
     font-weight: bold;
 }  
@@ -824,8 +843,9 @@ width: 100%; background: #FFF; margin: 0;
 .shop-index .info-box .title tr:nth-child(2n){background-color: #f9f9f9}
 .shop-index .info-box .title em{display: inline-block; width:1rem; height:1rem; background: url("../images/icon18.png") no-repeat center 0; margin:0px 0.5rem 0 0.2rem; vertical-align: middle;background-size: 0.8rem}
 .info-box .titleqs span{color:#999999; height:2.5rem;line-height:2.5rem;font-size: 0.6rem; float: right;}
-.shop-index .info-box .data{width:100%;overflow:hidden;padding-bottom: 1rem; border-bottom: 1px solid #F5F5F5;height: 16rem;}
-.shop-index .info-box div.pbbb{padding-bottom:0;border-bottom:0;border-top: 0.3rem solid #efefef;}
+.shop-index .info-box .data{width:100%;overflow:hidden;padding-bottom: 1rem;}
+.yinxiang{height: 17.5rem;}
+.shop-index .info-box div.pbbb{padding-bottom:0;border-bottom:0;border-top: 0.5rem solid #f5f7fa;}
 .shop-index .info-box .data .table{width: 100%;display: table;line-height: 1.2rem;}
 .shop-index .info-box .data th{font-size:0.6rem; color: #999999;font-weight:normal;}
 .shop-index .info-box .data th,.shop-index .info-box .data td{line-height: 1.2rem;padding:0.3rem 0;}
@@ -833,22 +853,7 @@ width: 100%; background: #FFF; margin: 0;
 .shop-index .info-box .data td span{padding-left: 0.6rem;}
 .shop-index .info-box .data td img{margin-left: 0.35rem;}
 .shop-index .info-box .data .bor{border-right: 1px #e7e7e7 solid;}
-.shop-index .info-box .data-chart{width:100%; display:block;overflow:hidden;position:relative;}
-.shop-index .info-box .data-chart .tit{height:2rem; width:100%; }
-.shop-index .info-box .data-chart .tit ul{display: flex; width: 12rem; left: 50%; position: absolute; margin-left: -6rem; margin-top: 0.5rem;}
-.shop-index .info-box .data-chart .tit li{width:6rem;height:1.5rem;float: left;border: 1px #E3E3E3 solid;}
-.shop-index .info-box .data-chart .tit a{display: block; width:100%; height:1.5rem; border-radius: 0.25rem; line-height:1.5rem; font-size:0.6rem; text-indent: 0.9rem; position: relative;color: #666666}
-.shop-index .info-box .data-chart .tit .on{background: -webkit-linear-gradient(45deg, #0fcccc, #31dac8); background: -o-linear-gradient(45deg, #0fcccc, #31dac8); background: -moz-linear-gradient(45deg, #0fcccc, #31dac8); background: linear-gradient(45deg, #0fcccc, #31dac8); border: 1px #36cccc solid; color: #FFF; }
-.shop-index .info-box .data-chart .tit .on a{color: #FFF}
-.shop-index .info-box .data-chart .tit .icon1,.shop-index .info-box .data-chart .tit .icon2,.shop-index .info-box .data-chart .tit .icon3{width:0.9rem; height:0.9rem; position: absolute; left:1rem; top:0.3rem; display: inline-block;}
-.shop-index .info-box .data-chart .tit .icon1{background: url("../images/icon45.png") no-repeat center center;background-size: 1rem}
-.shop-index .info-box .data-chart .tit .icon2{background: url("../images/icon35.png") no-repeat center center;background-size: 0.9rem}
-.shop-index .info-box .data-chart .tit .icon3{background: url("../images/icon36.png") no-repeat center center;background-size: 0.9rem}
-.shop-index .info-box .data-chart .on .icon1{background: url("../images/icon34.png") no-repeat center center;background-size: 1rem}
-.shop-index .info-box .data-chart .on .icon2{background: url("../images/icon43.png") no-repeat center center;background-size: 0.9rem}
-.shop-index .info-box .data-chart .on .icon3{background: url("../images/icon44.png") no-repeat center center;background-size: 0.9rem}
-.shop-index .info-box .data-chart .chart{width:100%;display: block;padding-top:0.8rem; overflow: hidden;}
-.shop-index .info-box .data-chart .chart img{width: 100%;}
+.shop-index .info-box .data-chart{width:100%; display:block;overflow:hidden;position:relative;border-top: 0.5rem solid #f5f7fa;}
 
 /*客户案例*/
 .case_box{position: relative; background: #FFF; width:100%;margin:0;border-top: 0.5rem solid #f5f7fa;}
@@ -1642,6 +1647,7 @@ background: url(http://c.youbangkeyi.cn/a/cross78.png) no-repeat;
     }
 .yuyue{
     display: block;
+    width: 92%;
     height: 2rem;
     margin: .5rem 4%;
     color: #fa5741;
@@ -1667,6 +1673,7 @@ background: url(http://c.youbangkeyi.cn/a/cross78.png) no-repeat;
     font-weight: bold;
 }
 .discount-btn{
+    cursor: pointer;
     float: right;
     height: 1rem;
     margin: .5rem 4% 0.5rem 0;
@@ -1678,6 +1685,10 @@ background: url(http://c.youbangkeyi.cn/a/cross78.png) no-repeat;
     font-size: .6rem;
     line-height: 1rem;
 }
+.showmore .discount-btn{background-color: #FF7070;margin: .25rem 4% 0.25rem 0;}
+.showmore .yuyue span{font-weight: initial;color: #ff7070;margin: 0.25rem 0;}
+.showmore .yuyue {margin: 0 4% .3rem; display: inline-block; height: 1.5rem; border: 0;}
+.showmore .yuyue i{width: 1.38rem;margin: 0.3rem .5rem 0.3rem 4%;background: url(http://c.youbangkeyi.cn/v/yuyue.png) no-repeat 0 center;background-size: 100%;}
 .yuyuedaodian{
     position: relative;
     padding: 0.8rem 0;

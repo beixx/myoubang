@@ -123,12 +123,12 @@ var _hmt = _hmt || [];
                                 <em>品牌搜索人数</em>
                             </div>
                             <div class="txt">
-                                <p class="blue"><?php echo $spread['allcy'];?></p>
-                                <em>全网好评人数</em>
+                                <p class="blue"><?php echo $spread['alls'];?></p>
+                                <em>全网评论数据</em>
                             </div>
                             <div class="txt">
-                                <p class="blue"><?php echo $spread['allce'];?></p>
-                                <em>全网差评人数</em>
+                                <p class="blue"><?php $spread['alls'] = $spread['alls'] ==0 ? 1 :$spread['alls'];  echo intval($spread['allcy']/$spread['alls']*100);?></p>
+                                <em>好评率</em>
                             </div>
                         </div>
                                             <div class="daodian">
@@ -148,8 +148,7 @@ var _hmt = _hmt || [];
                         <div class="num_txt">
                             <div class="tit_box">
                                 <div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span class="zhish"><em class="shu">数据指数</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均 ¥<?php echo $v['person_price'];?></span><span><?php echo $v['piccount']>0?''.$v['piccount'].'组':'无案例';?>客片</span>
-					<?php if(strlen($v['package'])>2) { ?><span class="daoli">线上预约有优惠</span><?php } ?>
+                                <div class="txt"><span class="zhish"><em class="shu">数据指数</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均 ¥<?php echo $v['person_price'];?></span><span><?php echo $v['area'];?></span>
 				</div>
                             </div>
                         </div>
@@ -186,7 +185,7 @@ var _hmt = _hmt || [];
                             <?php foreach($v['taoxi'] as $v2) { ?>
                                 <?php if(isset($v2['cover'][0])) { ?>                  
                                 <div class="img">
-                                    <a class="suolv" href="/detail/<?php echo $v['id'].'/'.$v2['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
+                                    <a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                                         <span>
                                             <?php if(strpos($v2['cover'][0],'http') === false) {?>
                                                 <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.cn<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
@@ -198,20 +197,24 @@ var _hmt = _hmt || [];
                                 </div>
                                 <?php } ?>
                             <?php } ?>
-
                         </div>
+           <?php if(strlen($v['package'])>2) { ?>
+                        <div class="yuyue">
+                <i></i><span><?php echo $v['package'];?></span>
+            <a class="discount-btn" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">去看一看</a>
+            </div><?php } ?>
                         <div class="txt_box txtCtr">
                             <div class="txt">
                                 <p class="blue"><?php echo $v['day30s'];?></p>
                                 <em>品牌搜索人数</em>
                             </div>
                             <div class="txt">
-                                <p class="blue"><?php echo $v['allcy'];?></p>
-                                <em>全网好评人数</em>
+                                <p class="blue"><?php echo ($v['allcy'] + $v['allce']);?></p>
+                                <em>全网评论人数</em>
                             </div>
                             <div class="txt">
-                                <p class="blue"><?php echo $v['allce'];?></p>
-                                <em>全网差评人数</em>
+                                <p class="blue"><?php $c = $v['allcy']+$v['allce'];$c= $c==0?1:$c ;  echo intval($v['allcy']/$c*10000)/100;?>%</p>
+                                <em>全网好评率</em>
                             </div>
                         </div>
                             <div class="daodian">
