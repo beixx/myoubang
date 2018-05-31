@@ -169,7 +169,7 @@ class IndexController extends Controller
             $city = Config::get('city.'.$name,'北京');
             $this->data['pycity'] = $name;
             $this->data['city'] = $city;
-	    //无法获取城市，直接首页
+	        //无法获取城市，直接首页
             if(!$city) {
                 return Redirect::to('/');
             }
@@ -222,9 +222,9 @@ class IndexController extends Controller
                     $this->data['spread']['taoxi']['cover'] = json_decode($this->data['spread']['taoxi']['cover'],true);
                 }
             }
-            $taoxi = YfcTenantsSet::select('id','currentPrice','price','tenantsId','setName','cover')
+            $taoxi = YfcTenantsPic::select('id',"tenantsId",'firstcover')
                 ->whereIn('tenantsId',$tids)
-                ->orderBy('recommend','asc')->limit(3000)->get()->toArray();
+                ->orderBy('id','desc')->limit(4000)->get()->toArray();
 
             $taoxitmp = [];
             foreach($taoxi as $kk => $vv) {
@@ -233,8 +233,8 @@ class IndexController extends Controller
                     continue;
                 }
 
-                if($vv['cover']){
-                    $vv['cover'] = json_decode($vv['cover'],true);
+                if($vv['firstcover']){
+                    $vv['cover'] = json_decode($vv['firstcover'],true);
                 }
                 $taoxitmp[$vv['tenantsId']][] = $vv;
             }
