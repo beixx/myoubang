@@ -35,6 +35,19 @@ input:focus,textarea:focus {border: 0;outline:none;}
     text-align: center;
     z-index: 13;
 }
+.mui-tagscloud-ul{    list-style-type: none;
+    padding: 0;
+    margin: 10px 4%;
+    overflow: hidden;}
+.mui-tagscloud-ul li{    float: left;
+    background-color: #FEE;
+    color: #666;
+    margin: 6px 3px;
+    padding: 0px 9px;
+    text-align: center;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    font-size: 12px;}
 .daoli{float: right;
     border-radius: 0.2rem;
     padding: 0!important;
@@ -87,8 +100,8 @@ input:focus,textarea:focus {border: 0;outline:none;}
     z-index: 9;
     height: 11rem;}
 .bg2{    background: #000;
-    opacity: .3;
-    filter: alpha(opacity=60);
+    opacity: .5;
+    filter: alpha(opacity=50);
     position: absolute;
     left: 0;
     width: 100%;
@@ -98,7 +111,7 @@ input:focus,textarea:focus {border: 0;outline:none;}
 .m-kan{    margin-left: -30px;
     color: #fff;
     text-align: center;
-    background: url(http://c.youbangkeyi.cn/css/vr1.png);
+    background: url(http://c.youbangkeyi.com/css/vr1.png);
     line-height: 18px;
     top:2rem;
     width: 60px;
@@ -108,7 +121,14 @@ input:focus,textarea:focus {border: 0;outline:none;}
     opacity: .85;
     z-index: 99;
     position: absolute;}
-
+.icon-unfold span,.icon-unfold1 span{
+    background: #eff2f6 url(http://c.youbangkeyi.com/a/xiangxia.png) no-repeat right 1.2rem center;
+    background-size: 0.6rem;
+}
+.icon-fold span,.icon-fold1 span{
+    background: #eff2f6 url(http://c.youbangkeyi.com/a/xiangshang.png) no-repeat right 1.2rem center;
+    background-size: 0.6rem;
+}
 .zhanshi{height: 16rem;overflow: hidden;}
 .unfold-field_text{  
 cursor: pointer;  
@@ -128,9 +148,8 @@ background: #FFF;
     height: 2rem;
     line-height: 2rem;
     margin: 0.5rem 0;
-    background:#eff2f6;
     border-radius: 2rem;
-    padding: 0 1.5rem;
+    padding:0 2.1rem 0 1.5rem;
     color: #FF4040;
     font-weight: bold;
 }  
@@ -175,7 +194,7 @@ header .pre{width: 1.5rem;display: block;background: url(../images/icon11.png) n
 header .share{position: absolute;right: 0.6rem;top: 0.35rem;width: 1.5rem;height: 1.5rem;background:#FFF url(../images/icon14.png) no-repeat center center;background-size: 1rem;overflow: hidden;cursor: pointer;}
 header .city_box{width: 1.8rem;color:#666;font-weight: bold;display: table-cell;margin-top: 0.35rem;line-height: 1.5rem;height: 1.5rem; text-align: center; font-size: 0.7rem; overflow: hidden; background: url(../images/icon2.png) no-repeat right center; background-size: 0.8rem; padding-right: 0.65rem; white-space: pre; text-overflow: ellipsis;float:left; margin-left: .5rem;}
 .zxdh{margin-right: 0.3rem;
-    background: url(http://c.youbangkeyi.cn/a/lianxikefu.png) no-repeat center center;
+    background: url(http://c.youbangkeyi.com/a/lianxikefu.png) no-repeat center center;
     height: 1.4rem;
     background-size: 1.4rem;
     float: right;
@@ -347,7 +366,7 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
     text-align: left;
     padding: 0 4% 0 10%;
     font-size: .6rem;
-    background: #f9f4d9 url(http://c.youbangkeyi.cn/yuyue/anquan1.png) no-repeat 4% 0.25rem;
+    background: #f9f4d9 url(http://c.youbangkeyi.com/yuyue/anquan1.png) no-repeat 4% 0.25rem;
     background-size: 1rem;
     color: #8f7f5d;
 }
@@ -356,7 +375,7 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
     text-align: left;
     padding: 0.8rem 4% 0.8rem 12%;
     font-size: .6rem;
-    background: #FFF url(http://c.youbangkeyi.cn/a/quan1.png) no-repeat 0 0.7rem;
+    background: #FFF url(http://c.youbangkeyi.com/a/quan1.png) no-repeat 0 0.7rem;
     background-size: 1.8rem;
     color:#9399a5;
     line-height:0.9rem;
@@ -391,7 +410,7 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
     text-align: left;
     padding: 0.5rem 4% 0.5rem 15%;
     font-size: .6rem;
-    background: #f9f4d9 url(http://c.youbangkeyi.cn/yuyue/anquan1.png) no-repeat 4% 0.4rem;
+    background: #f9f4d9 url(http://c.youbangkeyi.com/yuyue/anquan1.png) no-repeat 4% 0.4rem;
     background-size: 2rem;
     color: #8f7f5d;
     line-height: 1rem;
@@ -460,14 +479,14 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
     width: 70%;
     margin: 2rem auto 5rem;
     border-radius: 5px;
-    background: #fffaea url(http://c.youbangkeyi.cn/images/weihu.png) no-repeat 20px 14px;
+    background: #fffaea url(http://c.youbangkeyi.com/images/weihu.png) no-repeat 20px 14px;
     background-size:1.3rem;
     padding: 15px 5% 15px 5%;
     text-indent: 2rem;}
 .sjkap{
 width: 100%; background: #FFF; margin: 0;
 }
-.sousj{position: relative;font-size: 0.7rem;height:7rem;color:#666;background:url(http://c.youbangkeyi.cn/a/xingchendahai.jpg?imageslim) no-repeat;background-size: cover;}
+.sousj{position: relative;font-size: 0.7rem;height:7rem;color:#666;background:url(http://c.youbangkeyi.com/a/xingchendahai.jpg?imageslim) no-repeat;background-size: cover;}
 .pic_box{width:100%;background: #FFF;position: relative;border-bottom:.5rem #f5f7fa solid;padding:0.5rem 0 0;}
 .pic_box .num_txt{width:92%;display: -webkit-box;display: -ms-flexbox;display: -moz-box;height:2.2rem;padding:0.5rem 4% .5rem;position: relative;}
 .pic_box .num_txt .num{width: 2.2rem;line-height: 1rem;height: 2rem;margin: 0 .5rem 0 .7rem;position: relative;font-size: 1.2rem;font-family: Krungthep,"Microsoft YaHei",arial;border-radius:50%;color:#FFF;font-weight:700;background-color:#00B7B7;padding-top: 0.2rem;}
@@ -612,7 +631,7 @@ width: 100%; background: #FFF; margin: 0;
 .shushuo span{font-size: 0.8rem;line-height: 1.8rem;font-weight: 700;}
 .shushuo em{font-size: .6rem;color: #999;margin-left: .2rem;}
 .shushuo p{font-size: .6rem; line-height: 1.5rem;}
-.ppyh{    background: url(//c.youbangkeyi.cn/images/shuang1.png) no-repeat;
+.ppyh{    background: url(//c.youbangkeyi.com/images/shuang1.png) no-repeat;
     width: 25px;
     height: 25px;
     position: absolute;
@@ -620,7 +639,7 @@ width: 100%; background: #FFF; margin: 0;
     left: 0.3rem;
     top: 0;}
 .ppyh1{
-    background: url(//c.youbangkeyi.cn/images/shuang2.png) no-repeat;
+    background: url(//c.youbangkeyi.com/images/shuang2.png) no-repeat;
     width: 25px;
     height: 25px;
     background-size: 25px;
@@ -820,13 +839,13 @@ width: 100%; background: #FFF; margin: 0;
 .shop-index div.mtrem6 {visibility:visible; max-height:19rem;}
 .shop-index .info-box{width:100%; margin:0;border-top: 0.5rem solid #f5f7fa;}
 .shop-index .info-box .title{line-height:2.5rem; height:2.5rem; font-size: 0.7rem; color: #111; text-indent: 0.5rem;}
-.info-box .titleqs{width: 92%;background: #FFF;padding: 0 4%;line-height:2.5rem; height:2.5rem; font-size: 0.75rem;font-weight: 700;}
+.info-box .titleqs{width: 92%;background: #FFF;padding: 0 4%;line-height:2.5rem; height:2.5rem; font-size: 0.8rem;font-weight: 700;}
 .shop-index .info-box .title tr:nth-child(2n){background-color: #f9f9f9}
 .shop-index .info-box .title em{display: inline-block; width:1rem; height:1rem; background: url("../images/icon18.png") no-repeat center 0; margin:0px 0.5rem 0 0.2rem; vertical-align: middle;background-size: 0.8rem}
 .info-box .titleqs span{color:#999999; height:2.5rem;line-height:2.5rem;font-size: 0.6rem; float: right;}
 .shop-index .info-box .data{width:100%;overflow:hidden;padding-bottom: 1rem;}
 .yinxiang{height: 17.5rem;}
-.shop-index .info-box div.pbbb{padding-bottom:0;border-bottom:0;border-top: 0.3rem solid #efefef;}
+.shop-index .info-box div.pbbb{padding-bottom:0;border-bottom:0;border-top: 0.5rem solid #f5f7fa;}
 .shop-index .info-box .data .table{width: 100%;display: table;line-height: 1.2rem;}
 .shop-index .info-box .data th{font-size:0.6rem; color: #999999;font-weight:normal;}
 .shop-index .info-box .data th,.shop-index .info-box .data td{line-height: 1.2rem;padding:0.3rem 0;}
@@ -834,22 +853,7 @@ width: 100%; background: #FFF; margin: 0;
 .shop-index .info-box .data td span{padding-left: 0.6rem;}
 .shop-index .info-box .data td img{margin-left: 0.35rem;}
 .shop-index .info-box .data .bor{border-right: 1px #e7e7e7 solid;}
-.shop-index .info-box .data-chart{width:100%; display:block;overflow:hidden;position:relative;}
-.shop-index .info-box .data-chart .tit{height:2rem; width:100%; }
-.shop-index .info-box .data-chart .tit ul{display: flex; width: 12rem; left: 50%; position: absolute; margin-left: -6rem; margin-top: 0.5rem;}
-.shop-index .info-box .data-chart .tit li{width:6rem;height:1.5rem;float: left;border: 1px #E3E3E3 solid;}
-.shop-index .info-box .data-chart .tit a{display: block; width:100%; height:1.5rem; border-radius: 0.25rem; line-height:1.5rem; font-size:0.6rem; text-indent: 0.9rem; position: relative;color: #666666}
-.shop-index .info-box .data-chart .tit .on{background: -webkit-linear-gradient(45deg, #0fcccc, #31dac8); background: -o-linear-gradient(45deg, #0fcccc, #31dac8); background: -moz-linear-gradient(45deg, #0fcccc, #31dac8); background: linear-gradient(45deg, #0fcccc, #31dac8); border: 1px #36cccc solid; color: #FFF; }
-.shop-index .info-box .data-chart .tit .on a{color: #FFF}
-.shop-index .info-box .data-chart .tit .icon1,.shop-index .info-box .data-chart .tit .icon2,.shop-index .info-box .data-chart .tit .icon3{width:0.9rem; height:0.9rem; position: absolute; left:1rem; top:0.3rem; display: inline-block;}
-.shop-index .info-box .data-chart .tit .icon1{background: url("../images/icon45.png") no-repeat center center;background-size: 1rem}
-.shop-index .info-box .data-chart .tit .icon2{background: url("../images/icon35.png") no-repeat center center;background-size: 0.9rem}
-.shop-index .info-box .data-chart .tit .icon3{background: url("../images/icon36.png") no-repeat center center;background-size: 0.9rem}
-.shop-index .info-box .data-chart .on .icon1{background: url("../images/icon34.png") no-repeat center center;background-size: 1rem}
-.shop-index .info-box .data-chart .on .icon2{background: url("../images/icon43.png") no-repeat center center;background-size: 0.9rem}
-.shop-index .info-box .data-chart .on .icon3{background: url("../images/icon44.png") no-repeat center center;background-size: 0.9rem}
-.shop-index .info-box .data-chart .chart{width:100%;display: block;padding-top:0.8rem; overflow: hidden;}
-.shop-index .info-box .data-chart .chart img{width: 100%;}
+.shop-index .info-box .data-chart{width:100%; display:block;overflow:hidden;position:relative;border-top: 0.5rem solid #f5f7fa;}
 
 /*客户案例*/
 .case_box{position: relative; background: #FFF; width:100%;margin:0;border-top: 0.5rem solid #f5f7fa;}
@@ -903,7 +907,7 @@ width: 100%; background: #FFF; margin: 0;
 
 /*精选套餐*/
 .jxtc_box{position: relative; background: #FFF; width: 100%;border-top: 0.5rem solid #f5f7fa;}
-.jxtc_box .title{background:#FFF;width:92%;padding: 0 4%;line-height:2.5rem;height:2.5rem;font-size: 0.75rem;color:#111;font-weight:700;}
+.jxtc_box .title{background:#FFF;width:92%;padding: 0 4%;line-height:2.5rem;height:2.5rem;font-size: 0.8rem;color:#111;font-weight:700;}
 .jxtc_box .title a{float: right;color:#999999;font-size: 0.6rem;}
 .jxtc_box .tittx{background: #FFF; border-radius: .2rem .2rem 0 0; text-indent: 4%; border-bottom: 1px solid #efefef; font-size: 0.75rem; color: #111; line-height: 2.5rem; height: 2.5rem; font-weight: bold;}
 .jxtc_box ul{width: 100%;}
@@ -922,7 +926,7 @@ width: 100%; background: #FFF; margin: 0;
 .ckaqb{text-align:center;height:3rem;line-height:3rem;margin:0 4%;border-top: #f5f5f5 solid 1px;font-size: .6rem;}
 .ckaqb a,.ckqb a{background:#eff2f6;font-weight:bold;padding: 0.6rem 4rem; border-radius: 2rem; color: #ff4040;}
 .comment_list{display:inline-block;position: relative; background: #FFF; width:100%;border-top: 0.5rem solid #f5f7fa;}
-.comment_list .title{width: 92%;padding: 0 4%;line-height:2.5rem; height:2.5rem; font-size: 0.75rem;font-weight:700;color:#111111;}
+.comment_list .title{width: 92%;padding: 0 4%;line-height:2.5rem; height:2.5rem; font-size: 0.8rem;font-weight:700;color:#111111;}
 .comment_list dl{width:92%;border-bottom: 1px solid #F5F5F5;padding:1rem 4% 0.5rem}
 .comment_list dd{width:2rem; overflow:hidden; float:left; height:2rem}
 .comment_list dd img{border-radius:5px; width:2rem; height:2rem}
@@ -947,8 +951,8 @@ width: 100%; background: #FFF; margin: 0;
 .view .price-box span{font-size: 1.3rem;margin-right: 0.5rem;}
 .view .price-box del{font-size: 0.6rem;color: #bfbfbf;line-height: 3rem;}
 .view .price-box h2{font-size: 0.75rem; font-weight: bold; max-width: 55%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
-.view .titdp,.view .titjs,.tittp{width: 100%;border-top: 0.5rem solid #f5f7fa;background: #FFF;text-indent:4%;font-size: 0.75rem; color: #111; line-height: 2.5rem; height: 2.5rem; font-weight: bold;}
-.view .tit{background: #FFF; width: 92%; padding: 0 4%;border-top:0.5rem solid #f5f7fa;line-height: 2.5rem; height: 2.5rem;font-size: 0.75rem; color: #111; font-weight: 700;}
+.view .titdp,.view .titjs,.tittp{width: 100%;border-top: 0.5rem solid #f5f7fa;background: #FFF;text-indent:4%;font-size: 0.8rem; color: #111; line-height: 2.5rem; height: 2.5rem; font-weight: bold;}
+.view .tit{background: #FFF; width: 92%; padding: 0 4%;border-top:0.5rem solid #f5f7fa;line-height: 2.5rem; height: 2.5rem;font-size: 0.8rem; color: #111; font-weight: 700;}
 .view .txt-box{width: 92%;position: relative;padding:3% 4%}
 .view .txt-box .num{
     width: 2rem;position: absolute;
@@ -1059,13 +1063,13 @@ header h1 img{margin-top: 0.25rem;}
 
 }
 .aa_show .click_img::after {
-    background: url(http://c.youbangkeyi.cn/c/down.png?imageslim) no-repeat center;
+    background: url(http://c.youbangkeyi.com/c/down.png?imageslim) no-repeat center;
     background-size:1.2rem;
 }
 .click_img::after {
     width: 1.6rem;
     height: 1.6rem;
-    background: url(http://c.youbangkeyi.cn/c/123.png?imageslim) no-repeat center;
+    background: url(http://c.youbangkeyi.com/c/123.png?imageslim) no-repeat center;
     background-size: contain;
     position: absolute;
     right: -2%;
@@ -1081,7 +1085,7 @@ header h1 img{margin-top: 0.25rem;}
 .bottom_slide_box .click_img {
     width: 75%;
     height: 4.5rem;
-    background: url(http://c.youbangkeyi.cn/a/1fc9df907e3173fdf142a967911c5dba.png?imageslim) no-repeat left;
+    background: url(http://c.youbangkeyi.com/a/1fc9df907e3173fdf142a967911c5dba.png?imageslim) no-repeat left;
     background-size: contain;
     position: absolute;
     left: 39%;
@@ -1415,7 +1419,7 @@ option {
 .click_img:after {
     width: 1.8rem;
     height: 1.8rem;
-    background: url(http://c.youbangkeyi.cn/c/123.png?imageslim) no-repeat center;
+    background: url(http://c.youbangkeyi.com/c/123.png?imageslim) no-repeat center;
     background-size:1.2rem;
     position: absolute;
     right: -24%;
@@ -1470,7 +1474,7 @@ option {
     display: block;
 }
 .t8s-alert-i {
-background: url(http://c.youbangkeyi.cn/a/cross78.png) no-repeat;
+background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
     width: 1rem;
     height: 1rem;
     background-size: 1rem auto;
@@ -1595,7 +1599,7 @@ background: url(http://c.youbangkeyi.cn/a/cross78.png) no-repeat;
     width: 90%;
     height: 2rem;
     padding: 0 5%;
-    background: url(http://c.youbangkeyi.cn/a/t6s-result-bg.png) no-repeat;
+    background: url(http://c.youbangkeyi.com/a/t6s-result-bg.png) no-repeat;
     background-size: 100% 2rem;
     z-index: 10;
 }
@@ -1637,12 +1641,13 @@ background: url(http://c.youbangkeyi.cn/a/cross78.png) no-repeat;
     border-top: 0.5rem solid #f5f7fa;
     font-size: 0.6rem;
     width: 100%;
-    background:#FFF url(http://c.youbangkeyi.cn/a/6eef8e5dd1c8f3b7ffd84dc4921fb592.png) no-repeat 0.5rem 0.5rem;
+    background:#FFF url(http://c.youbangkeyi.com/a/6eef8e5dd1c8f3b7ffd84dc4921fb592.png) no-repeat 0.5rem 0.5rem;
     background-size:1.5rem;
     height: 1rem;
     }
 .yuyue{
     display: block;
+    width: 92%;
     height: 2rem;
     margin: .5rem 4%;
     color: #fa5741;
@@ -1668,6 +1673,7 @@ background: url(http://c.youbangkeyi.cn/a/cross78.png) no-repeat;
     font-weight: bold;
 }
 .discount-btn{
+    cursor: pointer;
     float: right;
     height: 1rem;
     margin: .5rem 4% 0.5rem 0;
@@ -1679,6 +1685,10 @@ background: url(http://c.youbangkeyi.cn/a/cross78.png) no-repeat;
     font-size: .6rem;
     line-height: 1rem;
 }
+.showmore .discount-btn{background-color:initial;margin: .25rem 4% 0.25rem 0;color:#FF7070;}
+.showmore .yuyue span{font-weight: initial;color: #ff7070;margin: 0.25rem 0;}
+.showmore .yuyue {margin: 0 4% .3rem; display: inline-block; height: 1.5rem; border: 0;}
+.showmore .yuyue i{width: 1.38rem;margin: 0.3rem .5rem 0.3rem 4%;background: url(http://c.youbangkeyi.com/v/yuyue.png) no-repeat 0 center;background-size: 100%;}
 .yuyuedaodian{
     position: relative;
     padding: 0.8rem 0;
@@ -1828,12 +1838,12 @@ footer{background:#26282b;width:100%;margin:0 auto 5.1rem;font-size:0.6rem;color
     padding: 0.5rem 4%;
     border-bottom: 0;
     background: #FFF;}
-.fgchs{background: url(http://c.youbangkeyi.cn/images/chengshi.png) no-repeat 2% 50%; background-size: 17%;}
-.fgshh{background: url(http://c.youbangkeyi.cn/images/shanghufg.png) no-repeat 2% 50%; background-size: 17%;}
-.fgxinren{background: url(http://c.youbangkeyi.cn/images/xinren.png) no-repeat 2% 50%; background-size: 17%;}
-.fgcaiji{background: url(http://c.youbangkeyi.cn/images/caiji.png) no-repeat 2% 50%; background-size: 17%;}
-.fgweidu{background: url(http://c.youbangkeyi.cn/images/weidu.png) no-repeat 2% 50%; background-size: 17%;}
-.fgpinglun{background: url(http://c.youbangkeyi.cn/images/pinglun.png) no-repeat 2% 50%; background-size: 17%;}
+.fgchs{background: url(http://c.youbangkeyi.com/images/chengshi.png) no-repeat 2% 50%; background-size: 17%;}
+.fgshh{background: url(http://c.youbangkeyi.com/images/shanghufg.png) no-repeat 2% 50%; background-size: 17%;}
+.fgxinren{background: url(http://c.youbangkeyi.com/images/xinren.png) no-repeat 2% 50%; background-size: 17%;}
+.fgcaiji{background: url(http://c.youbangkeyi.com/images/caiji.png) no-repeat 2% 50%; background-size: 17%;}
+.fgweidu{background: url(http://c.youbangkeyi.com/images/weidu.png) no-repeat 2% 50%; background-size: 17%;}
+.fgpinglun{background: url(http://c.youbangkeyi.com/images/pinglun.png) no-repeat 2% 50%; background-size: 17%;}
 .txtshuju span {
     font-size:0.7rem;
     display: block;
@@ -1926,7 +1936,11 @@ header .city_box{margin-top: 0.75rem;}
 .sousj{height: 9rem;}
 .bg2{height: 7rem;}
 .sy-title{top: 1.8rem;}
-body{    font: normal 16px/200% AvenirNext-Regular,PingFangHK-Light,-apple-system,BlinkMacSystemFont,"AvenirNext-Regular","Helvetica Neue","lucida grande","PingFang HK","Heiti SC","Hiragino Sans GB","Microsoft Yahei",SimHei,"WenQuanYi Micro Hei","Droid Sans","Roboto",Helvetica,Tahoma,Arial,"sans-serif"!important;}
+.showmore .yuyue{height: 2rem;}
+.showmore .yuyue i{    margin: 0.6rem .5rem 0.5rem 4%;}
+.showmore .yuyue span{    margin: 0.5rem 0;}
+.showmore .discount-btn{    margin: .5rem 4% 0.5rem 0;}
+body{    font: normal 16px/200% 'Droid Sans Fallback','PingFang SC','Microsoft YaHei','Hiragino Sans GB','Heiti SC','WenQuanYi Micro Hei',sans-serif!important;}
 }
 
 

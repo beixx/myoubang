@@ -42,7 +42,7 @@ Route::group(['domain' => env('M_WEB_URL')],function(){
     Route::post('/get/hunliprice', 'IndexController@hunliprice');
 });
 
-Route::group(['domain' => 'm.youbangkeyi.cn'],function(){
+Route::group(['domain' => 'www.youbangkeyi.com'],function(){
     Route::get('/', 'IndexController@redirect');
 
     Route::get('/dafen/{name}/{id}', 'IndexController@dafen');
@@ -99,33 +99,5 @@ Route::group(['domain' => env('MERCHANT_URL')],function(){
     Route::post("/merchant/filesave" , 'Merchant\IndexController@filesave');
 
 
-
-});
-Route::group(['domain' => 'merchant.youbangkeyi.cn'],function(){
-    //登录
-    Route::get("/merchant/login" , 'Merchant\LoginController@login');
-    Route::post("/merchant/check" , 'Merchant\LoginController@check');
-    Route::get("/merchant/logout" , 'Merchant\LoginController@logout');
-
-    //首页
-    Route::get("/" , 'Merchant\IndexController@index');
-    Route::get("/merchant/welcome" , 'Merchant\IndexController@welcome');
-
-    Route::get("/merchant/addpic" , 'Merchant\IndexController@addpic');
-    Route::post("/merchant/addpic" , 'Merchant\IndexController@addpic');
-    Route::get("/merchant/yfctenantspic" , 'Merchant\IndexController@yfctenantspic');
-    Route::get("/merchant/picdel" , 'Merchant\IndexController@picdel');
-
-
-    Route::get("/merchant/addset" , 'Merchant\IndexController@addset');
-    Route::post("/merchant/addset" , 'Merchant\IndexController@addset');
-    Route::get("/merchant/yfctenantsset" , 'Merchant\IndexController@yfctenantsset');
-    Route::get("/merchant/setdel" , 'Merchant\IndexController@setdel');
-    Route::get("/merchant/setpackage" , 'Merchant\IndexController@setpackage');
-    Route::post("/merchant/setpackage" , 'Merchant\IndexController@setpackage');
-
-
-    Route::post("/merchant/fileupload" , 'Merchant\IndexController@fileupload');
-    Route::post("/merchant/filesave" , 'Merchant\IndexController@filesave');
 
 });

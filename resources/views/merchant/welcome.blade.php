@@ -24,20 +24,66 @@
 <body>
 <div class="page-container">
     <p class="f-20 text-success">欢迎使用有榜网商家后台管理 <span class="f-14">v3.1</span></p>
-    <style type="text/css">
-    .anlitaoxi{    width: 360px;
-    margin-top: 35px;}
-.anlitaoxi img { width: 120px;   margin-right: 55px;
-    margin-bottom: 50px;}
-    </style>
-   <div class="anlitaoxi">
-      <a href="javascript:;" onclick="article_add('案例列表','/merchant/yfctenantspic')"><img src="http://m.youbangkeyi.cn/images/anlilibiao.jpg"></a>
-       <a href="javascript:;" onclick="picture_add('添加案例','/merchant/addpic')"><img src="http://m.youbangkeyi.cn/images/tianjia.jpg"></a>
 
-      <a href="javascript:;" onclick="article_add('套系列表','/merchant/yfctenantsset')"><img src="http://m.youbangkeyi.cn/images/taoxiliebiao.jpg"></a>
-       <a  href="javascript:;" onclick="article_add('添加套系','/merchant/addset')"><img src="http://m.youbangkeyi.cn/images/tianjiataoxi.jpg"></a>
+<style>
+.tongji{display: block;
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;    background: #F5F5F5;
+    width:98%;
+    padding: 10px 12px;
+    overflow: hidden;}
+.table-bordered td{border-top: 1px solid #c4c4c4;}
+.tongji span{    width: 25%;
+    float: left;
+    padding: 10px 4%;}
+.shuoming{    font-size: 12px;
+    color: #ff6c32;
+        margin: 20px 0;
+    background: #fffaea;
+    padding: 5px 20px;}
+.responsive{    width: 100%;    text-align: center;}
+.tongji em{    font-size: 14px;
+    font-weight: bold;    font-style: initial;}
+</style>
 
-   </div>
+<div class="tongji" style="margin-top: 35px;">
+  <span>今日获客:<em>1000（人）</em></span>
+    <span>本周获客:<em>1000（人）</em></span>
+    <span>本月获客:<em>1000（人）</em></span></div>
+<div class="tongji">
+
+    <span>总积分:1000</span>
+    <span>消耗积分:1000</span>
+    <span>剩余积分:1000</span>
+
+</div>
+<div class="shuoming">
+说明：积分变换时，如果该手机号同时预约两家商家，那么积分扣除金额会按照80%扣除。如果预约三家时，按照60扣除。四家及以上按照50%扣除。
+</div>
+<div>
+
+<table class="responsive table table-bordered">
+<thead><tr><th>序列</th><th>添加时间</th><th>用户手机号</th><th>预约来源</th><th>积分变换</th><th>回访状态</th> </tr></thead>
+                                        <tbody><tr>
+                                            <td>1</td>
+                                            <td>2017-08-26 00:00:00</td>
+                                            <td>18988904378</td>
+                                            <td>手机页面 （案例获取报价）</td>
+                                            
+<td>-90（80%）</td><td><div class="selector" id="uniform-visitstate"><select name="visitState" id="visitstate" style="opacity: 1;width:75px;">
+                                          <option value="2">未回访</option>
+                                          <option value="1">已回访</option>
+                                        </select></div></td> </tr>
+                                                                                    
+                                                                                    
+                                                                                  </tbody>
+                                    </table>
+
+</div>
+
+
 </div>
 <footer class="footer mt-20">
     <div class="container">

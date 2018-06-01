@@ -12,16 +12,16 @@
     <meta name="Keywords" content="<?php echo $keyword?>">
     <meta name="description" content="<?php echo $desc?>">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/TouchSlide.1.1.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/main.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.cn/js/foot.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/main.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
     <script type="text/javascript" src="/js/more.js?v1"></script>
     <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?1211ad93505007e7eb6df7f6f05c4e8d";
+  hm.src = "https://hm.baidu.com/hm.js?5e17917c58669241a9d904eaddad0a8e";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
@@ -60,7 +60,7 @@ var _hmt = _hmt || [];
         </div>
         <div class="bd">
             <div class="list_box">
-               <div class="zysmi"><span>全网数据监测  排名客观权威</span>中国婚嫁产业  大数据服务商<em><a href="http://www.youbangkeyi.cn/guize.html" target="_blank">排名算法</a></em></div>
+               <div class="zysmi"><span>全网数据监测  排名客观权威</span>中国婚嫁产业  大数据服务商<em><a href="http://www.youbangkeyi.com/guize.html" target="_blank">排名算法</a></em></div>
                 <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
                     <?php if(isset($spread['name'])) { ?>
                     <div class="pic_box">
@@ -68,7 +68,7 @@ var _hmt = _hmt || [];
                             <div class="huiyuan"></div>
                         <?php } ?> -->
                         <div class="num_txt">
-                       <div class="tit_pic"><a href="/detail/<?php echo $spread['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><img src="//img2.youbangkeyi.cn/<?php echo $spread['logo'];?>?imageView2/1/w/150/h/150/q/75|imageslim"></a></div>
+                       <div class="tit_pic"><a href="/detail/<?php echo $spread['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><img src="//img2.youbangkeyi.com/<?php echo $spread['logo'];?>?imageView2/1/w/150/h/150/q/75|imageslim"></a></div>
                             <div class="tit_box">
                                 <div class="title"><span>第<em><?php echo $spread['order_city'];?></em>名</span><a href="/detail/<?php echo $spread['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $spread['name']?></a></div>
                                 <div class="txt"><span>得分：<?php echo $spread['heat_index'];?></span><span>|</span><span>人均：¥<?php echo $spread['person_price'];?></span><span class="kep">客片：<?php echo $v['piccount']>0?''.$v['piccount'].'组':'商家无案例';?></span></div>
@@ -107,7 +107,7 @@ var _hmt = _hmt || [];
                             <div class="vipimg">
                                 <a href="/detail/<?php echo $spread['id'].'/'.$spread['taoxi']['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                                     <?php if(strpos($spread['taoxi']['cover'][0],'http') === false) {?>
-                                    <img src="//img2.youbangkeyi.cn<?php echo $spread['taoxi']['cover'][0]; ?>">
+                                    <img src="//img2.youbangkeyi.com<?php echo $spread['taoxi']['cover'][0]; ?>">
                                     <?php } else {?>
                                         <img src="<?php echo $spread['taoxi']['cover'][0]; ?>">
                                     <?php }?>
@@ -188,7 +188,7 @@ var _hmt = _hmt || [];
                                     <a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                                         <span>
                                             <?php if(strpos($v2['cover'][0],'http') === false) {?>
-                                                <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.cn<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
+                                                <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
                                             <?php } else {?>
                                                 <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
                                             <?php } ?>
@@ -201,7 +201,7 @@ var _hmt = _hmt || [];
            <?php if(strlen($v['package'])>2) { ?>
                         <div class="yuyue">
                 <i></i><span><?php echo $v['package'];?></span>
-            <a class="discount-btn" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">去看一看</a>
+            <a class="discount-btn" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">去看看</a>
             </div><?php } ?>
                         <div class="txt_box txtCtr">
                             <div class="txt">
@@ -302,11 +302,11 @@ var _hmt = _hmt || [];
 
  <div class="foot">
         <div class="foots">
-            <span><a href="/about.html">关于有榜</a>|<a target="_blank" href="http://youbangkeyi.mikecrm.com/E09npdx">商务合作</a>|<a target="_blank" href="/mianze.html">免责说明</a>|<a href="/shuoming.html" target="_blank">服务说明</a>|<a target="_blank" href="//c.youbangkeyi.cn/images/yingyezhizhao.jpeg">营业执照</a></span>
-            京ICP备17036862号-1 北京有榜信息科技有限公司 
+            <span><a href="/about.html">关于有榜</a>|<a target="_blank" href="http://youbangkeyi.mikecrm.com/E09npdx">商务合作</a>|<a target="_blank" href="/mianze.html">免责说明</a>|<a href="/shuoming.html" target="_blank">服务说明</a>|<a target="_blank" href="//c.youbangkeyi.com/images/yingyezhizhao.jpeg">营业执照</a></span>
+            京ICP备18024234号-2 北京有榜信息科技有限公司 
             <span class="gongan">京公网安备 11010802024698号</span>
         </div>
-        <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.cn/images/scs_logo.png"></a></div>
+        <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.com/images/scs_logo.png"></a></div>
     </div>
 </footer>
     </div>
