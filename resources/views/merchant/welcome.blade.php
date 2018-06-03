@@ -98,7 +98,7 @@
     <div class="tongji">
 
         <span></span>
-        <span>消耗积分:<?php echo $user["conscore"];?></span>
+        <span>消耗积分:<?php echo $conscore;?></span>
         <span>剩余积分:<?php echo $user["balascore"];?></span>
 
     </div>

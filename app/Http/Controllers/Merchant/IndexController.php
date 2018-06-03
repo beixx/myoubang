@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Merchant;
 
 use App\Http\Helper\Msg;
 use App\Http\Models\Merchant;
+use App\Http\Models\YfcBespokeView;
 use App\Http\Models\YfcTenants;
 use App\Http\Models\YfcTenantsPic;
 use App\Http\Models\YfcTenantsSet;
@@ -37,6 +38,8 @@ class IndexController extends MerchantController
             ->where("ctime" , '>',strtotime(date("Y-m-d"))-86400*6)->count();
         $this->data["c3"] = DB::table("yfc_bespoke_view")->where("tenantsId" ,"=",$this->tid)
             ->where("ctime" , '>',strtotime(date("Y-m-01")))->count();
+
+        $this->data['conscore'] = YfcBespokeView::where("tenantsId" ,"=",$this->tid)->sum("score");
 
         $this->data['poke'] = DB::table("yfc_bespoke_view")->orderby("id","desc")->where("tenantsId" ,$this->tid)->paginate(2, ['*'],  'page');
         $this->data['user'] = $user;
