@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Models\DianpingHunqingComments;
 use App\Http\Models\DianpingHunshaComments;
+use App\Http\Models\Merchant;
 use App\Http\Models\YfcAdv;
+use App\Http\Models\YfcBespokeView;
 use App\Http\Models\YfcStyle;
 use App\Http\Models\YfcTenants;
 use App\Http\Models\YfcTenantsPic;
@@ -628,7 +630,7 @@ class IndexController extends Controller
         foreach($this->data['tenants'] as $k => $v) {
             $this->data['tenants'][$k]['taoxi'] = empty($taoxitmp[$v['id']]) ? [] : $taoxitmp[$v['id']];
         }
-	$this->data['pycity'] = Config::get('city.'.$city,'beijing');
+	    $this->data['pycity'] = Config::get('city.'.$city,'beijing');
         $this->data['title'] = $city.'的'.$shoptype.'榜单定制页-有榜';
         $this->data['ismobile'] = $this->ismobile;
         return view("front/dingzhi",$this->data);
@@ -679,7 +681,7 @@ class IndexController extends Controller
     }
     public function saveview(){
         //`source` smallint(6) DEFAULT NULL COMMENT '1套系，2表示推荐榜单，3客片，4客户页面',
-	date_default_timezone_set('PRC'); 
+	    date_default_timezone_set('PRC');
         $phone = Request::get('phone');
         $tenantsId = Request::get('tenantsId');
         $data['phone'] = $phone;
@@ -688,8 +690,48 @@ class IndexController extends Controller
         $data['ctime'] = time();
         $data['url'] = $_SERVER['HTTP_REFERER'];
 
+        $other = YfcBespokeView::where("phone","=",$phone)->get();
+        $merchant = Merchant::where("tid","=",$tenantsId)->first();
+        $othertid = [];
+        foreach($other as $v ) {
+            $othertid[] = $v['tenantsId'];
+        }
+        if(in_array($tenantsId,$othertid)){
+            $res['result'] = '00';
+            return json_encode($res);
+        }
+        $count = count($othertid);
+        if($count == 0) {
+            $data["score"] = env("ALLSCORE");
+        }
+        elseif ($count == 1 ) {
+            $data["score"] =env("ALLSCORE") - env("PETSCORE") ;
+        }else {
+            $data["score"] =env("ALLSCORE") - env("PETSCORE")*2 ;
+        }
+        $data['type'] = 0;
+        if($merchant['balascore'] >0 ) {
+            if($merchant["balascore"] > $data['score']) {
+                $data['type'] = 1;
+                $merchant['balascore'] = $merchant["balascore"] - $data['score'];
+                DB::table("merchant")->where("tid","=",$tenantsId)->update([
+                    'balascore' => $merchant['balascore'],
+                ]);
+            }
+            $res['count'] = $count;
+            $res["tid"] = $othertid;
+            if($count ==1 || $count == 2) {
+                DB::table("merchant")->where("balascore",">","0")->wherein("tid",$othertid)->update([
+                    'balascore' => DB::Raw("balascore+".env("PETSCORE"))
+                ]);
+                YfcBespokeView::where("phone","=",$data['phone'])->update([
+                    'score' => DB::Raw("score-".env("PETSCORE"))
+                ]);
+
+            }
+        }
         $backres = DB::table('yfc_bespoke_view')->insert($data);
-        if($backres){
+        if(1){
             $res['result'] = '00';
             if($tenantsId) {
                 $yfctenants = YfcTenants::where("id",'=',$tenantsId)->first();

@@ -1,12 +1,13 @@
 <?php
 namespace App\Http\Controllers\Merchant;
 
-use App\Http\Controllers\Merchant;
 use App\Http\Helper\Msg;
+use App\Http\Models\Merchant;
 use App\Http\Models\YfcTenants;
 use App\Http\Models\YfcTenantsPic;
 use App\Http\Models\YfcTenantsSet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request as FileRequest;
 
 //待确认功能
@@ -26,7 +27,22 @@ class IndexController extends MerchantController
 
     public function welcome(Request $request)
     {
-        return view("merchant/welcome");
+        # 查询用户
+        $merchant = new Merchant();
+
+        $user = $merchant->where(array('id'=>$this->user['id']))->first();
+        $this->data["c1"] = DB::table("yfc_bespoke_view")->where("tenantsId" ,"=",$this->tid)
+            ->where("ctime" , '>',strtotime(date("Y-m-d")))->count();
+        $this->data["c2"] = DB::table("yfc_bespoke_view")->where("tenantsId" ,"=",$this->tid)
+            ->where("ctime" , '>',strtotime(date("Y-m-d"))-86400*6)->count();
+        $this->data["c3"] = DB::table("yfc_bespoke_view")->where("tenantsId" ,"=",$this->tid)
+            ->where("ctime" , '>',strtotime(date("Y-m-01")))->count();
+
+        $this->data['poke'] = DB::table("yfc_bespoke_view")->orderby("id","desc")->where("tenantsId" ,$this->tid)->paginate(2, ['*'],  'page');
+        $this->data['user'] = $user;
+        //echo "<pre>" ;
+        //print_r($this->data);exit;
+        return view("merchant/welcome",$this->data);
     }
 
 
