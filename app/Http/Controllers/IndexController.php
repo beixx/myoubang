@@ -67,7 +67,7 @@ class IndexController extends Controller
             $tenantssort = YfcTenantsSort::where('tenantsid',$id)->first();
             $tenantssortview = YfcTenantsSortview::where('tenantsid',$id)->orderby("date",'asc')->get()->toArray();
             $tenantssortviewcomment = YfcTenantsSortviewComment::where('tenantsid',$id)->orderby("date",'asc')->get()->toArray();
-            $city = $tenants['city'];
+            $city = $tenants['positionCity'];
             $pycity = Config::get('city.'.$city,'beijing');
             //Session::put('city',$city);
 
