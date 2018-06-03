@@ -690,7 +690,7 @@ class IndexController extends Controller
         $data['ctime'] = time();
         $data['url'] = $_SERVER['HTTP_REFERER'];
 
-        $other = YfcBespokeView::where("phone","=",$phone)->get();
+        $other = YfcBespokeView::where("phone","=",$phone)->where("type","=","1")->get();
         $merchant = Merchant::where("tid","=",$tenantsId)->first();
         $othertid = [];
         foreach($other as $v ) {
@@ -700,17 +700,19 @@ class IndexController extends Controller
             $res['result'] = '00';
             return json_encode($res);
         }
-        $count = count($othertid);
-        if($count == 0) {
-            $data["score"] = env("ALLSCORE");
-        }
-        elseif ($count == 1 ) {
-            $data["score"] =env("ALLSCORE") - env("PETSCORE") ;
-        }else {
-            $data["score"] =env("ALLSCORE") - env("PETSCORE")*2 ;
-        }
+
         $data['type'] = 0;
+        $data["score"] = env("ALLSCORE");
         if($merchant['balascore'] >0 ) {
+            $count = count($othertid);
+            if($count == 0) {
+                $data["score"] = env("ALLSCORE");
+            }
+            elseif ($count == 1 ) {
+                $data["score"] =env("ALLSCORE") - env("PETSCORE") ;
+            }else {
+                $data["score"] =env("ALLSCORE") - env("PETSCORE")*2 ;
+            }
             if($merchant["balascore"] > $data['score']) {
                 $data['type'] = 1;
                 $merchant['balascore'] = $merchant["balascore"] - $data['score'];
@@ -724,7 +726,7 @@ class IndexController extends Controller
                 DB::table("merchant")->where("balascore",">","0")->wherein("tid",$othertid)->update([
                     'balascore' => DB::Raw("balascore+".env("PETSCORE"))
                 ]);
-                YfcBespokeView::where("phone","=",$data['phone'])->update([
+                YfcBespokeView::where("type","=","1")->where("phone","=",$data['phone'])->update([
                     'score' => DB::Raw("score-".env("PETSCORE"))
                 ]);
 
