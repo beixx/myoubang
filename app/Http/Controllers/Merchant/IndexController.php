@@ -39,7 +39,7 @@ class IndexController extends MerchantController
         $this->data["c3"] = DB::table("yfc_bespoke_view")->where("tenantsId" ,"=",$this->tid)
             ->where("ctime" , '>',strtotime(date("Y-m-01")))->count();
 
-        $this->data['conscore'] = YfcBespokeView::where("tenantsId" ,"=",$this->tid)->sum("score");
+        $this->data['conscore'] = YfcBespokeView::where("type","=","1")->where("tenantsId" ,"=",$this->tid)->sum("score");
 
         $this->data['poke'] = DB::table("yfc_bespoke_view")->orderby("id","desc")->where("tenantsId" ,$this->tid)->paginate(2, ['*'],  'page');
         $this->data['user'] = $user;
