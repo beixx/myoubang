@@ -158,14 +158,7 @@ var _hmt = _hmt || [];
     </div>
 </footer>
 <div class="bgDiv"></div>
-<div class="downNav bt00">
-    <div class="ask">
-        <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入您的手机号（<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
-        <div type="submit" name="wapsubmit" id="tijiao" class="btn">免费获取报价 · 3分钟响应</div>
-    </div>
-
-</div>
+@include("front.poke")
 <!-- 城市弹出 -->
 <div class="container">
     <div class="city">
@@ -256,46 +249,8 @@ var _hmt = _hmt || [];
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript">
-    $('div[name=wapsubmit]').click(function(){
-        var tenantsId = $('#tenantsId').val();
-        var phone = $('#mobile').val();
-        var source = 13;
 
-        if(!phone){
-            alert('手机必填');
-            return false;
-        }
-        if(phone){
-            if(!(/^1[34578]\d{9}$/.test(phone))){
-                alert("亲，手机号码填写的不对哦");
-                return false;
-            }
-        }
-        $.ajax({
-            url: "/saveview",
-            type: "post",
-            dataType: "json",
-            data: {'tenantsId': tenantsId,'phone': phone,'source':source},
-            success: function(data){
-                console.log(data);
-                if(data.result=='00'){
-                    alert("预约成功" + '\n' + "请注意接听商家的来电！");
-                    <?php if($tenants['isVip'] ==2) { ?>
-                            location.href="<?php echo $tenants['modeladvurl'];?>";
-                    <?php } else {?>
-                        location.reload();
-                    <?php } ?>
-                }
-            }
-        });
-    });
-    $(".liwuclick").click(function(){
-        $("#tijiao").html("领取优惠·3分钟响应");
-    })
-    $(".anliclick").click(function(){
-        $("#tijiao").html("获取报价·3分钟响应");
-    })
-            // 数据初始化
+    // 数据初始化
     var Obj = $('body').barrage({
         data : data, //数据列表
         row : 1,   //显示行数

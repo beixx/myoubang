@@ -25,7 +25,7 @@ var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
   hm.src = "https://hm.baidu.com/hm.js?5e17917c58669241a9d904eaddad0a8e";
-  var s = document.getElementsByTagName("script")[0]; 
+  var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(hm, s);
 })();
 
@@ -145,7 +145,7 @@ var _hmt = _hmt || [];
                             <img src="<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                         <?php } ?>
                     </span></li></a>
-    <?php }} ?>    
+    <?php }} ?>
 <?php }else { ?>
 
     <?php } ?>
@@ -198,7 +198,7 @@ var _hmt = _hmt || [];
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 
         <div class="data pbbb">
         <div class="titleqs"><i>擅长数据分析</i><span class="fa">通过大数据进行标签提取</span></div>
@@ -372,14 +372,7 @@ var _hmt = _hmt || [];
     </div>
 </footer>
 <div class="bgDiv"></div>
-<div class="downNav bt00">
-    <div class="ask">
-        <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入您的手机号（<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
-        <button type="submit" name="wapsubmit" id="tijiao" class="btn">免费预约咨询 · 3分钟响应</button>
-    </div>
-
-</div>
+@include("front.poke")
 <!-- 城市弹出 -->
 <div class="container">
     <div class="city">
@@ -389,7 +382,7 @@ var _hmt = _hmt || [];
                 <p data-id="110100"><?php echo $city;?></p>
             </div>
             <div class="hot">
-                <span class="city-letter">华北东北</span>     
+                <span class="city-letter">华北东北</span>
                     <p data-id="110100"> <a href="/beijing/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">北京</a></p>
                     <p data-id="110101"> <a href="/tianjin/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">天津</a></p>
                     <p data-id="110102"><a href="/shenyang/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">沈阳</a></p>
@@ -406,7 +399,7 @@ var _hmt = _hmt || [];
                     <p data-id="1101048"><a href="/jinzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">锦州</a></p>
                     <p data-id="1101049"><a href="/daqing/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">大庆</a></p>
                     <p data-id="1101040"><a href="/changzhi/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">长治</a></p>
-               <span class="city-letter">华东地区</span> 
+               <span class="city-letter">华东地区</span>
                     <p data-id="110107"> <a href="/shanghai/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">上海</a></p>
                     <p data-id="110106"> <a href="/hangzhou/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">杭州</a></p>
                     <p data-id="110108"><a href="/xiamen/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">厦门</a></p>
@@ -435,7 +428,7 @@ var _hmt = _hmt || [];
                     <p data-id="11016"><a href="/huaian/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">淮安</a></p>
                     <p data-id="11017"><a href="/maanshan/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">马鞍山</a></p>
                     <p data-id="11018"><a href="/taian/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">泰安</a></p>
-            <span class="city-letter">中部西部</span> 
+            <span class="city-letter">中部西部</span>
                     <p data-id="110116"><a href="/chengdu/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">成都</a></p>
                     <p data-id="110117"><a href="/chongqing/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">重庆</a></p>
                     <p data-id="110118"><a href="/changsha/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">长沙</a></p>
@@ -487,7 +480,7 @@ var _hmt = _hmt || [];
  var colorList = [
      '#59c5a7', '#51b8fe', '#fa827d'
  ];
- 
+
  // 总和
  var total = {
      name: '竞争指数',
@@ -754,7 +747,7 @@ option = {
         myChart.resize();
     };
 
-    
+
 
     var myChart = document.getElementById('dbmain2');
     //自适应宽高
@@ -879,56 +872,7 @@ option = {
         myChart.resize();
     };
 
-    $('button[name=wapsubmit]').click(function(){
-        var tenantsId = $('#tenantsId').val();
-        var phone = $('#mobile').val();
-        var source = 12;
-
-        if(!phone){
-            alert('手机必填');
-            return false;
-        }
-        if(phone){
-            if(!(/^1[34578]\d{9}$/.test(phone))){
-                alert("亲，手机号码填写的不对哦");
-                return false;
-            }
-        }
-        $(this).attr('disabled', true);
-        $.ajax({
-            url: "/saveview",
-            type: "post",
-            dataType: "json",
-            data: {'tenantsId': tenantsId,'phone': phone,'source':source},
-            success: function(data){
-                console.log(data);
-                if(data.result=='00'){
-                    alert("预约成功" + '\n' + "请注意接听商家的来电！");
-                    <?php if($tenants['isVip'] ==2) { ?>
-                        location.href="<?php echo $tenants['modeladvurl'];?>";
-                    <?php } else {?>
-                        location.reload();
-                    <?php } ?>
-                }
-            }
-        });
-    });
-    $(".anliclick").click(function(){
-     $("#tijiao").html("免费获取报价 · 3分钟响应");
-	$("#mobile").attr("placeholder","请输入手机号，立刻获取案例报价！");
-    })
-    $(".liwuclick").click(function(){
-    $("#tijiao").html("免费领取优惠 · 3分钟响应");
-    $("#mobile").attr("placeholder","请输入手机号，领取优惠！");
-    })
-    $(".shopclick").click(function(){
-    $("#tijiao").html("免费预约咨询 · 3分钟响应");
-    })
-    $(".dangqiclick").click(function(){
-    $("#tijiao").html("免费咨询档期 · 3分钟响应");
-    $("#mobile").attr("placeholder","请输入手机号，优先安排拍摄档期！");
-    })
-        // 数据初始化
+    // 数据初始化
     var Obj = $('body').barrage({
         data : data, //数据列表
         row : 1,   //显示行数
@@ -939,7 +883,7 @@ option = {
         ismoseoverclose : true, //悬浮是否停止
         height : 30, //设置单个div的高度
     })
-    Obj.start(); 
+    Obj.start();
 </script>
 </body>
 </html>

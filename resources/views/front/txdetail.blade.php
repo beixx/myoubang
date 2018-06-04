@@ -148,14 +148,7 @@ var _hmt = _hmt || [];
     </div>
 </footer>
 <div class="bgDiv"></div>
-<div class="downNav bt00">
-    <div class="ask">
-        <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="text" name="mobile" id="mobile" class="input" placeholder="输入您的手机号，优先安排拍摄档期">
-        <input type="submit" name="wapsubmit" class="btn" value="免费咨询档期 · 3分钟响应">
-    </div>
-
-</div>
+@include("front.poke")
 <!-- 城市弹出 -->
 <div class="container">
     <div class="city">
@@ -247,10 +240,10 @@ var _hmt = _hmt || [];
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript">
 
-    $('input[name=wapsubmit]').click(function(){
+    $('button[name=wapsubmit]').click(function(){
         var tenantsId = $('#tenantsId').val();
         var phone = $('#mobile').val();
-        var source = 14;
+        var source = $("#source").val();
 
         if(!phone){
             alert('手机必填');
@@ -258,10 +251,11 @@ var _hmt = _hmt || [];
         }
         if(phone){
             if(!(/^1[34578]\d{9}$/.test(phone))){
-                alert("手机号码有误，请重填");
+                alert("亲，手机号码填写的不对哦");
                 return false;
             }
         }
+        $(this).attr('disabled', true);
         $.ajax({
             url: "/saveview",
             type: "post",
@@ -292,14 +286,8 @@ var _hmt = _hmt || [];
         ismoseoverclose : true, //悬浮是否停止
         height : 30, //设置单个div的高度
     })
-    Obj.start(); 
-    $(".yuyueclick").click(function(){
-        $("input[name=wapsubmit]").val("免费预约咨询·3分钟响应");
-        $("#mobile").attr("placeholder","请输入您的手机号，咨询商家！");
-    })
-    $(".liwuclick").click(function(){
-        $("input[name=wapsubmit]").val("免费领取优惠·3分钟响应");
-    })
+    Obj.start();
+
 </script>
 </body>
 </html>

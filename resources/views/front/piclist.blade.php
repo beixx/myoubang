@@ -96,13 +96,7 @@ var _hmt = _hmt || [];
     </div>
 </footer>
 <div class="bgDiv"></div>
-<div class="downNav bt00">
-    <div class="ask">
-        <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
-        <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入您的手机号（<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
-        <input type="submit" name="wapsubmit" class="btn" value="免费预约看店·3分钟响应">
-    </div>
-</div>
+@include("front.poke")
 <!-- 城市弹出 -->
 <div class="container">
     <div class="city">
@@ -193,51 +187,6 @@ var _hmt = _hmt || [];
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script>
-
-    $('input[name=wapsubmit]').click(function(){
-        var tenantsId = $('#tenantsId').val();
-        var phone = $('#mobile').val();
-        var source = 12;
-
-        if(!phone){
-            alert('手机必填');
-            return false;
-        }
-        if(phone){
-            if(!(/^1[34578]\d{9}$/.test(phone))){
-                alert("手机号码有误，请重填");
-                return false;
-            }
-        }
-        $.ajax({
-            url: "/saveview",
-            type: "post",
-            dataType: "json",
-            data: {'tenantsId': tenantsId,'phone': phone,'source':source},
-            success: function(data){
-                console.log(data);
-                if(data.result=='00'){
-                    alert("预约成功" + '\n' + "请注意接听商家的来电！");
-                    <?php if($tenants['isVip'] ==2) { ?>
-                            location.href="<?php echo $tenants['modeladvurl'];?>";
-                    <?php } else {?>
-                        location.reload();
-                    <?php } ?>
-                }
-            }
-        });
-    });
-    $(".anliclick").click(function(){
-        $("input[name=wapsubmit]").val("获取报价·3分钟响应");
-    })
-    $(".shopclick").click(function(){
-        $("input[name=wapsubmit]").val("预约到店·3分钟响应");
-    })
-    $(".dangqiclick").click(function(){
-        $("input[name=wapsubmit]").val("咨询档期·3分钟响应");
-    })
-
-
     <?php foreach($pics as $k=>$v) {?>
         var lightbox = GLightbox({selector: 'glightbox<?php echo $k?>'});
     <?php } ?>
