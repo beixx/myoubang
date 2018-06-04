@@ -901,7 +901,7 @@ option = {
             dataType: "json",
             data: {'tenantsId': tenantsId,'phone': phone,'source':source},
             success: function(data){
-                console.log(data); return false ;
+                console.log(data);
                 if(data.result=='00'){
                     alert("预约成功" + '\n' + "请注意接听商家的来电！");
                     <?php if($tenants['isVip'] ==2) { ?>
