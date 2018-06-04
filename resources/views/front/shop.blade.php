@@ -879,7 +879,7 @@ option = {
         myChart.resize();
     };
 
-    $('div[name=wapsubmit]').click(function(){
+    $('button[name=wapsubmit]').click(function(){
         var tenantsId = $('#tenantsId').val();
         var phone = $('#mobile').val();
         var source = 12;
