@@ -122,7 +122,7 @@
                 <td><?php echo date("Y-m-d H:i:s",$v->ctime);?></td>
                 <td><?php echo $v->type==1?$v->phone:"******";?></td>
                 <td>手机页面 </td>
-                <td><?php echo $type==1?$v->score:0; echo '('.$v->score.')';?></td>
+                <td><?php echo $v->type==1?$v->score:0; echo '('.$v->score.')';?></td>
             </tr>
             <?php } ?>
             </tbody>

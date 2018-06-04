@@ -68,6 +68,7 @@ var _hmt = _hmt || [];
         <del class="lft fa">¥<?php echo $info['price'];?></del>
         <h2 class="txtRgt rgt"><?php echo $info['setName'];?></h2>
     </div>
+    <div class="tishi">温馨提示：套餐详细内容以咨询商家为准，到店请提前预约！<span class="yuyueclick down">预约咨询</span></div>
 </div>
 <div class="shop_box">
    <div class="titdp">店铺信息</div>
@@ -293,8 +294,9 @@ var _hmt = _hmt || [];
         height : 30, //设置单个div的高度
     })
     Obj.start(); 
-    $(".dangqiclick").click(function(){
-        $("input[name=wapsubmit]").val("获取报价·3分钟响应");
+    $(".yuyueclick").click(function(){
+        $("input[name=wapsubmit]").val("免费预约咨询·3分钟响应");
+        $("#mobile").attr("placeholder","请输入您的手机号，咨询商家！");
     })
     $(".liwuclick").click(function(){
         $("input[name=wapsubmit]").val("免费领取优惠·3分钟响应");

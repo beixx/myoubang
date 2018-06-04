@@ -12,8 +12,12 @@
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
-        <script type="text/javascript" src="/js/index.js"></script>
-            <script type="text/javascript" src="/js/data.js"></script>
+
+
+    <script type="text/javascript" src="/js/layer/layer.js"></script>
+    <script type="text/javascript" src="/js/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/data.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js?2"></script>
     <style type="text/css">body{background:#f0f0f0}</style>
     <script>
@@ -227,9 +231,9 @@ var _hmt = _hmt || [];
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
                             <a class="yulan glightbox" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>">
-                          <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim"/></a>
+                          <img   class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim"/></a>
                             <?php } else {?>
-                            <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
+                            <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                             <?php } ?>
 
 
@@ -260,9 +264,9 @@ var _hmt = _hmt || [];
             <div class="suolvt">
                 <span>
                     <?php if(strpos($v['cover'][0],'http') === false) {?>
-                    <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/690/h/444/q/75|imageslim" />
+                    <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/690/h/444/q/75|imageslim" />
                     <?php } else {?>
-                    <img src="<?php echo $v['cover'][0];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
+                    <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v['cover'][0];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                     <?php } ?>
                 </span></div>
                 <div class="txt">
@@ -329,7 +333,7 @@ var _hmt = _hmt || [];
             <li>
                 <a class="suolvl" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                    <span>
-                       <img src="<?php echo strpos($v['cover'],"http")!==false ? '' : 'http://img2.youbangkeyi.com';?><?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim">
+                       <img class="lazy" src="/images/grey.gif" data-original="<?php echo strpos($v['cover'],"http")!==false ? '' : 'http://img2.youbangkeyi.com';?><?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim">
                    </span>  </a><p><?php echo $v['name'];?></p>
                     <div class="price">
                         <span class="red">第<?php echo $v['order_city'];?>名</span>
@@ -468,6 +472,9 @@ var _hmt = _hmt || [];
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
 <script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/echarts-wordcloud.min.js"></script>
 <script type="text/javascript">
+    $(function() {
+        $("img.lazy").lazyload({effect: "fadeIn"});
+    });
     var myChart = document.getElementById('shuju');
     //自适应宽高
     var myChartContainer = function () {
@@ -893,7 +900,7 @@ option = {
             dataType: "json",
             data: {'tenantsId': tenantsId,'phone': phone,'source':source},
             success: function(data){
-                console.log(data);
+                console.log(data); return false ;
                 if(data.result=='00'){
                     alert("预约成功" + '\n' + "请注意接听商家的来电！");
                     <?php if($tenants['isVip'] ==2) { ?>

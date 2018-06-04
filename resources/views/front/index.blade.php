@@ -17,6 +17,8 @@
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/main.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
     <script type="text/javascript" src="/js/more.js?v1"></script>
+            <script type="text/javascript" src="/js/index.js"></script>
+            <script type="text/javascript" src="/js/data.js"></script>
     <script>
 var _hmt = _hmt || [];
 (function() {
@@ -152,35 +154,6 @@ var _hmt = _hmt || [];
 				</div>
                             </div>
                         </div>
-                             <?php
-                             if($v['trends'] && is_array(json_decode($v['trends'],true))){
-                                 $trends = json_decode($v['trends'],true);
-                                 if($trends['time'] >= time() - 86400*3) {
-                                     if(isset($trends['type']) && $trends['type'] ==1) {
-                                         echo '<div class="dongtai">'.$trends['content'].'</div>';
-
-                                     }
-                                     else {
-                                         $time = time() - $trends['time'];
-                                         if($time < 3600) {
-                                             $str = intval($time/60).'分钟前  ';
-                                         }elseif ($time < 3600*24) {
-                                             $str = intval($time/3600).'小时前  ';
-
-                                         }else {
-                                             $str = '昨天  ';
-                                         }
-                                         echo '<div class="dongtai">'.$str.$trends['content'].'</div>';
-                                     }
-                                 }
-                                 else {
-                                     echo '';
-                                 }
-                             }
-                             else {
-                                 echo '';
-                             }
-                             ?>
                         <div class="pic txtCtr">
                             <?php foreach($v['taoxi'] as $v2) { ?>
                                 <?php if(isset($v2['cover'][0])) { ?>                  
@@ -577,6 +550,18 @@ var _hmt = _hmt || [];
             return false ;
         });
     });
+        // 数据初始化
+    var Obj = $('body').barrage({
+        data : data, //数据列表
+        row : 1,   //显示行数
+        time : 5000, //间隔时间
+        gap : 10,    //每一个的间隙
+        position : 'fixed', //绝对定位
+        direction : 'bottom left', //方向
+        ismoseoverclose : true, //悬浮是否停止
+        height : 30, //设置单个div的高度
+    })
+    Obj.start(); 
 </script>
 
 </body>
