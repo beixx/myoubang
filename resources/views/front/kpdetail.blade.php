@@ -90,13 +90,12 @@ var _hmt = _hmt || [];
         <div class="num fa txtCtr">
             <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
-    </div>
-<div class="zysmn"><span>中国婚嫁产业  大数据服务商</span>全网数据监测  排名客观权威<em><a href="http://www.youbangkeyi.com/guize.html" target="_blank">排名算法</a></em></div><hr>
+    </div><hr>
 <a class="yuyue">
                 <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?></span>
             <button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
             </a>
-</div>
+</div><div class="info-box"><div class="zysmn"><span>全网数据监测  排名客观权威</span>中国婚嫁产业  大数据服务商<em><a href="http://www.youbangkeyi.com/guize.html" target="_blank">排名算法</a></em></div></div>
 <div class="tittp">客片欣赏</div>
 <div class="info">
     <?php foreach($picinfo['cover'] as $v) { ?>
