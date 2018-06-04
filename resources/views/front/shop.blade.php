@@ -376,7 +376,7 @@ var _hmt = _hmt || [];
     <div class="ask">
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
         <input type="number" name="mobile" id="mobile" class="input" placeholder="请输入您的手机号（<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
-        <div type="submit" name="wapsubmit" id="tijiao" class="btn">免费预约咨询 · 3分钟响应</div>
+        <button type="submit" name="wapsubmit" id="tijiao" class="btn">免费预约咨询 · 3分钟响应</button>
     </div>
 
 </div>
@@ -894,6 +894,7 @@ option = {
                 return false;
             }
         }
+        $(this).attr('disabled', true);
         $.ajax({
             url: "/saveview",
             type: "post",
