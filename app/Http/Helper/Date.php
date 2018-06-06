@@ -49,4 +49,17 @@ class Date
         }
     }
 
+    public static function xtime ($time){
+        $t = time() - $time;
+        if($t > 86400) {
+            return date("m-d H:i",$time);
+        }
+        else if($t < 3600){
+            return intval($t/60)."分钟前";
+        }
+        else {
+            return intval($t/3600)."小时前";
+        }
+    }
+
 }
