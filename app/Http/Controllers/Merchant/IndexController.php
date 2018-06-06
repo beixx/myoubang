@@ -171,8 +171,17 @@ class IndexController extends MerchantController
     public function setpackage(Request $request){
         $this->data['tenants'] = YfcTenants::where("id",'=',$this->tid)->first()->toArray();
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //print_r($_POST);EXIT;
             $name = trim($request->input('name'));
-            YfcTenants::where("id" ,'=',$this->tid)->update(["package"=>$name]);
+            $data = [
+                "package"=>$name,
+                'bespoke' => trim($request->input("bespoke")),
+                "price" =>intval($request->input("price")),
+                "racket" =>intval($request->input("racket")),
+                "address" =>trim($request->input("address")),
+                "area" =>trim($request->input("area")),
+            ];
+            YfcTenants::where("id" ,'=',$this->tid)->update($data);
             Msg::js('设置成功','/merchant/setpackage');
         }
         return view("merchant/setpackage" , $this->data);
