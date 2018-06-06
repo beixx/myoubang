@@ -230,7 +230,7 @@ var _hmt = _hmt || [];
                         <span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
-                            <a class="yulan glightbox" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>">
+                            <a class="yulan  glightbox<?php echo $k;?>" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>">
                           <img   class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim"/></a>
                             <?php } else {?>
                             <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
@@ -250,7 +250,10 @@ var _hmt = _hmt || [];
 <script src="/js/glightbox.min.js"></script>
 
   <script>
-    var lightbox = GLightbox();
+      <?php foreach($tenantspics as $k=>$v) {?>
+        var lightbox = GLightbox({selector: 'glightbox<?php echo $k?>'});
+      <?php } ?>
+
   </script>
 <?php } ?>
 
