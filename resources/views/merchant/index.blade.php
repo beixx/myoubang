@@ -28,7 +28,7 @@
 <body>
 <header class="navbar-wrapper">
     <div class="navbar navbar-fixed-top">
-        <div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="http://www.youbangkeyi.com" >有榜网</a> <a href="http://www.youbangkeyi.com" class="logo navbar-logo-m f-l mr-10 visible-xs" >有榜网</a>
+        <div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="http://merchant.youbangkeyi.com/" >有榜网</a> <a href="http://merchant.youbangkeyi.com/" class="logo navbar-logo-m f-l mr-10 visible-xs" >有榜网</a>
             <span class="logo navbar-slogan f-l mr-10 hidden-xs">v3.1</span>
             <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
             <nav class="nav navbar-nav">
@@ -72,11 +72,11 @@
     <div class="menu_dropdown bk_2">
         <dl id="menu-article">
             <dt><i class="Hui-iconfont">&#xe616;</i> 商户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
+            <dd style="display: block;"> 
                 <ul>
+    <li><a data-href="/merchant/setpackage" data-title="商家基本信息" href="javascript:void(0)">商家基本信息</a></li>
                     <li><a data-href="/merchant/yfctenantspic" data-title="案例列表" href="javascript:void(0)">案例列表</a></li>
                     <li><a data-href="/merchant/yfctenantsset" data-title="套系列表" href="javascript:void(0)">套系列表</a></li>
-                    <li><a data-href="/merchant/setpackage" data-title="套系列表" href="javascript:void(0)">设置优惠</a></li>
                 </ul>
             </dd>
         </dl>

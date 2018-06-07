@@ -53,6 +53,31 @@
 <div class="page-container">
     <form class="form form-horizontal" action="" method="post" enctype="multipart/form-data" id="formarticleadd">
         <input type="hidden" name="id" value="<?php echo isset($set['id'])?$set['id']:0; ?>" />
+
+           <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商圈：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="<?php echo $tenants['area']; ?>" placeholder="" id="" name="area">
+            </div>
+        </div>
+                <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>地址：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="<?php echo $tenants['address']; ?>" placeholder="" id="" name="address">
+            </div>
+        </div>
+                <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商家平均价格：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="<?php echo $tenants['price']; ?>" placeholder="" id="" name="price">
+            </div>
+        </div>
+                <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>预约礼：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="<?php echo $tenants['bespoke']; ?>" placeholder="" id="" name="bespoke">
+            </div>
+        </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>到店礼：</label>
             <div class="formControls col-xs-8 col-sm-9">
@@ -60,33 +85,9 @@
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>预约礼：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="<?php echo $tenants['bespoke']; ?>" placeholder="" id="" name="bespoke">
-            </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商家平均价格：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="<?php echo $tenants['price']; ?>" placeholder="" id="" name="price">
-            </div>
-        </div>
-        <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>是否旅拍：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <input type="checkbox" class="input-text" value="1" <?php if($tenants["racket"]??0==1) echo "checked";?> placeholder="" id="" name="racket">
-            </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>地址：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="<?php echo $tenants['address']; ?>" placeholder="" id="" name="address">
-            </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商圈：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="<?php echo $tenants['area']; ?>" placeholder="" id="" name="area">
             </div>
         </div>
 
