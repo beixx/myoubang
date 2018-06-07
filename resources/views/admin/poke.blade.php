@@ -27,10 +27,7 @@
     <div class="text-c">
 
     </div>
-    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a></span>
-        <span class="l"><a href="javascript:;" onclick="picture_add('添加案例','/merchant/addpic')" class="btn btn-danger1 radius">添加案例</a></span>
-
-        <span class="r">共有数据：<strong>？</strong> 条</span> </div>
+    
     <div class="mt-20">
         <table class="table table-border table-bordered table-bg table-sort">
             <thead>
