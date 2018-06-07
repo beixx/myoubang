@@ -43,6 +43,10 @@ class IndexController extends MerchantController
 
         $this->data['poke'] = DB::table("yfc_bespoke_view")->orderby("id","desc")->where("tenantsId" ,$this->tid)->paginate(2, ['*'],  'page');
         $this->data['user'] = $user;
+
+        $this->data['poketype'] = [
+            "未申诉",'已申诉',"驳回","申诉成功",
+        ];
         //echo "<pre>" ;
         //print_r($this->data);exit;
         return view("merchant/welcome",$this->data);
@@ -264,6 +268,7 @@ class IndexController extends MerchantController
             "poketype" => 1 ,
             'pokemsg' => "该信息已从其他平台获取",
         ];
+
         $res['result'] = '00';
         if(YfcBespokeView::where(['id' => $id,'tenantsId' => $this->tid])->update($data)){
             $res['result'] == "00";

@@ -123,7 +123,7 @@
                 <td><?php echo $v->type==1?$v->phone:"******";?></td>
                 <td>手机页面 </td>
                 <td><?php echo $v->type==1?$v->score:0; echo '('.$v->score.')';?></td>
-                <td><?php echo $v->poketype==1?"已经申诉":"未申诉";?></td>
+                <td><?php echo $poketype[$v->poketype];?></td>
                 <td><select class="poke" data-id="<?php echo $v->id;?>">
                       <option value ="0">选择申诉理由</option>
                       <option <?php if($v->poketype==1) echo 'selected';?>  value ="1">该信息已从其他渠道获取</option>
