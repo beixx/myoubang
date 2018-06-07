@@ -42,7 +42,7 @@ Route::group(['domain' => env('M_WEB_URL')],function(){
     Route::post('/get/hunliprice', 'IndexController@hunliprice');
 });
 
-Route::group(['domain' => 'www.youbangkeyi.com'],function(){
+Route::group(['domain' => env('WWW_URL')],function(){
     Route::get('/', 'IndexController@redirect');
 
     Route::get('/dafen/{name}/{id}', 'IndexController@dafen');
@@ -97,7 +97,5 @@ Route::group(['domain' => env('MERCHANT_URL')],function(){
 
     Route::post("/merchant/fileupload" , 'Merchant\IndexController@fileupload');
     Route::post("/merchant/filesave" , 'Merchant\IndexController@filesave');
-
-
 
 });
