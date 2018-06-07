@@ -150,8 +150,38 @@ var _hmt = _hmt || [];
                         <div class="num_txt">
                             <div class="tit_box">
                                 <div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>¥<?php echo $v['person_price'];?></span><span><?php echo $v['area'];?></span><span class="fmr"><!--3分钟前新增客片/套系--></span>
-				</div>
+                                <div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>¥<?php echo $v['person_price'];?></span><span><?php echo $v['area'];?></span>
+                                    <span class="fmr">
+                                        <?php
+                                        if($v->trends && is_array(json_decode($v['trends'],true))){
+                                            $trends = json_decode($v['trends'],true);
+                                            if($trends['time'] >= time() - 86400*3) {
+                                                if(isset($trends['type']) && $trends['type'] ==1) {
+                                                    echo '<div class="t1">'.$trends['content'].'</div><hr>';
+                                                }
+                                                else {
+                                                    $time = time() - $trends['time'];
+                                                    if($time < 3600) {
+                                                        $str = intval($time/60).'分钟前  ';
+                                                    }elseif ($time < 3600*24) {
+                                                        $str = intval($time/3600).'小时前  ';
+
+                                                    }else {
+                                                        $str = '昨天  ';
+                                                    }
+                                                    echo '<div class="t1">'.$str.$trends['content'].'</div><hr>';
+                                                }
+                                            }
+                                            else {
+                                                echo '';
+                                            }
+                                        }
+                                        else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </span>
+				                </div>
                             </div>
                         </div>
                         <div class="pic txtCtr">
