@@ -79,7 +79,7 @@ class IndexController extends MerchantController
             else {
                 $set->insert($data);
             }
-            $trends = ['time' => time(),'content' => '更新了最新套系《'.$data['setName'].'》'];
+            $trends = ['time' => time(),'content' => '商家新增套系'];
             Yfctenants::where("id",'=',$data['tenantsId'])->update(['trends'=>json_encode($trends)]);
             Msg::js('编辑成功','/merchant/yfctenantsset');
             exit;
@@ -127,7 +127,7 @@ class IndexController extends MerchantController
 
                 YfcTenants::where("id",'=',$this->tid)->update(['piccount' => $count]);
             }
-            $trends = ['time' => time(),'content' => '更新了最新案例《'.$data['picname'].'》'];
+            $trends = ['time' => time(),'content' => '商家新增客片'];
             Yfctenants::where("id",'=',$data['tenantsId'])->update(['trends'=>json_encode($trends)]);
             Msg::js('编辑成功','/merchant/yfctenantspic');
             exit;
