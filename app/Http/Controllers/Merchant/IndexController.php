@@ -41,7 +41,7 @@ class IndexController extends MerchantController
 
         $this->data['conscore'] = YfcBespokeView::where("type","=","1")->where("tenantsId" ,"=",$this->tid)->sum("score");
 
-        $this->data['poke'] = DB::table("yfc_bespoke_view")->orderby("id","desc")->where("tenantsId" ,$this->tid)->paginate(2, ['*'],  'page');
+        $this->data['poke'] = DB::table("yfc_bespoke_view")->orderby("id","desc")->where("tenantsId" ,$this->tid)->paginate(20, ['*'],  'page');
         $this->data['user'] = $user;
 
         $this->data['poketype'] = [
@@ -263,6 +263,9 @@ class IndexController extends MerchantController
         }
         if($poke['poketype']==2 || $poke['poketype']==3) {
             return json_encode(["result"=> '01','msg'=> "数据已经处理完成"]);
+        }
+        if($poke['type']==0) {
+            return json_encode(["result"=> '01','msg'=> "免费数据，不做处理"]);
         }
         $data = [
             "poketype" => 1 ,

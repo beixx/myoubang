@@ -34,8 +34,8 @@
             <tr class="text-c">
                 <th width="25"><input type="checkbox" name="" value=""></th>
                 <th width="70">ID</th>
-                <th width="80">名称</th>
-                <th width="200">摘要</th>
+                <th width="80">手机</th>
+                <th width="200">商户id</th>
                 <th width="200">状态</th>
                 <th width="100">操作</th>
             </tr>
@@ -46,7 +46,8 @@
                 <td><input name="" type="checkbox" value="<?php echo $v->id;?>"></td>
                 <td><?php echo $v->id;?></td>
                 <td><?php echo $v->phone;?></td>
-                <td><?php echo $v->ctime;?></td>
+                <td><?php echo $v->tenantsId;?></td>
+                <td><?php echo date("Y-m-d H:i:s",$v->ctime);?></td>
                 <td><?php echo $v->poketype==1?"未处理":"已处理";?></td>
                 <td class="f-14 product-brand-manage">
                     <a href="/admin/pokesucc?id=<?php echo $v->id;?>" title="胜诉成功处理"><i class="Hui-iconfont">&#xe6e2;</i>胜诉成功处理</a>
