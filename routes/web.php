@@ -97,5 +97,22 @@ Route::group(['domain' => env('MERCHANT_URL')],function(){
 
     Route::post("/merchant/fileupload" , 'Merchant\IndexController@fileupload');
     Route::post("/merchant/filesave" , 'Merchant\IndexController@filesave');
+    Route::post("/merchant/poke" , 'Merchant\IndexController@poke');
+
+});
+
+
+Route::group(['domain' => env('ADMIN_URL')],function(){
+    //登录
+    Route::get("/admin/login" , 'Admin\LoginController@login');
+    Route::post("/admin/check" , 'Admin\LoginController@check');
+    Route::get("/admin/logout" , 'Admin\LoginController@logout');
+
+    //首页
+    Route::get("/" , 'Admin\IndexController@index');
+    Route::get("/admin/welcome" , 'Admin\IndexController@welcome');
+    Route::get("/admin/poke" , 'Admin\IndexController@poke');
+    Route::get("/admin/pokesucc" , 'Admin\IndexController@pokesucc');
+    Route::get("/admin/pokeerror" , 'Admin\IndexController@pokeerror');
 
 });

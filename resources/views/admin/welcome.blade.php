@@ -91,20 +91,12 @@
         }
     </style>
 
-    <div class="tongji" style="margin-top: 35px;">
-        <span>今日获客:<em><?php echo $c1;?>（人）</em></span>
-        <span>本周获客:<em><?php echo $c2;?>（人）</em></span>
-        <span>本月获客:<em><?php echo $c3;?>（人）</em></span></div>
-    <div class="tongji">
-        <span>消耗积分:<?php echo $conscore;?></span>
-        <span>剩余积分:<?php echo $user["balascore"];?></span>
-        <span>历史总充值：0</span>
 
-    </div>
     <div class="shuoming">
-        说明：积分变换时，如果该手机号同时预约两家商家，那么积分扣除金额会按照75%扣除。如果预约三家及以上，按照50%扣除。
+        说明：积分变换时，如果该手机号同时预约两家商家，那么积分扣除金额会按照80%扣除。如果预约三家时，按照60扣除。四家及以上按照50%扣除。
     </div>
     <div>
+
         <table class="responsive table table-bordered">
             <thead>
             <tr>
@@ -112,29 +104,14 @@
                 <th>用户手机号</th>
                 <th>预约来源</th>
                 <th>积分变换</th>
-                <th>申诉状态</th>
-                <th>申诉</th>
             </tr>
             </thead>
             <tbody>
-            <?php foreach($poke as $v ) { ?>
-            <tr>
-                <td><?php echo date("Y-m-d H:i:s",$v->ctime);?></td>
-                <td><?php echo $v->type==1?$v->phone:"******";?></td>
-                <td>手机页面 </td>
-                <td><?php echo $v->type==1?$v->score:0; echo '('.$v->score.')';?></td>
-                <td><?php echo $v->poketype==1?"已经申诉":"未申诉";?></td>
-                <td><select class="poke" data-id="<?php echo $v->id;?>">
-                      <option value ="0">选择申诉理由</option>
-                      <option <?php if($v->poketype==1) echo 'selected';?>  value ="1">该信息已从其他渠道获取</option>
-                    </select>
-                </td>
-            </tr>
-            <?php } ?>
+
             </tbody>
         </table>
         <div class="paging_simple_numbers" id="DataTables_Table_0_paginate">
-            <?php echo $poke->render();?>
+
         </div>
     </div>
 
@@ -213,24 +190,6 @@
         layer_show(title, url, w, h);
     }
 
-    $(function(){
-        $(".poke").change(function(){
-            var id = $(this).attr("data-id");
-            var type = $(this).val();
-            $.ajax({
-                url: "/merchant/poke",
-                type: "post",
-                dataType: "json",
-                data: {'id': id,'type':type},
-                success: function(data){
-                    console.log(data);
-
-                    alert(data.msg);
-
-                }
-            });
-        })
-    });
 
 </script>
 

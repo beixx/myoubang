@@ -248,5 +248,29 @@ class IndexController extends MerchantController
             return json_encode($res);
         }
     }
+
+    public function poke(Request $request){
+        $id = intval($request->input("id"));
+        $type = intval($request->input("type"));
+        $poke = YfcBespokeView::where(['id' => $id,'tenantsId' => $this->tid])->first();
+
+        if(empty($poke)) {
+            return json_encode(["result"=> '01',"msg" => "数据找不到"]);
+        }
+        if($poke['poketype']==2 || $poke['poketype']==3) {
+            return json_encode(["result"=> '01','msg'=> "数据已经处理完成"]);
+        }
+        $data = [
+            "poketype" => 1 ,
+            'pokemsg' => "该信息已从其他平台获取",
+        ];
+        $res['result'] = '00';
+        if(YfcBespokeView::where(['id' => $id,'tenantsId' => $this->tid])->update($data)){
+            $res['result'] == "00";
+        }
+        return json_encode(["result"=>'00',"msg" => "申诉成功"]);
+    }
+
+
 }
 
