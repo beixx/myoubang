@@ -100,7 +100,7 @@ var _hmt = _hmt || [];
 <div class="sjkap">
     <div class="txt_info">
         <h1><?php echo $city;?><?php echo $tenants['name'];?></h1>
-        <p><span>人均消费:¥<?php echo $tenants['person_price'];?></span><span>|</span><span>有<?php echo $tenantssort['allcy']?>人在此店消费过</span></p>
+        <p><span>人均消费:¥<?php echo $tenants['price'];?></span><span>|</span><span>有<?php echo $tenantssort['allcy']?>人在此店消费过</span></p>
         <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><em></em>打榜</a></div>
     </div>
     <div class="datas">
