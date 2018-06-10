@@ -178,6 +178,7 @@ class IndexController extends MerchantController
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             //print_r($_POST);EXIT;
             $name = trim($request->input('name'));
+            $endtime = strtotime($request->input("package_endtime"));
             $data = [
                 "package"=>htmlentities($name),
                 'bespoke' => htmlentities(trim($request->input("bespoke"))),
@@ -185,6 +186,7 @@ class IndexController extends MerchantController
                 "racket" =>intval($request->input("racket")),
                 "address" =>htmlentities(trim($request->input("address"))),
                 "area" =>htmlentities(trim($request->input("area"))),
+                "package_endtime" => $endtime,
             ];
             YfcTenants::where("id" ,'=',$this->tid)->update($data);
             Msg::js('设置成功','/merchant/setpackage');

@@ -15,17 +15,18 @@
     <link rel="stylesheet" type="text/css" href="/merchant/lib/Hui-iconfont/1.0.8/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="/merchant/static/h-ui.admin/skin/default/skin.css" id="skin" />
     <link rel="stylesheet" type="text/css" href="/merchant/static/h-ui.admin/css/style.css" />
+
+    <link href="/css/foundation.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/foundation-datepicker.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+
     <!--[if IE 6]>
     <script type="text/javascript" src="/merchant/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
     <title>新增图片</title>
-    <script src="/webUpload/js/jquery.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="/webUpload/css/webuploader.css">
-    <link rel="stylesheet" type="text/css" href="/webUpload/css/diyUpload.css">
-    <script type="text/javascript" src="/webUpload/js/webuploader.html5only.min.js"></script>
-    <script type="text/javascript" src="/webUpload/js/diyUpload.js"></script>
     <style >
         .lftat{
             float: left;
@@ -72,7 +73,7 @@
                 <input type="text" class="input-text" value="<?php echo $tenants['price']; ?>" placeholder="" id="" name="price">
             </div>
         </div>
-                <div class="row cl">
+        <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>预约礼：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <input type="text" class="input-text" value="<?php echo $tenants['bespoke']; ?>" placeholder="" id="" name="bespoke">
@@ -82,6 +83,12 @@
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>到店礼：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <input type="text" class="input-text" value="<?php echo $tenants['package']; ?>" placeholder="" id="" name="name">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>到店礼结束时间：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" id="demo"   class="input-text dates" value="<?php echo $tenants['package_endtime']?date("Y-d-m",$tenants['package_endtime']):""; ?>" placeholder="" id="" name="package_endtime">
             </div>
         </div>
         <div class="row cl">
@@ -100,60 +107,59 @@
     </form>
 </div>
 
-
 <!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/merchant/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="/merchant/lib/layer/2.4/layer.js"></script>
 <script type="text/javascript" src="/merchant/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="/merchant/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer /作为公共模版分离出去-->
+<script type="text/javascript" src="/merchant/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/merchant/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/merchant/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/merchant/lib/laypage/1.2/laypage.js"></script>
+<script src="/js/foundation-datepicker.js"></script>
+<script src="/js/foundation-datepicker.zh-CN.js"></script>
 
 <script type="text/javascript">
-
-    /*
-     * 服务器地址,成功返回,失败返回参数格式依照jquery.ajax习惯;
-     * 其他参数同WebUploader
-     */
-
-    $('#test').diyUpload({
-        url:'/webUpload/server/fileupload.php',
-        success:function( data ) {
-            var imageload = $("#imageloadpath");
-            var str = data._raw;
-            var obj = eval('(' + str + ')');
-            //var html = '<div class="pic lftat" style="display:block;"> <div class="close"> <input type="hidden" name="cover[]" value="'+obj.url+'" id="user_bill"> </div> <img id="upload_img2" width="120px" src="/upload/'+obj.url+'"> </div>';
-            var html = '<input type=hidden name=imageurl[] value="'+obj.url+'" />';
-            console.log(data._raw);
-            console.log(html);
-            console.log(data);
-            imageload.append(html);
-        },
-        error:function( err ) {
-            console.info( err );
-        }
+    $('#demo').fdatepicker({
+        format: 'yyyy-mm-dd',
     });
 
-    $('#as').diyUpload({
-        url:'server/fileupload.php',
-        success:function( data ) {
-            console.info( data );
-        },
-        error:function( err ) {
-            console.info( err );
-        },
-        buttonText : '选择文件',
-        chunked:true,
-        // 分片大小
-        chunkSize:512 * 1024,
-        //最大上传的文件数量, 总文件大小,单个文件大小(单位字节);
-        fileNumLimit:50,
-        fileSizeLimit:5000000 * 1024,
-        fileSingleSizeLimit:5000000 * 1024,
-        accept: {}
-    });
-    $(document).delegate(".close","click",function(){
-        $(this).parent().remove();
+    $('.table-sort').dataTable({
+        "lengthMenu":false,//显示数量选择
+        "bFilter": false,//过滤功能
+        "bPaginate": false,//翻页信息
+        "bInfo": false,//数量信息
+        "aaSorting": [[ 1, "desc" ]],//默认第几个排序
+        "bStateSave": true,//状态保存
+        "aoColumnDefs": [
+            //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+            {"orderable":false,"aTargets":[0,7]}// 制定列不参与排序
+        ]
     });
 
+    /*查看日志*/
+    function system_log_show(){
 
+    }
+    /*日志-删除*/
+    function system_log_del(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            $.ajax({
+                type: 'POST',
+                url: '',
+                dataType: 'json',
+                success: function(data){
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!',{icon:1,time:1000});
+                },
+                error:function(data) {
+                    console.log(data.msg);
+                },
+            });
+        });
+    }
 </script>
+
 </body>
 </html>
