@@ -151,7 +151,7 @@ var _hmt = _hmt || [];
           <script type="text/javascript">
                     $(function(){
                         //日期倒计时
-                        $.leftTime("2018/06/15 23:45:24",function(d){
+                        $.leftTime("<?php echo date("Y/m/d",$tenants['package_endtime'])."23:59:59"?>",function(d){
                             if(d.status){
                                 var $dateShow1=$("#dateShow");
                                 $dateShow1.find(".d").html(d.d);
