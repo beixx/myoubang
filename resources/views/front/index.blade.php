@@ -153,7 +153,7 @@ var _hmt = _hmt || [];
                                 <div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>¥<?php echo $v['person_price'];?></span><span><?php echo $v['area'];?></span>
                                     <span class="fmr">
                                         <?php
-                                        if($v->trends && is_array(json_decode($v['trends'],true))){
+                                        if($v['trends'] && is_array(json_decode($v['trends'],true))){
                                             $trends = json_decode($v['trends'],true);
                                             if($trends['time'] >= time() - 86400*3) {
                                                 if(isset($trends['type']) && $trends['type'] ==1) {

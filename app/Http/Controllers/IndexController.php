@@ -683,11 +683,11 @@ class IndexController extends Controller
     public function saveview(){
         //`source` smallint(6) DEFAULT NULL COMMENT '1套系，2表示推荐榜单，3客片，4客户页面',
 	    date_default_timezone_set('PRC');
-        $phone = Request::get('phone');
-        $tenantsId = Request::get('tenantsId');
-        $data['phone'] = $phone;
+        $phone = intval(Request::get('phone'));
+        $tenantsId = intval(Request::get('tenantsId'));
+        $data['phone'] = intval($phone);
         $data['tenantsId'] = $tenantsId;
-        $data['source'] = Request::get('source','1');
+        $data['source'] = intval(Request::get('source','1'));
         $data['ctime'] = time();
         $data['url'] = $_SERVER['HTTP_REFERER'];
 

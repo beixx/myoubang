@@ -57,15 +57,15 @@ class IndexController extends MerchantController
     {
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
-                'setName' => $request->get("setName"),
+                'setName' => htmlentities($request->get("setName")),
                 'cover' => json_encode($request->get("cover",[]),JSON_UNESCAPED_UNICODE),
                 'picDetail' =>  json_encode($request->get("picDetail",[]),JSON_UNESCAPED_UNICODE),
                 'kind' => json_encode(explode(',',$request->get("kind",'')),JSON_UNESCAPED_UNICODE),
-                'detail' => $request->get('detail'),
-                'taoxiexplain' => $request->get('taoxiexplain'),
-                'price' => $request->get('price'),
-                'currentPrice' => $request->get('currentprice'),
-                'item' => $request->get('item'),
+                'detail' => htmlentities($request->get('detail')),
+                'taoxiexplain' => htmlentities($request->get('taoxiexplain')),
+                'price' => intval($request->get('price')),
+                'currentPrice' => intval($request->get('currentprice')),
+                'item' => htmlentities($request->get('item')),
                 //'source' => 2,
                 'tenantsId' => $this->tid,
                 'created_at' => time(),
@@ -105,11 +105,11 @@ class IndexController extends MerchantController
     {
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
-                'picname' => $request->get("picname"),
+                'picname' => htmlentities($request->get("picname")),
                 'cover' => json_encode($request->get("cover",[]),JSON_UNESCAPED_UNICODE),
                 'firstcover' => json_encode($request->get('firstcover',[]),JSON_UNESCAPED_UNICODE),
                 'picstyle' => json_encode(explode(',',$request->get("picstyle",'')),JSON_UNESCAPED_UNICODE),
-                'explain' => $request->get('explain'),
+                'explain' => htmlentities($request->get('explain')),
                 //'source' => 2,
                 'tenantsId' => $this->tid,
                 'created_at' => time(),
@@ -172,18 +172,19 @@ class IndexController extends MerchantController
         $this->data['data'] = $set->where(['tenantsId' =>$this->tid,'id'=>$id ])->delete();
         Msg::js('删除结束','/merchant/yfctenantsset');
     }
+
     public function setpackage(Request $request){
         $this->data['tenants'] = YfcTenants::where("id",'=',$this->tid)->first()->toArray();
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             //print_r($_POST);EXIT;
             $name = trim($request->input('name'));
             $data = [
-                "package"=>$name,
-                'bespoke' => trim($request->input("bespoke")),
+                "package"=>htmlentities($name),
+                'bespoke' => htmlentities(trim($request->input("bespoke"))),
                 "price" =>intval($request->input("price")),
                 "racket" =>intval($request->input("racket")),
-                "address" =>trim($request->input("address")),
-                "area" =>trim($request->input("area")),
+                "address" =>htmlentities(trim($request->input("address"))),
+                "area" =>htmlentities(trim($request->input("area"))),
             ];
             YfcTenants::where("id" ,'=',$this->tid)->update($data);
             Msg::js('设置成功','/merchant/setpackage');
