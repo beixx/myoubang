@@ -150,7 +150,7 @@ var _hmt = _hmt || [];
                         <div class="num_txt">
                             <div class="tit_box">
                                 <div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>¥<?php echo $v['person_price'];?></span><span><?php echo $v['area'];?></span>
+                                <div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>¥<?php echo $v['price'];?></span><span><?php echo $v['area'];?></span>
                                     <span class="fmr">
                                         <?php
                                         if($v['trends'] && is_array(json_decode($v['trends'],true))){
