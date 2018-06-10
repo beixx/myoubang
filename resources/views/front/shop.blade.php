@@ -99,7 +99,35 @@ var _hmt = _hmt || [];
 <div class="sjkap">
     <div class="txt_info">
         <h1><?php echo $city;?><?php echo $tenants['name'];?></h1>
-        <p><span>人均消费:¥<?php echo $tenants['price'];?></span><span>|</span><span>有<?php echo $tenantssort['allcy']?>人在此店消费过</span></p>
+        <p><span>人均消费:¥<?php echo $tenants['person_price'];?></span><span>|</span><span>
+<?php
+                                        if($tenants['trends'] && is_array(json_decode($tenants['trends'],true))){
+                                            $trends = json_decode($tenants['trends'],true);
+                                            if($trends['time'] >= time() - 86400*3) {
+                                                if(isset($trends['type']) && $trends['type'] ==1) {
+                                                    echo ''.$trends['content'].'';
+                                                }
+                                                else {
+                                                    $time = time() - $trends['time'];
+                                                    if($time < 3600) {
+                                                        $str = intval($time/60).'分钟前';
+                                                    }elseif ($time < 3600*24) {
+                                                        $str = intval($time/3600).'小时前';
+
+                                                    }else {
+                                                        $str = '昨天';
+                                                    }
+                                                    echo ''.$str.$trends['content'].'';
+                                                }
+                                            }
+                                            else {
+                                                echo '有'.$tenantssort['allcy'].'人在此店消费过';
+                                            }
+                                        }
+                                        else {
+                                            echo '有'.$tenantssort['allcy'].'人在此店消费过';
+                                        }
+                                        ?></span></p>
         <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><em></em>打榜</a></div>
     </div>
     <div class="datas">
@@ -117,8 +145,7 @@ var _hmt = _hmt || [];
 		        </span>
 </div><hr>
 <a id="dateShow" class="yuyue">
-                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?><p><em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>时<em class="date-tiem-span m">00</em>分<em class="date-s-span s">00</em>秒后活动结束
-</p></span>
+                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?><p><em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>时<em class="date-tiem-span m">00</em>分<em class="date-s-span s">00</em>秒后活动结束</p></span>
 			<button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
             </a>
           <script type="text/javascript">
