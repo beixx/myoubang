@@ -12,8 +12,7 @@
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
-
-
+    <script type="text/javascript" src="/js/leftTime.min.js"></script>
     <script type="text/javascript" src="/js/layer/layer.js"></script>
     <script type="text/javascript" src="/js/jquery.lazyload.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
@@ -117,10 +116,26 @@ var _hmt = _hmt || [];
 		        	<p>好评榜</p>
 		        </span>
 </div><hr>
-<a class="yuyue">
-                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?></span>
+<a id="dateShow" class="yuyue">
+                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?><p><em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>时<em class="date-tiem-span m">00</em>分<em class="date-s-span s">00</em>秒后活动结束
+</p></span>
 			<button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
             </a>
+          <script type="text/javascript">
+                    $(function(){
+                        //日期倒计时
+                        $.leftTime("2018/06/15 23:45:24",function(d){
+                            if(d.status){
+                                var $dateShow1=$("#dateShow");
+                                $dateShow1.find(".d").html(d.d);
+                                $dateShow1.find(".h").html(d.h);
+                                $dateShow1.find(".m").html(d.m);
+                                $dateShow1.find(".s").html(d.s);
+                            }
+                        });
+                    });
+                </script>
+
     <div class="address"><a target="_blank" href="https://map.baidu.com/mobile/webapp/search/search/qt=s&wd=<?php echo $city;?><?php echo $tenants['name'];?>&&vt=map&universalLinkCbkTag=1"><?php echo $tenants['address'];?><em></em></a></div>
 </div></div>
     <?php if($tenants['isVip'] == 2) { ?>

@@ -504,7 +504,7 @@ width: 100%; background: #FFF; margin: 0;
 }
 .sousj{position: relative;font-size: 0.7rem;height:7rem;color:#666;background:url(http://c.youbangkeyi.com/a/xingchendahai.jpg?imageslim) no-repeat;background-size: cover;}
 .pic_box{width:100%;background: #FFF;position: relative;border-bottom:.5rem #f5f7fa solid;padding:0.5rem 0 0;}
-.pic_box .num_txt{width:92%;display: -webkit-box;display: -ms-flexbox;display: -moz-box;height:2.4rem;padding:0.5rem 4% .5rem;position: relative;}
+.pic_box .num_txt{width:92%;display: -webkit-box;display: -ms-flexbox;display: -moz-box;height:2.1rem;padding:0.5rem 4% .4rem;position: relative;}
 .pic_box .num_txt .num{width: 2.2rem;line-height: 1rem;height: 2rem;margin: 0 .5rem 0 .7rem;position: relative;font-size: 1.2rem;font-family: Krungthep,"Microsoft YaHei",arial;border-radius:50%;color:#FFF;font-weight:700;background-color:#00B7B7;padding-top: 0.2rem;}
 .pic_box .dongtai{width: 92%;padding: 0.5rem 4%; font-size: 0.6rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; height: 0.6rem; line-height: 0.6rem;border-bottom:1px solid #F6F7F9;}
 .youhui{border-top: 1px dashed #eee;margin-top: 0.5rem;padding: 0.5rem 0;font-size: 0.6rem;line-height: 1rem;color: #FF4848;text-indent: 0.75rem;}
@@ -676,9 +676,9 @@ width: 100%; background: #FFF; margin: 0;
 .pic_box .num_txt .tit_pic img{width: 2.2rem;height: 2.2rem;border-radius: 50%;}
 .taoxi-xiangqing h3{font-size:.8rem;}
 .taoxi-xiangqing p{font-size:.6rem;}
-.pic_box .num_txt .tit_box{width:100%;height:2.2rem;}
+.pic_box .num_txt .tit_box{width:100%;height:2.1rem;}
 .xiangxia{background: url(../images/xiangxia.png) no-repeat center center;background-size:18px;position:absolute;bottom:-15px;width:20px;height: 20px; z-index: 999999; left:47%;}
-.pic_box .num_txt .tit_box .title{width:100%;height:1.2rem;margin:0 0 0.3rem;line-height:1.2rem;font-size: 0.85rem;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;display: block;}
+.pic_box .num_txt .tit_box .title{width:100%;height:1.2rem;line-height:1.2rem;font-size: 0.85rem;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;display: block;}
 .pic_box .num_txt .tit_box .title a{height:1.2rem;line-height:1.2rem;font-size:0.85rem;font-weight:700;}
 .pic_box .num_txt .tit_box .txt{font-size:0.6rem;color:#999999;height:0.9rem;line-height:1rem}
 .pic_box .num_txt .tit_box .txt a{color:#999;margin-left:0.2rem;font-size: 0.6rem; border-radius: 0.15rem;float: right; height: 1rem; line-height: 1rem;}
@@ -798,10 +798,10 @@ width: 100%; background: #FFF; margin: 0;
 .focus_box .focus .bd li img{ width:100%;  background:url(../images/loading.gif) center center no-repeat;}
 .focus_box .focus .bd li a{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
 .focus_box .txt_info{width: 100%;display: table;border-bottom: 1px #f4f4f4 solid;background: #FFF;position:relative;padding: 0.65rem 0 0.5rem;}
-.focus_box .txt_info h1{font-size:0.85rem;font-weight:700;color:#111;line-height:1.5rem;margin-left:0.75rem;white-space:nowrap;text-overflow:ellipsis;overflow: hidden;width: 82%;}
+.focus_box .txt_info h1{font-size:0.85rem;font-weight:700;color:#111;line-height:1.2rem;margin-left:0.75rem;white-space:nowrap;text-overflow:ellipsis;overflow: hidden;width: 82%;}
 .focus_box .txt_info p{font-size: 0.6rem;line-height: 1rem;color:#999999;text-indent: 0.75rem;}
 .focus_box .txt_info p span{padding-right: 0.5rem;}
-.focus_box .txt_info .pf{position: absolute;width: 1.5rem;height: 2.2rem;right: 0.8rem;text-align:center;top:0.9rem;font-size: 0.5rem;line-height: 1rem;}
+.focus_box .txt_info .pf{position: absolute;width: 1.5rem;height: 2.2rem;right: 0.8rem;text-align:center;top:0.65rem;font-size: 0.5rem;line-height: 1rem;}
 .focus_box .txt_info .pf em{width: 1.2rem;height: 1.2rem;padding:0 0.15rem;border-radius: 50%;background: url(../images/icon6.png) no-repeat center center;background-size:1.2rem;overflow: hidden;display: block;}
 .focus_box .txt_info .pf a{color: #999999;font-size: 0.6rem;}
 .focus_box .txt_info .num{width:2.8rem;height:2.8rem ;background-size:2.8rem;position: absolute;left: 0.75rem;top: -2.9rem}
@@ -840,14 +840,14 @@ width: 100%; background: #FFF; margin: 0;
     background-size: 1.2rem;
     overflow: hidden;
     display: block;}
-.shop-index .datas {width:98%;overflow: hidden;display: table;margin:0.5rem auto 0;padding: 0 1% 0.8rem}
+.shop-index .datas {width:98%;overflow: hidden;display: table;margin:0.3rem auto 0;padding: 0 1% 0.5rem}
 .shop-index .datas .border-right-e7e7e7{position: relative;overflow: hidden;width: 1px;height:1.5rem;float: left;margin:.7rem 0 0;}
 .border-right-e7e7e7:before { position: absolute; content: ''; width: 1px; right: 0; bottom: 0; height: 100%; background-image: -webkit-linear-gradient(180deg,#e7e7e7 50%,transparent 50%); background-image: linear-gradient(90deg,#e7e7e7 50%,transparent 50%); will-change: transform; }
 .shop-index .datas span {height: 2.5rem;display:block;position: relative;width:33.1%;background: #FFF;border-radius: 0.25rem;}
 .shop-index .datas span:last-child{margin-right: 0;}
-.shop-index .datas span em {display: block;font-size: 0.6rem;color: #111;line-height: 0.75rem;margin-top:0.5rem;}
-.shop-index .datas span em i{font-size: 1rem;font-weight:700;margin:0 0.2rem;color:#FF4040;}
-.shop-index .datas span p {font-size: 0.6rem;color:#999999;line-height:1rem;}
+.shop-index .datas span em {display: block;font-size: 0.6rem;color: #111;line-height: 0.75rem;margin:0.5rem 0 0.2rem;}
+.shop-index .datas span em i{font-size:0.85rem;font-weight:700;margin:0 0.2rem;color:#FF4040;}
+.shop-index .datas span p {font-size: 0.6rem;color:#999999;line-height:0.6rem;}
 .shop-index .datas b {position: absolute;width: 0.7rem;height:2.5rem;display: inline-block;left: 0.35rem;top: 0px;}
 .shop-index .datas .icon1{background: url(../images/icon16.png) no-repeat center center;background-size: 0.5rem}
 .shop-index .datas .icon2{background: url(../images/icon17.png) no-repeat center center;background-size: 0.5rem}
@@ -1664,36 +1664,41 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
 .yuyue{
     display: block;
     width: 92%;
-    height: 2.4rem;
+    height: 2.8rem;
     margin: .5rem 4%;
     color: #fa5741;
     background: url(http://c.youbangkeyi.com/a/red_background_v2.png);
     background-size: 100% 100%;
     border-top: 1px solid #FEFEFE;
 }
+.yuyue p{
+    font-size: 0.6rem;
+    line-height: 0.6rem;
+    height: 0.6rem;
+    margin-top: 0.2rem;
+}
 .yuyue i{
     display: inline-block;
     float: left;
-    width: 1.1rem;
-    height: 0.8rem;
-    margin: 0.8rem .5rem 0.8rem 4%;
+    width: 2rem;
+    height: 1.5rem;
+    margin: 0.65rem .5rem 0.65rem 4%;
     background: url(http://c.youbangkeyi.com/a/discount_icon.svg);
     background-size: 100%;
 }
 .yuyue span{
-    height: 0.7rem;
-    margin: 0.85rem 0;
+    height: 1.5rem;
+    margin: 0.65rem 0;
     line-height: 0.7rem;
     font-size: .7rem;
     display: inline-block;
-    text-align: center;
 }
 .discount-btn{
     cursor: pointer;
     position: relative;
     float: right;
     height: 1.2rem;
-    margin: .6rem 4% 0.6rem 0;
+    margin: .8rem 4% 0.8rem 0;
     padding: 0 .3rem;
     background-color: #FF4040;
     border: 0;
@@ -1702,10 +1707,10 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
     font-size: .6rem;
     line-height: 1.2rem;
 }
-.showmore .discount-btn{background-color: initial; margin: .6rem 4% 0.6rem 0; color: #FF7070; padding: 0 .75rem 0 0.3rem; background: url(http://c.youbangkeyi.com/a/xiangyou1.png) right center no-repeat; background-size: 0.6rem; height: 0.6rem; line-height: 0.6rem;}
+.showmore .discount-btn{background-color: initial; margin:.6rem 4% 0.6rem 0; color: #FF7070; padding: 0 .75rem 0 0.3rem; background: url(http://c.youbangkeyi.com/a/xiangyou1.png) right center no-repeat; background-size: 0.6rem; height: 0.6rem; line-height: 0.6rem;}
 .showmore .yuyue span{font-weight: initial;color: #ff7070;margin: 0.55rem 0;vertical-align: middle;}
-.showmore .yuyue {margin: 0 4% .3rem; display: inline-block; height: 1.8rem; border: 0;}
-.showmore .yuyue i{width: 1.2rem;margin: 0.5rem .5rem 0.5rem 4%;background: url(http://c.youbangkeyi.com/v/yuyue.png) no-repeat 0 center;background-size: 100%;}
+.showmore .yuyue {height: 0.7rem;margin: 0 4% .3rem; display: inline-block; height: 1.8rem; border: 0;}
+.showmore .yuyue i{width: 1.2rem;height: 0.8rem;margin: 0.5rem .5rem 0.5rem 4%;background: url(http://c.youbangkeyi.com/v/yuyue.png) no-repeat 0 center;background-size: 100%;}
 .yuyuedaodian{
     position: relative;
     padding: 0.8rem 0;
@@ -1886,8 +1891,9 @@ footer{background:#26282b;width:100%;margin:0 auto 5.1rem;font-size:0.6rem;color
     .f075{font-size:.75rem!important;}
 @media screen and (min-width:740px) {
   .pic_box .num_txt .tit_box{
-    width: 680px;
+    width: 680px; height: 2.4rem;
   }
+  .pic_box .num_txt{height: 2.4rem;}
   .anli_month,.case_box .picScroll .bd p{padding: 0px 0% 0 5rem;width: 82%;}
 .jxtc_box ul{overflow: hidden;zoom: 1;}
     .jxtc_box li{width: 50%;float: left;border-bottom:0;}
@@ -1951,18 +1957,21 @@ header .city_box{margin-top: 0.75rem;}
     height:1.8rem;
     vertical-align: initial;
 }
+.focus_box .txt_info .pf{top:0.95rem;}
+.pic_box .num_txt .tit_box .title{margin-bottom: 0.2rem;}
 a.discount-btn:after{top:0.2rem;}
-.focus_box .txt_info h1{font-size: 1rem;}
+.focus_box .txt_info h1{font-size: 1rem;line-height: 1.5rem;}
 .pic_box .pic{    padding: 0.5rem 0 0.15rem;}
 .sousj{height: 9rem;}
 .bg2{height: 7rem;}
+.showmore .discount-btn{margin: .7rem 4% 0.7rem 0;}
 .tishi span{display: initial;}
 .sy-title{top: 1.8rem;}
 .focus_box .address{height: 2rem; line-height: 2rem;}
 .focus_box .address em{height: 2rem;}
 .showmore .yuyue{height: 2rem;}
 .showmore .yuyue i{    margin: 0.6rem .5rem 0.5rem 4%;}
-.showmore .yuyue span{    margin: 0.5rem 0;}
+.showmore .yuyue span{height: 0.7rem;margin: 0.65rem 0;}
 body{    font: normal 16px/200% 'Droid Sans Fallback','PingFang SC','Microsoft YaHei','Hiragino Sans GB','Heiti SC','WenQuanYi Micro Hei',sans-serif!important;}
 }
 

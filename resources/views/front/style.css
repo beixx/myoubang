@@ -2,7 +2,7 @@
 html{font-size:20px;}
 body, div,p, input, h1, h2, h3, h4, h5, h6, ul, li, dl, dt, dd, form { margin: 0; padding: 0; list-style: none; vertical-align: middle; font-weight:normal;-webkit-tap-highlight-color: transparent;-webkit-overflow-scrolling: touch;}
 img { border:0;vertical-align: middle;}
-body {color:#111111;max-width:740px;margin:0 auto;position: relative;font:normal 16px/200%  "-apple-system",BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif!important; text-align:left;background: #f0f0f0;-webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-font-feature-settings: normal; font-feature-settings: normal; font-variant: normal;font-stretch: normal;}
+body {color:#111111;max-width:740px;margin:0 auto;font:normal 16px/200%  "-apple-system",BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif!important; text-align:left;background: #f0f0f0;-webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-font-feature-settings: normal; font-feature-settings: normal; font-variant: normal;font-stretch: normal;}
 header, section, footer { display: block; margin: 0; padding: 0 }
 a{text-decoration:none;color:#111111;}
 i,em{font-style: normal;}
@@ -11,6 +11,7 @@ i,em{font-style: normal;}
 .txtCtr {text-align: center}
 .txtRgt {text-align: right}
 .clear{ clear:both} 
+button{outline:none;}
 textarea, p, blockquote{margin: 0;padding: 0;}
 .red {color: #FF4040}
 .green{color:#008B00}
@@ -35,6 +36,22 @@ input:focus,textarea:focus {border: 0;outline:none;}
     text-align: center;
     z-index: 13;
 }
+.tishi{font-size: 0.6rem;
+    position: relative;
+    color: #ff6c32;
+    background: #fffaea;
+    padding: 0 4%;
+    line-height: 1.8rem;}
+.tishi span{    float: right;
+    border: 1px solid #ff6c32;
+    padding: 0.2rem 0.5rem;
+    position: absolute;
+    display: none;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    top: 0.4rem;
+    border-radius: 8rem;
+    right: 4%;}
 .mui-tagscloud-ul{    list-style-type: none;
     padding: 0;
     margin: 10px 4%;
@@ -153,7 +170,6 @@ background: #FFF;
     color: #FF4040;
     font-weight: bold;
 }  
-
 /* 会员 */
 .huiyuan{background: url(../images/renzheng.png) no-repeat right 0rem; background-size: 3.2rem;width: 3.2rem; height: 3.2rem; position: absolute; top: 0; z-index: 999999; right: 0;}
 /* 推广 */
@@ -366,22 +382,21 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
     text-align: left;
     padding: 0 4% 0 10%;
     font-size: .6rem;
-    background: #f9f4d9 url(http://c.youbangkeyi.com/yuyue/anquan1.png) no-repeat 4% 0.25rem;
+    background: #f9f4d9 url(http://c.youbangkeyi.com/a/quan1.png) no-repeat 3% 0.45rem;
     background-size: 1rem;
     color: #8f7f5d;
 }
 .zysmn{
     position: relative;
     text-align: left;
-    padding: 0.8rem 4% 0.8rem 12%;
+    padding: 0.85rem 4% 0.8rem 12%;
     font-size: .6rem;
-    background: #FFF url(http://c.youbangkeyi.com/a/quan1.png) no-repeat 0 0.7rem;
-    background-size: 1.8rem;
+    background: #FFF url(http://c.youbangkeyi.com/a/quan1.png) no-repeat 0 0.65rem;
+    background-size: 2rem;
     color:#9399a5;
     line-height:0.9rem;
-    height: 1.8rem;
+    height: 1.6rem;
     margin: 0rem 4%;
-    border-top: 1px #f4f4f4 solid;
 }
 .zysmi span{    display: block;
     font-size: 0.7rem;
@@ -394,28 +409,28 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
 }
 .zysmi em{border: 1px solid;
     border-radius: 0.3rem;
-    padding: 0 0.3rem;
-    top:0.9rem;
+    padding:0.1rem 0.3rem;
+    top:0.85rem;
     position: absolute;
     right: 4%;}
 .zysmn em{    border: 1px solid;
     border-radius: 0.3rem;
-    padding: 0 0.3rem;
-    top:1.15rem;
+    padding: 0.1rem 0.3rem;
+    top:1rem;
     position: absolute;
     right: 0;}
 .zysmi em a{color:#8f7f5d;}
 .zysmi{
     position: relative;
     text-align: left;
-    padding: 0.5rem 4% 0.5rem 15%;
+    padding: 0.55rem 4% 0.5rem 14.5%;
     font-size: .6rem;
-    background: #f9f4d9 url(http://c.youbangkeyi.com/yuyue/anquan1.png) no-repeat 4% 0.4rem;
+    background: #f9f4d9 url(http://c.youbangkeyi.com/a/quan1.png) no-repeat 3% 0.45rem;
     background-size: 2rem;
     color: #8f7f5d;
-    line-height: 1rem;
-    margin:0.5rem;
-    height: 1.983rem;
+    line-height: 0.9rem;
+    margin: 0.5rem;
+    height: 1.8rem;
 }
 /*评选咨询*/
 .downNav .ask{ border-top: 1px solid #efefef;
@@ -454,9 +469,10 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
 .tabBox .hd ul .on a{ display:block;position: relative;font-weight:bold;}
 .tabBox .hd ul a{color:#333}
 .tabBox .bd{z-index:0;width: 100%;}
+.fmr{float: right;margin-right: 0 !important;}
 /*列表*/
-.showmore{border-top: .5rem #f5f7fa solid;}
-#leftTabBox{width: 100%;margin:-2rem 0% 0;position:absolute;background: #FFF;}
+.content{position: relative;}
+#leftTabBox{width: 100%;margin:-2rem 0% 0;background: #FFF;}
 .list_box{width: 100%;}
 .list_box .text{font-size: 0.5rem;padding: 1% 1% 1% 3%;line-height: 1.2rem;display: table;width: 96%;color: #999;position: relative;}
 .list_box .text p{height: 0.8rem;line-height: 0.8rem;overflow:hidden;text-overflow:ellipsis;width: 85%;white-space:nowrap; }
@@ -488,7 +504,7 @@ width: 100%; background: #FFF; margin: 0;
 }
 .sousj{position: relative;font-size: 0.7rem;height:7rem;color:#666;background:url(http://c.youbangkeyi.com/a/xingchendahai.jpg?imageslim) no-repeat;background-size: cover;}
 .pic_box{width:100%;background: #FFF;position: relative;border-bottom:.5rem #f5f7fa solid;padding:0.5rem 0 0;}
-.pic_box .num_txt{width:92%;display: -webkit-box;display: -ms-flexbox;display: -moz-box;height:2.2rem;padding:0.5rem 4% .5rem;position: relative;}
+.pic_box .num_txt{width:92%;display: -webkit-box;display: -ms-flexbox;display: -moz-box;height:2.1rem;padding:0.5rem 4% .4rem;position: relative;}
 .pic_box .num_txt .num{width: 2.2rem;line-height: 1rem;height: 2rem;margin: 0 .5rem 0 .7rem;position: relative;font-size: 1.2rem;font-family: Krungthep,"Microsoft YaHei",arial;border-radius:50%;color:#FFF;font-weight:700;background-color:#00B7B7;padding-top: 0.2rem;}
 .pic_box .dongtai{width: 92%;padding: 0.5rem 4%; font-size: 0.6rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; height: 0.6rem; line-height: 0.6rem;border-bottom:1px solid #F6F7F9;}
 .youhui{border-top: 1px dashed #eee;margin-top: 0.5rem;padding: 0.5rem 0;font-size: 0.6rem;line-height: 1rem;color: #FF4848;text-indent: 0.75rem;}
@@ -660,13 +676,13 @@ width: 100%; background: #FFF; margin: 0;
 .pic_box .num_txt .tit_pic img{width: 2.2rem;height: 2.2rem;border-radius: 50%;}
 .taoxi-xiangqing h3{font-size:.8rem;}
 .taoxi-xiangqing p{font-size:.6rem;}
-.pic_box .num_txt .tit_box{width:100%;height:2.2rem;}
+.pic_box .num_txt .tit_box{width:100%;height:2.1rem;}
 .xiangxia{background: url(../images/xiangxia.png) no-repeat center center;background-size:18px;position:absolute;bottom:-15px;width:20px;height: 20px; z-index: 999999; left:47%;}
-.pic_box .num_txt .tit_box .title{width:100%;height:1.2rem;margin:0 0 0.3rem;line-height:1.2rem;font-size: 0.85rem;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;display: block;}
+.pic_box .num_txt .tit_box .title{width:100%;height:1.2rem;line-height:1.2rem;font-size: 0.85rem;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;display: block;}
 .pic_box .num_txt .tit_box .title a{height:1.2rem;line-height:1.2rem;font-size:0.85rem;font-weight:700;}
-.pic_box .num_txt .tit_box .txt{font-size:0.6rem;color:#999999;height:0.6rem;line-height:0.6rem}
+.pic_box .num_txt .tit_box .txt{font-size:0.6rem;color:#999999;height:0.9rem;line-height:1rem}
 .pic_box .num_txt .tit_box .txt a{color:#999;margin-left:0.2rem;font-size: 0.6rem; border-radius: 0.15rem;float: right; height: 1rem; line-height: 1rem;}
-.pic_box .num_txt .tit_box .txt span{margin-right: 0.3rem;color: #9C9FA1;padding: 0 0.2rem;}
+.pic_box .num_txt .tit_box .txt span{margin-right: 0.5rem;color: #9C9FA1;}
 .pic_box .num_txt .zhishu{width: 1.2rem;height: 1.2rem;background: url(../images/icon6.png) no-repeat center center;background-size:0.9rem;overflow: hidden;position: absolute;top: 30%;right: 3%}
 .pic_box .num_txt .zhishu a{display: block;width: 1.2rem;height: 1.2rem;overflow: hidden;text-indent: -999px;}
 .pic_box .num_txt .com{width: 1.6rem; position: absolute; top: 30%; right: 3%;}
@@ -771,20 +787,21 @@ width: 100%; background: #FFF; margin: 0;
 .shop-index .focus_box{width: 100%;position: relative;}
 .focus_box{width: 100%;position: relative;background: #FFF;}
 .shop_box{background-color: #FFF; width:100%; position: relative;display: inline-block;}
-.shop-index .info-box{background-color: #FFF;width: 100%;position: relative;}
+.info-box{width:100%; margin:0;border-top: 0.5rem solid #f5f7fa;background-color: #FFF;position: relative;}
 .focus_box .focus{ width:100%; position:relative; overflow:hidden; height:11rem;}
 .focus_box .focus .hd{ width:100%; height:11px;  position:absolute; z-index:1; bottom:0.5rem; text-align:center;}
 .focus_box .focus .hd ul{ display:inline-block; height:0.25rem; font-size:0; vertical-align:top;}
 .focus_box .focus .hd ul li{ display:inline-block; width:0.5rem; height:0.5rem; border-radius:50%;  background-color:rgba(255,255,255,0.7);margin:0 0.25rem; vertical-align:top; overflow:hidden;}
 .focus_box .focus .hd ul .on{ background:#09cfcb;}
-.focus_box .focus .bd{ position:relative; z-index:0; }
+.focus_box .focus .bd{ position:relative; z-index:0;overflow: hidden;}
+.focus_box .focus .bd ul{overflow: hidden;}
 .focus_box .focus .bd li img{ width:100%;  background:url(../images/loading.gif) center center no-repeat;}
 .focus_box .focus .bd li a{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
 .focus_box .txt_info{width: 100%;display: table;border-bottom: 1px #f4f4f4 solid;background: #FFF;position:relative;padding: 0.65rem 0 0.5rem;}
-.focus_box .txt_info h1{font-size:0.85rem;font-weight:700;color:#111;line-height:1.5rem;margin-left:0.75rem;white-space:nowrap;text-overflow:ellipsis;overflow: hidden;width: 82%;}
+.focus_box .txt_info h1{font-size:0.85rem;font-weight:700;color:#111;line-height:1.2rem;margin-left:0.75rem;white-space:nowrap;text-overflow:ellipsis;overflow: hidden;width: 82%;}
 .focus_box .txt_info p{font-size: 0.6rem;line-height: 1rem;color:#999999;text-indent: 0.75rem;}
 .focus_box .txt_info p span{padding-right: 0.5rem;}
-.focus_box .txt_info .pf{position: absolute;width: 1.5rem;height: 2.2rem;right: 0.8rem;text-align:center;top:0.9rem;font-size: 0.5rem;line-height: 1rem;}
+.focus_box .txt_info .pf{position: absolute;width: 1.5rem;height: 2.2rem;right: 0.8rem;text-align:center;top:0.7rem;font-size: 0.5rem;line-height: 1rem;}
 .focus_box .txt_info .pf em{width: 1.2rem;height: 1.2rem;padding:0 0.15rem;border-radius: 50%;background: url(../images/icon6.png) no-repeat center center;background-size:1.2rem;overflow: hidden;display: block;}
 .focus_box .txt_info .pf a{color: #999999;font-size: 0.6rem;}
 .focus_box .txt_info .num{width:2.8rem;height:2.8rem ;background-size:2.8rem;position: absolute;left: 0.75rem;top: -2.9rem}
@@ -824,20 +841,19 @@ width: 100%; background: #FFF; margin: 0;
     overflow: hidden;
     display: block;}
 .shop-index .datas {width:98%;overflow: hidden;display: table;margin:0.5rem auto 0;padding: 0 1% 0.8rem}
-.shop-index .datas .border-right-e7e7e7{position: relative;overflow: hidden;width: 1px;height: 2rem;float: left;margin: .5rem 0 0;}
+.shop-index .datas .border-right-e7e7e7{position: relative;overflow: hidden;width: 1px;height:1.5rem;float: left;margin:.7rem 0 0;}
 .border-right-e7e7e7:before { position: absolute; content: ''; width: 1px; right: 0; bottom: 0; height: 100%; background-image: -webkit-linear-gradient(180deg,#e7e7e7 50%,transparent 50%); background-image: linear-gradient(90deg,#e7e7e7 50%,transparent 50%); will-change: transform; }
 .shop-index .datas span {height: 2.5rem;display:block;position: relative;width:33.1%;background: #FFF;border-radius: 0.25rem;}
 .shop-index .datas span:last-child{margin-right: 0;}
-.shop-index .datas span em {display: block;font-size: 0.6rem;color: #111;line-height: 0.75rem;margin-top:0.5rem;}
+.shop-index .datas span em {display: block;font-size: 0.6rem;color: #111;line-height: 0.75rem;margin:0.5rem 0 0.2rem;}
 .shop-index .datas span em i{font-size: 1rem;font-weight:700;margin:0 0.2rem;color:#FF4040;}
-.shop-index .datas span p {font-size: 0.6rem;color:#999999;line-height:1.4rem;}
+.shop-index .datas span p {font-size: 0.6rem;color:#999999;line-height:0.6rem;}
 .shop-index .datas b {position: absolute;width: 0.7rem;height:2.5rem;display: inline-block;left: 0.35rem;top: 0px;}
 .shop-index .datas .icon1{background: url(../images/icon16.png) no-repeat center center;background-size: 0.5rem}
 .shop-index .datas .icon2{background: url(../images/icon17.png) no-repeat center center;background-size: 0.5rem}
 .shop-index .ad{width: 100%;display: table;}
 .shop-index .ad img{width: 100%;}
 .shop-index div.mtrem6 {visibility:visible; max-height:19rem;}
-.shop-index .info-box{width:100%; margin:0;border-top: 0.5rem solid #f5f7fa;}
 .shop-index .info-box .title{line-height:2.5rem; height:2.5rem; font-size: 0.7rem; color: #111; text-indent: 0.5rem;}
 .info-box .titleqs{width: 92%;background: #FFF;padding: 0 4%;line-height:2.5rem; height:2.5rem; font-size: 0.8rem;font-weight: 700;}
 .shop-index .info-box .title tr:nth-child(2n){background-color: #f9f9f9}
@@ -1648,47 +1664,53 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
 .yuyue{
     display: block;
     width: 92%;
-    height: 2rem;
+    height: 2.8rem;
     margin: .5rem 4%;
     color: #fa5741;
-    background: url(https://s1.ljcdn.com/mars/static/asset/img/detail/red_background_v2.png?version=f15ardzien);
+    background: url(http://c.youbangkeyi.com/a/red_background_v2.png);
     background-size: 100% 100%;
     border-top: 1px solid #FEFEFE;
 }
+.yuyue p{
+    font-size: 0.6rem;
+    line-height: 0.6rem;
+    height: 0.6rem;
+    margin-top: 0.2rem;
+}
 .yuyue i{
     display: inline-block;
-    width: 1.25rem;
-    height: 0.9rem;
-    margin: 0.52rem .5rem 0.5rem 4%;
-    background: url(https://s1.ljcdn.com/mars/static/asset/img/detail/discount_icon.svg?version=f15ardzien);
+    float: left;
+    width: 2rem;
+    height: 1.5rem;
+    margin: 0.65rem .5rem 0.65rem 4%;
+    background: url(http://c.youbangkeyi.com/a/discount_icon.svg);
     background-size: 100%;
 }
 .yuyue span{
-    height: 1rem;
-    margin: 0.5rem 0;
-    line-height: 1rem;
-    font-size: .6rem;
+    height: 1.5rem;
+    margin: 0.65rem 0;
+    line-height: 0.7rem;
+    font-size: .7rem;
     display: inline-block;
-    vertical-align: top;
-    font-weight: bold;
 }
 .discount-btn{
     cursor: pointer;
+    position: relative;
     float: right;
-    height: 1rem;
-    margin: .5rem 4% 0.5rem 0;
+    height: 1.2rem;
+    margin: .8rem 4% 0.8rem 0;
     padding: 0 .3rem;
     background-color: #FF4040;
     border: 0;
     border-radius: .8125rem;
     color: #fff;
     font-size: .6rem;
-    line-height: 1rem;
+    line-height: 1.2rem;
 }
-.showmore .discount-btn{background-color:initial;margin: .25rem 4% 0.25rem 0;color:#FF7070;}
-.showmore .yuyue span{font-weight: initial;color: #ff7070;margin: 0.25rem 0;}
-.showmore .yuyue {margin: 0 4% .3rem; display: inline-block; height: 1.5rem; border: 0;}
-.showmore .yuyue i{width: 1.38rem;margin: 0.3rem .5rem 0.3rem 4%;background: url(http://c.youbangkeyi.com/v/yuyue.png) no-repeat 0 center;background-size: 100%;}
+.showmore .discount-btn{background-color: initial; margin:.6rem 4% 0.6rem 0; color: #FF7070; padding: 0 .75rem 0 0.3rem; background: url(http://c.youbangkeyi.com/a/xiangyou1.png) right center no-repeat; background-size: 0.6rem; height: 0.6rem; line-height: 0.6rem;}
+.showmore .yuyue span{font-weight: initial;color: #ff7070;margin: 0.55rem 0;vertical-align: middle;}
+.showmore .yuyue {height: 0.7rem;margin: 0 4% .3rem; display: inline-block; height: 1.8rem; border: 0;}
+.showmore .yuyue i{width: 1.2rem;height: 0.8rem;margin: 0.5rem .5rem 0.5rem 4%;background: url(http://c.youbangkeyi.com/v/yuyue.png) no-repeat 0 center;background-size: 100%;}
 .yuyuedaodian{
     position: relative;
     padding: 0.8rem 0;
@@ -1708,10 +1730,10 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
     font-weight: bold;}
     .yytouxiang{
           
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.7);
     border-radius: 30px;
-    height: 30px;
-    line-height: 30px;
+    height: 30px!important;
+    line-height: 30px!important;
     }
 .yyicon{
     float: left;
@@ -1869,8 +1891,9 @@ footer{background:#26282b;width:100%;margin:0 auto 5.1rem;font-size:0.6rem;color
     .f075{font-size:.75rem!important;}
 @media screen and (min-width:740px) {
   .pic_box .num_txt .tit_box{
-    width: 680px;
+    width: 680px; height: 2.4rem;
   }
+  .pic_box .num_txt{height: 2.4rem;}
   .anli_month,.case_box .picScroll .bd p{padding: 0px 0% 0 5rem;width: 82%;}
 .jxtc_box ul{overflow: hidden;zoom: 1;}
     .jxtc_box li{width: 50%;float: left;border-bottom:0;}
@@ -1878,6 +1901,7 @@ footer{background:#26282b;width:100%;margin:0 auto 5.1rem;font-size:0.6rem;color
 .hot .suolvl,.hot .suolvl span,.shop-tuijian .suolvl, .shop-tuijian .suolvl span {
     height:165px;
 }
+.layui-layer{max-width: 740px; left: 50% !important; margin-left: -370px !important;}
 .view .hot li p{
         font-size: 14px;
     height: 28px;
@@ -1902,8 +1926,8 @@ footer{background:#26282b;width:100%;margin:0 auto 5.1rem;font-size:0.6rem;color
     border-bottom: 0;
     background: #FFF;}
 .zysm{padding: 0px 4% 0 55px;}
-.zysmi{padding:0.5rem 4% 0.5rem 10%;}
-.zysmn{padding: 0.8rem 4% 0.8rem 6%;}
+.zysmi{padding:0.55rem 4% 0.5rem 9%;}
+.zysmn{padding: 0.85rem 4% 0.8rem 6%;}
 .view .txt-box h1{
     font-size: 0.9rem;
     height: 1rem;
@@ -1933,13 +1957,20 @@ header .city_box{margin-top: 0.75rem;}
     height:1.8rem;
     vertical-align: initial;
 }
+.focus_box .txt_info .pf{top:0.9rem;}
+.pic_box .num_txt .tit_box .title{margin-bottom: 0.2rem;}
+a.discount-btn:after{top:0.2rem;}
+.focus_box .txt_info h1{font-size: 1rem;line-height: 1.5rem;}
+.pic_box .pic{    padding: 0.5rem 0 0.15rem;}
 .sousj{height: 9rem;}
 .bg2{height: 7rem;}
+.tishi span{display: initial;}
 .sy-title{top: 1.8rem;}
+.focus_box .address{height: 2rem; line-height: 2rem;}
+.focus_box .address em{height: 2rem;}
 .showmore .yuyue{height: 2rem;}
 .showmore .yuyue i{    margin: 0.6rem .5rem 0.5rem 4%;}
-.showmore .yuyue span{    margin: 0.5rem 0;}
-.showmore .discount-btn{    margin: .5rem 4% 0.5rem 0;}
+.showmore .yuyue span{height: 0.7rem;margin: 0.65rem 0;}
 body{    font: normal 16px/200% 'Droid Sans Fallback','PingFang SC','Microsoft YaHei','Hiragino Sans GB','Heiti SC','WenQuanYi Micro Hei',sans-serif!important;}
 }
 

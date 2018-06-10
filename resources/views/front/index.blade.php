@@ -157,19 +157,19 @@ var _hmt = _hmt || [];
                                             $trends = json_decode($v['trends'],true);
                                             if($trends['time'] >= time() - 86400*3) {
                                                 if(isset($trends['type']) && $trends['type'] ==1) {
-                                                    echo '<div class="t1">'.$trends['content'].'</div><hr>';
+                                                    echo '<span>'.$trends['content'].'</span>';
                                                 }
                                                 else {
                                                     $time = time() - $trends['time'];
                                                     if($time < 3600) {
-                                                        $str = intval($time/60).'分钟前  ';
+                                                        $str = intval($time/60).'分钟前';
                                                     }elseif ($time < 3600*24) {
-                                                        $str = intval($time/3600).'小时前  ';
+                                                        $str = intval($time/3600).'小时前';
 
                                                     }else {
-                                                        $str = '昨天  ';
+                                                        $str = '昨天';
                                                     }
-                                                    echo '<div class="t1">'.$str.$trends['content'].'</div><hr>';
+                                                    echo '<span>'.$str.$trends['content'].'</span>';
                                                 }
                                             }
                                             else {
@@ -179,8 +179,7 @@ var _hmt = _hmt || [];
                                         else {
                                             echo '';
                                         }
-                                        ?>
-                                    </span>
+                                        ?><span><?php echo $v['area'];?></span>
 				                </div>
                             </div>
                         </div>
@@ -221,7 +220,7 @@ var _hmt = _hmt || [];
                             </div>
                         </div>
                             <div class="daodian">
-                                <a class="sybj" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看商家详情</a>
+                                <a class="sybj" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">人均 ¥<?php echo $v['person_price'];?>  ·  查看商家详情</a>
                             </div>
                     </div>
                     <?php } ?>
