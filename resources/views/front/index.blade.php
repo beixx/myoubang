@@ -73,7 +73,7 @@ var _hmt = _hmt || [];
                        <div class="tit_pic"><a href="/detail/<?php echo $spread['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><img src="//img2.youbangkeyi.com/<?php echo $spread['logo'];?>?imageView2/1/w/150/h/150/q/75|imageslim"></a></div>
                             <div class="tit_box">
                                 <div class="title"><span>第<em><?php echo $spread['order_city'];?></em>名</span><a href="/detail/<?php echo $spread['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $spread['name']?></a></div>
-                                <div class="txt"><span>得分：<?php echo $spread['heat_index'];?></span><span>|</span><span>人均：¥<?php echo $spread['person_price'];?></span><span class="kep">客片：<?php echo $v['piccount']>0?''.$v['piccount'].'组':'商家无案例';?></span></div>
+                                <div class="txt"><span>得分：<?php echo $spread['heat_index'];?></span><span>|</span><span>人均：¥<?php echo $spread['price'];?></span><span class="kep">客片：<?php echo $v['piccount']>0?''.$v['piccount'].'组':'商家无案例';?></span></div>
                             </div>
                         </div>
                         <?php
