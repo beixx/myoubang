@@ -99,7 +99,11 @@ var _hmt = _hmt || [];
                         });
                     });
                 </script>
-</div><div class="info-box"><div class="zysmn"><span>全网数据监测  排名客观权威</span>中国婚嫁产业  大数据服务商<em><a href="http://www.youbangkeyi.com/guize.html" target="_blank">排名算法</a></em></div></div>
+<div class="zysmn">
+<span class="jiance">全网数据监测</span>
+<span class="shishi">数据实时更新</span>
+<span class="jiangbei">排名客观权威</span>
+</div></div>
 <div class="tittp">图文详情</div>
 <div class="info">
     <?php foreach($info['picDetail'] as $v) { ?>
