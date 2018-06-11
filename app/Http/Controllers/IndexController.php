@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Database\QueryException;
+use Mockery\CountValidator\Exception;
+
 
 
 //待确认功能
@@ -354,8 +357,8 @@ class IndexController extends Controller
         $keyword = $picinfo->picName;
         $picinfo->picStyle = json_decode($picinfo->picStyle,true);
         $this->data['type'] = $shoptype=='婚纱摄影'?'sheying':'hunli';
-	$this->data['shoptype'] = $shoptype;
-	$this->data['dbtenants'] = $dbtenants;
+	    $this->data['shoptype'] = $shoptype;
+	    $this->data['dbtenants'] = $dbtenants;
         $this->data['title'] = $title;
         $this->data['desc'] = $desc;
         $this->data['keyword'] = $keyword;
@@ -704,47 +707,48 @@ class IndexController extends Controller
 
         $data['type'] = 0;
         $data["score"] = env("ALLSCORE");
-        if($merchant['balascore'] >0 ) {
-            $count = count($othertid);
-            if($count == 0) {
-                $data["score"] = env("ALLSCORE");
-            }
-            elseif ($count == 1 ) {
-                $data["score"] =env("ALLSCORE") - env("PETSCORE") ;
-            }else {
-                $data["score"] =env("ALLSCORE") - env("PETSCORE")*2 ;
-            }
-            if($merchant["balascore"] > $data['score']) {
-                $data['type'] = 1;
-                $merchant['balascore'] = $merchant["balascore"] - $data['score'];
-                DB::table("merchant")->where("tid","=",$tenantsId)->update([
-                    'balascore' => $merchant['balascore'],
-                ]);
-            }
-            $res['count'] = $count;
-            $res["tid"] = $othertid;
-            if($count ==1 || $count == 2) {
-                DB::table("merchant")->where("balascore",">","0")->wherein("tid",$othertid)->update([
-                    'balascore' => DB::Raw("balascore+".env("PETSCORE"))
-                ]);
-                YfcBespokeView::where("type","=","1")->where("phone","=",$data['phone'])->update([
-                    'score' => DB::Raw("score-".env("PETSCORE"))
-                ]);
+        DB::beginTransaction();
+        try {
+            if ($merchant['balascore'] > 0) {
+                $count = count($othertid);
+                if ($count == 0) {
+                    $data["score"] = env("ALLSCORE");
+                } elseif ($count == 1) {
+                    $data["score"] = env("ALLSCORE") - env("PETSCORE");
+                } else {
+                    $data["score"] = env("ALLSCORE") - env("PETSCORE") * 2;
+                }
+                if ($merchant["balascore"] > $data['score']) {
+                    $data['type'] = 1;
+                    $merchant['balascore'] = $merchant["balascore"] - $data['score'];
+                    DB::table("merchant")->where("tid", "=", $tenantsId)->update([
+                        'balascore' => $merchant['balascore'],
+                    ]);
+                }
+                $res['count'] = $count;
+                $res["tid"] = $othertid;
+                if ($count == 1 || $count == 2) {
+                    DB::table("merchant")->where("balascore", ">", "0")->wherein("tid", $othertid)->update([
+                        'balascore' => DB::Raw("balascore+" . env("PETSCORE"))
+                    ]);
+                    YfcBespokeView::where("type", "=", "1")->where("phone", "=", $data['phone'])->update([
+                        'score' => DB::Raw("score-" . env("PETSCORE"))
+                    ]);
 
+                }
             }
-        }
-        $backres = DB::table('yfc_bespoke_view')->insert($data);
-        if(1){
-            $res['result'] = '00';
-            if($tenantsId) {
-                $yfctenants = YfcTenants::where("id",'=',$tenantsId)->first();
-                $content = '城市:'.$yfctenants["positionCity"].";\n时间:".date('Y-m-d H:i:s').";\n名称:"
-                    .$yfctenants["name"].";\n预约人:无;\n手机号码:".$data['phone'].";\n地址:".$data['url']."\n";
-                $this->sendDD('04a7b3d87f5701ff8d2bf9cccb38ead42344b8ead406fe125d5147e36df33b81',$content);
-            }
-
-        }else{
+            DB::table('yfc_bespoke_view')->insert($data);
+        }catch (Exception $e) {
             $res['result'] = '01';
+            return json_encode($res);
+        }
+        DB::commit();
+        $res['result'] = '00';
+        if($tenantsId) {
+            $yfctenants = YfcTenants::where("id",'=',$tenantsId)->first();
+            $content = '城市:'.$yfctenants["positionCity"].";\n时间:".date('Y-m-d H:i:s').";\n名称:"
+                .$yfctenants["name"].";\n预约人:无;\n手机号码:".$data['phone'].";\n地址:".$data['url']."\n";
+            $this->sendDD('04a7b3d87f5701ff8d2bf9cccb38ead42344b8ead406fe125d5147e36df33b81',$content);
         }
 
         return json_encode($res);
