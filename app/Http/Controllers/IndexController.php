@@ -148,7 +148,7 @@ class IndexController extends Controller
                 ->where("shoptype",'=',$tenants['shoptype'])
                 ->where("order_city",'<','50')
                 ->orderby("order_city",'asc')
-		->where("piccount",">","0")
+		        ->where("piccount",">","0")
                 ->limit(6)
                 ->get()
                 ->toArray();
@@ -213,24 +213,19 @@ class IndexController extends Controller
                 ->where('spread','=','2')
                 ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
                 ->orderBy('order_city','asc')->limit(1)->get();
-
-            $this->data['spread'] = empty($spread[0])? []:$spread[0];
+            if(!empty($spread)){
+                $spread = $spread->toArray();
+            }
+            $this->data['tenants'] = array_merge($spread,$this->data['tenants']);
 
             $tids = [];
             foreach($this->data['tenants'] as $v) {
                 $tids[] = $v['id'];
             }
 
-            if(!empty($this->data['spread']['name'])) {
-                $spreadset = YfcTenantsSet::where("tenantsId",$this->data['spread']['id'])->limit(1)->get();
-                if(!empty($spreadset[0])) {
-                    $this->data['spread']['taoxi'] = $spreadset[0];
-                    $this->data['spread']['taoxi']['cover'] = json_decode($this->data['spread']['taoxi']['cover'],true);
-                }
-            }
             $taoxi = YfcTenantsPic::select('id',"tenantsId",'firstcover')
                 ->whereIn('tenantsId',$tids)
-                ->orderBy('id','desc')->limit(4000)->get()->toArray();
+                ->orderBy('id','desc')->limit(2000)->get()->toArray();
 
             $taoxitmp = [];
             foreach($taoxi as $kk => $vv) {
@@ -249,7 +244,7 @@ class IndexController extends Controller
             }
 
 
-            //echo '<pre>' ; print_r($this->data) ;exit;
+
             if($this->data['iscity']==1) {
                 $this->data['title'] = '【有榜网 Youbangkeyi.com】'.$city.' - 商家数据查询平台';
                 $this->data['desc'] = '有榜网'.$city.'站，为您提供'.$city.'商家数据查询、'.$city.'婚纱摄影榜单以及'.$city.'婚礼策划榜单等，并且可以根据自己的需求定制专属榜单，充分的辅助您做决策。';
@@ -267,7 +262,7 @@ class IndexController extends Controller
                     $this->data['keyword'] =$city.'婚纱摄影,'.$city.'婚纱摄影前十名,'.$city.'婚纱摄影排行榜,'.$city.'婚纱摄影排名';
                 }
             }
-            //echo '<pre>' ; print_r($this->data) ;exit;
+
             $advtype = $shoptype=='婚纱摄影'?1:0;
 
             $this->data['advinfo'] = YfcAdv::where('type','1')->where('position','1')->where('city', '=', $city)->where('advtype',$advtype)->where('endTime','>',time())->first();
@@ -275,6 +270,13 @@ class IndexController extends Controller
                 var_dump($city);
                 var_dump($advtype);
                 echo '<pre>' ; print_r($this->data['advinfo'] );exit;
+            }
+
+            if(count($this->data['tenants']) > 1 && $this->data['tenants'][0]['spread']==2) {
+
+                $this->data['spread'] = [$this->data['tenants'][0]];
+                unset($this->data['tenants'][0]);
+
             }
 
             $this->data['ismobile'] = $this->ismobile;

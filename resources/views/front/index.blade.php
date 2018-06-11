@@ -64,118 +64,41 @@ var _hmt = _hmt || [];
             <div class="list_box">
                <div class="zysmi"><span>全网数据监测  排名客观权威</span>中国婚嫁产业  大数据服务商<em><a href="http://www.youbangkeyi.com/guize.html" target="_blank">排名算法</a></em></div>
                 <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
-                    <?php if(isset($spread['name'])) { ?>
-                    <div class="pic_box">
-                        <!-- <?php if($spread['isVip']==2) { ?>
-                            <div class="huiyuan"></div>
-                        <?php } ?> -->
-                        <div class="num_txt">
-                       <div class="tit_pic"><a href="/detail/<?php echo $spread['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><img src="//img2.youbangkeyi.com/<?php echo $spread['logo'];?>?imageView2/1/w/150/h/150/q/75|imageslim"></a></div>
-                            <div class="tit_box">
-                                <div class="title"><span>第<em><?php echo $spread['order_city'];?></em>名</span><a href="/detail/<?php echo $spread['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $spread['name']?></a></div>
-                                <div class="txt"><span>得分：<?php echo $spread['heat_index'];?></span><span>|</span><span>人均：¥<?php echo $spread['price'];?></span><span class="kep">客片：<?php echo $v['piccount']>0?''.$v['piccount'].'组':'商家无案例';?></span></div>
-                            </div>
-                        </div>
-                        <?php
-                            if($spread['trends'] && is_array(json_decode($spread['trends'],true))){
-                                $trends = json_decode($spread['trends'],true);
-                                if($trends['time'] >= time() - 86400*2) {
-                                    if(isset($trends['type']) && $trends['type'] ==1) {
-                                        echo '<div class="dongtai"> '.$trends['content'].'</div>';
-                                    }
-                                    else {
-                                        $time = time() - $trends['time'];
-                                        if($time < 3600) {
-                                            $str = intval($time/60).'分钟前  ';
-                                        }elseif ($time < 3600*24) {
-                                            $str = intval($time/3600).'小时前  ';
 
-                                        }else {
-                                            $str = '昨天  ';
-                                        }
-                                        echo '<div class="dongtai">'.$str.$trends['content'].'</div>';
-                                    }
-                                }
-                                else {
-                                    echo '';
-                                }
-                            }
-                            else {
-                                echo '';
-                            }
-                        ?>
-                        <div class="vippic txtCtr">
-                            <?php if(isset($spread['taoxi'])) { ?>
-                            <div class="vipimg">
-                                <a href="/detail/<?php echo $spread['id'].'/'.$spread['taoxi']['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
-                                    <?php if(strpos($spread['taoxi']['cover'][0],'http') === false) {?>
-                                    <img src="//img2.youbangkeyi.com<?php echo $spread['taoxi']['cover'][0]; ?>">
-                                    <?php } else {?>
-                                        <img src="<?php echo $spread['taoxi']['cover'][0]; ?>">
-                                    <?php }?>
-                                </a>
-                                <p class="title txtLft"><?php echo $spread['setName'];?></p>
-                                <div class="price txtLft"><span class="red fa">¥<?php echo $spread['taoxi']['currentPrice'];?></span><del class="fa">¥<?php echo $spread['taoxi']['price'];?></del></div>
-                            </div>
-                            <?php } ?>
-                        </div>
-                        <div class="txt_box txtCtr">
-                            <div class="txt">
-                                <p class="blue"><?php echo $spread['day30s'];?></p>
-                                <em>品牌搜索人数</em>
-                            </div>
-                            <div class="txt">
-                                <p class="blue"><?php echo $spread['alls'];?></p>
-                                <em>全网评论数据</em>
-                            </div>
-                            <div class="txt">
-                                <p class="blue"><?php $spread['alls'] = $spread['alls'] ==0 ? 1 :$spread['alls'];  echo intval($spread['allcy']/$spread['alls']*100);?></p>
-                                <em>好评率</em>
-                            </div>
-                        </div>
-                                            <div class="daodian">
-                                <div class="daodian_l">
-                                    <p class="dp001"><span>到店礼 </span>
-                                    预约到店免费领取超值礼包</p>
-                                                                    </div>
-                               <div class="daodian_r"><a href="/detail/<?php echo $spread['id']?>">领取优惠</a></div>
-                            </div>
-                    </div>
-                    <?php } ?>
-                    <?php foreach($tenants as $k => $v) { ?>
+                    <?php foreach($spread as $k => $v) { ?>
                     <div class="pic_box">
-                         <!--<?php if($v['isVip']==2) { ?>
-                            <div class="huiyuan"></div>
-                        <?php } ?>-->
+                        <!--<?php if($v['isVip']==2) { ?>
+                                <div class="huiyuan"></div>
+                            <?php } ?>-->
                         <div class="num_txt">
                             <div class="tit_box">
                                 <div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
                                 <div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均消费 ¥<?php echo $v['person_price'];?></span><span class="fmr"><?php echo $v['area'];?></span>
-				                </div>
+                                </div>
                             </div>
                         </div>
                         <div class="pic txtCtr">
                             <?php foreach($v['taoxi'] as $v2) { ?>
-                                <?php if(isset($v2['cover'][0])) { ?>                  
-                                <div class="img">
-                                    <a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
-                                        <span>
-                                            <?php if(strpos($v2['cover'][0],'http') === false) {?>
-                                                <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
-                                            <?php } else {?>
-                                                <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
-                                            <?php } ?>
-                                        </span>
-                                    </a>
-                                </div>
-                                <?php } ?>
+                            <?php if(isset($v2['cover'][0])) { ?>
+                            <div class="img">
+                                <a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
+                                    <span>
+                                        <?php if(strpos($v2['cover'][0],'http') === false) {?>
+                                        <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
+                                        <?php } else {?>
+                                        <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
+                                        <?php } ?>
+                                    </span>
+                                </a>
+                            </div>
+                            <?php } ?>
                             <?php } ?>
                         </div>
-           <?php if(strlen($v['package'])>2) { ?>
+                        <?php if(strlen($v['package'])>2) { ?>
                         <div class="yuyue">
-                <i></i><span><?php echo $v['package'];?></span>
-            <a class="discount-btn" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">去看看</a>
-            </div><?php } ?>
+                            <i></i><span><?php echo $v['package'];?></span>
+                            <a class="discount-btn" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">去看看</a>
+                        </div><?php } ?>
                         <div class="txt_box txtCtr">
                             <div class="txt">
                                 <p class="blue"><?php echo $v['day30s'];?></p>
@@ -190,11 +113,63 @@ var _hmt = _hmt || [];
                                 <em>全网好评率</em>
                             </div>
                         </div>
+                        <div class="daodian">
+                            <a class="sybj" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看商家详情</a>
+                        </div>
+                    </div>
+                    <?php } ?><?php foreach($tenants as $k => $v) { ?>
+                        <div class="pic_box">
+                            <!--<?php if($v['isVip']==2) { ?>
+                                    <div class="huiyuan"></div>
+                                <?php } ?>-->
+                            <div class="num_txt">
+                                <div class="tit_box">
+                                    <div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
+                                    <div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均消费 ¥<?php echo $v['person_price'];?></span><span class="fmr"><?php echo $v['area'];?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pic txtCtr">
+                                <?php foreach($v['taoxi'] as $v2) { ?>
+                                <?php if(isset($v2['cover'][0])) { ?>
+                                <div class="img">
+                                    <a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
+                                        <span>
+                                            <?php if(strpos($v2['cover'][0],'http') === false) {?>
+                                            <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
+                                            <?php } else {?>
+                                            <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
+                                            <?php } ?>
+                                        </span>
+                                    </a>
+                                </div>
+                                <?php } ?>
+                                <?php } ?>
+                            </div>
+                            <?php if(strlen($v['package'])>2) { ?>
+                            <div class="yuyue">
+                                <i></i><span><?php echo $v['package'];?></span>
+                                <a class="discount-btn" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">去看看</a>
+                            </div><?php } ?>
+                            <div class="txt_box txtCtr">
+                                <div class="txt">
+                                    <p class="blue"><?php echo $v['day30s'];?></p>
+                                    <em>品牌搜索人数</em>
+                                </div>
+                                <div class="txt">
+                                    <p class="blue"><?php echo ($v['allcy'] + $v['allce']);?></p>
+                                    <em>全网评论人数</em>
+                                </div>
+                                <div class="txt">
+                                    <p class="blue"><?php $c = $v['allcy']+$v['allce'];$c= $c==0?1:$c ;  echo intval($v['allcy']/$c*10000)/100;?>%</p>
+                                    <em>全网好评率</em>
+                                </div>
+                            </div>
                             <div class="daodian">
                                 <a class="sybj" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看商家详情</a>
                             </div>
-                    </div>
-                    <?php } ?>
+                        </div>
+                        <?php } ?>
                 </section>
             </div>
                                 <div class="tittp">有榜数据说明</div>
