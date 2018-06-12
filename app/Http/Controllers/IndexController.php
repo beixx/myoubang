@@ -143,6 +143,17 @@ class IndexController extends Controller
                 'ismobile' => $this->ismobile,
             ];
 
+            $this->data['spread'] = YfcTenants::where('positionCity', '=',$city)
+                ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
+                ->where('shoptype',$tenants['shoptype'])
+                ->where('spread','=','2')
+                ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
+                ->orderBy('order_city','asc')->limit(1)->get();
+            if(!empty($spread)){
+                $this->data['spread'] = $spread->toArray();
+                $this->data['spread'][0]['taoxi'] = YfcTenantsSet::where("tenantsId","=",$this->data['spread'][0]['id'])->get();
+            }
+
             $this->data['recommenttenants'] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
                 ->where("id",'!=',$tenants['id'])
                 ->where("shoptype",'=',$tenants['shoptype'])

@@ -78,7 +78,7 @@ var _hmt = _hmt || [];
                             </div>
                         </div>
                         <div class="pic txtCtr">
-			    <?php $i = 0;?>
+			                <?php $i = 0;?>
                             <?php foreach($v['taoxi'] as $v2) { if($i++ >2) break;  ?>
                             <?php if(isset($v2['cover'][0])) { ?>
                             <div class="img">
