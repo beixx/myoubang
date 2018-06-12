@@ -151,11 +151,11 @@ class IndexController extends Controller
                 ->orderBy('order_city','asc')->limit(1)->get();
             if(!empty($this->data['spread'])){
                 $this->data['spread'] = $this->data['spread']->toArray();
-                $this->data['spread'][0]['taoxi'] = YfcTenantsSet::where("tenantsId","=",$this->data['spread'][0]['id'])->get();
+                $this->data['spread'][0]['taoxi'] = YfcTenantsPic::select('id',"tenantsId",'firstcover')->where("tenantsId","=",$this->data['spread'][0]['id'])->get();
                 if(!empty($this->data['spread'][0]['taoxi'])) {
                     $this->data['spread'][0]['taoxi'] = $this->data['spread'][0]['taoxi']->toArray();
                     foreach($this->data['spread'][0]['taoxi'] as $k1 => $v1) {
-                        $this->data['spread'][0]['taoxi'][$k1]['cover'] = json_decode($v1['cover'],true);
+                        $this->data['spread'][0]['taoxi'][$k1]['cover'] = json_decode($v1['firstcover'],true);
                     }
                 }
                 else {
