@@ -152,6 +152,12 @@ class IndexController extends Controller
             if(!empty($spread)){
                 $this->data['spread'] = $spread->toArray();
                 $this->data['spread'][0]['taoxi'] = YfcTenantsSet::where("tenantsId","=",$this->data['spread'][0]['id'])->get();
+                if(!empty($this->data['spread'][0]['taoxi'])) {
+                    $this->data['spread'][0]['taoxi'] = $this->data['spread'][0]['taoxi']->toArray();
+                }
+                else {
+                    $this->data['spread'][0]['taoxi'] = [];
+                }
             }
             else {
                 $this->data['spread'] = [];
