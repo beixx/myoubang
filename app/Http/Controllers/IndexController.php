@@ -155,7 +155,7 @@ class IndexController extends Controller
                 if(!empty($this->data['spread'][0]['taoxi'])) {
                     $this->data['spread'][0]['taoxi'] = $this->data['spread'][0]['taoxi']->toArray();
                     foreach($this->data['spread'][0]['taoxi'] as $k1 => $v1) {
-                        $this->data['spread'][0]['taoxi'][$k1]['cover'] = json_decode($v1['firstcover'],true);
+                        $this->data['spread'][0]['taoxi'][$k1]['cover'] = json_decode($v1['cover'],true);
                     }
                 }
                 else {
