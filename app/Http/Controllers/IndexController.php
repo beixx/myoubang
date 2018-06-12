@@ -149,8 +149,8 @@ class IndexController extends Controller
                 ->where('spread','=','2')
                 ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
                 ->orderBy('order_city','asc')->limit(1)->get();
-            if(!empty($spread)){
-                $this->data['spread'] = $spread->toArray();
+            if(!empty($this->data['spread'])){
+                $this->data['spread'] = $this->data['spread']->toArray();
                 $this->data['spread'][0]['taoxi'] = YfcTenantsSet::where("tenantsId","=",$this->data['spread'][0]['id'])->get();
                 if(!empty($this->data['spread'][0]['taoxi'])) {
                     $this->data['spread'][0]['taoxi'] = $this->data['spread'][0]['taoxi']->toArray();
