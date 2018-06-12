@@ -154,6 +154,9 @@ class IndexController extends Controller
                 $this->data['spread'][0]['taoxi'] = YfcTenantsSet::where("tenantsId","=",$this->data['spread'][0]['id'])->get();
                 if(!empty($this->data['spread'][0]['taoxi'])) {
                     $this->data['spread'][0]['taoxi'] = $this->data['spread'][0]['taoxi']->toArray();
+                    if($this->data['spread'][0]['taoxi']['firstcover']){
+                        $this->data['spread'][0]['taoxi']['cover'] = json_decode($this->data['spread'][0]['taoxi']['firstcover'],true);
+                    }
                 }
                 else {
                     $this->data['spread'][0]['taoxi'] = [];
