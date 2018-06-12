@@ -388,7 +388,7 @@ var _hmt = _hmt || [];
         <div class="tit_box">
             <div class="title"><span class="icot1"></span><a href="/detail/158464"><?php echo $v['name']?></a></div>
             <div class="txt">
-                <span>人均消费 ¥<?php echo $v['prices']?></span>
+                <span>人均消费 ¥<?php echo $v['price']?></span>
                 <span> <?php echo $v['areas'];?> </span>
                 <span class="fmr"> <?php echo $v['spreadcontent']?> </span>
             </div>
