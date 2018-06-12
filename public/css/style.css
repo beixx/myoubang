@@ -80,6 +80,23 @@ em.date-s-span{color: #999; width: 1rem; display: inline-block; text-align: cent
     padding: 0 0.2rem;}
 .bt22{bottom: -22rem;}
 .bt00{bottom: 0 !important;}
+.icot1{    background: url(http://c.youbangkeyi.com/v/4.png);
+    background-size: 100%;
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    margin-right: 0;}
+.icot2{    background: url(http://c.youbangkeyi.com/v/5.png);
+    background-size: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;}
 .sy-title h1{
     font-size:1rem;
     color: #FFF;
@@ -381,7 +398,7 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
          }
 .sybj em{font-size: 0.6rem;margin-left: 0.3rem;}
 
-.zysmn{    width:92%;padding: 0 4%;
+.zysmn{background: #f9f4d9;width:92%;padding: 0 4%;
     line-height: 1.8rem;
     height: 1.8rem;
     position: relative;
@@ -401,9 +418,9 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
     margin: 0 2.5%;
     color: #8f7f5d;
 }
-.zysmn .jiance{background: url(http://c.youbangkeyi.com/v/jiance3.png) no-repeat 0rem center #FFF;background-size: 0.8rem;}
-.zysmn .shishi{background: url(http://c.youbangkeyi.com/v/shishi1.png) no-repeat 0rem center #FFF;background-size: 0.8rem;}
-.zysmn .jiangbei{background: url(http://c.youbangkeyi.com/v/jiangbei2.png) no-repeat 0rem center #FFF;background-size: 0.8rem;}
+.zysmn .jiance{background: url(http://c.youbangkeyi.com/v/jiance3.png) no-repeat 0rem center;background-size: 0.8rem;}
+.zysmn .shishi{background: url(http://c.youbangkeyi.com/v/shishi1.png) no-repeat 0rem center;background-size: 0.8rem;}
+.zysmn .jiangbei{background: url(http://c.youbangkeyi.com/v/jiangbei2.png) no-repeat 0rem center;background-size: 0.8rem;}
 .zysmi span{    display: block;
     font-size: 0.7rem;
     font-weight: bold;}
@@ -1695,7 +1712,7 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
     font-size: .6rem;
     line-height: 1.2rem;
 }
-.showmore{border-top: .5rem #f5f7fa solid;}
+.showmore{border-top: .5rem #f5f7fa solid;background:#f5f7fa;}
 .showmore .discount-btn{background-color: initial; margin:.6rem 4% 0.6rem 0; color: #FF7070; padding: 0 .75rem 0 0.3rem; background: url(http://c.youbangkeyi.com/a/xiangyou1.png) right center no-repeat; background-size: 0.6rem; height: 0.6rem; line-height: 0.6rem;}
 .showmore .yuyue span{font-weight: initial;color: #ff7070;margin: 0.55rem 0;vertical-align: middle;height: 0.7rem;}
 .showmore .yuyue {height: 0.7rem;margin: 0 4% .3rem; display: inline-block; height: 1.8rem; border: 0;}
@@ -1790,7 +1807,7 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
     transform: scaleY(.5);
     -webkit-transform: scaleY(.5);
 }
-.bottom_slide_box .calculator_box:after,.zysmn:after,.daodian:after,.pic_box .txt_box:after{
+.bottom_slide_box .calculator_box:after,.daodian:after,.pic_box .txt_box:after{
     content: "";
     width: 100%;
     border-bottom: 1px solid #eff2f6;
@@ -1835,6 +1852,7 @@ footer{background:#26282b;width:100%;margin:0 auto 5.1rem;font-size:0.6rem;color
 .foots1{width:350px;float:right;text-align:right;height:75px;}
 .foot span{display:table;color:#666;text-align:center;width:100%;line-height:1.2rem;height:1.2rem;}
 .foots a{margin:0px 0.3rem;color:#666;}
+.bdtj{width:96%!important; margin: 0 2%!important;}
 .tuijian{width:92%;padding:4%;margin:0 auto;text-align:left;display: none;}
 .tuijian h3{font-size:16px;color:#999;}
 .tuijian h3 span{font-size:0.6rem;font-weight:initial;margin-left:0.3rem;color:#666;}
@@ -1880,7 +1898,7 @@ footer{background:#26282b;width:100%;margin:0 auto 5.1rem;font-size:0.6rem;color
     .f075{font-size:.75rem!important;}
 @media screen and (min-width:740px) {
   .pic_box .num_txt .tit_box{
-    width: 680px; height: 2.4rem;
+    width:653.55px; height: 2.4rem;
   }
   .pic_box .num_txt{height: 2.4rem;}
   .anli_month,.case_box .picScroll .bd p{padding: 0px 0% 0 5rem;width: 82%;}

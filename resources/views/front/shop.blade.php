@@ -380,6 +380,48 @@ var _hmt = _hmt || [];
 
 <div class="view shop-tuijian">
     <div class="tit">猜你喜欢的商家</div>
+
+<!--
+<div class="pic_box bdtj">
+                   
+                        <div class="num_txt">
+                            <div class="tit_box">
+                                <div class="title"><span class="icot1"></span><a href="/detail/158464">唐山维纳斯婚纱摄影总店</a></div>
+                                <div class="txt"><span>人均消费 ¥5463</span><span> 丰润区 </span><span class="fmr"> 丰润区 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pic txtCtr">
+                                                                                    <div class="img">
+                                <a class="suolv" href="/detail/158464">
+                                    <span>
+                                                                                <img class="lazy" src="//img2.youbangkeyi.com/8ef/661/d00/8ef6614f1429d009e6535ce1d6781fe6.jpg?imageView2/1/w/300/h/250/q/75|imageslim" data-original="//img2.youbangkeyi.com/8ef/661/d00/8ef6614f1429d009e6535ce1d6781fe6.jpg?imageView2/1/w/300/h/250/q/75|imageslim" style="display: block;">
+                                                                            </span>
+                                </a>
+                            </div>
+                                                                                                                <div class="img">
+                                <a class="suolv" href="/detail/158464">
+                                    <span>
+                                                                                <img class="lazy" src="//img2.youbangkeyi.com/ae7/824/652/ae7824f7981d65201585211b08e8ddc7.jpg?imageView2/1/w/300/h/250/q/75|imageslim" data-original="//img2.youbangkeyi.com/ae7/824/652/ae7824f7981d65201585211b08e8ddc7.jpg?imageView2/1/w/300/h/250/q/75|imageslim" style="display: block;">
+                                                                            </span>
+                                </a>
+                            </div>
+                                                                                                                <div class="img">
+                                <a class="suolv" href="/detail/158464">
+                                    <span>
+                                                                                <img class="lazy" src="//img2.youbangkeyi.com/ae7/824/652/ae7824f7981d65201585211b08e8ddc7.jpg?imageView2/1/w/300/h/250/q/75|imageslim" data-original="//img2.youbangkeyi.com/ae7/824/652/ae7824f7981d65201585211b08e8ddc7.jpg?imageView2/1/w/300/h/250/q/75|imageslim" style="display: block;">
+                                                                            </span>
+                                </a>
+                            </div>
+                                                                                </div>
+                                                <div class="daodian"><span class="icot2"></span>
+                            <a class="sybj" href="/detail/158464">查看商家详情</a>
+                        </div>
+                    </div>
+
+-->
+
+
     <div class="hot">
         <ul>
             <?php foreach($recommenttenants as $k =>$v) { ?>

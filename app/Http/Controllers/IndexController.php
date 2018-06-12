@@ -192,7 +192,6 @@ class IndexController extends Controller
                 $this->data['tenants'] = YfcTenants::where('positionCity', '=', $city)
                     ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
                     ->where('shoptype',$shoptype)
-                    ->where('spread','!=','2')
                     ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
                     ->limit(10)
                     ->orderBy('order_city','asc')->get()->toArray();

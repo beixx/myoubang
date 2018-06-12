@@ -66,19 +66,20 @@ var _hmt = _hmt || [];
                 <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
 
                     <?php if(!empty($spread)) foreach($spread as $k => $v) { ?>
-                    <div class="pic_box">
+                    <div class="pic_box bdtj">
                         <!--<?php if($v['isVip']==2) { ?>
                                 <div class="huiyuan"></div>
                             <?php } ?>-->
                         <div class="num_txt">
                             <div class="tit_box">
-                                <div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均消费 ¥<?php echo $v['person_price'];?></span><span class="fmr"><?php echo $v['area'];?></span>
+                                <div class="title"><span class="icot1"></span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
+                                <div class="txt"><span>人均消费 ¥<?php echo $v['person_price'];?></span><span><?php echo $v['area'];?></span><span class="fmr"><?php echo $v['spreadcontent'];?></span>
                                 </div>
                             </div>
                         </div>
                         <div class="pic txtCtr">
-                            <?php foreach($v['taoxi'] as $v2) { ?>
+			    <?php $i = 0;?>
+                            <?php foreach($v['taoxi'] as $v2) { if($i++ >2) break;  ?>
                             <?php if(isset($v2['cover'][0])) { ?>
                             <div class="img">
                                 <a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
@@ -99,21 +100,7 @@ var _hmt = _hmt || [];
                             <i></i><span><?php echo $v['package'];?></span>
                             <a class="discount-btn" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">去看看</a>
                         </div><?php } ?>
-                        <div class="txt_box txtCtr">
-                            <div class="txt">
-                                <p class="blue"><?php echo $v['day30s'];?></p>
-                                <em>品牌搜索人数</em>
-                            </div>
-                            <div class="txt">
-                                <p class="blue"><?php echo ($v['allcy'] + $v['allce']);?></p>
-                                <em>全网评论人数</em>
-                            </div>
-                            <div class="txt">
-                                <p class="blue"><?php $c = $v['allcy']+$v['allce'];$c= $c==0?1:$c ;  echo intval($v['allcy']/$c*10000)/100;?>%</p>
-                                <em>全网好评率</em>
-                            </div>
-                        </div>
-                        <div class="daodian">
+                        <div class="daodian"><span class="icot2"></span>
                             <a class="sybj" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看商家详情</a>
                         </div>
                     </div>
@@ -125,7 +112,7 @@ var _hmt = _hmt || [];
                             <div class="num_txt">
                                 <div class="tit_box">
                                     <div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                    <div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均消费 ¥<?php echo $v['person_price'];?></span><span class="fmr"><?php echo $v['area'];?></span>
+                                    <div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均消费 ¥<?php echo $v['price'];?></span><span class="fmr"><?php echo $v['area'];?></span>
                                     </div>
                                 </div>
                             </div>
