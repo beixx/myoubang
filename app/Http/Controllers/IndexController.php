@@ -159,7 +159,7 @@ class IndexController extends Controller
                 ->where('spread','=','2')
                 ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
                 ->orderBy('order_city','asc')->limit(1)->get();
-            if(!empty($this->data['spread'])){
+            if(!empty($this->data['spread'][0])){
                 $this->data['spread'] = $this->data['spread']->toArray();
                 $this->data['spread'][0]['taoxi'] = YfcTenantsPic::select('id',"tenantsId",'firstcover')->where("tenantsId","=",$this->data['spread'][0]['id'])->get();
                 if(!empty($this->data['spread'][0]['taoxi'])) {
@@ -181,8 +181,8 @@ class IndexController extends Controller
                 ->where("shoptype",'=',$tenants['shoptype'])
                 ->where("order_city",'<','50')
                 ->orderby("order_city",'asc')
-		        ->where("piccount",">","0")
-                ->limit(6)
+		->where("piccount",">","0")
+                ->limit(4)
                 ->get()
                 ->toArray();
 
