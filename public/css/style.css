@@ -288,8 +288,23 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
 /*底部*/
 
 .bgDiv{ width: 100%;height: 100%; background-color: #000;opacity: .75;overflow: hidden;position:fixed;display:none ; z-index: 99; bottom: 0;}
-.downNav{width: 100%;background-color: #fff;position: fixed;z-index:1001;overflow: hidden;
-    height: 5.1rem;}
+.downNav{position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.3);
+    z-index: 99;}
 
 /*立即定制*/
 .downNav .title{display:table;font-weight:700;margin: 0 auto;background: url(../images/icon8.png) no-repeat left center;padding-left: 3rem;font-size:0.8rem;background-size: 2.5rem;margin-top: 0.5rem;height: 1.5rem;line-height: 1.5rem;}
@@ -579,6 +594,8 @@ width: 100%; background: #FFF; margin: 0;
     bottom: 0;
     margin: auto;
 }
+.shop-tuijian{background: #f5f7fa;}
+.shop-tuijian .bdtj{margin: 0.5rem 2% 0!important;}
 .shop-tuijian .suolvl, .shop-tuijian .suolvl span {
     height: 5.5rem;
 }
@@ -1906,7 +1923,7 @@ footer{background:#26282b;width:100%;margin:0 auto 5.1rem;font-size:0.6rem;color
     .jxtc_box li{width: 50%;float: left;border-bottom:0;}
 .jxtc_box li:last-child{    border-bottom:0;}
 .hot .suolvl,.hot .suolvl span,.shop-tuijian .suolvl, .shop-tuijian .suolvl span {
-    height:165px;
+    height:120px;
 }
 .layui-layer{max-width: 740px; left: 50% !important; margin-left: -370px !important;}
 .view .hot li p{
@@ -1921,7 +1938,7 @@ footer{background:#26282b;width:100%;margin:0 auto 5.1rem;font-size:0.6rem;color
 .sjkap{margin-top: -65px;}
 .suolv{height: 167.2px;}
 .suolvt{height:222px;}
-.view .hot li{    width:28%;}
+.view .hot li{    width:20%;}
 .lian img{width: 300px;}
 .tuijian{display: block;}
 .foots a{margin: 0 12px;}

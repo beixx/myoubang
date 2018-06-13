@@ -382,8 +382,8 @@ var _hmt = _hmt || [];
     <div class="tit">猜你喜欢的商家</div>
 
 
-<div class="pic_box bdtj">
     <?php foreach($spread as $v) {?>
+    <div class="pic_box bdtj">
     <div class="num_txt">
         <div class="tit_box">
             <div class="title"><span class="icot1"></span><a href="/detail/158464"><?php echo $v['name']?></a></div>
@@ -393,9 +393,8 @@ var _hmt = _hmt || [];
                 <span class="fmr"> <?php echo $v['spreadcontent']?> </span>
             </div>
         </div>
-    </div>
-    <div class="pic txtCtr">
-        <?php $i = 0;?>
+    </div><div class="pic txtCtr">
+        <?php $i = 0;?> 
         <?php foreach($v['taoxi'] as $v2) { if($i++ >2) break;  ?>
         <?php if(isset($v2['cover'][0])) { ?>
         <div class="img">
@@ -414,9 +413,8 @@ var _hmt = _hmt || [];
     </div>
     <div class="daodian"><span class="icot2"></span>
         <a class="sybj" href="/detail/158464">查看商家详情</a>
-    </div>
+    </div></div>
     <?php } ?>
-</div>
 
 
 
