@@ -15,39 +15,35 @@
             <div class="num_txt">
                 <div class="tit_box">
                     <div class="title"><span class="icot1"></span><a href="/detail/<?php echo $v['id'];?>"><?php echo $v['name'];?></a></div>
-                    <div class="txt"><span>人均消费 ¥4279</span><span>新街口地区</span><span class="fmr">本周用户预约最多商家</span>
+                    <div class="txt"><span>人均消费 ¥<?php echo $v['price'];?></span>
+                        <span><?php echo $v['area'];?></span>
+                        <span class="fmr"><?php echo $v['spreadcontent']?></span>
                     </div>
                 </div>
             </div>
             <div class="pic txtCtr">
+                <?php foreach($v['taoxi'] as $v2) { if($i++ >2) break;  ?>
+                <?php if(isset($v2['cover'][0])) { ?>
                 <div class="img">
-                    <a class="suolv" href="/detail/14">
+                    <a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                         <span>
-                            <img src="//img2.youbangkeyi.com/merchant/af9/0a2/dfc/3091d86c09a002e144f4ec506eada3d7.jpg?imageView2/1/w/300/h/250/q/75|imageslim">
+                            <?php if(strpos($v2['cover'][0],'http') === false) {?>
+                            <img src="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
+                            <?php } else {?>
+                            <img src="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
+                            <?php } ?>
                         </span>
                     </a>
                 </div>
-                <div class="img">
-                    <a class="suolv" href="/detail/14">
-                        <span>
-                            <img src="//img2.youbangkeyi.com/merchant/325/fe2/8c2/67ed94744426295f96268f4ac1881b46.jpg?imageView2/1/w/300/h/250/q/75|imageslim">
-                        </span>
-                    </a>
-                </div>
-                <div class="img">
-                    <a class="suolv" href="/detail/14">
-                        <span>
-                            <img src="//img2.youbangkeyi.com/merchant/8dd/5e1/dc6/798ed7d4ee7138d49b8828958048130a.jpg?imageView2/1/w/300/h/250/q/75|imageslim">
-                        </span>
-                    </a>
-                </div>
+                <?php } ?>
+                <?php } ?>
             </div>
             <div class="yuyue">
-                <i></i><span>滴滴专车接送+情侣对戒</span>
-                <a class="discount-btn" href="/detail/14">去看看</a>
+                <i></i><span><?php echo $v['package'];?></span>
+                <a class="discount-btn" href="/detail/<?php echo $v['id'];?>">去看看</a>
             </div>
             <div class="daodian"><span class="icot2"></span>
-                <a class="sybj" href="/detail/14">查看商家详情</a>
+                <a class="sybj" href="/detail/<?php echo $v['id'];?>">查看商家详情</a>
             </div>
         </div>
         <?php } ?>
