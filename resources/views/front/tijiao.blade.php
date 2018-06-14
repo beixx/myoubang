@@ -10,7 +10,7 @@
     </div>
     <div class="tishik" style="display:none;"  >
         <div class="tishizi"><p>预约成功</p></div>
-        <?php foreach($spread as $v) { s?>
+        <?php foreach($spread as $v) { ?>
         <div class="pic_box bdtj">
             <div class="num_txt">
                 <div class="tit_box">
