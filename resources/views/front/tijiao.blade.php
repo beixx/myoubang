@@ -9,47 +9,49 @@
         <button type="submit" name="wapsubmit" id="tijiao" class="btn">免费预约咨询 · 3分钟响应</button>
     </div>
     <div class="tishik" style="display:none;"  >
-    <div class="tishizi"><p>预约成功</p></div>
-    
-    <div class="pic_box bdtj">
-                        <div class="num_txt">
-                            <div class="tit_box">
-                                <div class="title"><span class="icot1"></span><a href="/detail/14">南京七楼摄影旅拍</a></div>
-                                <div class="txt"><span>人均消费 ¥4279</span><span>新街口地区</span><span class="fmr">本周用户预约最多商家</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pic txtCtr">
-                                                                                                                <div class="img">
-                                <a class="suolv" href="/detail/14">
-                                    <span>
-                                                                                <img src="//img2.youbangkeyi.com/merchant/af9/0a2/dfc/3091d86c09a002e144f4ec506eada3d7.jpg?imageView2/1/w/300/h/250/q/75|imageslim">
-                                                                            </span>
-                                </a>
-                            </div>
-                                                                                                                <div class="img">
-                                <a class="suolv" href="/detail/14">
-                                    <span>
-                                                                                <img src="//img2.youbangkeyi.com/merchant/325/fe2/8c2/67ed94744426295f96268f4ac1881b46.jpg?imageView2/1/w/300/h/250/q/75|imageslim">
-                                                                            </span>
-                                </a>
-                            </div>
-                                                                                                                <div class="img">
-                                <a class="suolv" href="/detail/14">
-                                    <span>
-                                                                                <img src="//img2.youbangkeyi.com/merchant/8dd/5e1/dc6/798ed7d4ee7138d49b8828958048130a.jpg?imageView2/1/w/300/h/250/q/75|imageslim">
-                                                                            </span>
-                                </a>
-                            </div>
-                                                                                </div>
-                                                <div class="yuyue">
-                            <i></i><span>滴滴专车接送+情侣对戒</span>
-                            <a class="discount-btn" href="/detail/14">去看看</a>
-                        </div>                        <div class="daodian"><span class="icot2"></span>
-                            <a class="sybj" href="/detail/14">查看商家详情</a>
-                        </div>
+        <div class="tishizi"><p>预约成功</p></div>
+        <?php foreach($spread as $v) { s?>
+        <div class="pic_box bdtj">
+            <div class="num_txt">
+                <div class="tit_box">
+                    <div class="title"><span class="icot1"></span><a href="/detail/<?php echo $v['id'];?>"><?php echo $v['name'];s?></a></div>
+                    <div class="txt"><span>人均消费 ¥4279</span><span>新街口地区</span><span class="fmr">本周用户预约最多商家</span>
                     </div>
-</div>
+                </div>
+            </div>
+            <div class="pic txtCtr">
+                <div class="img">
+                    <a class="suolv" href="/detail/14">
+                        <span>
+                            <img src="//img2.youbangkeyi.com/merchant/af9/0a2/dfc/3091d86c09a002e144f4ec506eada3d7.jpg?imageView2/1/w/300/h/250/q/75|imageslim">
+                        </span>
+                    </a>
+                </div>
+                <div class="img">
+                    <a class="suolv" href="/detail/14">
+                        <span>
+                            <img src="//img2.youbangkeyi.com/merchant/325/fe2/8c2/67ed94744426295f96268f4ac1881b46.jpg?imageView2/1/w/300/h/250/q/75|imageslim">
+                        </span>
+                    </a>
+                </div>
+                <div class="img">
+                    <a class="suolv" href="/detail/14">
+                        <span>
+                            <img src="//img2.youbangkeyi.com/merchant/8dd/5e1/dc6/798ed7d4ee7138d49b8828958048130a.jpg?imageView2/1/w/300/h/250/q/75|imageslim">
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="yuyue">
+                <i></i><span>滴滴专车接送+情侣对戒</span>
+                <a class="discount-btn" href="/detail/14">去看看</a>
+            </div>
+            <div class="daodian"><span class="icot2"></span>
+                <a class="sybj" href="/detail/14">查看商家详情</a>
+            </div>
+        </div>
+        <?php } ?>
+    </div>
 </div>
 <script type="text/javascript">
     $('button[name=wapsubmit]').click(function(){

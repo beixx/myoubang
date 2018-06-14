@@ -153,35 +153,14 @@ class IndexController extends Controller
                 'ismobile' => $this->ismobile,
             ];
 
-            $this->data['spread'] = YfcTenants::where('positionCity', '=',$city)
-                ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
-                ->where('shoptype',$tenants['shoptype'])
-                ->where('spread','=','2')
-                ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
-                ->orderBy('order_city','asc')->limit(1)->get();
-            if(!empty($this->data['spread'][0])){
-                $this->data['spread'] = $this->data['spread']->toArray();
-                $this->data['spread'][0]['taoxi'] = YfcTenantsPic::select('id',"tenantsId",'firstcover')->where("tenantsId","=",$this->data['spread'][0]['id'])->get();
-                if(!empty($this->data['spread'][0]['taoxi'])) {
-                    $this->data['spread'][0]['taoxi'] = $this->data['spread'][0]['taoxi']->toArray();
-                    foreach($this->data['spread'][0]['taoxi'] as $k1 => $v1) {
-                        $this->data['spread'][0]['taoxi'][$k1]['cover'] = json_decode($v1['firstcover'],true);
-                    }
-                }
-                else {
-                    $this->data['spread'][0]['taoxi'] = [];
-                }
-            }
-            else {
-                $this->data['spread'] = [];
-            }
+            $this->getSpread($tenants);
 
             $this->data['recommenttenants'] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
                 ->where("id",'!=',$tenants['id'])
                 ->where("shoptype",'=',$tenants['shoptype'])
                 ->where("order_city",'<','50')
                 ->orderby("order_city",'asc')
-		->where("piccount",">","0")
+		        ->where("piccount",">","0")
                 ->limit(4)
                 ->get()
                 ->toArray();
@@ -369,44 +348,6 @@ class IndexController extends Controller
     }
 
 
-    public function kepian($id = 0){
-        $picinfo = Yfctenantspic::where('id',$id)->first();
-        if(isset($picinfo->cover) && $picinfo->cover){
-            $picinfo->cover = json_decode($picinfo->cover,true);
-        }
-        $tenantsId = $picinfo->tenantsId;
-        $info = Yfctenants::where('id',$tenantsId)->first();
-        $city = $info->city;
-        $pycity = Config::get('city.'.$city,'beijing');
-        $recommpics = Yfctenantspic::where('id','!=',$id)->where('tenantsId',$tenantsId)->orderBy('marknums','desc')->take(4)->get();
-        foreach($recommpics as $key=>$v){
-            $v->firstcover = json_decode($v->firstcover,true);
-            $recommpics[$key] = $v;
-            $v->picStyle = json_decode($v->picStyle,true);
-        }
-        $shoptype = $info->shoptype;
-        $dbtenants = Yfctenants::where('city', 'like', '%'.$city.'%')->where('shoptype',$shoptype)->skip(0)->take(50)->orderBy('order_city','asc')->get();
-        $title = $picinfo->picName.' _'.$info->name.'-有榜';
-        $desc = '有榜提供'.$info->name.'的'.$picinfo->picName.'客片欣赏！';
-        $keyword = $picinfo->picName;
-        $picinfo->picStyle = json_decode($picinfo->picStyle,true);
-        $this->data['type'] = $shoptype=='婚纱摄影'?'sheying':'hunli';
-	    $this->data['shoptype'] = $shoptype;
-	    $this->data['dbtenants'] = $dbtenants;
-        $this->data['title'] = $title;
-        $this->data['desc'] = $desc;
-        $this->data['keyword'] = $keyword;
-        $this->data['pycity'] = $pycity;
-        $this->data['city'] = $city;
-        $this->data['picinfo'] = $picinfo;
-        $this->data['info'] = $info;
-        $this->data['tenantsId'] = $tenantsId;
-        $this->data['recommpics'] = $recommpics;
-        $this->data['ismobile'] = $this->ismobile;
-        return view("front.clientpicdetail",$this->data);
-    }
-
-
     public function kplist($id = 0){
         $tenants = Yfctenants::where('id',$id)->first()->toArray();
         if(empty($tenants)) {
@@ -435,8 +376,8 @@ class IndexController extends Controller
             'tenants' => $tenants,
             'city' => $city,
         ];
-	$this->data['pycity'] = Config::get('city.'.$city,'beijing');
-	$this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
+	    $this->data['pycity'] = Config::get('city.'.$city,'beijing');
+	    $this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
         $this->data['ismobile'] = $this->ismobile;
         $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
             ->where("id",'!=',$tenants['id'])
@@ -446,6 +387,8 @@ class IndexController extends Controller
             ->limit(24)
             ->get()
             ->toArray();
+        $this->getSpread($tenants);
+
         return view("front/piclist",$this->data);
     }
     public function txlist($id = 0){
@@ -481,7 +424,7 @@ class IndexController extends Controller
             'city' => $city,
         ];
         $this->data['pycity'] = Config::get('city.'.$city,'beijing');
-	$this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
+	    $this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
         $this->data['ismobile'] = $this->ismobile;
         $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
             ->where("id",'!=',$tenants['id'])
@@ -491,6 +434,8 @@ class IndexController extends Controller
             ->limit(24)
             ->get()
             ->toArray();
+        $this->getSpread($tenants);
+
         return view("front/taoxilist",$this->data);
     }
 
@@ -531,8 +476,8 @@ class IndexController extends Controller
             'desc' =>$desc,
             'keyword' => $keyword,
         ];
-	$this->data['pycity'] = Config::get('city.'.$city,'beijing');
-	$this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
+	    $this->data['pycity'] = Config::get('city.'.$city,'beijing');
+	    $this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
         $this->data['ismobile'] = $this->ismobile;
         $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
             ->where("id",'!=',$tenants['id'])
@@ -542,6 +487,8 @@ class IndexController extends Controller
             ->limit(24)
             ->get()
             ->toArray();
+        $this->getSpread($tenants);
+
         return view("front/kpdetail",$this->data);
     }
 
@@ -594,8 +541,8 @@ class IndexController extends Controller
             'desc' => $desc,
             'keyword' => $keyword,
         ];
-	$this->data['pycity'] = Config::get('city.'.$city,'beijing');
-	$this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
+	    $this->data['pycity'] = Config::get('city.'.$city,'beijing');
+	    $this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
         $this->data['ismobile'] = $this->ismobile;
         $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
             ->where("id",'!=',$tenants['id'])
@@ -605,6 +552,8 @@ class IndexController extends Controller
             ->limit(24)
             ->get()
             ->toArray();
+        $this->getSpread($tenants);
+
         return view("front/txdetail",$this->data);
     }
 
@@ -958,6 +907,31 @@ class IndexController extends Controller
         ];
         echo json_encode($data,JSON_UNESCAPED_UNICODE);
         exit;
+    }
+
+    function getSpread($tenants){
+        $this->data['spread'] = YfcTenants::where('positionCity', '=',$tenants['positionCity'])
+            ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
+            ->where('shoptype',$tenants['shoptype'])
+            ->where('spread','=','2')
+            ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
+            ->orderBy('order_city','asc')->limit(1)->get();
+        if(!empty($this->data['spread'][0])){
+            $this->data['spread'] = $this->data['spread']->toArray();
+            $this->data['spread'][0]['taoxi'] = YfcTenantsPic::select('id',"tenantsId",'firstcover')->where("tenantsId","=",$this->data['spread'][0]['id'])->get();
+            if(!empty($this->data['spread'][0]['taoxi'])) {
+                $this->data['spread'][0]['taoxi'] = $this->data['spread'][0]['taoxi']->toArray();
+                foreach($this->data['spread'][0]['taoxi'] as $k1 => $v1) {
+                    $this->data['spread'][0]['taoxi'][$k1]['cover'] = json_decode($v1['firstcover'],true);
+                }
+            }
+            else {
+                $this->data['spread'][0]['taoxi'] = [];
+            }
+        }
+        else {
+            $this->data['spread'] = [];
+        }
     }
 
     function sendDD($access_token  ,$message){
