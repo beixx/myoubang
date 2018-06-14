@@ -556,7 +556,7 @@ class IndexController extends Controller
         $name = $tenants['name'];
         $city = $tenants['city'];
         $txname = $info['setName'];
-        $remmends = Yfctenantsset::where('id', '!=', $id)->where('tenantsId', $info['tenantsId'])->skip(0)->take(6)->get();
+        $remmends = Yfctenantsset::where('id', '!=', $id)->where('tenantsId', $info['tenantsId'])->skip(0)->take(4)->get();
         foreach ($remmends as $key => $v) {
             if ($v['cover']) {
                 $v['cover'] = json_decode($v['cover'], true);

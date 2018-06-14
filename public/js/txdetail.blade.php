@@ -2,19 +2,77 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title><?php echo $title?></title>
+    <title><?php echo $title;?></title>
     <meta name="viewport"  content="width=device-width,user-scalable=no">
     <meta name="copyright" content="">
-    <meta name="Keywords" content="">
-    <meta name="description" content="">
+    <meta name="Keywords" content="<?php echo $keyword;?>">
+    <meta name="description" content="<?php echo $desc?>">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
-        <script type="text/javascript" src="/js/leftTime.min.js"></script>
+    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
     <script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
-    <script type="text/javascript" src="http://www.youbangkeyi.com/js/foot.js"></script>
-    <style type="text/css">body{background: #f0f0f0}</style>
+    <script type="text/javascript" src="/js/leftTime.min.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/data.js"></script>
+    <script type="text/javascript" src="http://www.youbangkeyi.com/js/foot1.js?v89101"></script>
+    <style type="text/css">body{background:#f0f0f0;}.suolvl,.suolvl span{height:5.5rem;}
+
+
+
+.bgDiv{background-color: rgba(0,0,0,.75);    opacity: initial;}
+
+
+
+.downNav {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    height: auto;
+    z-index: 1001;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+.downNav .ask .input {
+    width: 100%;
+    height: 2.4rem;
+    background: #eff2f6;
+    border-radius: 0.25rem;
+    font-size: 0.6rem;
+    text-indent: 0.5rem;
+    border: 0px;
+}
+.downNav .ask .btn {
+    width: 100%;
+    border: 0;
+    height: 2.4rem;
+    color: #FFF;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.7rem;
+    background: #FF4040;
+    font-weight: bold;
+    line-height: 2rem;
+    border-radius: 0.25rem;
+    margin-top: 0.5rem;
+}
+.downNav .ask{padding: 0.8rem 8%;}
+.tijiao{margin-bottom: 0.8rem;}
+.downNav .ask p.current-li{font-size: .6rem;
+    line-height: .6rem;
+    height: .6rem;
+    font-weight: initial;
+    color: #999;}
+.downNav .ask p {
+    font-size: 0.9rem;
+    line-height: 2rem;
+    height: 2rem;
+    color: #333;
+    font-weight: 700;
+}
+
+
+    </style>
     <script>
 var _hmt = _hmt || [];
 (function() {
@@ -25,28 +83,63 @@ var _hmt = _hmt || [];
 })();
 </script>
 </head>
-<body class="shop-index view">
-@include("front.tijiao")
-<div class="main">
+<body class="view">
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
 <div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><img src="/images/logo.png" alt="有榜网"></a></div>
 <a class="zxdh" href="tel:18500905723"></a>
 </header>
+<div class="focus_box">
+    <div id="focus" class="focus">
+        <div class="hd">
+            <ul></ul>
+        </div>
+        <div class="bd">
+            <ul>
+                <?php foreach($info['cover'] as $v) { ?>
+                <li class="suolvd">
+                    <span>
+                        <?php if(strpos($v,'http') === false) {?>
+                        <img src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" />
+                        <?php } else {?>
+                            <img src="<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" />
+                        <?php } ?>
+                        <img src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" />
+                    </span>
+                </li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        TouchSlide({
+            slideCell:"#focus",
+            titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+            mainCell:".bd ul",
+            effect:"left",
+            autoPlay:true,//自动播放
+            autoPage:true, //自动分页
+            switchLoad:"_src" //切换加载，真实图片路径为"_src"
+        });
+    </script>
+    <div class="price-box">
+        <span class="lft red fa">¥<?php echo $info['currentPrice'];?></span>
+        <del class="lft fa">¥<?php echo $info['price'];?></del>
+        <h2 class="txtRgt rgt"><?php echo $info['setName'];?></h2>
+    </div>
+    <div class="tishi">温馨提示：套餐详细内容以咨询商家为准，到店请提前预约！<span class="yuyueclick down">预约咨询</span></div>
+</div>
 <div class="shop_box">
-    <?php if($tenants['isVip'] == 2) {?>
-    <div class="huiyuan"></div>
-    <?php } ?>
-    <div class="titdp">店铺信息</div>
+   <div class="titdp">店铺信息</div>
     <div class="txt-box">
-        <h1><a href="/detail/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $tenants['name']?></a></h1>
+        <h1><?php echo $tenants['name']?></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
         <div class="num fa txtCtr">
             <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
         </div>
     </div><hr>
 <a id="dateShow" class="yuyue">
-                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?><p><em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>:<em class="date-tiem-span m">00</em>:<em class="date-s-span s">00</em>后活动结束</p></span>
+                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?><p><em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>时<em class="date-tiem-span m">00</em>分<em class="date-s-span s">00</em>秒后活动结束</p></span>
             <button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
             </a>
                       <script type="text/javascript">
@@ -68,36 +161,42 @@ var _hmt = _hmt || [];
 <span class="shishi">数据实时更新</span>
 <span class="jiangbei">排名客观权威</span>
 </div></div>
-<div class="jxtc_box">
-    <div class="tittx">全部套餐（<?php echo count($sets);?>）</div>
-    <ul>
-        <?php foreach($sets as $k => $v) { ?>
-        <li>
-            <a href="/detail/<?php echo $tenants['id'].'/'.$v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
-               <div class="suolvt">
-                <span>
-                    <?php if(strpos($v['cover'][0],'http') === false) {?>
-                        <img src="http://img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim">
-                    <?php } else {?>
-                        <img src="http://img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/640/h/370/q/75|imageslim">
-                    <?php } ?>
+<div class="tittp">图文详情</div>
+<div class="info">
+    <?php foreach($info['picDetail'] as $v) { ?>
+        <?php if(strpos($v,'http') === false) {?>
+            <img src="http://img2.youbangkeyi.com<?php echo $v;?>">
+        <?php } else {?>
+            <img src="<?php echo $v;?>">
+        <?php } ?>
 
-                </span></div>
-                <div class="txt">
-                    <h3><?php echo $v['setName'];?></h3>
-                    <div class="price fa">
-                        <span class="red">¥<?php echo $v['currentPrice']?></span>
-                        <del>¥<?php echo $v['price']?></del>
-                    </div>
+    <?php } ?>
+</div>
+<div class="titjs">套餐介绍</div>
+<div class="txt-info">
+    <?php echo $info['detail'];?>
+</div>
+<div class="tit"><?php echo $tenants['name'];?>专属定制热卖产品</div>
+<div class="hot">
+    <ul>
+        <?php foreach($remmends as $v) { ?>
+        <li>
+            <a class="suolvl" href="/detail/<?php echo $tenants['id'].'/'.$v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
+               <span>
+                   <?php if(strpos($v['cover'][0],'http') === false) {?>
+                   <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0]?>?imageView2/1/w/400/h/300/q/75|imageslim">
+                   <?php } else {?>
+                       <img src="<?php echo $v['cover'][0]?>?imageView2/1/w/400/h/300/q/75|imageslim">
+                   <?php } ?>
+               </span>  </a><p><?php echo $v['setName'];?></p>
+                <div class="price">
+                    <span class="red">¥<?php echo $v['currentPrice'];?></span>
+                    <del>¥<?php echo $v['price'];?></del>
                 </div>
-            </a>
-            <div href="javascript:" class="anlibj down dangqiclick">咨询档期</div>
         </li>
         <?php } ?>
     </ul>
 </div>
-<div></div>
-<div class="more txtCtr">点击加载更多套系</div>
                     <div class="tittp">有榜数据说明</div>
 <div id="fugai" class="time-box">
    <div class="txtshuju lft fgchs">
@@ -113,7 +212,7 @@ var _hmt = _hmt || [];
                     <span class="blue">40,000 </span>对结婚新人</div>
 <div class="txtshuju lft fgpinglun">
                     <span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
-<div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
+<div class="unit-footer"><div class="peace-live"><p class="txt-cont">大数据实时分析 | 排名权威有保障</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
 <footer class="txtCtr">
 @include("front.hotTenants")
  <div class="foot">
@@ -125,6 +224,83 @@ var _hmt = _hmt || [];
         <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.com/images/scs_logo.png"></a></div>
     </div>
 </footer>
+<div class="bgDiv"></div>
+<div class="downNav">
+    <div class="ask">
+    <div class="tijiao"><p>提交信息，立即预约咨询商家</p>
+<p class="current-li">预约领取：滴滴专车接送+情侣对戒</p></div>
+        <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
+        <input type="hidden" name="source" id="source" value="1">
+        <input type="tel" name="mobile" id="mobile" class="input" placeholder="请输入您的手机号（<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
+        <button type="submit" name="wapsubmit" id="tijiao" class="btn">免费预约咨询 · 3分钟响应</button>
+    </div>
+</div>
+<script type="text/javascript">
+    $('button[name=wapsubmit]').click(function(){
+        var tenantsId = $('#tenantsId').val();
+        var phone = $('#mobile').val();
+        var source = $("#source").val();
+
+        if(!phone){
+            alert('手机必填');
+            return false;
+        }
+        if(phone){
+            if(!(/^1[34578]\d{9}$/.test(phone))){
+                alert("亲，手机号码填写的不对哦");
+                return false;
+            }
+        }
+        $(this).attr('disabled', true);
+        $.ajax({
+            url: "/saveview",
+            type: "post",
+            dataType: "json",
+            data: {'tenantsId': tenantsId,'phone': phone,'source':source},
+            success: function(data){
+                console.log(data);
+                if(data.result=='00'){
+                    alert("预约成功" + '\n' + "请注意接听商家的来电！");
+                    <?php if($tenants['isVip'] ==2) { ?>
+                            location.href="<?php echo $tenants['modeladvurl'];?>";
+                    <?php } else {?>
+                        location.reload();
+                    <?php } ?>
+                }
+            }
+        });
+    });
+    $(".anliclick").click(function(){
+        $("#source").val(3);
+        $("#tijiao").html("免费获取报价 · 3分钟响应");
+        $("#mobile").attr("placeholder","请输入手机号，立刻获取案例报价！");
+    })
+    $(".liwuclick").click(function(){
+        $("#source").val(2);
+        $("#tijiao").html("免费领取优惠 · 3分钟响应");
+        $("#mobile").attr("placeholder","请输入手机号，领取优惠！");
+        $("#mobile").trigger("focus");
+    })
+
+    $(".dangqiclick").click(function(){
+        $("#source").val(4);
+        $("#tijiao").html("免费咨询档期 · 3分钟响应");
+        $("#mobile").attr("placeholder","请输入手机号，优先安排拍摄档期！");
+    })
+
+
+
+
+if(/iphone|ipad|ipod/i.test(navigator.userAgent)) 
+{ 
+$(".downNav").css("position", "absolute"); 
+};
+
+
+</script>
+
+
+
 <!-- 城市弹出 -->
 <div class="container">
     <div class="city">
@@ -214,7 +390,20 @@ var _hmt = _hmt || [];
 </div>
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
-</div>
-<div class="zxyy"><em class="down yuyueclick">免费预约咨询 · 3分钟响应</em></div>
+<script type="text/javascript">
+   // 数据初始化
+    var Obj = $('body').barrage({
+        data : data, //数据列表
+        row : 1,   //显示行数
+        time : 5000, //间隔时间
+        gap : 10,    //每一个的间隙
+        position : 'fixed', //绝对定位
+        direction : 'bottom left', //方向
+        ismoseoverclose : true, //悬浮是否停止
+        height : 30, //设置单个div的高度
+    })
+    Obj.start();
+
+</script>
 </body>
 </html>

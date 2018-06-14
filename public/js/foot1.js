@@ -11,7 +11,6 @@ $(function () {
     var downNav = $('.downNav');
     var upNav = $('.upNav');
     var view = $('.view');
-    var zxyy = $('.zxyy');
     showNav(left, leftNav, "left");
     showNav(right, rightNav, "right");
     showNav(up, upNav, "up");
@@ -46,12 +45,11 @@ $(function () {
                     top: "0",
                     visibility: "visible",
                 });
-                 zxyy.css({
-                    display: "none",
+                view.css({
+                    overflow: "hidden",
                 });
                 $("html").css({"overflow":"hidden"});
-                $("body").css({"overflow":"hidden"});
-                $("#mobile").trigger("focus");
+		$("#mobile").trigger("focus");
             }
 
 
@@ -85,14 +83,13 @@ $(function () {
             mozTransition:"bottom .5s",
             transition: "bottom .5s"
         });
-        $("body").css({"overflow":"scroll"});
+        view.css({
+                    overflow: "scroll"
+                });
         $("html").css({"overflow":"scroll"});
         bg.css({
             display: "none",
             transition: "display 1s"
-        });
-        zxyy.css({
-            display: "block"
         });
     }
 });

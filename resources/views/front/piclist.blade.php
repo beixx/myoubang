@@ -13,7 +13,7 @@
     <script type="text/javascript" src="/js/leftTime.min.js"></script>
     <script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
+    <script type="text/javascript" src="http://www.youbangkeyi.com/js/foot.js"></script>
     <script>
 var _hmt = _hmt || [];
 (function() {
@@ -26,6 +26,8 @@ var _hmt = _hmt || [];
     <style type="text/css">body{/*padding-top: 2.5rem;*/}.case_box{position:initial;display: grid;}.case_box .picScroll .bd .img em{z-index: initial;}</style>
 </head>
 <body class="shop-index view">
+@include("front.tijiao")
+<div class="main">
 <header>
     <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
     <div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><img src="/images/logo.png" alt="有榜网"></a></div>
@@ -116,8 +118,6 @@ var _hmt = _hmt || [];
         <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.com/images/scs_logo.png"></a></div>
     </div>
 </footer>
-<div class="bgDiv"></div>
-@include("front.poke")
 <!-- 城市弹出 -->
 <div class="container">
     <div class="city">
@@ -213,7 +213,7 @@ var _hmt = _hmt || [];
     <?php } ?>
 
 </script>
-
-
+</div>
+<div class="zxyy"><em class="down yuyueclick">免费预约咨询 · 3分钟响应</em></div>
 </body>
 </html>

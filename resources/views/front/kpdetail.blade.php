@@ -18,7 +18,7 @@
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/main.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript" src="/js/data.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js?2"></script>
+    <script type="text/javascript" src="http://www.youbangkeyi.com/js/foot.js?2"></script>
     <style type="text/css">body{background: #f0f0f0}</style>
     <script>
 var _hmt = _hmt || [];
@@ -30,6 +30,8 @@ var _hmt = _hmt || [];
 })();
 </script>
 </head>
+@include("front.tijiao")
+<div class="main">
 <body class="view">
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
@@ -93,7 +95,7 @@ var _hmt = _hmt || [];
         </div>
     </div><hr>
 <a id="dateShow" class="yuyue">
-                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?><p><em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>时<em class="date-tiem-span m">00</em>分<em class="date-s-span s">00</em>秒后活动结束</p></span>
+                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?><p><em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>:<em class="date-tiem-span m">00</em>:<em class="date-s-span s">00</em>后活动结束</p></span>
             <button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
             </a>
                       <script type="text/javascript">
@@ -176,8 +178,6 @@ var _hmt = _hmt || [];
         <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.com/images/scs_logo.png"></a></div>
     </div>
 </footer>
-<div class="bgDiv"></div>
-@include("front.poke")
 <!-- 城市弹出 -->
 <div class="container">
     <div class="city">
@@ -283,6 +283,7 @@ var _hmt = _hmt || [];
     Obj.start(); 
 
 </script>
-
+</div>
+<div class="zxyy"><em class="down yuyueclick">免费预约咨询 · 3分钟响应</em></div>
 </body>
 </html>

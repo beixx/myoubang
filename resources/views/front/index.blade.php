@@ -17,8 +17,6 @@
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/main.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
     <script type="text/javascript" src="/js/more.js?v1"></script>
-            <script type="text/javascript" src="/js/index.js"></script>
-            <script type="text/javascript" src="/js/data.js"></script>
     <script>
 var _hmt = _hmt || [];
 (function() {
@@ -85,9 +83,9 @@ var _hmt = _hmt || [];
                                 <a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                                     <span>
                                         <?php if(strpos($v2['cover'][0],'http') === false) {?>
-                                        <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
+                                        <img src="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
                                         <?php } else {?>
-                                        <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
+                                        <img src="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
                                         <?php } ?>
                                     </span>
                                 </a>
@@ -123,9 +121,9 @@ var _hmt = _hmt || [];
                                     <a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                                         <span>
                                             <?php if(strpos($v2['cover'][0],'http') === false) {?>
-                                            <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
+                                            <img src="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
                                             <?php } else {?>
-                                            <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
+                                            <img src="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
                                             <?php } ?>
                                         </span>
                                     </a>
@@ -335,30 +333,6 @@ var _hmt = _hmt || [];
 </div>
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
-<script type="text/javascript" src="/js/jquery.lazyload.js"></script>
-
-<div class="bgDiv"></div>
-<div class="downNav bt22" style="background: #FFF;border-radius: 0.3rem 0.3rem 0 0;height:18.5rem;">
-    <div class="ask" style="border-top:0; padding: 3% 4% 0.5rem;">
-        <h4>有榜网独家优惠,预约即可领取：</h4>
-        <dl class="vip">
-                <dt><i class="vipcon"></i></dt>
-                <dd>获得有榜网一对一VIP服务，全程免费</dd>
-            </dl>
-        <dl class="vip">
-                <dt><i class="youhuicon"></i></dt>
-                <dd id='packagemessage'>预约到店免费赠送超值结婚大礼包</dd>
-            </dl>
-        <div class="tip">
-            <span>7天内选片</span><span>15天出精修</span><span>不满意重拍</span><span>无隐形消费</span>
-        </div>
-        <p>留下您的联系方式以便商户尽快联系你</p>
-        <input type="hidden" name="tenantsId" id="tenantsId" value="">
-        <input type="number" style="width: 100%;border-radius:0.25rem;" name="mobile" id="mobile" class="input" placeholder="输入手机号，享受以上福利">
-        <input type="submit" style="width: 100%;margin-top:0.5rem;border-radius: 0.25rem;" name="wapsubmit" class="btn" value="预约看店">
-    </div>
-
-</div>
 <script type="text/javascript">
 
     $('input[name=wapsubmit]').click(function(){
@@ -401,9 +375,6 @@ var _hmt = _hmt || [];
 </script>
 
 <script type="text/javascript">
-    $(function() {
-        $("img.lazy").lazyload({effect: "fadeIn"});
-    });
     $(document).ready(function(){
         //子导航展开收缩
         $(".sewvtop").click(function(){
@@ -512,18 +483,6 @@ var _hmt = _hmt || [];
             return false ;
         });
     });
-        // 数据初始化
-    var Obj = $('body').barrage({
-        data : data, //数据列表
-        row : 1,   //显示行数
-        time : 5000, //间隔时间
-        gap : 10,    //每一个的间隙
-        position : 'fixed', //绝对定位
-        direction : 'bottom left', //方向
-        ismoseoverclose : true, //悬浮是否停止
-        height : 30, //设置单个div的高度
-    })
-    Obj.start(); 
 </script>
 
 </body>

@@ -2,6 +2,14 @@
 html{font-size:20px;}
 body, div,p, input, h1, h2, h3, h4, h5, h6, ul, li, dl, dt, dd, form { margin: 0; padding: 0; list-style: none; vertical-align: middle; font-weight:normal;-webkit-tap-highlight-color: transparent;-webkit-overflow-scrolling: touch;}
 img { border:0;vertical-align: middle;}
+html, body {
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.main{    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;}
 body {color:#111111;max-width:740px;margin:0 auto;font:normal 16px/200%  "-apple-system",BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif!important; text-align:left;background: #f0f0f0;-webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-font-feature-settings: normal; font-feature-settings: normal; font-variant: normal;font-stretch: normal;}
 header, section, footer { display: block; margin: 0; padding: 0 }
 a{text-decoration:none;color:#111111;}
@@ -81,7 +89,7 @@ em.date-s-span{color: #999; width: 1rem; display: inline-block; text-align: cent
 .bt22{bottom: -22rem;}
 .bt00{bottom: 0 !important;}
 .icot1{    background: url(http://c.youbangkeyi.com/v/4.png);
-    background-size: 100%;
+    background-size:cover;
     position: absolute;
     top: -0.5rem;
     left: 0;
@@ -90,7 +98,7 @@ em.date-s-span{color: #999; width: 1rem; display: inline-block; text-align: cent
     display: inline-block;
     margin-right: 0;}
 .icot2{    background: url(http://c.youbangkeyi.com/v/5.png);
-    background-size: 100%;
+    background-size:cover;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -221,7 +229,7 @@ background: #FFF;
 }
 .e0{color:#FF4848;}
 /* 头部 */
-header{background:#FFF;width:100%;z-index: 99;height:2.2rem;}
+header{background:#FFF;position: relative;width:100%;z-index: 99;height:2.2rem;}
 .logo{width:3.46rem;height: 1.4rem;position: absolute;left:50%;margin-left: -1.73rem; margin-top: 0.4rem;}
 .logo img{height: 1.4rem; width: 3.46rem; vertical-align: initial;}
 header .title{font-size:0.8rem;font-weight: bold;width: 100%;height:2.2rem; line-height:2.2rem;}
@@ -288,49 +296,11 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
 /*底部*/
 
 .bgDiv{ width: 100%;height: 100%; background-color: #000;opacity: .75;overflow: hidden;position:fixed;display:none ; z-index: 99; bottom: 0;}
-.downNav{position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-justify-content: center;
-    -webkit-align-items: center;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0,0,0,.3);
-    z-index: 99;}
+.downNav{width: 100%;margin: 0 auto;background-color: #fff;display: none; position: fixed; height: auto; z-index: 1001; left: 0; right: 0;}
 
-/*立即定制*/
-.downNav .title{display:table;font-weight:700;margin: 0 auto;background: url(../images/icon8.png) no-repeat left center;padding-left: 3rem;font-size:0.8rem;background-size: 2.5rem;margin-top: 0.5rem;height: 1.5rem;line-height: 1.5rem;}
-.downNav .title span{color: #33c5c4}
-.downNav .form{width: 100%; margin-top: 0.5rem; position: relative;}
-.downNav .form .btn{width: 80%; height: 2rem; line-height: 2rem; font-size: 0.7rem; margin: 1rem auto; text-align: center; clear: both; margin-bottom: 1rem; background: #00c2c2; border-radius: 0.3rem;}
-.downNav .form .btn a{ width: 100%;  height: 2rem;color:#FFF;display: block;}
-.downNav .form .submit{width: 80%; height: 2rem; line-height: 2rem; font-size: 0.7rem;margin: 1rem auto;text-align: center;}
-.downNav .form .submit a{color: #fff; background: #00c2c2; border-radius: 0.3rem;font-size:0.9rem;display: block;}
-.downNav .form .input{width: 80%;margin: 0 auto}
-.downNav .form .input input{width: 100%; border:1px #ade4e4 solid; height: 2rem;font-size: 0.7rem;text-indent: 10px; line-height: 2rem;border-radius:.5rem;margin-top: 0.7rem;}
-.downNav .form .sewvmain{display: table;margin: 0 auto;width:80%;}
-.downNav .form .sewv{position: relative; width: 48%; display: inline-block; vertical-align: middle; height: 2rem; background: #FFF;text-indent:0.5rem;border-radius:.5rem;border:1px #ade4e4 solid;}
-.downNav .form .sewv:last-child{float: right;}
-.downNav .form .sewvtop{width: 100%; height: 2rem; cursor: pointer; overflow: hidden; position: relative}
-.downNav .form .sewvtop > span{float: left; width: 70%; height: 2rem; white-space: pre; text-overflow: ellipsis; overflow: hidden; font-size:0.7rem; line-height: 2rem; color: #333; padding: 0 5px 0 10px; vertical-align: middle;}
-.downNav .form .sewvtop > em{ width: 98%; height: 2rem; white-space: pre; text-overflow: ellipsis; overflow: hidden; font-size:0.7rem; line-height: 2rem; color: #333; padding: 0 2%; vertical-align: middle;display: block;position: relative;}
-.downNav .form .sewvtop > em span{width:5rem; height: 2rem; white-space: pre; text-overflow: ellipsis; overflow: hidden; font-size:0.7rem; line-height: 2rem; color: #333; vertical-align: middle;display: block;float: left;}
-.downNav .form .sewvtop > em img{width: 0.9rem;float: right;margin-top: 0.5rem;margin-right: 0.5rem;}
-.downNav .form .sewvbm{width: 210%; position: absolute; left: -2px; top: 2.5rem; display: none; z-index: 9999; height:11rem;overflow:auto;overflow-x:hidden; background: #FFF url("../images/line.png") no-repeat right top;}
-.downNav .form .sewvbm li{border: 1px #eaeaea solid; border-radius: 0.25rem; height: 1.75rem; line-height: 1.75rem; float: left; margin-right: 2%; width: 48%; margin-bottom: 0.75rem; font-size: 0.7rem; color: #333; text-indent: 0.75rem;}
-.downNav .form .sewvbm li:nth-of-type(2),.downNav .form .sewvbm li:nth-of-type(4),.downNav .form .sewvbm li:nth-of-type(6),.downNav .form .sewvbm li:nth-of-type(8),.downNav .form .sewvbm li:nth-of-type(10),.downNav .form .sewvbm li:nth-of-type(12),.downNav .form .sewvbm li:nth-of-type(14),.downNav .form .sewvbm li:nth-of-type(16),.downNav .form .sewvbm li:nth-of-type(18){margin-right: 0;}
-.downNav .form .sewvbm li:hover{cursor: pointer; border: 1px #00cccc solid;}
-.downNav .form .sewvbm .cur{background: url("../images/icon25.png") no-repeat 90% center; border: 1px #00cccc solid;background-size: 1rem}
-.downNav .form .lbaxztop{animation: rotatete 0.3s linear forwards;}
-.downNav .form .lbaxztop2{animation: rotatete2 0.3s linear forwards;}
+.zxyy{position:fixed;cursor:pointer;z-index: 9999;max-width:740px;margin: 0 auto;bottom: 0; left: 0; right: 0; background: #FFF;height: 2.8rem; line-height: 2.8rem; text-align: center; border-top: 1px solid #F5F5F5;}
+.zxyy em{background: #FF4040; cursor:pointer;color: #FFF; border-radius: 9rem; height: 2.2rem; line-height: 2.2rem; font-weight: bold; display: block; margin: 0.3rem 10%;}
+
 /*优惠咨询*/
 .banyouhui{width: 92%;background: #FFFFFF;margin-top: 0.3rem; padding: 0 4%;}
 .banyouhui .vip{padding: 0.2rem 0;display: inline-block; width: 100%;}
@@ -459,8 +429,7 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
     height: 1.8rem;
 }
 /*评选咨询*/
-.downNav .ask{ border-top: 1px solid #efefef;
-    padding:0.5rem 5% 0.3rem;}
+.downNav .ask{padding: 0.8rem 8%;}
 .downNav .vip{padding: 0.2rem 0; border-bottom: 1px dashed #e4e4e4; display: inline-block; width: 100%;}
 .downNav .vip dt{float: left; margin-right: 0.5rem;  height: 1.6rem;}
 .downNav .vip dd{font-size: 0.6rem; color: #666; overflow: hidden; height: 1.6rem; line-height: 1.6rem;}
@@ -469,10 +438,12 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
 .downNav .ask h4{font-size: 0.8rem;line-height: 1rem;font-weight: bold;padding: 0.2rem 0 0.5rem;}
 .downNav .ask .tip{width: 100%;display: table;border-bottom: 1px #e5e5e5 solid;padding: 0.8rem 0}
 .downNav .ask .tip span{display: block;float: left;width: 30%;margin-right: 3%;height: 1.5rem;line-height: 1.5rem;font-size: 0.7rem;background: url(../images/icon25.png) no-repeat left center;background-size: 0.8rem;color: #999999;text-indent: 1rem;}
-.downNav .ask p{font-size: 0.6rem;line-height: 2rem;height: 2rem;color: #999}
-.downNav .ask .input{width:100%; height: 2rem; background: #eff2f6; border-radius: 0.25rem; font-size: 0.6rem; text-indent: 0.5rem; border: 0px;}
-.downNav .ask .btn{width: 100%; border: 0; height: 2rem; color: #FFF;cursor:pointer;text-align: center; font-size: 0.7rem; background: #FF4040; font-weight: bold; line-height: 2rem; border-radius: 0.25rem;  margin-top: 0.3rem;}
+.downNav .ask p{font-size: 0.9rem; line-height: 2rem; height: 2rem; color: #333; font-weight: 700;}
+.downNav .ask p.current-li{font-size: .6rem; line-height: .6rem; height: .6rem; font-weight: initial; color: #999;}
+.downNav .ask .input{width: 100%; height: 2.4rem; background: #eff2f6; border-radius: 0.25rem; font-size: 0.6rem; text-indent: 0.5rem; border: 0px;}
+.downNav .ask .btn{width: 100%; border: 0; height: 2.4rem; color: #FFF; cursor: pointer; text-align: center; font-size: 0.7rem; background: #FF4040; font-weight: bold; line-height: 2rem; border-radius: 0.25rem; margin-top: 0.5rem;}
 .downNav .ask .btn em{font-size: 0.6rem; margin-left: 0.2rem;}
+.tijiao{margin-bottom: 0.8rem;}
 /* 内容 */
 .i_img{width:100%;display:table;margin-bottom:0.5rem;}
 .i_img a{display: block;width:100%;}
@@ -1862,7 +1833,7 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
 .UISelect{margin-top:5px}
 
 
-footer{background:#26282b;width:100%;margin:0 auto 5.1rem;font-size:0.6rem;color:#ababab;}
+footer{background:#26282b;width:100%;margin:0 auto 2.8rem;font-size:0.6rem;color:#ababab;}
 .foot{width:100%;;background:#313439;line-height:1.2rem;display:table;color:#666;padding:0.8rem 0px;}
 .foo{width:100%;;margin:0 auto;}
 .foots{width:100%;;text-align:center;margin:0 auto;}
@@ -1914,6 +1885,11 @@ footer{background:#26282b;width:100%;margin:0 auto 5.1rem;font-size:0.6rem;color
     .layui-layer-setwin{right: 8px!important;top: 8px!important}
     .f075{font-size:.75rem!important;}
 @media screen and (min-width:740px) {
+html, body {
+    height:auto;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
   .pic_box .num_txt .tit_box{
     width:653.55px; height: 2.4rem;
   }
@@ -1979,6 +1955,9 @@ header .city_box{margin-top: 0.75rem;}
     height:1.8rem;
     vertical-align: initial;
 }
+.downNav{ width: 550px;
+    top: 50%!important;
+    margin-top: -100px;}
 .zysmn span{padding-left: 3%; height: 0.8rem; line-height: 0.8rem; display: inline-block; width: 11.9%; text-align: center; margin: 0 9%;}
 .focus_box .txt_info .pf{top:0.95rem;}
 .pic_box .num_txt .tit_box .title{margin-bottom: 0.2rem;}

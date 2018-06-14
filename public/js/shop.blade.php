@@ -13,6 +13,8 @@
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
     <script type="text/javascript" src="/js/leftTime.min.js"></script>
+    <script type="text/javascript" src="/js/layer/layer.js"></script>
+    <script type="text/javascript" src="/js/jquery.lazyload.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript" src="/js/data.js"></script>
     <script type="text/javascript" src="http://www.youbangkeyi.com/js/foot.js?21"></script>
@@ -51,7 +53,6 @@ var _hmt = _hmt || [];
 </script>
 </head>
 <body class="shop-index">
-<div class="zxyy"><em class="down yuyueclick">免费预约咨询 · 3分钟响应</em></div>
 @include("front.tijiao")
 <div class="main">
 <header>
@@ -282,9 +283,9 @@ var _hmt = _hmt || [];
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
                             <a class="yulan  glightbox<?php echo $k;?>" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>">
-                          <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim"/></a>
+                          <img   class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim"/></a>
                             <?php } else {?>
-                            <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
+                            <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                             <?php } ?>
 
 
@@ -318,9 +319,9 @@ var _hmt = _hmt || [];
             <div class="suolvt">
                 <span>
                     <?php if(strpos($v['cover'][0],'http') === false) {?>
-                    <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/690/h/444/q/75|imageslim"/>
+                    <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/690/h/444/q/75|imageslim" />
                     <?php } else {?>
-                    <img src="<?php echo $v['cover'][0];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
+                    <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v['cover'][0];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
                     <?php } ?>
                 </span></div>
                 <div class="txt">
@@ -381,6 +382,8 @@ var _hmt = _hmt || [];
 
 <div class="view shop-tuijian">
     <div class="tit">猜你喜欢的商家</div>
+
+
     <?php foreach($spread as $v) {?>
     <div class="pic_box bdtj">
     <div class="num_txt">
@@ -400,9 +403,9 @@ var _hmt = _hmt || [];
             <a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                 <span>
                     <?php if(strpos($v2['cover'][0],'http') === false) {?>
-                    <img src="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
+                    <img class="lazy" src="/images/grey.gif" data-original="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
                     <?php } else {?>
-                    <img src="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
+                    <img class="lazy" src="/images/grey.gif" data-original="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
                     <?php } ?>
                 </span>
             </a>
@@ -414,13 +417,17 @@ var _hmt = _hmt || [];
         <a class="sybj" href="/detail/158464">查看商家详情</a>
     </div></div>
     <?php } ?>
+
+
+
+
     <div class="hot">
         <ul>
             <?php foreach($recommenttenants as $k =>$v) { ?>
             <li>
                 <a class="suolvl" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                    <span>
-                       <img src="<?php echo strpos($v['cover'],"http")!==false ? '' : 'http://img2.youbangkeyi.com';?><?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim">
+                       <img class="lazy" src="/images/grey.gif" data-original="<?php echo strpos($v['cover'],"http")!==false ? '' : 'http://img2.youbangkeyi.com';?><?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim">
                    </span>  </a><p><?php echo $v['name'];?></p>
                     <div class="price">
                         <span class="red">第<?php echo $v['order_city'];?>名</span>
@@ -458,6 +465,7 @@ var _hmt = _hmt || [];
         <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.com/images/scs_logo.png"></a></div>
     </div>
 </footer>
+<div class="zxyy"><em class="down yuyueclick">免费预约咨询 · 3分钟响应</em></div>
 <!-- 城市弹出 -->
 <div class="container">
     <div class="city">
@@ -550,6 +558,9 @@ var _hmt = _hmt || [];
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
 <script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/echarts-wordcloud.min.js"></script>
 <script type="text/javascript">
+    $(function() {
+        $("img.lazy").lazyload({effect: "fadeIn"});
+    });
     var myChart = document.getElementById('shuju');
     //自适应宽高
     var myChartContainer = function () {
