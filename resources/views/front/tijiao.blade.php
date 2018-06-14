@@ -14,7 +14,7 @@
         <div class="pic_box bdtj">
             <div class="num_txt">
                 <div class="tit_box">
-                    <div class="title"><span class="icot1"></span><a href="/detail/<?php echo $v['id'];?>"><?php echo $v['name'];s?></a></div>
+                    <div class="title"><span class="icot1"></span><a href="/detail/<?php echo $v['id'];?>"><?php echo $v['name'];?></a></div>
                     <div class="txt"><span>人均消费 ¥4279</span><span>新街口地区</span><span class="fmr">本周用户预约最多商家</span>
                     </div>
                 </div>
