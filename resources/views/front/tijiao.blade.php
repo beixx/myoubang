@@ -8,8 +8,7 @@
         <input type="tel" name="mobile" id="mobile" class="input" placeholder="请输入您的手机号（<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
         <button type="submit" name="wapsubmit" id="tijiao" class="btn">免费预约咨询 · 3分钟响应</button>
     </div>
-    <!-- 预约成功提示
-    <div class="tishik">
+    <div class="tishik" style="display:none;"  >
     <div class="tishizi"><p>预约成功</p></div>
     
     <div class="pic_box bdtj">
@@ -50,7 +49,7 @@
                             <a class="sybj" href="/detail/14">查看商家详情</a>
                         </div>
                     </div>
-</div> -->
+</div>
 </div>
 <script type="text/javascript">
     $('button[name=wapsubmit]').click(function(){
@@ -77,13 +76,9 @@
             success: function(data){
                 console.log(data);
                 if(data.result=='00'){
-                    alert("预约成功" + '\n' + "请注意接听商家的来电！");
-                    <?php if($tenants['isVip'] ==2) { ?>
-                            location.href="<?php echo $tenants['modeladvurl'];?>";
-                    <?php } else {?>
-                        location.reload();
-                    <?php } ?>
-                }
+                    $(".ask").css("display","none");
+                    $(".tishik").css("display","block");
+		}
             }
         });
     });
