@@ -126,8 +126,24 @@ class IndexController extends Controller
                 }
             }
             # 添加案例次数
-            $c = rand(1,3);
-            YfcTenantsPic::where("tenantsId",'=',$id)->update(['showcount' => DB::RAW("showcount+(CEIL(RAND() * (3-1+1)))")]);
+            $xdata = ['showcount' => DB::RAW("showcount+(CEIL(RAND() * (3-1+1)))")];
+            if(is_array(json_decode($tenants['pcount']))) {
+                $c = json_decode($tenants['pcount']);
+                if(empty($c['time']) || $c['time'] != date("Y-m-d")) {
+                    $pcount['time'] = date("Y-m-d");
+                    if($tenants['order_city'] <10) {
+                        $pcount['count'] = rand(5,10);
+                    }
+                    else if($tenants['order_city'] < 20) {
+                        $pcount['count'] = rand(5-8);
+                    }else {
+                        $pcount['count']= rand(0,3);
+                    }
+                    $xdata['pcount'] = json_encode($pcount);
+                }
+            }
+
+            YfcTenantsPic::where("tenantsId",'=',$id)->update($xdata);
             $title = $tenants['city'].$tenants['name'].' | 有榜「第'.$tenants['order_city'].'名」';
             $desc = $tenants['city'].$tenants['name'].'在《有榜婚嫁行业榜单》综合排名第'.$tenants['order_city'].'名，该商户在品牌榜单中排名第'.$tenants['brand_search_order'].'名，好评榜单中排名第'.$tenants['praise_order'].'名，希望能够帮助您了解到'.$tenants['name'].'怎么样的问题。';
             $keyword = $tenants['city'].$tenants['name'].', '.$tenants['name'].', '.$tenants['name'].'怎么样, '.$tenants['name'].'行业第'.$tenants['order_city'].'名';
