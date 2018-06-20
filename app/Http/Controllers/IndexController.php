@@ -84,7 +84,7 @@ class IndexController extends Controller
             $pycity = Config::get('city.'.$city,'beijing');
             //Session::put('city',$city);
 
-            $tenantssets = YfcTenantsSet::where('tenantsId',$id)->orderby("created_at",'desc')->limit(4)->get()->toArray();
+            $tenantssets = YfcTenantsSet::where('tenantsId',$id)->orderby("created_at",'desc')->limit(2)->get()->toArray();
 
             foreach($tenantssets as $key=>$v){
                 if(isset($v['kind']) && $v['kind']){
@@ -100,7 +100,7 @@ class IndexController extends Controller
             }
             $countsets = YfcTenantsSet::where('tenantsId',$id)->count();
 
-            $tenantspics = YfcTenantsPic::where('tenantsId', $id)->orderby("created_at",'desc')->limit(9)->get();
+            $tenantspics = YfcTenantsPic::where('tenantsId', $id)->orderby("created_at",'desc')->limit(3)->get();
             foreach($tenantspics as $k => $t){
                 if(isset($t['cover']) && $t['cover']){
                     $t['cover'] = json_decode($t['cover'],true);
@@ -212,7 +212,6 @@ class IndexController extends Controller
                 $this->data['tenants'] = YfcTenants::where('positionCity', '=',$city)
                     ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
                     ->where('shoptype',$shoptype)
-                    ->where('spread','!=','2')
                     ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
                     ->skip($index)->take($size)
                     ->orderBy('order_city','asc')->get()->toArray();

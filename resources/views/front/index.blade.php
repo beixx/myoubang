@@ -71,7 +71,7 @@ var _hmt = _hmt || [];
                         <div class="num_txt">
                             <div class="tit_box">
                                 <div class="title"><span class="icot1"></span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span>人均消费 ¥<?php echo $v['person_price'];?></span><span><?php echo $v['area'];?></span><span class="fmr"><?php echo $v['spreadcontent'];?></span>
+                                <div class="txt"><span>人均消费 ¥<?php echo $v['price'];?></span><span><?php echo $v['area'];?></span><span class="fmr f40"><?php echo $v['spreadcontent'];?></span>
                                 </div>
                             </div>
                         </div>
@@ -484,6 +484,5 @@ var _hmt = _hmt || [];
         });
     });
 </script>
-
 </body>
 </html>

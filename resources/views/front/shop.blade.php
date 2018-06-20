@@ -13,8 +13,6 @@
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
     <script type="text/javascript" src="/js/leftTime.min.js"></script>
-    <script type="text/javascript" src="/js/index.js"></script>
-    <script type="text/javascript" src="/js/data.js"></script>
     <script type="text/javascript" src="http://www.youbangkeyi.com/js/foot.js?21"></script>
     <style type="text/css">body{background:#f0f0f0}</style>
     <script>
@@ -51,7 +49,6 @@ var _hmt = _hmt || [];
 </script>
 </head>
 <body class="shop-index">
-<div class="zxyy"><em class="down yuyueclick">免费预约咨询 · 3分钟响应</em></div>
 @include("front.tijiao")
 <div class="main">
 <header>
@@ -100,35 +97,7 @@ var _hmt = _hmt || [];
 <div class="sjkap">
     <div class="txt_info">
         <h1><?php echo $city;?><?php echo $tenants['name'];?></h1>
-        <p><span>人均消费:¥<?php echo $tenants['person_price'];?></span><span>|</span><span>
-<?php
-                                        if($tenants['trends'] && is_array(json_decode($tenants['trends'],true))){
-                                            $trends = json_decode($tenants['trends'],true);
-                                            if($trends['time'] >= time() - 86400*3) {
-                                                if(isset($trends['type']) && $trends['type'] ==1) {
-                                                    echo ''.$trends['content'].'';
-                                                }
-                                                else {
-                                                    $time = time() - $trends['time'];
-                                                    if($time < 3600) {
-                                                        $str = intval($time/60).'分钟前';
-                                                    }elseif ($time < 3600*24) {
-                                                        $str = intval($time/3600).'小时前';
-
-                                                    }else {
-                                                        $str = '昨天';
-                                                    }
-                                                    echo ''.$str.$trends['content'].'';
-                                                }
-                                            }
-                                            else {
-                                                echo '有'.$tenantssort['allcy'].'人在此店消费过';
-                                            }
-                                        }
-                                        else {
-                                            echo '有'.$tenantssort['allcy'].'人在此店消费过';
-                                        }
-                                        ?></span></p>
+        <p><span>人均消费:¥<?php echo $tenants['price'];?></span><span>|</span><span>咨询或到店请点击（预约咨询）</span></p>
         <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><em></em>打榜</a></div>
     </div>
     <div class="datas">
@@ -150,7 +119,6 @@ var _hmt = _hmt || [];
 <span class="jiangbei">排名客观权威</span>
 </div>
 <div class="info-box">
-<div class="titleqs"><i>优惠信息</i><span class="fa">到店人数过多，请提前预约哦</span></div>
 <a id="dateShow" class="yuyue">
                 <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?><p>距离结束:<em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>:<em class="date-tiem-span m">00</em>:<em class="date-s-span s">00</em></p></span>
 			<button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
@@ -295,7 +263,7 @@ var _hmt = _hmt || [];
                 <?php } ?>
             </ul>        </div>
     </div>
-	<div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看全部<span class="fa"><?php echo $countpics;?></span>个案例</a></div>
+	<div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看其他<?php echo $countpics;?>套</a></div>
 </div>
 <link rel="stylesheet" href="/css/glightbox.css">
 <script src="/js/glightbox.min.js"></script>
@@ -310,7 +278,7 @@ var _hmt = _hmt || [];
 
 <?php if($countsets >0 ) { ?>
 <div class="jxtc_box">
-    <div class="title">精选套餐<a href="/txlist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">全部<span class="fa"><?php echo $countsets;?></span>个套系 ></a></div>
+    <div class="title">精选套餐<a href="/txlist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">更多 ></a></div>
     <ul>
         <?php foreach($tenantssets as $k => $v) { ?>
         <li>
@@ -335,7 +303,7 @@ var _hmt = _hmt || [];
         </li>
         <?php } ?>
     </ul>
-    <div class="ckqb"><a href="/txlist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看全部<span class="fa"><?php echo $countsets;?></span>个精选套系</a></div>
+    <div class="ckqb"><a href="/txlist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看其他<?php echo $countsets;?>套</span></a></div>
 </div>
 <?php } ?>
 <div class="info-box info-yinxiang">
@@ -389,7 +357,7 @@ var _hmt = _hmt || [];
             <div class="txt">
                 <span>人均消费 ¥<?php echo $v['price']?></span>
                 <span> <?php echo $v['area'];?> </span>
-                <span class="fmr"> <?php echo $v['spreadcontent']?> </span>
+                <span class="fmr f40"> <?php echo $v['spreadcontent']?> </span>
             </div>
         </div>
     </div><div class="pic txtCtr">
@@ -953,19 +921,6 @@ option = {
         myChartContainer();
         myChart.resize();
     };
-
-    // 数据初始化
-    var Obj = $('body').barrage({
-        data : data, //数据列表
-        row : 1,   //显示行数
-        time : 5000, //间隔时间
-        gap : 10,    //每一个的间隙
-        position : 'fixed', //绝对定位
-        direction : 'bottom left', //方向
-        ismoseoverclose : true, //悬浮是否停止
-        height : 30, //设置单个div的高度
-    })
-    Obj.start();
 </script>
 </div>
 </body>

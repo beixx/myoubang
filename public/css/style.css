@@ -44,8 +44,8 @@ input:focus,textarea:focus {border: 0;outline:none;}
     text-align: center;
     z-index: 13;
 }
-em.date-tiem-span{color: #999; width: 1rem; display: inline-block; text-align: center;}
-em.date-s-span{color: #999; width: 1rem; display: inline-block; text-align: center;}
+em.date-tiem-span{color: #999; width:0.8rem; display: inline-block; text-align: center;}
+em.date-s-span{color: #999; width:0.8rem;display:inline-block; text-align: center;}
 .tishi{font-size: 0.6rem;
     position: relative;
     color: #ff6c32;
@@ -88,6 +88,16 @@ em.date-s-span{color: #999; width: 1rem; display: inline-block; text-align: cent
     padding: 0 0.2rem;}
 .bt22{bottom: -22rem;}
 .bt00{bottom: 0 !important;}
+.tishik{background:#f5f7fa;padding: 0;}
+.tishik .bdtj{ width: 98%!important; margin: 0 1%!important; }
+.tishik .tit{background: #FFF; width: 92%; padding: 0 4%; line-height: 2.5rem; height: 2.5rem; font-size: 0.7rem; color: #111; font-weight: 700; border-bottom:0.2rem solid #f5f6f7;}
+.tishik .yuyue i{width: 0.8rem; height: 0.8rem; margin: 0.5rem .5rem 0.5rem 4%;}
+.tishik .yuyue{margin: 0 4% .3rem; display: inline-block; height: 1.8rem; border: 0;}
+.tishik .discount-btn { background-color: initial; margin: .6rem 4% 0.6rem 0; color: #FF7070; padding: 0 .75rem 0 0.3rem; background: url(http://c.youbangkeyi.com/a/xiangyou1.png) right center no-repeat; background-size: 0.6rem; height: 0.6rem; line-height: 0.6rem; }
+.tishik .yuyue span{ font-weight: initial; color: #ff7070; margin: 0.55rem 0; vertical-align: middle; height: 0.7rem; }
+.tishizi{background: url(http://c.youbangkeyi.com/v/wancheng.png) #FFF no-repeat 5.8rem center; background-size: 1.5rem; text-align: center; text-indent: 0rem;    padding: 1rem;
+    border-bottom: 0.5rem solid #f5f6f7;}
+.tishizi p{font-size: 0.8rem;font-weight: bold;}
 .icot1{    background: url(http://c.youbangkeyi.com/v/4.png);
     background-size:cover;
     position: absolute;
@@ -166,7 +176,7 @@ em.date-s-span{color: #999; width: 1rem; display: inline-block; text-align: cent
     z-index: 99;
     position: absolute;}
 .icon-unfold span,.icon-unfold1 span{
-    background: #eff2f6 url(http://c.youbangkeyi.com/a/xiangxia.png) no-repeat right 1.2rem center;
+    background: #f5f7fa url(http://c.youbangkeyi.com/a/xiangxia.png) no-repeat right 1.2rem center;
     background-size: 0.6rem;
 }
 .icon-fold span,.icon-fold1 span{
@@ -188,15 +198,16 @@ background: #FFF;
 }  
 .unfold-field_text span{  
     display: inline-block;
-    font-size: .6rem;
+    font-size: .7rem;
     height: 2rem;
     line-height: 2rem;
     margin: 0.5rem 0;
-    border-radius: 2rem;
+    border-radius:5px;
     padding:0 2.1rem 0 1.5rem;
     color: #FF4040;
     font-weight: bold;
-}  
+}
+.f40{color: #FF4040!important;}
 /* 会员 */
 .huiyuan{background: url(../images/renzheng.png) no-repeat right 0rem; background-size: 3.2rem;width: 3.2rem; height: 3.2rem; position: absolute; top: 0; z-index: 999999; right: 0;}
 /* 推广 */
@@ -296,10 +307,10 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
 /*底部*/
 
 .bgDiv{ width: 100%;height: 100%; background-color: #000;opacity: .75;overflow: hidden;position:fixed;display:none ; z-index: 99; bottom: 0;}
-.downNav{width: 100%;margin: 0 auto;background-color: #fff;display: none; position: fixed; height: auto; z-index: 1001; left: 0; right: 0;}
+.downNav{width: 100%;margin: 0 auto;background-color: #fff;display: none; position: fixed; height: auto; z-index:9999999; left: 0; right: 0;}
 
-.zxyy{position:fixed;cursor:pointer;z-index: 9999;max-width:740px;margin: 0 auto;bottom: 0; left: 0; right: 0; background: #FFF;height: 2.8rem; line-height: 2.8rem; text-align: center; border-top: 1px solid #F5F5F5;}
-.zxyy em{background: #FF4040; cursor:pointer;color: #FFF; border-radius: 9rem; height: 2.2rem; line-height: 2.2rem; font-weight: bold; display: block; margin: 0.3rem 10%;}
+.zxyy{position:fixed;cursor:pointer;z-index: 9999;max-width:740px;margin: 0 auto;bottom: 0; left: 0; right: 0;height: 2.4rem; line-height: 2.4rem; text-align: center;}
+.zxyy em{background: #FF4040; cursor:pointer;color: #FFF;box-shadow: 0rem 0rem 0.5rem #666;border-radius: 9rem; height: 2rem; line-height: 2rem; font-weight: bold; display: block; margin:0rem 18% 0.4rem;}
 
 /*优惠咨询*/
 .banyouhui{width: 92%;background: #FFFFFF;margin-top: 0.3rem; padding: 0 4%;}
@@ -363,7 +374,8 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
     margin: 0rem 0 0.6rem -3rem;
     height: 1.5rem;
     border: 1px solid #FF7070;
-    color: #FFF;
+    color: #FFF;clear: both;
+        vertical-align: baseline;
     float: left;cursor:pointer;
     left: 50%;  }
 .sybj{
@@ -383,7 +395,7 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
          }
 .sybj em{font-size: 0.6rem;margin-left: 0.3rem;}
 
-.zysmn{background: #f9f4d9;width:92%;padding: 0 4%;
+.zysmn{background: #FBFBFB;width:92%;padding: 0 4%;
     line-height: 1.8rem;
     height: 1.8rem;
     position: relative;
@@ -401,11 +413,11 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
     width: 21.666666%;
     text-align: center;
     margin: 0 2.5%;
-    color: #8f7f5d;
+    color: #999;
 }
-.zysmn .jiance{background: url(http://c.youbangkeyi.com/v/jiance3.png) no-repeat 0rem center;background-size: 0.8rem;}
-.zysmn .shishi{background: url(http://c.youbangkeyi.com/v/shishi1.png) no-repeat 0rem center;background-size: 0.8rem;}
-.zysmn .jiangbei{background: url(http://c.youbangkeyi.com/v/jiangbei2.png) no-repeat 0rem center;background-size: 0.8rem;}
+.zysmn .jiance{background: url(http://c.youbangkeyi.com/v/dunpai1.png) no-repeat 0rem center;background-size: 0.8rem;}
+.zysmn .shishi{background: url(http://c.youbangkeyi.com/v/shishi4.png) no-repeat 0rem center;background-size: 0.8rem;}
+.zysmn .jiangbei{background: url(http://c.youbangkeyi.com/v/jiangbei4.png) no-repeat 0rem center;background-size: 0.8rem;}
 .zysmi span{    display: block;
     font-size: 0.7rem;
     font-weight: bold;}
@@ -428,6 +440,8 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
     margin: 0.5rem;
     height: 1.8rem;
 }
+#zxsl {position: fixed; z-index: 99991; max-width: 740px; bottom: 0; left: 0; right: 0; text-align: center; background: #333;cursor: pointer; color: #FFF; box-shadow: 0rem 0rem 0.5rem #666; border-radius: 9rem; height: 2rem; line-height: 2rem; font-weight: bold; display: block; margin: 0rem 18% 0.4rem;}
+#zxss {position: fixed; z-index: 99991; max-width: 740px; bottom: 0; left: 0; right: 0; text-align: center;background: rgba(5,5,5,0.8);cursor: pointer; color: #FFF; box-shadow: 0rem 0rem 0.5rem #666; border-radius: 9rem; height: 2rem; line-height: 2rem; font-weight: bold; display: block; margin: 0rem 15% 0.4rem;}
 /*评选咨询*/
 .downNav .ask{padding: 0.8rem 8%;}
 .downNav .vip{padding: 0.2rem 0; border-bottom: 1px dashed #e4e4e4; display: inline-block; width: 100%;}
@@ -440,6 +454,7 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
 .downNav .ask .tip span{display: block;float: left;width: 30%;margin-right: 3%;height: 1.5rem;line-height: 1.5rem;font-size: 0.7rem;background: url(../images/icon25.png) no-repeat left center;background-size: 0.8rem;color: #999999;text-indent: 1rem;}
 .downNav .ask p{font-size: 0.9rem; line-height: 2rem; height: 2rem; color: #333; font-weight: 700;}
 .downNav .ask p.current-li{font-size: .6rem; line-height: .6rem; height: .6rem; font-weight: initial; color: #999;}
+.current-li em{background: #FF4040; padding: 0 0.2rem; border-radius: 0.2rem; color: #FFF; margin-right: 0.2rem;}
 .downNav .ask .input{width: 100%; height: 2.4rem; background: #eff2f6; border-radius: 0.25rem; font-size: 0.6rem; text-indent: 0.5rem; border: 0px;}
 .downNav .ask .btn{width: 100%; border: 0; height: 2.4rem; color: #FFF; cursor: pointer; text-align: center; font-size: 0.7rem; background: #FF4040; font-weight: bold; line-height: 2rem; border-radius: 0.25rem; margin-top: 0.5rem;}
 .downNav .ask .btn em{font-size: 0.6rem; margin-left: 0.2rem;}
@@ -806,7 +821,7 @@ width: 100%; background: #FFF; margin: 0;
 .focus_box .txt_info .num{width:2.8rem;height:2.8rem ;background-size:2.8rem;position: absolute;left: 0.75rem;top: -2.9rem}
 .focus_box .txt_info .num em{color:#FFF;display: block;font-size: 1rem;line-height:2.6rem;height:2.8rem;}
 .focus_box .txt_info .num p{color: #FFF;font-size: 0.6rem;text-indent: 0;height: 0.75rem;line-height: 0.75rem;}
-.focus_box .address{width:92%;line-height:1.8rem;height:1.8rem;position: relative;font-size: 0.6rem;color:#999999 !important;text-indent:2.3rem;background: url(http://c.youbangkeyi.com/v/ditu1.png) no-repeat 0.75rem center #fBfBfB;background-size:1.2rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right: 8%}
+.focus_box .address{width:92%;line-height:1.8rem;height:1.8rem;position: relative;font-size: 0.6rem;color:#999999 !important;text-indent:2.3rem;background: url(http://c.youbangkeyi.com/v/ditu1.png) no-repeat 0.75rem center #fff;background-size:1.2rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right: 8%}
 .focus_box .address a{color:#999;}
 .focus_box .address em{position: absolute; width: 0.65rem; height: 0.65rem; background: url(http://c.youbangkeyi.com/v/xiangyou.png) no-repeat center center; right: 0.75rem; top: 0.55rem; background-size: 0.65rem;}
 .comment_column {width:100%;position: relative;text-align: center;color: #333;font-family: "microsoft yahei";}
@@ -859,7 +874,7 @@ width: 100%; background: #FFF; margin: 0;
 .shop-index .info-box .title em{display: inline-block; width:1rem; height:1rem; background: url("../images/icon18.png") no-repeat center 0; margin:0px 0.5rem 0 0.2rem; vertical-align: middle;background-size: 0.8rem}
 .info-box .titleqs span{color:#999999; height:2.5rem;line-height:2.5rem;font-size: 0.6rem; float: right;}
 .shop-index .info-box .data{width:100%;overflow:hidden;padding-bottom: 1rem;}
-.yinxiang{height: 17.5rem;}
+.yinxiang{height: 8rem;}
 .shop-index .info-box div.pbbb{padding-bottom:0;border-bottom:0;border-top: 0.5rem solid #f5f7fa;}
 .shop-index .info-box .data .table{width: 100%;display: table;line-height: 1.2rem;}
 .shop-index .info-box .data th{font-size:0.6rem; color: #999999;font-weight:normal;}
@@ -937,9 +952,9 @@ width: 100%; background: #FFF; margin: 0;
 .jxtc_box li .txt .price del{font-size: 0.6rem;color:#999999}
 .jxtc_box li .txt .text{color: #999999;font-size: 0.6rem;float:right;text-align:left;overflow: hidden;height:1.5rem;line-height:1.5rem;white-space:nowrap;text-overflow:ellipsis;}
 .jxtc_box li .txt .text span{padding: 0 0.4rem}
-.ckqb{text-align:center;padding:0.8rem 0;margin:0 4%;font-size: .6rem;border-top: #f5f5f5 solid 1px;}
-.ckaqb{text-align:center;height:3rem;line-height:3rem;margin:0 4%;border-top: #f5f5f5 solid 1px;font-size: .6rem;}
-.ckaqb a,.ckqb a{background:#eff2f6;font-weight:bold;padding: 0.6rem 4rem; border-radius: 2rem; color: #ff4040;}
+.ckqb{text-align:center;padding:0.8rem 0;margin:0 4%;font-size: .7rem;border-top: #f5f5f5 solid 1px;}
+.ckaqb{text-align:center;height:3rem;line-height:3rem;margin:0 4%;border-top: #f5f5f5 solid 1px;font-size: .7rem;}
+.ckaqb a,.ckqb a{background:#f5f7fa;line-height:0.7rem;height:0.7rem;font-weight:bold;padding: 0.6rem 4rem; border-radius:5px; color: #ff4040;}
 .comment_list{display:inline-block;position: relative; background: #FFF; width:100%;border-top: 0.5rem solid #f5f7fa;}
 .comment_list .title{width: 92%;padding: 0 4%;line-height:2.5rem; height:2.5rem; font-size: 0.7rem;font-weight:700;color:#111111;}
 .comment_list dl{width:92%;border-bottom: 1px solid #F5F5F5;padding:1rem 4% 0.5rem}
@@ -1668,7 +1683,6 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
     color: #fa5741;
     background: url(http://c.youbangkeyi.com/a/red_background_v2.png);
     background-size: 100% 100%;
-    border-top: 1px solid #FEFEFE;
 }
 .yuyue p{
     font-size: 0.6rem;
@@ -1723,12 +1737,47 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
     line-height: 1rem;
     font-weight: bold;}
     .yytouxiang{
-          
+       
     background: rgba(0,0,0,0.7);
     border-radius: 30px;
     height: 30px!important;
     line-height: 30px!important;
+
+    opacity: 1;
+  -ms-filter: none;
+  filter: none;
+    -webkit-animation: popin-data-v-6a121f57 4s ease 0s 1 normal forwards;
+    -moz-animation: popin-data-v-6a121f57 4s ease 0s 1 normal forwards;
+    -o-animation: popin-data-v-6a121f57 4s ease 0s 1 normal forwards;
+    -ms-animation: popin-data-v-6a121f57 4s ease 0s 1 normal forwards;
+    animation: popin-data-v-6a121f57 4s ease 0s 1 normal forwards;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 2rem;
+    font-size: 0.24rem;
+    color: #fff;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -ms-flex-line-pack: center;
+    -webkit-align-content: center;
+    align-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -o-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
     }
+#barrage{overflow: hidden;height: 30px;}
 .yyicon{
     float: left;
     height: 24px;
@@ -1746,7 +1795,10 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
     color: #FFF;
     padding-right:0.5rem;
     }
-.h30{height: 30px;}
+.h30{    height: 30px!important;
+    line-height: 30px!important;
+
+}
 .unit-footer{
     line-height: 0.6rem;
     padding: 0.5rem 5% 0.5rem;
@@ -1782,7 +1834,7 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
     text-align: center;
     width: 50%;
 }
-.case_box .tittx,.info-box .titleqs,.jxtc_box .title,.jxtc_box li .txt,.comment_list .title,.view .tit,.tabBox .hd,.pic_box .num_txt,.view .titdp, .view .titjs, .tittp{
+.case_box .tittx,.focus_box .address,.info-box .titleqs,.jxtc_box .title,.jxtc_box li .txt,.comment_list .title,.view .tit,.tabBox .hd,.pic_box .num_txt,.view .titdp, .view .titjs, .tittp{
     position: relative;
 }
 .case_box .picScroll .bd .img:before,.case_box .tittx:before,.info-box .titleqs:before,.txt_info:before,.jxtc_box .title:before,.jxtc_box li .txt:before,.comment_list .title:before,.view .tit:before,.tabBox .hd:before,.pic_box .num_txt:before,.view .titdp:before, .view .titjs:before, .tittp:before{
@@ -1795,7 +1847,7 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
     transform: scaleY(.5);
     -webkit-transform: scaleY(.5);
 }
-.bottom_slide_box .calculator_box:after,.daodian:after,.pic_box .txt_box:after{
+.bottom_slide_box .calculator_box:after,.focus_box .address:after,.daodian:after,.pic_box .txt_box:after{
     content: "";
     width: 100%;
     border-bottom: 1px solid #eff2f6;
@@ -1833,7 +1885,7 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
 .UISelect{margin-top:5px}
 
 
-footer{background:#26282b;width:100%;margin:0 auto 2.8rem;font-size:0.6rem;color:#ababab;}
+footer{background:#26282b;width:100%;margin:0 auto;font-size:0.6rem;color:#ababab;}
 .foot{width:100%;;background:#313439;line-height:1.2rem;display:table;color:#666;padding:0.8rem 0px;}
 .foo{width:100%;;margin:0 auto;}
 .foots{width:100%;;text-align:center;margin:0 auto;}
@@ -1891,7 +1943,11 @@ html, body {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
   .pic_box .num_txt .tit_box{
-    width:653.55px; height: 2.4rem;
+    width:680px; height: 2.4rem;
+  }
+.bdtj .num_txt .tit_box{width:655px!important;}
+  .tishik .pic_box .num_txt .tit_box{
+    width:495.15px; height: 2.4rem;
   }
   .pic_box .num_txt{height: 2.4rem;}
   .anli_month,.case_box .picScroll .bd p{padding: 0px 0% 0 5rem;width: 82%;}
@@ -1909,10 +1965,10 @@ html, body {
 }
 .shop-index .info-box,.downNav,.bgDiv{width: 740px;}
 .focus_box .focus,.suolvd{height:438px;}
-.suolvvr,.bg1{height:320px;}
+.suolvvr,.bg1{height:281.5px;}
 .m-kan{top:4.5rem;}
-.sjkap{margin-top: -65px;}
 .suolv{height: 167.2px;}
+.tishik .suolv{height: 130px;}
 .suolvt{height:222px;}
 .view .hot li{    width:20%;}
 .lian img{width: 300px;}
@@ -1950,14 +2006,14 @@ header .city_box{margin-top: 0.75rem;}
     margin-left: -44.5px;
     margin-top:12px;
 }
-.logo img {
-    width: initial;
+.logo img {width: initial;
     height:1.8rem;
-    vertical-align: initial;
-}
+    vertical-align: initial;}
+.zxyy em{margin: 0rem 32% 0.4rem;}
+#zxsl{margin: 0rem auto 0.4rem; width: 266.41px;}
 .downNav{ width: 550px;
     top: 50%!important;
-    margin-top: -100px;}
+    margin-top: -236px;}
 .zysmn span{padding-left: 3%; height: 0.8rem; line-height: 0.8rem; display: inline-block; width: 11.9%; text-align: center; margin: 0 9%;}
 .focus_box .txt_info .pf{top:0.95rem;}
 .pic_box .num_txt .tit_box .title{margin-bottom: 0.2rem;}
@@ -1967,7 +2023,7 @@ a.discount-btn:after{top:0.2rem;}
 .sousj{height: 9rem;}
 .bg2{height: 7rem;}
 .showmore .discount-btn{margin: .7rem 4% 0.7rem 0;}
-.tishi span{display: initial;}
+.tishi span{display: initial;cursor:pointer;}
 .sy-title{top: 1.8rem;}
 .focus_box .address{height: 2rem; line-height: 2rem;}
 .focus_box .address em{height: 0.8rem;}

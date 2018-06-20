@@ -16,8 +16,6 @@
     <script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="/js/leftTime.min.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/main.js"></script>
-    <script type="text/javascript" src="/js/index.js"></script>
-    <script type="text/javascript" src="/js/data.js"></script>
     <script type="text/javascript" src="http://www.youbangkeyi.com/js/foot.js?2"></script>
     <style type="text/css">body{background: #f0f0f0}</style>
     <script>
@@ -95,13 +93,13 @@ var _hmt = _hmt || [];
         </div>
     </div><hr>
 <a id="dateShow" class="yuyue">
-                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?><p><em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>:<em class="date-tiem-span m">00</em>:<em class="date-s-span s">00</em>后活动结束</p></span>
+                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?><p>距离结束:<em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>:<em class="date-tiem-span m">00</em>:<em class="date-s-span s">00</em></p></span>
             <button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
             </a>
                       <script type="text/javascript">
                     $(function(){
                         //日期倒计时
-                        $.leftTime("2018/06/15 23:45:24",function(d){
+                        $.leftTime("<?php echo date("Y/m/d",$tenants['package_endtime'])." 23:59:59"?>",function(d){
                             if(d.status){
                                 var $dateShow1=$("#dateShow");
                                 $dateShow1.find(".d").html(d.d);
@@ -267,23 +265,6 @@ var _hmt = _hmt || [];
 </div>
 <script type="text/javascript" src="/js/city.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
-<script type="text/javascript">
-
-    // 数据初始化
-    var Obj = $('body').barrage({
-        data : data, //数据列表
-        row : 1,   //显示行数
-        time : 5000, //间隔时间
-        gap : 10,    //每一个的间隙
-        position : 'fixed', //绝对定位
-        direction : 'bottom left', //方向
-        ismoseoverclose : true, //悬浮是否停止
-        height : 30, //设置单个div的高度
-    })
-    Obj.start(); 
-
-</script>
 </div>
-<div class="zxyy"><em class="down yuyueclick">免费预约咨询 · 3分钟响应</em></div>
 </body>
 </html>

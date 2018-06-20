@@ -46,13 +46,13 @@ var _hmt = _hmt || [];
         </div>
     </div><hr>
 <a id="dateShow" class="yuyue">
-                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?><p><em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>时<em class="date-tiem-span m">00</em>分<em class="date-s-span s">00</em>秒后活动结束</p></span>
+                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?><p>距离结束:<em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>时<em class="date-tiem-span m">00</em>分<em class="date-s-span s">00</em></p></span>
             <button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
             </a>
                       <script type="text/javascript">
                     $(function(){
                         //日期倒计时
-                        $.leftTime("2018/06/15 23:45:24",function(d){
+                        $.leftTime("<?php echo date("Y/m/d",$tenants['package_endtime'])." 23:59:59"?>",function(d){
                             if(d.status){
                                 var $dateShow1=$("#dateShow");
                                 $dateShow1.find(".d").html(d.d);
