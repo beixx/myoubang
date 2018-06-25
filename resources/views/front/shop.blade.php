@@ -278,36 +278,7 @@ var _hmt = _hmt || [];
   </script>
 <?php } ?>
 
-<?php if($countsets >0 ) { ?>
-<div class="jxtc_box">
-    <div class="title">精选套餐<a href="/txlist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">更多 ></a></div>
-    <ul>
-        <?php foreach($tenantssets as $k => $v) { ?>
-        <li>
-            <a href="/detail/<?php echo $tenants['id'].'/'.$v['id']?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
-            <div class="suolvt">
-                <span>
-                    <?php if(strpos($v['cover'][0],'http') === false) {?>
-                    <img src="//img2.youbangkeyi.com<?php echo $v['cover'][0];?>?imageView2/1/w/690/h/444/q/75|imageslim"/>
-                    <?php } else {?>
-                    <img src="<?php echo $v['cover'][0];?>?imageView2/1/w/800/h/600/q/75|imageslim"/>
-                    <?php } ?>
-                </span></div>
-                <div class="txt">
-                    <h3><?php echo $v['setName'];?></h3>
-                    <div class="price fa">
-                        <span class="red">¥<?php echo $v['currentPrice']?></span>
-                        <del>原价:¥<?php echo $v['price'];?></del>
-                    </div>
-                </div>
-            </a>
-        <div href="javascript:" class="anlibj down dangqiclick">咨询档期</div>
-        </li>
-        <?php } ?>
-    </ul>
-    <div class="ckqb"><a href="/txlist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看其他<?php echo $countsets;?>套</span></a></div>
-</div>
-<?php } ?>
+
 <div class="info-box info-yinxiang">
     <div class="data yinxiang">
         <div class="titleqs"><i>用户印象标签</i><span class="fa">以下标签为大数据分析所得</span></div>

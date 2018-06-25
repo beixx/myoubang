@@ -35,7 +35,6 @@
                 <ul class="cl">
                     <li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
-                            <li><a href="javascript:;" onclick="article_add('添加套系','/merchant/addset')"><i class="Hui-iconfont">&#xe616;</i> 套系</a></li>
                             <li><a href="javascript:;" onclick="picture_add('添加案例','/merchant/addpic')"><i class="Hui-iconfont">&#xe613;</i> 案例</a></li>
                         </ul>
                     </li>
@@ -76,7 +75,6 @@
                 <ul>
     <li><a data-href="/merchant/setpackage" data-title="商家基本信息" href="javascript:void(0)">商家基本信息</a></li>
                     <li><a data-href="/merchant/yfctenantspic" data-title="案例列表" href="javascript:void(0)">案例列表</a></li>
-                    <li><a data-href="/merchant/yfctenantsset" data-title="套系列表" href="javascript:void(0)">套系列表</a></li>
                 </ul>
             </dd>
         </dl>

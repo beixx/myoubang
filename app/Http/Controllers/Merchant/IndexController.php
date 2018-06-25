@@ -106,6 +106,8 @@ class IndexController extends MerchantController
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
                 'picname' => htmlentities($request->get("picname")),
+                'price' => htmlentities($request->get("price")),
+                'currentPrice' => htmlentities($request->get("currentPrice")),
                 'cover' => json_encode($request->get("cover",[]),JSON_UNESCAPED_UNICODE),
                 'firstcover' => json_encode($request->get('firstcover',[]),JSON_UNESCAPED_UNICODE),
                 'picstyle' => json_encode(explode(',',$request->get("picstyle",'')),JSON_UNESCAPED_UNICODE),

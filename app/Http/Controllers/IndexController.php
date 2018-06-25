@@ -84,21 +84,6 @@ class IndexController extends Controller
             $pycity = Config::get('city.'.$city,'beijing');
             //Session::put('city',$city);
 
-            $tenantssets = YfcTenantsSet::where('tenantsId',$id)->orderby("created_at",'desc')->limit(2)->get()->toArray();
-
-            foreach($tenantssets as $key=>$v){
-                if(isset($v['kind']) && $v['kind']){
-                    $v['kind'] = json_decode($v['kind'],true);
-                }
-                if(isset($v['cover']) && $v['cover']){
-                    $v['cover'] = json_decode($v['cover'],true);
-                }
-                if(isset($v['picDetail']) && $v['picDetail']){
-                    $v['picDetail'] = json_decode($v['picDetail'],true);
-                }
-                $tenantssets[$key] = $v;
-            }
-            $countsets = YfcTenantsSet::where('tenantsId',$id)->count();
 
             $tenantspics = YfcTenantsPic::where('tenantsId', $id)->orderby("created_at",'desc')->limit(3)->get();
             foreach($tenantspics as $k => $t){
@@ -139,7 +124,7 @@ class IndexController extends Controller
                 $xdata['pcount'] = json_encode($pcount);
 
                 YfcTenants::where("id",'=',$id)->update($xdata);
-		$tenants['pcount'] =$xdata['pcount'];
+		        $tenants['pcount'] =$xdata['pcount'];
             }
 
             # 添加案例次数
@@ -155,10 +140,8 @@ class IndexController extends Controller
 		        'title' => $title,
                 'desc' => $desc,
                 'keyword' => $keyword,
-                'countsets' => $countsets,
                 'countpics' => $countpics,
                 'shoptype' => $tenants['shoptype'],
-                'tenantssets' => $tenantssets,
                 'tenantspics' => $tenantspics,
                 'tenantssort' => $tenantssort,
                 'tenantssortview' => $tenantssortview,
@@ -409,6 +392,7 @@ class IndexController extends Controller
         return view("front/piclist",$this->data);
     }
     public function txlist($id = 0){
+        return Redirect::to('/');
         $sets = YfcTenantsSet::where('tenantsId',$id)->orderby("created_at",'desc')->get();
         $tenants = Yfctenants::where('id',$id)->first()->toArray();
         if(empty($tenants)) {
@@ -512,6 +496,8 @@ class IndexController extends Controller
 
     public function txdetail($tid = 0,$id = 0)
     {
+
+        return Redirect::to('/');
         $info = Yfctenantsset::where('id', $id)->first();
         if(empty($info)) {
             return Redirect::to("/");
