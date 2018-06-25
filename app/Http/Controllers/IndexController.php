@@ -132,14 +132,14 @@ class IndexController extends Controller
                     $pcount['count'] = rand(5,10);
                 }
                 else if($tenants['order_city'] < 20) {
-                    $pcount['count'] = rand(5-8);
+                    $pcount['count'] = rand(5,8);
                 }else {
                     $pcount['count']= rand(0,3);
                 }
                 $xdata['pcount'] = json_encode($pcount);
 
                 YfcTenants::where("id",'=',$id)->update($xdata);
-
+		$tenants['pcount'] =$xdata['pcount'];
             }
 
             # 添加案例次数
@@ -371,7 +371,7 @@ class IndexController extends Controller
             return Redirect::to('/');
         }
         $city = $tenants['city'];
-
+        $tenants['pcount'] = json_decode($tenants['pcount'],true);
         $pics = YfcTenantsPic::where('tenantsId',$id)->orderby("created_at",'desc')->get();
         foreach($pics as $key=>$v){
             if($v['firstcover']){
@@ -414,6 +414,7 @@ class IndexController extends Controller
         if(empty($tenants)) {
             return Redirect::to('/');
         }
+        $tenants['pcount'] = json_decode($tenants['pcount'],true);
         $city = $tenants['city'];
         if(count($sets)){
             foreach($sets as $key=>$v){
@@ -466,7 +467,7 @@ class IndexController extends Controller
         $tenantsId = $picinfo['tenantsId'];
         $tenants = YfcTenants::where('id',$tenantsId)->first();
         $city = $tenants['city'];
-
+        $tenants['pcount'] = json_decode($tenants['pcount'],true);
         $recommpics = YfcTenantsPic::where('id','!=',$id)
             ->where('tenantsId',$tenantsId)
             ->orderBy('marknums','desc')
@@ -516,7 +517,7 @@ class IndexController extends Controller
             return Redirect::to("/");
         }
         $tenants = YfcTenants::where('id', $info['tenantsId'])->first();
-
+        $tenants['pcount'] = json_decode($tenants['pcount'],true);
         $name = $tenants['name'];
         $city = $tenants['city'];
         $txname = $info['setName'];
@@ -747,7 +748,7 @@ class IndexController extends Controller
         if($tenantsId) {
             $yfctenants = YfcTenants::where("id",'=',$tenantsId)->first();
             $content = '城市:'.$yfctenants["positionCity"].";\n时间:".date('Y-m-d H:i:s').";\n名称:"
-                .$yfctenants["name"].";\n预约人:无;\n手机号码:".$data['phone'].";\n地址:".$data['url']."\n";
+                .$yfctenants["name"].";\n预约人:无;\n手机号码:".$data['phone'].";\n地址:".$data['url']."\n来自：有榜网·".$yfctenants["positionCity"]."站（中国婚嫁产业·大数据服务商）\n";
             $this->sendDD('04a7b3d87f5701ff8d2bf9cccb38ead42344b8ead406fe125d5147e36df33b81',$content);
         }
 

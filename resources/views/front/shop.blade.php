@@ -221,7 +221,7 @@ var _hmt = _hmt || [];
          <div class="shushuo">
             <span>擅长拍摄风格<em>(对商家案例、评论数据进行标签分析)</em></span>
              <?php foreach($style as $k=>$v) { ?>
-                    <p>“<?php echo $v['name'];?>”被提及<?php echo $v['count'];?>次，在北京排名第<?php echo $v['order_index'];?>位</p>
+                    <p>“<?php echo $v['name'];?>”被提及<?php echo $v['count'];?>次，在<?php echo $city;?>排名第<?php echo $v['order_index'];?>位</p>
              <?php } ?>
 </div>
     </div>
@@ -257,6 +257,8 @@ var _hmt = _hmt || [];
 
 
                         <?php } ?>
+                        <!--
+                        <div class="txprice">该案例拍摄价格：<em class="red">8999元</em><em class="txyj">原价：9999元</em></div>-->
                         </span>
                 <div href="javascript:" class="anlibj down anliclick">获取案例报价</div>
                 </li>
