@@ -185,7 +185,10 @@ class IndexController extends Controller
                 $this->data['iscity'] = 0;
             }
             $page = Request::get('page','1');
-            $city = Config::get('city.'.$name,'北京');
+            $city = Config::get('city.'.$name);
+            if(!$city) {
+                return Redirect::to('/');
+            }
             $this->data['pycity'] = $name;
             $this->data['city'] = $city;
 	        //无法获取城市，直接首页
