@@ -85,7 +85,7 @@ class IndexController extends Controller
             //Session::put('city',$city);
 
 
-            $tenantspics = YfcTenantsPic::where('tenantsId', $id)->orderby("created_at",'desc')->limit(3)->get();
+            $tenantspics = YfcTenantsPic::where('tenantsId', $id)->orderby("id",'desc')->limit(3)->get();
             foreach($tenantspics as $k => $t){
                 if(isset($t['cover']) && $t['cover']){
                     $t['cover'] = json_decode($t['cover'],true);
@@ -244,7 +244,7 @@ class IndexController extends Controller
             $taoxitmp = [];
             foreach($taoxi as $kk => $vv) {
                 # 过滤超过三条的套系
-                if(!empty($taoxitmp[$vv['tenantsId']]) && count($taoxitmp[$vv['tenantsId']])>=6){
+                if(!empty($taoxitmp[$vv['tenantsId']]) && count($taoxitmp[$vv['tenantsId']])>=3){
                     continue;
                 }
 

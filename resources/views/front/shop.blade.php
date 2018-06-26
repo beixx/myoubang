@@ -243,9 +243,6 @@ var _hmt = _hmt || [];
                     <?php echo \App\Http\Helper\Date::xtime($v['created_at']);?>
                 </em>
                 <em class="fr">浏览<?php echo $v['showcount'];?>次</em></span>
-            <?php if(strlen($v['explain'])>5) { ?>
-           <div class="anli_p"><?php echo $v['explain'];?></div>
-           <?php } ?>
                         <span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
@@ -257,8 +254,9 @@ var _hmt = _hmt || [];
 
 
                         <?php } ?>
-                        <!--
-                        <div class="txprice">该案例拍摄价格：<em class="red">8999元</em><em class="txyj">原价：9999元</em></div>-->
+                        <?php if($v['currentPrice']>0) {?>
+                        <div class="txprice">该案例拍摄价格：<em class="red"><?php echo $v['currentPrice'];?>元</em><em class="txyj">原价：<?php echo $v['price'];?>元</em></div>
+                        <?php } ?>
                         </span>
                 <div href="javascript:" class="anlibj down anliclick">获取案例报价</div>
                 </li>
