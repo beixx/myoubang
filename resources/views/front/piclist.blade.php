@@ -23,7 +23,7 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
     </script>
-    <style type="text/css">body{/*padding-top: 2.5rem;*/}.case_box{position:initial;display: grid;}.case_box .picScroll .bd .img em{z-index: initial;}</style>
+    <style type="text/css">.case_box .picScroll .bd .img em{z-index: initial;}</style>
 </head>
 <body class="shop-index view">
 @include("front.tijiao")
@@ -81,9 +81,6 @@ var _hmt = _hmt || [];
                     <div class="anli_touxiang"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/150/h/150/q/75|imageslim"></div>
                     <p> <a href="/kpdetail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $v['picName'];?> </a></p>
                     <span class="anli_month"><em class="fl">发布于<?php echo date("m-d H:i",$v['created_at']);?></em><em class="fr">浏览342次</em></span>
-                    <?php if($v['explain']) { ?>
-                    <div class="anli_p"><?php echo $v['explain'];?></div>
-                    <?php } ?>
                     <span class="img">
                             <?php $v['cover'] = json_decode($v['cover'],true); for($i = 0 ; $i < 9 ;$i ++ ) { if(empty($v['cover'][$i])) { break; }?>
                         <?php if(strpos($v['cover'][$i],'http') === false) {?>
@@ -94,7 +91,10 @@ var _hmt = _hmt || [];
                         <?php } ?>
 
                         <?php } ?>
-                        </span>
+                        <?php if($v['currentPrice']>0) {?>
+                        <div class="txprice">该案例拍摄价格：<em class="red"><?php echo $v['currentPrice'];?>元</em><em class="txyj">原价：<?php echo $v['price'];?>元</em></div>
+                        <?php }?>
+                    </span>
                     <div href="javascript:" class="anlibj down anliclick">获取案例报价</div>
                 </li>
                 <?php } ?>

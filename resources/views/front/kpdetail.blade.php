@@ -76,8 +76,8 @@ var _hmt = _hmt || [];
             <?php } ?>
         </div>
     </div>
-    <?php if($picinfo['explain']) {?>
-           <p class="anli_pa"><?php echo $picinfo['explain'];?></p>
+    <?php if($picinfo['currentPrice']>0) { ?>
+    <div class="txprice">该案例拍摄价格：<em class="red"><?php echo $picinfo['currentPrice'];?>元</em><em class="txyj">原价：<?php echo $picinfo['price'];?>元</em></div>
     <?php } ?>
 </div>
 <div class="shop_box">

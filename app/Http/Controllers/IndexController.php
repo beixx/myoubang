@@ -358,7 +358,7 @@ class IndexController extends Controller
         }
         $city = $tenants['city'];
         $tenants['pcount'] = json_decode($tenants['pcount'],true);
-        $pics = YfcTenantsPic::where('tenantsId',$id)->orderby("created_at",'desc')->get();
+        $pics = YfcTenantsPic::where('tenantsId',$id)->orderby("id",'desc')->get();
         foreach($pics as $key=>$v){
             if($v['firstcover']){
                 $v['firstcover'] = json_decode($v['firstcover'],true);
