@@ -81,6 +81,9 @@ var _hmt = _hmt || [];
                     <div class="anli_touxiang"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/150/h/150/q/75|imageslim"></div>
                     <p> <a href="/kpdetail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $v['picName'];?> </a></p>
                     <span class="anli_month"><em class="fl">发布于<?php echo date("m-d H:i",$v['created_at']);?></em><em class="fr">浏览342次</em></span>
+                    <?php if($v['explain']) { ?>
+                    <div class="anli_p"><?php echo $v['explain'];?></div>
+                    <?php } ?>
                     <span class="img">
                             <?php $v['cover'] = json_decode($v['cover'],true); for($i = 0 ; $i < 9 ;$i ++ ) { if(empty($v['cover'][$i])) { break; }?>
                         <?php if(strpos($v['cover'][$i],'http') === false) {?>
