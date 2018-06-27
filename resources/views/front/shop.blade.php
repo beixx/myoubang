@@ -262,7 +262,7 @@ var _hmt = _hmt || [];
                         <?php } ?>
                         </span>
                         <div href="javascript:" class="anlibj down anliclick">
-                            <?php echo $v['currentPrice']>0?"咨询档期":"获取案例价格";?>
+                            <?php echo $v['currentPrice']>0?"咨询档期":"获取报价";?>
                         </div>
                 </li>
                 <?php } ?>
