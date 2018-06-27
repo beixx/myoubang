@@ -243,6 +243,9 @@ var _hmt = _hmt || [];
                     <?php echo \App\Http\Helper\Date::xtime($v['created_at']);?>
                 </em>
                 <em class="fr">浏览<?php echo $v['showcount'];?>次</em></span>
+                       <?php if($v['explain']) { ?>
+                    <div class="anli_p"><?php echo $v['explain'];?></div>
+                    <?php } ?>
                         <span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>

@@ -365,7 +365,10 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
     height: auto;
     text-align: left;
     border-top: 1px solid #efefef;
+    overflow: hidden;
 }
+.anli_pa p{margin-bottom: 0.5rem;}
+.anli_pa .txprice{margin: 0;}
 .anlibj{
     background:#FF7070;
     width: 6rem;
@@ -2032,6 +2035,7 @@ a.discount-btn:after{top:0.2rem;}
 .focus_box .address{height: 2rem; line-height: 2rem;}
 .focus_box .address em{height: 0.8rem;}
 .showmore .yuyue{height: 2rem;}
+.yinxiang{height: 8.7rem;}
 .showmore .yuyue i{    margin: 0.6rem .5rem 0.5rem 4%;}
 .showmore .yuyue span{height: 0.7rem;margin: 0.65rem 0;}
 body{    font: normal 16px/200% 'Droid Sans Fallback','PingFang SC','Microsoft YaHei','Hiragino Sans GB','Heiti SC','WenQuanYi Micro Hei',sans-serif!important;}
