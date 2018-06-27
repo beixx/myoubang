@@ -98,7 +98,9 @@ var _hmt = _hmt || [];
                         <div class="txprice">该案例拍摄价格：<em class="red"><?php echo $v['currentPrice'];?>元</em><em class="txyj">原价：<?php echo $v['price'];?>元</em></div>
                         <?php }?>
                     </span>
-                    <div href="javascript:" class="anlibj down anliclick">咨询档期</div>
+                    <div href="javascript:" class="anlibj down anliclick">
+                        <?php echo $v['currentPrice']>0?"咨询档期":"获取案例价格";?>
+                    </div>
                 </li>
                 <?php } ?>
             </ul>

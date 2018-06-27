@@ -84,8 +84,8 @@ class IndexController extends Controller
             $pycity = Config::get('city.'.$city,'beijing');
             //Session::put('city',$city);
 
-
-            $tenantspics = YfcTenantsPic::where('tenantsId', $id)->orderby("id",'desc')->limit(3)->get();
+            $vc = $tenants['isVip'] ==2?6:3;
+            $tenantspics = YfcTenantsPic::where('tenantsId', $id)->orderby("id",'desc')->limit($vc)->get();
             foreach($tenantspics as $k => $t){
                 if(isset($t['cover']) && $t['cover']){
                     $t['cover'] = json_decode($t['cover'],true);
