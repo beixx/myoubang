@@ -237,7 +237,7 @@ class IndexController extends Controller
                 $tids[] = $v['id'];
             }
 
-            $taoxi = YfcTenantsPic::select('id',"tenantsId",'firstcover')
+            $taoxi = YfcTenantsPic::select('id',"tenantsId",'firstcover',"currentPrice")
                 ->whereIn('tenantsId',$tids)
                 ->orderBy('id','desc')->limit(2000)->get()->toArray();
 
