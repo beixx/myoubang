@@ -33,7 +33,7 @@ var _hmt = _hmt || [];
 <body class="view">
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
-<div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><img src="/images/logo.png" alt="有榜网"></a></div>
+<div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜</a></div>
 <a class="zxdh" href="tel:18500905723"></a>
 </header>
 <div class="focus_box">
@@ -47,9 +47,9 @@ var _hmt = _hmt || [];
                 <li class="suolvd">
                     <span>
                         <?php if(strpos($v,'http') === false) {?>
-                           <img src="//img2.youbangkeyi.com<?php echo $v;?>?<?php echo  $ismobile?"imageView2/1/w/800/h/600/q/75|":'';?>imageslim"/>
+                           <img src="//img2.youbangkeyi.com<?php echo $v;?>?<?php echo  $ismobile?"imageView2/1/w/800/h/600/q/75|":'';?>imageslim" alt="<?php echo $picinfo['picName'];?>"/>
                         <?php } else {?>
-                            <img _src="<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" />
+                            <img _src="<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $picinfo['picName'];?>"/>
                         <?php } ?>
                     </span>
                 </li>
@@ -86,11 +86,8 @@ var _hmt = _hmt || [];
 </div>
 <div class="shop_box">
     <div class="titdp">案例所属商家</div>
-    <?php if($tenants['isVip'] == 2) { ?>
-    <div class="huiyuan"></div>
-    <?php } ?>
     <div class="txt-box">
-        <h1><a href="/detail/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $tenants['name'];?></a></h1>
+        <h1><a href="/detail/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $tenants['name'];?></a></h1>
         <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
         <div class="num fa txtCtr">
             <?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
@@ -123,9 +120,9 @@ var _hmt = _hmt || [];
 <div class="info">
     <?php foreach($picinfo['cover'] as $v) { ?>
         <?php if(strpos($v,'http') === false) {?>
-            <img src="http://img2.youbangkeyi.com<?php echo $v;?>">
+            <img src="http://img2.youbangkeyi.com<?php echo $v;?>" alt="<?php echo $picinfo['picName'];?>">
         <?php } else {?>
-        <img src="<?php echo $v;?>">
+        <img src="<?php echo $v;?>" alt="<?php echo $picinfo['picName'];?>">
         <?php } ?>
     <?php } ?>
 </div>
@@ -138,9 +135,9 @@ var _hmt = _hmt || [];
                 <div class="suolvt">
                 <span>
                     <?php if(strpos($v['firstcover'][0],'http') === false) {?>
-                        <img src="http://img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/768/h/420/q/75|imageslim">
+                        <img src="http://img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/768/h/420/q/75|imageslim" alt="<?php echo $v['picName'];?>">
                     <?php } else {?>
-                        <img src="<?php echo $v['firstcover'][0];?>?imageView2/1/w/768/h/420/q/75|imageslim">
+                        <img src="<?php echo $v['firstcover'][0];?>?imageView2/1/w/768/h/420/q/75|imageslim" alt="<?php echo $v['picName'];?>">
                     <?php } ?>
 
                 </span></div>
@@ -169,7 +166,7 @@ var _hmt = _hmt || [];
                     <span class="blue">40,000 </span>对结婚新人</div>
 <div class="txtshuju lft fgpinglun">
                     <span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
-<div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">商家编号:<?php echo $tenants['id'];?></span></div></div>
+<div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">版权归:<?php echo $city;?><?php echo $tenants['name'];?>所有</span></div></div>
 <footer class="txtCtr">
  @include("front.hotTenants")  <div class="foot">
         <div class="foots">

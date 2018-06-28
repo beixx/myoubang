@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title><?php echo $title;?></title>
+    <title>婚纱摄影预估计算器</title>
     <meta name="viewport"  content="width=device-width,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta http-equiv="Cache-Control" content="no-transform" /> 
@@ -27,139 +27,362 @@ var _hmt = _hmt || [];
 })();
 </script>
     <style type="text/css">
+    .sousj {
+    position: relative;
+    font-size: 0.7rem;
+    height: 7rem;
+    color: #666;
+    background: url(http://img2.youbangkeyi.com/uploads/cover/0bc801e2a31f893a032a7980f090c073.jpg?imageView2/1/w/800/h/600/q/75|imageslim) no-repeat;
+    background-size: cover;
+}
         #gr_zone_ids{cursor:pointer}
         footer{margin-bottom: 0;}
+        .foot {
+    width: 100%;
+    background: #313439;
+    line-height: 1.2rem;
+    display: table;
+    color: #666;
+    padding: 0.8rem 0px;
+    font-size: 0.6rem;
+}
+header .city_box {
+    width: 2.8rem;
+    color: #666;
+    font-weight:initial;
+    display: table-cell;
+    margin-top: 0.35rem;
+    line-height: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    font-size: 0.7rem;
+    overflow: hidden;
+    background:none;
+    background-size: 0.8rem;
+    padding-right: 0.65rem;
+    white-space: pre;
+    text-overflow: ellipsis;
+    float: left;
+    margin-left: .5rem;
+}
+.lian img {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    margin: 0 15%;
+}
+        .aa_hide{bottom: 0}
+        .bottom_slide_box{position: initial;}
+        .sousj{height: 5rem}
+        body{    background: #FFF;}
+        .bottom_slide_box {
+    width: 92%;
+    background: #FFF;
+    border: 1px solid #E4E4E4;
+    margin: 4% 4%;
+    padding-bottom: 20px;
+    border-radius: 16px;
+    box-shadow: 0px 2px 13px -1px #c7c7c7;
+    font-family: "Microsoft Yahei", Tahoma, Arial, sans-serif;
+}
+.bottom_slide_box .calculator_box {
+    width: 100%;
+    background: #fff;
+    margin: 0 auto;
+    overflow: hidden;
+    background: rgba(255,255,255,.97);
+    position: relative;
+    border-radius: 16px;
+}
+.bottom_slide_box .calculator_box .select_b h2 span {
+    font-size: .6rem;
+    color: #999;
+    font-weight: normal;
+    display: block;
+    line-height: 2.2rem;
+    text-align: center;
+}
+.bottom_slide_box .calculator_box .select_b {
+    width: 86%;
+    margin: 0rem 7% 0;
+}
     </style>
 </head>
 <body>
 <header>
-<div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
-<div class="logo"><img src="/images/logo.png" alt="有榜网"></div>
+<div class="city_box" id="gr_zone_ids" data-id="110100"><a href="/">< 首页</a></div>
+<div class="logo"><img src="/images/logo.png"></div>
 <a class="zxdh" href="tel:18500905723"></a>
 </header>
+
 <div class="content">
 <div class="bg2"></div>
     <div class="sousj">
-    <div class="sy-title"><h1><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜</h1><span>数据更新:<?php echo date("Y年m月d日");?></span></div>
+    <div class="sy-title"><h1>10秒估算拍婚纱照价格</h1><span>今日已有3098人计算</span></div>
     </div>
     </div>
-    <div id="leftTabBox" class="tabBox">
-        <div class="hd">
-            <ul>
-            <?php if($type=='sheying') { ?>
-                           <li class="on"><a href="/<?php echo $pycity;?>/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚纱摄影</a></li>
-                    <?php } else { ?>
-							<li><a href="/<?php echo $pycity;?>/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚纱摄影</a></li>
-                    <?php } ?>
-                      <?php if($type=='sheying') { ?>
-                          <li ><a href="/<?php echo $pycity;?>/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚礼策划</a></li>
-                    <?php } else { ?>
-                          <li class="on"><a href="/<?php echo $pycity;?>/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚礼策划</a></li>
-                    <?php } ?>
-            </ul>
-        </div>
-        <div class="bd">
-            <div class="list_box">
-               <div class="zysmi"><span>全网数据监测  排名客观权威</span>中国婚嫁产业  大数据服务商<em><a href="http://www.youbangkeyi.com/guize.html" target="_blank">排名算法</a></em></div>
-                <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
 
-                    <?php if(!empty($spread)) foreach($spread as $k => $v) { ?>
-                    <div class="pic_box bdtj">
-                        <!--<?php if($v['isVip']==2) { ?>
-                                <div class="huiyuan"></div>
-                            <?php } ?>-->
-                        <div class="num_txt">
-                            <div class="tit_box">
-                                <div class="title"><span class="icot1"></span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span>人均消费 ¥<?php echo $v['price'];?></span><span><?php echo $v['area'];?></span><span class="fmr f40"><?php echo $v['spreadcontent'];?></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pic txtCtr">
-			                <?php $i = 0;?>
-                            <?php foreach($v['taoxi'] as $v2) { if($i++ >2) break;  ?>
-                            <?php if(isset($v2['cover'][0])) { ?>
-                            <div class="img">
-                                <a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
-                                    <span>
-                                        <?php if(strpos($v2['cover'][0],'http') === false) {?>
-                                        <img src="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim">
-                                        <?php } else {?>
-                                        <img src="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
-                                        <?php } ?>
-                                        <em>¥<?php echo $v2['currentPrice'];?></em>
-                                    </span>
-                                </a>
-                            </div>
-                            <?php } ?>
-                            <?php } ?>
-                        </div>
-                        <?php if(strlen($v['package'])>2) { ?>
-                        <div class="yuyue">
-                            <i></i><span><?php echo $v['package'];?></span>
-                            <a class="discount-btn" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">去看看</a>
-                        </div><?php } ?>
-                        <div class="daodian"><span class="icot2"></span>
-                            <a class="sybj" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看商家详情</a>
-                        </div>
-                    </div>
-                    <?php } ?><?php foreach($tenants as $k => $v) { ?>
-                        <div class="pic_box">
-                            <!--<?php if($v['isVip']==2) { ?>
-                                    <div class="huiyuan"></div>
-                                <?php } ?>-->
-                            <div class="num_txt">
-                                <div class="tit_box">
-                                    <div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                    <div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均消费 ¥<?php echo $v['price'];?></span><span class="fmr"><?php echo $v['area'];?></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pic txtCtr">
-                                <?php foreach($v['taoxi'] as $v2) { ?>
-                                <?php if(isset($v2['cover'][0])) { ?>
-                                <div class="img">
-                                    <a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
-                                        <span>
-                                            <?php if(strpos($v2['cover'][0],'http') === false) {?>
-                                            <img src="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/250/q/75":'imageView2/1/w/464/h/387/q/75';?>|imageslim" alt="">
-                                            <?php } else {?>
-                                            <img src="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim"  alt="">
-                                            <?php } ?>
-                                            <em>¥<?php echo $v2['currentPrice'];?></em>
-                                        </span>
-                                    </a>
-                                </div>
-                                <?php } ?>
-                                <?php } ?>
-                            </div>
-                            <?php if(strlen($v['package'])>2) { ?>
-                            <div class="yuyue">
-                                <i></i><span><?php echo $v['package'];?></span>
-                                <a class="discount-btn" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">去看看</a>
-                            </div><?php } ?>
-                            <div class="txt_box txtCtr">
-                                <div class="txt">
-                                    <p class="blue"><?php echo $v['day30s'];?></p>
-                                    <em>品牌搜索人数</em>
-                                </div>
-                                <div class="txt">
-                                    <p class="blue"><?php echo ($v['allcy'] + $v['allce']);?></p>
-                                    <em>全网评论人数</em>
-                                </div>
-                                <div class="txt">
-                                    <p class="blue"><?php $c = $v['allcy']+$v['allce'];$c= $c==0?1:$c ;  echo intval($v['allcy']/$c*10000)/100;?>%</p>
-                                    <em>全网好评率</em>
-                                </div>
-                            </div>
-                            <div class="daodian">
-                                <a class="sybj" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看商家详情</a>
-                            </div>
-                        </div>
-                        <?php } ?>
-                </section>
+ <script type="text/javascript">
+   
+    function showaa(obj)
+    {
+      //var obj_parent=obj.parentNode;
+      var obj_parent=obj.parentElement
+     
+      if(document.getElementById("12").className=="bottom_slide_box aa_show")
+      {
+        document.getElementById("12").className="bottom_slide_box aa_hide";
+      }
+      else
+      {
+        document.getElementById("12").className="bottom_slide_box aa_show";
+      }
+    }
+    
+  </script>
+
+
+<div id="12" class="bottom_slide_box aa_hide">
+  <div onclick="showaa(this)" class="click_are"></div>
+  <!-- <div class="go_shake_img"></div> -->
+  <div class="calculator_box">
+    <div class="select_b">
+      <h2><span>你拍婚纱照的预算</span></h2>
+        <div class="num-frame">
+                <div class="ndys"><p>您的婚纱照预算为</p></div>
+                <div class="yuan"><p>元</p></div>
+                <div class="num-window clearfix clear">
+        <em id="setnum">?</em>
+                </div>
             </div>
-                                <div class="tittp">有榜数据说明</div>
+
+            <div class="form_line">
+          <div class="element triangle">
+                <select name="city" id="xuqiu" class="first_line">
+                  <option value="南京">--南京--</option>
+
+                  <option value="北京">北京</option>
+                  <option value="天津">天津</option>
+                  <option value="沈阳">沈阳</option>
+                  <option value="大连">大连</option>
+                  <option value="哈尔滨">哈尔滨</option>
+                  <option value="石家庄">石家庄</option>
+
+                  <option value="上海">上海</option>
+                  <option value="杭州">杭州</option>
+                  <option value="厦门">厦门</option>
+                  <option value="南京">南京</option>
+                  <option value="苏州">苏州</option>
+                  <option value="无锡">无锡</option>
+                  <option value="宁波">宁波</option>
+                  <option value="福州">福州</option>
+                  <option value="青岛">青岛</option>
+                  <option value="合肥">合肥</option>
+
+                  <option value="成都">成都</option>
+                  <option value="重庆">重庆</option>
+                  <option value="长沙">长沙</option>
+                  <option value="郑州">郑州</option>
+                  <option value="西安">西安</option>
+                  <option value="武汉">武汉</option>
+                  <option value="总监级">广州</option>
+                  <option value="资深级">深圳</option>
+              </select>
+          </div>
+      </div>
+      <div class="form_line">
+          <div class="element triangle">
+                  <select name="shangjia" id="xuqiu" class="first_lin">
+                  <option value="">--选择商家类型--</option>
+                  <option value="资深级">中端商家</option>
+                  <option value="总监级">高端商家</option>
+              </select>
+                <select name="zaoxing" id="hotel" class="first_lin fr">
+                  <option value="">--选择场景数量--</option>
+                  <option data-value="3" value="3">3个</option>
+                  <option data-value="4" value="4">4个</option>
+                  <option data-value="5" value="5">5个</option>
+                  <option data-value="6" value="6">6个</option>
+                  <option data-value="7" value="7">6以上</option>
+              </select>
+          </div>
+      </div>
+      <div class="form_line">
+          <div class="element">
+              <div class="text_wrap">
+                   <select  name="sheying"  id="xuqiu" class="first_lin">
+                  <option value="">--选择摄影师--</option>
+                  <option value="资深级">资深级</option>
+                  <option value="总监级">总监级</option>
+                  <option value="资深级">首席摄影师</option>
+              </select>
+               <select name="huazhuang" id="xuqiu" class="first_lin fr">
+                  <option value="">--选择化妆师--</option>
+                  <option value="资深级">资深级</option>
+                  <option value="总监级">总监级</option>
+                  <option value="资深级">首席化妆师</option>
+              </select>
+              </div>
+          </div>
+      </div>
+      <div class="form_line">
+          <div class="element triangle">
+              <select name="count" id="xuqiu" class="first_line">
+                  <option value="">--请选择精修张数--</option>
+                  <option value="40张">40张</option>
+                  <option value="45张">45张</option>
+                  <option value="50张">50张</option>
+                  <option value="55张">55张</option>
+                  <option value="60张">60张</option>
+                  <option value="65张">65张</option>
+                  <option value="70张">70张</option>
+                  <option value="75张">75张</option>
+                  <option value="80张">80张</option>
+                  <option value="85张">85张</option>
+                  <option value="90张">90张</option>
+                  <option value="95张">95张</option>
+                  <option value="100张">100张</option>
+              </select>
+          </div>
+      </div>
+      <div class="form_line" id="zxys_phoneInput">
+          <div class="element">
+              <div class="text_wrap">
+                  <input id="phonenumber" placeholder="输入手机号，短信接收报价结果" type="text" class="text phonetext" name="phone">
+                  <em class="text_lbl"></em>
+              </div>
+          </div>
+      </div>
+          <div class="shuom">
+          预算结果根据用户真实消费大数据分析计算得出。
+          </div>
+    </div>
+    <div class="result_b">
+      <button  href="javascript:void(0)"  class="star_calculator">
+        开始计算
+      </button>
+      <span></span>
+    </div>
+
+  </div>
+</div>
+
+<div id="overlay-bd" class="overlay-bd">
+<div class="t8s-alert-close" href="javascript:void(0)" onclick="two()"><i class="t8s-alert-i"></i></div>
+<div class="t8s-content-box">
+<div class="t8s-fruit-price">
+<p class="column">您的婚纱照预算为</p>
+<p class="jaojia">
+<span id='setnumall'>4738</span>
+<i>元</i></p></div>
+<div class="t8s-price-list">
+<ul><li class="clearfix"><span class="t8s-budget-span">场景费用：</span><span><em id='zaoxingprice'>0</em>元</span></li>
+<li class="clearfix"><span class="t8s-budget-span">摄影师费用：</span><span><em id='sheyingprice'>0</em>元</span></li>
+<li class="clearfix"><span class="t8s-budget-span">化妆造型：</span><span><em id='huazhuangprice'>0</em>元</span></li>
+<li class="clearfix"><span class="t8s-budget-span">精修费用：</span><span><em id=jinxiuprice>0</em>元</span></li>
+
+</ul></div><div class="holiday-text-t6s"><p>*报价有疑问？稍后有榜网将致电为您解答。</p><p>*报价为大数据报价，实际以推荐商家为准。</p></div></div>
+</div>
+ <div id="fade" class="black_overlay"> 
+  </div>
+ <script>
+   function one(){
+    document.getElementById('overlay-bd').style.display='block';
+    document.getElementById('fade').style.display='block'
+   }
+   function two(){
+    document.getElementById('overlay-bd').style.display='none';
+    document.getElementById('fade').style.display='none'
+   }
+   </script> 
+<script type="text/javascript">
+  var min = 3000, max = 20000;
+  setInterval(displayNum,100);
+  function displayNum(){
+    var temp_min = min < 10 ? "00" : (min < 10 ? "0"+min : min);
+    var temp_max = max < 100 ? "0"+max : max;
+    document.getElementById("setnum").innerHTML = temp_min;
+    min = min + 4356;
+    if(min > max){
+      min=0;
+    }
+  }
+
+  $(function() {
+    $(".star_calculator").click(function(){
+
+      var city = $("select[name=city]").val();
+      console.log(city);
+      if(!city) {
+        showMessage("请选择城市");
+        return false ;
+      } 
+      var shangjia = $("select[name=shangjia]").val();
+      console.log(shangjia);
+      if(!shangjia){
+        showMessage("请选择商家类型")
+        return false ;
+      }
+      var zaoxing = $("select[name=zaoxing]").val()
+      if(!zaoxing) {
+        showMessage("请选择造型数量");
+        return false ;
+      }
+
+      var sheying = $("select[name=sheying]").val();
+      if(!sheying) {
+        showMessage("请选择摄影师");
+        return false ;
+      }
+      
+      var huazhuang = $("select[name=huazhuang]").val()
+      if(!huazhuang) {
+        showMessage("请选择化妆师");
+        return false ;
+      }
+
+      var count = $("select[name=count]").val();
+      if(!count) {
+        showMessage("请选择精修数量");
+        return false ;
+      }
+
+      var mobile = $("input[name=phone]").val();
+      if(!mobile) {
+        showMessage("请填写手机号码");
+        return false ;
+      }
+      var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;  
+      if(!myreg.test(mobile)) {
+        showMessage("请填写正确的手机号码");
+        return false ;
+      }
+
+      $.post(
+        "/get/sheyingprice", 
+        "city="+city+"&shangjia=" + shangjia+ "&zaoxing="+zaoxing+"&sheying="+
+        sheying+"&huazhuang="+huazhuang+"&count="+count+"&mobile="+mobile, 
+        function (res, status, xhr) {
+            console.log(res);
+            $("#zaoxingprice").html(res.zaoxingprice);
+            $("#sheyingprice").html(res.sheyingprice);
+            $("#huazhuangprice").html(res.huazhuangprice);
+            $("#jinxiuprice").html(res.cpprice);
+            $("#setnumall").html(res.allprice);
+        }, 
+        'json'
+      );
+      one()
+    
+    })
+    
+    function showMessage(message){
+        alert(message);
+    }
+});
+
+</script>
+  <div class="tittp">有榜数据说明</div>
 <div id="fugai" class="time-box">
    <div class="txtshuju lft fgchs">
                     <span class="blue">200+ </span>数据覆盖城市</div>
@@ -174,67 +397,7 @@ var _hmt = _hmt || [];
                     <span class="blue">40,000 </span>对结婚新人</div>
 <div class="txtshuju lft fgpinglun">
                     <span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
-            <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">所属城市:<?php echo $city;?></span></div></div>
-        </div>
-<footer class="txtCtr">
-    <?php if($type=='sheying') { ?>
-                  <div class="tuijian"><h3>热门城市婚纱摄影榜单<span>(城市排名不分先后)</span></h3><ul>
-                     <li><a target="_blank" href="/beijing/sheying">北京婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/tianjin/sheying">天津婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/shenyang/sheying">沈阳婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/dalian/sheying">大连婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/haerbin/sheying">哈尔滨婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/shijiazhuang/sheying">石家庄婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/shanghai/sheying">上海婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/hangzhou/sheying">杭州婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/xiamen/sheying">厦门婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/nanjing/sheying">南京婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/suzhou/sheying">苏州婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/wuxi/sheying">无锡婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/ningbo/sheying">宁波婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/fuzhou/sheying">福州婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/qingdao/sheying">青岛婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/hefei/sheying">合肥婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/chengdu/sheying">成都婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/chongqing/sheying">重庆婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/changsha/sheying">长沙婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/zhengzhou/sheying">郑州婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/xian/sheying">西安婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/wuhan/sheying">武汉婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/guangzhou/sheying">广州婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/shenzhen/sheying">深圳婚纱摄影排名</a></li>
-
-</ul></div> 
-                    <?php } else { ?>
-                     <div class="tuijian"><h3>热门城市婚礼策划榜单<span>(城市排名不分先后)</span></h3><ul>
-                     <li><a target="_blank" href="/beijing/hunli">北京婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/tianjin/hunli">天津婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/shenyang/hunli">沈阳婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/dalian/hunli">大连婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/haerbin/hunli">哈尔滨婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/shijiazhuang/hunli">石家庄婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/shanghai/hunli">上海婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/hangzhou/hunli">杭州婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/xiamen/hunli">厦门婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/nanjing/hunli">南京婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/suzhou/hunli">苏州婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/wuxi/hunli">无锡婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/ningbo/hunli">宁波婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/fuzhou/hunli">福州婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/qingdao/hunli">青岛婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/hefei/hunli">合肥婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/chengdu/hunli">成都婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/chongqing/hunli">重庆婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/changsha/hunli">长沙婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/zhengzhou/hunli">郑州婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/xian/hunli">西安婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/wuhan/hunli">武汉婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/guangzhou/hunli">广州婚礼策划排名</a></li>
-                    <li><a target="_blank" href="/shenzhen/hunli">深圳婚礼策划排名</a></li>
-
-</ul></div> 
-                    <?php } ?>
-
+<div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div></div>
  <div class="foot">
         <div class="foots">
             <span><a href="/about.html">关于有榜</a>|<a target="_blank" href="http://youbangkeyi.mikecrm.com/E09npdx">商务合作</a>|<a target="_blank" href="/mianze.html">免责说明</a>|<a href="/shuoming.html" target="_blank">服务说明</a>|<a target="_blank" href="//c.youbangkeyi.com/images/yingyezhizhao.jpeg">营业执照</a></span>
