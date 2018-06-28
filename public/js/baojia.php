@@ -16,6 +16,8 @@
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/main.js"></script>
     <script type="text/javascript" src="http://www.youbangkeyi.com/js/foot.js?21"></script>
+        <script type="text/javascript" src="http://www.youbangkeyi.com/js/index.js?21"></script>
+            <script type="text/javascript" src="http://www.youbangkeyi.com/js/data.js?21"></script>
     <script type="text/javascript" src="/js/more.js?v1"></script>
     <script>
 var _hmt = _hmt || [];
@@ -32,12 +34,12 @@ var _hmt = _hmt || [];
     font-size: 0.7rem;
     height:6rem;
     color: #666;
-    background:url(http://img2.youbangkeyi.com/4c3/0c5/4de/4c30c54d5e294dedaa772eddde11524f.jpg) no-repeat;
+    background:url(http://c.youbangkeyi.com/baojia/438e2638ad76a48db6cb490f47f3f9dc.png) no-repeat;
     background-size: cover;
 }
 .bg2 {
     background: #000;
-    opacity: 0.5;
+    opacity: 0;
     filter: alpha(opacity=50);
     position: absolute;
     left: 0;
@@ -100,7 +102,7 @@ header .city_box {
     width: 96%;
     background: #FFF;
     border: 1px solid #E4E4E4;
-    margin:2%;
+    margin: 4% 2%;
     padding-bottom: 20px;
     border-radius: 16px;
     box-shadow: 0px 2px 13px -1px #c7c7c7;
@@ -117,7 +119,7 @@ header .city_box {
 }
 .bottom_slide_box .calculator_box .select_b h2 span {
   position: relative;
-    font-size: .65rem;
+    font-size: .6rem;
     color: #666;
     font-weight: normal;
     display: block;
@@ -146,7 +148,7 @@ header .city_box {
 .bottom_slide_box .calculator_box .select_b h2 span:before, .bottom_slide_box .calculator_box .select_b h2 span:after {
     position: absolute;
     top: 1.25rem;
-    width: 15%;
+    width: 25%;
     height: 1px;
     content: ' ';
     border-top: 1px solid #E3E3E3;
@@ -238,7 +240,7 @@ header .city_box {
 <div class="content">
 <div class="bg2"></div>
     <div class="sousj">
-    <div class="sy-title"><h1>南京拍婚纱照价格计算器</h1><span>10秒快速算出你拍婚纱照多少钱</span></div>
+    <div class="sy-title"><h1>南京拍婚纱照价格计算器</h1><span>计算结果根据大数据分析得出</span></div>
     </div>
     </div>
 
@@ -265,7 +267,7 @@ header .city_box {
 <div id="12" class="bottom_slide_box aa_hide">
   <div class="calculator_box">
     <div class="select_b">
-      <h2><span>今日已有<em class="red">1067人</em>免费计算</span></h2>
+      <h2><span>你拍婚纱照的预算</span></h2>
         <div class="num-frame">
                 <div class="ndys"><p>您的婚纱照预算为</p></div>
                 <div class="yuan"><p>元</p></div>
@@ -343,20 +345,22 @@ header .city_box {
       <div class="form_line" id="zxys_phoneInput">
           <div class="element">
               <div class="text_wrap">
-                  <input id="phonenumber" placeholder="请输入手机号，短信接收报价结果" type="text" class="text phonetext" name="phone">
+                  <input id="phonenumber" placeholder="输入手机号，短信接收报价结果" type="text" class="text phonetext" name="phone">
                   <em class="text_lbl"></em>
               </div>
           </div>
       </div>
+          <div class="shuom">
+          预算结果根据用户真实消费大数据分析计算得出。
+          </div>
     </div>
     <div class="result_b">
       <button  href="javascript:void(0)"  class="star_calculator">
         开始计算
       </button>
+      <span></span>
     </div>
-          <div class="shuom">
-          预算结果根据用户真实消费大数据分析计算得出。
-          </div>
+
   </div>
 </div>
 
@@ -487,11 +491,12 @@ header .city_box {
 <div class="txtshuju lft fgweidu">
                     <span class="blue">18 </span>数据统计维度</div>
 <div class="txtshuju lft fgxinren">
-                    <span class="blue">40,000 </span>对新人喜好数据</div>
+                    <span class="blue">40,000 </span>对结婚新人</div>
 <div class="txtshuju lft fgpinglun">
                     <span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
 
                     <div class="case_box">
+                      <div class="tittx">2018最新客片案例欣赏</div>
     <div id="picScroll" class="picScroll txtCtr">
         <div class="bd">
             <ul>
@@ -836,6 +841,18 @@ header .city_box {
             return false ;
         });
     });
+        // 数据初始化
+    var Obj = $('#yuyuea').barrage({
+        data : data, //数据列表
+        row : 1,   //显示行数
+        time : 5000, //间隔时间
+        gap : 10,    //每一个的间隙
+        position : 'fixed', //绝对定位
+        direction : 'bottom left', //方向
+        ismoseoverclose : true, //悬浮是否停止
+        height : 30, //设置单个div的高度
+    })
+    Obj.start(); 
 </script>
 </div>
 </body>

@@ -1182,13 +1182,12 @@ header h1 img{margin-top: 0.25rem;}
     margin:0.5rem 7% 0;
 }
 .bottom_slide_box .calculator_box .result_b {
-    width: 6.3rem;
+    width:14.798rem;
+    margin-top: 0.7rem;
     background: #FFF;
     height: 2rem;
     bottom:-0.5rem;
     margin-right: -5rem;
-    border: 1px solid #faafbc;
-    border-radius: 0.5rem;
     position: relative;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1271,11 +1270,11 @@ option {
     padding: 0px 2px 1px;
 }
 .bottom_slide_box .calculator_box .result_b .star_calculator {
-    width: 6rem;
-    height: 1.8rem;
-    background: #ed4a57;
+    width:14.798rem;
+    height:2rem;
+    background: #FF4040;
     text-align: center;
-    border-radius: 0.5rem;
+    border-radius:5px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -1289,23 +1288,6 @@ option {
     color: #fff;
     z-index: 15;
     cursor: pointer;
-}
-.bottom_slide_box .calculator_box .result_b span {
-     width: 5rem;
-    height: 1.5rem;
-    border-radius: 0.5rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    -webkit-animation: scale-three 1.5s ease infinite;
-    -moz-animation: scale-three 1.5s ease infinite;
-    -o-animation: scale-three 1.5s ease infinite;
-    animation: scale-three 1.5s ease infinite;
-    background-color: #ed4a57;
-    opacity: 0.15;
-    z-index: 12;
-    top: 12%;
-    left: 10%;
 }
 @keyframes scale-three{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.5);opacity:0}}
 .bottom_slide_box .calculator_box .get_result h2 {

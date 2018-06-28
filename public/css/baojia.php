@@ -100,7 +100,7 @@ header .city_box {
     width: 96%;
     background: #FFF;
     border: 1px solid #E4E4E4;
-    margin:2%;
+    margin: 4% 2%;
     padding-bottom: 20px;
     border-radius: 16px;
     box-shadow: 0px 2px 13px -1px #c7c7c7;
@@ -117,7 +117,7 @@ header .city_box {
 }
 .bottom_slide_box .calculator_box .select_b h2 span {
   position: relative;
-    font-size: .65rem;
+    font-size: .7rem;
     color: #666;
     font-weight: normal;
     display: block;
@@ -348,15 +348,16 @@ header .city_box {
               </div>
           </div>
       </div>
+          <div class="shuom">
+          预算结果根据用户真实消费大数据分析计算得出。
+          </div>
     </div>
     <div class="result_b">
       <button  href="javascript:void(0)"  class="star_calculator">
         开始计算
       </button>
     </div>
-          <div class="shuom">
-          预算结果根据用户真实消费大数据分析计算得出。
-          </div>
+
   </div>
 </div>
 
@@ -487,11 +488,12 @@ header .city_box {
 <div class="txtshuju lft fgweidu">
                     <span class="blue">18 </span>数据统计维度</div>
 <div class="txtshuju lft fgxinren">
-                    <span class="blue">40,000 </span>对新人喜好数据</div>
+                    <span class="blue">40,000 </span>对结婚新人</div>
 <div class="txtshuju lft fgpinglun">
                     <span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
 
                     <div class="case_box">
+                      <div class="tittx">2018最新客片案例欣赏</div>
     <div id="picScroll" class="picScroll txtCtr">
         <div class="bd">
             <ul>
