@@ -162,7 +162,7 @@ class IndexController extends Controller
                 ->where("order_city",'<','50')
                 ->orderby("order_city",'asc')
 		        ->where("piccount",">","0")
-                ->limit(4)
+                ->limit(8)
                 ->get()
                 ->toArray();
 
@@ -917,6 +917,7 @@ class IndexController extends Controller
     }
 
     function getSpread($tenants){
+        return ;
         $this->data['spread'] = YfcTenants::where('positionCity', '=',$tenants['positionCity'])
             ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
             ->where('shoptype',$tenants['shoptype'])
