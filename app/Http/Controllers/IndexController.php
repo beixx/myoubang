@@ -41,7 +41,40 @@ class IndexController extends Controller
 
     }
 
+    public function baojia($name) {
 
+        $city = Config::get('city.'.$name);
+
+        if(!$city) {
+            return Redirect::to('/');
+        }
+        $this->data['pycity'] = $name;
+        $this->data['city'] = $city;
+
+        $tenants = YfcTenants::where([
+            'positionCity' => $city,
+            "shoptype" =>"婚纱摄影",
+            'isVip' => 2
+        ])->get();
+
+        if(empty($tenants[0])) {
+            $pic = [];
+        }
+        else{
+            $tid = [];
+            foreach($tenants as $v) {
+                $tid[] = $v['id'];
+            }
+            $pic = YfcTenantsPic::wherein("tenantsId",$tid)->orderby("id","desc")->limit(3)->get()->toArray();
+            foreach( $pic as $k =>$v) {
+                $pic[$k]['cover'] = json_decode($v['cover'],true);
+            }
+        }
+
+        $this->data['pic'] = $pic;
+        $this->data['ismobile'] = $this->ismobile;
+        return view('front/baojia', $this->data);
+    }
     public function index($name = 'beijing' ,$id = 'sheying' )
     {
         # 过滤非法的url
@@ -839,12 +872,13 @@ class IndexController extends Controller
             $huazhuang = 1.5;
         }
         $huazhuangprice = intval($huazhuang * 21.5 * $price* $sheyingpop /100);
+        $count = intval($count);
 
         if($shangjia == 4.3) {
             $cpprice = intval($price * 0.54  * $count/100) ;
         }
         else {
-            $cpprice = intval($price * 0.86 * $count / 100);
+            $cpprice = intval($price * 0.86 * $count);
         }
         $allprice  = $zaoxingprice + $sheyingprice + $huazhuangprice + $cpprice  ;
 
@@ -1035,5 +1069,7 @@ class IndexController extends Controller
         $arr = json_decode($ret,true);
         return $arr;
     }
+
+
 
 }
