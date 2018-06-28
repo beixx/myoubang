@@ -474,9 +474,9 @@
                     <?php foreach($pic as $v) { ?>
                     <li>
                         <div class="anli_touxiang">
-                            <img src="//img2.youbangkeyi.com/uploads/cover/0bc801e2a31f893a032a7980f090c073.jpg?imageView2/1/w/300/h/300/q/75|imageslim">
+                            <img src="//img2.youbangkeyi.com/<?php echo $v['logo'];?>?imageView2/1/w/300/h/300/q/75|imageslim">
                         </div>
-                        <p><a href="/kpdetail/<?php echo $v['id'];?>"><?php echo $v['picName'];?></a></p>
+                        <p><a href="/kpdetail/<?php echo $v['id'];?>"><?php echo $v['name'];?></a></p>
                         <span class="anli_month">
                             <em class="fl">
                                 发布于<?php echo date("m-d H:i",$v['created_at']);?>

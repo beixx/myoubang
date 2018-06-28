@@ -65,7 +65,11 @@ class IndexController extends Controller
             foreach($tenants as $v) {
                 $tid[] = $v['id'];
             }
-            $pic = YfcTenantsPic::wherein("tenantsId",$tid)->orderby("id","desc")->limit(3)->get()->toArray();
+            $pic = YfcTenantsPic::select("yfc_tenants_pic.cover","yfc_tenants_pic.created_at","yfc_tenants_pic.showcount","yfc_tenants_pic.id","yfc_tenants.logo","yfc_tenants.name")
+                ->leftjoin("yfc_tenants","yfc_tenants.id","=","yfc_tenants_pic.tenantsId")
+                ->wherein("tenantsId",$tid)
+                ->orderby("id","desc")
+                ->limit(3)->get()->toArray();
             foreach( $pic as $k =>$v) {
                 $pic[$k]['cover'] = json_decode($v['cover'],true);
             }
