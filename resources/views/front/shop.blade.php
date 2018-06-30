@@ -119,6 +119,7 @@ var _hmt = _hmt || [];
 <span class="jiangbei">排名客观权威</span>
 </div>
 <div class="info-box">
+<div class="titleqs"><i>优惠信息</i><span class="fa">预约领取优惠</span></div>
 <a id="dateShow" class="yuyue">
                 <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?><p>距离结束:<em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>:<em class="date-tiem-span m">00</em>:<em class="date-s-span s">00</em></p></span>
 			<button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>

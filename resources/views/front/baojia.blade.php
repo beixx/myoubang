@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title>婚纱摄影预估计算器</title>
+    <title><?php echo $city;?>婚纱摄影预估计算器</title>
     <meta name="viewport" content="width=device-width,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta http-equiv="Cache-Control" content="no-transform"/>
@@ -33,10 +33,17 @@
             font-size: 0.7rem;
             height: 6rem;
             color: #666;
-            background: url(http://img2.youbangkeyi.com/4c3/0c5/4de/4c30c54d5e294dedaa772eddde11524f.jpg) no-repeat;
+            background:url(http://c.youbangkeyi.com/baojia/4c30c54d5e294dedaa772eddde11524f.jpg) 0 -3.5rem no-repeat;
             background-size: cover;
         }
-
+.txtshuju {
+    width: 38%;
+    padding: 3% 0% 3% 12%;
+    text-align: left;
+    color: #666;
+    font-size: 0.6rem;
+    line-height: 0.8rem;
+}
         .bg2 {
             background: #000;
             opacity: 0.5;
@@ -66,27 +73,6 @@
             padding: 0.8rem 0px;
             font-size: 0.6rem;
         }
-
-        header .city_box {
-            width: 2.8rem;
-            color: #666;
-            font-weight: initial;
-            display: table-cell;
-            margin-top: 0.35rem;
-            line-height: 1.5rem;
-            height: 1.5rem;
-            text-align: center;
-            font-size: 0.7rem;
-            overflow: hidden;
-            background: none;
-            background-size: 0.8rem;
-            padding-right: 0.65rem;
-            white-space: pre;
-            text-overflow: ellipsis;
-            float: left;
-            margin-left: .5rem;
-        }
-
         .lian img {
             width: 70%;
             height: auto;
@@ -115,7 +101,7 @@
         }
 
         .sousj {
-            height: 6rem
+            height:34rem
         }
 
         body {
@@ -123,16 +109,21 @@
         }
 
         .bottom_slide_box {
-            width: 96%;
-            background: #FFF;
-            border: 1px solid #E4E4E4;
-            margin: 2%;
-            padding-bottom: 20px;
-            border-radius: 16px;
-            box-shadow: 0px 2px 13px -1px #c7c7c7;
-            font-family: "Microsoft Yahei", Tahoma, Arial, sans-serif;
+    width: 92%;
+    background: #FFF;
+    margin: 2% 4%;
+    padding-bottom: 20px;
+    border-radius: 16px;
+    box-shadow: 0px 2px 13px -1px #c7c7c7;
+    font-family: "Microsoft Yahei", Tahoma, Arial, sans-serif;
+    margin-top: -30rem;
         }
-
+.ygxm {
+    padding: 0.5rem 0px 0.5rem;
+    border: 2px solid #e7e7e7;
+    width: 99%;
+    margin: 0 auto 0.2rem;
+}
         .bottom_slide_box .calculator_box {
             width: 100%;
             background: #fff;
@@ -142,15 +133,16 @@
             position: relative;
             border-radius: 16px;
         }
-
         .bottom_slide_box .calculator_box .select_b h2 span {
-            position: relative;
-            font-size: .65rem;
-            color: #666;
-            font-weight: normal;
-            display: block;
-            line-height: 2.5rem;
-            text-align: center;
+
+     position: relative;
+    font-size: .6rem;
+    color: #666;
+    font-weight: normal;
+    display: block;
+    line-height: 0.8rem;
+    text-align: center;
+    margin-bottom: 0.8rem;
         }
 
         .bottom_slide_box .calculator_box .select_b {
@@ -168,7 +160,11 @@
             margin-left: -1.73rem;
             margin-top: 0.5rem;
         }
-
+.bottom_slide_box .calculator_box .select_b h2 span p{line-height: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0.8rem;}
         .bottom_slide_box .calculator_box .select_b h2 span:before {
             left: 0.5rem;
         }
@@ -179,7 +175,7 @@
 
         .bottom_slide_box .calculator_box .select_b h2 span:before, .bottom_slide_box .calculator_box .select_b h2 span:after {
             position: absolute;
-            top: 1.25rem;
+            top:0.8rem;
             width: 15%;
             height: 1px;
             content: ' ';
@@ -188,8 +184,6 @@
     </style>
 </head>
 <body>
-<div class="bgDiv"></div>
-
 <div class="main">
     <header>
         <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
@@ -198,9 +192,7 @@
     </header>
 
     <div class="content">
-        <div class="bg2"></div>
         <div class="sousj">
-            <div class="sy-title"><h1>南京拍婚纱照价格计算器</h1><span>10秒快速算出你拍婚纱照多少钱</span></div>
         </div>
     </div>
 
@@ -224,7 +216,8 @@
     <div id="12" class="bottom_slide_box aa_hide">
         <div class="calculator_box">
             <div class="select_b">
-                <h2><span>今日已有<em class="red">1067人</em>免费计算</span></h2>
+                <h2>
+                <span><p><?php echo $city;?>婚纱摄影报价计算器</p>今日已有<em class="red">1067人</em>免费计算  准确度高达98%</span></h2>
                 <div class="num-frame">
                     <div class="ndys"><p>您的婚纱照预算为</p></div>
                     <div class="yuan"><p>元</p></div>
@@ -232,15 +225,24 @@
                         <em id="setnum">?</em>
                     </div>
                 </div>
-
+                <div class="ygxm"><p><span class="mr1">摄影师费：？元</span><span>化妆师费：？元</span></p>
+                <p><span class="mr1">场景费：？元</span><span>精修费：？元</span></p></div>
                 <div class="form_line">
                     <div class="element triangle">
                         <select name="font-style" id="xuqiu" class="first_line">
-                            <option value="南京">--请选择你喜欢的风格--</option>
-
-                            <option value="北京">韩式风格</option>
-                            <option value="天津">欧美风格</option>
-
+                            <option value="风格">--选择你喜欢的风格--</option>
+                            <option value="韩式唯美风">韩式唯美风</option>
+                            <option value="时尚简约风">时尚简约风</option>
+                            <option value="传统中国风">传统中国风</option>
+                            <option value="城市旅拍风">城市旅拍风</option>
+                            <option value="梦幻海景风">梦幻海景风</option>
+                            <option value="叙事情节风">叙事情节风</option>
+                            <option value="个性搞怪风">个性搞怪风</option>
+                            <option value="夫妻反串风">夫妻反串风</option>
+                            <option value="欧美宫廷风">欧美宫廷风</option>
+                            <option value="清新自然风">清新自然风</option>
+                            <option value="纪实影像风">纪实影像风</option>
+                            <option value="cosplay婚纱照">cosplay婚纱照</option>
                         </select>
                     </div>
                 </div>
@@ -248,11 +250,11 @@
                     <div class="element triangle">
                         <select name="shangjia" id="xuqiu" class="first_lin">
                             <option value="">--选择商家档次--</option>
-                            <option value="资深级">中端商家</option>
-                            <option value="总监级">高端商家</option>
+                            <option value="中端商家">中端商家</option>
+                            <option value="高端商家">高端商家</option>
                         </select>
                         <select name="zaoxing" id="hotel" class="first_lin fr">
-                            <option value="">--拍摄场景数量--</option>
+                            <option value="">--选择场景数量--</option>
                             <option data-value="3" value="3">3个</option>
                             <option data-value="4" value="4">4个</option>
                             <option data-value="5" value="5">5个</option>
@@ -268,13 +270,13 @@
                                 <option value="">--选择摄影师级别--</option>
                                 <option value="资深级">资深级</option>
                                 <option value="总监级">总监级</option>
-                                <option value="资深级">首席摄影师</option>
+                                <option value="首席级">首席摄影师</option>
                             </select>
                             <select name="huazhuang" id="xuqiu" class="first_lin fr">
                                 <option value="">--选择化妆师级别--</option>
                                 <option value="资深级">资深级</option>
                                 <option value="总监级">总监级</option>
-                                <option value="资深级">首席化妆师</option>
+                                <option value="首席级">首席化妆师</option>
                             </select>
                         </div>
                     </div>
@@ -282,7 +284,7 @@
                 <div class="form_line">
                     <div class="element triangle">
                         <select name="count" id="xuqiu" class="first_line">
-                            <option value="">--请选择精修张数--</option>
+                            <option value="">--选择精修张数--</option>
                             <option value="40张">40张</option>
                             <option value="45张">45张</option>
                             <option value="50张">50张</option>
@@ -311,7 +313,7 @@
             </div>
             <div class="result_b">
                 <button href="javascript:void(0)" class="star_calculator">
-                    开始计算
+                    免费快速计算
                 </button>
             </div>
             <div class="shuom">
@@ -444,6 +446,116 @@
         });
 
     </script>
+
+
+<div class="hunshabang">
+<ul>
+ <div class="tittp">北京婚纱摄影榜单TOP50<span class="fa">查看完整榜单</span></div>
+<li style="font-size:12px;"><em style="font-size: 12px;color: #ff4848;">排名</em><span style="font-size: 12px;color: #ff4848;"><a href="/detail/2876" style="color:#ff4848;">商户名称</a></span><em class="jz" style="font-size:12px;color:#ff4848;">得分</em></li>
+<li><em>第1名</em><span><a href="/detail/2882">北京聚焦摄影(世界公园店)</a></span><em class="jz">99.1</em></li>
+<li><em>第2名</em><span><a href="/detail/2876">北京蒙娜丽莎婚纱摄影(总店)</a></span><em class="jz">97.9</em></li>
+<li><em>第3名</em><span><a href="/detail/2892">北京金夫人婚纱摄影(华北总部)</a></span><em class="jz">97.3</em></li>
+<li><em>第4名</em><span><a href="/detail/2879">北京水晶之恋婚纱摄影(世界公园店)</a></span><em class="jz">96.1</em></li>
+<li><em>第5名</em><span><a href="/detail/2875">北京韩国艺匠ARTIZSTUDIO</a></span><em class="jz">95.5</em></li>
+<li><em>第6名</em><span><a href="/detail/2877">北京27°罗马风情婚纱摄影(总部)</a></span><em class="jz">94.9</em></li>
+<li><em>第7名</em><span><a href="/detail/2896">北京香草影堂(朝阳店)</a></span><em class="jz">94.3</em></li>
+<li><em>第8名</em><span><a href="/detail/3087">北京纽约纽约婚纱摄影(西单店)</a></span><em class="jz">93.4</em></li>
+<li><em>第9名</em><span><a href="/detail/3407">北京凤栖梧摄影工作室&lrm;</a></span><em class="jz">91.9</em></li>
+<li><em>第10名</em><span><a href="/detail/2883">北京CD视觉婚纱摄影(总店)</a></span><em class="jz">91.3</em></li>
+<div class="bangdwz"><span><a style="color: #fff" href="/beijing/sheying">查看完整榜单</a></span></div>
+</ul>
+</div>
+<style>
+.hunshabang{
+    width: 100%;
+    display: -webkit-box;
+    background: #FFF;
+    overflow: hidden;
+}
+.hunshabang ul{width: 100%}
+.bangtu {
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%;
+    float: left;
+    height:5rem;
+    text-align: center;
+    line-height:5rem;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: bold;
+    background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1511440695635&di=f01925475f74d1e519d27f7a73cfa652&imgtype=0&src=http%3A%2F%2Fpic6.wed114.cn%2F20160630%2F2016063016535825892636.jpg);
+    background-size: cover;
+}
+.fa{
+        color: #999999;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 0.6rem;
+    float: right;
+    margin-right: 4%;
+}
+.bg1 {
+    background: #000;
+    opacity: .3;
+    filter: alpha(opacity=30);
+    width:100%;
+    height: 120px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.bangdtit {
+    font-size:1.2rem;
+    color: #fff;
+    z-index: 99;
+    position: absolute;
+    bottom: 25px;
+    width:100%;
+    font-weight: 700;
+    height:5rem;
+    left: 50%;
+    top: 50%;
+    margin-left: -50%;
+    text-align: center;
+    margin-top:-2.5rem;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+.hunshabang li, .hunlibang li {
+    line-height:2rem;
+    border-bottom: 1px solid #EFEFEF;
+    padding: 0 4%;
+    width: 92%;
+}
+.hunshabang li em, .hunlibang li em {
+    width:2.5rem;
+    display: inline-block;
+    font-size:0.65rem;
+}
+.hunshabang li span, .hunlibang li span {
+    display: inline-block;
+    font-size:0.65rem;
+}
+.hunshabang li em.jz, .hunlibang li em.jz {
+    width:2rem;
+    display: inline-block;
+    font-size:0.65rem;
+    float: right;
+}
+.bangdwz {
+    width:100%;
+    margin: 0 auto;
+}
+.bangdwz span {
+padding: 0.2rem 2.5rem;
+    margin: 1rem auto;
+    display: table;
+    background-color: #FF4040;
+    color: #FFF  !important;
+}
+</style>
+
+
     <div class="tittp">有榜数据说明</div>
     <div id="fugai" class="time-box">
         <div class="txtshuju lft fgchs">
@@ -466,48 +578,6 @@
         </div>
         <div class="clear"></div>
     </div>
-
-    <div class="case_box">
-        <div id="picScroll" class="picScroll txtCtr">
-            <div class="bd">
-                <ul>
-                    <?php foreach($pic as $v) { ?>
-                    <li>
-                        <div class="anli_touxiang">
-                            <img src="//img2.youbangkeyi.com/<?php echo $v['logo'];?>?imageView2/1/w/300/h/300/q/75|imageslim">
-                        </div>
-                        <p><a href="/kpdetail/<?php echo $v['id'];?>"><?php echo $v['name'];?></a></p>
-                        <span class="anli_month">
-                            <em class="fl">
-                                发布于<?php echo date("m-d H:i",$v['created_at']);?>
-                            </em>
-                            <em class="fr">浏览<?php echo $v['showcount'];?>次</em>
-                        </span>
-                       <span class="img">
-                           <?php foreach($v['cover'] as $v2 ) {  ?>
-                            <a class="yulan  glightbox2" href="//img2.youbangkeyi.com<?php echo $v2;?>">
-                                <img src="//img2.youbangkeyi.com<?php echo $v2;?>?imageView2/1/w/500/h/500/q/75|imageslim" alt=""></a>
-
-                            <?php } ?>
-                       </span>
-                        <div href="javascript:" class="anlibj down anliclick">
-                            获取该案例报价
-                        </div>
-                    </li>
-                    <?php } ?>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <link rel="stylesheet" href="/css/glightbox.css">
-    <script src="/js/glightbox.min.js"></script>
-    <script>
-        var lightbox = GLightbox({selector: 'glightbox0'});
-        var lightbox = GLightbox({selector: 'glightbox1'});
-        var lightbox = GLightbox({selector: 'glightbox2'});
-
-    </script>
     <div class="unit-footer">
         <div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p>
             <p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span
@@ -534,7 +604,7 @@
 
 </div>
 <script type="text/javascript" src="/js/city.js"></script>
-<script type="text/javascript" src="/js/sheyingcity.js"></script>
+<script type="text/javascript" src="/js/jiagecity.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript">
 

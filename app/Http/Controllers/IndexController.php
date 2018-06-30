@@ -843,7 +843,7 @@ class IndexController extends Controller
         $count = Request::get("count");
         $mobile = Request::get("mobile");
 
-        $price = Yfctenants::select(DB::RAW("avg(price) as c"))->where("shoptype",'=','婚纱摄影')->where('city', '=',$city)->where("price",'>',0)->get();
+        $price = Yfctenants::select(DB::RAW("avg(price) as c"))->where("shoptype",'=','婚纱摄影')->where('city', '=',$city)->where("price",'>',1000)->get();
 
         $price = $price[0]['c'];
 
@@ -882,7 +882,7 @@ class IndexController extends Controller
             $cpprice = intval($price * 0.54  * $count/100) ;
         }
         else {
-            $cpprice = intval($price * 0.86 * $count);
+            $cpprice = intval($price * 0.86 * $count/100);
         }
         $allprice  = $zaoxingprice + $sheyingprice + $huazhuangprice + $cpprice  ;
 

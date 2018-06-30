@@ -538,7 +538,7 @@ width: 100%; background: #FFF; margin: 0;
 .suolv {
     width:100%;
     overflow: hidden;
-    height:4.2rem;
+    height:5.5294rem;
     float: left;
 }
 .suolv span img {
@@ -602,7 +602,7 @@ width: 100%; background: #FFF; margin: 0;
     position: relative;
     width:100%;
     overflow: hidden;
-    height:7rem;
+    height:6rem;
     float: left;
 }
 .suolvvr span img {
@@ -1363,17 +1363,17 @@ option {
 .num-frame {
     position: relative;
     height: 2rem;
-    margin: 0 0 .5rem;
-    padding: .3rem .3rem 0;
     border-radius: 4px;
-    background: #fff;
-    background: -moz-linear-gradient(top,#d2d1d1,#fff);
-    background: -webkit-gradient(linear,top,from(#d2d1d1),to(#fff));
-    background: -webkit-linear-gradient(top,#d2d1d1,#fff);
-    background: -o-linear-gradient(top,#d2d1d1,#fff);
-    background: linear-gradient(top,#d2d1d1,#fff);
 }
-
+.ygxm{    padding: 0.5rem 0px 0.5rem;
+    border: 2px solid #e7e7e7;
+    width: 99%;
+    margin: 0 auto;}
+.ygxm p{    font-size: 0.6rem;
+    text-align: center;
+    color: #666;
+    line-height: 0.8rem;}
+.ygxm .mr1{margin-right:1rem;}
 .num-frame .yuan {
     height: 2rem;
     line-height: 3rem;
@@ -1956,9 +1956,9 @@ html, body {
 }
 .shop-index .info-box,.downNav,.bgDiv{width: 740px;}
 .focus_box .focus,.suolvd{height:438px;}
-.suolvvr,.bg1{height:281.5px;}
+.suolvvr,.bg1{height:241.5px;}
 .m-kan{top:4.5rem;}
-.suolv{height: 167.2px;}
+.suolv{height:222.38px;}
 .tishik .suolv{height: 130px;}
 .suolvt{height:222px;}
 .view .hot li{    width:20%;}
