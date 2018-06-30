@@ -75,6 +75,15 @@ class IndexController extends Controller
             }
         }
 
+
+        $shoptype = "婚纱摄影";
+        $this->data['tenants'] = YfcTenants::where('positionCity', '=',$city)
+            ->select("yfc_tenants.*",'comments','alls','allcy','allce','day30s','day30cy','day30ce')
+            ->where('shoptype',$shoptype)
+            ->leftjoin("yfc_tenants_sort",'yfc_tenants_sort.tenantsid','=','yfc_tenants.id')
+            ->limit(10)
+            ->orderBy('order_city','asc')->get()->toArray();
+
         $this->data['pic'] = $pic;
         $this->data['ismobile'] = $this->ismobile;
         return view('front/baojia', $this->data);

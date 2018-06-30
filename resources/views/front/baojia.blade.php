@@ -451,18 +451,11 @@
 <div class="hunshabang">
 <ul>
  <div class="tittp">北京婚纱摄影榜单TOP50<span class="fa">查看完整榜单</span></div>
-<li style="font-size:12px;"><em style="font-size: 12px;color: #ff4848;">排名</em><span style="font-size: 12px;color: #ff4848;"><a href="/detail/2876" style="color:#ff4848;">商户名称</a></span><em class="jz" style="font-size:12px;color:#ff4848;">得分</em></li>
-<li><em>第1名</em><span><a href="/detail/2882">北京聚焦摄影(世界公园店)</a></span><em class="jz">99.1</em></li>
-<li><em>第2名</em><span><a href="/detail/2876">北京蒙娜丽莎婚纱摄影(总店)</a></span><em class="jz">97.9</em></li>
-<li><em>第3名</em><span><a href="/detail/2892">北京金夫人婚纱摄影(华北总部)</a></span><em class="jz">97.3</em></li>
-<li><em>第4名</em><span><a href="/detail/2879">北京水晶之恋婚纱摄影(世界公园店)</a></span><em class="jz">96.1</em></li>
-<li><em>第5名</em><span><a href="/detail/2875">北京韩国艺匠ARTIZSTUDIO</a></span><em class="jz">95.5</em></li>
-<li><em>第6名</em><span><a href="/detail/2877">北京27°罗马风情婚纱摄影(总部)</a></span><em class="jz">94.9</em></li>
-<li><em>第7名</em><span><a href="/detail/2896">北京香草影堂(朝阳店)</a></span><em class="jz">94.3</em></li>
-<li><em>第8名</em><span><a href="/detail/3087">北京纽约纽约婚纱摄影(西单店)</a></span><em class="jz">93.4</em></li>
-<li><em>第9名</em><span><a href="/detail/3407">北京凤栖梧摄影工作室&lrm;</a></span><em class="jz">91.9</em></li>
-<li><em>第10名</em><span><a href="/detail/2883">北京CD视觉婚纱摄影(总店)</a></span><em class="jz">91.3</em></li>
-<div class="bangdwz"><span><a style="color: #fff" href="/beijing/sheying">查看完整榜单</a></span></div>
+<li style="font-size:12px;"><em style="font-size: 12px;color: #ff4848;">排名</em><span style="font-size: 12px;color: #ff4848;"><a  style="color:#ff4848;">商户名称</a></span><em class="jz" style="font-size:12px;color:#ff4848;">得分</em></li>
+    <?php foreach($tenants as $v) { ?>
+        <li><em>第<?php echo $v['order_city']?>名</em><span><a href="/detail/<?php echo $v['id'];?>"><?php echo $v['name']?></a></span><em class="jz"><?php echo $v['heat_index']?></em></li>
+    <?php } ?>
+    <div class="bangdwz"><span><a style="color: #fff" href="/<?php echo $pycity;?>/sheying">查看完整榜单</a></span></div>
 </ul>
 </div>
 <style>

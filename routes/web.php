@@ -98,6 +98,7 @@ Route::group(['domain' => env('MERCHANT_URL')],function(){
     Route::post("/merchant/fileupload" , 'Merchant\IndexController@fileupload');
     Route::post("/merchant/filesave" , 'Merchant\IndexController@filesave');
     Route::post("/merchant/poke" , 'Merchant\IndexController@poke');
+    Route::get("/merchant/recommend" , 'Merchant\IndexController@poke');
 
 });
 

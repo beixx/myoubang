@@ -50,6 +50,9 @@
                 <td><?php echo $v['picName'];?></td>
                 <td><?php echo $v['explain'];?></td>
                 <td class="f-14 product-brand-manage">
+                    <a href="/merchant/recommend?id=<?php echo $v['id']."&status=".($v['status']==0?1:0);?>" title="推荐">
+                        <?php echo $v['status']==0?"推荐":"取消推荐"?>
+                    </a>
                     <a href="/merchant/addpic?id=<?php echo $v['id'];?>" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
                     <a href="/merchant/picdel?id=<?php echo $v['id'];?>" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a>
                 </td>

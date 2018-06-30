@@ -285,5 +285,17 @@ class IndexController extends MerchantController
     }
 
 
+    public function recommend(Request $request){
+        $id = intval($request->input("id"));
+        $status = intval($request->input("status"));
+
+        YfcTenantsPic::where([
+            'id' => $id,
+            'tenantsId' => $this->tid,
+        ])->update(['status' => $status]);
+
+        Msg::js('操作成功','/merchant/yfctenantspic');
+    }
+
 }
 
