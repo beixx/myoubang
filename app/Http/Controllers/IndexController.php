@@ -131,7 +131,7 @@ class IndexController extends Controller
             //Session::put('city',$city);
 
             $vc = $tenants['isVip'] ==2?6:3;
-            $tenantspics = YfcTenantsPic::where('tenantsId', $id)->orderby("id",'desc')->limit($vc)->get();
+            $tenantspics = YfcTenantsPic::where('tenantsId', $id)->orderby("status",'desc')->orderby("id",'desc')->limit($vc)->get();
             foreach($tenantspics as $k => $t){
                 if(isset($t['cover']) && $t['cover']){
                     $t['cover'] = json_decode($t['cover'],true);
@@ -285,6 +285,7 @@ class IndexController extends Controller
 
             $taoxi = YfcTenantsPic::select('id',"tenantsId",'firstcover',"currentPrice")
                 ->whereIn('tenantsId',$tids)
+                ->orderby("status",'desc')
                 ->orderBy('id','desc')->limit(2000)->get()->toArray();
 
             $taoxitmp = [];
@@ -404,7 +405,7 @@ class IndexController extends Controller
         }
         $city = $tenants['city'];
         $tenants['pcount'] = json_decode($tenants['pcount'],true);
-        $pics = YfcTenantsPic::where('tenantsId',$id)->orderby("id",'desc')->get();
+        $pics = YfcTenantsPic::where('tenantsId',$id)->orderby("status",'desc')->orderby("id",'desc')->get();
         foreach($pics as $key=>$v){
             if($v['firstcover']){
                 $v['firstcover'] = json_decode($v['firstcover'],true);
