@@ -895,7 +895,7 @@ class IndexController extends Controller
             $cpprice = intval($price * 0.86 * $count/100);
         }
         $allprice  = $zaoxingprice + $sheyingprice + $huazhuangprice + $cpprice  ;
-
+        $_REQUEST["url"] = $_SERVER['HTTP_REFERER'];
         file_put_contents(storage_path("logs/sheying.log"), "日期：".date("Y-m-d H:i:s")."=>数据：".json_encode($_REQUEST,JSON_UNESCAPED_UNICODE)."\n",FILE_APPEND);
 
         $data = [
