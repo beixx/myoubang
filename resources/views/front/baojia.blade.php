@@ -450,7 +450,7 @@
 
 <div class="hunshabang">
 <ul>
- <div class="tittp">北京婚纱摄影榜单TOP50<span class="fa">查看完整榜单</span></div>
+ <div class="tittp"><?php echo $city;?>婚纱摄影榜单TOP50<span class="fa"><a style="color: #999" href="/<?php echo $pycity;?>/sheying">查看完整榜单</a></span></div>
 <li style="font-size:12px;"><em style="font-size: 12px;color: #ff4848;">排名</em><span style="font-size: 12px;color: #ff4848;"><a  style="color:#ff4848;">商户名称</a></span><em class="jz" style="font-size:12px;color:#ff4848;">得分</em></li>
     <?php foreach($tenants as $v) { ?>
         <li><em>第<?php echo $v['order_city']?>名</em><span><a href="/detail/<?php echo $v['id'];?>"><?php echo $v['name']?></a></span><em class="jz"><?php echo $v['heat_index']?></em></li>
@@ -515,13 +515,13 @@
     text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 .hunshabang li, .hunlibang li {
-    line-height:2rem;
+    line-height:1.8rem;
     border-bottom: 1px solid #EFEFEF;
-    padding: 0 4%;
-    width: 92%;
+    padding: 0 5%;
+    width: 90%;
 }
 .hunshabang li em, .hunlibang li em {
-    width:2.5rem;
+    width:2.3rem;
     display: inline-block;
     font-size:0.65rem;
 }
@@ -531,6 +531,7 @@
 }
 .hunshabang li em.jz, .hunlibang li em.jz {
     width:2rem;
+        text-align: right;
     display: inline-block;
     font-size:0.65rem;
     float: right;
