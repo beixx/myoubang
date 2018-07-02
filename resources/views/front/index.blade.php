@@ -126,7 +126,7 @@ var _hmt = _hmt || [];
                                             <?php } else {?>
                                             <img src="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim"  alt="">
                                             <?php } ?>
-                                            <em>¥<?php echo $v2['currentPrice'];?></em>
+                                            <em><?php echo $v['currentPrice']>0?'¥'.$v2['currentPrice']:'';?></em>
                                         </span>
                                     </a>
                                 </div>
