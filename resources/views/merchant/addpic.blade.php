@@ -106,6 +106,7 @@
             position: relative;
             height: 95px;
             margin-right: 20px;
+            display: inline-block;
         }
         .pic .close {
             width: 23px;

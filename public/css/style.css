@@ -315,7 +315,7 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
 .downNav{width: 100%;margin: 0 auto;background-color: #fff;display: none; position: fixed; height: auto; z-index:9999999; left: 0; right: 0;}
 
 .zxyy{position:fixed;cursor:pointer;z-index: 9999;max-width:740px;margin: 0 auto;bottom: 0; left: 0; right: 0;height: 2.4rem; line-height: 2.4rem; text-align: center;}
-.zxyy em{background: #FF4040; cursor:pointer;color: #FFF;box-shadow: 0rem 0rem 0.5rem #666;border-radius: 9rem; height: 2rem; line-height: 2rem; font-weight: bold; display: block; margin:0rem 18% 0.4rem;}
+.zxyy em{background: #FF4040; cursor:pointer;color: #FFF;box-shadow: 0rem 0rem 0.1rem #B1B1B1;border-radius: 9rem; height: 2rem; line-height: 2rem; font-weight: bold; display: block; margin:0rem 18% 0.4rem;}
 
 /*优惠咨询*/
 .banyouhui{width: 92%;background: #FFFFFF;margin-top: 0.3rem; padding: 0 4%;}
@@ -522,7 +522,7 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
 .sjkap{
 width: 100%; background: #FFF; margin: 0;
 }
-.sousj{position: relative;font-size: 0.7rem;height:7rem;color:#666;background:url(http://c.youbangkeyi.com/a/xingchendahai.jpg?imageslim) no-repeat;background-size: cover;}
+.sousj{position: relative;font-size: 0.7rem;height:7rem;color:#666;background:url(http://img2.youbangkeyi.com/merchant/6a6/31f/455/8de4aa6f66a39065b3fac4aa58feaccd.jpg) 0 -4.5rem no-repeat;background-size: cover;}
 .pic_box{width:100%;background: #FFF;position: relative;border-bottom:.5rem #f5f7fa solid;padding:0.5rem 0 0;}
 .pic_box .num_txt{width:92%;display: -webkit-box;display: -ms-flexbox;display: -moz-box;height:2.25rem;padding:0.5rem 4% .4rem;position: relative;}
 .pic_box .num_txt .num{width: 2.2rem;line-height: 1rem;height: 2rem;margin: 0 .5rem 0 .7rem;position: relative;font-size: 1.2rem;font-family: Krungthep,"Microsoft YaHei",arial;border-radius:50%;color:#FFF;font-weight:700;background-color:#00B7B7;padding-top: 0.2rem;}
@@ -1227,7 +1227,7 @@ header h1 img{margin-top: 0.25rem;}
     height:2rem;
     border: 0;
     text-indent:0.5rem;
-    font-size: .6rem;
+    font-size: .65rem;
     color: #333333;
     border-radius: .2rem;
     background:#EFEFEF;
@@ -1649,7 +1649,7 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
     width: 48%;
     height: 2rem;
     text-indent:.5rem;
-    font-size:.6rem;
+    font-size:.65rem;
     color: #333333;
     border-radius: .2rem;
     background:#EFEFEF;
@@ -1933,6 +1933,9 @@ html, body {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+.sousj{
+    background: url(http://img2.youbangkeyi.com/merchant/6a6/31f/455/8de4aa6f66a39065b3fac4aa58feaccd.jpg) 0 -9.5rem no-repeat;
+    background-size: cover;}
   .pic_box .num_txt .tit_box{
     width:680px; height: 2.4rem;
   }

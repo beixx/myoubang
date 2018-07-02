@@ -34,7 +34,7 @@ var _hmt = _hmt || [];
 <body>
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
-<div class="logo"><img src="/images/logo.png" alt="有榜网"></div>
+<div class="logo"><a href="/<?php echo $pycity;?>/<?php if($type=='sheying') { ?>sheying<?php } else { ?>hunli<?php } ?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>前十名</a></div>
 <a class="zxdh" href="tel:18500905723"></a>
 </header>
 <div class="content">
@@ -71,7 +71,7 @@ var _hmt = _hmt || [];
                         <div class="num_txt">
                             <div class="tit_box">
                                 <div class="title"><span class="icot1"></span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span>人均消费 ¥<?php echo $v['price'];?></span><span><?php echo $v['area'];?></span><span class="fmr f40"><?php echo $v['spreadcontent'];?></span>
+                                <div class="txt"><span>人均消费 ¥<?php echo $v['price'];?></span><span><?php echo $v['area'];?></span><span class="fmr"><?php echo $v['spreadcontent'];?></span>
                                 </div>
                             </div>
                         </div>

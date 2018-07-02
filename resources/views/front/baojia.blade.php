@@ -28,12 +28,15 @@
         })();
     </script>
     <style type="text/css">
+    body {
+    background: #f5f7fa;
+}
         .sousj {
             position: relative;
             font-size: 0.7rem;
             height: 6rem;
             color: #666;
-            background:url(http://c.youbangkeyi.com/baojia/4c30c54d5e294dedaa772eddde11524f.jpg) 0 -3.5rem no-repeat;
+            background:url(http://img2.youbangkeyi.com/merchant/a9b/f26/86e/94351bc971eb5aab6a0cdc84227a6af3.jpg) 0 -4rem no-repeat;
             background-size: cover;
         }
 .txtshuju {
@@ -101,22 +104,18 @@
         }
 
         .sousj {
-            height:34rem
+            height:4rem
         }
 
-        body {
-            background: #FFF;
-        }
 
         .bottom_slide_box {
     width: 92%;
     background: #FFF;
-    margin: 2% 4%;
+    margin:4%;
     padding-bottom: 20px;
     border-radius: 16px;
     box-shadow: 0px 2px 13px -1px #c7c7c7;
     font-family: "Microsoft Yahei", Tahoma, Arial, sans-serif;
-    margin-top: -30rem;
         }
 .ygxm {
     padding: 0.5rem 0px 0.5rem;
@@ -161,7 +160,7 @@
             margin-top: 0.5rem;
         }
 .bottom_slide_box .calculator_box .select_b h2 span p{line-height: 1.5rem;
-    font-size: 0.8rem;
+    font-size:1rem;
     font-weight: bold;
     color: #333;
     margin-top: 0.8rem;}
@@ -176,7 +175,7 @@
         .bottom_slide_box .calculator_box .select_b h2 span:before, .bottom_slide_box .calculator_box .select_b h2 span:after {
             position: absolute;
             top:0.8rem;
-            width: 15%;
+            width: 5%;
             height: 1px;
             content: ' ';
             border-top: 1px solid #E3E3E3;
@@ -217,9 +216,9 @@
         <div class="calculator_box">
             <div class="select_b">
                 <h2>
-                <span><p><?php echo $city;?>婚纱摄影报价计算器</p>今日已有<em class="red">1067人</em>免费计算  准确度高达98%</span></h2>
+                <span><p><?php echo $city;?>婚纱摄影报价计算器</p><em class="red">拍婚纱照必算 避免被忽悠</em></span></h2>
                 <div class="num-frame">
-                    <div class="ndys"><p>您的婚纱照预算为</p></div>
+                    <div class="ndys"></div>
                     <div class="yuan"><p>元</p></div>
                     <div class="num-window clearfix clear">
                         <em id="setnum">?</em>
@@ -230,7 +229,7 @@
                 <div class="form_line">
                     <div class="element triangle">
                         <select name="font-style" id="xuqiu" class="first_line">
-                            <option value="风格">--选择你喜欢的风格--</option>
+                            <option value="风格">--选择风格--</option>
                             <option value="韩式唯美风">韩式唯美风</option>
                             <option value="时尚简约风">时尚简约风</option>
                             <option value="传统中国风">传统中国风</option>
@@ -267,13 +266,13 @@
                     <div class="element">
                         <div class="text_wrap">
                             <select name="sheying" id="xuqiu" class="first_lin">
-                                <option value="">--选择摄影师级别--</option>
+                                <option value="">--选择摄影师--</option>
                                 <option value="资深级">资深级</option>
                                 <option value="总监级">总监级</option>
                                 <option value="首席级">首席摄影师</option>
                             </select>
                             <select name="huazhuang" id="xuqiu" class="first_lin fr">
-                                <option value="">--选择化妆师级别--</option>
+                                <option value="">--选择化妆师--</option>
                                 <option value="资深级">资深级</option>
                                 <option value="总监级">总监级</option>
                                 <option value="首席级">首席化妆师</option>
@@ -284,7 +283,7 @@
                 <div class="form_line">
                     <div class="element triangle">
                         <select name="count" id="xuqiu" class="first_line">
-                            <option value="">--选择精修张数--</option>
+                            <option value="">--选择修片数量--</option>
                             <option value="40张">40张</option>
                             <option value="45张">45张</option>
                             <option value="50张">50张</option>
@@ -304,7 +303,7 @@
                 <div class="form_line" id="zxys_phoneInput">
                     <div class="element">
                         <div class="text_wrap">
-                            <input id="phonenumber" placeholder="请输入手机号，短信接收报价结果" type="text" class="text phonetext"
+                            <input id="phonenumber" placeholder="输入号码，报价结果将发送到您的手机" type="text" class="text phonetext"
                                    name="phone">
                             <em class="text_lbl"></em>
                         </div>
@@ -312,9 +311,7 @@
                 </div>
             </div>
             <div class="result_b">
-                <button href="javascript:void(0)" class="star_calculator">
-                    免费快速计算
-                </button>
+                <button href="javascript:void(0)" class="star_calculator">点击计算价格</button>
             </div>
             <div class="shuom">
                 预算结果根据用户真实消费大数据分析计算得出。
