@@ -730,7 +730,7 @@ class IndexController extends Controller
         $data['source'] = intval(Request::get('source','1'));
         $data['ctime'] = time();
         $data['url'] = $_SERVER['HTTP_REFERER'];
-
+        $data['city'] = Request::get("city");
         $other = YfcBespokeView::where("phone","=",$phone)->where("type","=","1")->get();
         $merchant = Merchant::where("tid","=",$tenantsId)->first();
         $othertid = [];

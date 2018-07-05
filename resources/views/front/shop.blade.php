@@ -231,6 +231,12 @@ var _hmt = _hmt || [];
     </div>
     <div href="javascript:void(0);" class="unfold-field_text iconfont icon-unfold"><span>展开详细数据 · 商家擅长风格</span></div>
 </div>
+    <div id="tocvipGuide">
+        <div class="toctitle">找不到合适的商家?</div>
+        <input type="hidden" id="pcity" name="pcity" value="<?php echo $city;?>">
+        <div class="tocdesc">原价99元VIP大数据推荐，限时免费0元申请推荐！</div>
+        <a class="tocbtn down freeclick" href="javascript:">免费申请</a>
+    </div>
 <?php if($countpics >0 ) { ?>
 <div class="case_box">
     <div id="picScroll" class="picScroll txtCtr">

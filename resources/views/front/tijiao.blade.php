@@ -2,8 +2,8 @@
 <div class="downNav">
     <div class="ask">
     <div class="tijiao"><p id="titlefield">提交信息，立即预约咨询商家</p>
-<p class="current-li"><em>预约礼</em><?php echo $tenants['package']?$tenants['package']:'是否有优惠？预约时请咨询商家';?></p></div>
-        <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
+<p class="current-li"><em>预约礼</em><?php echo isset($tenants['package'])?$tenants['package']:'是否有优惠？预约时请咨询商家';?></p></div>
+        <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id']??'';?>">
         <input type="hidden" name="source" id="source" value="1">
         <input type="tel" name="mobile" id="mobile" class="input" placeholder="请输入您的手机号 · 商家3分钟内会联系您！">
         <button type="submit" name="wapsubmit" id="tijiao" class="btn">免费预约咨询</button>
@@ -16,6 +16,7 @@
     $('button[name=wapsubmit]').click(function(){
         var tenantsId = $('#tenantsId').val();
         var phone = $('#mobile').val();
+        var city = $('#pcity').val();
         var source = $("#source").val();
 
         if(!phone){
@@ -33,7 +34,7 @@
             url: "/saveview",
             type: "post",
             dataType: "json",
-            data: {'tenantsId': tenantsId,'phone': phone,'source':source},
+            data: {'tenantsId': tenantsId,"city":city,'phone': phone,'source':source},
             success: function(data){
                 console.log(data);
                 if(data.result=='00'){
@@ -69,6 +70,12 @@
         $("#tijiao").html("免费咨询档期");
         $("#mobile").attr("placeholder","请输入手机号 · 商家3分钟内会联系您！");
     })
+        $(".freeclick").click(function(){
+            $("#source").val(5);
+            $("#titlefield").html("提交信息，预约拍摄档期");
+            $("#tijiao").html("免费咨询档期");
+            $("#mobile").attr("placeholder","请输入手机号 · 商家3分钟内会联系您！");
+        })
     });
 </script>
 <?php if(isset($tenants['pcount']['count']) &&$tenants['pcount']['count']>0 ) { ?>

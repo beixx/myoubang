@@ -66,6 +66,12 @@ var _hmt = _hmt || [];
 <span class="shishi">数据实时更新</span>
 <span class="jiangbei">排名客观权威</span>
 </div></div>
+    <div id="tocvipGuide">
+        <div class="toctitle">找不到合适的商家?</div>
+        <input type="hidden" id="pcity" name="pcity" value="<?php echo $city;?>">
+        <div class="tocdesc">原价99元VIP大数据推荐，限时免费0元申请推荐！</div>
+        <a class="tocbtn down freeclick" href="javascript:">免费申请</a>
+    </div>
 <div class="case_box">
     <div class="tittx">客片欣赏 (<?php echo count($pics);?>)</div>
     <div id="picScroll" class="picScroll txtCtr">

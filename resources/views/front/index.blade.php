@@ -33,19 +33,7 @@ var _hmt = _hmt || [];
     </style>
 </head>
 <body>
-<div class="bgDiv"></div><div class="downNav">
-    <div class="ask">
-    <div class="tijiao"><p id="titlefield">提交信息，申请大数据深度推荐</p>
-    <p class="current-li">原价99元VIP大数据推荐，限时免费0元申请推荐！</p></div>
-        <input type="hidden" name="tenantsId" id="tenantsId" value="">
-        <input type="hidden" name="source" id="source" value="1">
-        <input type="tel" name="mobile" id="mobile" class="input" placeholder="请输入手机号，分析师根据需求为您推荐！">
-        <button type="submit" name="wapsubmit" id="tijiao" class="btn">免费申请</button>
-    </div>
-    <div class="tishik" style="display:none;">
-        <div class="tishizi"><p>申请成功</p></div>
-    </div>
-</div>
+@include("front.tijiao")
 <div class="main">
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
@@ -118,7 +106,16 @@ var _hmt = _hmt || [];
                             <a class="sybj" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看商家详情</a>
                         </div>
                     </div>
-                    <?php } ?><?php foreach($tenants as $k => $v) { ?>
+                    <?php } ?>
+                    <?php foreach($tenants as $k => $v) { ?>
+                        <?php if($k ==2){?>
+                            <div id="tocvipGuide">
+                                <div class="toctitle">找不到合适的商家?</div>
+                                <input type="hidden" id="pcity" name="pcity" value="<?php echo $city;?>">
+                                <div class="tocdesc">原价99元VIP大数据推荐，限时免费0元申请推荐！</div>
+                                <a class="tocbtn down freeclick" href="javascript:">免费申请</a>
+                            </div>
+                        <?php } ?>
                         <div class="pic_box">
                             <!--<?php if($v['isVip']==2) { ?>
                                     <div class="huiyuan"></div>
@@ -174,12 +171,7 @@ var _hmt = _hmt || [];
                         <?php } ?>
                 </section>
             </div>
-            <div id="tocvipGuide">
-        <div class="toctitle">找不到合适的商家?</div>
-        <div class="tocdesc">原价99元VIP大数据推荐，限时免费0元申请推荐！</div>
-        <a class="tocbtn down shenqingclick" href="javascript:">免费申请</a>
-    </div>
-                                <div class="tittp">有榜数据说明</div>
+            <div class="tittp">有榜数据说明</div>
 <div id="fugai" class="time-box">
    <div class="txtshuju lft fgchs">
                     <span class="blue">200+ </span>数据覆盖城市</div>
@@ -370,38 +362,7 @@ var _hmt = _hmt || [];
     <script type="text/javascript" src="/js/hunlicity.js"></script>
 <?php } ?>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
-<script type="text/javascript">
-    $('button[name=wapsubmit]').click(function(){
-        var tenantsId = $('#tenantsId').val();
-        var phone = $('#mobile').val();
-        var source = $("#source").val();
 
-        if(!phone){
-            alert('手机必填');
-            return false;
-        }
-        if(phone){
-            if(!(/^1[34578]\d{9}$/.test(phone))){
-                alert("亲，手机号码填写的不对哦");
-                return false;
-            }
-        }
-        $(this).attr('disabled', true);
-        $.ajax({
-            url: "/saveview",
-            type: "post",
-            dataType: "json",
-            data: {'tenantsId': tenantsId,'phone': phone,'source':source},
-            success: function(data){
-                console.log(data);
-                if(data.result=='00'){
-                    $(".ask").css("display","none");
-                    $(".tishik").css("display","block");
-        }
-            }
-        });
-    });
-</script>
 </div>
 </body>
 </html>
