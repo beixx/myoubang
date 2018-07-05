@@ -39,7 +39,7 @@ class IndexController extends AdminController
 
 
     public function poke(){
-        $this->data['poke'] = DB::table("yfc_bespoke_view")->orderby("id","desc")->where("poketype",">" ,0)->paginate(20, ['*'],  'page');
+        $this->data['poke'] = DB::table("yfc_bespoke_view")->orderby("id","desc")->paginate(20, ['*'],  'page');
 
         return view("admin/poke",$this->data);
     }
