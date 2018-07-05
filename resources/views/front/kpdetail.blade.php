@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title><?php echo $title;?></title>
-    <meta name="viewport"  content="width=device-width,user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+    <meta name="applicable-device" content="pc,mobile">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta http-equiv="Cache-Control" content="no-transform" /> 
     <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -81,7 +82,7 @@ var _hmt = _hmt || [];
 <p><?php echo $picinfo['explain'];?></p>
 <?php } ?>
     <?php if($picinfo['currentPrice']>0) { ?>
-    <div class="txprice">该案例拍摄价格：<em class="red"><?php echo $picinfo['currentPrice'];?>元</em><em class="txyj">原价：<?php echo $picinfo['price'];?>元</em></div>
+    <div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $picinfo['currentPrice'];?></em><em class="txyj">原价：￥<?php echo $picinfo['price'];?></em></div>
     <?php } ?></div>
 </div>
 <div class="shop_box">

@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title><?php echo $title;?></title>
-    <meta name="viewport"  content="width=device-width,user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+    <meta name="applicable-device" content="pc,mobile">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta http-equiv="Cache-Control" content="no-transform" /> 
     <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -15,7 +16,7 @@
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/main.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/foot.js"></script>
+    <script type="text/javascript" src="/js/foot.js"></script>
     <script type="text/javascript" src="/js/more.js?v1"></script>
     <script>
 var _hmt = _hmt || [];
@@ -32,6 +33,20 @@ var _hmt = _hmt || [];
     </style>
 </head>
 <body>
+<div class="bgDiv"></div><div class="downNav">
+    <div class="ask">
+    <div class="tijiao"><p id="titlefield">提交信息，申请大数据深度推荐</p>
+    <p class="current-li">原价99元VIP大数据推荐，限时免费0元申请推荐！</p></div>
+        <input type="hidden" name="tenantsId" id="tenantsId" value="">
+        <input type="hidden" name="source" id="source" value="1">
+        <input type="tel" name="mobile" id="mobile" class="input" placeholder="请输入手机号，分析师根据需求为您推荐！">
+        <button type="submit" name="wapsubmit" id="tijiao" class="btn">免费申请</button>
+    </div>
+    <div class="tishik" style="display:none;">
+        <div class="tishizi"><p>申请成功</p></div>
+    </div>
+</div>
+<div class="main">
 <header>
 <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
 <div class="logo"><a href="/<?php echo $pycity;?>/<?php if($type=='sheying') { ?>sheying<?php } else { ?>hunli<?php } ?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>前十名</a></div>
@@ -126,7 +141,7 @@ var _hmt = _hmt || [];
                                             <?php } else {?>
                                             <img src="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim"  alt="">
                                             <?php } ?>
-                                            <em><?php echo $v['currentPrice']>0?'¥'.$v2['currentPrice']:'';?></em>
+                                            <em><?php echo $v2['currentPrice']>0?'¥'.$v2['currentPrice']:'';?></em>
                                         </span>
                                     </a>
                                 </div>
@@ -159,6 +174,11 @@ var _hmt = _hmt || [];
                         <?php } ?>
                 </section>
             </div>
+            <div id="tocvipGuide">
+        <div class="toctitle">找不到合适的商家?</div>
+        <div class="tocdesc">原价99元VIP大数据推荐，限时免费0元申请推荐！</div>
+        <a class="tocbtn down shenqingclick" href="javascript:">免费申请</a>
+    </div>
                                 <div class="tittp">有榜数据说明</div>
 <div id="fugai" class="time-box">
    <div class="txtshuju lft fgchs">
@@ -351,11 +371,10 @@ var _hmt = _hmt || [];
 <?php } ?>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript">
-
-    $('input[name=wapsubmit]').click(function(){
+    $('button[name=wapsubmit]').click(function(){
         var tenantsId = $('#tenantsId').val();
         var phone = $('#mobile').val();
-        var source = 3;
+        var source = $("#source").val();
 
         if(!phone){
             alert('手机必填');
@@ -363,10 +382,11 @@ var _hmt = _hmt || [];
         }
         if(phone){
             if(!(/^1[34578]\d{9}$/.test(phone))){
-                alert("亲，手机号填写有误哦");
+                alert("亲，手机号码填写的不对哦");
                 return false;
             }
         }
+        $(this).attr('disabled', true);
         $.ajax({
             url: "/saveview",
             type: "post",
@@ -375,131 +395,13 @@ var _hmt = _hmt || [];
             success: function(data){
                 console.log(data);
                 if(data.result=='00'){
-                    alert("预约成功" + '\n' + "请注意接听商家的来电！");
-                    location.reload();
-                }
+                    $(".ask").css("display","none");
+                    $(".tishik").css("display","block");
+        }
             }
-        });
-    });
-    $(".package").click(function(){
-        $("#tenantsId").val($(this).attr("id"));
-        $("#packagemessage").html($(this).attr("message"));
-        console.log($(this).attr("message"));
-    });
-    $(".sybj").click(function(){
-        $("#tenantsId").val($(this).attr("data-id"));
-    });
-</script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        //子导航展开收缩
-        $(".sewvtop").click(function(){
-            $(this).find("em").removeClass("lbaxztop2").addClass("lbaxztop").parents(".sewv").siblings().children(".sewvtop").find("em").removeClass("lbaxztop").addClass(".lbaxztop2");
-            $(this).next(".sewvbm").toggle().parents(".sewv").siblings().find(".sewvbm").hide();
-
-        });
-        /*鼠标离开下拉框关闭*/
-        $(".sewv").mouseleave(function(){
-            $(".sewvbm").hide();
-            $(this).children(".sewvtop").find("em").addClass("lbaxztop2");
-        });
-
-
-        //赋值
-        $(".sewvbm>li").click(function(){
-            var that = $(this);
-            var multile = that.parent().attr('multile');
-            if(multile == 1){
-                if(that.hasClass('cur')){
-                    that.removeClass('cur');
-                } else {
-                    that.addClass('cur');
-                }
-                var text = '';
-                that.parent().find('.cur').each(function(){
-                    console.log($(this));
-                    console.log($(this).text());
-                    text += ($(this).text()+',')
-                })
-                // var selva=$(this).parents(".sewvbm").siblings(".sewvtop").find("span").text()+','+$(this).text();
-                $(this).parents(".sewvbm").siblings(".sewvtop").find("span").text(text);
-                // $(this).parent("ul").hide();
-                // $(this).parents(".sewv").children(".sewvtop").find("em").addClass("lbaxztop2");
-            } else {
-                var selva=that.text();
-                that.parents(".sewvbm").siblings(".sewvtop").find("span").text(selva);
-                that.parent("ul").hide();
-                that.parents(".sewv").children(".sewvtop").find("em").addClass("lbaxztop2");
-            }
-
-        });
-
-        $(document).on('click','#style_btn',function(){
-            $(this).parent().parent('ul').hide();
-            return false;
-        })
-
-        //模糊搜索商家
-        $('input[name=submit]').click(function(){
-            var keyword = $('input[name=keyword]').val();
-            var city = $('input[name=pycity]').val();
-            var type = $("input[name=type]").val();
-            location.href="/search/"+city+'?keyword='+keyword+'&type='+type;
-        });
-
-        $('.submit').click(function(){
-            var customized_name = $('#customized_name').text();
-            var style = $('#style').text();
-            var budget = $('input[name=budget]').val();
-            var city = '<?php echo $pycity?>';
-            if(!budget){
-                alert('预算不能为空');
-                return false;
-            }
-            var phone = $('input[name=mobile]').val();
-            if(!phone){
-                alert('手机号码不能为空');
-                return false;
-            }
-            if(phone){
-                var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
-                if(!myreg.test(phone))
-                {
-                    alert('请输入有效的手机号码！');
-                    return false;
-                }
-            }
-            var name = $('input[name=name]').val();
-            if(!name){
-                alert('姓名不能为空');
-                return false;
-            }
-            $.ajax({
-                url: "/dingzhi",
-                type: "post",
-                dataType: "json",
-                data: {'customized_name': customized_name,'style': style,'budget': budget,'phone': phone,'name': name,'city': city,'linkurl': "{{url('user')}}/{{$pycity}}/<?php echo rand(10,1000) ?>?style="+style+"&city="+city+"&name="+name+"&price="+budget+"&customized_name="+customized_name},
-                success: function(data){
-                    console.log(data);
-                    if(data.result == "00")
-                    {
-                        var city = $('#area').text();
-                        $('#hiddenstyle').val(style);
-                        $('#hiddencity').val(city);
-                        $('#hiddenname').val(name);
-                        $('#hiddenprice').val(budget);
-                        $('#hiddencustomized_name').val(customized_name);
-
-                        $('#subsubmit').submit();
-                    }else{
-                        alert('定制失败');
-                    };
-                }
-            });
-            return false ;
         });
     });
 </script>
+</div>
 </body>
 </html>

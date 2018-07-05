@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title><?php echo $title;?></title>
-    <meta name="viewport"  content="width=device-width,user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+    <meta name="applicable-device" content="pc,mobile">
     <meta name="copyright" content="">
     <meta name="Keywords" content="<?php echo $keyword;?>">
     <meta name="description" content="<?php echo $desc;?>">
@@ -97,7 +98,7 @@ var _hmt = _hmt || [];
 <div class="sjkap">
     <div class="txt_info">
         <h1><?php echo $city;?><?php echo $tenants['name'];?></h1>
-        <p><span>人均消费:¥<?php echo $tenants['price'];?></span><span>|</span><span>咨询或到店请点击（预约咨询）</span></p>
+        <p><span>人均消费:¥<?php echo $tenants['price'];?></span><span>|</span><span>到店请提前预约</span></p>
         <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><em></em>打榜</a></div>
     </div>
     <div class="datas">
@@ -257,11 +258,11 @@ var _hmt = _hmt || [];
                             <?php } ?>
                         <?php } ?>
                         <?php if($v['currentPrice']>0) {?>
-                        <div class="txprice">该案例拍摄价格：<em class="red"><?php echo $v['currentPrice'];?>元</em><em class="txyj">原价：<?php echo $v['price'];?>元</em></div>
+                        <div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div>
                         <?php } ?>
                         </span>
                         <div href="javascript:" class="anlibj down anliclick">
-                            <?php echo $v['currentPrice']>0?"咨询档期":"获取报价";?>
+                            <?php echo $v['currentPrice']>0?"咨询档期":"获取案例报价";?>
                         </div>
                 </li>
                 <?php } ?>
@@ -308,17 +309,22 @@ var _hmt = _hmt || [];
     <div href="javascript:void(0);" class="unfold-field_text iconfont1 icon-unfold1"><span>展开更多用户印象</span></div>
 </div>
 <div class="comment_list">
-            <div class="title dafen1">今日点评精选</a><span class="fa">更新时间：<?php echo Date("Y-m-d")?></span></div>
+            <div class="title dafen1">猜你关心的话题</a><span class="fa">全部3个回答</span></div>
             <div class="comment_column">
+            <h3 class="wenda"><?php echo $city;?><?php echo $tenants['name'];?>怎么样？</h3>
                 <?php if(!empty($usercomment['content'])) { ?>
                     <div class="cmt_con cmt_R">
                             <span class="comment_W"><?php echo $usercomment['content'];?></span>
-                      <span class="f12p">—「摘自第三方平台」<?php echo $usercomment['nick_name'];?></span>
+                      <span class="f12p">—「以上内容真实消费者"<?php echo $usercomment['nick_name'];?>"阐述 」</span>
                 </div>
                 <?php } ?>
 </div>
             </div>
-
+<div id="tocvipGuide">
+        <div class="toctitle">找不到合适的商家?</div>
+        <div class="tocdesc">原价99元VIP大数据推荐，现0元免费申请推荐！</div>
+        <a class="tocbtn down shenqingclick" href="javascript:">申请推荐</a>
+    </div>
 <div class="view shop-tuijian">
     <div class="tit">猜你喜欢的商家</div>
 
@@ -329,10 +335,9 @@ var _hmt = _hmt || [];
                 <a class="suolvl" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                    <span>
                        <img src="<?php echo strpos($v['cover'],"http")!==false ? '' : 'http://img2.youbangkeyi.com';?><?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim">
-                   </span>  </a><p><?php echo $v['name'];?></p>
+                   </span>  </a><p><em class="red mr01">第<?php echo $v['order_city'];?>名</em><?php echo $v['name'];?></p>
                     <div class="price">
-                        <span class="red">第<?php echo $v['order_city'];?>名</span>
-                        <del>竞争指数：<?php echo $v['heat_index'];?></del>
+                        <del>竞争指数:<?php echo $v['heat_index'];?></del><!--<del class="fr">商圈展示</del>-->
                     </div>
             </li>
             <?php } ?>
@@ -522,7 +527,7 @@ var _hmt = _hmt || [];
         }],
      series: [{
          hoverAnimation: false, //设置饼图默认的展开样式
-         radius: [50,80],
+         radius: [45,80],
          name: 'pie',
          type: 'pie',
          selectedMode: 'single',

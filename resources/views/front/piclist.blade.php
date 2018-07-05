@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title><?php echo $title;?></title>
-    <meta name="viewport"  content="width=device-width,user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+    <meta name="applicable-device" content="pc,mobile">
     <meta name="copyright" content="">
     <meta name="Keywords" content="">
     <meta name="description" content="">
@@ -92,7 +93,7 @@ var _hmt = _hmt || [];
 
                         <?php } ?>
                         <?php if($v['currentPrice']>0) {?>
-                        <div class="txprice">该案例拍摄价格：<em class="red"><?php echo $v['currentPrice'];?>元</em><em class="txyj">原价：<?php echo $v['price'];?>元</em></div>
+                        <div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div>
                         <?php }?>
                     </span>
                     <div href="javascript:" class="anlibj down anliclick">

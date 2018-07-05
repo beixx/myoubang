@@ -5,12 +5,11 @@
 <p class="current-li"><em>预约礼</em><?php echo $tenants['package']?$tenants['package']:'是否有优惠？预约时请咨询商家';?></p></div>
         <input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id'];?>">
         <input type="hidden" name="source" id="source" value="1">
-        <input type="tel" name="mobile" id="mobile" class="input" placeholder="请输入您的手机号（<?php echo $tenants['package']?$tenants['package']:'免费赠送超值结婚大礼包';?>）">
-        <button type="submit" name="wapsubmit" id="tijiao" class="btn">免费预约咨询 · 3分钟响应</button>
+        <input type="tel" name="mobile" id="mobile" class="input" placeholder="请输入您的手机号 · 商家3分钟内会联系您！">
+        <button type="submit" name="wapsubmit" id="tijiao" class="btn">免费预约咨询</button>
     </div>
-    <div class="tishik" style="display:none;"  >
+    <div class="tishik" style="display:none;">
         <div class="tishizi"><p>预约成功</p></div>
-
     </div>
 </div>
 <script type="text/javascript">
@@ -48,27 +47,27 @@
     $(".anliclick").click(function(){
         $("#source").val(3);
         $("#titlefield").html("提交信息，快速获取报价");
-        $("#tijiao").html("免费获取报价 · 3分钟响应");
-        $("#mobile").attr("placeholder","请输入手机号，立刻获取案例报价！");
+        $("#tijiao").html("免费获取报价");
+        $("#mobile").attr("placeholder","请输入手机号 · 商家3分钟内会联系您！");
     })
-    $(".yuyueclick").click(function(){
+    $(".shenqingclick").click(function(){
         $("#source").val(1);
-        $("#titlefield").html("提交信息，快速预约咨询");
-        $("#tijiao").html("免费预约咨询");
-        $("#mobile").attr("placeholder","请输入手机号，商家3分钟响应！");
+        $("#titlefield").html("提交信息，申请大数据深度推荐");
+        $("#tijiao").html("免费申请");
+        $("#mobile").attr("placeholder","请输入手机号，分析师根据需求为您推荐！");
     })
     $(".liwuclick").click(function(){
         $("#source").val(2);
         $("#titlefield").html("提交信息，领取优惠并预约");
-        $("#tijiao").html("免费领取优惠 · 3分钟响应");
-        $("#mobile").attr("placeholder","请输入手机号，领取优惠！");
+        $("#tijiao").html("免费领取优惠");
+        $("#mobile").attr("placeholder","请输入手机号 · 商家3分钟内会联系您！");
     })
 
     $(".dangqiclick").click(function(){
         $("#source").val(4);
         $("#titlefield").html("提交信息，预约拍摄档期");
-        $("#tijiao").html("免费咨询档期 · 3分钟响应");
-        $("#mobile").attr("placeholder","请输入手机号，优先安排拍摄档期！");
+        $("#tijiao").html("免费咨询档期");
+        $("#mobile").attr("placeholder","请输入手机号 · 商家3分钟内会联系您！");
     })
     });
 </script>
