@@ -37,9 +37,13 @@ class IndexController extends AdminController
         return view("admin/welcome",$this->data);
     }
 
-
-    public function poke(){
+    public function xpokelist(){
         $this->data['poke'] = DB::table("yfc_bespoke_view")->orderby("id","desc")->paginate(20, ['*'],  'page');
+
+        return view("admin/xpokelist",$this->data);
+    }
+    public function poke(){
+        $this->data['poke'] = DB::table("yfc_bespoke_view")->orderby("id","desc")->where("type",'>','0')->paginate(20, ['*'],  'page');
 
         return view("admin/poke",$this->data);
     }

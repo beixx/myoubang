@@ -112,6 +112,7 @@ Route::group(['domain' => env('ADMIN_URL')],function(){
     //首页
     Route::get("/" , 'Admin\IndexController@index');
     Route::get("/admin/welcome" , 'Admin\IndexController@welcome');
+    Route::get("/admin/xpokelist" , 'Admin\IndexController@xpokelist');
     Route::get("/admin/poke" , 'Admin\IndexController@poke');
     Route::get("/admin/pokesucc" , 'Admin\IndexController@pokesucc');
     Route::get("/admin/pokeerror" , 'Admin\IndexController@pokeerror');

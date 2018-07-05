@@ -74,8 +74,8 @@
             <dt><i class="Hui-iconfont">&#xe616;</i> 后台管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="/admin/poke" data-title="预约记录" href="javascript:void(0)">预约记录</a></li>
-                    <li><a data-href="/admin/poketype" data-title="申诉记录" href="javascript:void(0)">申诉记录</a></li>
+                    <li><a data-href="/admin/xpokelist" data-title="预约记录" href="javascript:void(0)">预约记录</a></li>
+                    <li><a data-href="/admin/poke" data-title="申诉记录" href="javascript:void(0)">申诉记录</a></li>
                 </ul>
             </dd>
         </dl>
