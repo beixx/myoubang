@@ -1103,6 +1103,21 @@ class IndexController extends Controller
 
         $tenantsId = $ask['tid'];
         $tenants = YfcTenants::where('id',$tenantsId)->first();
+
+        $tenantspics = YfcTenantsPic::where('tenantsId', $id)->orderby("status",'desc')->orderby("id",'desc')->limit(3)->get();
+        foreach($tenantspics as $k => $t){
+            if(isset($t['cover']) && $t['cover']){
+                $t['cover'] = json_decode($t['cover'],true);
+            }
+            if(isset($t->firstcover) && $t->firstcover){
+                $t['firstcover'] = json_decode($t['firstcover'],true);
+            }
+            if(isset($t['picStyle']) && $t['picStyle']){
+                $t['picStyle'] = json_decode($t['picStyle'],true);
+            }
+            $tenantspics[$k] = $t;
+        }
+
         $city = $tenants['city'];
 
         $shoptype = $tenants['shoptype'];
@@ -1120,6 +1135,7 @@ class IndexController extends Controller
             'title' => $title,
             'desc' =>$desc,
             'keyword' => $keyword,
+            "tenantspics" => $tenantspics
         ];
         $this->data['pycity'] = Config::get('city.'.$city,'beijing');
         $this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';

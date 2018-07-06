@@ -116,7 +116,54 @@
         <p class="neirong"><?php echo $v['content'];?></p>
     </div>
     <?php } ?>
+    <?php if(isset($tenantspics) ) { ?>
+    <div class="case_box">
+        <div id="picScroll" class="picScroll txtCtr">
+            <div class="bd">
+                <ul>
+                    <?php foreach($tenantspics as $k => $v){?>
+                    <li>
+                        <div class="anli_touxiang"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim"></div>
+                        <p><a href="/kpdetail/<?php echo $v['id']?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $v['picName']?></a></p>
+            <span class="anli_month">
+                <em class="fl">发布于
+                    <?php echo \App\Http\Helper\Date::xtime($v['created_at']);?>
+                </em>
+                <em class="fr">浏览<?php echo $v['showcount'];?>次</em></span>
+                        <?php if($v['explain']) { ?>
+                        <div class="anli_p"><?php echo $v['explain'];?></div>
+                        <?php } ?>
+                        <span class="img">
+                        <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
+                            <?php if(strpos($v['cover'][$i],'http') === false) {?>
+                            <a class="yulan  glightbox<?php echo $k;?>" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>">
+                                <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" alt="<?php echo $v['picName']?>"/></a>
+                            <?php } else {?>
+                            <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $v['picName']?>"/>
+                            <?php } ?>
+                            <?php } ?>
+                            <?php if($v['currentPrice']>0) {?>
+                            <div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div>
+                            <?php } ?>
+                        </span>
+                        <div href="javascript:" class="anlibj down anliclick">
+                            <?php echo $v['currentPrice']>0?"咨询档期":"获取案例报价";?>
+                        </div>
+                    </li>
+                    <?php } ?>
+                </ul>        </div>
+        </div>
+        <div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看其他案例</a></div>
+    </div>
+    <link rel="stylesheet" href="/css/glightbox.css">
+    <script src="/js/glightbox.min.js"></script>
+    <script>
+                <?php foreach($tenantspics as $k=>$v) {?>
+        var lightbox = GLightbox({selector: 'glightbox<?php echo $k?>'});
+        <?php } ?>
 
+    </script>
+    <?php } ?>
     <div class="unit-footer">
         <div class="peace-live">
             <p class="txt-cont">全网数据监测 | 排名客观权威</p>
