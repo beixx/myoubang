@@ -56,6 +56,7 @@ Route::group(['domain' => env('WWW_URL')],function(){
     Route::get('/detail/{tid}/{id}', 'IndexController@txdetail');
 
 
+    Route::get('/wenda/{id}', 'IndexController@wenda');
     Route::get('/txlist/{id}', 'IndexController@txlist');
     Route::get('/kplist/{id}', 'IndexController@kplist');
     Route::get('/baojia/{name}','IndexController@baojia');

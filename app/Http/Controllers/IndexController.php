@@ -6,6 +6,8 @@ use App\Http\Models\DianpingHunqingComments;
 use App\Http\Models\DianpingHunshaComments;
 use App\Http\Models\Merchant;
 use App\Http\Models\YfcAdv;
+use App\Http\Models\YfcAsk;
+use App\Http\Models\YfcAskAnswer;
 use App\Http\Models\YfcBespokeView;
 use App\Http\Models\YfcStyle;
 use App\Http\Models\YfcTenants;
@@ -220,6 +222,12 @@ class IndexController extends Controller
                 ->limit(24)
                 ->get()
                 ->toArray();
+
+            $this->data['ask'] = YfcAsk::where("tid",'=',$id)->first();
+            if(!empty($this->data['ask']['id'])) {
+                $this->data['anwser'] = YfcAskAnswer::where("aid",'=',$this->data['ask']['id'])->first();
+            }
+
             return view("front/shop",$this->data);
 
 
@@ -1084,6 +1092,52 @@ class IndexController extends Controller
         return $arr;
     }
 
+
+    public function wenda($id){
+        $ask = YfcAsk::where("id",$id)->first();
+        if(empty($ask)) {
+            $this->redirect("/");
+        }
+        $anwser = YfcAskAnswer::where("aid",$id)->get();
+
+
+        $tenantsId = $ask['tid'];
+        $tenants = YfcTenants::where('id',$tenantsId)->first();
+        $city = $tenants['city'];
+
+        $shoptype = $tenants['shoptype'];
+
+        $title = $ask['title'];
+        $desc = '';
+        $keyword = "";
+
+        $this->data = [
+            'ask' => $ask,
+            'anwser' => $anwser,
+            'tenants' => $tenants,
+            'city' => $city,
+            'shoptype' => $shoptype,
+            'title' => $title,
+            'desc' =>$desc,
+            'keyword' => $keyword,
+        ];
+        $this->data['pycity'] = Config::get('city.'.$city,'beijing');
+        $this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
+        $this->data['ismobile'] = $this->ismobile;
+        $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
+            ->where("id",'!=',$tenants['id'])
+            ->where("shoptype",'=',$tenants['shoptype'])
+            ->where("order_city",'<','50')
+            ->orderby("order_city",'asc')
+            ->limit(24)
+            ->get()
+            ->toArray();
+        $this->getSpread($tenants);
+
+        $this->data['other'] = YfcAsk::where("id","!=",$id)->where("tid",$tenantsId)->get();
+        //print_r($this->data['other']) ;exit;
+        return view("front/wenda",$this->data);
+    }
 
 
 }

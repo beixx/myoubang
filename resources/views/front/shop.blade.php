@@ -120,11 +120,20 @@ var _hmt = _hmt || [];
 <span class="jiangbei">排名客观权威</span>
 </div>
 <div class="info-box">
-<div class="titleqs"><i>优惠信息</i><span class="fa">预约领取优惠</span></div>
-<a id="dateShow" class="yuyue">
-                <i></i><span><?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?><p>距离结束:<em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>:<em class="date-tiem-span m">00</em>:<em class="date-s-span s">00</em></p></span>
-			<button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
-            </a>
+<div class="titleqs">
+    <i>优惠信息</i>
+    <span class="fa">预约领取优惠</span></div>
+    <a id="dateShow" class="yuyue">
+        <i></i>
+        <span>
+            <?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?>
+            <p>距离结束:<em class="date-tiem-span d">00</em>天
+                <em class="date-tiem-span h">00</em>:
+                <em class="date-tiem-span m">00</em>:
+                <em class="date-s-span s">00</em></p>
+        </span>
+        <button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
+    </a>
           <script type="text/javascript">
                     $(function(){
                         //日期倒计时
@@ -314,18 +323,22 @@ var _hmt = _hmt || [];
     </div>
     <div href="javascript:void(0);" class="unfold-field_text iconfont1 icon-unfold1"><span>展开更多用户印象</span></div>
 </div>
+<?php if(isset($ask['id'])) {?>
 <div class="comment_list">
-            <div class="title dafen1">猜你关心的话题</a><span class="fa">全部3个回答</span></div>
-            <div class="comment_column">
-            <h3 class="wenda"><?php echo $city;?><?php echo $tenants['name'];?>怎么样？</h3>
-                <?php if(!empty($usercomment['content'])) { ?>
-                    <div class="cmt_con cmt_R">
-                            <span class="comment_W"><?php echo $usercomment['content'];?></span>
-                      <span class="f12p">—「以上内容真实消费者"<?php echo $usercomment['nick_name'];?>"阐述 」</span>
-                </div>
-                <?php } ?>
+    <div class="title dafen1">猜你关心的话题
+        <span class="fa"><a href="/wenda/<?php echo $ask['id'];?>">全部3个回答</a></span>
+    </div>
+    <div class="comment_column">
+    <h3 class="wenda"><?php echo $ask['title'];?>怎么样？</h3>
+        <?php if(!empty($anwser['content'])) { ?>
+            <div class="cmt_con cmt_R">
+                    <span class="comment_W"><?php echo $anwser['content'];?></span>
+              <span class="f12p">—「以上内容真实消费者"<?php echo $anwser['name'];?>"阐述 」</span>
+        </div>
+        <?php } ?>
+    </div>
 </div>
-            </div>
+<?php } ?>
 <div id="tocvipGuide">
         <div class="toctitle">找不到合适的商家?</div>
         <div class="tocdesc">原价99元VIP大数据推荐，现0元免费申请推荐！</div>
