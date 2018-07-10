@@ -9,7 +9,7 @@
         <p>该问题由"<?php echo $ask['name'];?>"发起</p>
     </div>
     <div class="shop_box"><div class="titdp">店铺信息</div><div class="txt-box">
-            <h1><a href="/detail/1848"><?php echo $city.$tenants['name'];?></a></h1>
+            <h3><a href="/detail/1848"><?php echo $city.$tenants['name'];?></a></h3>
             <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price']?></span></div>
             <div class="num fa txtCtr"><?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div></div></div><hr>
         <a id="dateShow" class="yuyue"><i></i><span>
@@ -33,7 +33,7 @@
         <div class="zysmn"><span class="jiance">全网数据监测</span><span class="shishi">数据实时更新</span><span class="jiangbei">排名客观权威</span></div></div>
     <?php foreach($anwser as $v) { ?>
     <div class="huida">
-        <div class="yonghu"><?php echo $v['name'];?></div>
+        <div class="yonghu"><?php echo $v['name'];?> <!--<span class="frwd">Ta给出了五星好评</span>--></div>
         <p class="neirong"><?php echo $v['content'];?></p></div><?php } ?><?php if(isset($tenantspics) ) { ?>
     <div class="case_box"><div id="picScroll" class="picScroll txtCtr"><div class="bd"><ul><?php foreach($tenantspics as $k => $v){?><li><div class="anli_touxiang"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim"></div><p><a href="/kpdetail/<?php echo $v['id']?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $v['picName']?></a></p><span class="anli_month"><em class="fl">发布于<?php echo \App\Http\Helper\Date::xtime($v['created_at']);?></em><em class="fr">浏览<?php echo $v['showcount'];?>次</em></span><?php if($v['explain']) { ?><div class="anli_p"><?php echo $v['explain'];?></div><?php } ?><span class="img"><?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?><?php if(strpos($v['cover'][$i],'http') === false) {?><a class="yulan  glightbox<?php echo $k;?>" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>"><img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" alt="<?php echo $title;?>相关案例"/></a><?php } else {?><img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $title;?>相关案例"/><?php } ?><?php } ?><?php if($v['currentPrice']>0) {?><div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div><?php } ?></span><div href="javascript:" class="anlibj down anliclick"><?php echo $v['currentPrice']>0?"咨询档期":"获取案例报价";?></div></li><?php } ?></ul></div></div>
         <div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看其他案例</a></div></div>

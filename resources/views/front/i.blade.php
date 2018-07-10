@@ -1,15 +1,12 @@
 
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head><meta charset="utf-8"><title><?php echo $title;?>-有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $city.$tenants['name'];?>,<?php echo $title;?>"><meta name="description" content=""><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/wenda.css"><link rel="stylesheet" href="/css/glightbox.css"><script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script><script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script><script type="text/javascript" src="/js/leftTime.min.js"></script><script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script><script type="text/javascript" src="http://www.youbangkeyi.com/js/foot.js"></script></head>
+<head><meta charset="utf-8"><title><?php echo $title;?>-有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $title;?>"><meta name="description" content=""><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/wenda.css"><link rel="stylesheet" href="/css/glightbox.css"><script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script><script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script><script type="text/javascript" src="/js/leftTime.min.js"></script><script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script><script type="text/javascript" src="http://www.youbangkeyi.com/js/foot.js"></script></head>
 <body class="shop-index view"><div class="bgDiv"></div><div class="downNav"><div class="ask"><div class="tijiao"><p id="titlefield">提交信息，立即预约咨询商家</p><p class="current-li"><em>预约礼</em><?php echo isset($tenants['package'])?$tenants['package']:'是否有优惠？预约时请咨询商家';?></p></div><input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id']??'';?>"><input type="hidden" name="source" id="source" value="1"><input type="tel" name="mobile" id="mobile" class="input" placeholder="请输入您的手机号 · 商家3分钟内会联系您！"><button type="submit" name="wapsubmit" id="tijiao" class="btn">免费预约咨询</button></div><div class="tishik" style="display:none;"><div class="tishizi"><p>预约成功</p></div></div></div>
 <div class="main"><header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div><div class="logo"><a href="<?php echo '/'.$pycity.'/'.($tenants['shoptype']=='婚纱摄影'?'sheying':'hunli');?>"><?php echo $city.$tenants['shoptype'];?></a></div><a class="zxdh" href="tel:18500905723"></a></header>
-    <div class="wendat">
-        <h1><?php echo $ask['title'];?></h1>
-        <p>该问题由"<?php echo $ask['name'];?>"发起</p>
-    </div>
-    <div class="shop_box"><div class="titdp">店铺信息</div><div class="txt-box">
-            <h1><a href="/detail/1848"><?php echo $city.$tenants['name'];?></a></h1>
+    <div class="wendat"><h1><?php echo $ask['title'];?></h1><p>该问题由"<?php echo $ask['name'];?>"发起</p></div>
+    <div class="shop_box"><div class="titdp"><?php echo $city;?>推荐商家</div><div class="txt-box">
+            <h3><a href="/detail/1848"><?php echo $city.$tenants['name'];?></a></h3>
             <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price']?></span></div>
             <div class="num fa txtCtr"><?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div></div></div><hr>
         <a id="dateShow" class="yuyue"><i></i><span>
@@ -281,12 +278,7 @@
     <?php if(isset($tenants['pcount']['count']) &&$tenants['pcount']['count']>0 ) { ?>
     <div id="zxsl"></div>
     <?php } ?>
-    <div class="zxyy"><em class="down yuyueclick">免费预约咨询 · 3分钟响应</em></div>
-    <?php if(isset($tenants['pcount']['count']) &&$tenants['pcount']['count']>0 ) { ?>
-    <script type="text/javascript">
-        $('#zxsl').html('今天已有<?php echo $tenants['pcount']['count'];?>人预约该商家').addClass('alert-success').show().delay(2000).fadeOut();
-    </script>
-    <?php } ?>
+    <div class="zxyy"><em><a href="<?php echo '/'.$pycity.'/'.($tenants['shoptype']=='婚纱摄影'?'sheying':'hunli');?>">2018<?php echo $city.$tenants['shoptype'];?>排行榜</a></em></div>
 </div>
 </body>
 </html>

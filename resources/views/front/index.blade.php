@@ -152,7 +152,7 @@
         </div>
 <footer class="txtCtr">
     <?php if($type=='sheying') { ?>
-                  <div class="tuijian"><h3>全部城市婚纱摄影榜单<span>(城市排名不分先后)</span></h3><ul>
+                  <div class="tuijian paim"><h3>全部城市婚纱摄影榜单<span>(城市排名不分先后)</span></h3><ul>
                     <li><a target="_blank" href="/beijing/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">北京婚纱摄影排名</a></li>
                     <li><a target="_blank" href="/tianjin/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">天津婚纱摄影排名</a></li>
                     <li><a target="_blank" href="/shenyang/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">沈阳婚纱摄影排名</a></li>
@@ -228,7 +228,7 @@
 
 </ul></div> 
                     <?php } else { ?>
-                     <div class="tuijian"><h3>热门城市婚礼策划榜单<span>(城市排名不分先后)</span></h3><ul>
+                     <div class="tuijian paim"><h3>热门城市婚礼策划榜单<span>(城市排名不分先后)</span></h3><ul>
                     <li><a target="_blank" href="/beijing/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">北京婚礼策划排名</a></li>
                     <li><a target="_blank" href="/tianjin/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">天津婚礼策划排名</a></li>
                     <li><a target="_blank" href="/shenyang/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">沈阳婚礼策划排名</a></li>
@@ -318,9 +318,9 @@
 </div>
 <script type="text/javascript" src="/js/city.js"></script>
 <?php if($type=="sheying"){?>
-    <script type="text/javascript" src="/js/sheyingcity.js"></script>
+<script type="text/javascript" src="/js/sheyingcity.js"></script>
 <?php } else {?>
-    <script type="text/javascript" src="/js/hunlicity.js"></script>
+<script type="text/javascript" src="/js/hunlicity.js"></script>
 <?php } ?>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript">

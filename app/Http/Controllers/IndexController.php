@@ -1190,7 +1190,7 @@ class IndexController extends Controller
 
         $shoptype = $tenants['shoptype'];
 
-        $title = $ask['title'];
+        $title = $ask['title'].'';
         $desc = '';
         $keyword = "";
 

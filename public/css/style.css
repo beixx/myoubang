@@ -134,6 +134,7 @@ em.date-s-span{color: #999; width:0.8rem;display:inline-block; text-align: cente
 }
 .txyj{text-decoration: line-through; margin-left: 0.6rem; color: #999;}
 .fr{float: right;text-align: right;}
+.ftwd{float: right; font-size: 0.6rem; font-weight: initial; color: #999;}
 .fl{float: left;text-align:left;}
 .mt03{border-top: 0.5rem solid #f5f7fa;}
 .m-title{    color: #fff;
@@ -321,7 +322,7 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
 
 .zxyy{position:fixed;cursor:pointer;z-index: 9999;max-width:740px;margin: 0 auto;bottom: 0; left: 0; right: 0;height: 2.4rem; line-height: 2.4rem; text-align: center;}
 .zxyy em{background: #FF4040; cursor:pointer;color: #FFF;box-shadow: 0rem 0rem 0.1rem #B1B1B1;border-radius: 9rem; height: 2rem; line-height: 2rem; font-weight: bold; display: block; margin:0rem 18% 0.4rem;}
-
+.zxyy em a{color:#FFF;}
 /*优惠咨询*/
 .banyouhui{width: 92%;background: #FFFFFF;margin-top: 0.3rem; padding: 0 4%;}
 .banyouhui .vip{padding: 0.2rem 0;display: inline-block; width: 100%;}
@@ -902,6 +903,7 @@ width: 100%; background: #FFF; margin: 0;
     line-height: 2.5rem;
     font-size: 0.6rem;
     float: right;}
+.dafen1 .fa a{color: #999999;}
 .dafen a{color: #999999;
     font-size: 0.6rem;}
 .dafen em{    width: 1.2rem;
@@ -1064,7 +1066,7 @@ width: 100%; background: #FFF; margin: 0;
 .view .txt-box .num em{display:block;font-size: .6rem; line-height: .6rem; color: #999; overflow: hidden; font-family: Krungthep,"Microsoft YaHei",arial;}
 .view .txt-box .num p{color: #FFF;font-size: 0.6rem;text-indent: 0;height: 0.85rem;line-height: 0.85rem;}
 .view .txt-box .num i{background-color: #f3faff;border:#7bbbdc 1px solid;padding: 0 0.15rem;font-size: 0.4rem;border-radius: 0.15rem;line-height: 0.65rem;height: 0.65rem;display:inline-block;position: relative;top: -0.35rem;color: #66b7e1}
-.view .txt-box h1{font-size: 0.8rem;height:0.8rem;line-height:0.8rem;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;width: 80%;margin: 0.15rem 0 0.55rem;padding-right: 20%}
+.view .txt-box h1,.view .txt-box h3{font-size: 0.8rem;height:0.8rem;line-height:0.8rem;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;width: 80%;margin: 0.15rem 0 0.55rem;padding-right: 20%}
 .view .txt-box .t1{font-size: 0.6rem;color: #999;line-height:0.6rem;height:0.6rem;}
 .view .txt-box .t1 span{padding-left: 0.25rem;}
 .view .txt-info{width: 96%;background: #FFF;position: relative;padding:2%}
@@ -1739,10 +1741,14 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
     font-weight: bold;
     font-size: .65rem;
     display: inline-block;
+    width: 9rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .discount-btn{
     cursor: pointer;
-    position: relative;
+    position:relative;
     float: right;
     height: 1.2rem;
     margin: .8rem 4% 0.8rem 0;
@@ -1756,7 +1762,7 @@ background: url(http://c.youbangkeyi.com/a/cross78.png) no-repeat;
 }
 .showmore{border-top: .5rem #f5f7fa solid;background:#f5f7fa;}
 .showmore .discount-btn{background-color: initial; margin:.6rem 4% 0.6rem 0; color: #FF7070; padding: 0 .75rem 0 0.3rem; background: url(http://c.youbangkeyi.com/a/xiangyou1.png) right center no-repeat; background-size: 0.6rem; height: 0.6rem; line-height: 0.6rem;}
-.showmore .yuyue span{font-weight: initial;color: #ff7070;margin: 0.55rem 0;vertical-align: middle;height: 0.7rem;}
+.showmore .yuyue span{font-weight: initial;color: #ff7070;margin: 0.55rem 0;vertical-align: middle;width: 10.5rem;height: 0.7rem;font-size: .6rem; line-height: 0.7rem;}
 .showmore .yuyue {height: 0.7rem;margin: 0 4% .3rem; display: inline-block; height: 1.8rem; border: 0;}
 .showmore .yuyue i{width:0.8rem;height:0.8rem;margin: 0.5rem .5rem 0.5rem 4%;}
 .yuyuedaodian{
@@ -1939,6 +1945,7 @@ footer{background:#26282b;width:100%;margin:0 auto;font-size:0.6rem;color:#ababa
 .tuijian ul{margin-top:0.5rem;display:table;width:100%;}
 .tuijian li{display:block;height:1.2rem;font-size:0.6rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:25%;float:left;color:#999;}
 .tuijian li a{color:#666;}
+.paim li{width: 16.666666666%!important;}
 .lian img{width: 70%;height: auto;}
 
 
@@ -1988,6 +1995,12 @@ html, body {
   .pic_box .num_txt .tit_box{
     width:680px; height: 2.4rem;
   }
+.yuyue span{
+    width: 19rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 .bdtj .num_txt .tit_box{width:655px!important;}
   .tishik .pic_box .num_txt .tit_box{
     width:495.15px; height: 2.4rem;
@@ -2026,18 +2039,6 @@ html, body {
     background: #FFF;}
 .zysm{padding: 0px 4% 0 55px;}
 .zysmi{padding:0.55rem 4% 0.5rem 9%;}
-.view .txt-box h1{
-    font-size: 0.9rem;
-    height: 1rem;
-    line-height: 1rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 80%;
-    margin: 0.15rem 0 0.55rem;
-    padding-right: 20%;
-    font-weight: bold;
-}
 .view .txt-box .num{top: 24%;}
 header{height: 3rem;}
 header .city_box{margin-top: 0.75rem;}
