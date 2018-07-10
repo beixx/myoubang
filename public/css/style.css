@@ -133,7 +133,8 @@ em.date-s-span{color: #999; width:0.8rem;display:inline-block; text-align: cente
     margin-top: 0.25rem;
 }
 .txyj{text-decoration: line-through; margin-left: 0.6rem; color: #999;}
-.fr{float: right;}
+.fr{float: right;text-align: right;}
+.fl{float: left;text-align:left;}
 .mt03{border-top: 0.5rem solid #f5f7fa;}
 .m-title{    color: #fff;
     text-align: center;
@@ -245,6 +246,7 @@ background: #FFF;
     color: #999;
 }
 .e0{color:#FF4848;}
+.queshuju{background: #FFF8DE;color: #ff552e;font-size: 0.6rem;padding: 0 4%;}
 /* 头部 */
 header{background:#FFF;position: relative;width:100%;z-index: 99;height:2.2rem;}
 .logo{width:3.46rem;height: 1.4rem;background: url(http://www.youbangkeyi.com/images/logo.png) no-repeat;
@@ -774,6 +776,10 @@ width: 100%; background: #FFF; margin: 0;
 .comment .title {font-size:0.7rem;color: #333;margin-top: 0.5rem;line-height: 1.2rem;}
 .comment .title span {padding: 0 0.1rem;}
 /*申请推荐*/
+.showmore #tocvipGuide{
+    border-top:0;
+    border-bottom: .5rem #f5f7fa solid;
+}
  #tocvipGuide {
         background: #fff;
     padding: .8rem .4rem .5rem .4rem;
@@ -1075,7 +1081,7 @@ width: 100%; background: #FFF; margin: 0;
 .view .hot li .price{height: 1rem;line-height: 1rem;}
 .view .hot li .price span{font-size: 0.7rem;margin-right: 0.5rem;font-weight: bold;}
 .view .hot li .price del{color: #bfbfbf;font-size: 0.5rem;}
-.shop-index .view .hot li .price del{color:#999999;font-size: 0.5rem;text-decoration: none;}
+.shop-index .view .hot li .price del{width:50%;color:#999999;font-size: 0.5rem;text-decoration: none;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
 .view .hot .all{line-height: 2rem;height: 2rem;border:1px #d7d7d7 solid;border-radius: 0.15rem;margin: 0 auto;width: 92%;}
 .view .hot .all a{color: #00b7b7;font-size: 0.7rem;}
 .suan-box{background: #FFF;z-index:99;height: 2.5rem;width: 100%;left: 0;-webkit-box-shadow: 2px 1px 8px #a4a4a4; box-shadow: 2px 1px 8px #a4a4a4;}

@@ -1,0 +1,35 @@
+.tuijian li{width: 16.666666666%!important;}
+header {
+            border-bottom: 1px solid rgba(26,26,26,.06);
+            box-shadow: 0 1px 3px 0 rgba(23,81,153,.05);
+        }
+.shop_box {
+            background-color: #FFF;
+            width: 94%;
+            position: relative;
+            display: inline-block;
+            margin: 3%;
+        }
+.chengshi li{width:16.66666% !important;}
+.view .titdp{border-top:0;}
+.wendat{    width: 92%;
+            padding: 1.2rem 4% 0.5rem;
+            background: #FFF;
+            font-size: 0.8rem;}
+.wendat p{    color: #999;
+            font-size: 0.6rem;
+            line-height: 1.2rem;}
+.wendat h1{    font-size: 0.85rem;
+            font-weight: bold;}
+.huida{    background: #FFF;
+            width: 100%;    margin-bottom: .5rem;}
+.huida .yonghu{    border-bottom: 1px solid #F5F5F5;
+            font-size: 0.6rem;
+            padding: 2% 4%;
+            font-weight: bold;}
+.huida .neirong{    width: 92%;
+            padding: 4%;
+            font-size: 0.7rem;}
+.main{    background: #f5f7fa;}
+.case_box .picScroll .bd .img em{z-index: initial;}
+#wenda{width:33.333333% !important;}

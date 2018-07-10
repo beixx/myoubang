@@ -1,45 +1,8 @@
 <?php //echo $type ;exit;?><!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-    <meta charset="utf-8">
-    <title><?php echo $title;?></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
-    <meta name="applicable-device" content="pc,mobile">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta http-equiv="Cache-Control" content="no-transform" /> 
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
-    <meta name="copyright" content="">
-    <meta name="Keywords" content="<?php echo $keyword?>">
-    <meta name="description" content="<?php echo $desc?>">
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/main.js"></script>
-    <script type="text/javascript" src="/js/foot.js"></script>
-    <script type="text/javascript" src="/js/more.js?v1"></script>
-    <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?5e17917c58669241a9d904eaddad0a8e";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-    <style type="text/css">
-        #gr_zone_ids{cursor:pointer}
-        footer{margin-bottom: 0;}
-    </style>
-</head>
-<body>
-@include("front.tijiao")
+<html lang="zh-cn"><head><meta charset="utf-8"><title><?php echo $title;?></title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $keyword?>"><meta name="description" content="<?php echo $desc?>"><link rel="stylesheet" href="/css/style.css"><script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script><script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script><script type="text/javascript" src="//m1.youbangkeyi.com/js/main.js"></script><script type="text/javascript" src="/js/foot.js"></script><script type="text/javascript" src="/js/more.js?v1"></script><style type="text/css">#gr_zone_ids{cursor:pointer}footer{margin-bottom: 0;}</style></head>
+<body><div class="bgDiv"></div><div class="downNav"><div class="ask"><div class="tijiao"><p id="titlefield">提交信息，申请大数据深度推荐</p><p class="current-li"><em>预约礼</em><?php echo isset($tenants['package'])?$tenants['package']:'是否有优惠？预约时请咨询商家';?></p></div><input type="hidden" name="tenantsId" id="tenantsId" value="<?php echo $tenants['id']??'';?>"><input type="hidden" name="source" id="source" value="1"><input type="tel" name="mobile" id="mobile" class="input" placeholder="请输入手机号，分析师根据需求为您推荐！"><button type="submit" name="wapsubmit" id="tijiao" class="btn">免费申请</button></div><div class="tishik" style="display:none;"><div class="tishizi"><p>预约成功</p></div></div></div>
 <div class="main">
-<header>
-<div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
-<div class="logo"><a href="/<?php echo $pycity;?>/<?php if($type=='sheying') { ?>sheying<?php } else { ?>hunli<?php } ?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>前十名</a></div>
-<a class="zxdh" href="tel:18500905723"></a>
-</header>
+<header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div><div class="logo"><a href="/<?php echo $pycity;?>/<?php if($type=='sheying') { ?>sheying<?php } else { ?>hunli<?php } ?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>前十名</a></div><a class="zxdh" href="tel:18500905723"></a></header>
 <div class="content">
 <div class="bg2"></div>
     <div class="sousj">
@@ -65,7 +28,6 @@ var _hmt = _hmt || [];
             <div class="list_box">
                <div class="zysmi"><span>全网数据监测  排名客观权威</span>中国婚嫁产业  大数据服务商<em><a href="http://www.youbangkeyi.com/guize.html" target="_blank">排名算法</a></em></div>
                 <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
-
                     <?php if(!empty($spread)) foreach($spread as $k => $v) { ?>
                     <div class="pic_box bdtj">
                         <!--<?php if($v['isVip']==2) { ?>
@@ -353,7 +315,6 @@ var _hmt = _hmt || [];
 </div>
 <!-- 城市弹出 -->
 <div class="container">
-
 </div>
 <script type="text/javascript" src="/js/city.js"></script>
 <?php if($type=="sheying"){?>
@@ -362,7 +323,39 @@ var _hmt = _hmt || [];
     <script type="text/javascript" src="/js/hunlicity.js"></script>
 <?php } ?>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
+<script type="text/javascript">
+    $('button[name=wapsubmit]').click(function(){
+        var tenantsId = $('#tenantsId').val();
+        var phone = $('#mobile').val();
+        var city = $('#pcity').val();
+        var source = $("#source").val();
 
+        if(!phone){
+            alert('手机必填');
+            return false;
+        }
+        if(phone){
+            if(!(/^1[34578]\d{9}$/.test(phone))){
+                alert("亲，手机号码填写的不对哦");
+                return false;
+            }
+        }
+        $(this).attr('disabled', true);
+        $.ajax({
+            url: "/saveview",
+            type: "post",
+            dataType: "json",
+            data: {'tenantsId': tenantsId,"city":city,'phone': phone,'source':source},
+            success: function(data){
+                console.log(data);
+                if(data.result=='00'){
+                    $(".ask").css("display","none");
+                    $(".tishik").css("display","block");
+        }
+            }
+        });
+    });
+</script>
 </div>
 </body>
 </html>

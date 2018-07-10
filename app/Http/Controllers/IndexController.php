@@ -1104,7 +1104,7 @@ class IndexController extends Controller
         $tenantsId = $ask['tid'];
         $tenants = YfcTenants::where('id',$tenantsId)->first();
 
-        $tenantspics = YfcTenantsPic::where('tenantsId', $id)->orderby("status",'desc')->orderby("id",'desc')->limit(3)->get();
+        $tenantspics = YfcTenantsPic::where('tenantsId', $tenantsId)->orderby("status",'desc')->orderby("id",'desc')->limit(3)->get();
         foreach($tenantspics as $k => $t){
             if(isset($t['cover']) && $t['cover']){
                 $t['cover'] = json_decode($t['cover'],true);

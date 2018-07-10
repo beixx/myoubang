@@ -21,6 +21,70 @@
     <![endif]-->
     <title>品牌管理</title>
 </head>
+<style>
+        .tongji {
+            display: block;
+            display: block;
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+            font-size: 14px;
+            background: #F5F5F5;
+            width: 98%;
+            padding: 10px 12px;
+            overflow: hidden;
+        }
+
+        .table-bordered td {
+            border-top: 1px solid #c4c4c4;
+        }
+
+        .tongji span {
+            width: 25%;
+            float: left;
+            padding: 10px 4%;
+        }
+
+        .shuoming {
+            font-size: 12px;
+            color: #ff6c32;
+            margin: 20px 0;
+            background: #fffaea;
+            padding: 5px 20px;
+        }
+
+        .responsive {
+            width: 100%;
+            text-align: center;
+        }
+
+        .tongji em {
+            font-size: 14px;
+            font-weight: bold;
+            font-style: initial;
+        }
+        .paging_simple_numbers{
+            width: 100%;
+            height: 30px;
+            font-size:12px;
+        }
+        .pagination {
+            margin-top: 5px;
+            width:100%;
+            height: 24px;
+        }
+        .paging_simple_numbers ul li {
+            float:left;
+            display: block;
+            margin: 4px;
+            padding: 2px  10px ;
+            text-align: center;
+            width:auto;
+            border: 1px solid #eee;
+        }
+        .paging_simple_numbers ul .active{
+            border: 0px solid #eee;
+        }
+    </style>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商户管理 <span class="c-gray en">&gt;</span> 案例管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
@@ -55,7 +119,7 @@
                 <td><?php echo $v->phone;?></td>
                 <td><?php echo $v->tenantsId;?></td>
                 <td><?php echo date("Y-m-d H:i:s",$v->ctime);?></td>
-                <td><?php echo $status[$v['source']]??'未知';?></td>
+                <td><?php echo $status[$v->source]??'未知';?></td>
                 <td class="f-14 product-brand-manage">
                 </td>
             </tr>
