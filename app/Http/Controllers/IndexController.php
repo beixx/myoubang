@@ -8,6 +8,8 @@ use App\Http\Models\Merchant;
 use App\Http\Models\YfcAdv;
 use App\Http\Models\YfcAsk;
 use App\Http\Models\YfcAskAnswer;
+use App\Http\Models\YfcAskCity;
+use App\Http\Models\YfcAskCityAnswer;
 use App\Http\Models\YfcBespokeView;
 use App\Http\Models\YfcStyle;
 use App\Http\Models\YfcTenants;
@@ -1155,5 +1157,70 @@ class IndexController extends Controller
         return view("front/wenda",$this->data);
     }
 
+    function i($id){
+        $ask = YfcAskCity::where("id",$id)->first();
+        if(empty($ask)) {
+            $this->redirect("/");
+        }
+        $anwser = YfcAskCityAnswer::where("aid",$id)->get();
+
+
+        $tenants = YfcTenants::where('city',$ask['city'])
+            ->where("shoptype",'=',$ask['shoptype'])
+            ->orderby("spread","desc")
+            ->orderby("isVip","desc")
+            ->orderby("order_city","asc")
+            ->first();
+        $tenantsId = $tenants['id'];
+        $tenantspics = YfcTenantsPic::where('tenantsId', $tenantsId)->orderby("status",'desc')->orderby("id",'desc')->limit(3)->get();
+        foreach($tenantspics as $k => $t){
+            if(isset($t['cover']) && $t['cover']){
+                $t['cover'] = json_decode($t['cover'],true);
+            }
+            if(isset($t->firstcover) && $t->firstcover){
+                $t['firstcover'] = json_decode($t['firstcover'],true);
+            }
+            if(isset($t['picStyle']) && $t['picStyle']){
+                $t['picStyle'] = json_decode($t['picStyle'],true);
+            }
+            $tenantspics[$k] = $t;
+        }
+
+        $city = $tenants['city'];
+
+        $shoptype = $tenants['shoptype'];
+
+        $title = $ask['title'];
+        $desc = '';
+        $keyword = "";
+
+        $this->data = [
+            'ask' => $ask,
+            'anwser' => $anwser,
+            'tenants' => $tenants,
+            'city' => $city,
+            'shoptype' => $shoptype,
+            'title' => $title,
+            'desc' =>$desc,
+            'keyword' => $keyword,
+            "tenantspics" => $tenantspics
+        ];
+        $this->data['pycity'] = Config::get('city.'.$city,'beijing');
+        $this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
+        $this->data['ismobile'] = $this->ismobile;
+        $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$tenants['positionCity'])
+            ->where("id",'!=',$tenants['id'])
+            ->where("shoptype",'=',$tenants['shoptype'])
+            ->where("order_city",'<','50')
+            ->orderby("order_city",'asc')
+            ->limit(24)
+            ->get()
+            ->toArray();
+        $this->getSpread($tenants);
+
+        $this->data['other'] = YfcAsk::where("id","!=",$id)->where("tid",$tenantsId)->get();
+        //print_r($this->data['other']) ;exit;
+        return view("front/i",$this->data);
+    }
 
 }
