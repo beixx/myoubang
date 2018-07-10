@@ -33,7 +33,7 @@
         <div class="zysmn"><span class="jiance">全网数据监测</span><span class="shishi">数据实时更新</span><span class="jiangbei">排名客观权威</span></div></div>
     <?php foreach($anwser as $v) { ?>
     <div class="huida">
-        <div class="yonghu"><?php echo $v['name'];?> <!--<span class="frwd">Ta给出了五星好评</span>--></div>
+        <div class="yonghu"><?php echo $v['name'];?> <span class="frwd">Ta给出了<?php echo $v['start']?>星好评</span></div>
         <p class="neirong"><?php echo $v['content'];?></p></div><?php } ?><?php if(isset($tenantspics) ) { ?>
     <div class="case_box"><div id="picScroll" class="picScroll txtCtr"><div class="bd"><ul><?php foreach($tenantspics as $k => $v){?><li><div class="anli_touxiang"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim"></div><p><a href="/kpdetail/<?php echo $v['id']?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $v['picName']?></a></p><span class="anli_month"><em class="fl">发布于<?php echo \App\Http\Helper\Date::xtime($v['created_at']);?></em><em class="fr">浏览<?php echo $v['showcount'];?>次</em></span><?php if($v['explain']) { ?><div class="anli_p"><?php echo $v['explain'];?></div><?php } ?><span class="img"><?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?><?php if(strpos($v['cover'][$i],'http') === false) {?><a class="yulan  glightbox<?php echo $k;?>" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>"><img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" alt="<?php echo $title;?>相关案例"/></a><?php } else {?><img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $title;?>相关案例"/><?php } ?><?php } ?><?php if($v['currentPrice']>0) {?><div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div><?php } ?></span><div href="javascript:" class="anlibj down anliclick"><?php echo $v['currentPrice']>0?"咨询档期":"获取案例报价";?></div></li><?php } ?></ul></div></div>
         <div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看其他案例</a></div></div>
@@ -43,9 +43,15 @@
     <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div>
     <div class="room-num-line"><span class="txt">版权归:<?php echo $city.$tenants['name'];?>所有</span></div></div>
     <footer class="txtCtr">
-        <div class="tuijian"><h3><b>其他相关问答</b></h3><ul>
+        <div class="tuijian"><h3><b>其他相关问答</b></h3>
+            <ul>
                 <?php foreach($other as $v) { ?>
-                <li id="wenda"><a target="_blank" href="/wenda/<?php echo $v['id'];?>"><?php echo $v['title'];?></a></li>
+                <li id="wenda">
+                    <a target="_blank" href="/wenda/<?php echo $v['id'];?>"><?php echo $v['title'];?></a></li>
+                <?php } ?>
+                <?php foreach($askcity as $v) { ?>
+                <li id="wenda">
+                    <a target="_blank" href="/i/<?php echo $v['id'];?>"><?php echo $v['title'];?></a></li>
                 <?php } ?>
             </ul></div>
   <?php if($type=='sheying') { ?>
@@ -120,10 +126,10 @@
                     <li><a target="_blank" href="/jiangmen/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">江门婚纱摄影排名</a></li>
                     <li><a target="_blank" href="/dong_/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">东莞婚纱摄影排名</a></li>
                     <li><a target="_blank" href="/zhanjiang/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">湛江婚纱摄影排名</a></li>
-                    
- 
 
-</ul></div> 
+
+
+</ul></div>
                     <?php } else { ?>
                      <div class="tuijian"><h3>热门城市婚礼策划榜单<span>(城市排名不分先后)</span></h3><ul>
                     <li><a target="_blank" href="/beijing/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">北京婚礼策划排名</a></li>
@@ -196,7 +202,7 @@
                     <li><a target="_blank" href="/jiangmen/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">江门婚礼策划排名</a></li>
                     <li><a target="_blank" href="/dong_/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">东莞婚礼策划排名</a></li>
                     <li><a target="_blank" href="/zhanjiang/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">湛江婚礼策划排名</a></li>
-</ul></div> 
+</ul></div>
                     <?php } ?>
         <div class="foot">
             <div class="foots">
