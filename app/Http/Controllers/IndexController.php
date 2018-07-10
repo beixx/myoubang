@@ -1220,8 +1220,13 @@ class IndexController extends Controller
             ->get()
             ->toArray();
         $this->getSpread($tenants);
-
-        $this->data['other'] = YfcAsk::where("id","!=",$id)->where("tid",$tenantsId)->get();
+        $this->data['askcity'] = YfcAskCity::where([
+            'city' => $city,
+            'shoptype' => $shoptype
+        ])->wher("id","!=",$id)->limit(5)->get();
+        $this->data['other'] = YfcAsk::where([
+            'city' => $city
+        ])->limit(10)->get();
         //print_r($this->data['other']) ;exit;
         return view("front/i",$this->data);
     }
