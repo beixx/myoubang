@@ -151,6 +151,17 @@
             <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">所属城市:<?php echo $city;?></span></div></div>
         </div>
 <footer class="txtCtr">
+    <div class="tuijian"><h3><b><?php echo $city.$shoptype;?>热门话题</b></h3>
+        <ul>
+            <?php foreach($other as $v) { ?>
+            <li id="wenda">
+                <a target="_blank" href="/wenda/<?php echo $v['id'];?>"><?php echo $v['title'];?></a></li>
+            <?php } ?>
+            <?php foreach($askcity as $v) { ?>
+            <li id="wenda">
+                <a target="_blank" href="/i/<?php echo $v['id'];?>"><?php echo $v['title'];?></a></li>
+            <?php } ?>
+        </ul></div>
     <?php if($type=='sheying') { ?>
                   <div class="tuijian paim"><h3>全部城市婚纱摄影榜单<span>(城市排名不分先后)</span></h3><ul>
                     <li><a target="_blank" href="/beijing/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">北京婚纱摄影排名</a></li>

@@ -349,7 +349,7 @@ class IndexController extends Controller
                 unset($this->data['tenants'][0]);
 
             }
-
+            $this->footeraskcity($city,$shoptype);
             $this->data['ismobile'] = $this->ismobile;
             $this->data['type'] = $shoptype=='婚纱摄影'?'sheying':'hunli';
             return view('front/index', $this->data);
@@ -1237,5 +1237,12 @@ class IndexController extends Controller
         $this->data['other'] = YfcAsk::where([
             'city' => $city
         ])->limit(10)->get();
+    }
+
+    public function footeraskcity ($city,$shoptype){
+        $this->data['askcity'] = YfcAskCity::where([
+            'city' => $city,
+            'shoptype' => $shoptype
+        ])->limit(12)->get();
     }
 }
