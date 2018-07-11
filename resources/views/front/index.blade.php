@@ -26,7 +26,7 @@
         </div>
         <div class="bd">
             <div class="list_box">
-               <div class="zysmi"><span>全网数据监测  排名客观权威</span>中国婚嫁产业  大数据服务商<em><a href="http://www.youbangkeyi.com/guize.html" target="_blank">排名算法</a></em></div>
+               <div class="zysmi"><span>全网数据监测  榜单客观权威</span>中国婚嫁产业  大数据服务商<em><a href="http://www.youbangkeyi.com/guize.html" target="_blank">排名算法</a></em></div>
                 <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
                     <?php if(!empty($spread)) foreach($spread as $k => $v) { ?>
                     <div class="pic_box bdtj">

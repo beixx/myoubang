@@ -95,8 +95,8 @@
                         <div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div>
                         <?php }?>
                     </span>
-                    <div href="javascript:" class="anlibj down anliclick">
-                        <?php echo $v['currentPrice']>0?"咨询档期":"获取报价";?>
+                    <div href="javascript:" class="anlibj down <?php echo $v['currentPrice']>0?"dangqiclick":"anliclick";?>">
+                        <?php echo $v['currentPrice']>0?"咨询该案例档期":"获取该案例报价";?>
                     </div>
                 </li>
                 <?php } ?>

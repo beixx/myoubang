@@ -9,7 +9,7 @@
         <p>该问题由"<?php echo $ask['name'];?>"发起</p>
     </div>
     <div class="shop_box"><div class="titdp">店铺信息</div><div class="txt-box">
-            <h3><a href="/detail/1848"><?php echo $city.$tenants['name'];?></a></h3>
+            <h3><a href="/detail/<?php echo $tenants['id']?>"><?php echo $city.$tenants['name'];?></a></h3>
             <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price']?></span></div>
             <div class="num fa txtCtr"><?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div></div></div><hr>
         <a id="dateShow" class="yuyue"><i></i><span>
