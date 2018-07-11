@@ -153,10 +153,6 @@
 <footer class="txtCtr">
     <div class="tuijian"><h3><b><?php echo $city.$shoptype;?>热门话题</b></h3>
         <ul>
-            <?php foreach($other as $v) { ?>
-            <li id="wenda">
-                <a target="_blank" href="/wenda/<?php echo $v['id'];?>"><?php echo $v['title'];?></a></li>
-            <?php } ?>
             <?php foreach($askcity as $v) { ?>
             <li id="wenda">
                 <a target="_blank" href="/i/<?php echo $v['id'];?>"><?php echo $v['title'];?></a></li>
