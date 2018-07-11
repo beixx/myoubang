@@ -413,6 +413,7 @@ class IndexController extends Controller
         if(empty($tenants)) {
             return Redirect::to('/');
         }
+        $shoptype = $tenants['shoptype'];
         $city = $tenants['city'];
         $tenants['pcount'] = json_decode($tenants['pcount'],true);
         $pics = YfcTenantsPic::where('tenantsId',$id)->orderby("status",'desc')->orderby("id",'desc')->get();
@@ -435,6 +436,7 @@ class IndexController extends Controller
             'pics' => $pics,
             'tenants' => $tenants,
             'city' => $city,
+            'shoptype' =>$shoptype
         ];
 	    $this->data['pycity'] = Config::get('city.'.$city,'beijing');
 	    $this->data['type'] = $this->data['shoptype']=='婚纱摄影'?'sheying':'hunli';
@@ -448,7 +450,7 @@ class IndexController extends Controller
             ->get()
             ->toArray();
         $this->getSpread($tenants);
-
+        $this->footerask($city,$shoptype);
         return view("front/piclist",$this->data);
     }
     public function txlist($id = 0){
@@ -550,7 +552,7 @@ class IndexController extends Controller
             ->get()
             ->toArray();
         $this->getSpread($tenants);
-
+        $this->footerask($city,$shoptype);
         return view("front/kpdetail",$this->data);
     }
 
@@ -1220,15 +1222,20 @@ class IndexController extends Controller
             ->get()
             ->toArray();
         $this->getSpread($tenants);
-        $this->data['askcity'] = YfcAskCity::where([
-            'city' => $city,
-            'shoptype' => $shoptype
-        ])->where("id","!=",$id)->limit(5)->get();
-        $this->data['other'] = YfcAsk::where([
-            'city' => $city
-        ])->limit(10)->get();
+
+        $this->footerask($city,$shoptype,$id);
         //print_r($this->data['other']) ;exit;
         return view("front/i",$this->data);
     }
 
+    public function footerask ($city,$shoptype,$id=0){
+        $this->data['askcity'] = YfcAskCity::where([
+            'city' => $city,
+            'shoptype' => $shoptype
+        ])->where("id","!=",$id)->limit(5)->get();
+
+        $this->data['other'] = YfcAsk::where([
+            'city' => $city
+        ])->limit(10)->get();
+    }
 }
