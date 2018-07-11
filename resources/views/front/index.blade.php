@@ -151,7 +151,7 @@
             <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">所属城市:<?php echo $city;?></span></div></div>
         </div>
 <footer class="txtCtr">
-    <div class="tuijian"><h3><b><?php echo $city;?>热门话题</b></h3>
+    <div class="tuijian"><h3><b><?php echo $city.$shoptype;?>热门话题</b></h3>
         <ul>
             <?php foreach($askcity as $v) { ?>
             <li id="wenda">

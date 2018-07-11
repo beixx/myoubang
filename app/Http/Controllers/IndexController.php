@@ -351,6 +351,7 @@ class IndexController extends Controller
             }
             $this->footeraskcity($city,$shoptype);
             $this->data['ismobile'] = $this->ismobile;
+            $this->data['shoptype'] = $shoptype;
             $this->data['type'] = $shoptype=='婚纱摄影'?'sheying':'hunli';
             return view('front/index', $this->data);
 
