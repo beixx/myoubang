@@ -23,7 +23,10 @@
         <p><span>人均消费:¥<?php echo $tenants['price'];?></span><span>|</span><span>到店请提前预约</span></p>
         <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><em></em>打榜</a></div>
     </div>
-   <!-- 如果数据排名数据是0或者是50名以上的则展示这段代码，同时下方排名是0 或 这是 50名以上的 ，则用  “-” 来表示。 <div class="queshuju">“-” 表示数据太少无法统计，但可正常预约商家！</div> -->
+    <?php if($tenants['order_city']==0 || $tenants['order_city']>50){  ?>
+    <div class="queshuju">“-” 表示数据太少无法统计，但可正常预约商家！</div>
+    <?php } else {?>
+
     <div class="datas">
 		        <span class="lft txtCtr c1">
 		            <em>第<i class="fa"><?php echo $tenants['order_city'];?></i>名</em>
@@ -37,7 +40,9 @@
 		            <em>第<i class="fa"><?php echo $tenants['praise_order'];?></i>名</em>
 		        	<p>好评榜</p>
 		        </span>
-</div><div class="zysmn">
+    </div>
+    <?php } ?>
+<div class="zysmn">
 <span class="jiance">全网数据监测</span>
 <span class="shishi">数据实时更新</span>
 <span class="jiangbei">排名客观权威</span>
