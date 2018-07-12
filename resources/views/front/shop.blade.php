@@ -23,25 +23,28 @@
         <p><span>人均消费:¥<?php echo $tenants['price'];?></span><span>|</span><span>到店请提前预约</span></p>
         <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><em></em>打榜</a></div>
     </div>
-    <?php if($tenants['order_city']==0 || $tenants['order_city']>50){  ?>
     <div class="queshuju">“-” 表示数据太少无法统计，但可正常预约商家！</div>
-    <?php } else {?>
 
     <div class="datas">
 		        <span class="lft txtCtr c1">
-		            <em>第<i class="fa"><?php echo $tenants['order_city'];?></i>名</em>
+		            <em>第<i class="fa">
+                            <?php echo ($tenants['order_city']>1&&$tenants['order_city']<50)?$tenants['order_city']:"-";?>
+                        </i>名</em>
 		        	<p>综合榜</p>
 		        </span><div class="border-right-e7e7e7"></div>
 		        <span class="lft txtCtr c2">
-		            <em>第<i class="fa"><?php echo $tenants['brand_search_order'];?></i>名</em>
+		            <em>第<i class="fa">
+                            <?php echo ($tenants['brand_search_order']>1&&$tenants['brand_search_order']<50)?$tenants['brand_search_order']:"-";?>
+                        </i>名</em>
 		            <p>品牌榜</p>
 		        </span><div class="border-right-e7e7e7"></div>
 		        <span class="lft txtCtr c3">
-		            <em>第<i class="fa"><?php echo $tenants['praise_order'];?></i>名</em>
+		            <em>第<i class="fa">
+                            <?php echo ($tenants['praise_order']>1&&$tenants['praise_order']<50)?$tenants['praise_order']:"-";?>
+                        </i>名</em>
 		        	<p>好评榜</p>
 		        </span>
     </div>
-    <?php } ?>
 <div class="zysmn">
 <span class="jiance">全网数据监测</span>
 <span class="shishi">数据实时更新</span>
