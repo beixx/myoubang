@@ -23,7 +23,12 @@
         <p><span>人均消费:¥<?php echo $tenants['price'];?></span><span>|</span><span>到店请提前预约</span></p>
         <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><em></em>打榜</a></div>
     </div>
+    <?php if($tenants['order_city']=0||$tenants['order_city']>50
+        || $tenants['brand_search_order']=0||$tenants['brand_search_order']>50
+        || $tenants['praise_order']=0||$tenants['praise_order']>50
+    ) { ?>
     <div class="queshuju">“-” 表示数据太少无法统计，但可正常预约商家！</div>
+    <?php } ?>
 
     <div class="datas">
 		        <span class="lft txtCtr c1">
