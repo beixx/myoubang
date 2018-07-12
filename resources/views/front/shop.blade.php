@@ -28,19 +28,19 @@
     <div class="datas">
 		        <span class="lft txtCtr c1">
 		            <em>第<i class="fa">
-                            <?php echo ($tenants['order_city']>1&&$tenants['order_city']<50)?$tenants['order_city']:"-";?>
+                            <?php echo ($tenants['order_city']>0&&$tenants['order_city']<=50)?$tenants['order_city']:"-";?>
                         </i>名</em>
 		        	<p>综合榜</p>
 		        </span><div class="border-right-e7e7e7"></div>
 		        <span class="lft txtCtr c2">
 		            <em>第<i class="fa">
-                            <?php echo ($tenants['brand_search_order']>1&&$tenants['brand_search_order']<50)?$tenants['brand_search_order']:"-";?>
+                            <?php echo ($tenants['brand_search_order']>0&&$tenants['brand_search_order']<=50)?$tenants['brand_search_order']:"-";?>
                         </i>名</em>
 		            <p>品牌榜</p>
 		        </span><div class="border-right-e7e7e7"></div>
 		        <span class="lft txtCtr c3">
 		            <em>第<i class="fa">
-                            <?php echo ($tenants['praise_order']>1&&$tenants['praise_order']<50)?$tenants['praise_order']:"-";?>
+                            <?php echo ($tenants['praise_order']>0&&$tenants['praise_order']<=50)?$tenants['praise_order']:"-";?>
                         </i>名</em>
 		        	<p>好评榜</p>
 		        </span>
