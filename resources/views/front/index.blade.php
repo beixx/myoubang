@@ -154,7 +154,7 @@
     <div class="tuijian"><h3><b><?php echo $city.$shoptype;?>热门话题</b></h3>
         <ul>
             <?php foreach($askcity as $v) { ?>
-            <li id="wenda">
+            <li id="sansan">
                 <a target="_blank" href="/i/<?php echo $v['id'];?>"><?php echo $v['title'];?></a></li>
             <?php } ?>
         </ul></div>

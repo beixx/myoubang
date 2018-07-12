@@ -161,11 +161,11 @@
     <div class="tuijian"><h3><b>其他相关问答</b></h3>
         <ul>
             <?php foreach($other as $v) { ?>
-            <li id="wenda">
+            <li id="sansan">
                 <a target="_blank" href="/wenda/<?php echo $v['id'];?>"><?php echo $v['title'];?></a></li>
             <?php } ?>
             <?php foreach($askcity as $v) { ?>
-            <li id="wenda">
+            <li id="sansan">
                 <a target="_blank" href="/i/<?php echo $v['id'];?>"><?php echo $v['title'];?></a></li>
             <?php } ?>
         </ul></div>
