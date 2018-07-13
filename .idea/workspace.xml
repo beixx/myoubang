@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78c33a0d-54cb-4cf0-8b6a-947adcf68385" name="Default" comment="Merge branch 'master' of https://github.com/beixx/myoubang&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/tijiao.js" afterPath="$PROJECT_DIR$/public/js/tijiao.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/tijiao.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/tijiao.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/tijiaojs.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/tijiaojs.blade.php" />
     </list>
     <ignored path="myoubang.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,14 +24,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.166667">
-              <caret line="802" column="9" selection-start-line="802" selection-start-column="9" selection-end-line="802" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.6283186">
+              <caret line="761" column="13" selection-start-line="761" selection-start-column="13" selection-end-line="761" selection-end-column="13" />
               <folding>
                 <element signature="e#39#75#0#PHP" expanded="true" />
-                <marker date="1531461900411" expanded="true" signature="34921:34981" placeholder="..." />
+                <marker date="1531462116751" expanded="true" signature="34955:35015" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -81,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tijiaojs.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tijiaojs.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/front/tijiaojs.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23893805">
+            <state vertical-scroll-proportion="-5.625">
               <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
               <folding />
             </state>
@@ -186,10 +182,10 @@
         <option value="$PROJECT_DIR$/resources/views/front/piclist.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/shop.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
         <option value="$PROJECT_DIR$/resources/views/front/tijiao.blade.php" />
         <option value="$PROJECT_DIR$/public/js/tijiao.js" />
         <option value="$PROJECT_DIR$/resources/views/front/tijiaojs.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
       </list>
     </option>
   </component>
@@ -1109,17 +1105,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.166667">
-          <caret line="802" column="9" selection-start-line="802" selection-start-column="9" selection-end-line="802" selection-end-column="9" />
-          <folding>
-            <element signature="e#39#75#0#PHP" expanded="true" />
-            <marker date="1531461900411" expanded="true" signature="34921:34981" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-195.0">
@@ -1146,9 +1131,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/tijiaojs.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23893805">
+        <state vertical-scroll-proportion="-5.625">
           <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6283186">
+          <caret line="761" column="13" selection-start-line="761" selection-start-column="13" selection-end-line="761" selection-end-column="13" />
+          <folding>
+            <element signature="e#39#75#0#PHP" expanded="true" />
+            <marker date="1531462116751" expanded="true" signature="34955:35015" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -797,12 +797,12 @@ class IndexController extends Controller
         $res['result'] = '00';
         if($tenantsId) {
             $yfctenants = YfcTenants::where("id",'=',$tenantsId)->first();
-            $content = "来源：".$data['ismobile']."\n".'城市:'.$yfctenants["positionCity"].";\n时间:".date('Y-m-d H:i:s').";\n名称:"
+            $content = "来源：".($data['ismobile']==0?"pc端":"手机端")."\n".'城市:'.$yfctenants["positionCity"].";\n时间:".date('Y-m-d H:i:s').";\n名称:"
                 .$yfctenants["name"].";\n预约人:无;\n手机号码:".$data['phone'].";\n地址:".$data['url']."\n来自：有榜网·".$yfctenants["positionCity"]."站（中国婚嫁产业·大数据服务商）\n";
             $this->sendDD('04a7b3d87f5701ff8d2bf9cccb38ead42344b8ead406fe125d5147e36df33b81',$content);
         }
         else {
-            $content = "来源：".$data['ismobile']."\n".'城市:'.$data['city'].";\n时间:".date('Y-m-d H:i:s').";\n名称:"
+            $content = "来源：".($data['ismobile']==0?"pc端":"手机端")."\n".'城市:'.$data['city'].";\n时间:".date('Y-m-d H:i:s').";\n名称:"
                 .";\n预约人:无;\n手机号码:".$data['phone'].";\n地址:".$data['url']."\n来自：有榜网·".$data['city']."站（中国婚嫁产业·大数据服务商）\n";
             $this->sendDD('04a7b3d87f5701ff8d2bf9cccb38ead42344b8ead406fe125d5147e36df33b81',$content);
         }
