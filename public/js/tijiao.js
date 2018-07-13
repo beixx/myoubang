@@ -4,6 +4,7 @@
         var phone = $('#mobile').val();
         var city = $('#pcity').val();
         var source = $("#source").val();
+        var ismobile = $("#ismobile").val();
 
         if(!phone){
             alert('手机必填');
@@ -20,7 +21,7 @@
             url: "/saveview",
             type: "post",
             dataType: "json",
-            data: {'tenantsId': tenantsId,"city":city,'phone': phone,'source':source},
+            data: {'tenantsId': tenantsId,"ismobile":ismobile,"city":city,'phone': phone,'source':source},
             success: function(data){
                 console.log(data);
                 if(data.result=='00'){

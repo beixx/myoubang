@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78c33a0d-54cb-4cf0-8b6a-947adcf68385" name="Default" comment="Merge branch 'master' of https://github.com/beixx/myoubang&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/tijiao.js" afterPath="$PROJECT_DIR$/public/js/tijiao.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/tijiao.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/tijiao.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/tijiaojs.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/tijiaojs.blade.php" />
     </list>
     <ignored path="myoubang.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,21 +31,41 @@
       <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.541667">
-              <caret line="353" column="48" selection-start-line="353" selection-start-column="48" selection-end-line="353" selection-end-column="48" />
+            <state vertical-scroll-proportion="-9.166667">
+              <caret line="802" column="9" selection-start-line="802" selection-start-column="9" selection-end-line="802" selection-end-column="9" />
               <folding>
                 <element signature="e#39#75#0#PHP" expanded="true" />
-                <marker date="1531316894061" expanded="true" signature="34466:34526" placeholder="..." />
+                <marker date="1531461900411" expanded="true" signature="34921:34981" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.94690263">
-              <caret line="153" column="58" selection-start-line="153" selection-start-column="49" selection-end-line="153" selection-end-column="58" />
+            <state vertical-scroll-proportion="-195.0">
+              <caret line="312" column="19" selection-start-line="312" selection-start-column="19" selection-end-line="312" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shop.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/front/shop.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="415.20834">
+              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tijiao.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/front/tijiao.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="413" selection-start-line="0" selection-start-column="413" selection-end-line="0" selection-end-column="413" />
               <folding />
             </state>
           </provider>
@@ -51,18 +74,48 @@
       <file leaf-file-name="kpdetail.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/front/kpdetail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.375">
-              <caret line="170" column="19" selection-start-line="170" selection-start-column="19" selection-end-line="170" selection-end-column="19" />
+            <state vertical-scroll-proportion="-18.541666">
+              <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YfcAskAnswer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Models/YfcAskAnswer.php">
+      <file leaf-file-name="tijiaojs.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/front/tijiaojs.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5">
-              <caret line="14" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.23893805">
+              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tijiao.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/tijiao.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="piclist.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/front/piclist.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.0">
+              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -71,32 +124,8 @@
       <file leaf-file-name="wenda.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/front/wenda.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6666665">
-              <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="55" selection-end-column="23" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="i.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/front/i.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.541667">
-              <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wenda.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/wenda.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2916667">
-              <caret line="158" column="4" selection-start-line="158" selection-start-column="4" selection-end-line="190" selection-end-column="15" />
+            <state vertical-scroll-proportion="-11.875">
+              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -110,9 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Merchant/LoginController.php" />
-        <option value="$PROJECT_DIR$/resources/views/merchant/setlist.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/merchant/addset.blade.php" />
         <option value="$PROJECT_DIR$/public/webUpload/js/diyUpload.js" />
         <option value="$PROJECT_DIR$/public/webUpload/extend-webuploader.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
@@ -143,24 +169,27 @@
         <option value="$PROJECT_DIR$/resources/views/front/baojia.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/merchant/piclist.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/tijiao.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/IndexController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/xpokelist.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Models/YfcAsk.php" />
         <option value="$PROJECT_DIR$/app/Http/Models/YfcAskAnswer.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/shop.blade.php" />
         <option value="$PROJECT_DIR$/config/city.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Models/YfcAskCity.php" />
         <option value="$PROJECT_DIR$/app/Http/Models/YfcAskCityAnswer.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/wenda.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/i.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/piclist.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/txdetail.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/baojia.js.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/kpdetail.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/i.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/wenda.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/piclist.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/shop.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/tijiao.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/tijiao.js" />
+        <option value="$PROJECT_DIR$/resources/views/front/tijiaojs.blade.php" />
       </list>
     </option>
   </component>
@@ -206,7 +235,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -617,13 +645,14 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../youbang" />
-    <property name="SearchEverywhereHistoryKey" value="wenda.&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/resources/views/front/wenda.blade.php&#10;baojia.&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/resources/views/front/baojia.blade.php&#10;.env&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/.env&#10;web.php&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/routes/web.php&#10;shop&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/public/css/shop.blade.php&#10;.ENV&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/.env&#10;define.php&#9;FILE&#9;jar:///Applications/PhpStorm.app/Contents/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_defines.php&#10;boot&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/public/webUpload/bootstrap.css&#10;route&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/vendor/symfony/routing/Route.php&#10;route.php&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/vendor/symfony/routing/Route.php&#10;invoice.js&#9;null&#9;null&#10;web.&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/routes/web.php&#10;iconf&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/public/merchant/lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <property name="SearchEverywhereHistoryKey" value="tijiao.js&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/public/js/tijiao.js&#10;wenda.&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/resources/views/front/wenda.blade.php&#10;baojia.&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/resources/views/front/baojia.blade.php&#10;.env&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/.env&#10;web.php&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/routes/web.php&#10;shop&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/public/css/shop.blade.php&#10;.ENV&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/.env&#10;define.php&#9;FILE&#9;jar:///Applications/PhpStorm.app/Contents/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_defines.php&#10;boot&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/public/webUpload/bootstrap.css&#10;route&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/vendor/symfony/routing/Route.php&#10;route.php&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/vendor/symfony/routing/Route.php&#10;invoice.js&#9;null&#9;null&#10;web.&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/routes/web.php&#10;iconf&#9;FILE&#9;file:///Users/chen/website/mvc/myoubang/public/merchant/lib/Hui-iconfont/1.0.8/iconfont.css" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="72" />
@@ -699,7 +728,7 @@
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33279485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -743,27 +772,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39823008">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/mbaojiahunli.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8495574">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18584071">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/taoxilist.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -855,18 +863,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28697184">
-          <caret line="278" column="0" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/hunlicity.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -874,7 +874,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34513274">
           <caret line="13" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="143" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -882,7 +881,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.15929204">
           <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -890,15 +888,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.625">
           <caret line="39" column="29" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/tijiao.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75">
-          <caret line="66" column="19" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -906,7 +895,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="37.708332">
           <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,7 +902,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.625">
           <caret line="136" column="16" selection-start-line="136" selection-start-column="16" selection-end-line="136" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -922,7 +909,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.916667">
           <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,7 +916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -938,7 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.5486727">
           <caret line="132" column="9" selection-start-line="132" selection-start-column="9" selection-end-line="132" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,7 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,7 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.4867257">
           <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,7 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.026548672">
           <caret line="87" column="28" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -970,7 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5840708">
           <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,15 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/baojia.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.98938054">
-          <caret line="459" column="12" selection-start-line="459" selection-start-column="12" selection-end-line="459" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -994,7 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.9380531">
           <caret line="138" column="36" selection-start-line="138" selection-start-column="36" selection-end-line="138" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,7 +988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.25">
           <caret line="58" column="44" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1026,23 +995,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2300885">
           <caret line="157" column="20" selection-start-line="157" selection-start-column="20" selection-end-line="157" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/shop.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6265486">
-          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/wenda.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2916667">
-          <caret line="158" column="4" selection-start-line="158" selection-start-column="4" selection-end-line="190" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,42 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Models/YfcAskAnswer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5">
-          <caret line="14" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/i.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.541667">
-          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/wenda.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6666665">
-          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="55" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/kpdetail.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375">
-          <caret line="170" column="19" selection-start-line="170" selection-start-column="19" selection-end-line="170" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Models/YfcAsk.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31858408">
@@ -1106,37 +1022,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/piclist.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57522124">
-          <caret line="120" column="19" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/txdetail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6106195">
           <caret line="159" column="4" selection-start-line="159" selection-start-column="4" selection-end-line="169" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Models/YfcAskAnswer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/wenda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="158" column="4" selection-start-line="158" selection-start-column="4" selection-end-line="190" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Merchant/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.0833335">
+          <caret line="278" column="0" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/i.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.4705882">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/wenda.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/piclist.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/shop.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="415.20834">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/baojia.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.840708">
+          <caret line="323" column="17" selection-start-line="323" selection-start-column="17" selection-end-line="323" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/kpdetail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.541666">
+          <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.541667">
-          <caret line="353" column="48" selection-start-line="353" selection-start-column="48" selection-end-line="353" selection-end-column="48" />
+        <state vertical-scroll-proportion="-9.166667">
+          <caret line="802" column="9" selection-start-line="802" selection-start-column="9" selection-end-line="802" selection-end-column="9" />
           <folding>
             <element signature="e#39#75#0#PHP" expanded="true" />
-            <marker date="1531316894061" expanded="true" signature="34466:34526" placeholder="..." />
+            <marker date="1531461900411" expanded="true" signature="34921:34981" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.94690263">
-          <caret line="153" column="58" selection-start-line="153" selection-start-column="49" selection-end-line="153" selection-end-column="58" />
+        <state vertical-scroll-proportion="-195.0">
+          <caret line="312" column="19" selection-start-line="312" selection-start-column="19" selection-end-line="312" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/tijiao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/tijiao.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="413" selection-start-line="0" selection-start-column="413" selection-end-line="0" selection-end-column="413" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/tijiaojs.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23893805">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
           <folding />
         </state>
       </provider>
