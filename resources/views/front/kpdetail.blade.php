@@ -190,6 +190,6 @@
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 </div>
 
-@include("front.tijiao.js")
+@include("front.tijiaojs")
 </body>
 </html>
