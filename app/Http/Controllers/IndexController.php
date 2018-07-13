@@ -349,6 +349,7 @@ class IndexController extends Controller
                 unset($this->data['tenants'][0]);
 
             }
+            $this->data['index'] = 1;
             $this->footeraskcity($city,$shoptype);
             $this->data['ismobile'] = $this->ismobile;
             $this->data['shoptype'] = $shoptype;
