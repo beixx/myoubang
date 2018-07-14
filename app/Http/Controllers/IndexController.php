@@ -354,7 +354,7 @@ class IndexController extends Controller
                 'shoptype' => $shoptype,
             ])->orderby('id',"desc")->first();
             if(!empty($this->data['askfooter']['id'])) {
-                $this->data['askfooter']['answer'] =YfcAskAnswer::where("aid",'=',$this->data['ask']['id'])
+                $this->data['askfooter']['answer'] =YfcAskAnswer::where("aid",'=',$this->data['askfooter']['id'])
                     ->first();
             }
             $this->data['index'] = 1;
