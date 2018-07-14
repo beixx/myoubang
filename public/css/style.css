@@ -321,7 +321,7 @@ header .cd-bouncy-nav-trigger{width: 1.5rem;height: 1.5rem;border-radius: 50%;fl
 .downNav{width: 100%;margin: 0 auto;background-color: #fff;display: none; position: fixed; height: auto; z-index:9999999; left: 0; right: 0;}
 
 .zxyy{position:fixed;cursor:pointer;z-index: 9999;max-width:740px;margin: 0 auto;bottom: 0; left: 0; right: 0;height: 2.4rem; line-height: 2.4rem; text-align: center;}
-.zxyy em{background: #FF4040; cursor:pointer;color: #FFF;box-shadow: 0rem 0rem 0.1rem #B1B1B1;border-radius: 9rem; height: 2rem; line-height: 2rem; font-weight: bold; display: block; margin:0rem 18% 0.4rem;}
+.zxyy{background: #FF4040; cursor:pointer;-webkit-box-flex: 1; -ms-flex: 1; flex: 1;color: #FFF;box-shadow: 0rem 0rem 0.1rem #B1B1B1;border-radius: 9rem; height: 2rem; line-height: 2rem; font-weight: bold; display: block; margin:0rem 18% 0.4rem;}
 .zxyy em a{color:#FFF;}
 /*优惠咨询*/
 .banyouhui{width: 92%;background: #FFFFFF;margin-top: 0.3rem; padding: 0 4%;}
@@ -2061,7 +2061,8 @@ header .city_box{margin-top: 0.75rem;}
 .logo img {width: initial;
     height:1.8rem;
     vertical-align: initial;}
-.zxyy em{margin: 0rem 32% 0.4rem;}
+.zxyy{    margin: 0rem auto 0.4rem;
+    width: 266.41px;}
 #zxsl{margin: 0rem auto 0.4rem; width: 266.41px;}
 .downNav{ width: 550px;
     top: 50%!important;

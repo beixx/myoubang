@@ -134,6 +134,18 @@
                         <?php } ?>
                 </section>
             </div>
+    <!--
+    <div class="comment_list">
+    <div class="title dafen1">本城市最新话题<span class="fa"><a href="/wenda/19">更新于：2018年7月14日</a></span>
+    </div>
+    <div class="comment_column">
+    <h3 class="wenda"><a href="/wenda/19">南京乐玛婚纱摄影怎么样？</a></h3>
+                    <div class="cmt_con cmt_R">
+                    <span class="comment_W"> 还没结婚之前每天下班都会经过乐玛摄影店门口。从最初看着店装修，一直到开业。真的是看着它开起来的，哈哈。后来有了男朋友，再后来结了婚准备拍婚纱照，一开始就选定了乐玛。不负所望，从选衣服到拍完，整个过程虽然辛苦但是拍出的效果很赞。每个环节的服务都很到位，特别是我的化妆师佳怡，妹子长相甜美人也超nice，很有耐心，一直帮我补妆弄造型。摄影师tom很有趣，因为我不怎么喜欢笑，然后他就一直在逗我笑，到最后都快崩溃了，但是还是耐心着帮我们拍完了，效果真的很好。印象最深的是我们当时已经出外景到下午，有点饿，工作人员主动把自己带的小零食给我们吃，很贴心。最后奉上几张照片。 </span>
+              <span class="f12p">—「以上内容真实消费者"人生地不熟"阐述 」</span>
+        </div>
+            </div>
+</div>-->
             <div class="tittp">有榜数据说明</div>
 <div id="fugai" class="time-box">
    <div class="txtshuju lft fgchs">

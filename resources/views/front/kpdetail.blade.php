@@ -189,7 +189,6 @@
 <?php } ?>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 </div>
-
 @include("front.tijiaojs")
 </body>
 </html>

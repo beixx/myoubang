@@ -57,9 +57,9 @@ $(function(){
         $("#tijiao").html("免费咨询档期");
         $("#mobile").attr("placeholder","请输入手机号 · 商家3分钟内会联系您！");
     })
-    $(".freeclick").click(function(){
+    $(".yuyueclick").click(function(){
         $("#source").val(5);
-        $("#titlefield").html("提交信息，预约拍摄档期");
+        $("#titlefield").html("提交信息，立即预约咨询商家");
         $("#tijiao").html("免费咨询档期");
         $("#mobile").attr("placeholder","请输入手机号 · 商家3分钟内会联系您！");
     })

@@ -96,7 +96,7 @@
                         <?php }?>
                     </span>
                     <div href="javascript:" class="anlibj down <?php echo $v['currentPrice']>0?"dangqiclick":"anliclick";?>">
-                        <?php echo $v['currentPrice']>0?"咨询该案例档期":"获取该案例报价";?>
+                        <?php echo $v['currentPrice']>0?"咨询档期":"获取报价";?>
                     </div>
                 </li>
                 <?php } ?>

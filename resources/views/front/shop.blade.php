@@ -190,7 +190,7 @@
                         <?php if($v['currentPrice']>0) {?>
                         <div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div><?php } ?>
                         </span>
-                        <div href="javascript:" class="anlibj down <?php echo $v['currentPrice']>0?"dangqiclick":"anliclick";?>"><?php echo $v['currentPrice']>0?"咨询该案例档期":"获取该案例报价";?></div></li><?php } ?></ul></div></div>
+                        <div href="javascript:" class="anlibj down <?php echo $v['currentPrice']>0?"dangqiclick":"anliclick";?>"><?php echo $v['currentPrice']>0?"咨询档期":"获取报价";?></div></li><?php } ?></ul></div></div>
 	<div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看其他<?php echo $countpics;?>套</a></div>
 </div>
 <link rel="stylesheet" href="/css/glightbox.css">
@@ -305,6 +305,24 @@
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
 <script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/echarts-wordcloud.min.js"></script>
 <script type="text/javascript">
+    $(document).ready(function() {
+        $(".info-box").off('click').on('click','.icon-unfold', function () {
+            $(".zhanshi").animate({height: $('.neirong').height()}, "slow");
+            $(this).removeClass('icon-unfold icon-fold').addClass('icon-fold');
+        }).on('click','.icon-fold', function () {
+            $(".zhanshi").animate({height: '16rem'}, "normal");
+            $(this).removeClass('icon-fold icon-unfold').addClass('icon-unfold');
+        });
+    })
+    $(document).ready(function() {
+        $(".info-yinxiang").off('click').on('click','.icon-unfold1', function () {
+            $(".yinxiang").animate({height: $('.mui-tagscloud-ul').height()}, "slow");
+            $(this).removeClass('icon-unfold1 icon-fold1').addClass('icon-fold1');
+        }).on('click','.icon-fold1', function () {
+            $(".yinxiang").animate({height: '17.5rem'}, "normal");
+            $(this).removeClass('icon-fold1 icon-unfold1').addClass('icon-unfold1');
+        });
+    })
     var myChart = document.getElementById('shuju');
     //自适应宽高
     var myChartContainer = function () {
