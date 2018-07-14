@@ -146,7 +146,7 @@
                 <?php echo $askfooter['title'];?>
             </a>
         </h3>
-        <?php if(isset($askfooter['answer']['content']["id"])){ ?>
+        <?php if(isset($askfooter['answer']["id"])){ ?>
         <div class="cmt_con cmt_R">
             <span class="comment_W">
             <?php echo $askfooter['answer']['content'];?></span>
