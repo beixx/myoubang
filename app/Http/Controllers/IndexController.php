@@ -349,6 +349,14 @@ class IndexController extends Controller
                 unset($this->data['tenants'][0]);
 
             }
+            $this->data['askfooter'] = YfcAsk::where([
+                'city' => $city,
+                'shoptype' => $shoptype,
+            ])->orderby('id',"desc")->first();
+            if(!empty($this->data['askfooter']['id'])) {
+                $this->data['askfooter']['answer'] =YfcAskAnswer::where("aid",'=',$this->data['ask']['id'])
+                    ->first();
+            }
             $this->data['index'] = 1;
             $this->footeraskcity($city,$shoptype);
             $this->data['ismobile'] = $this->ismobile;
