@@ -146,13 +146,16 @@
                 <?php echo $askfooter['title'];?>
             </a>
         </h3>
+        <?php if(isset($askfooter['answer']['content']["id"])){ ?>
         <div class="cmt_con cmt_R">
             <span class="comment_W">
             <?php echo $askfooter['answer']['content'];?></span>
               <span class="f12p">—「以上内容真实消费者"<?php echo $askfooter['answer']['name'];?>"阐述 」</span>
         </div>
+        <?php } ?>
     </div>
 </div>
+<?php } ?>
             <div class="tittp">有榜数据说明</div>
 <div id="fugai" class="time-box">
    <div class="txtshuju lft fgchs">
