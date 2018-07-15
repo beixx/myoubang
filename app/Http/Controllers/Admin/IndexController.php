@@ -99,9 +99,9 @@ class IndexController extends AdminController
         Msg::js("处理成功");
     }
 
-    public function askNew(Request $request){
+    public function askNew(){
 
-        return view("/admin/asknew" , $this->data);
+        return view("/admin/asknew");
     }
 
     public function  askNewPost(Request $request){
@@ -147,7 +147,7 @@ class IndexController extends AdminController
                     $c = rand(3,5);
                     $cc = count($comment);
 
-                    
+
                     for($i = 0 ; $i < $c;$i ++) {
                         if($cc<1) {
                             return [];
