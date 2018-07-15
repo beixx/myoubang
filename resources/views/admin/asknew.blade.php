@@ -52,7 +52,7 @@
 </head>
 <body>
 <div class="page-container">
-    <form class="form form-horizontal" action="/manage/askNewPost" method="post" enctype="multipart/form-data" id="formarticleadd">
+    <form class="form form-horizontal" action="/admin/askNewPost" method="post" enctype="multipart/form-data" id="formarticleadd">
         <input type="hidden" name="id" value="<?php echo isset($set['id'])?$set['id']:0; ?>" />
 
         <div class="row cl">
