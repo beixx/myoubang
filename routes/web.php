@@ -119,4 +119,7 @@ Route::group(['domain' => env('ADMIN_URL')],function(){
     Route::get("/admin/pokesucc" , 'Admin\IndexController@pokesucc');
     Route::get("/admin/pokeerror" , 'Admin\IndexController@pokeerror');
 
+    Route::get("/admin/askNew" , 'Admin\IndexController@askNew');
+    Route::post("/admin/askNewPost" , 'Admin\IndexController@askNew');
+
 });

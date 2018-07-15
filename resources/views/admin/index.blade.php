@@ -76,6 +76,7 @@
                 <ul>
                     <li><a data-href="/admin/xpokelist" data-title="预约记录" href="javascript:void(0)">预约记录</a></li>
                     <li><a data-href="/admin/poke" data-title="申诉记录" href="javascript:void(0)">申诉记录</a></li>
+                    <li><a data-href="/admin/asknew" data-title="设置新闻最新" href="javascript:void(0)">设置新闻最新</a></li>
                 </ul>
             </dd>
         </dl>
