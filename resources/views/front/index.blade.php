@@ -1,39 +1,19 @@
 <?php //echo $type ;exit;?><!DOCTYPE html>
-<html lang="zh-cn"><head><meta charset="utf-8"><title><?php echo $title;?></title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $keyword?>"><meta name="description" content="<?php echo $desc?>"><link rel="stylesheet" href="/css/style.css"><script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script><script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script><script type="text/javascript" src="//m1.youbangkeyi.com/js/main.js"></script><script type="text/javascript" src="/js/foot.js"></script><script type="text/javascript" src="/js/more.js?v1"></script><style type="text/css">#gr_zone_ids{cursor:pointer}footer{margin-bottom: 0;}</style></head>
+<html lang="zh-cn"><head><meta charset="utf-8"><title>【<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名前十名】<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜-有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>,<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>前十名,<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名,<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜,<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>哪家好"><meta name="description" content="「有榜网<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>TOP50榜单」依托行业大数据为您提供客观权威的<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名，准确提供<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜前十名、<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影影楼和工作室<?php } else { ?>婚庆公司<?php } ?>哪家好等信息。"><link rel="stylesheet" href="/js/layer/wenda.css"><script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script><script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script></head>
 <body>
-@include("front.tijiao")
-<div class="main">
-<header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div><div class="logo"><a href="/<?php echo $pycity;?>/<?php if($type=='sheying') { ?>sheying<?php } else { ?>hunli<?php } ?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>前十名</a></div><a class="zxdh" href="tel:18500905723"></a></header>
-<div class="content">
-<div class="bg2"></div>
-    <div class="sousj">
-    <div class="sy-title"><h1><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜</h1><span>数据更新:<?php echo date("Y年m月d日");?></span></div>
-    </div>
-    </div>
-    <div id="leftTabBox" class="tabBox">
-        <div class="hd">
-            <ul>
-            <?php if($type=='sheying') { ?>
-                           <li class="on"><a href="/<?php echo $pycity;?>/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚纱摄影</a></li>
-                    <?php } else { ?>
-							<li><a href="/<?php echo $pycity;?>/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚纱摄影</a></li>
-                    <?php } ?>
-                      <?php if($type=='sheying') { ?>
-                          <li ><a href="/<?php echo $pycity;?>/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚礼策划</a></li>
-                    <?php } else { ?>
-                          <li class="on"><a href="/<?php echo $pycity;?>/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚礼策划</a></li>
-                    <?php } ?>
-            </ul>
-        </div>
+<header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div><div class="logo"><a href="/<?php echo $pycity;?>/<?php if($type=='sheying') { ?>sheying<?php } else { ?>hunli<?php } ?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?></a></div><a class="zxdh" href="tel:18500905723"></a></header>
+<div class="content"><div class="bg2"></div><div class="sousj">
+<div class="sy-title"><h1><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排行榜</h1><span>数据更新:<?php echo date("Y年m月d日");?></span></div></div></div>
+<div id="leftTabBox" class="tabBox"><div class="hd"><ul>
+            <?php if($type=='sheying') { ?><li class="on"><a href="/<?php echo $pycity;?>/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚纱摄影</a></li>
+                    <?php } else { ?><li><a href="/<?php echo $pycity;?>/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚纱摄影</a></li><?php } ?>
+            <?php if($type=='sheying') { ?><li ><a href="/<?php echo $pycity;?>/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚礼策划</a></li><?php } else { ?><li class="on"><a href="/<?php echo $pycity;?>/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚礼策划</a></li><?php } ?></ul></div>
         <div class="bd">
             <div class="list_box">
                <div class="zysmi"><span>全网数据监测  榜单客观权威</span>中国婚嫁产业  大数据服务商<em><a href="http://www.youbangkeyi.com/guize.html" target="_blank">排名算法</a></em></div>
                 <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
                     <?php if(!empty($spread)) foreach($spread as $k => $v) { ?>
                     <div class="pic_box bdtj">
-                        <!--<?php if($v['isVip']==2) { ?>
-                                <div class="huiyuan"></div>
-                            <?php } ?>-->
                         <div class="num_txt">
                             <div class="tit_box">
                                 <div class="title"><span class="icot1"></span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
@@ -53,7 +33,9 @@
                                         <?php } else {?>
                                         <img src="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim">
                                         <?php } ?>
+                                        <?php if($v2['currentPrice']>0) {?>
                                         <em>¥<?php echo $v2['currentPrice'];?></em>
+                                        <?php } ?>
                                     </span>
                                 </a>
                             </div>
@@ -63,7 +45,7 @@
                         <?php if(strlen($v['package'])>2) { ?>
                         <div class="yuyue">
                             <i></i><span><?php echo $v['package'];?></span>
-                            <a class="discount-btn" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">去看看</a>
+                            <a class="discount-btn" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">去看看<em></em></a>
                         </div><?php } ?>
                         <div class="daodian"><span class="icot2"></span>
                             <a class="sybj" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看商家详情</a>
@@ -71,116 +53,38 @@
                     </div>
                     <?php } ?>
                     <?php foreach($tenants as $k => $v) { ?>
-                        <?php if($k ==2){?>
-                            <div id="tocvipGuide">
-                                <div class="toctitle">找不到合适的商家?</div>
-                                <input type="hidden" id="pcity" name="pcity" value="<?php echo $city;?>">
-                                <div class="tocdesc">原价99元VIP大数据推荐，限时免费0元申请推荐！</div>
-                                <a class="tocbtn down freeclick" href="javascript:">免费申请</a>
-                            </div>
-                        <?php } ?>
                         <div class="pic_box">
-                            <!--<?php if($v['isVip']==2) { ?>
-                                    <div class="huiyuan"></div>
-                                <?php } ?>-->
-                            <div class="num_txt">
-                                <div class="tit_box">
-                                    <div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                    <div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均消费 ¥<?php echo $v['price'];?></span><span class="fmr"><?php echo $v['area'];?></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pic txtCtr">
-                                <?php foreach($v['taoxi'] as $v2) { ?>
-                                <?php if(isset($v2['cover'][0])) { ?>
-                                <div class="img">
-                                    <a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
-                                        <span>
-                                            <?php if(strpos($v2['cover'][0],'http') === false) {?>
-                                            <img src="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/300/q/75":'imageView2/1/w/464/h/464/q/75';?>|imageslim" alt="">
-                                            <?php } else {?>
-                                            <img src="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim"  alt="">
-                                            <?php } ?>
-                                            <em><?php echo $v2['currentPrice']>0?'¥'.$v2['currentPrice']:'';?></em>
-                                        </span>
-                                    </a>
-                                </div>
-                                <?php } ?>
-                                <?php } ?>
-                            </div>
-                            <?php if(strlen($v['package'])>2) { ?>
-                            <div class="yuyue">
-                                <i></i><span><?php echo $v['package'];?></span>
-                                <a class="discount-btn" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">去看看</a>
-                            </div><?php } ?>
-                            <div class="txt_box txtCtr">
-                                <div class="txt">
-                                    <p class="blue"><?php echo $v['day30s'];?></p>
-                                    <em>品牌搜索人数</em>
-                                </div>
-                                <div class="txt">
-                                    <p class="blue"><?php echo ($v['allcy'] + $v['allce']);?></p>
-                                    <em>全网评论人数</em>
-                                </div>
-                                <div class="txt">
-                                    <p class="blue"><?php $c = $v['allcy']+$v['allce'];$c= $c==0?1:$c ;  echo intval($v['allcy']/$c*10000)/100;?>%</p>
-                                    <em>全网好评率</em>
-                                </div>
-                            </div>
-                            <div class="daodian">
-                                <a class="sybj" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看商家详情</a>
-                            </div>
-                        </div>
+<div class="num_txt"><div class="tit_box"><div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div><div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均消费 ¥<?php echo $v['price'];?></span><span class="fmr"><?php echo $v['area'];?></span></div></div></div>
+<div class="pic txtCtr"><?php foreach($v['taoxi'] as $v2) { ?><?php if(isset($v2['cover'][0])) { ?><div class="img"><a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><span><?php if(strpos($v2['cover'][0],'http') === false) {?><img src="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/300/q/75":'imageView2/1/w/464/h/464/q/75';?>|imageslim" alt=""><?php } else {?><img src="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim"  alt=""><?php } ?><?php if($v2['currentPrice']>0) {?><em><?php echo $v2['currentPrice']>0?'¥'.$v2['currentPrice']:'';?></em><?php } ?></span></a></div><?php } ?><?php } ?></div>
+ <?php if(strlen($v['package'])>2) { ?>
+<div class="yuyue"><i></i><span><?php echo $v['package'];?></span><a class="discount-btn" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">去看看<em></em></a></div><?php } ?>
+<div class="txt_box txtCtr"><div class="txt"><p class="blue"><?php echo $v['day30s'];?></p><em>品牌搜索人数</em></div><div class="txt"><p class="blue"><?php echo ($v['allcy'] + $v['allce']);?></p><em>全网评论人数</em></div><div class="txt"><p class="blue"><?php $c = $v['allcy']+$v['allce'];$c= $c==0?1:$c ;  echo intval($v['allcy']/$c*10000)/100;?>%</p><em>全网好评率</em></div></div>
+<div class="daodian"><a class="sybj" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看商家详情</a></div></div>
                         <?php } ?>
-                </section>
-            </div>
+</section></div>
 <?php if(isset($askfooter)) { ?>
-<div class="comment_list">
-    <div class="title dafen1">本城市最新话题<span class="fa">
-            <a href="/wenda/<?php echo $askfooter['id'];?>">更新于：2018年7月14日</a>
-        </span>
-    </div>
-    <div class="comment_column">
-        <h3 class="wenda">
-            <a href="/wenda/<?php echo $askfooter['id'];?>">
-                <?php echo $askfooter['title'];?>
-            </a>
-        </h3>
-        <?php if(isset($askfooter['answer']["id"])){ ?>
-        <div class="cmt_con cmt_R">
-            <span class="comment_W">
-            <?php echo $askfooter['answer']['content'];?></span>
-              <span class="f12p">—「以上内容真实消费者"<?php echo $askfooter['answer']['name'];?>"阐述 」</span>
-        </div>
+<div class="comment_list"><div class="title dafen1">本城市最新话题<span class="fa"><a href="/wenda/<?php echo $askfooter['id'];?>">更新于：<?php echo date("Y-m-d H:i:s",$askfooter['created']);?></a></span></div>
+<div class="comment_column"><h3 class="wenda"><em></em><a href="/wenda/<?php echo $askfooter['id'];?>"><?php echo $askfooter['title'];?></a></h3>
+<?php if(isset($askfooter['answer']["id"])){ ?>
+<div class="cmt_con cmt_R"><span class="comment_W"><?php echo $askfooter['answer']['content'];?></span>
+<span class="f12p">—「以上内容真实消费者"<?php echo $askfooter['answer']['name'];?>"阐述 」</span></div>
         <?php } ?>
-    </div>
-</div>
+</div></div>
 <?php } ?>
-            <div class="tittp">有榜数据说明</div>
+<div class="tittp">有榜数据说明</div>
 <div id="fugai" class="time-box">
-   <div class="txtshuju lft fgchs">
-                    <span class="blue">200+ </span>数据覆盖城市</div>
-                    <div class="txtshuju lft fgshh">
-                <span class="blue">120,000+ </span>实时分析商户
-                </div>
-                <div class="txtshuju lft fgcaiji">
-                    <span class="blue">10 </span>数据采集渠道 </div>
-<div class="txtshuju lft fgweidu">
-                    <span class="blue">18 </span>数据统计维度</div>
-<div class="txtshuju lft fgxinren">
-                    <span class="blue">40,000 </span>对结婚新人</div>
-<div class="txtshuju lft fgpinglun">
-                    <span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
-            <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">所属城市:<?php echo $city;?></span></div></div>
+<div class="txtshuju lft"><em class="fgchs"></em><span class="blue">200+ </span>数据覆盖城市</div>
+<div class="txtshuju lft"><em class="fgshh"></em><span class="blue">120,000+ </span>实时分析商户</div>
+<div class="txtshuju lft"><em class="fgcaiji"></em><span class="blue">10 </span>数据采集渠道 </div>
+<div class="txtshuju lft"><em class="fgweidu"></em><span class="blue">18 </span>数据统计维度</div>
+<div class="txtshuju lft"><em class="fgxinren"></em><span class="blue">40,000 </span>对结婚新人</div>
+<div class="txtshuju lft"><em class="fgpinglun"></em><span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
+<div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">所属城市:<?php echo $city;?></span></div></div>
         </div>
 <footer class="txtCtr">
-    <div class="tuijian"><h3><b><?php echo $city.$shoptype;?>热门话题</b></h3>
-        <ul>
-            <?php foreach($askcity as $v) { ?>
-            <li id="sansan">
-                <a target="_blank" href="/i/<?php echo $v['id'];?>"><?php echo $v['title'];?></a></li>
-            <?php } ?>
-        </ul></div>
+<div class="tuijian"><h3><b><?php echo $city.$shoptype;?>热门话题</b></h3>
+<ul><?php foreach($askcity as $v) { ?>
+<li id="sansan"><a target="_blank" href="/i/<?php echo $v['id'];?>"><?php echo $v['title'];?></a></li><?php } ?></ul></div>
     <?php if($type=='sheying') { ?>
                   <div class="tuijian paim"><h3>全部城市婚纱摄影榜单<span>(城市排名不分先后)</span></h3><ul>
                     <li><a target="_blank" href="/beijing/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">北京婚纱摄影排名</a></li>
@@ -252,11 +156,7 @@
                     <li><a target="_blank" href="/shantou/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">汕头婚纱摄影排名</a></li>
                     <li><a target="_blank" href="/jiangmen/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">江门婚纱摄影排名</a></li>
                     <li><a target="_blank" href="/dong_/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">东莞婚纱摄影排名</a></li>
-                    <li><a target="_blank" href="/zhanjiang/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">湛江婚纱摄影排名</a></li>
-                    
- 
-
-</ul></div> 
+                    <li><a target="_blank" href="/zhanjiang/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">湛江婚纱摄影排名</a></li></ul></div> 
                     <?php } else { ?>
                      <div class="tuijian paim"><h3>热门城市婚礼策划榜单<span>(城市排名不分先后)</span></h3><ul>
                     <li><a target="_blank" href="/beijing/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">北京婚礼策划排名</a></li>
@@ -329,32 +229,20 @@
                     <li><a target="_blank" href="/jiangmen/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">江门婚礼策划排名</a></li>
                     <li><a target="_blank" href="/dong_/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">东莞婚礼策划排名</a></li>
                     <li><a target="_blank" href="/zhanjiang/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">湛江婚礼策划排名</a></li>
-</ul></div> 
-                    <?php } ?>
-
+</ul></div> <?php } ?>
  <div class="foot">
         <div class="foots">
             <span><a href="/about.html">关于有榜</a>|<a target="_blank" href="http://youbangkeyi.mikecrm.com/E09npdx">商务合作</a>|<a target="_blank" href="/mianze.html">免责说明</a>|<a href="/shuoming.html" target="_blank">服务说明</a>|<a target="_blank" href="//c.youbangkeyi.com/images/yingyezhizhao.jpeg">营业执照</a></span>
             京ICP备18024234号-2 北京有榜信息科技有限公司 
-            <span class="gongan">京公网安备 11010802024698号</span>
-        </div>
-        <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.com/images/scs_logo.png"></a></div>
-    </div>
-</footer>
-    </div>
-</div>
+            <span class="gongan">京公网安备 11010802024698号</span></div>
+        <div class="lian">Copyright © 2018 有榜网</div></div>
+</footer></div></div>
 <!-- 城市弹出 -->
-<div class="container">
-</div>
-<script type="text/javascript" src="/js/city.js"></script>
+<div class="container"></div>
+<script type="text/javascript" src="/js/footer.js"></script>
 <?php if($type=="sheying"){?>
 <script type="text/javascript" src="/js/sheyingcity.js"></script>
 <?php } else {?>
 <script type="text/javascript" src="/js/hunlicity.js"></script>
 <?php } ?>
-<script type="text/javascript" src="/js/layer/layer.js"></script>
-
-@include("front.tijiaojs")
-</div>
-</body>
-</html>
+<script type="text/javascript" src="/js/layer/layer.js"></script></body></html>

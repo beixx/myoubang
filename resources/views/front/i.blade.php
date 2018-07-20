@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head><meta charset="utf-8"><title><?php echo $title;?>-有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $title;?>"><meta name="description" content=""><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/wenda.css"><link rel="stylesheet" href="/css/glightbox.css"><script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script><script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script><script type="text/javascript" src="/js/leftTime.min.js"></script><script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script><script type="text/javascript" src="http://www.youbangkeyi.com/js/foot.js"></script></head>
+<head><meta charset="utf-8"><title><?php echo $title;?>_有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $title;?>"><meta name="description" content=""><link rel="stylesheet" href="/js/layer/wenda.css"><script type="text/javascript" src="//c.youbangkeyi.com/js/jquery.SuperSlide1-2.1.1.js"></script><script src="//c.youbangkeyi.com/js/TouchSlide.1.1.js"></script></head>
 <body class="shop-index view">
 @include("front.tijiao")
-<div class="main"><header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div><div class="logo"><a href="<?php echo '/'.$pycity.'/'.($tenants['shoptype']=='婚纱摄影'?'sheying':'hunli');?>"><?php echo $city.$tenants['shoptype'];?></a></div><a class="zxdh" href="tel:18500905723"></a></header>
-    <div class="wendat"><h1><?php echo $ask['title'];?></h1><p>该问题由"<?php echo $ask['name'];?>"发起</p></div>
+<div class="main"><header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div><div class="logo"><a href="<?php echo '/'.$pycity.'/'.($tenants['shoptype']=='婚纱摄影'?'sheying':'hunli');?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?></a></div><a class="zxdh" href="tel:18500905723"></a></header>
+    <div class="wendat"><h1><?php echo $ask['title'];?></h1><p>该问题由"<?php echo $ask['name'];?>" 发布于<?php echo date("Y-m-d H:i:s",$ask['created']);?></p></div>
     <div class="shop_box"><div class="titdp"><?php echo $city;?>推荐商家</div><div class="txt-box">
             <h3><a href="/detail/<?php echo $tenants['id'];?>"><?php echo $city.$tenants['name'];?></a></h3>
             <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price']?></span></div>
@@ -14,30 +14,13 @@
                 <?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?>
                 <p>距离结束:<em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>:<em class="date-tiem-span m">00</em>:<em class="date-s-span s">00</em></p></span>
             <button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button></a>
-        <script type="text/javascript">
-            $(function(){
-                //日期倒计时
-                $.leftTime("<?php echo date("Y/m/d",$tenants['package_endtime'])." 23:59:59"?>",function(d){
-                    if(d.status){
-                        var $dateShow1=$("#dateShow");
-                        $dateShow1.find(".d").html(d.d);
-                        $dateShow1.find(".h").html(d.h);
-                        $dateShow1.find(".m").html(d.m);
-                        $dateShow1.find(".s").html(d.s);
-                    }
-                });
-            });
-        </script>
-        <div class="zysmn"><span class="jiance">全网数据监测</span><span class="shishi">数据实时更新</span><span class="jiangbei">排名客观权威</span></div></div>
+        <div class="zysmn"><span class="jiance"><em></em>全网数据监测</span><span class="shishi"><em></em>数据实时更新</span><span class="jiangbei"><em></em>排名客观权威</span></div></div>
     <?php foreach($anwser as $v) { ?>
     <div class="huida">
         <div class="yonghu"><?php echo $v['name'];?></div>
         <p class="neirong"><?php echo $v['content'];?></p></div><?php } ?><?php if(isset($tenantspics) ) { ?>
-    <div class="case_box"><div id="picScroll" class="picScroll txtCtr"><div class="bd"><ul><?php foreach($tenantspics as $k => $v){?><li><div class="anli_touxiang"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim"></div><p><a href="/kpdetail/<?php echo $v['id']?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $v['picName']?></a></p><span class="anli_month"><em class="fl">发布于<?php echo \App\Http\Helper\Date::xtime($v['created_at']);?></em><em class="fr">浏览<?php echo $v['showcount'];?>次</em></span><?php if($v['explain']) { ?><div class="anli_p"><?php echo $v['explain'];?></div><?php } ?><span class="img"><?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?><?php if(strpos($v['cover'][$i],'http') === false) {?><a class="yulan  glightbox<?php echo $k;?>" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>"><img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" alt="<?php echo $title;?>相关案例"/></a><?php } else {?><img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $title;?>相关案例"/><?php } ?><?php } ?><?php if($v['currentPrice']>0) {?><div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div><?php } ?></span><div href="javascript:" class="anlibj down anliclick"><?php echo $v['currentPrice']>0?"咨询档期":"获取案例报价";?></div></li><?php } ?></ul></div></div>
+    <div class="case_box"><div id="picScroll" class="picScroll txtCtr"><div class="bd"><ul><?php foreach($tenantspics as $k => $v){?><li><div class="anli_touxiang"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim"></div><p><a href="/kpdetail/<?php echo $v['id']?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $v['picName']?></a></p><span class="anli_month"><em class="fl">发布于<?php echo \App\Http\Helper\Date::xtime($v['created_at']);?></em><em class="fr">浏览<?php echo $v['showcount'];?>次</em></span><?php if($v['explain']) { ?><div class="anli_p"><?php echo $v['explain'];?></div><?php } ?><span class="img"><?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?><?php if(strpos($v['cover'][$i],'http') === false) {?><a class="yulan  glightbox<?php echo $k;?>" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>"><img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" width="100%" height="100%" alt="<?php echo $title;?>相关案例"/></a><?php } else {?><img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $title;?>相关案例"/><?php } ?><?php } ?><?php if($v['currentPrice']>0) {?><div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div><?php } ?></span><div href="javascript:" class="anlibj down anliclick"><?php echo $v['currentPrice']>0?"咨询档期":"获取案例报价";?></div></li><?php } ?></ul></div></div>
         <div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看其他案例</a></div></div>
-    <script src="/js/glightbox.min.js"></script>
-    <script><?php foreach($tenantspics as $k=>$v) {?>var lightbox = GLightbox({selector: 'glightbox<?php echo $k?>'});<?php } ?></script>
-    <?php } ?>
     <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div>
         <div class="room-num-line"><span class="txt">版权归:<?php echo $city.$tenants['name'];?>所有</span></div></div>
     <footer class="txtCtr">
@@ -52,7 +35,7 @@
                 <?php } ?>
             </ul></div>
         <?php if($type=='sheying') { ?>
-        <div class="tuijian"><h3>全部城市婚纱摄影榜单<span>(城市排名不分先后)</span></h3><ul>
+        <div class="tuijian chengshi"><h3>全部城市婚纱摄影榜单<span>(城市排名不分先后)</span></h3><ul>
                 <li><a target="_blank" href="/beijing/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">北京婚纱摄影排名</a></li>
                 <li><a target="_blank" href="/tianjin/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">天津婚纱摄影排名</a></li>
                 <li><a target="_blank" href="/shenyang/sheying<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">沈阳婚纱摄影排名</a></li>
@@ -128,7 +111,7 @@
 
             </ul></div>
         <?php } else { ?>
-        <div class="tuijian"><h3>热门城市婚礼策划榜单<span>(城市排名不分先后)</span></h3><ul>
+        <div class="tuijian chengshi"><h3>热门城市婚礼策划榜单<span>(城市排名不分先后)</span></h3><ul>
                 <li><a target="_blank" href="/beijing/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">北京婚礼策划排名</a></li>
                 <li><a target="_blank" href="/tianjin/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">天津婚礼策划排名</a></li>
                 <li><a target="_blank" href="/shenyang/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">沈阳婚礼策划排名</a></li>
@@ -207,16 +190,30 @@
                 京ICP备18024234号-2 北京有榜信息科技有限公司
                 <span class="gongan">京公网安备 11010802024698号</span>
             </div>
-            <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.com/images/scs_logo.png"></a></div>
+            <div class="lian">Copyright © 2018 有榜网</div>
         </div>
     </footer>
     <!-- 城市弹出 -->
     <div class="container"></div>
-    <script type="text/javascript" src="/js/city.js"></script>
+    <script type="text/javascript" src="/js/Time.glight.foot.js"></script>
     <script type="text/javascript" src="/js/sheyingcity.js"></script>
     <script type="text/javascript" src="/js/layer/layer.js"></script>
-
-    @include("front.tijiaojs")
+    <script><?php foreach($tenantspics as $k=>$v) {?>var lightbox = GLightbox({selector: 'glightbox<?php echo $k?>'});<?php } ?>
+                    $(function(){
+                //日期倒计时
+                $.leftTime("<?php echo date("Y/m/d",$tenants['package_endtime'])." 23:59:59"?>",function(d){
+                    if(d.status){
+                        var $dateShow1=$("#dateShow");
+                        $dateShow1.find(".d").html(d.d);
+                        $dateShow1.find(".h").html(d.h);
+                        $dateShow1.find(".m").html(d.m);
+                        $dateShow1.find(".s").html(d.s);
+                    }
+                });
+            });
+    </script>
+    <?php } ?>
+    @include("front.tijiaonew")
 </div>
 </body>
 </html>

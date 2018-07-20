@@ -78,7 +78,7 @@ var s = `<div class="city">
     <p data-id="1101237"><a href="/huizhou/hunli">惠州</a></p>
     <p data-id="1101238"> <a href="/shantou/hunli">汕头</a></p>
     <p data-id="1101239"><a href="/jiangmen/hunli">江门</a></p>
-    <p data-id="1101230"><a href="/dongwan/hunli">东莞</a></p>
+    <p data-id="1101230"><a href="/dong_/hunli">东莞</a></p>
     <p data-id="11012311"><a href="/zhanjiang/hunli">湛江</a></p>
     </div>
     </div>

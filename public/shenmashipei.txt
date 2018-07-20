@@ -1,0 +1,4 @@
+http://www.youbangkeyi.com/wenda/(\d+)	http://www.youbangkeyi.com/wenda/${1}
+http://www.youbangkeyi.com/i/(\d+)	http://www.youbangkeyi.com/i/${1}
+http://www.youbangkeyi.com/detail/(\d+)	http://www.youbangkeyi.com/detail/${1}
+http://www.youbangkeyi.com/kpdetail/(\d+)	http://www.youbangkeyi.com/kpdetail/${1}

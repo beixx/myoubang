@@ -2,15 +2,15 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title><?php echo $title;?></title>
+    <title><?php echo $title;?>_有榜网</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
     <meta name="applicable-device" content="pc,mobile">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta http-equiv="Cache-Control" content="no-transform" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta name="Keywords" content="">
     <meta name="description" content="">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/js/layer/wenda.css">
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script>
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
     <script type="text/javascript" src="/js/leftTime.min.js"></script>
@@ -23,8 +23,8 @@
 @include("front.tijiao")
 <div class="main">
 <header>
-    <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
-   <div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜</a></div>
+    <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div>
+   <div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排行榜</a></div>
     <a class="zxdh" href="tel:18500905723"></a>
 </header>
 <div class="shop_box">
@@ -54,11 +54,7 @@
                         });
                     });
                 </script>
-<div class="zysmn">
-<span class="jiance">全网数据监测</span>
-<span class="shishi">数据实时更新</span>
-<span class="jiangbei">排名客观权威</span>
-</div></div>
+<div class="zysmn"><span class="jiance"><em></em>全网数据监测</span><span class="shishi"><em></em>数据实时更新</span><span class="jiangbei"><em></em>排名客观权威</span></div></div>
     <div id="tocvipGuide">
         <div class="toctitle">找不到合适的商家?</div>
         <input type="hidden" id="pcity" name="pcity" value="<?php echo $city;?>">
@@ -125,7 +121,7 @@
             京ICP备18024234号-2 北京有榜信息科技有限公司
             <span class="gongan">京公网安备 11010802024698号</span>
         </div>
-        <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.com/images/scs_logo.png"></a></div>
+        <div class="lian">Copyright © 2018 有榜网</div>
     </div>
 </footer>
 <!-- 城市弹出 -->

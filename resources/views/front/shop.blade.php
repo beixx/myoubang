@@ -1,8 +1,8 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><title><?php echo $title;?></title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $keyword;?>"><meta name="description" content="<?php echo $desc;?>"><link rel="stylesheet" href="/css/style.css"><script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script><script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script><script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script><script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script><script type="text/javascript" src="/js/leftTime.min.js"></script><script type="text/javascript" src="http://www.youbangkeyi.com/js/foot.js?21"></script><style type="text/css">body{background:#f0f0f0}</style></head>
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><title><?php echo $title;?></title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $keyword;?>"><meta name="description" content="<?php echo $desc;?>"><link rel="stylesheet" href="/js/layer/wenda.css"><script type="text/javascript" src="//c.youbangkeyi.com/js/jquery.SuperSlide1-2.1.1.js"></script><script type="text/javascript" src="/js/TouchSlide.1.1.js"></script></head>
 <body class="shop-index">
 @include("front.tijiao")
 <div class="main">
-<header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div><div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜</a></div><a class="zxdh" href="tel:18500905723"></a></header>
+<header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div><div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排行榜</a></div><a class="zxdh" href="tel:18500905723"></a></header>
 <div class="focus_box"><div id="focus" class="focus" style="height: auto;">
         <div class="bd"><ul><?php if(strlen($tenants['vrimage'])>10) { ?><a target="_blank" href="<?php echo $tenants['vrurl']?>"><li class="suolvvr"><div class="m-title">全景看店</div><div class="bg1"></div><div class="m-kan"></div><span><img src="<?php echo $tenants['vrimage'];?>"/></span></li></a><?php } else { ?>
         <li class="suolvvr"><span><?php if(strpos($tenants['cover'],'http') === false) {?><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?<?php echo  $ismobile?"imageView2/1/w/800/h/600/q/75":'';?>|imageslim" alt="<?php echo $city;?><?php echo $tenants['name'];?>"/><?php } else {?><img src="<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $city;?><?php echo $tenants['name'];?>"/><?php } ?></span></li><?php } ?></ul></div></div>
@@ -50,11 +50,7 @@
 		        	<p>好评榜</p>
 		        </span>
     </div>
-<div class="zysmn">
-<span class="jiance">全网数据监测</span>
-<span class="shishi">数据实时更新</span>
-<span class="jiangbei">排名客观权威</span>
-</div>
+<div class="zysmn"><span class="jiance"><em></em>全网数据监测</span><span class="shishi"><em></em>数据实时更新</span><span class="jiangbei"><em></em>排名客观权威</span></div>
 <div class="info-box">
 <div class="titleqs">
     <i>优惠信息</i>
@@ -70,20 +66,6 @@
         </span>
         <button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
     </a>
-          <script type="text/javascript">
-                    $(function(){
-                        //日期倒计时
-                        $.leftTime("<?php echo date("Y/m/d",$tenants['package_endtime'])." 23:59:59"?>",function(d){
-                            if(d.status){
-                                var $dateShow1=$("#dateShow");
-                                $dateShow1.find(".d").html(d.d);
-                                $dateShow1.find(".h").html(d.h);
-                                $dateShow1.find(".m").html(d.m);
-                                $dateShow1.find(".s").html(d.s);
-                            }
-                        });
-                    });
-                </script>
     <div class="address"><a target="_blank" href="https://map.baidu.com/mobile/webapp/search/search/qt=s&wd=<?php echo $city;?><?php echo $tenants['name'];?>&&vt=map&universalLinkCbkTag=1"><?php echo $tenants['address'];?><em></em></a></div></div>
 </div></div>
     <?php if($tenants['isVip'] == 2) { ?>
@@ -185,7 +167,7 @@
                     <div class="anli_p"><?php echo $v['explain'];?></div><?php } ?><span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
-                            <a class="yulan  glightbox<?php echo $k;?>" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>"><img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" alt="<?php echo $v['picName']?>"/></a><?php } else {?><img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $v['picName']?>"/>
+                            <a class="yulan  glightbox<?php echo $k;?>" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>"><img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" width="100%" height="100%" alt="<?php echo $v['picName']?>"/></a><?php } else {?><img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $v['picName']?>"/>
                             <?php } ?><?php } ?>
                         <?php if($v['currentPrice']>0) {?>
                         <div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div><?php } ?>
@@ -193,14 +175,6 @@
                         <div href="javascript:" class="anlibj down <?php echo $v['currentPrice']>0?"dangqiclick":"anliclick";?>"><?php echo $v['currentPrice']>0?"咨询档期":"获取报价";?></div></li><?php } ?></ul></div></div>
 	<div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看其他<?php echo $countpics;?>套</a></div>
 </div>
-<link rel="stylesheet" href="/css/glightbox.css">
-<script src="/js/glightbox.min.js"></script>
-  <script>
-      <?php foreach($tenantspics as $k=>$v) {?>
-        var lightbox = GLightbox({selector: 'glightbox<?php echo $k?>'});
-      <?php } ?>
-
-  </script>
 <?php } ?>
 <div class="info-box info-yinxiang">
     <div class="data yinxiang">
@@ -231,7 +205,7 @@
     <div class="title dafen1">猜你关心的话题<span class="fa"><a href="/wenda/<?php echo $ask['id'];?>">全部3个回答</a></span>
     </div>
     <div class="comment_column">
-    <h3 class="wenda"><a href="/wenda/<?php echo $ask['id'];?>"><?php echo $ask['title'];?></a></h3>
+    <h3 class="wenda"><em></em><a href="/wenda/<?php echo $ask['id'];?>"><?php echo $ask['title'];?></a></h3>
         <?php if(!empty($anwser['content'])) { ?>
             <div class="cmt_con cmt_R">
                     <span class="comment_W"><?php echo $anwser['content'];?></span>
@@ -248,14 +222,13 @@
     </div>
 <div class="view shop-tuijian">
     <div class="tit">猜你喜欢的商家</div>
-
     <div class="hot">
         <ul>
             <?php foreach($recommenttenants as $k =>$v) { ?>
             <li>
                 <a class="suolvl" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                    <span>
-                       <img src="<?php echo strpos($v['cover'],"http")!==false ? '' : 'http://img2.youbangkeyi.com';?><?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim">
+                       <img src="<?php echo strpos($v['cover'],"http")!==false ? '' : 'http://img2.youbangkeyi.com';?><?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim" alt="<?php echo $v['name'];?>">
                    </span>  </a><p><em class="red mr01">第<?php echo $v['order_city'];?>名</em><?php echo $v['name'];?></p>
                     <div class="price">
                         <del class="fl">人均:¥<?php echo $v['person_price'];?></del><del class="fr"><?php echo $v['area'];?></del>
@@ -265,21 +238,14 @@
         </ul>
     </div>
 </div>
-                    <div class="tittp">有榜数据说明</div>
+<div class="tittp">有榜数据说明</div>
 <div id="fugai" class="time-box">
-   <div class="txtshuju lft fgchs">
-                    <span class="blue">200+ </span>数据覆盖城市</div>
-                    <div class="txtshuju lft fgshh">
-                <span class="blue">120,000+ </span>实时分析商户
-                </div>
-                <div class="txtshuju lft fgcaiji">
-                    <span class="blue">10 </span>数据采集渠道 </div>
-<div class="txtshuju lft fgweidu">
-                    <span class="blue">18 </span>数据统计维度</div>
-<div class="txtshuju lft fgxinren">
-                    <span class="blue">40,000 </span>对结婚新人</div>
-<div class="txtshuju lft fgpinglun">
-                    <span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
+<div class="txtshuju lft"><em class="fgchs"></em><span class="blue">200+ </span>数据覆盖城市</div>
+<div class="txtshuju lft"><em class="fgshh"></em><span class="blue">120,000+ </span>实时分析商户</div>
+<div class="txtshuju lft"><em class="fgcaiji"></em><span class="blue">10 </span>数据采集渠道 </div>
+<div class="txtshuju lft"><em class="fgweidu"></em><span class="blue">18 </span>数据统计维度</div>
+<div class="txtshuju lft"><em class="fgxinren"></em><span class="blue">40,000 </span>对结婚新人</div>
+<div class="txtshuju lft"><em class="fgpinglun"></em><span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
 <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">版权归:<?php echo $city;?><?php echo $tenants['name'];?>所有</span></div></div>
 <footer class="txtCtr">
     @include("front.hotTenants")
@@ -289,13 +255,15 @@
             京ICP备18024234号-2 北京有榜信息科技有限公司
             <span class="gongan">京公网安备 11010802024698号</span>
         </div>
-        <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.com/images/scs_logo.png"></a></div>
+        <div class="lian">Copyright © 2018 有榜网</div>
     </div>
 </footer>
+</div>
+@include("front.tijiaonew")
 <!-- 城市弹出 -->
 <div class="container">
 </div>
-<script type="text/javascript" src="/js/city.js"></script>
+<script type="text/javascript" src="/js/Time.glight.foot.js"></script>
 <?php if($type=="sheying"){?>
 <script type="text/javascript" src="/js/sheyingcity.js"></script>
 <?php } else {?>
@@ -303,7 +271,6 @@
 <?php } ?>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
-<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/echarts-wordcloud.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $(".info-box").off('click').on('click','.icon-unfold', function () {
@@ -323,6 +290,21 @@
             $(this).removeClass('icon-fold1 icon-unfold1').addClass('icon-unfold1');
         });
     })
+                   $(function(){
+                        //日期倒计时
+                        $.leftTime("<?php echo date("Y/m/d",$tenants['package_endtime'])." 23:59:59"?>",function(d){
+                            if(d.status){
+                                var $dateShow1=$("#dateShow");
+                                $dateShow1.find(".d").html(d.d);
+                                $dateShow1.find(".h").html(d.h);
+                                $dateShow1.find(".m").html(d.m);
+                                $dateShow1.find(".s").html(d.s);
+                            }
+                        });
+                    });
+      <?php foreach($tenantspics as $k=>$v) {?>
+        var lightbox = GLightbox({selector: 'glightbox<?php echo $k?>'});
+      <?php } ?>
     var myChart = document.getElementById('shuju');
     //自适应宽高
     var myChartContainer = function () {
@@ -727,7 +709,5 @@ option = {
         myChart.resize();
     };
 </script>
-</div>
-@include("front.tijiaojs")
 </body>
 </html>

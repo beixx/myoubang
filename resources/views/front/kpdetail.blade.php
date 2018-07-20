@@ -10,7 +10,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta name="Keywords" content="<?php echo $keyword?>">
     <meta name="description" content="<?php echo $desc;?>">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/js/layer/wenda.css">
     <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
     <script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="/js/leftTime.min.js"></script>
@@ -22,8 +22,8 @@
 <div class="main">
 <body class="view">
 <header>
-<div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?></div>
-<div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜</a></div>
+<div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div>
+<div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排行榜</a></div>
 <a class="zxdh" href="tel:18500905723"></a>
 </header>
 <div class="focus_box">
@@ -101,11 +101,7 @@
                         });
                     });
                 </script>
-<div class="zysmn">
-<span class="jiance">全网数据监测</span>
-<span class="shishi">数据实时更新</span>
-<span class="jiangbei">排名客观权威</span>
-</div></div>
+<div class="zysmn"><span class="jiance"><em></em>全网数据监测</span><span class="shishi"><em></em>数据实时更新</span><span class="jiangbei"><em></em>排名客观权威</span></div></div>
 <div class="tittp">客片欣赏</div>
 <div class="info">
     <?php foreach($picinfo['cover'] as $v) { ?>
@@ -141,21 +137,14 @@
         <?php } ?>
     </ul>
 </div>
-                    <div class="tittp">有榜数据说明</div>
+<div class="tittp">有榜数据说明</div>
 <div id="fugai" class="time-box">
-   <div class="txtshuju lft fgchs">
-                    <span class="blue">200+ </span>数据覆盖城市</div>
-                    <div class="txtshuju lft fgshh">
-                <span class="blue">120,000+ </span>实时分析商户
-                </div>
-                <div class="txtshuju lft fgcaiji">
-                    <span class="blue">10 </span>数据采集渠道 </div>
-<div class="txtshuju lft fgweidu">
-                    <span class="blue">18 </span>数据统计维度</div>
-<div class="txtshuju lft fgxinren">
-                    <span class="blue">40,000 </span>对结婚新人</div>
-<div class="txtshuju lft fgpinglun">
-                    <span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
+<div class="txtshuju lft"><em class="fgchs"></em><span class="blue">200+ </span>数据覆盖城市</div>
+<div class="txtshuju lft"><em class="fgshh"></em><span class="blue">120,000+ </span>实时分析商户</div>
+<div class="txtshuju lft"><em class="fgcaiji"></em><span class="blue">10 </span>数据采集渠道 </div>
+<div class="txtshuju lft"><em class="fgweidu"></em><span class="blue">18 </span>数据统计维度</div>
+<div class="txtshuju lft"><em class="fgxinren"></em><span class="blue">40,000 </span>对结婚新人</div>
+<div class="txtshuju lft"><em class="fgpinglun"></em><span class="blue">2,000万+ </span>用户真实点评</div><div class="clear"></div> </div>
 <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div><div class="room-num-line"><span class="txt">版权归:<?php echo $city;?><?php echo $tenants['name'];?>所有</span></div></div>
 <footer class="txtCtr">
     <div class="tuijian"><h3><b>其他相关问答</b></h3>
@@ -175,7 +164,7 @@
             京ICP备18024234号-2 北京有榜信息科技有限公司 
             <span class="gongan">京公网安备 11010802024698号</span>
         </div>
-        <div class="lian"><a rel="nofollow" target="_blank" href="http://www.saic.gov.cn/scs/index.html"><img alt="国家工商行政管理总局" src="//c.youbangkeyi.com/images/scs_logo.png"></a></div>
+        <div class="lian">Copyright © 2018 有榜网</div>
     </div>
 </footer>
 <!-- 城市弹出 -->

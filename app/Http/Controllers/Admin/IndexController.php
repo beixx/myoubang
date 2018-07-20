@@ -118,31 +118,35 @@ class IndexController extends AdminController
             foreach(["婚纱摄影",'婚礼策划'] as $v2) {
 
                 $tenants = YfcTenants::where("city","=",$v)
-                    ->where("shoptype",",",$v2)
+                    ->where("shoptype","=",$v2)
                     ->where("order_city",">=",1)
                     ->where("order_city","<=",10)
                     ->get();
-                if(!empty($tenants)) {
+                if(!empty($tenants[0])) {
                     $tenants = $tenants[rand(0,count($tenants)-1)];
 
-                    $comment = DB::table("web_com.dianping_".($v2=="婚纱摄影"?"hunsha":"hunqing")."_comments")
+                    $comment = DB::table("new_data.dianping_".($v2=="婚纱摄影"?"hunsha":"hunqing")."_comments")
                         ->where("shop_url","=",$tenants['url'])
                         ->where("stars","=",5)
                         ->limit(100)
+                        ->where(DB::RAW("length(content)"),">",10)
                         ->get();
-                    if($comment < 5) {
+		
+                    if(count($comment) < 5) {
                         continue;
                     }
-
-                    $title = $v.$v2.$name;
+		    $comment = $comment->toArray();
+                    $title = $v.$tenants['name'].$name;
                     $data = [
-                        'tid' => $v['id'],
-                        'city' => $v['positionCity'],
+                        'tid' => $tenants['id'],
+                        'city' => $tenants['positionCity'],
                         'name' => names($text),
+                        'shoptype' => $tenants['shoptype'],
                         'title' => $title,
+                        'created' => time(),
                     ];
 
-                    $aid = YfcAsk::insert($data);
+                    $aid = YfcAsk::insertGetId($data);
                     if(!$aid) {
                         print_r($data);
                     }
@@ -159,12 +163,11 @@ class IndexController extends AdminController
                         unset($comment[$key]);
                         $comment = array_values($comment);
                         $cc = $cc -1;
-
                         $data = [
-                            'tid' => $v['id'],
+                            'tid' => $tenants['id'],
                             'aid' => $aid,
                             'name' => names($text),
-                            'content' => $asks['content']
+                            'content' => $asks->content
                         ];
                         $qid = YfcAskAnswer::insert($data);
                         if(!$qid) {
@@ -174,6 +177,8 @@ class IndexController extends AdminController
                 }
             }
         }
+        
+        echo 'success';
     }
 }
 
