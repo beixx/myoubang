@@ -220,7 +220,7 @@
                     <?php } ?>
                 </span>
             </div>
-            <?if(isset($v['answer']['content'])) { ?>
+            <?php if(isset($v['answer']['content'])) { ?>
             <div class="bottom_line clearfix">
                 <em class="ttAsk-huida">回答1</em>
                 <em class="ttAsk-time"><?php echo date("Y-m-d",$v['answer']['created']);?></em>
