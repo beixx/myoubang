@@ -180,4 +180,19 @@
 </div>
 @include("front.tijiaojs")
 </body>
+<script type="application/ld+json">
+{
+    "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+    "@id": "http://www.youbangkeyi.com/kpdetail/<?php echo $picinfo['id'];?>",
+    "appid": "1605753876149174",
+    "title": "{{$title}}",
+    "images": [
+        <?php $i = 0 ;  foreach($picinfo['cover'] as $v) { if($i ++ >2 ) break;?>
+    "<?php echo $v;?>",
+        <?php }?>
+
+    ], //请在此处添加希望在搜索结果中展示图片的url，可以添加1个或3个url
+    "pubDate": "<?php echo date("Y-m-d",$picinfo['created_at']).'T'.date("H:i:s",$picinfo['created_at'])?>" // 需按照yyyy-mm-ddThh:mm:ss格式编写时间，字母T不能省去
+}
+</script>
 </html>
