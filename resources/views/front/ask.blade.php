@@ -2,14 +2,14 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title>邢台萌宝主题摄影工作室他们家怎么样？_有榜网</title>
+    <title>{{$title}}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
     <meta name="applicable-device" content="pc,mobile">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta http-equiv="Cache-Control" content="no-transform"/>
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <meta name="Keywords" content="邢台萌宝主题摄影工作室,邢台萌宝主题摄影工作室他们家怎么样？">
-    <meta name="description" content="">
+    <meta name="Keywords" content="{{$keyword}}">
+    <meta name="description" content="{{$desc}}">
     <link rel="stylesheet" href="/js/layer/wenda.css">
     <script type="text/javascript" src="//c.youbangkeyi.com/js/jquery.SuperSlide1-2.1.1.js"></script>
     <script src="//c.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
@@ -196,7 +196,7 @@
 <body class="shop-index view">
 <header>
     <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div>
-    <div class="logo"><a href="/<?php echo $pycity?>/sheying"><?php echo $city?>婚纱摄影</a></div>
+    <div class="logo"><a href="/<?php echo $pycity."/".$type;?>"><?php echo $city.$shoptype;?></a></div>
     <a class="zxdh" href="tel:18500905723"></a></header>
 <div class="daan">
     <em>已有<i>347777</i>对新人得到满意答案</em>

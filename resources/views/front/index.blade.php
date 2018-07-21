@@ -252,7 +252,7 @@
     "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
     "@id": "http://www.youbangkeyi.com/<?php echo $pycity.'/'.$type;?>",
     "appid": "1605753876149174",
-    "title": "「有榜网<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>TOP50榜单」依托行业大数据为您提供客观权威的<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名，准确提供<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜前十名、<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影影楼和工作室<?php } else { ?>婚庆公司<?php } ?>哪家好等信息。",
+    "title": "【<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名前十名】<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜-有榜网",
     "images": [
         <?php $i=0; foreach($tenants as $v) {  foreach($v['taoxi'] as $v2) { if($i ++ > 3) break; ?>
         "<?php echo "http://img2.youbangkeyi.com".$v2['cover'][0];?>",

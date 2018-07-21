@@ -1262,20 +1262,28 @@ class IndexController extends Controller
         ])->limit(12)->get();
     }
 
-    public function ask ($pycity){
+    public function ask ($id){
+        $tenants = YfcTenants::where('id',$id)->first();
+        $tenantsId = $tenants['tid'];
 
-        $city = Config::get('city.'.$pycity);
-        if(!$city) {
-            return Redirect::to('/');
+        if(empty($tenants)) {
+            $this->redirect("/");
         }
-        $this->data['pycity'] = $pycity;
 
-        $count = YfcAsk::where("city",$city)->count();
+        $city = $tenants['city'];
+        $shoptype = $tenants['shoptype'];
+
+        $title = $tenants['name']."怎么样_用户口碑好吗-有榜网";
+        $desc = $tenants['name'].",".$tenants['name']."怎么样,".$tenants['name']."好吗,".$tenants['name']."口碑";
+        $keyword = $tenants['name']."有榜网综合排名第8名，有榜网为您提供".$tenants['name']."相关话题，话题包含".$tenants['name']."怎么样，".$tenants['name']."口碑等相关内容，希望能够帮助找到满意的答案。";
+
+
+        $count = YfcAsk::where("tid",$id)->count();
         $package = 20;
         $pagecount = intval($count/$package) +1;
         $p = intval(Request::input("p"));
         $p = $p <1  ?1 :$p ;
-        $ask = YfcAsk::where("city",$city)->offset(($p-1)*$package)->limit($package)->get();
+        $ask = YfcAsk::where("tid",$id)->offset(($p-1)*$package)->limit($package)->get();
         if(empty($ask)) {
             $this->redirect("/");
         }
@@ -1293,12 +1301,17 @@ class IndexController extends Controller
                 }
             }
         }
+
         $this->data['ask'] = $ask;
+        $this->data['title'] = $title;
+        $this->data['desc'] = $desc;
+        $this->data['keyword'] = $keyword;
         $this->data['pagecount'] = $pagecount;
         $this->data['p'] = $p;
         $this->data['city'] = $city;
-        $this->data['pycity'] = $pycity;
+        $this->data['pycity'] =  Config::get('city.'.$city,'beijing');
         $this->data['type'] = 'sheying';
+        $this->data['shoptype'] = $tenants['shoptype'];
         $this->data['ismobile'] = $this->ismobile;
         $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$city)
             ->where("shoptype",'=',"婚纱摄影")
