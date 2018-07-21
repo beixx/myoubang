@@ -215,7 +215,7 @@
                     </a>
                 </h3>
                 <span class="ttAsk-miaoshu">
-                    <?if(isset($v['answer']['content'])) { ?>
+                    <?php if(isset($v['answer']['content'])) { ?>
                     <?php echo $v['answer']['content'];?>
                     <?php } ?>
                 </span>
