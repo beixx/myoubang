@@ -1301,6 +1301,15 @@ class IndexController extends Controller
                 }
             }
         }
+        $count= YfcAskAnswer::select(DB::Raw("count(*) as c"),"aid")->wherein("aid",$aid)->groupBy("aid")->get()->toArray();
+        foreach($count as $v) {
+            foreach($ask  as $k2 => $v2) {
+                if($v2['id'] == $v['aid']) {
+                    $ask[$k2]['count'] = $v["c"];
+                }
+            }
+        }
+
 
         $this->data['ask'] = $ask;
         $this->data['title'] = $title;
@@ -1363,6 +1372,14 @@ class IndexController extends Controller
             foreach($ask  as $k2 => $v2) {
                 if($v2['id'] == $v['aid']) {
                     $ask[$k2]['answer'] = $v;
+                }
+            }
+        }
+        $count= YfcAskCityAnswer::select(DB::Raw("count(*) as c"),"aid")->wherein("aid",$aid)->groupBy("aid")->get()->toArray();
+        foreach($count as $v) {
+            foreach($ask  as $k2 => $v2) {
+                if($v2['id'] == $v['aid']) {
+                    $ask[$k2]['count'] = $v["c"];
                 }
             }
         }
