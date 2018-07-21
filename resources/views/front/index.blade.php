@@ -254,7 +254,7 @@
     "appid": "1605753876149174",
     "title": "【<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名前十名】<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜-有榜网",
     "images": [
-        <?php $i=0; foreach($tenants as $v) {  foreach($v['taoxi'] as $v2) { if($i ++ > 3) break; ?>
+        <?php $i=0; foreach($tenants as $v) {  foreach($v['taoxi'] as $v2) { if($i ++ > 2) break; ?>
         "<?php echo "http://img2.youbangkeyi.com".$v2['cover'][0];?>",
         <?php }} ?>
     ], //请在此处添加希望在搜索结果中展示图片的url，可以添加1个或3个url

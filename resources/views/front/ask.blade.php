@@ -210,7 +210,7 @@
         <li>
             <div class="ttAsk-tit">
                 <h3 class="ttAsk-title ">
-                    <a href="/wenda/a-562713.html">
+                    <a href="/wenda/{{$v['id']}}">
                         <?php echo $v['title'];?>
                     </a>
                 </h3>
