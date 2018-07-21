@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <urlset>
+    <url>
+      <loc>http://www.domain.com/ </loc>
+      <data>
+        <display>
+          <pc_url_pattern>http://www.youbangkeyi.com/wenda/(\d+)</pc_url_pattern>
+          <xhtml_url_pattern >http://www.youbangkeyi.com/wenda/${1}</xhtml_url_pattern>
+          <html5_url_pattern >http://www.youbangkeyi.com/wenda/${1}</html5_url_pattern>
+        </display>
+      </data>
+    </url>
+    <url>
+      <loc>http://www.domain.com/ </loc>
+      <data>
+        <display>
+          <pc_url_pattern>http://www.youbangkeyi.com/i/(\d+)</pc_url_pattern>
+          <xhtml_url_pattern >http://www.youbangkeyi.com/i/${1}</xhtml_url_pattern>
+          <html5_url_pattern >http://www.youbangkeyi.com/i/${1}</html5_url_pattern>
+        </display>
+      </data>
+    </url>
+    <url>
+      <loc>http://www.domain.com/ </loc>
+      <data>
+        <display>
+          <pc_url_pattern>http://www.youbangkeyi.com/detail/(\d+)</pc_url_pattern>
+          <xhtml_url_pattern >http://www.youbangkeyi.com/detail/${1}</xhtml_url_pattern>
+          <html5_url_pattern >http://www.youbangkeyi.com/detail/${1}</html5_url_pattern>
+        </display>
+      </data>
+    </url>
+    <url>
+      <loc>http://www.domain.com/ </loc>
+      <data>
+        <display>
+          <pc_url_pattern>http://www.youbangkeyi.com/kpdetail/(\d+)</pc_url_pattern>
+          <xhtml_url_pattern >http://www.youbangkeyi.com/kpdetail/${1}</xhtml_url_pattern>
+          <html5_url_pattern >http://www.youbangkeyi.com/kpdetail/${1}</html5_url_pattern>
+        </display>
+      </data>
+    </url>
+  </urlset>

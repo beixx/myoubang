@@ -716,13 +716,15 @@ option = {
     "@id": "http://www.youbangkeyi.com/detail/<?php echo $tenants['id'];?>",
     "appid": "1605753876149174",
     "title": "{{$title}}",
+    "description":"<?php echo $desc;?>",
     "images": [
         <?php $i = 0 ; if(isset($tenantspics[0])) { foreach($tenantspics[0]['cover'] as $v) { if($i ++ >2 ) break;?>
-        "http://img2.youbangkeyi.com<?php echo $v;?>",
-        <?php }} ?>
-
-    ], //请在此处添加希望在搜索结果中展示图片的url，可以添加1个或3个url
-    "pubDate": "<?php echo date("Y-m-d",$ask['created']).'T'.date("H:i:s",$ask['created'])?>" // 需按照yyyy-mm-ddThh:mm:ss格式编写时间，字母T不能省去
+        "http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75",
+        <?php }}else { ?>
+        "http://img2.youbangkeyi.com<?php echo $tenants['cover'];?>",
+        <?php } ?>
+    ], 
+    "pubDate": "<?php echo date("Y-m-d",$ask['created']??($tenantspics[0]['created_at']??1530403200)).'T'.date("H:i:s",$ask['created']??($tenantspics[0]['created_at']??1530403200))?>" 
 }
 </script>
 </body>

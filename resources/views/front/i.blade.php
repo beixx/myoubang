@@ -216,7 +216,7 @@
     @include("front.tijiaonew")
 </div>
 </body>
-
+<?php if(isset($tenantspics[0])){ ?>
 <script type="application/ld+json">
 {
     "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
@@ -225,12 +225,12 @@
     "title": "{{$title}}",
     "images": [
         <?php $i = 0 ; if(isset($tenantspics[0])) { foreach($tenantspics[0]['cover'] as $v) { if($i ++ >2 ) break;?>
-    "http://img2.youbangkeyi.com<?php echo $v;?>",
+    "http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75",
         <?php }} ?>
-
     ],
-    "description":"<?php echo $anwser[0]["content"]??"";?>"
-    "pubDate": "<?php echo date("Y-m-d",$ask['created']).'T'.date("H:i:s",$ask['created'])?>" // 需按照yyyy-mm-ddThh:mm:ss格式编写时间，字母T不能省去
+    "description":"<?php echo $anwser[0]["content"]??"";?>",
+    "pubDate": "<?php echo date("Y-m-d",$ask['created']).'T'.date("H:i:s",$ask['created'])?>",
 }
 </script>
+<?php } ?>
 </html>

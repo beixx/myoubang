@@ -153,9 +153,8 @@
         <?php $i = 0 ;  foreach($pics[0]['cover'] as $v) { if($i ++ >2 ) break;?>
     "http://img2.youbangkeyi.com<?php echo $v;?>",
         <?php }?>
-
-    ], //请在此处添加希望在搜索结果中展示图片的url，可以添加1个或3个url
-    "pubDate": "<?php echo date("Y-m-d",$pics[0]['created_at']).'T'.date("H:i:s",$pics[0]['created_at'])?>" // 需按照yyyy-mm-ddThh:mm:ss格式编写时间，字母T不能省去
+    ],
+    "pubDate": "<?php echo date("Y-m-d",$pics[0]['created_at']).'T'.date("H:i:s",$pics[0]['created_at'])?>"
 }
 </script>
 </html>
