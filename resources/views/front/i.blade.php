@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head><meta charset="utf-8"><title><?php echo $title;?>_有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $title;?>"><meta name="description" content=""><link rel="stylesheet" href="/js/layer/wenda.css"><script type="text/javascript" src="//c.youbangkeyi.com/js/jquery.SuperSlide1-2.1.1.js"></script><script src="//c.youbangkeyi.com/js/TouchSlide.1.1.js"></script></head>
+<head><meta charset="utf-8"><title><?php echo $title;?>_有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $title;?>"><meta name="description" content="<?php echo  $anwser[0]["content"]??""; ?>"><link rel="stylesheet" href="/js/layer/wenda.css"><script type="text/javascript" src="//c.youbangkeyi.com/js/jquery.SuperSlide1-2.1.1.js"></script><script src="//c.youbangkeyi.com/js/TouchSlide.1.1.js"></script></head>
 <body class="shop-index view">
 @include("front.tijiao")
 <div class="main"><header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div><div class="logo"><a href="<?php echo '/'.$pycity.'/'.($tenants['shoptype']=='婚纱摄影'?'sheying':'hunli');?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?></a></div><a class="zxdh" href="tel:18500905723"></a></header>
@@ -228,7 +228,8 @@
     "http://img2.youbangkeyi.com<?php echo $v;?>",
         <?php }} ?>
 
-    ], //请在此处添加希望在搜索结果中展示图片的url，可以添加1个或3个url
+    ],
+    "description":"<?php echo $anwser[0]["content"]??"";?>"
     "pubDate": "<?php echo date("Y-m-d",$ask['created']).'T'.date("H:i:s",$ask['created'])?>" // 需按照yyyy-mm-ddThh:mm:ss格式编写时间，字母T不能省去
 }
 </script>
