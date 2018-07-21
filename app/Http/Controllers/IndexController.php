@@ -1261,4 +1261,104 @@ class IndexController extends Controller
             'shoptype' => $shoptype
         ])->limit(12)->get();
     }
+
+    public function ask ($pycity){
+
+        $city = Config::get('city.'.$pycity);
+        if(!$city) {
+            return Redirect::to('/');
+        }
+        $this->data['pycity'] = $pycity;
+
+        $count = YfcAsk::where("city",$city)->count();
+        $package = 20;
+        $pagecount = intval($count/$package) +1;
+        $p = intval(Request::input("p"));
+        $p = $p <1  ?1 :$p ;
+        $ask = YfcAsk::where("city",$city)->offset(($p-1)*$package)->limit($package)->get();
+        if(empty($ask)) {
+            $this->redirect("/");
+        }
+        $ask = $ask->toArray();
+        $aid = [];
+        foreach($ask as $v ) {
+            $aid[] = $v['id'];
+        }
+        $answer= YfcAskAnswer::wherein("aid",$aid)->orderby("id","desc")->limit(1000)->get()->toArray();
+
+        foreach($answer as $v) {
+            foreach($ask  as $k2 => $v2) {
+                if($v2['id'] == $v['aid']) {
+                    $ask[$k2]['answer'] = $v;
+                }
+            }
+        }
+        $this->data['ask'] = $ask;
+        $this->data['pagecount'] = $pagecount;
+        $this->data['p'] = $p;
+        $this->data['city'] = $city;
+        $this->data['pycity'] = $pycity;
+        $this->data['type'] = 'sheying';
+        $this->data['ismobile'] = $this->ismobile;
+        $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$city)
+            ->where("shoptype",'=',"婚纱摄影")
+            ->where("order_city",'<','50')
+            ->orderby("order_city",'asc')
+            ->limit(24)
+            ->get()
+            ->toArray();
+
+
+        //print_r($this->data['other']) ;exit;
+        return view("front/ask",$this->data);
+    }
+    public function cask ($pycity){
+
+        $city = Config::get('city.'.$pycity);
+        if(!$city) {
+            return Redirect::to('/');
+        }
+        $this->data['pycity'] = $pycity;
+
+        $count = YfcAskCity::where("city",$city)->count();
+        $package = 20;
+        $pagecount = intval($count/$package) +1;
+        $p = intval(Request::input("p"));
+        $p = $p <1  ?1 :$p ;
+        $ask = YfcAskCity::where("city",$city)->offset(($p-1)*$package)->limit($package)->get();
+        if(empty($ask)) {
+            $this->redirect("/");
+        }
+        $ask = $ask->toArray();
+        $aid = [];
+        foreach($ask as $v ) {
+            $aid[] = $v['id'];
+        }
+        $answer= YfcAskCityAnswer::wherein("aid",$aid)->orderby("id","desc")->limit(1000)->get()->toArray();
+
+        foreach($answer as $v) {
+            foreach($ask  as $k2 => $v2) {
+                if($v2['id'] == $v['aid']) {
+                    $ask[$k2]['answer'] = $v;
+                }
+            }
+        }
+        $this->data['ask'] = $ask;
+        $this->data['pagecount'] = $pagecount;
+        $this->data['p'] = $p;
+        $this->data['city'] = $city;
+        $this->data['pycity'] = $pycity;
+        $this->data['type'] = 'sheying';
+        $this->data['ismobile'] = $this->ismobile;
+        $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$city)
+            ->where("shoptype",'=',"婚纱摄影")
+            ->where("order_city",'<','50')
+            ->orderby("order_city",'asc')
+            ->limit(24)
+            ->get()
+            ->toArray();
+
+        //print_r($this->data['other']) ;exit;
+        return view("front/askcity",$this->data);
+    }
 }
