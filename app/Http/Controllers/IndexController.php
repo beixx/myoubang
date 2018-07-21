@@ -1325,20 +1325,30 @@ class IndexController extends Controller
         //print_r($this->data['other']) ;exit;
         return view("front/ask",$this->data);
     }
-    public function cask ($pycity){
+    function sask($pycity){
+        return $this->cask($pycity,'sheying');
+    }
+    function hask($pycity){
+        return $this->cask($pycity,'hunli');
+    }
+
+    public function cask ($pycity , $type){
+
+        $shoptype = $type=='sheying'?"婚纱摄影":"婚礼策划";
 
         $city = Config::get('city.'.$pycity);
+        $this->data['shoptype'] = $shoptype;
         if(!$city) {
             return Redirect::to('/');
         }
         $this->data['pycity'] = $pycity;
 
-        $count = YfcAskCity::where("city",$city)->count();
+        $count = YfcAskCity::where("city",$city)->where("shoptype",$shoptype)->count();
         $package = 20;
         $pagecount = intval($count/$package) +1;
         $p = intval(Request::input("p"));
         $p = $p <1  ?1 :$p ;
-        $ask = YfcAskCity::where("city",$city)->offset(($p-1)*$package)->limit($package)->get();
+        $ask = YfcAskCity::where("city",$city)->where("shoptype",$shoptype)->offset(($p-1)*$package)->limit($package)->get();
         if(empty($ask)) {
             $this->redirect("/");
         }
@@ -1356,15 +1366,19 @@ class IndexController extends Controller
                 }
             }
         }
+        $this->data['xtype'] = $type=="sheying" ?"sask":"hask";
         $this->data['ask'] = $ask;
         $this->data['pagecount'] = $pagecount;
         $this->data['p'] = $p;
+        $this->data['title'] =$city.$shoptype."哪家好_".$city.$shoptype."-有榜网";
+        $this->data['keyword'] = $city.$shoptype."哪家好,".$city.$shoptype;
+        $this->data['desc'] = "[".$city.$shoptype."哪家好]，有榜网为您提供".$city.$shoptype."相关话题，话题包含".$city."口碑最好的".$shoptype."，".$city."比较好的".$shoptype."等相关内容，希望能够帮助找到满意的答案。";
         $this->data['city'] = $city;
         $this->data['pycity'] = $pycity;
         $this->data['type'] = 'sheying';
         $this->data['ismobile'] = $this->ismobile;
         $this->data["hotTenants"] = YfcTenants::where("positionCity",'=',$city)
-            ->where("shoptype",'=',"婚纱摄影")
+            ->where("shoptype",'=',$shoptype)
             ->where("order_city",'<','50')
             ->orderby("order_city",'asc')
             ->limit(24)

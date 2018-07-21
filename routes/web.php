@@ -57,7 +57,8 @@ Route::group(['domain' => env('WWW_URL')],function(){
 
 
     Route::get('/ask/{pycity}', 'IndexController@ask');
-    Route::get('/cask/{pycity}', 'IndexController@cask');
+    Route::get('/sask/{pycity}', 'IndexController@sask');
+    Route::get('/hask/{pycity}', 'IndexController@hask');
     Route::get('/i/{id}', 'IndexController@i');
     Route::get('/wenda/{id}', 'IndexController@wenda');
     Route::get('/txlist/{id}', 'IndexController@txlist');
