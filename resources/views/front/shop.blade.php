@@ -721,7 +721,7 @@ option = {
         <?php $i = 0 ; if(isset($tenantspics[0])) { foreach($tenantspics[0]['cover'] as $v) { if($i ++ >2 ) break;?>
         "https://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75",
         <?php }}else { ?>
-        "https://img2.youbangkeyi.com<?php echo $tenants['cover'];?>",
+        "https://img2.youbangkeyi.com<?php echo $tenants['cover'];?>"<?php echo $i >2 ?"":",";?>
         <?php } ?>
     ], 
     "pubDate": "<?php echo date("Y-m-d",$ask['created']??($tenantspics[0]['created_at']??1530403200)).'T'.date("H:i:s",$ask['created']??($tenantspics[0]['created_at']??1530403200))?>" 

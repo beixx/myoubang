@@ -150,7 +150,7 @@
     "title": "{{$title}}",
     "images": [
         <?php $i = 0 ;  foreach($pics[0]['cover'] as $v) { if($i ++ >2 ) break;?>
-    "https://img2.youbangkeyi.com<?php echo $v;?>",
+    "https://img2.youbangkeyi.com<?php echo $v;?>"<?php echo $i >2 ?"":",";?>
         <?php }?>
     ],
     "pubDate": "<?php echo date("Y-m-d",$pics[0]['created_at']).'T'.date("H:i:s",$pics[0]['created_at'])?>"

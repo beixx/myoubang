@@ -229,7 +229,7 @@
     "title": "{{$title}}",
     "images": [
         <?php $i = 0 ; if(isset($tenantspics[0])) { foreach($tenantspics[0]['cover'] as $v) { if($i ++ >2 ) break;?>
-    "https://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75",
+    "https://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75"<?php echo $i >2 ?"":",";?>
         <?php }} ?>
     ],
     "description":"<?php echo $anwser[0]["content"]??"";?>",

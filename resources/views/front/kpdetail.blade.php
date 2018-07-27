@@ -190,7 +190,7 @@
     "description": "<?php echo $desc;?>",
     "images": [
         <?php $i = 0 ;  foreach($picinfo['cover'] as $v) { if($i ++ >2 ) break;?>
-    "https://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75",
+    "https://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75"<?php echo $i >2 ?"":",";?>
         <?php }?>
     ], 
     "pubDate": "<?php echo date("Y-m-d",$picinfo['created_at']).'T'.date("H:i:s",$picinfo['created_at'])?>"
