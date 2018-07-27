@@ -8,14 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta http-equiv="Cache-Control" content="no-transform" /> 
     <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="https://www.youbangkeyi.com/kpdetail/<?php echo $picinfo['id'];?>">
     <meta name="Keywords" content="<?php echo $keyword?>">
     <meta name="description" content="<?php echo $desc;?>">
-    <link rel="stylesheet" href="/js/layer/wenda.css">
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
-    <script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
-    <script type="text/javascript" src="/js/leftTime.min.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/main.js"></script>
-    <script type="text/javascript" src="http://www.youbangkeyi.com/js/foot.js?2"></script>
+    <link rel="stylesheet" href="//www.youbangkeyi.com/js/layer/wenda.css">
+    <script type="text/javascript" src="//www.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
+    <script src="//www.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="//www.youbangkeyi.com/js/leftTime.min.js"></script>
+    <script type="text/javascript" src="//www.youbangkeyi.com/js/main.js"></script>
+    <script type="text/javascript" src="//www.youbangkeyi.com/js/foot.js?2"></script>
     <style type="text/css">body{background: #f0f0f0}</style>
 </head>
 @include("front.tijiao")
@@ -39,7 +40,7 @@
                         <?php if(strpos($v,'http') === false) {?>
                            <img src="//img2.youbangkeyi.com<?php echo $v;?>?<?php echo  $ismobile?"imageView2/1/w/800/h/600/q/75|":'';?>imageslim" alt="<?php echo $picinfo['picName'];?>"/>
                         <?php } else {?>
-                            <img _src="<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" src="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $picinfo['picName'];?>"/>
+                            <img _src="<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" src="//img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $picinfo['picName'];?>"/>
                         <?php } ?>
                     </span>
                 </li>
@@ -106,7 +107,7 @@
 <div class="info">
     <?php foreach($picinfo['cover'] as $v) { ?>
         <?php if(strpos($v,'http') === false) {?>
-            <img src="http://img2.youbangkeyi.com<?php echo $v;?>" alt="<?php echo $picinfo['picName'];?>">
+            <img src="//img2.youbangkeyi.com<?php echo $v;?>" alt="<?php echo $picinfo['picName'];?>">
         <?php } else {?>
         <img src="<?php echo $v;?>" alt="<?php echo $picinfo['picName'];?>">
         <?php } ?>
@@ -121,7 +122,7 @@
                 <div class="suolvt">
                 <span>
                     <?php if(strpos($v['firstcover'][0],'http') === false) {?>
-                        <img src="http://img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/768/h/420/q/75|imageslim" alt="<?php echo $v['picName'];?>">
+                        <img src="//img2.youbangkeyi.com<?php echo $v['firstcover'][0];?>?imageView2/1/w/768/h/420/q/75|imageslim" alt="<?php echo $v['picName'];?>">
                     <?php } else {?>
                         <img src="<?php echo $v['firstcover'][0];?>?imageView2/1/w/768/h/420/q/75|imageslim" alt="<?php echo $v['picName'];?>">
                     <?php } ?>
@@ -170,26 +171,26 @@
 <!-- 城市弹出 -->
 <div class="container">
 </div>
-<script type="text/javascript" src="/js/city.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/city.js"></script>
 <?php if($type=="sheying"){?>
-<script type="text/javascript" src="/js/sheyingcity.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/sheyingcity.js"></script>
 <?php } else {?>
-<script type="text/javascript" src="/js/hunlicity.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/hunlicity.js"></script>
 <?php } ?>
-<script type="text/javascript" src="/js/layer/layer.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/layer/layer.js"></script>
 </div>
 @include("front.tijiaojs")
 </body>
 <script type="application/ld+json">
 {
     "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
-    "@id": "http://www.youbangkeyi.com/kpdetail/<?php echo $picinfo['id'];?>",
+    "@id": "https://www.youbangkeyi.com/kpdetail/<?php echo $picinfo['id'];?>",
     "appid": "1605753876149174",
     "title": "{{$title}}",
     "description": "<?php echo $desc;?>",
     "images": [
         <?php $i = 0 ;  foreach($picinfo['cover'] as $v) { if($i ++ >2 ) break;?>
-    "http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75",
+    "https://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75",
         <?php }?>
     ], 
     "pubDate": "<?php echo date("Y-m-d",$picinfo['created_at']).'T'.date("H:i:s",$picinfo['created_at'])?>"

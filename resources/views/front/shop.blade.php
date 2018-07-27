@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><title><?php echo $title;?></title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $keyword;?>"><meta name="description" content="<?php echo $desc;?>"><link rel="stylesheet" href="/js/layer/wenda.css"><script type="text/javascript" src="//c.youbangkeyi.com/js/jquery.SuperSlide1-2.1.1.js"></script><script type="text/javascript" src="/js/TouchSlide.1.1.js"></script></head>
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><title><?php echo $title;?></title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $keyword;?>"><meta name="description" content="<?php echo $desc;?>"><link rel="canonical" href="https://www.youbangkeyi.com/detail/<?php echo $tenants['id'];?>"><link rel="stylesheet" href="//www.youbangkeyi.com/js/layer/wenda.css"><script type="text/javascript" src="//www.youbangkeyi.com/js/jquery.SuperSlide1-2.1.1.js"></script><script type="text/javascript" src="//www.youbangkeyi.com/js/TouchSlide.1.1.js"></script></head>
 <body class="shop-index">
 @include("front.tijiao")
 <div class="main">
@@ -167,7 +167,7 @@
                     <div class="anli_p"><?php echo $v['explain'];?></div><?php } ?><span class="img">
                         <?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
-                            <a class="yulan  glightbox<?php echo $k;?>" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>"><img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" width="100%" height="100%" alt="<?php echo $v['picName']?>"/></a><?php } else {?><img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $v['picName']?>"/>
+                            <a class="yulan  glightbox<?php echo $k;?>" href="http://img2.youbangkeyi.com<?php echo $v['cover'][$i];?>"><img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" width="100%" height="100%" alt="<?php echo $v['picName']?>"/></a><?php } else {?><img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $v['picName']?>"/>
                             <?php } ?><?php } ?>
                         <?php if($v['currentPrice']>0) {?>
                         <div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div><?php } ?>
@@ -202,7 +202,7 @@
 </div>
 <?php if(isset($ask['id'])) {?>
 <div class="comment_list">
-    <div class="title dafen1">猜你关心的话题<span class="fa"><a href="/wenda/<?php echo $ask['id'];?>">全部3个回答</a></span>
+    <div class="title dafen1">猜你关心的话题<span class="fa"><a href="/ask/<?php echo $tenants['id'];?>">查看全部话题</a></span>
     </div>
     <div class="comment_column">
     <h3 class="wenda"><em></em><a href="/wenda/<?php echo $ask['id'];?>"><?php echo $ask['title'];?></a></h3>
@@ -228,7 +228,7 @@
             <li>
                 <a class="suolvl" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
                    <span>
-                       <img src="<?php echo strpos($v['cover'],"http")!==false ? '' : 'http://img2.youbangkeyi.com';?><?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim" alt="<?php echo $v['name'];?>">
+                       <img src="<?php echo strpos($v['cover'],"http")!==false ? '' : '//img2.youbangkeyi.com';?><?php echo $v['cover'];?>?imageView2/1/w/400/h/300/q/75|imageslim" alt="<?php echo $v['name'];?>">
                    </span>  </a><p><em class="red mr01">第<?php echo $v['order_city'];?>名</em><?php echo $v['name'];?></p>
                     <div class="price">
                         <del class="fl">人均:¥<?php echo $v['person_price'];?></del><del class="fr"><?php echo $v['area'];?></del>
@@ -251,7 +251,7 @@
     @include("front.hotTenants")
     <div class="foot">
         <div class="foots">
-            <span><a href="/about.html">关于有榜</a>|<a target="_blank" href="http://youbangkeyi.mikecrm.com/E09npdx">商务合作</a>|<a target="_blank" href="/mianze.html">免责说明</a>|<a href="/shuoming.html" target="_blank">服务说明</a>|<a target="_blank" href="//c.youbangkeyi.com/images/yingyezhizhao.jpeg">营业执照</a></span>
+            <span><a href="/about.html">关于有榜</a>|<a target="_blank" href="https://youbangkeyi.mikecrm.com/E09npdx">商务合作</a>|<a target="_blank" href="/mianze.html">免责说明</a>|<a href="/shuoming.html" target="_blank">服务说明</a>|<a target="_blank" href="//c.youbangkeyi.com/images/yingyezhizhao.jpeg">营业执照</a></span>
             京ICP备18024234号-2 北京有榜信息科技有限公司
             <span class="gongan">京公网安备 11010802024698号</span>
         </div>
@@ -263,13 +263,13 @@
 <!-- 城市弹出 -->
 <div class="container">
 </div>
-<script type="text/javascript" src="/js/Time.glight.foot.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/Time.glight.foot.js"></script>
 <?php if($type=="sheying"){?>
-<script type="text/javascript" src="/js/sheyingcity.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/sheyingcity.js"></script>
 <?php } else {?>
-<script type="text/javascript" src="/js/hunlicity.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/hunlicity.js"></script>
 <?php } ?>
-<script type="text/javascript" src="/js/layer/layer.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/layer/layer.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -713,15 +713,15 @@ option = {
 <script type="application/ld+json">
 {
     "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
-    "@id": "http://www.youbangkeyi.com/detail/<?php echo $tenants['id'];?>",
+    "@id": "https://www.youbangkeyi.com/detail/<?php echo $tenants['id'];?>",
     "appid": "1605753876149174",
     "title": "{{$title}}",
     "description":"<?php echo $desc;?>",
     "images": [
         <?php $i = 0 ; if(isset($tenantspics[0])) { foreach($tenantspics[0]['cover'] as $v) { if($i ++ >2 ) break;?>
-        "http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75",
+        "https://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75",
         <?php }}else { ?>
-        "http://img2.youbangkeyi.com<?php echo $tenants['cover'];?>",
+        "https://img2.youbangkeyi.com<?php echo $tenants['cover'];?>",
         <?php } ?>
     ], 
     "pubDate": "<?php echo date("Y-m-d",$ask['created']??($tenantspics[0]['created_at']??1530403200)).'T'.date("H:i:s",$ask['created']??($tenantspics[0]['created_at']??1530403200))?>" 

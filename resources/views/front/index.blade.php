@@ -1,5 +1,5 @@
 <?php //echo $type ;exit;?><!DOCTYPE html>
-<html lang="zh-cn"><head><meta charset="utf-8"><title>【<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名前十名】<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜-有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>,<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>前十名,<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名,<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜,<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>哪家好"><meta name="description" content="「有榜网<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>TOP50榜单」依托行业大数据为您提供客观权威的<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名，准确提供<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜前十名、<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影影楼和工作室<?php } else { ?>婚庆公司<?php } ?>哪家好等信息。"><link rel="stylesheet" href="/js/layer/wenda.css"><script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-1.7.1.min.js"></script><script type="text/javascript" src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script></head>
+<html lang="zh-cn"><head><meta charset="utf-8"><title>【<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名前十名】<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜-有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>,<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>前十名,<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名,<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜,<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>哪家好"><meta name="description" content="「有榜网<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>TOP50榜单」依托行业大数据为您提供客观权威的<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名，准确提供<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜前十名、<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影影楼和工作室<?php } else { ?>婚庆公司<?php } ?>哪家好等信息。"><link rel="canonical" href="https://www.youbangkeyi.com/<?php echo $pycity;?>/<?php if($type=='sheying') { ?>sheying<?php } else { ?>hunli<?php } ?>"><link rel="stylesheet" href="//www.youbangkeyi.com/js/layer/wenda.css"><script type="text/javascript" src="//www.youbangkeyi.com/js/jquery-1.7.1.min.js"></script><script type="text/javascript" src="//www.youbangkeyi.com/js/TouchSlide.1.1.js"></script></head>
 <body>
 <header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div><div class="logo"><a href="/<?php echo $pycity;?>/<?php if($type=='sheying') { ?>sheying<?php } else { ?>hunli<?php } ?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?></a></div><a class="zxdh" href="tel:18500905723"></a></header>
 <div class="content"><div class="bg2"></div><div class="sousj">
@@ -10,7 +10,7 @@
             <?php if($type=='sheying') { ?><li ><a href="/<?php echo $pycity;?>/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚礼策划</a></li><?php } else { ?><li class="on"><a href="/<?php echo $pycity;?>/hunli<?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">婚礼策划</a></li><?php } ?></ul></div>
         <div class="bd">
             <div class="list_box">
-               <div class="zysmi"><span>全网数据监测  榜单客观权威</span>中国婚嫁产业  大数据服务商<em><a href="http://www.youbangkeyi.com/guize.html" target="_blank">排名算法</a></em></div>
+               <div class="zysmi"><span>全网数据监测  榜单客观权威</span>中国婚嫁产业  大数据服务商<em><a href="https://www.youbangkeyi.com/guize.html" target="_blank">排名算法</a></em></div>
                 <section class="showmore" pagesize="<?php echo $iscity==1?10:15;?>">
                     <?php if(!empty($spread)) foreach($spread as $k => $v) { ?>
                     <div class="pic_box bdtj">
@@ -63,7 +63,7 @@
                         <?php } ?>
 </section></div>
 <?php if(isset($askfooter)) { ?>
-<div class="comment_list"><div class="title dafen1">本城市最新话题<span class="fa"><a href="/wenda/<?php echo $askfooter['id'];?>">更新于：<?php echo date("Y-m-d H:i:s",$askfooter['created']);?></a></span></div>
+<div class="comment_list"><div class="title dafen1">本城市最新话题<span class="fa">更新于：<?php echo date("Y-m-d H:i:s",$askfooter['created']);?></span></div>
 <div class="comment_column"><h3 class="wenda"><em></em><a href="/wenda/<?php echo $askfooter['id'];?>"><?php echo $askfooter['title'];?></a></h3>
 <?php if(isset($askfooter['answer']["id"])){ ?>
 <div class="cmt_con cmt_R"><span class="comment_W"><?php echo $askfooter['answer']['content'];?></span>
@@ -232,35 +232,30 @@
 </ul></div> <?php } ?>
  <div class="foot">
         <div class="foots">
-            <span><a href="/about.html">关于有榜</a>|<a target="_blank" href="http://youbangkeyi.mikecrm.com/E09npdx">商务合作</a>|<a target="_blank" href="/mianze.html">免责说明</a>|<a href="/shuoming.html" target="_blank">服务说明</a>|<a target="_blank" href="//c.youbangkeyi.com/images/yingyezhizhao.jpeg">营业执照</a></span>
+            <span><a href="/about.html">关于有榜</a>|<a target="_blank" href="https://youbangkeyi.mikecrm.com/E09npdx">商务合作</a>|<a target="_blank" href="/mianze.html">免责说明</a>|<a href="/shuoming.html" target="_blank">服务说明</a>|<a target="_blank" href="http://c.youbangkeyi.com/images/yingyezhizhao.jpeg">营业执照</a></span>
             京ICP备18024234号-2 北京有榜信息科技有限公司 
             <span class="gongan">京公网安备 11010802024698号</span></div>
         <div class="lian">Copyright © 2018 有榜网</div></div>
 </footer></div></div>
 <!-- 城市弹出 -->
 <div class="container"></div>
-<script type="text/javascript" src="/js/footer.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/footer.js"></script>
 <?php if($type=="sheying"){?>
-<script type="text/javascript" src="/js/sheyingcity.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/sheyingcity.js"></script>
 <?php } else {?>
-<script type="text/javascript" src="/js/hunlicity.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/hunlicity.js"></script>
 <?php } ?>
-<script type="text/javascript" src="/js/layer/layer.js"></script></body>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/layer/layer.js"></script></body>
 <?php if(isset($askfooter)) { ?>
 <script type="application/ld+json">
 {
-    "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
-    "@id": "http://www.youbangkeyi.com/<?php echo $pycity.'/'.$type;?>",
-    "appid": "1605753876149174",
-    "title": "【<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名前十名】<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜-有榜网",
-    "description":"「有榜网<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>TOP50榜单」依托行业大数据为您提供客观权威的<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名，准确提供<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜前十名、<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影影楼和工作室<?php } else { ?>婚庆公司<?php } ?>哪家好等信息。",
-    "images": [
-        <?php $i=0; foreach($tenants as $v) {  foreach($v['taoxi'] as $v2) { if($i ++ > 2) break; ?>
-        "<?php echo "http://img2.youbangkeyi.com".$v2['cover'][0];?>?imageView2/1/w/600/h/400/q/75';?>|imageslim",
-        <?php }} ?>
-    ],
-    "pubDate": "<?php echo date("Y-m-d",$askfooter['created']).'T'.date("H:i:s",$askfooter['created'])?>"
-}
+"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+"@id": "https://www.youbangkeyi.com/<?php echo $pycity.'/'.$type;?>",
+"appid": "1605753876149174",
+"title": "【<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名前十名】<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜-有榜网",
+"description":"「有榜网<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>TOP50榜单」依托行业大数据为您提供客观权威的<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排名，准确提供<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚礼策划<?php } ?>排行榜前十名、<?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影影楼和工作室<?php } else { ?>婚庆公司<?php } ?>哪家好等信息。",
+"images": [<?php $i=0; foreach($tenants as $v) {  foreach($v['taoxi'] as $v2) { if($i ++ > 2) break; ?>"<?php echo "https://img2.youbangkeyi.com".$v2['cover'][0];?>?imageView2/1/w/600/h/400/q/75|imageslim",<?php }} ?>],
+"pubDate": "<?php echo date("Y-m-d",$askfooter['created']).'T'.date("H:i:s",$askfooter['created'])?>"}
 </script>
 <?php } ?>
 </html>

@@ -120,7 +120,7 @@ class IndexController extends AdminController
                 $tenants = YfcTenants::where("city","=",$v)
                     ->where("shoptype","=",$v2)
                     ->where("order_city",">=",1)
-                    ->where("order_city","<=",10)
+                    ->where("order_city","<=",20)
                     ->get();
                 if(!empty($tenants[0])) {
                     $tenants = $tenants[rand(0,count($tenants)-1)];
@@ -167,7 +167,8 @@ class IndexController extends AdminController
                             'tid' => $tenants['id'],
                             'aid' => $aid,
                             'name' => names($text),
-                            'content' => $asks->content
+                            'content' => $asks->content,
+                            'created' => time(),
                         ];
                         $qid = YfcAskAnswer::insert($data);
                         if(!$qid) {

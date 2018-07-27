@@ -8,15 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <meta name="Keywords" content="">
-    <meta name="description" content="">
-    <link rel="stylesheet" href="/js/layer/wenda.css">
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
-    <script type="text/javascript" src="/js/leftTime.min.js"></script>
-    <script src="//m1.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/more.js"></script>
-    <script type="text/javascript" src="http://www.youbangkeyi.com/js/foot.js"></script>
+    <link rel="canonical" href="https://www.youbangkeyi.com/kplist/<?php echo $tenants['id'];?>">
+    <link rel="stylesheet" href="//www.youbangkeyi.com/js/layer/wenda.css">
+    <script type="text/javascript" src="//www.youbangkeyi.com/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="//www.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="//www.youbangkeyi.com/js/leftTime.min.js"></script>
+    <script src="//www.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="//www.youbangkeyi.com/js/more.js"></script>
+    <script type="text/javascript" src="//www.youbangkeyi.com/js/foot.js"></script>
     <style type="text/css">.case_box .picScroll .bd .img em{z-index: initial;}</style>
 </head>
 <body class="shop-index view">
@@ -127,13 +126,13 @@
 <!-- 城市弹出 -->
 <div class="container">
 </div>
-<script type="text/javascript" src="/js/city.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/city.js"></script>
 <?php if($type=="sheying"){?>
-<script type="text/javascript" src="/js/sheyingcity.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/sheyingcity.js"></script>
 <?php } else {?>
-<script type="text/javascript" src="/js/hunlicity.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/hunlicity.js"></script>
 <?php } ?>
-<script type="text/javascript" src="/js/layer/layer.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/layer/layer.js"></script>
 <script>
     <?php foreach($pics as $k=>$v) {?>
         var lightbox = GLightbox({selector: 'glightbox<?php echo $k?>'});
@@ -146,12 +145,12 @@
 <script type="application/ld+json">
 {
     "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
-    "@id": "http://www.youbangkeyi.com/kplist/<?php echo $tenants['id'];?>",
+    "@id": "https://www.youbangkeyi.com/kplist/<?php echo $tenants['id'];?>",
     "appid": "1605753876149174",
     "title": "{{$title}}",
     "images": [
         <?php $i = 0 ;  foreach($pics[0]['cover'] as $v) { if($i ++ >2 ) break;?>
-    "http://img2.youbangkeyi.com<?php echo $v;?>",
+    "https://img2.youbangkeyi.com<?php echo $v;?>",
         <?php }?>
     ],
     "pubDate": "<?php echo date("Y-m-d",$pics[0]['created_at']).'T'.date("H:i:s",$pics[0]['created_at'])?>"

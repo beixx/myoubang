@@ -222,8 +222,8 @@
             </div>
             <?php if(isset($v['answer']['content'])) { ?>
             <div class="bottom_line clearfix">
-                <em class="ttAsk-huida">回答<?php echo $v['count']??"";</em>
-                <em class="ttAsk-time"><?php echo date("Y-m-d",$v['answer']['created']);?></em>
+                <em class="ttAsk-huida">回答<?php echo $v['count']??"";?></em>
+                <em class="ttAsk-time"><?php echo date("Y-m-d H:i:s",$v['answer']['created']);?></em>
                 <em class="ttAsk-tag">
                     <?php echo $v['answer']['name'];?>
                 </em>
@@ -235,7 +235,7 @@
 
     </ul>
     <div class="widget">
-        <a href="/cask/<?php echo $pycity."?p=".($p>1?$p-1:1);?>">上一页</a>
+        <a href="/<?php echo $xtype;?>/<?php echo $pycity."?p=".($p>1?$p-1:1);?>">上一页</a>
         <div>
             <a class="widget-pagination-current-page" href=""><?php echo $p.'/'.$pagecount;?></a>
             <select class="widget-pagination-pages" id="pageCounts">

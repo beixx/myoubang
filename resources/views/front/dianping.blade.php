@@ -7,10 +7,10 @@
     <meta name="copyright" content="">
     <meta name="Keywords" content="">
     <meta name="description" content="">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="//m1.youbangkeyi.com/js/jquery-2.1.1.js"></script>
-    <link rel="stylesheet" href="/css/jquery.range.css" />
-    <script type="text/javascript" src="//m1.youbangkeyi.com/js/jquery.range.js?2017421"></script>
+    <link rel="stylesheet" href="//www.youbangkeyi.com/css/style.css">
+    <script src="//www.youbangkeyi.com/js/jquery-2.1.1.js"></script>
+    <link rel="stylesheet" href="//www.youbangkeyi.com/css/jquery.range.css" />
+    <script type="text/javascript" src="//www.youbangkeyi.com/js/jquery.range.js?2017421"></script>
     <script type="text/javascript">
         $(function () {
             $('.single-slider').jRange({
@@ -169,15 +169,15 @@ var _hmt = _hmt || [];
 
 </div>
 
-<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/template.js"></script>
-<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/zepto.min.js"></script>
-<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/uploadImage.js"></script>
-<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/exif.js"></script>
-<script type="text/javascript" src="http://www.youbangkeyi.com/xinjs/layer.js" ></script>
-<script type="text/javascript" src="http://c.youbangkeyi.com/js/main.js"></script>
-<script type="text/javascript" src="http://c.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js" ></script>
-<script type="text/javascript" src="http://c.youbangkeyi.com/js/template.js"></script>
-<script type="text/javascript" src="http://c.youbangkeyi.com/js/zepto.min.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/xinjs/template.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/xinjs/zepto.min.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/xinjs/uploadImage.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/xinjs/exif.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/xinjs/layer.js" ></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/main.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js" ></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/template.js"></script>
+<script type="text/javascript" src="//www.youbangkeyi.com/js/zepto.min.js"></script>
 <script type="text/javascript">
     //模糊搜索商家
     $('#submit').click(function(){

@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head><meta charset="utf-8"><title><?php echo $title;?>_有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $city.$tenants['name'];?>,<?php echo $title;?>"><meta name="description" content="<?php echo $anwser[0]["content"]??"";?>"><link rel="stylesheet" href="/js/layer/wenda.css"><script type="text/javascript" src="//c.youbangkeyi.com/js/jquery.SuperSlide1-2.1.1.js"></script><script src="//c.youbangkeyi.com/js/TouchSlide.1.1.js"></script></head>
+<head><meta charset="utf-8"><title><?php echo $title;?>_有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $city.$tenants['name'];?>,<?php echo $title;?>"><meta name="description" content="<?php echo $anwser[0]["content"]??"";?>"><link rel="canonical" href="https://www.youbangkeyi.com/wenda/<?php echo $ask['id'];?>"><link rel="stylesheet" href="//www.youbangkeyi.com/js/layer/wenda.css"><script type="text/javascript" src="//www.youbangkeyi.com/js/jquery.SuperSlide1-2.1.1.js"></script><script src="//www.youbangkeyi.com/js/TouchSlide.1.1.js"></script></head>
 <body class="shop-index view">
 @include("front.tijiao")
 <div class="main"><header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div><div class="logo"><a href="<?php echo '/'.$pycity.'/'.($tenants['shoptype']=='婚纱摄影'?'sheying':'hunli');?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?></a></div><a class="zxdh" href="tel:18500905723"></a></header>
@@ -22,7 +22,7 @@
     <div class="huida">
         <div class="yonghu"><?php echo $v['name'];?> <span class="frwd">Ta给出了<?php echo $v['start']?>星好评</span></div>
         <p class="neirong"><?php echo $v['content'];?></p></div><?php } ?><?php if(isset($tenantspics) ) { ?>
-    <div class="case_box"><div id="picScroll" class="picScroll txtCtr"><div class="bd"><ul><?php foreach($tenantspics as $k => $v){?><li><div class="anli_touxiang"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim"></div><p><a href="/kpdetail/<?php echo $v['id']?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $v['picName']?></a></p><span class="anli_month"><em class="fl">发布于<?php echo \App\Http\Helper\Date::xtime($v['created_at']);?></em><em class="fr">浏览<?php echo $v['showcount'];?>次</em></span><?php if($v['explain']) { ?><div class="anli_p"><?php echo $v['explain'];?></div><?php } ?><span class="img"><?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?><?php if(strpos($v['cover'][$i],'http') === false) {?><a class="yulan  glightbox<?php echo $k;?>" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>"><img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" width="100%" height="100%" alt="<?php echo $title;?>相关案例"/></a><?php } else {?><img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $title;?>相关案例"/><?php } ?><?php } ?><?php if($v['currentPrice']>0) {?><div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div><?php } ?></span><div href="javascript:" class="anlibj down anliclick"><?php echo $v['currentPrice']>0?"咨询档期":"获取案例报价";?></div></li><?php } ?></ul></div></div>
+    <div class="case_box"><div id="picScroll" class="picScroll txtCtr"><div class="bd"><ul><?php foreach($tenantspics as $k => $v){?><li><div class="anli_touxiang"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim"></div><p><a href="/kpdetail/<?php echo $v['id']?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $v['picName']?></a></p><span class="anli_month"><em class="fl">发布于<?php echo \App\Http\Helper\Date::xtime($v['created_at']);?></em><em class="fr">浏览<?php echo $v['showcount'];?>次</em></span><?php if($v['explain']) { ?><div class="anli_p"><?php echo $v['explain'];?></div><?php } ?><span class="img"><?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?><?php if(strpos($v['cover'][$i],'http') === false) {?><a class="yulan  glightbox<?php echo $k;?>" href="http://img2.youbangkeyi.com<?php echo $v['cover'][$i];?>"><img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" width="100%" height="100%" alt="<?php echo $title;?>相关案例"/></a><?php } else {?><img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $title;?>相关案例"/><?php } ?><?php } ?><?php if($v['currentPrice']>0) {?><div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div><?php } ?></span><div href="javascript:" class="anlibj down anliclick"><?php echo $v['currentPrice']>0?"咨询档期":"获取案例报价";?></div></li><?php } ?></ul></div></div>
         <div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看其他案例</a></div></div>
     <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div>
     <div class="room-num-line"><span class="txt">版权归:<?php echo $city.$tenants['name'];?>所有</span></div></div>
@@ -199,9 +199,9 @@
     </footer>
     <!-- 城市弹出 -->
     <div class="container"></div>
-    <script type="text/javascript" src="/js/Time.glight.foot.js"></script>
-    <script type="text/javascript" src="/js/sheyingcity.js"></script>
-    <script type="text/javascript" src="/js/layer/layer.js"></script>
+    <script type="text/javascript" src="//www.youbangkeyi.com/js/Time.glight.foot.js"></script>
+    <script type="text/javascript" src="//www.youbangkeyi.com/js/sheyingcity.js"></script>
+    <script type="text/javascript" src="//www.youbangkeyi.com/js/layer/layer.js"></script>
     <script><?php foreach($tenantspics as $k=>$v) {?>var lightbox = GLightbox({selector: 'glightbox<?php echo $k?>'});<?php } ?>
                     $(function(){
                 //日期倒计时
@@ -224,15 +224,15 @@
 <script type="application/ld+json">
 {
     "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
-    "@id": "http://www.youbangkeyi.com/i/<?php echo $ask['id'];?>",
+    "@id": "https://www.youbangkeyi.com/wenda/<?php echo $ask['id'];?>",
     "appid": "1605753876149174",
     "title": "{{$title}}",
     "images": [
         <?php $i = 0 ; if(isset($tenantspics[0])) { foreach($tenantspics[0]['cover'] as $v) { if($i ++ >2 ) break;?>
-    "http://img2.youbangkeyi.com<?php echo $v;?>",
+    "https://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75",
         <?php }} ?>
     ],
-    "description":"<?php echo $anwser[0]["content"]??"";?>?imageView2/1/w/600/h/400/q/75",
+    "description":"<?php echo $anwser[0]["content"]??"";?>",
     "pubDate": "<?php echo date("Y-m-d",$ask['created']).'T'.date("H:i:s",$ask['created'])?>",
 }
 </script>

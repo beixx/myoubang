@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title>{{$title}}</title>
+    <title><?php echo $city;?>{{$title}}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
     <meta name="applicable-device" content="pc,mobile">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -15,183 +15,26 @@
     <script src="//c.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
 </head>
 <style type="text/css">
-    .daan {
-        width: 92%;
-        padding: 0.5rem 4% 0.5rem;
-        background: #FFF;
-        font-size: 0.8rem;
-        border-top: 0.5rem solid #f5f7fa;
-        text-align: center;
-    }
-
-    .daan em {
-        font-size: 0.75rem;
-        font-weight: bold;
-    }
-
-    .daan i {
-        color: #FF4040;
-        margin: 0 0.2rem;
-    }
-
-    .ask-m {
-        background: #fff;
-        border-top: 0.5rem solid #f5f7fa;
-    }
-
-    .ask-m li {
-        width: 92%;
-        border-bottom: 1px solid #efefef;
-        padding: 0.3rem 4%;
-    }
-
-    .ask-m li h3 {
-        font-size: .75rem;
-        color: #333;
-        display: inline-block;
-        padding-bottom: .1rem;
-        vertical-align: middle;
-        font-weight: bold;
-    }
-
-    .ask-m li h3:before {
-        content: "问";
-        display: inline-block;
-        width: 1rem;
-        height: 1rem;
-        background: #ffa114;
-        font-size: .6rem;
-        color: #fff;
-        text-align: center;
-        margin-right: .3rem;
-        line-height: 1rem;
-        vertical-align: middle;
-        margin-bottom: .2rem;
-        border-radius: .2rem;
-    }
-
-    .ask-m span {
-        text-align: left;
-        font-size: .6rem;
-        color: #666;
-        margin-bottom: .16rem;
-        display: -webkit-box;
-        word-break: break-all;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        padding-right: .01rem;
-        line-height: 1rem;
-    }
-
-    .bottom_line {
-        position: relative;
-        height: 1.2rem;
-        line-height: 1.2rem;
-    }
-
-    .ttAsk-huida {
-        line-height: 1.2rem;
-        display: block;
-        font-size: .6rem;
-        color: #999;
-        float: left;
-        padding-right: .5em;
-    }
-
-    .ttAsk-huida:after {
-        content: "";
-        width: 0.2rem;
-        height: 0.2rem;
-        background: #dfdfdf;
-        border-radius: 45%;
-        line-height: 1.2rem;
-        display: inline-block;
-        margin-left: .5rem;
-        margin-bottom: .1rem;
-    }
-
-    .ttAsk-time {
-        line-height: 1.2rem;
-        display: block;
-        font-size: .6rem;
-        color: #999;
-        float: left;
-    }
-
-    .ttAsk-tag {
-        line-height: 1;
-        font-size: .6rem;
-        color: #999;
-        padding: .2rem .3rem;
-        background: #f6f6f6;
-        position: absolute;
-        right: 0;
-        top: .1rem;
-        border-radius: .35rem;
-    }
-
-    .widget {
-        height: 65px;
-        background-color: #fff;
-        border: 1px solid #fff;
-        text-align: center;
-        overflow: hidden;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        padding: 15px 0;
-    }
-
-    .widget a {
-        width: 31.25%;
-        background-color: #6fd2a6;
-        color: #fff;
-        display: block;
-        float: left;
-    }
-
-    .widget a:first-of-type {
-        margin-left: 4.6875%;
-    }
-
-    .widget a:last-of-type {
-        margin-right: 4.6875%;
-    }
-
-    .widget div {
-        float: left;
-        display: block;
-        height: 32px;
-        line-height: 32px;
-        font-size: 14px;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        width: 28.125%;
-        background-color: #fff !important;
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-        color: #000;
-        position: relative;
-    }
-
-    .widget-pagination-current-page {
-        display: block;
-        margin: 0 auto !important;
-        background-color: #fff !important;
-        width: 100% !important;
-        height: 100% !important;
-        color: #333 !important;
-    }
-
-    .widget-pagination-pages {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        opacity: 0;
-    }
-
+.daan {width:92%;padding:0.5rem 4% 0.5rem;background:#FFF;font-size:0.8rem;border-top:0.5rem solid #f5f7fa;text-align:center;}
+.daan em {font-size:0.75rem;font-weight:bold;}
+.daan i {color:#FF4040;margin:0 0.2rem;}
+.ask-m {background:#fff;border-top:0.5rem solid #f5f7fa;}
+.ask-m li {width:92%;border-bottom:1px solid #efefef;padding:0.3rem 4%;}
+.ask-m li h3 {font-size:.75rem;color:#333;display:inline-block;padding-bottom:.1rem;vertical-align:middle;font-weight:bold;}
+.ask-m li h3:before {content:"问";display:inline-block;width:1rem;height:1rem;background:#ffa114;font-size:.6rem;color:#fff;text-align:center;margin-right:.3rem;line-height:1rem;vertical-align:middle;margin-bottom:.2rem;border-radius:.2rem;}
+.ask-m span {text-align:left;font-size:.6rem;color:#666;margin-bottom:.16rem;display:-webkit-box;word-break:break-all;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;padding-right:.01rem;line-height:1rem;}
+.bottom_line {position:relative;height:1.2rem;line-height:1.2rem;}
+.ttAsk-huida {line-height:1.2rem;display:block;font-size:.6rem;color:#999;float:left;padding-right:.5em;}
+.ttAsk-huida:after {content:"";width:0.2rem;height:0.2rem;background:#dfdfdf;border-radius:45%;line-height:1.2rem;display:inline-block;margin-left:.5rem;margin-bottom:.1rem;}
+.ttAsk-time {line-height:1.2rem;display:block;font-size:.6rem;color:#999;float:left;}
+.ttAsk-tag {line-height:1;font-size:.6rem;color:#999;padding:.2rem .3rem;background:#f6f6f6;position:absolute;right:0;top:.1rem;border-radius:.35rem;}
+.widget {height:65px;background-color:#fff;border:1px solid #fff;text-align:center;overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box;padding:15px 0;}
+.widget a {width:31.25%;background-color:#6fd2a6;color:#fff;display:block;float:left;}
+.widget a:first-of-type {margin-left:4.6875%;}
+.widget a:last-of-type {margin-right:4.6875%;}
+.widget div {float:left;display:block;height:32px;line-height:32px;font-size:14px;-webkit-box-sizing:border-box;box-sizing:border-box;width:28.125%;background-color:#fff !important;border-top:1px solid #eee;border-bottom:1px solid #eee;color:#000;position:relative;}
+.widget-pagination-current-page {display:block;margin:0 auto !important;background-color:#fff !important;width:100% !important;height:100% !important;color:#333 !important;}
+.widget-pagination-pages {position:absolute;width:100%;height:100%;left:0;top:0;opacity:0;}
 </style>
 <body class="shop-index view">
 <header>
@@ -199,11 +42,8 @@
     <div class="logo"><a href="/<?php echo $pycity."/".$type;?>"><?php echo $city.$shoptype;?></a></div>
     <a class="zxdh" href="tel:18500905723"></a></header>
 <div class="daan">
-    <em>已有<i>347777</i>对新人得到满意答案</em>
+    <em>已有<i>8976</i>对新人得到满意答案</em>
 </div>
-
-
-
 <section class="ask-m">
     <ul>
         <?php foreach($ask as $v) { ?>
@@ -223,7 +63,7 @@
             <?php if(isset($v['answer']['content'])) { ?>
             <div class="bottom_line clearfix">
                 <em class="ttAsk-huida">回答<?php echo $v['count']??"";?></em>
-                <em class="ttAsk-time"><?php echo date("Y-m-d",$v['answer']['created']);?></em>
+                <em class="ttAsk-time"><?php echo date("Y-m-d H:i:s",$v['answer']['created']);?></em>
                 <em class="ttAsk-tag">
                     <?php echo $v['answer']['name'];?>
                 </em>

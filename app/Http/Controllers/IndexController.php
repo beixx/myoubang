@@ -464,7 +464,6 @@ class IndexController extends Controller
         return view("front/piclist",$this->data);
     }
     public function txlist($id = 0){
-        return Redirect::to('/');
         $sets = YfcTenantsSet::where('tenantsId',$id)->orderby("created_at",'desc')->get();
         $tenants = Yfctenants::where('id',$id)->first()->toArray();
         if(empty($tenants)) {
@@ -568,8 +567,9 @@ class IndexController extends Controller
 
     public function txdetail($tid = 0,$id = 0)
     {
-
-        return Redirect::to('/');
+        header('HTTP/1.1 301 Moved Permanently');//发出301头部   
+        header('Location: /');//跳转到你希望的地址格式 
+	return '';
         $info = Yfctenantsset::where('id', $id)->first();
         if(empty($info)) {
             return Redirect::to("/");
@@ -1283,7 +1283,7 @@ class IndexController extends Controller
         $pagecount = intval($count/$package) +1;
         $p = intval(Request::input("p"));
         $p = $p <1  ?1 :$p ;
-        $ask = YfcAsk::where("tid",$id)->offset(($p-1)*$package)->limit($package)->get();
+        $ask = YfcAsk::where("tid",$id)->orderby('id','desc')->offset(($p-1)*$package)->limit($package)->get();
         if(empty($ask)) {
             $this->redirect("/");
         }
