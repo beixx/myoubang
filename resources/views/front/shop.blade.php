@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><title><?php echo $title;?></title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $keyword;?>"><meta name="description" content="<?php echo $desc;?>"><link rel="canonical" href="https://www.youbangkeyi.com/detail/<?php echo $tenants['id'];?>"><link rel="stylesheet" href="//www.youbangkeyi.com/js/layer/wenda.css"><script type="text/javascript" src="//www.youbangkeyi.com/js/jquery.SuperSlide1-2.1.1.js"></script><script type="text/javascript" src="//www.youbangkeyi.com/js/TouchSlide.1.1.js"></script></head>
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><title><?php echo $title;?></title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $keyword;?>"><meta name="description" content="<?php echo $desc;?>"><link rel="canonical" href="https://www.youbangkeyi.com/detail/<?php echo $tenants['id'];?>"><link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css"><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery.SuperSlide1-2.1.1.js"></script><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script></head>
 <body class="shop-index">
 @include("front.tijiao")
 <div class="main">
@@ -263,13 +263,13 @@
 <!-- 城市弹出 -->
 <div class="container">
 </div>
-<script type="text/javascript" src="//www.youbangkeyi.com/js/Time.glight.foot.js"></script>
+<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/Time.glight.foot.js"></script>
 <?php if($type=="sheying"){?>
-<script type="text/javascript" src="//www.youbangkeyi.com/js/sheyingcity.js"></script>
+<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/sheyingcity.js"></script>
 <?php } else {?>
-<script type="text/javascript" src="//www.youbangkeyi.com/js/hunlicity.js"></script>
+<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/hunlicity.js"></script>
 <?php } ?>
-<script type="text/javascript" src="//www.youbangkeyi.com/js/layer/layer.js"></script>
+<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/layer.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -719,7 +719,7 @@ option = {
     "description":"<?php echo $desc;?>",
     "images": [
         <?php $i = 0 ; if(isset($tenantspics[0])) { foreach($tenantspics[0]['cover'] as $v) { if($i ++ >2 ) break;?>
-        "https://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75",
+        "https://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75"<?php echo $i >2 ?"":",";?>
         <?php }}else { ?>
         "https://img2.youbangkeyi.com<?php echo $tenants['cover'];?>"<?php echo $i >2 ?"":",";?>
         <?php } ?>

@@ -11,9 +11,9 @@
     <link rel="canonical" href="https://www.youbangkeyi.com/kpdetail/<?php echo $picinfo['id'];?>">
     <meta name="Keywords" content="<?php echo $keyword?>">
     <meta name="description" content="<?php echo $desc;?>">
-    <link rel="stylesheet" href="//www.youbangkeyi.com/js/layer/wenda.css">
-    <script type="text/javascript" src="//www.youbangkeyi.com/js/jquery-1.7.1.min.js"></script>
-    <script src="//www.youbangkeyi.com/js/TouchSlide.1.1.js"></script>
+    <link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css">
+    <script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery-1.7.1.min.js"></script>
+    <script src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script>
     <script type="text/javascript" src="//www.youbangkeyi.com/js/leftTime.min.js"></script>
     <script type="text/javascript" src="//www.youbangkeyi.com/js/main.js"></script>
     <script type="text/javascript" src="//www.youbangkeyi.com/js/foot.js?2"></script>
@@ -173,11 +173,11 @@
 </div>
 <script type="text/javascript" src="//www.youbangkeyi.com/js/city.js"></script>
 <?php if($type=="sheying"){?>
-<script type="text/javascript" src="//www.youbangkeyi.com/js/sheyingcity.js"></script>
+<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/sheyingcity.js"></script>
 <?php } else {?>
-<script type="text/javascript" src="//www.youbangkeyi.com/js/hunlicity.js"></script>
+<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/hunlicity.js"></script>
 <?php } ?>
-<script type="text/javascript" src="//www.youbangkeyi.com/js/layer/layer.js"></script>
+<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/layer.js"></script>
 </div>
 @include("front.tijiaojs")
 </body>
