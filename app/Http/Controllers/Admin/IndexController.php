@@ -136,7 +136,7 @@ class IndexController extends AdminController
                         continue;
                     }
 		    $comment = $comment->toArray();
-                    $title = $v.$tenants['name'].$name;
+                    $title =str_replace('{商家}', $v.$tenants['name'],$name);
                     $data = [
                         'tid' => $tenants['id'],
                         'city' => $tenants['positionCity'],
