@@ -52,6 +52,7 @@
                                             src="//img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/500/h/500/q/75|imageslim"
                                             width="100%" height="100%"/></a>
                                 <?php } ?>
+                            </span>
                             <div href="javascript:" class="anlibj down anliclick">获取案例报价</div>
                         </li>
                     </ul>
