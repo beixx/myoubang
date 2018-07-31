@@ -1241,7 +1241,20 @@ class IndexController extends Controller
 
         $this->footerask($city,$shoptype,$id);
         //print_r($this->data['other']) ;exit;
-        return view("front/i",$this->data);
+        if($ask['type'] == 1) {
+
+            return view("front/i",$this->data);
+        }
+        else {
+            foreach($this->data['anwser'] as $k => $v) {
+                $this->data['anwser'][$k]['pic'] = YfcTenantsPic::where("tenantsId",'=',$v['tid'])
+                    ->select("Yfc_tenants.*","yfc_tenants_pic.cover","yfc_tenants_pic.updated_at","yfc_tenants_pic.showcount",DB::RAW("yfc_tenants_pic.id as pid"))
+                    ->leftjoin("yfc_tenants","yfc_tenants.id","yfc_tenants_pic.tenantsId")
+                    ->orderby("id","desc")->first();
+            }
+
+            return view("front/i2",$this->data);
+        }
     }
 
     public function footerask ($city,$shoptype,$id=0){

@@ -212,56 +212,61 @@ class IndexController extends AdminController
                 $tenants = YfcTenants::where("positionCity","=",$city)
                     ->where("shoptype","=",$shoptype)
                     ->where("order_city",">=",1)
-                    ->where("order_city","<=",10)
                     ->orderby("order_city","asc")
                     ->limit(10)
-                    ->get();
+                    ->get()->toArray();
 
-                $title = str_replace($city,'{城市}',$name);
-                $title = str_replace($shoptype,'{类别}',$title);
+                if(empty($tenants)) {
+                    echo $city.'---'.$shoptype."<br />" ;
+                    continue;
+                }
+
+                $title = str_replace('{城市}',$city,$name);
+                $title = str_replace('{类别}',$shoptype,$title);
 
                 $data = [
                     'city' => $city,
                     'shoptype' => $shoptype,
-                    'type' => 1,
+                    'type' => 2,
                     'name' => names($text),
                     'title' => $title,
                     "created" => time(),
                 ];
-                $aid = YfcAskCity::insertGetId($data);
 
+                $aid = YfcAskCity::insertGetId($data);
                 if (!$aid) {
                     print_r($this->db);
                     exit;
                 }
 
                 $random_keys=array_rand($tenants,9);
-
-
+                $i = 0 ;
                 foreach($random_keys as $k => $v) {
+
+                    if( $i >=5) break;
                     $comment = DB::table("new_data.dianping_".($tenants[$v]['shoptype']=="婚纱摄影"?"hunsha":"hunqing")."_comments")
                         ->where("shop_url","=",$tenants[$v]['url'])
                         ->where("stars","=",5)
                         ->limit(1)
                         ->where(DB::RAW("length(content)"),">",10)
                         ->orderby(DB::RAW("rand()"))
-                        ->get();
+                        ->first();
 
-                    if(!empty($comment[0]['content'])) {
+                    if(isset($comment->content)) {
+                        $i ++ ;
                         $data = [
                             'city' => $city,
                             'shoptype' => $shoptype,
                             'aid' => $aid,
                             'name' => names($text),
-                            'content' => $comment[0]['content'],
+                            'content' => $comment->content,
+                            'tid' => $tenants[$v]['id'],
                             "created" => time(),
                         ];
-                        print_r($data) ;exit;
                         YfcAskCityAnswer::insert($data);
                     }
 
                 }
-
             }
         }
 
