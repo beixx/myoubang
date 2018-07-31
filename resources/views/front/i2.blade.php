@@ -22,7 +22,7 @@
             <a id="dateShow" class="yuyue"><i></i><span>
                 <?php echo $tenants['package']?$tenants['package']:'是否有优惠？点击右侧咨询';?>
                     <p>距离结束:<em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>:<em class="date-tiem-span m">00</em>:<em class="date-s-span s">00</em></p></span>
-                <button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
+                <button class="discount-btn down liwuclickTid" href="javascript:" data-id="<?php echo $tenants['id'];?>"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
             </a>
             <div class="zysmn">
                 推荐理由：<?php echo $v['content'];?>
@@ -261,7 +261,7 @@
         });
     </script>
 
-    @include("front.tijiaonew")
+    @include("front.tijiaojs")
 </div>
 </body>
 <?php if(isset($tenantspics[0])){ ?>

@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/js/tijiao.js?v1"></script>
+<script type="text/javascript" src="/js/tijiao.js?v2"></script>
 <?php if(isset($tenants['pcount']['count']) &&$tenants['pcount']['count']>0 ) { ?>
 <div id="zxsl"></div>
 <?php } ?>

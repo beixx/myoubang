@@ -51,6 +51,13 @@ $(function(){
         $("#mobile").attr("placeholder","请输入手机号 · 商家3分钟内会联系您！");
     })
 
+    $(".liwuclickTid").click(function(){
+        $("#source").val(6);
+        $("#titlefield").html("提交信息，领取优惠并预约");
+        $("#tijiao").html("免费领取优惠");
+        $("#tenantsId").val($(this).attr("data-id"));
+        $("#mobile").attr("placeholder","请输入手机号 · 商家3分钟内会联系您！");
+    })
     $(".dangqiclick").click(function(){
         $("#source").val(4);
         $("#titlefield").html("提交信息，预约拍摄档期");
