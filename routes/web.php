@@ -124,5 +124,7 @@ Route::group(['domain' => env('ADMIN_URL')],function(){
 
     Route::get("/admin/askNew" , 'Admin\IndexController@askNew');
     Route::post("/admin/askNewPost" , 'Admin\IndexController@askNewPost');
+    Route::get("/admin/askNewCity" , 'Admin\IndexController@askNewCity');
+    Route::post("/admin/askNewCityPost" , 'Admin\IndexController@askNewCityPost');
 
 });

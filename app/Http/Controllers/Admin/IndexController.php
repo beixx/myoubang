@@ -5,6 +5,8 @@ use App\Http\Helper\Msg;
 use App\Http\Models\Merchant;
 use App\Http\Models\YfcAsk;
 use App\Http\Models\YfcAskAnswer;
+use App\Http\Models\YfcAskCity;
+use App\Http\Models\YfcAskCityAnswer;
 use App\Http\Models\YfcBespokeView;
 use App\Http\Models\YfcTenants;
 use App\Http\Models\YfcTenantsPic;
@@ -135,7 +137,7 @@ class IndexController extends AdminController
                     if(count($comment) < 5) {
                         continue;
                     }
-		    $comment = $comment->toArray();
+		            $comment = $comment->toArray();
                     $title =str_replace('{商家}', $v.$tenants['name'],$name);
                     $data = [
                         'tid' => $tenants['id'],
@@ -179,6 +181,90 @@ class IndexController extends AdminController
             }
         }
         
+        echo 'success';
+    }
+
+
+    public function askNewCity(){
+
+        return view("/admin/asknewcity");
+    }
+
+    public function  askNewCityPost(Request $request){
+
+        set_time_limit(0);
+        $name = $request->input("name");
+        if(!$name) {
+            Msg::js("请填写内容");
+        }
+        $text = file("/Users/chen/website/mvc/youbang1/shell/name.txt");
+        $citystring1 = "南京,厦门,合肥,哈尔滨,大连,宁波,广州,成都,无锡,杭州,武汉,沈阳,深圳,石家庄,苏州,西安,郑州,长沙,青岛,天津,上海,北京,重庆";
+        $citystring1 .= ',长春,福州,佛山,东莞,太原,南昌,南宁,昆明,济南,温州,唐山,贵阳,海口,兰州,银川,泉州,南通,大庆,徐州,潍坊,常州,绍兴,济宁,盐城,临沂,洛阳,扬州,嘉兴,镇江,金华,保定,泰安,宜昌,襄阳,惠州,威海,淮安,江门,芜湖,湛江,廊坊,宝鸡,珠海,绵阳,三亚,蚌埠,长治,滁州,桂林,汉中,衡阳,湖州,焦作,锦州,马鞍山,莆田,秦皇岛,汕头,邢台';
+        $citys = explode(',', $citystring1);
+
+        foreach ($citys as $k => $city) {
+
+
+            $shoptypes = ['婚纱摄影', '婚礼策划'];
+
+            foreach ($shoptypes as $shoptype) {
+
+                $tenants = YfcTenants::where("positionCity","=",$city)
+                    ->where("shoptype","=",$shoptype)
+                    ->where("order_city",">=",1)
+                    ->where("order_city","<=",10)
+                    ->orderby("order_city","asc")
+                    ->limit(10)
+                    ->get();
+
+                $title = str_replace($city,'{城市}',$name);
+                $title = str_replace($shoptype,'{类别}',$title);
+
+                $data = [
+                    'city' => $city,
+                    'shoptype' => $shoptype,
+                    'type' => 1,
+                    'name' => names($text),
+                    'title' => $title,
+                    "created" => time(),
+                ];
+                $aid = YfcAskCity::insertGetId($data);
+
+                if (!$aid) {
+                    print_r($this->db);
+                    exit;
+                }
+
+                $random_keys=array_rand($tenants,9);
+
+
+                foreach($random_keys as $k => $v) {
+                    $comment = DB::table("new_data.dianping_".($tenants[$v]['shoptype']=="婚纱摄影"?"hunsha":"hunqing")."_comments")
+                        ->where("shop_url","=",$tenants[$v]['url'])
+                        ->where("stars","=",5)
+                        ->limit(1)
+                        ->where(DB::RAW("length(content)"),">",10)
+                        ->orderby(DB::RAW("rand()"))
+                        ->get();
+
+                    if(!empty($comment[0]['content'])) {
+                        $data = [
+                            'city' => $city,
+                            'shoptype' => $shoptype,
+                            'aid' => $aid,
+                            'name' => names($text),
+                            'content' => $comment[0]['content'],
+                            "created" => time(),
+                        ];
+                        print_r($data) ;exit;
+                        YfcAskCityAnswer::insert($data);
+                    }
+
+                }
+
+            }
+        }
+
         echo 'success';
     }
 }
