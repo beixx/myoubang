@@ -233,13 +233,27 @@ class IndexController extends AdminController
                     "created" => time(),
                 ];
 
+
+                $random_keys=array_rand($tenants,9);
+                $url = [];
+                foreach($random_keys as $k =>$v) {
+                    $url[] = $tenants[$k]['url'];
+                }
+                $count = DB::table("new_data.dianping_".($tenants[$v]['shoptype']=="婚纱摄影"?"hunsha":"hunqing")."_comments")
+                    ->wherein("shop_url",$url)
+                    ->where("stars","=",5)
+                    ->where(DB::RAW("length(content)"),">",10)
+                    ->orderby(DB::RAW("rand()"))
+                    ->count();
+                if($count < 5) {
+                    continue;
+                }
+
                 $aid = YfcAskCity::insertGetId($data);
                 if (!$aid) {
                     print_r($this->db);
                     exit;
                 }
-
-                $random_keys=array_rand($tenants,9);
                 $i = 0 ;
                 foreach($random_keys as $k => $v) {
 
