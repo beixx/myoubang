@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head><meta charset="utf-8"><title><?php echo $title;?>_有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $title;?>"><meta name="description" content="<?php echo  $anwser[0]["content"]??""; ?>"><link rel="canonical" href="https://www.youbangkeyi.com/i/<?php echo $ask['id'];?>"><link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css"><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery.SuperSlide1-2.1.1.js"></script><script src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script></head>
+<head><meta charset="utf-8"><title><?php echo $title;?>_有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $title;?>"><meta name="description" content="<?php echo  $anwser[0]["content"]??""; ?>"><link rel="canonical" href="https://www.youbangkeyi.com/i/<?php echo $ask['id'];?>"><link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css"><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery.SuperSlide1-2.1.1.js"></script><script src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script><style>.zxyy a{color:#FFF;}</style></head>
 <body class="shop-index view">
 @include("front.tijiao")
 <div class="main"><header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div><div class="logo"><a href="<?php echo '/'.$pycity.'/'.($tenants['shoptype']=='婚纱摄影'?'sheying':'hunli');?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?></a></div><a class="zxdh" href="tel:18500905723"></a></header>
@@ -217,7 +217,7 @@
             });
     </script>
     <?php } ?>
-    @include("front.tijiaonew")
+    @include("front.tijiaojs2")
 </div>
 </body>
 <?php if(isset($tenantspics[0])){ ?>

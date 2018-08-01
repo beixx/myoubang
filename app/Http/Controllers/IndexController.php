@@ -1248,7 +1248,7 @@ class IndexController extends Controller
         else {
             foreach($this->data['anwser'] as $k => $v) {
                 $this->data['anwser'][$k]['pic'] = YfcTenantsPic::where("tenantsId",'=',$v['tid'])
-                    ->select("Yfc_tenants.*","yfc_tenants_pic.cover","yfc_tenants_pic.updated_at","yfc_tenants_pic.showcount",DB::RAW("yfc_tenants_pic.id as pid"))
+                    ->select("yfc_tenants.*","yfc_tenants_pic.cover","yfc_tenants_pic.updated_at","yfc_tenants_pic.showcount",DB::RAW("yfc_tenants_pic.id as pid"))
                     ->leftjoin("yfc_tenants","yfc_tenants.id","yfc_tenants_pic.tenantsId")
                     ->orderby("id","desc")->first();
             }

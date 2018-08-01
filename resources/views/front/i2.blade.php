@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head><meta charset="utf-8"><title><?php echo $title;?>_有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $title;?>"><meta name="description" content="<?php echo  $anwser[0]["content"]??""; ?>"><link rel="canonical" href="https://www.youbangkeyi.com/i/<?php echo $ask['id'];?>"><link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css"><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery.SuperSlide1-2.1.1.js"></script><script src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script></head>
+<head><meta charset="utf-8"><title><?php echo $title;?>_有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $title;?>"><meta name="description" content="<?php echo  $anwser[0]["content"]??""; ?>"><link rel="canonical" href="https://www.youbangkeyi.com/i/<?php echo $ask['id'];?>"><link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css"><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery.SuperSlide1-2.1.1.js"></script><script src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script><style>.shop_box{width:100%; margin: 0.5rem 0% 0;}.case_box{border-top: 1px solid #f5f7fa;}.huida .yonghu{font-size:0.7rem;}.frwd {float: initial;}.anlibj a,.zxyy a{color:#FFF;}.room-num-line a{color: #b2b2b2;}.view .txt-box h3 a{font-weight:bold;}</style></head>
 <body class="shop-index view">
 @include("front.tijiao")
 <div class="main"><header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div><div class="logo"><a href="<?php echo '/'.$pycity.'/'.($tenants['shoptype']=='婚纱摄影'?'sheying':'hunli');?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?></a></div><a class="zxdh" href="tel:18500905723"></a></header>
@@ -9,13 +9,11 @@
 
     <?php foreach($anwser as $v) { $tenants = $v['pic']; ?>
     <div class="huida">
-        <div class="yonghu"><?php echo $v['name'];?> <span class="frwd">为您推荐的<?php echo $tenants["positionCity"].$tenants['shoptype'];?></span></div>
         <div class="shop_box">
             <div class="txt-box">
                 <h3><a href="/detail/32"><?php echo $tenants["positionCity"].$tenants["name"];?></a></h3>
                 <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
-                <div class="num fa txtCtr"><?php echo $tenants['order_city'];?>
-                    <div class="pmt1"><span>TOP</span></div>
+                <div class="num fa txtCtr"><?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
                 </div>
             </div>
             <hr>
@@ -24,49 +22,33 @@
                     <p>距离结束:<em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>:<em class="date-tiem-span m">00</em>:<em class="date-s-span s">00</em></p></span>
                 <button class="discount-btn down liwuclickTid" href="javascript:" data-id="<?php echo $tenants['id'];?>"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
             </a>
-            <div class="zysmn">
-                推荐理由：<?php echo $v['content'];?>
-            </div>
-        </div>
-
-        <div class="case_box">
+            <div class="case_box">
             <div id="picScroll" class="picScroll txtCtr">
                 <div class="bd">
                     <ul>
                         <li>
-                            <div class="anli_touxiang">
-                                <img src="//img2.youbangkeyi.com/<?php echo $tenants['logo'];?>?imageView2/1/w/300/h/300/q/75|imageslim">
-                            </div>
-                            <p>
-                                <a href="/kpdetail/<?php echo $tenants['pid'];?>">
-                                    <?php echo $tenants["positionCity"].$tenants["name"];?>案例
-                                </a>
-                            </p>
-                            <span class="anli_month">
-                                <em class="fl">发布于<?php echo date("m-d H:i:s",$tenants['updated_at']);?></em>
-                                <em class="fr">浏览<?php echo $tenants['showcount']?>次</em>
-                            </span>
                             <span class="img">
-                                <?php $i =1 ;  foreach(json_decode($tenants['cover'], true) as $v) {  if($i++>3) break;?>
-                                <a class="yulan  glightbox2" href="http://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/500/h/500/q/75|imageslim"><img
-                                            src="//img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/500/h/500/q/75|imageslim"
-                                            width="100%" height="100%"/></a>
+                                <?php $i =1 ; $cover =json_decode($tenants['cover'], true);$cover = is_array($cover)?$cover:[]; 
+                foreach($cover as $v2) {  if($i++>3) break;?>
+                                <a class="yulan  glightbox2" href="http://img2.youbangkeyi.com<?php echo $v2;?>?imageView2/1/w/500/h/500/q/75|imageslim"><img
+                                            src="//img2.youbangkeyi.com<?php echo $v2;?>?imageView2/1/w/500/h/500/q/75|imageslim"
+                                            width="100%" height="100%" alt="<?php echo $tenants["positionCity"].$tenants["name"];?>案例"/></a>
                                 <?php } ?>
                             </span>
-                            <div href="javascript:" class="anlibj down anliclick">获取案例报价</div>
+                            <div class="anlibj"><a href="/kplist/<?php echo $tenants['id'];?>">查看他家全部案例</a></div>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?>">查看他家全部案例</a></div>
+        </div>
+            <div class="zysmn">
+              @<?php echo $v['name'];?>:<?php echo $v['content'];?>
+            </div>
         </div>
     </div>
     <?php } ?>
-
-
-
     <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div>
-        <div class="room-num-line"><span class="txt">版权归:<?php echo $city.$tenants['name'];?>所有</span></div></div>
+        <div class="room-num-line"><span class="txt">标题:<a href="https://www.youbangkeyi.com/i/<?php echo $ask['id'];?>"><?php echo $ask['title'];?></a></span></div></div>
     <footer class="txtCtr">
         <div class="tuijian"><h3><b>其他相关问答</b></h3><ul>
                 <?php foreach($other as $v) { ?>
@@ -261,7 +243,7 @@
         });
     </script>
 
-    @include("front.tijiaojs")
+    @include("front.tijiaojs2")
 </div>
 </body>
 <?php if(isset($tenantspics[0])){ ?>
