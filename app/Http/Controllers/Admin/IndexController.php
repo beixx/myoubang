@@ -197,7 +197,7 @@ class IndexController extends AdminController
         if(!$name) {
             Msg::js("请填写内容");
         }
-        $text = file("/Users/chen/website/mvc/youbang1/shell/name.txt");
+        $text = file("/home/chen/youbang2/shell/name.txt");
         $citystring1 = "南京,厦门,合肥,哈尔滨,大连,宁波,广州,成都,无锡,杭州,武汉,沈阳,深圳,石家庄,苏州,西安,郑州,长沙,青岛,天津,上海,北京,重庆";
         $citystring1 .= ',长春,福州,佛山,东莞,太原,南昌,南宁,昆明,济南,温州,唐山,贵阳,海口,兰州,银川,泉州,南通,大庆,徐州,潍坊,常州,绍兴,济宁,盐城,临沂,洛阳,扬州,嘉兴,镇江,金华,保定,泰安,宜昌,襄阳,惠州,威海,淮安,江门,芜湖,湛江,廊坊,宝鸡,珠海,绵阳,三亚,蚌埠,长治,滁州,桂林,汉中,衡阳,湖州,焦作,锦州,马鞍山,莆田,秦皇岛,汕头,邢台';
         $citys = explode(',', $citystring1);
