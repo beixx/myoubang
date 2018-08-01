@@ -11,7 +11,7 @@
     <div class="huida">
         <div class="shop_box">
             <div class="txt-box">
-                <h3><a href="/detail/32"><?php echo $tenants["positionCity"].$tenants["name"];?></a></h3>
+                <h3><a href="/detail/<?php echo $tenants['id'];?>"><?php echo $tenants["positionCity"].$tenants["name"];?></a></h3>
                 <div class="t1">人均消费<span class="red">¥<?php echo $tenants['person_price'];?></span></div>
                 <div class="num fa txtCtr"><?php echo $tenants['order_city'];?><div class="pmt1"><span>TOP</span></div>
                 </div>
@@ -246,7 +246,7 @@
     @include("front.tijiaojs2")
 </div>
 </body>
-<?php if(isset($tenantspics[0])){ ?>
+<?php if(isset($anwser[0]["pic"]["cover"])){ ?>
 <script type="application/ld+json">
 {
     "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
@@ -254,7 +254,7 @@
     "appid": "1605753876149174",
     "title": "{{$title}}",
     "images": [
-        <?php $i = 0 ; if(isset($tenantspics[0])) { foreach($tenantspics[0]['cover'] as $v) { if($i ++ >2 ) break;?>
+        <?php $i = 0 ; if(isset($anwser[0]["pic"])) { $cover = json_decode($anwser[0]["pic"]["cover"],true);   foreach($cover as $v) { if($i ++ >2 ) break;?>
     "https://img2.youbangkeyi.com<?php echo $v;?>?imageView2/1/w/600/h/400/q/75"<?php echo $i >2 ?"":",";?>
     <?php }} ?>
     ],
