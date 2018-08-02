@@ -1247,10 +1247,10 @@ class IndexController extends Controller
         }
         else {
             foreach($this->data['anwser'] as $k => $v) {
-                $this->data['anwser'][$k]['pic'] = YfcTenantsPic::where("tenantsId",'=',$v['tid'])
+                $this->data['anwser'][$k]['pic'] = YfcTenants::where("yfc_tenants.id",'=',$v['tid'])
                     ->select("yfc_tenants.*","yfc_tenants_pic.cover","yfc_tenants_pic.updated_at","yfc_tenants_pic.showcount",DB::RAW("yfc_tenants_pic.id as pid"))
-                    ->leftjoin("yfc_tenants","yfc_tenants.id","yfc_tenants_pic.tenantsId")
-                    ->orderby("id","desc")->first();
+                    ->leftjoin("yfc_tenants_pic","yfc_tenants.id","yfc_tenants_pic.tenantsId")
+                    ->orderby("yfc_tenants_pic.id","desc")->limit(1)->first();
             }
 
             return view("front/i2",$this->data);
