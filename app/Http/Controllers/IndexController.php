@@ -301,7 +301,7 @@ class IndexController extends Controller
             $taoxitmp = [];
             foreach($taoxi as $kk => $vv) {
                 # 过滤超过三条的套系
-                if(!empty($taoxitmp[$vv['tenantsId']]) && count($taoxitmp[$vv['tenantsId']])>=3){
+                if(!empty($taoxitmp[$vv['tenantsId']]) && count($taoxitmp[$vv['tenantsId']])>=($this->ismobile?3:4)){
                     continue;
                 }
 

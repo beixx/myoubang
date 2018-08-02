@@ -77,7 +77,7 @@
                     <div class="anli_p"><?php echo $v['explain'];?></div>
                     <?php } ?>
                     <span class="img">
-                            <?php $v['cover'] = json_decode($v['cover'],true); for($i = 0 ; $i < 9 ;$i ++ ) { if(empty($v['cover'][$i])) { break; }?>
+                            <?php $v['cover'] = json_decode($v['cover'],true); for($i = 0 ; $i < ($ismobile?9:8) ;$i ++ ) { if(empty($v['cover'][$i])) { break; }?>
                         <?php if(strpos($v['cover'][$i],'http') === false) {?>
                         <a class="yulan glightbox<?php echo $k;?>" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>">
                             <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" alt="<?php echo $v['picName'];?>"/></a>
