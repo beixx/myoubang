@@ -1261,18 +1261,18 @@ class IndexController extends Controller
         $this->data['askcity'] = YfcAskCity::where([
             'city' => $city,
             'shoptype' => $shoptype
-        ])->where("id","!=",$id)->limit(5)->get();
+        ])->where("id","!=",$id)->orderby("id","desc")->limit(5)->get();
 
         $this->data['other'] = YfcAsk::where([
             'city' => $city
-        ])->limit(10)->get();
+        ])->orderby("id","desc")->limit(10)->get();
     }
 
     public function footeraskcity ($city,$shoptype){
         $this->data['askcity'] = YfcAskCity::where([
             'city' => $city,
             'shoptype' => $shoptype
-        ])->limit(12)->get();
+        ])->orderby("id","desc")->limit(12)->get();
     }
 
     public function ask ($id){
