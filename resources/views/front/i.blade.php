@@ -201,7 +201,7 @@
 <?php } else {?>
 <script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/hunlicity.js"></script>
 <?php } ?>
-<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/layer/layer.js"></script>
+<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/layer.js"></script>
     <script><?php foreach($tenantspics as $k=>$v) {?>var lightbox = GLightbox({selector: 'glightbox<?php echo $k?>'});<?php } ?>
                     $(function(){
                 //日期倒计时

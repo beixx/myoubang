@@ -163,7 +163,7 @@
         <div class="foots">
             <span><a href="/about.html">关于有榜</a>|<a target="_blank" href="http://youbangkeyi.mikecrm.com/E09npdx">商务合作</a>|<a target="_blank" href="/mianze.html">免责说明</a>|<a href="/shuoming.html" target="_blank">服务说明</a>|<a target="_blank" href="//c.youbangkeyi.com/images/yingyezhizhao.jpeg">营业执照</a></span>
             京ICP备18024234号-2 北京有榜信息科技有限公司 
-            <span class="gongan">京公网安备 11010802024698号</span>
+            <span class="gongan"><img src="https://img2.youbangkeyi.com/xinjs/police_record.png" width="15" style="margin:0 4px 4px 0;">京公网安备 11010802024698号</span>
         </div>
         <div class="lian">Copyright © 2018 有榜网</div>
     </div>
