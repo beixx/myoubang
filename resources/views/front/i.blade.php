@@ -25,10 +25,6 @@
         <div class="room-num-line"><span class="txt">版权归:<?php echo $city.$tenants['name'];?>所有</span></div></div>
     <footer class="txtCtr">
         <div class="tuijian"><h3><b>其他相关问答</b></h3><ul>
-                <?php foreach($other as $v) { ?>
-                <li id="wenda">
-                    <a target="_blank" href="/wenda/<?php echo $v['id'];?>"><?php echo $v['title'];?></a></li>
-                <?php } ?>
                 <?php foreach($askcity as $v) { ?>
                 <li id="wenda">
                     <a target="_blank" href="/i/<?php echo $v['id'];?>"><?php echo $v['title'];?></a></li>

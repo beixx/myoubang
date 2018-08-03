@@ -1239,7 +1239,7 @@ class IndexController extends Controller
             ->toArray();
         $this->getSpread($tenants);
 
-        $this->footerask($city,$shoptype,$id);
+        $this->footeraskcity($city,$shoptype);
         //print_r($this->data['other']) ;exit;
         if($ask['type'] == 1) {
 
@@ -1272,7 +1272,7 @@ class IndexController extends Controller
         $this->data['askcity'] = YfcAskCity::where([
             'city' => $city,
             'shoptype' => $shoptype
-        ])->orderby("id","desc")->limit(12)->get();
+        ])->orderby("id","desc")->limit(15)->get();
     }
 
     public function ask ($id){
