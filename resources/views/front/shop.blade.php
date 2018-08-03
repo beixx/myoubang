@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><title><?php echo $title;?></title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $keyword;?>"><meta name="description" content="<?php echo $desc;?>"><link rel="canonical" href="https://www.youbangkeyi.com/detail/<?php echo $tenants['id'];?>"><link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css"><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery.SuperSlide1-2.1.1.js"></script><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script></head>
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><title><?php echo $title;?></title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $keyword;?>"><meta name="description" content="<?php echo $desc;?>"><link rel="canonical" href="https://www.youbangkeyi.com/detail/<?php echo $tenants['id'];?>"><link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css?1"><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery.SuperSlide1-2.1.1.js"></script><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script></head>
 <body class="shop-index">
 @include("front.tijiao")
 <div class="main">
@@ -269,7 +269,7 @@
 <?php } else {?>
 <script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/hunlicity.js"></script>
 <?php } ?>
-<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/layer.js"></script>
+<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/layer.js?2"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {

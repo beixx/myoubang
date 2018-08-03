@@ -213,7 +213,7 @@ class IndexController extends AdminController
                     ->where("shoptype","=",$shoptype)
                     ->where("order_city",">=",1)
                     ->orderby("order_city","asc")
-                    ->limit(10)
+                    ->limit(20)
                     ->get()->toArray();
 
                 if(empty($tenants)) {
@@ -257,7 +257,7 @@ class IndexController extends AdminController
                 $i = 0 ;
                 foreach($random_keys as $k => $v) {
 
-                    if( $i >=5) break;
+                    if( $i >=10) break;
                     $comment = DB::table("new_data.dianping_".($tenants[$v]['shoptype']=="婚纱摄影"?"hunsha":"hunqing")."_comments")
                         ->where("shop_url","=",$tenants[$v]['url'])
                         ->where("stars","=",5)

@@ -9,7 +9,7 @@
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link rel="canonical" href="https://www.youbangkeyi.com/kplist/<?php echo $tenants['id'];?>">
-    <link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css">
+    <link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css?1">
     <script type="text/javascript" src="//www.youbangkeyi.com/js/jquery-2.1.1.js"></script>
     <script type="text/javascript" src="//www.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
     <script type="text/javascript" src="//www.youbangkeyi.com/js/leftTime.min.js"></script>
@@ -132,7 +132,7 @@
 <?php } else {?>
 <script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/hunlicity.js"></script>
 <?php } ?>
-<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/layer.js?1"></script>
+<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/layer.js?2"></script>
 <script>
     <?php foreach($pics as $k=>$v) {?>
         var lightbox = GLightbox({selector: 'glightbox<?php echo $k?>'});
