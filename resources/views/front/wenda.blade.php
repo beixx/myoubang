@@ -18,12 +18,63 @@
                 <p>距离结束:<em class="date-tiem-span d">00</em>天<em class="date-tiem-span h">00</em>:<em class="date-tiem-span m">00</em>:<em class="date-s-span s">00</em></p></span>
             <button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button></a>
         <div class="zysmn"><span class="jiance"><em></em>全网数据监测</span><span class="shishi"><em></em>数据实时更新</span><span class="jiangbei"><em></em>排名客观权威</span></div></div>
-    <?php foreach($anwser as $v) { ?>
+    <?php foreach($anwser as  $k=> $v) { ?>
     <div class="huida">
         <div class="yonghu"><?php echo $v['name'];?> <span class="frwd">Ta给出了<?php echo $v['start']?>星好评</span></div>
-        <p class="neirong"><?php echo $v['content'];?></p></div><?php } ?><?php if(isset($tenantspics) ) { ?>
-    <div class="case_box"><div id="picScroll" class="picScroll txtCtr"><div class="bd"><ul><?php foreach($tenantspics as $k => $v){?><li><div class="anli_touxiang"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim"></div><p><a href="/kpdetail/<?php echo $v['id']?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $v['picName']?></a></p><span class="anli_month"><em class="fl">发布于<?php echo \App\Http\Helper\Date::xtime($v['created_at']);?></em><em class="fr">浏览<?php echo $v['showcount'];?>次</em></span><?php if($v['explain']) { ?><div class="anli_p"><?php echo $v['explain'];?></div><?php } ?><span class="img"><?php for($i = 0 ; $i<9 ; $i++) { if(empty($v['cover'][$i])) break; ?><?php if(strpos($v['cover'][$i],'http') === false) {?><a class="yulan  glightbox<?php echo $k;?>" href="http://img2.youbangkeyi.com<?php echo $v['cover'][$i];?>"><img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" width="100%" height="100%" alt="<?php echo $title;?>相关案例"/></a><?php } else {?><img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $title;?>相关案例"/><?php } ?><?php } ?><?php if($v['currentPrice']>0) {?><div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div><?php } ?></span><div href="javascript:" class="anlibj down anliclick"><?php echo $v['currentPrice']>0?"咨询档期":"获取案例报价";?></div></li><?php } ?></ul></div></div>
-        <div class="ckaqb"><a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看其他案例</a></div></div>
+        <p class="neirong"><?php echo $v['content'];?>
+
+            <?php if($k == 0) { $i = 1 ;  foreach( $tenantspics[0]["cover"] as $v2) {  if($i++>3) break;?>
+            <img src="//img2.youbangkeyi.com<?php echo $v2;?>?<?php echo  $ismobile?"imageView2/1/w/600/h/600/q/75":'imageView2/1/w/1000/h/1000/q/75';?>" width="100%" height="100%" alt=""/>
+            <?php }} ?>
+        </p></div>
+    <?php } ?>
+
+    <?php if(count($tenantspics) >1) { ?>
+    <div class="case_box">
+        <div id="picScroll" class="picScroll txtCtr">
+            <div class="bd">
+                <ul><?php foreach($tenantspics as $k => $v){?>
+                    <li>
+                        <div class="anli_touxiang">
+                            <img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/300/h/300/q/75|imageslim">
+                        </div>
+                        <p>
+                            <a href="/kpdetail/<?php echo $v['id']?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">
+                                <?php echo $v['picName']?></a></p><span class="anli_month">
+                            <em class="fl">发布于<?php echo \App\Http\Helper\Date::xtime($v['created_at']);?></em>
+                            <em class="fr">浏览<?php echo $v['showcount'];?>次</em>
+                        </span>
+                        <?php if($v['explain']) { ?>
+                        <div class="anli_p"><?php echo $v['explain'];?></div>
+                        <?php } ?>
+                        <span class="img">
+                            <?php $c = $ismobile?3:4;$c = intval(count($v['cover'])/$c)*$c; for($i = 0 ; $i<$c ; $i++) { if(empty($v['cover'][$i])) break; ?>
+                            <?php if(strpos($v['cover'][$i],'http') === false) {?>
+                                <a class="yulan  glightbox<?php echo $k;?>" href="http://img2.youbangkeyi.com<?php echo $v['cover'][$i];?>">
+                                    <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" width="100%" height="100%" alt="<?php echo $title;?>相关案例"/>
+                                </a>
+                            <?php } else {?>
+                                <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $title;?>相关案例"/>
+                            <?php } ?>
+                            <?php } ?>
+                            <?php if($v['currentPrice']>0) {?>
+                                <div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em>
+                                </div>
+                            <?php } ?>
+                        </span>
+                        <div href="javascript:" class="anlibj down anliclick">
+                            <?php echo $v['currentPrice']>0?"咨询档期":"获取案例报价";?>
+                        </div>
+                    </li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+        <div class="ckaqb">
+            <a href="/kplist/<?php echo $tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">查看其他案例</a>
+        </div>
+    </div>
+    <?php } ?>
     <div class="unit-footer"><div class="peace-live"><p class="txt-cont">全网数据监测 | 排名客观权威</p><p class="logo-cont"><span class="safeguard"></span><span class="font1">有榜网·</span><span class="font1">放心选</span></p></div>
     <div class="room-num-line"><span class="txt">版权归:<?php echo $city.$tenants['name'];?>所有</span></div></div>
     <footer class="txtCtr">
@@ -221,7 +272,7 @@
                 });
             });
     </script>
-    <?php } ?>
+
     @include("front.tijiaonew")
 </div>
 </body>
