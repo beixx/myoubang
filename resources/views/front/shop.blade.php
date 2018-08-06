@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><title><?php echo $title;?></title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $keyword;?>"><meta name="description" content="<?php echo $desc;?>"><link rel="canonical" href="https://www.youbangkeyi.com/detail/<?php echo $tenants['id'];?>"><link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css?1"><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery.SuperSlide1-2.1.1.js"></script><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script></head>
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><title><?php echo $title;?></title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $keyword;?>"><meta name="description" content="<?php echo $desc;?>"><link rel="canonical" href="https://www.youbangkeyi.com/detail/<?php echo $tenants['id'];?>"><link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css?21"><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery.SuperSlide1-2.1.1.js"></script><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script></head>
 <body class="shop-index">
 @include("front.tijiao")
 <div class="main">
@@ -20,7 +20,7 @@
 <div class="sjkap">
     <div class="txt_info">
         <h1><?php echo $city;?><?php echo $tenants['name'];?></h1>
-        <p><span>人均消费:¥<?php echo $tenants['price'];?></span><span>|</span><span>到店请提前预约</span></p>
+        <p><span>人均消费:¥<?php echo $tenants['person_price'];?></span><span>|</span><span>到店请提前预约</span></p>
         <div class="pf txtCtr"><a href="/dafen/<?php echo $pycity.'/'.$tenants['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><em></em>打榜</a></div>
     </div>
     <?php if($tenants['order_city']==0||$tenants['order_city']>50

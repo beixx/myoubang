@@ -17,7 +17,7 @@
                         <div class="num_txt">
                             <div class="tit_box">
                                 <div class="title"><span class="icot1"></span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div>
-                                <div class="txt"><span>人均消费 ¥<?php echo $v['price'];?></span><span><?php echo $v['area'];?></span><span class="fmr"><?php echo $v['spreadcontent'];?></span>
+                                <div class="txt"><span>人均消费 ¥<?php echo $v['person_price'];?></span><span><?php echo $v['area'];?></span><span class="fmr"><?php echo $v['spreadcontent'];?></span>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                     <?php } ?>
                     <?php foreach($tenants as $k => $v) { ?>
                         <div class="pic_box">
-<div class="num_txt"><div class="tit_box"><div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div><div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均消费 ¥<?php echo $v['price'];?></span><span class="fmr"><?php echo $v['area'];?></span></div></div></div>
+<div class="num_txt"><div class="tit_box"><div class="title"><span>第<em><?php echo $v['order_city'];?></em>名</span><a href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php echo $v['name']?></a></div><div class="txt"><span class="zhish"><em class="shu">综合得分</em><em class="zhi"><?php echo $v['heat_index'];?></em></span><span>人均消费 ¥<?php echo $v['person_price'];?></span><span class="fmr"><?php echo $v['area'];?></span></div></div></div>
 <div class="pic txtCtr"><?php foreach($v['taoxi'] as $v2) { ?><?php if(isset($v2['cover'][0])) { ?><div class="img"><a class="suolv" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><span><?php if(strpos($v2['cover'][0],'http') === false) {?><img src="//img2.youbangkeyi.com<?php echo $v2['cover'][0];?>?<?php echo  $ismobile?"imageView2/1/w/300/h/300/q/75":'imageView2/1/w/464/h/464/q/75';?>|imageslim" alt=""><?php } else {?><img src="<?php echo $v2['cover'][0];?>?imageView2/1/w/300/h/250/q/75|imageslim"  alt=""><?php } ?><?php if($v2['currentPrice']>0) {?><em><?php echo $v2['currentPrice']>0?'¥'.$v2['currentPrice']:'';?></em><?php } ?></span></a></div><?php } ?><?php } ?></div>
  <?php if(strlen($v['package'])>2) { ?>
 <div class="yuyue"><i></i><span><?php echo $v['package'];?></span><a class="discount-btn" href="/detail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">去看看<em></em></a></div><?php } ?>

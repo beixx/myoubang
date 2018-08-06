@@ -23,7 +23,7 @@
         <div class="yonghu"><?php echo $v['name'];?> <span class="frwd">Ta给出了<?php echo $v['start']?>星好评</span></div>
         <p class="neirong"><?php echo $v['content'];?>
 
-            <?php if($k == 0) { $i = 1 ;  foreach( $tenantspics[0]["cover"] as $v2) {  if($i++>3) break;?>
+            <?php if($k == 0 && isset( $tenantspics[0]["cover"])) { $i = 1 ;  foreach( $tenantspics[0]["cover"] as $v2) {  if($i++>3) break;?>
             <img src="//img2.youbangkeyi.com<?php echo $v2;?>?<?php echo  $ismobile?"imageView2/1/w/600/h/600/q/75":'imageView2/1/w/1000/h/1000/q/75';?>" width="100%" height="100%" alt=""/>
             <?php }} ?>
         </p></div>
