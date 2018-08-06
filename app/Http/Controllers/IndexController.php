@@ -424,7 +424,7 @@ class IndexController extends Controller
             return Redirect::to('/');
         }
         $shoptype = $tenants['shoptype'];
-        $city = $tenants['city'];
+        $city = $tenants['positionCity'];
         $tenants['pcount'] = json_decode($tenants['pcount'],true);
         $pics = YfcTenantsPic::where('tenantsId',$id)->orderby("status",'desc')->orderby("id",'desc')->get();
         foreach($pics as $key=>$v){
@@ -521,7 +521,7 @@ class IndexController extends Controller
         }
         $tenantsId = $picinfo['tenantsId'];
         $tenants = YfcTenants::where('id',$tenantsId)->first();
-        $city = $tenants['city'];
+        $city = $tenants['positionCity'];
         $tenants['pcount'] = json_decode($tenants['pcount'],true);
         $recommpics = YfcTenantsPic::where('id','!=',$id)
             ->where('tenantsId',$tenantsId)
