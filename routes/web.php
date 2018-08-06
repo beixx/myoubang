@@ -126,5 +126,9 @@ Route::group(['domain' => env('ADMIN_URL')],function(){
     Route::post("/admin/askNewPost" , 'Admin\IndexController@askNewPost');
     Route::get("/admin/askNewCity" , 'Admin\IndexController@askNewCity');
     Route::post("/admin/askNewCityPost" , 'Admin\IndexController@askNewCityPost');
+    Route::get("/admin/askNewCitySheying" , 'Admin\IndexController@askNewCitySheying');
+    Route::post("/admin/askNewCitySheyingPost" , 'Admin\IndexController@askNewCitySheyingPost');
+    Route::get("/admin/askNewCityHunli" , 'Admin\IndexController@askNewCityHunli');
+    Route::post("/admin/askNewCityHunliPost" , 'Admin\IndexController@askNewCityHunliPost');
 
 });

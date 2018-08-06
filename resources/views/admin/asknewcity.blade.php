@@ -53,7 +53,7 @@
 <body>
 <div class="page-container">
     <form class="form form-horizontal" action="/admin/askNewCityPost" method="post" enctype="multipart/form-data" id="formarticleadd">
-        <input type="hidden" name="id" value="<?php echo isset($set['id'])?$set['id']:0; ?>" />
+        <input type="hidden" name="type" value="{{$type}}" />
 
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>后缀名称：</label>

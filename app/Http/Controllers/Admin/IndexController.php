@@ -185,9 +185,9 @@ class IndexController extends AdminController
     }
 
 
-    public function askNewCity(){
-
-        return view("/admin/asknewcity");
+    public function askNewCity(Request $req){
+        $this->data['type'] = $req->input("type","all");
+        return view("/admin/asknewcity",$this->data);
     }
 
     public function  askNewCityPost(Request $request){
@@ -202,10 +202,17 @@ class IndexController extends AdminController
         $citystring1 .= ',长春,福州,佛山,东莞,太原,南昌,南宁,昆明,济南,温州,唐山,贵阳,海口,兰州,银川,泉州,南通,大庆,徐州,潍坊,常州,绍兴,济宁,盐城,临沂,洛阳,扬州,嘉兴,镇江,金华,保定,泰安,宜昌,襄阳,惠州,威海,淮安,江门,芜湖,湛江,廊坊,宝鸡,珠海,绵阳,三亚,蚌埠,长治,滁州,桂林,汉中,衡阳,湖州,焦作,锦州,马鞍山,莆田,秦皇岛,汕头,邢台';
         $citys = explode(',', $citystring1);
 
+        $shoptypes = ['婚纱摄影', '婚礼策划'];
+        $type = $request->input("type");
+
+        if($type == 'sheying') {
+            $shoptypes = ["婚纱摄影"];
+        }
+        if($type == "hunli") {
+            $shoptypes = ['婚礼策划'];
+        }
         foreach ($citys as $k => $city) {
 
-
-            $shoptypes = ['婚纱摄影', '婚礼策划'];
 
             foreach ($shoptypes as $shoptype) {
 
@@ -283,7 +290,6 @@ class IndexController extends AdminController
                 }
             }
         }
-
         echo 'success';
     }
 }

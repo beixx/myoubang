@@ -78,6 +78,8 @@
                     <li><a data-href="/admin/poke" data-title="申诉记录" href="javascript:void(0)">申诉记录</a></li>
                     <li><a data-href="/admin/askNew" data-title="设置新闻最新" href="javascript:void(0)">设置新闻最新</a></li>
                     <li><a data-href="/admin/askNewCity" data-title="设置新闻最新" href="javascript:void(0)">设置城市新闻最新</a></li>
+                    <li><a data-href="/admin/askNewCity?type=sheying" data-title="设置新闻最新" href="javascript:void(0)">设置城市婚纱摄影</a></li>
+                    <li><a data-href="/admin/askNewCity?type=hunli" data-title="设置新闻最新" href="javascript:void(0)">设置城市婚礼策划</a></li>
                 </ul>
             </dd>
         </dl>
