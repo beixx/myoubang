@@ -75,18 +75,18 @@
 
     </ul>
     <div class="widget">
-        <a href="/ask/<?php echo $pycity."?p=".($p>1?$p-1:1);?>">上一页</a>
+        <a href="/ask/<?php echo $ask[0]['tid']."?p=".($p>1?$p-1:1);?>">上一页</a>
         <div>
             <a class="widget-pagination-current-page" href=""><?php echo $p.'/'.$pagecount;?></a>
             <select class="widget-pagination-pages" id="pageCounts">
                 <?php for($i = 1 ;$i <= $pagecount; $i ++ ) { ?>
-                <option value="/ask/<?php echo $pycity."?p=".$i;?>">
+                <option value="/ask/<?php echo $ask[0]['tid']."?p=".$i;?>">
                     <?php echo $i.'/'.$pagecount;?>
                 </option>
                 <?php } ?>
             </select>
         </div>
-        <a href="/ask/<?php echo $pycity."?p=".($p>=$pagecount?$pagecount:$p+1);?>">下一页</a>
+        <a href="/ask/<?php echo $ask[0]['tid']."?p=".($p>=$pagecount?$pagecount:$p+1);?>">下一页</a>
     </div>
 
 </section>

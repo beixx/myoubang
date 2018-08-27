@@ -1,11 +1,11 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><title><?php echo $title;?></title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $keyword;?>"><meta name="description" content="<?php echo $desc;?>"><link rel="canonical" href="https://www.youbangkeyi.com/detail/<?php echo $tenants['id'];?>"><link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css?21"><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery.SuperSlide1-2.1.1.js"></script><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script></head>
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><title><?php echo $title;?></title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $keyword;?>"><meta name="description" content="<?php echo $desc;?>"><link rel="canonical" href="https://www.youbangkeyi.com/detail/<?php echo $tenants['id'];?>"><link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css?339"><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery.SuperSlide1-2.1.1.js"></script><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js?7"></script></head>
 <body class="shop-index">
 @include("front.tijiao")
 <div class="main">
-<header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div><div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排行榜</a></div><a class="zxdh" href="tel:18500905723"></a></header>
-<div class="focus_box"><div id="focus" class="focus" style="height: auto;">
+<header><a class="fanhui" href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>">榜单首页</a><div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排行榜</a></div><a class="zxdh" href="tel:18500905723"></a></header>
+<div class="focus_box"><div id="focus" class="fengmian focus" style="height:auto">
         <div class="bd"><ul><?php if(strlen($tenants['vrimage'])>10) { ?><a target="_blank" href="<?php echo $tenants['vrurl']?>"><li class="suolvvr"><div class="m-title">全景看店</div><div class="bg1"></div><div class="m-kan"></div><span><img src="<?php echo $tenants['vrimage'];?>"/></span></li></a><?php } else { ?>
-        <li class="suolvvr"><span><?php if(strpos($tenants['cover'],'http') === false) {?><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?<?php echo  $ismobile?"imageView2/1/w/800/h/600/q/75":'';?>|imageslim" alt="<?php echo $city;?><?php echo $tenants['name'];?>"/><?php } else {?><img src="<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $city;?><?php echo $tenants['name'];?>"/><?php } ?></span></li><?php } ?></ul></div></div>
+        <li class="suolvvr"><span><?php if(strpos($tenants['cover'],'http') === false) {?><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $city;?><?php echo $tenants['name'];?>"/><?php } else {?><img src="<?php echo $tenants['cover'];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $city;?><?php echo $tenants['name'];?>"/><?php } ?></span></li><?php } ?></ul></div></div>
     <script type="text/javascript">
         TouchSlide({
             slideCell:"#focus",
@@ -17,7 +17,7 @@
             switchLoad:"_src" //切换加载，真实图片路径为"_src"
         });
     </script>
-<div class="sjkap">
+<div class="sjkap spxx">
     <div class="txt_info">
         <h1><?php echo $city;?><?php echo $tenants['name'];?></h1>
         <p><span>人均消费:¥<?php echo $tenants['person_price'];?></span><span>|</span><span>到店请提前预约</span></p>
@@ -50,7 +50,7 @@
 		        	<p>好评榜</p>
 		        </span>
     </div>
-<div class="zysmn"><span class="jiance"><em></em>全网数据监测</span><span class="shishi"><em></em>数据实时更新</span><span class="jiangbei"><em></em>排名客观权威</span></div>
+<div class="zysmn"><span class="jiance"><em></em>全网数据监测</span><span class="shishi"><em></em>数据实时更新</span><span class="jiangbei"><em></em>排名客观权威</span></div></div>
 <div class="info-box">
 <div class="titleqs">
     <i>优惠信息</i>
@@ -67,7 +67,7 @@
         <button class="discount-btn down liwuclick" href="javascript:"><?php echo $tenants['package']?"领取优惠":'优惠咨询';?></button>
     </a>
     <div class="address"><a target="_blank" href="https://map.baidu.com/mobile/webapp/search/search/qt=s&wd=<?php echo $city;?><?php echo $tenants['name'];?>&&vt=map&universalLinkCbkTag=1"><?php echo $tenants['address'];?><em></em></a></div></div>
-</div></div>
+</div>
     <?php if($tenants['isVip'] == 2) { ?>
 <?php if(isset($tenantinfo->isVip) && $tenantinfo->isVip==2){
     if(isset($advinfo->id)){
@@ -287,16 +287,7 @@
 </footer>
 </div>
 @include("front.tijiaonew")
-<!-- 城市弹出 -->
-<div class="container">
-</div>
 <script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/Time.glight.foot.js"></script>
-<?php if($type=="sheying"){?>
-<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/sheyingcity.js"></script>
-<?php } else {?>
-<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/hunlicity.js"></script>
-<?php } ?>
-<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/layer.js?2"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.7.1/echarts.common.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {

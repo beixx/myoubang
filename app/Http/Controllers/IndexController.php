@@ -33,12 +33,12 @@ class IndexController extends Controller
 
     public function redirect(){
         $ip = $this->GetIp();
-        $city = $this->get_area($ip);
-        if(is_array($city) && isset($city["data"]["city"])) {
-            $cityName = $city["data"]["city"];
-            $pycity = Config::get('city.'.$cityName,'beijing');
-            return Redirect::to($pycity.'/sheying');
-        }
+        //$city = $this->get_area($ip);
+        //if(is_array($city) && isset($city["data"]["city"])) {
+        //    $cityName = $city["data"]["city"];
+        //    $pycity = Config::get('city.'.$cityName,'beijing');
+        //    return Redirect::to($pycity.'/sheying');
+        //}
 
         return Redirect::to('beijing/sheying');
 
