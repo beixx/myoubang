@@ -187,10 +187,13 @@
                     <span class="img">
                         <?php for($i = 0 ; $i<($ismobile?9:8) ; $i++) { if(empty($v['cover'][$i])) break; ?>
                             <?php if(strpos($v['cover'][$i],'http') === false) {?>
-                            <a class="yulan  glightbox<?php echo $k;?>" href="http://img2.youbangkeyi.com<?php echo $v['cover'][$i];?>"><img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" width="100%" height="100%" alt="<?php echo $v['picName']?>"/></a><?php } else {?><img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $v['picName']?>"/>
-                            <?php } ?><?php } ?>
-                        <?php if($v['currentPrice']>0) {?>
-                        
+                            <a class="yulan  glightbox<?php echo $k;?>" href="http://img2.youbangkeyi.com<?php echo $v['cover'][$i];?>">
+                                <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" width="100%" height="100%" alt="<?php echo $v['picName']?>"/>
+                            </a>
+                            <?php } else {?>
+                                <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/800/h/600/q/75|imageslim" alt="<?php echo $v['picName']?>"/>
+                            <?php } ?>
+                        <?php } ?>
                     </span>
                     <div href="javascript:" class="anlibj down <?php echo $v['currentPrice']>0?"dangqiclick":"anliclick";?>">
                         <?php echo $v['currentPrice']>0?"咨询档期":"获取报价";?>
