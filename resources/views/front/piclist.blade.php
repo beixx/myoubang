@@ -64,23 +64,32 @@
                 <li>
                     <div class="anli_touxiang"><img src="//img2.youbangkeyi.com<?php echo $tenants['cover'];?>?imageView2/1/w/150/h/150/q/75|imageslim"></div>
                     <p> <a href="/kpdetail/<?php echo $v['id'];?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $v['picName'];?></a></p>
-                    <span class="anli_month"><em class="fl">发布于<?php echo date("m-d H:i",$v['created_at']);?></em><em class="fr">浏览342次</em></span>
+                    <span class="anli_month">
+                        <?php if($v['price']>0) { ?>
+                        <em class="fl">该案例优惠价格：<?php echo $v['currentPrice'];?></em>
+                        <?php } else { ?>
+                        <em class="fl">具体价格请预约咨询</em>
+                        <?php } ?>
+                        <?php if($v['currentPrice']>0) { ?>
+                        <em class="fr">原价：<?php echo $v['price'];?></em>
+                        <?php } else { ?>
+                        <em class="fr">浏览<?php echo $v['showcount'];?>次</em>
+                        <?php } ?>
+                    </span>
+
                     <?php if($v['explain']) { ?>
                     <div class="anli_p"><?php echo $v['explain'];?></div>
                     <?php } ?>
                     <span class="img">
-                            <?php $v['cover'] = json_decode($v['cover'],true); for($i = 0 ; $i < ($ismobile?9:8) ;$i ++ ) { if(empty($v['cover'][$i])) { break; }?>
+                        <?php $v['cover'] = json_decode($v['cover'],true); for($i = 0 ; $i < ($ismobile?9:8) ;$i ++ ) { if(empty($v['cover'][$i])) { break; }?>
                         <?php if(strpos($v['cover'][$i],'http') === false) {?>
                         <a class="yulan glightbox<?php echo $k;?>" href="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>">
                             <img src="//img2.youbangkeyi.com<?php echo $v['cover'][$i];?>?<?php echo  $ismobile?"imageView2/1/w/250/h/250/q/75":'imageView2/1/w/500/h/500/q/75';?>|imageslim" alt="<?php echo $v['picName'];?>"/></a>
                         <?php } else {?>
-                        <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/200/h/200/q/75|imageslim" alt="<?php echo $v['picName'];?>"/>
+                            <img src="<?php echo $v['cover'][$i];?>?imageView2/1/w/200/h/200/q/75|imageslim" alt="<?php echo $v['picName'];?>"/>
                         <?php } ?>
 
                         <?php } ?>
-                        <?php if($v['currentPrice']>0) {?>
-                        <div class="txprice">该案例优惠价格：<em class="red">￥<?php echo $v['currentPrice'];?></em><em class="txyj">原价:￥<?php echo $v['price'];?></em></div>
-                        <?php }?>
                     </span>
                     <div href="javascript:" class="anlibj down <?php echo $v['currentPrice']>0?"dangqiclick":"anliclick";?>">
                         <?php echo $v['currentPrice']>0?"咨询档期":"获取报价";?>
