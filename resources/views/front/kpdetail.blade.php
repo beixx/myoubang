@@ -11,9 +11,9 @@
     <link rel="canonical" href="https://www.youbangkeyi.com/kpdetail/<?php echo $picinfo['id'];?>">
     <meta name="Keywords" content="<?php echo $keyword?>">
     <meta name="description" content="<?php echo $desc;?>">
-    <link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css">
+    <link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css?146">
     <script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery-1.7.1.min.js"></script>
-    <script src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script>
+    <script src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js?10"></script>
     <script type="text/javascript" src="//www.youbangkeyi.com/js/leftTime.min.js"></script>
     <script type="text/javascript" src="//www.youbangkeyi.com/js/main.js"></script>
     <script type="text/javascript" src="//www.youbangkeyi.com/js/foot.js?2"></script>
@@ -22,8 +22,7 @@
 @include("front.tijiao")
 <div class="main">
 <body class="view">
-<header>
-<div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div>
+<header><a class="fanhui" href="<?php echo '/'.$pycity.'/'.($tenants['shoptype']=='婚纱摄影'?'sheying':'hunli');?>">榜单首页</a>
 <div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排行榜</a></div>
 <a class="zxdh" href="tel:18500905723"></a>
 </header>
@@ -101,8 +100,7 @@
                             }
                         });
                     });
-                </script>
-<div class="zysmn"><span class="jiance"><em></em>全网数据监测</span><span class="shishi"><em></em>数据实时更新</span><span class="jiangbei"><em></em>排名客观权威</span></div></div>
+                </script></div>
 <div class="tittp">客片欣赏</div>
 <div class="info">
     <?php foreach($picinfo['cover'] as $v) { ?>
@@ -168,18 +166,8 @@
         <div class="lian">Copyright © 2018 有榜网</div>
     </div>
 </footer>
-<!-- 城市弹出 -->
-<div class="container">
 </div>
-<script type="text/javascript" src="//www.youbangkeyi.com/js/city.js"></script>
-<?php if($type=="sheying"){?>
-<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/sheyingcity.js"></script>
-<?php } else {?>
-<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/hunlicity.js"></script>
-<?php } ?>
-<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/layer.js"></script>
-</div>
-@include("front.tijiaojs")
+@include("front.tijiaonew")
 </body>
 <script type="application/ld+json">
 {

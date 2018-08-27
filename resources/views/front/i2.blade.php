@@ -1,9 +1,9 @@
 
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head><meta charset="utf-8"><title><?php echo $title;?>_有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $title;?>"><meta name="description" content="<?php echo  $anwser[0]["content"]??""; ?>"><link rel="canonical" href="https://www.youbangkeyi.com/i/<?php echo $ask['id'];?>"><link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css"><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery.SuperSlide1-2.1.1.js"></script><script src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script><style>.huida .yonghu{font-size:0.7rem!important;}.frwd {float: initial!important;margin-left: 0.4rem;}.anlibj a,.zxyy a{color:#FFF!important;}.room-num-line a{color: #b2b2b2!important;}.neirong span{display: block;margin-bottom: 0.5rem;}.neirong span a{font-weight: bold; color: #3c6e9e; font-size: 0.75rem;}.neirong img{margin-top: 0.5rem;}</style></head>
+<head><meta charset="utf-8"><title><?php echo $title;?>_有榜网</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="applicable-device" content="pc,mobile"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /> <meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="Keywords" content="<?php echo $title;?>"><meta name="description" content="<?php echo  $anwser[0]["content"]??""; ?>"><link rel="canonical" href="https://www.youbangkeyi.com/i/<?php echo $ask['id'];?>"><link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css?310"><script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/jquery.SuperSlide1-2.1.1.js"></script><script src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script><style>.huida .yonghu{font-size:0.7rem!important;}.frwd {float: initial!important;margin-left: 0.4rem;}.anlibj a,.zxyy a{color:#FFF!important;}.room-num-line a{color: #b2b2b2!important;}.neirong span{display: block;margin-bottom: 0.5rem;}.neirong span a{font-weight: bold; color: #3c6e9e; font-size: 0.75rem;}</style></head>
 <body class="shop-index view">
-<header><div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div><div class="logo"><a href="<?php echo '/'.$pycity.'/'.($tenants['shoptype']=='婚纱摄影'?'sheying':'hunli');?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?></a></div><a class="zxdh" href="tel:18500905723"></a></header>
+<header><a class="fanhui" href="<?php echo '/'.$pycity.'/'.($tenants['shoptype']=='婚纱摄影'?'sheying':'hunli');?>">榜单首页</a><div class="logo"><a href="<?php echo '/'.$pycity.'/'.($tenants['shoptype']=='婚纱摄影'?'sheying':'hunli');?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?></a></div><a class="zxdh" href="tel:18500905723"></a></header>
     <div class="wendat"><h1><?php echo $ask['title'];?></h1><p>该问题由"<?php echo $ask['name'];?>" 发布于<?php echo date("Y-m-d H:i:s",$ask['created']);?></p></div>
 
     <?php foreach($anwser as $v) { $tenants = $v['pic']; ?>
@@ -41,15 +41,7 @@
             <div class="lian">Copyright © 2018 有榜网</div>
         </div>
     </footer>
-    <!-- 城市弹出 -->
-    <div class="container"></div>
     <script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/Time.glight.foot.js"></script>
-    <?php if($type=="sheying"){?>
-    <script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/sheyingcity.js"></script>
-    <?php } else {?>
-    <script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/hunlicity.js"></script>
-    <?php } ?>
-    <script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/layer.js"></script>
 </body>
 <?php if(isset($anwser[0]["pic"]["cover"])){ ?>
 <script type="application/ld+json">

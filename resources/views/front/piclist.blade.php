@@ -9,11 +9,11 @@
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link rel="canonical" href="https://www.youbangkeyi.com/kplist/<?php echo $tenants['id'];?>">
-    <link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css?1">
+    <link rel="stylesheet" href="https://c.youbangkeyi.com/xinjs/wenda.css?1893">
     <script type="text/javascript" src="//www.youbangkeyi.com/js/jquery-2.1.1.js"></script>
     <script type="text/javascript" src="//www.youbangkeyi.com/js/jquery.SuperSlide.2.1.1.js"></script>
     <script type="text/javascript" src="//www.youbangkeyi.com/js/leftTime.min.js"></script>
-    <script src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js"></script>
+    <script src="https://c.youbangkeyi.com/xinjs/TouchSlide.1.1.js?10"></script>
     <script type="text/javascript" src="//www.youbangkeyi.com/js/more.js"></script>
     <script type="text/javascript" src="//www.youbangkeyi.com/js/foot.js"></script>
     <style type="text/css">.case_box .picScroll .bd .img em{z-index: initial;}</style>
@@ -21,10 +21,9 @@
 <body class="shop-index view">
 @include("front.tijiao")
 <div class="main">
-<header>
-    <div class="city_box" id="gr_zone_ids" data-id="110100"><?php echo $city;?><em></em></div>
-   <div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排行榜</a></div>
-    <a class="zxdh" href="tel:18500905723"></a>
+<header><a class="fanhui" href="<?php echo '/'.$pycity.'/'.($tenants['shoptype']=='婚纱摄影'?'sheying':'hunli');?>">榜单首页</a>
+<div class="logo"><a href="/<?php echo $pycity;?>/<?php echo $type;?><?php echo isset($_GET['from'])? '?from='.$_GET['from'] : ''?>"><?php echo $city;?><?php if($type=='sheying') { ?>婚纱摄影<?php } else { ?>婚庆公司<?php } ?>排行榜</a></div>
+<a class="zxdh" href="tel:18500905723"></a>
 </header>
 <div class="shop_box">
     <div class="titdp">店铺信息</div>
@@ -52,14 +51,7 @@
                             }
                         });
                     });
-                </script>
-<div class="zysmn"><span class="jiance"><em></em>全网数据监测</span><span class="shishi"><em></em>数据实时更新</span><span class="jiangbei"><em></em>排名客观权威</span></div></div>
-    <div id="tocvipGuide">
-        <div class="toctitle">找不到合适的商家?</div>
-        <input type="hidden" id="pcity" name="pcity" value="<?php echo $city;?>">
-        <div class="tocdesc">原价99元VIP大数据推荐，限时免费0元申请推荐！</div>
-        <a class="tocbtn down freeclick" href="javascript:">免费申请</a>
-    </div>
+                </script></div>
 <div class="case_box">
     <div class="tittx">客片欣赏 (<?php echo count($pics);?>)</div>
     <div id="picScroll" class="picScroll txtCtr">
@@ -123,16 +115,6 @@
         <div class="lian">Copyright © 2018 有榜网</div>
     </div>
 </footer>
-<!-- 城市弹出 -->
-<div class="container">
-</div>
-<script type="text/javascript" src="//www.youbangkeyi.com/js/city.js"></script>
-<?php if($type=="sheying"){?>
-<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/sheyingcity.js"></script>
-<?php } else {?>
-<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/hunlicity.js"></script>
-<?php } ?>
-<script type="text/javascript" src="https://c.youbangkeyi.com/xinjs/layer.js?2"></script>
 <script>
     <?php foreach($pics as $k=>$v) {?>
         var lightbox = GLightbox({selector: 'glightbox<?php echo $k?>'});
@@ -140,7 +122,7 @@
 
 </script>
 </div>
-@include("front.tijiaojs")
+@include("front.tijiaonew")
 </body>
 <script type="application/ld+json">
 {
